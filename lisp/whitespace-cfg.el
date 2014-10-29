@@ -1,5 +1,5 @@
 ;; whitespace handling
-(setq-default show-trailing-whitespace t)
+;; (setq-default show-trailing-whitespace t)
 
 (defalias 'ws 'whitespace-mode)
 (defalias 'wc 'whitespace-cleanup)
