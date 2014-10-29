@@ -39,25 +39,6 @@
 ;;   (interactive)
 ;;   (generic-shell-dedicated-toggle "*eshell*" 'start-eshell-with-smart))
 
-;; (defun super-hacky-irb-with-working-completion ()
-;;   "inf-ruby mode has busted completion for now, so hack it with term-mode."
-;;   (term "irb")
-;;   (rename-buffer "*irb*" t))
-
-;; (defun irb-dedicated-toggle ()
-;;   "Toggle dedicated irb window."
-;;   (interactive)
-;;   (generic-shell-dedicated-toggle "*irb*" 'super-hacky-irb-with-working-completion))
-
-;; (defun inf-ruby-wrapper (&optional name)
-;;   "Throw away arg and call inf-ruby."
-;;   (inf-ruby))
-
-;; (defun inf-ruby-dedicated-toggle ()
-;;   "Toggle dedicated irb window."
-;;   (interactive)
-;;   (generic-shell-dedicated-toggle "*irb*" 'super-hacky-irb-with-working-completion))
-
 ;; swiped this from http://www.emacswiki.org/emacs/misc-cmds.el
 (defun kill-buffer-and-its-windows (buffer)
   "Kill BUFFER and delete its windows.  Default is `current-buffer'.
