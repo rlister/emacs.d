@@ -1,6 +1,4 @@
 (column-number-mode 1)             ;turn on column numbers in modeline
-
-;; ;; mavericks broke this:
 (display-battery-mode 1)           ;turn on battery display in modeline
 
 ;; (setq display-time-load-average t) ;display time and load average in modeline
