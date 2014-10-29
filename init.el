@@ -30,7 +30,7 @@
 (load-library "open-line-and-indent")     ;C-o
 (load-library "beginning-or-indentation") ;C-a
 (load-library "end-of-code-or-line")      ;C-e
-(load-library "ace-jump-cfg")             ;c-x {j,w,l}, also C-cC-c in jump-char
+(load-library "ace-jump-cfg")             ;C-x {j,w,l}, also C-cC-c in jump-char
 ;(load-library "expand-region-cfg")        ;expand region syntactically with C-]
 (load-library "jump-char-cfg")            ;jump to char with M-j
 (load-library "mark-forward-sexp-cfg")    ;C-c[oOiI]
@@ -64,7 +64,7 @@
 (load-library "js-cfg")                 ;javascript settings
 (load-library "json-cfg")               ;json-mode and json-pretty-print
 ;(load-library "haml-cfg")               ;haml-mode
-(load-library "git-cfg")                ;egg-mode
+(load-library "git-cfg")                ;magit-mode
 (load-library "rainbow-mode-cfg")       ;show colours
 ;(load-library "css-cfg")                ;css/scss settings
 (load-library "shell-script-cfg")       ;shell-script-mode
