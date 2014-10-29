@@ -50,8 +50,8 @@
 
 ;; shells
 ;; (load-library "term-mode-cfg")          ;M-x term
-(load-library "eshell-dedicated")       ;M-,
-(load-library "multi-term-cfg")         ;C-z c and C-z ,
+(load-library "shell-dedicated")        ;M-i, M-,
+(load-library "multi-term-cfg")         ;C-z c
 ;; (load-library "shell-mode-cfg")         ;colors for shell-mode?
 
 ;; completion
