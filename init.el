@@ -15,8 +15,7 @@
 (load-library "ido-cfg")
 (load-library "uniquify-cfg")           ;make buffer names unique
 (load-library "kill-ring-cfg")          ;M-y
-;; (load-library "mode-line")
-;(load-library "time-cfg")              ;world time setup
+(load-library "mode-line")              ;setup modeline
 (load-library "world-time-cfg")         ;timezones
 (load-library "insert-date-time")       ;M-x date
 
