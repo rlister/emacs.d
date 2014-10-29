@@ -81,4 +81,6 @@
 (load-library "perspective-cfg")
 (load-library "key-chord-cfg")
 
+(load-library "erc-cfg")                ;C-c e for ERC
+
 (toggle-frame-maximized)                ;start up maximized
