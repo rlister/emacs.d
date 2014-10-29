@@ -25,8 +25,8 @@
 ;;    hvmode-line-end-spaces)
 
 ;; wget http://webonastick.com/emacs-lisp/hide-mode-line.el
-(autoload 'hide-mode-line "hide-mode-line" nil t)
-(hide-mode-line)
+;(autoload 'hide-mode-line "hide-mode-line" nil t)
+;(hide-mode-line)
 
 ;; e.g. use (mode-line-fill 'mode-line 10) "Hello world"
 ;; (defun mode-line-fill (face reserve)
