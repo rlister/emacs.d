@@ -62,6 +62,7 @@
 (depends-on "nginx-mode")
 (depends-on "omniref")
 (depends-on "on-screen")
+(depends-on "pabbrev")
 (depends-on "package-build")
 (depends-on "pallet")
 (depends-on "paren-face")
