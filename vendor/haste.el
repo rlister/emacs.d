@@ -1,0 +1,1 @@
+../../emacs-haste-client/haste.el
