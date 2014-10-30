@@ -19,3 +19,10 @@ ln -s ../code/emacs.d/{Cask,init.el} .
 brew install cask
 cask install
 ```
+
+## Emacs.app
+
+Applications started from finder in OSX will not get shell
+environment. Solution is to run homebrew Emacs.app from a wrapper
+shell script that sources profile. Install `Emacs.app` to
+`/Applications` and run from there.
