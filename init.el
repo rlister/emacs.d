@@ -24,6 +24,7 @@
 (load-library "paren-cfg")              ;setup parentheses behaviour (inc smartparens)
 (load-library "hl-line-cfg")            ;highlight current line
 (load-library "enlarge-font-cfg")       ;C-+, C--
+(load-library "toggle-selective-display-column") ;C-TAB
 
 ;; movement
 (load-library "open-line-and-indent")     ;C-o
