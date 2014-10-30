@@ -50,7 +50,7 @@
 ;; shells
 (load-library "shell-dedicated")        ;M-i, M-,
 (load-library "multi-term-cfg")         ;C-z c
-(load-library "shell-mode-cfg")         ;shell-mode extras
+;; (load-library "shell-mode-cfg")         ;shell-mode extras
 
 ;; completion
 (load-library "ac-complete-cfg")
