@@ -1,9 +1,6 @@
-;; pabbrev-mode
-;; wget http://emacswiki.org/emacs/download/pabbrev.el
-;; comment out occurences of make-local-hook
+;; pabbrev from melpa
 
 (autoload 'global-pabbrev-mode "pabbrev" nil t)
-(defalias 'pa 'global-pabbrev-mode)
 
 ;; modes for which we want no pabbrev
 (put 'inf-ruby 'pabbrev-global-mode-excluded-modes t)
@@ -13,6 +10,18 @@
   '(progn
      (setq pabbrev-minimal-expansion-p t) ;show minimal substring instead of most frequent
      (setq pabbrev-read-only-error nil)
+
+     ;; in emacs 24.4. I see this, so write this as a defun instead of macro
+     ;; remove this once the problem is figured out
+     (defun pabbrev-debug-message(&rest body)
+       `(if pabbrev-debug-enabled
+            (let ((insert
+                   (concat (format ,@body) "\n")))
+              (with-current-buffer
+                  (pabbrev-debug-get-buffer)
+                (goto-char (point-max))
+                (insert insert)
+                (pabbrev-debug-frame-scroll)))))
 
      (defun pabbrev-suggestions-ido (suggestion-list)
        "Use ido to display menu of all pabbrev suggestions."
