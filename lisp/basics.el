@@ -33,6 +33,11 @@
 (global-set-key (kbd "M-s s")   'replace-string)
 (global-set-key (kbd "M-s M-s") 'replace-string)
 
+(define-key global-map "\M-r"     'repeat-complex-command) ;also C-x ESC ESC
+
+(define-key global-map "\M-["     'beginning-of-defun)
+(define-key global-map "\M-]"     'end-of-defun)
+
 ;(setq help-window-select 'always)  ;select the buffer displaying help (so I can quit it easily)
 
 ;(setq-default indent-tabs-mode nil);always indent with spaces, not tabs
