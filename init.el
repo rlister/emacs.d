@@ -1,4 +1,4 @@
-(setq debug-on-error nil)               ;turn on for debugging
+;; (setq debug-on-error t)               ;turn on for debugging
 
 (require 'cask "/usr/local/Cellar/cask/0.7.2/cask.el")
 (cask-initialize)
