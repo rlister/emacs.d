@@ -1,3 +1,5 @@
+;; popup small window split with various kinds of shells and inf processes
+
 (defun generic-shell-dedicated-toggle (buffer-name shell-func)
   "Start small split window with shell, or kill it if exists. Call with shell buffer name and function to start shell."
   (let ((shell-buffer (get-buffer buffer-name)))
