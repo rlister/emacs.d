@@ -50,6 +50,7 @@
 (depends-on "json-mode")
 (depends-on "jump-char")
 (depends-on "key-chord")
+(depends-on "lorem-ipsum")
 (depends-on "magit")
 (depends-on "markdown-mode")
 (depends-on "mew")
