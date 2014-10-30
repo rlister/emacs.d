@@ -25,6 +25,7 @@
 (load-library "whitespace-cfg")         ;setup whitespace handling
 (load-library "paren-cfg")              ;setup parentheses behaviour (inc smartparens)
 (load-library "hl-line-cfg")            ;highlight current line
+(load-library "enlarge-font-cfg")       ;C-+, C--
 
 ;; movement
 (load-library "open-line-and-indent")     ;C-o
