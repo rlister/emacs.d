@@ -73,15 +73,14 @@
             (add-to-list 'term-bind-key-alist '("M-,"     .'ric-multi-term-dedicated-toggle)))) ;make this work in line mode
 
 ;; experimental so far
-(defun multi-term-dedicated-toggle ()
-  "Toggle multi-term dedicated buffer, switch to it when creating."
-  (interactive)
-  (if (get-buffer "*MULTI-TERM-DEDICATED*")
-      (progn
-        (multi-term-dedicated-close)
-        (kill-buffer "*MULTI-TERM-DEDICATED*"))
-    (multi-term-dedicated-open)))
-
+;; (defun multi-term-dedicated-toggle ()
+;;   "Toggle multi-term dedicated buffer, switch to it when creating."
+;;   (interactive)
+;;   (if (get-buffer "*MULTI-TERM-DEDICATED*")
+;;       (progn
+;;         (multi-term-dedicated-close)
+;;         (kill-buffer "*MULTI-TERM-DEDICATED*"))
+;;     (multi-term-dedicated-open)))
 
 ;; char mode is raw shell input, line-mode is moving around like a normal emacs buffer
 ;; set in global map so it works in line-mode
