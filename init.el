@@ -67,7 +67,6 @@
 (load-library "ag-cfg")                 ;ag, ag-project (silver searcher)
 (load-library "golang-cfg")             ;setup go-mode
 (load-library "nginx-cfg")              ;nginx-mode
-(load-library "slack-cfg")
 ;(load-library "pretty-symbols")         ;function and lambda symbols
 ;(load-library "elisp-cfg")              ;elisp hooks
 ;(load-library "haml-cfg")               ;haml-mode
@@ -75,10 +74,13 @@
 ;(load-library "puppet-cfg")             ;puppet-mode
 ;(load-library "flycheck-cfg")           ;turn on globally
 
+;; services
+(load-library "slack-cfg")
+(load-library "haste-cfg")
+(load-library "erc-cfg")                ;C-c e for ERC
+
 (load-library "projectile-cfg")
 (load-library "perspective-cfg")
 (load-library "key-chord-cfg")
-
-(load-library "erc-cfg")                ;C-c e for ERC
 
 (toggle-frame-maximized)                ;start up maximized
