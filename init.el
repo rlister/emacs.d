@@ -41,6 +41,7 @@
 (load-library "dot-mode-cfg")             ;C-. emulates vi .
 (load-library "goto-chg-cfg")             ;M-g M-g to goto last change
 (load-library "imenu-cfg")                ;M-m
+(load-library "goto-top-or-bottom")       ;chord jg
 ;(load-library "visual-regexp-cfg")        ;C-c[rq]
 ;(load-library "goto-top-or-bottom")       ;M-g M-g
 

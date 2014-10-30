@@ -26,3 +26,4 @@
 
 (key-chord-define-global "jb" 'ido-switch-buffer)
 (key-chord-define-global "kk" 'ido-kill-buffer)
+(key-chord-define-global "jg" 'goto-top-or-bottom)
