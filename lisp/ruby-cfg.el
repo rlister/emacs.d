@@ -41,4 +41,5 @@
         ;; (ruby-end-mode) ;; built-in to enh-ruby-mode?
         (setq show-trailing-whitespace t)
         (whitespace-cleanup-on-save)
+        (highlight-indentation-current-column-mode)
         (inf-ruby-minor-mode)))))

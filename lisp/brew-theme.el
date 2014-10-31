@@ -301,6 +301,10 @@
    `(helm-source-header ((t (:foreground ,green :background ,brew-bg2 :slant italic))))
    `(helm-selection     ((t (:background ,brew-bg2))))
 
+   ;; for highlight-indentation-mode
+   `(highlight-indentation-face                ((t (:background ,brew-bg1))))
+   `(highlight-indentation-current-column-face ((t (:background ,brew-bg2))))
+   
    ))
 
 (provide-theme 'brew)
