@@ -1,3 +1,6 @@
+(setq magit-save-some-buffers nil)
+(setq magit-completing-read-function 'magit-ido-completing-read)
+
 (global-set-key (kbd "C-x g") 'magit-status) ;magit from melpa
 
 (eval-after-load 'magit-mode
