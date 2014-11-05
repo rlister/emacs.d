@@ -39,3 +39,14 @@
 (flx-ido-mode 1)
 (setq ido-use-faces nil) ;disable ido faces to see flx highlights.
 (setq gc-cons-threshold 20000000)       ;see https://github.com/lewang/flx#gc-optimization
+
+;; make ~ in ido file completion go direct to $HOME
+(add-hook 'ido-setup-hook
+ (lambda ()
+   (define-key ido-file-completion-map
+     (kbd "~")
+     (lambda ()
+       (interactive)
+       (if (looking-back "/")
+           (insert "~/")
+         (call-interactively 'self-insert-command))))))
