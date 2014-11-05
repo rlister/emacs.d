@@ -47,11 +47,6 @@
 (load-library "resize-windows")         ;M-left,right,up,down
 ;; (load-library "transpose-windows")      ;M-x swap
 
-;; shells
-(load-library "shell-dedicated")        ;M-i, M-,
-(load-library "multi-term-cfg")         ;C-z c
-;; (load-library "shell-mode-cfg")         ;shell-mode extras
-
 ;; completion
 (load-library "ac-complete-cfg")
 (load-library "pabbrev-cfg")
@@ -83,5 +78,10 @@
 (load-library "perspective-cfg")
 (load-library "key-chord-cfg")
 (load-library "org-present-cfg")
+
+;; shells
+(load-library "shell-dedicated")        ;M-i, M-,
+(load-library "multi-term-cfg")         ;C-z c
+;; (load-library "shell-mode-cfg")         ;shell-mode extras
 
 (toggle-frame-maximized)                ;start up maximized
