@@ -83,7 +83,7 @@
    `(font-lock-doc-face                 ((t (:foreground ,cyan :slant italic))))
    `(font-lock-doc-string-face          ((t (:foreground ,blue :slant italic))))
    `(font-lock-function-name-face       ((t (:foreground ,blue-l :height 1.0))))
-   `(font-lock-keyword-face             ((t (:foreground ,green :weight bold))))
+   `(font-lock-keyword-face             ((t (:foreground ,green :weight normal))))
    `(font-lock-negation-char-face       ((t (:foreground "#839496"))))
    `(font-lock-preprocessor-face        ((t (:foreground ,blue))))
    `(font-lock-string-face              ((t (:foreground ,cyan :slant italic))))
