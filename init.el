@@ -82,5 +82,6 @@
 (load-library "projectile-cfg")
 (load-library "perspective-cfg")
 (load-library "key-chord-cfg")
+(load-library "org-present-cfg")
 
 (toggle-frame-maximized)                ;start up maximized
