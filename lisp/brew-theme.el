@@ -304,7 +304,19 @@
    ;; for highlight-indentation-mode
    `(highlight-indentation-face                ((t (:background ,brew-bg1))))
    `(highlight-indentation-current-column-face ((t (:background ,brew-bg2))))
-   
+
+   ;; flymake
+   `(flymake-errline ((t (:underline (:style wave :color "IndianRed")))))
+
+   `(diredp-number      ((t (:foreground ,yellow))))
+   `(diredp-file-name   ((t (:foreground ,yellow))))
+   `(diredp-file-suffix ((t (:foreground "PaleGreen"))))
+   `(diredp-date-time   ((t (:foreground ,blue))))
+   `(diredp-dir-priv    ((t (:foreground ,cyan))))
+   `(diredp-read-priv   ((t (:foreground "IndianRed"))))
+   `(diredp-write-priv  ((t (:foreground "PaleGreen"))))
+   `(diredp-exec-priv   ((t (:foreground "GoldenRod"))))
+   `(diredp-no-priv     ((t (:foreground ,brew-bg5))))
    ))
 
 (provide-theme 'brew)
