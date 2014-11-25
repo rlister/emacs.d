@@ -85,3 +85,4 @@
 ;; (load-library "shell-mode-cfg")         ;shell-mode extras
 
 (toggle-frame-maximized)                ;start up maximized
+(message (emacs-init-time))
