@@ -42,4 +42,6 @@
         (setq show-trailing-whitespace t)
         ;; (whitespace-cleanup-on-save)
         (highlight-indentation-current-column-mode)
-        (inf-ruby-minor-mode)))))
+        (inf-ruby-minor-mode)
+        (define-key enh-ruby-mode-map (kbd "M-p") 'enh-ruby-backward-sexp)
+        (define-key enh-ruby-mode-map (kbd "M-n") 'enh-ruby-forward-sexp)))))
