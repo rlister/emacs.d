@@ -30,8 +30,8 @@
       (lambda ()
         ;; (pretty-lambda)                 ;utf-8 lambda
         ;; (ruby-end-mode)                 ;from melpa
-        (setq show-trailing-whitespace t)
-        (whitespace-cleanup-on-save)))))
+        ;; (whitespace-cleanup-on-save)
+        (setq show-trailing-whitespace t)))))
 
 (eval-after-load 'enh-ruby-mode
   '(progn
@@ -40,6 +40,6 @@
       (lambda ()
         ;; (ruby-end-mode) ;; built-in to enh-ruby-mode?
         (setq show-trailing-whitespace t)
-        (whitespace-cleanup-on-save)
+        ;; (whitespace-cleanup-on-save)
         (highlight-indentation-current-column-mode)
         (inf-ruby-minor-mode)))))
