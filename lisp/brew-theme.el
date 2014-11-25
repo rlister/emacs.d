@@ -18,13 +18,15 @@
       (orange  "#FFD2A7")
       (red     "#cc9393")
       (magenta "#FF73FD")
-      (blue    "#6699CC")
+      ;; (blue    "#6699CC")
+      (blue    "#749AF7")
       (cyan    "#96CBFE")
       (green   "#99CC99")
 
       (yellow-l "#DEB542")
       (red-d    "#990A1B")
       (red-l    "#FF6E64")
+      (blue-d   "#446AC7")
       (blue-l   "#69B7F0")
       (green-l  "#B4C342")
       )
@@ -39,7 +41,7 @@
    `(mode-line-buffer-id        ((t (:foreground "PaleGreen" :background nil :weight normal))))
    ;; `(mode-line-emphasis         ((t (:foreground ,cyan :background nil :weight normal))))
    `(persp-selected-face        ((t (:foreground ,cyan :background nil :weight normal)))) ;current perspective in mode-line
-   
+
    `(fringe                     ((t (:inherit default))))
    `(header-line                ((t (:inherit default))))
    `(highlight                  ((t (:foreground nil :background ,brew-hl :underline nil))))
@@ -79,7 +81,7 @@
    `(font-lock-builtin-face             ((t (:foreground ,blue :slant italic))))
    `(font-lock-comment-delimiter-face   ((t (:foreground ,brew-bg5))))
    `(font-lock-comment-face             ((t (:foreground ,brew-bg5 :slant italic))))
-   `(font-lock-constant-face            ((t (:foreground ,blue :weight bold))))
+   `(font-lock-constant-face            ((t (:foreground ,blue :weight normal :slant italic))))
    `(font-lock-doc-face                 ((t (:foreground ,cyan :slant italic))))
    `(font-lock-doc-string-face          ((t (:foreground ,blue :slant italic))))
    `(font-lock-function-name-face       ((t (:foreground ,blue-l :height 1.0))))
