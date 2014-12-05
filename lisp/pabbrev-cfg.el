@@ -3,7 +3,9 @@
 (autoload 'global-pabbrev-mode "pabbrev" nil t)
 
 ;; modes for which we want no pabbrev
-(put 'inf-ruby 'pabbrev-global-mode-excluded-modes t)
+(put 'inf-ruby       'pabbrev-global-mode-excluded-modes t)
+(put 'erc-mode       'pabbrev-global-mode-excluded-modes t)
+(put 'mew-draft-mode 'pabbrev-global-mode-excluded-modes t)
 
 ;; use ido-mode to select suggestions
 (eval-after-load "pabbrev"
