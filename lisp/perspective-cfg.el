@@ -10,3 +10,4 @@
   (shell-dedicated-toggle (format "*shell: %s*" (persp-name persp-curr))))
 
 (global-set-key (kbd "C-,") 'persp-shell-dedicated-toggle)
+(global-set-key (kbd "M-.") 'persp-shell-dedicated-toggle) ;since iterm eats C-,
