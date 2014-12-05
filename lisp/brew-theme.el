@@ -33,7 +33,8 @@
 
   (custom-theme-set-faces
    'brew
-   `(default                    ((t (:foreground ,brew-fg :background "Black"))))
+   ;`(default                    ((t (:foreground ,brew-fg :background "Black"))))
+   `(default                    ((t (:foreground ,brew-fg :background "unspec"))))
    `(underline                  ((t (:underline nil)))) ;no underlines unless I ask for them
 
    `(mode-line                  ((t (:foreground nil :background "#040454" :slant italic)))); :box (:line-width 1 :color ,brew-bg3)))))
