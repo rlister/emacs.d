@@ -15,7 +15,7 @@
 (load-library "ido-cfg")                ;setup ido
 (load-library "uniquify-cfg")           ;make buffer names unique
 (load-library "kill-ring-cfg")          ;M-y
-(load-library "world-time-cfg")         ;timezones
+;; (load-library "world-time-cfg")         ;timezones
 (load-library "insert-date-time")       ;M-x date
 (load-library "smex-cfg")               ;C-xm, C-xC-m to replace M-x
 (load-library "safe-quit")              ;prompt to quit emacs
