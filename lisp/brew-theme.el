@@ -262,6 +262,7 @@
    ;; `(magit-diff-add          ((t (:background "#113311"))))
    `(magit-diff-del          ((t (:foreground ,red))))
    `(magit-diff-add          ((t (:foreground ,green))))
+   `(magit-diff-none         ((t (:foreground ,brew-bg5))))
 
    `(git-commit-overlong-summary-face     ((t (:foreground ,brew-fg :italic :underline nil))))
    `(git-commit-nonempty-second-line-face ((t (:foreground ,brew-fg :italic :underline nil))))
