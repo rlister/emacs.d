@@ -54,3 +54,23 @@
 
 ;; man page in same window
 (setq Man-notify-method 'pushy)
+
+;; ;; fix background running in terminal
+;; (defun on-after-init ()
+;;   (unless (display-graphic-p (selected-frame))
+;;     (set-face-background 'default "unspecified-bg" (selected-frame))))
+;; (add-hook 'window-setup-hook 'on-after-init)
+
+;; (add-hook 'after-make-frame-functions
+;;           '(lambda (frame)
+;;              (select-frame frame)
+;;              (if window-system nil
+;;                (set-frame-parameter nil 'background-color "black"))))
+
+;; (add-hook 'server-visit-hook 'fix-bg-in-terminal)
+;; (defun fix-bg-in-terminal ()
+;;   (unless window-system
+;;     (progn
+;;       (select-frame frame)
+;;       (set-frame-parameter nil 'background-color "black"))))
+;;     ;(face-remap-add-relative 'default :background "unspecified-bg"))
