@@ -313,7 +313,7 @@
    `(flymake-errline ((t (:underline (:style wave :color "IndianRed")))))
 
    `(diredp-number      ((t (:foreground ,yellow))))
-   `(diredp-file-name   ((t (:foreground ,yellow))))
+   `(diredp-file-name   ((t (:inherit default))))
    `(diredp-file-suffix ((t (:foreground "PaleGreen"))))
    `(diredp-date-time   ((t (:foreground ,blue))))
    `(diredp-dir-priv    ((t (:foreground ,cyan))))
