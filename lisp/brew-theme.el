@@ -321,6 +321,7 @@
    `(diredp-write-priv  ((t (:foreground "PaleGreen"))))
    `(diredp-exec-priv   ((t (:foreground "GoldenRod"))))
    `(diredp-no-priv     ((t (:foreground ,brew-bg5))))
+   `(diredp-dir-heading ((t (:foreground ,cyan :background nil))))
    ))
 
 (provide-theme 'brew)
