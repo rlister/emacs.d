@@ -19,7 +19,7 @@
 (put 'dired-find-alternate-file 'disabled nil) ;no newbie hand-holding
                                         ;when I use 'a' to replace dired buffer
 
-(require 'dired-x)
+;; (require 'dired-x)
 
 ;; use wdired-mode to edit filenames in buffer with C-x C-q
 (setq wdired-allow-to-change-permissions t) ;edit permission bits directly
