@@ -13,6 +13,7 @@
 (setq ring-bell-function 'ignore)  ;do not beep for C-g or bad completions (esp on OSX)
 (setq custom-file "~/.emacs.d/custom.el") ;do not stick customizations in .emacs or init.el
 (setq x-select-enable-clipboard t) ;selection goes to system clipboard
+;(setq x-select-enable-primary t) ;selection goes to system clipboard
 
 (setq-default indent-tabs-mode nil) ;just for pablo no tabs evah in any mode
 
