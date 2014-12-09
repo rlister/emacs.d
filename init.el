@@ -85,4 +85,4 @@
 ;; (load-library "shell-mode-cfg")         ;shell-mode extras
 (load-library "dired-cfg")              ;dired+ etc
 
-(toggle-frame-maximized)                ;start up maximized
+;; (toggle-frame-maximized)                ;start up maximized
