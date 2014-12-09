@@ -322,6 +322,13 @@
    `(diredp-exec-priv   ((t (:foreground "GoldenRod"))))
    `(diredp-no-priv     ((t (:foreground ,brew-bg5))))
    `(diredp-dir-heading ((t (:foreground ,cyan :background nil))))
+
+   ;; hi-lock mode, e.g. highlight-* commands
+   `(hi-yellow ((t (:background "#A57706"))))
+   `(hi-blue   ((t (:background "MidnightBlue"))))
+   `(hi-green  ((t (:background "#548B54"))))
+   `(hi-red    ((t (:background "IndianRed"))))
+
    ))
 
 (provide-theme 'brew)
