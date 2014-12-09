@@ -86,4 +86,3 @@
 (load-library "dired-cfg")              ;dired+ etc
 
 (toggle-frame-maximized)                ;start up maximized
-(message (emacs-init-time))
