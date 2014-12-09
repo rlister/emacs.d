@@ -50,6 +50,7 @@
 ;; completion
 (load-library "ac-complete-cfg")
 (load-library "pabbrev-cfg")
+(load-library "discover-cfg")
 
 ;; programming modes
 (load-library "git-cfg")                ;magit-mode
