@@ -251,6 +251,13 @@
    `(erc-timestamp-face      ((t (:foreground ,green))))
    `(erc-underline-face      ((t (:underline t))))
 
+   ;; diff
+   `(diff-context     ((t :inherit font-lock-comment-face)))
+   `(diff-header      ((t :background ,brew-bg3)))
+   `(diff-file-header ((t :background ,brew-bg3 :foreground ,cyan)))
+   `(diff-hunk-header ((t :background ,brew-hl)))
+   `(diff-added       ((t :foreground ,green)))
+
    `(egg-diff-hunk-header    ((t (:inherit font-lock-comment-face))))
    `(egg-diff-add            ((t (:foreground "PaleGreen" :background ,brew-bg))))
    `(egg-diff-del            ((t (:foreground "IndianRed" :background ,brew-bg))))
