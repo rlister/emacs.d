@@ -18,3 +18,13 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 ;; or you can add this hook locally for particular mode
 ;(add-hook ‘c-mode-hook (lambda () (add-to-list ‘write-file-functions ‘delete-trailing-whitespace)))
+
+(defun space-dwim (beg end)
+  "If region set, canonically space it, otherwise compress space at point."
+  (interactive "r")
+  (if (region-active-p)
+      (canonically-space-region beg end)
+    (just-one-space)))
+
+;; was toggle-input-method
+(define-key global-map (kbd "C-\\") 'space-dwim)
