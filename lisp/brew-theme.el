@@ -66,7 +66,7 @@
    `(header-line                ((t (:background ,brew-hl)))) ;buffer-specific top mode-line
 ;   `(vertical-border
 
-   `(region                     ((t (:background "MidnightBlue"))))
+   `(region                     ((t (:background ,blue-d))))
    `(scroll-bar                 ((t (:background ,brew-hl))))
    `(secondary-selection        ((t (:foreground nil :background ,brew-bg5))))
    `(tool-bar                   ((t (:background ,brew-hl))))
