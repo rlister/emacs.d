@@ -24,7 +24,6 @@
 (key-chord-define-global "jm" 'persp-switch)
 
 (key-chord-define-global "jb" 'ido-switch-buffer)
-(key-chord-define-global "kk" 'ido-kill-buffer)
 (key-chord-define-global "jg" 'move-to-window-line-top-bottom)
 
 (key-chord-define-global ".;" 'comment-region-or-line)
