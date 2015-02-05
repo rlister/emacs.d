@@ -27,5 +27,5 @@
 (setq wdired-confirm-overwrite t) ; ask to overwrite files if conflict
 
 (require 'dired+)                     ;extra functionality below
-(diredp-toggle-find-file-reuse-dir 1) ;tell Dired to reuse Dired buffers
+;(diredp-toggle-find-file-reuse-dir 1) ;tell Dired to reuse Dired buffers
 (setq diredp-hide-details-initially-flag nil) ;toggle with '('
