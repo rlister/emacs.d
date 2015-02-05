@@ -69,6 +69,7 @@
 ;(load-library "css-cfg")                ;css/scss settings
 ;(load-library "puppet-cfg")             ;puppet-mode
 ;(load-library "flycheck-cfg")           ;turn on globally
+(load-library "conf-cfg")               ;conf-mode
 
 ;; services
 (load-library "slack-cfg")
