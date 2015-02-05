@@ -14,8 +14,8 @@
 (key-chord-define-global "jh" 'helm-mini)
 ;; (key-chord-define-global "qq" '(lambda () (interactive) (quit-window nil (next-window))))
 
-(key-chord-define-global "yy" 'yank)
-(key-chord-define-global "uu" 'undo)
+;(key-chord-define-global "yy" 'yank)
+;(key-chord-define-global "uu" 'undo)
 ;; (key-chord-define-global "ii" 'god-local-mode)
 
 ;; (key-chord-define-global "jk" 'term-toggle-line-char-mode)
