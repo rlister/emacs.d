@@ -305,7 +305,7 @@
 
    ;; enh-ruby-mode
    `(erm-syn-errline  ((t (:background "#440000")))) ;flag errors
-   `(erm-syn-warnline ((t (:background "#222200")))) ;flag errors
+   `(erm-syn-warnline ((t (:background "#010100")))) ;flag errors
 
    `(hiwin-face ((t (:foreground "#444444" :background "#111111"))))
 
