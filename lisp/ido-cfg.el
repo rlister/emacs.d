@@ -14,7 +14,7 @@
 (setq ido-default-buffer-method 'selected-frame)
 ;; (setq ido-max-directory-size 100000) ;hope this helps with adms
 (setq ido-create-new-buffer 'never)  ;do not make new buffers if I typo name
-(setq ido-use-url-at-point t)        ;use C-xC-f to open URLs
+(setq ido-use-url-at-point nil)        ;use C-xC-f to open URLs
 (setq ido-use-virtual-buffers t)     ;remember buffers that were once open
 
 (defun ido-disable-line-trucation ()
