@@ -53,7 +53,13 @@
    ((equal "right" (win-resize-left-or-right)) (enlarge-window-horizontally -1))
    ((equal "mid" (win-resize-left-or-right)) (enlarge-window-horizontally 1))))
 
-(global-set-key [M-up]    'win-resize-enlarge-horiz)
-(global-set-key [M-down]  'win-resize-minimize-horiz)
+;; needed for below bindings in terminal emacs
+(define-key input-decode-map "\e\eOA" [(meta up)])
+(define-key input-decode-map "\e\eOB" [(meta down)])
+
+;(global-set-key [M-up]    'win-resize-enlarge-horiz)
 (global-set-key [M-left]  'win-resize-enlarge-vert)
 (global-set-key [M-right] 'win-resize-minimize-vert)
+
+(global-set-key [(meta up)] 'win-resize-enlarge-horiz)
+(global-set-key [(meta down)] 'win-resize-minimize-horiz)
