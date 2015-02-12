@@ -29,3 +29,7 @@
 (require 'dired+)                     ;extra functionality below
 ;(diredp-toggle-find-file-reuse-dir 1) ;tell Dired to reuse Dired buffers
 (setq diredp-hide-details-initially-flag nil) ;toggle with '('
+
+;; melpa install dired-k
+(require 'dired-k)
+(define-key dired-mode-map (kbd "K") 'dired-k)
