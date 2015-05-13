@@ -40,7 +40,7 @@
 (load-library "imenu-cfg")                ;M-m
 ;(load-library "expand-region-cfg")        ;expand region syntactically with C-]
 ;(load-library "mark-forward-sexp-cfg")    ;C-c[oOiI]
-;(load-library "toggle-selective-display-column") ;code folding with C-TAB
+(load-library "toggle-selective-display-column") ;code folding with C-TAB
 ;(load-library "visual-regexp-cfg")        ;C-c[rq]
 
 ;; window movement
