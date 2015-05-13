@@ -70,6 +70,7 @@
 (depends-on "persp-projectile")
 (depends-on "perspective")
 (depends-on "popup")
+(depends-on "powerline")
 (depends-on "proc-net")
 (depends-on "projectile")
 (depends-on "projectile-rails")
