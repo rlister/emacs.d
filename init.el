@@ -64,6 +64,7 @@
 (load-library "ag-cfg")                 ;ag, ag-project (silver searcher)
 (load-library "golang-cfg")             ;setup go-mode
 (load-library "nginx-cfg")              ;nginx-mode
+(load-library "terraform-cfg")          ;terraform-mode
 ;(load-library "pretty-symbols")         ;function and lambda symbols
 ;(load-library "elisp-cfg")              ;elisp hooks
 ;(load-library "haml-cfg")               ;haml-mode
