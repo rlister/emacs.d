@@ -10,6 +10,7 @@
 
 (load-library "brew-theme")             ;my color theme
 (load-library "mode-line")              ;setup modeline
+(load-library "powerline-cfg")          ;use powerline libs
 (load-library "mac")                    ;some mac-specific settings
 (load-library "basics")                 ;basic display and key tweaks
 (load-library "ido-cfg")                ;setup ido
