@@ -9,5 +9,7 @@
 (eval-after-load 'browse-kill-ring
   '(define-key browse-kill-ring-mode-map (kbd "M-y") 'browse-kill-ring-forward))
 
+(setq browse-kill-ring-highlight-current-entry t)
+
 ;; for haxorz: you can also use this function with your own ring
 ;(kill-ring-ido nil "Choose something: " (list "long long" "loooooooooooooooooooooooooong" "short"))
