@@ -78,6 +78,7 @@
 (depends-on "s")
 (depends-on "smartparens")
 (depends-on "smex")
+(depends-on "terraform-mode")
 (depends-on "turnip")
 (depends-on "vkill")
 (depends-on "web")
