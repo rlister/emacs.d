@@ -1,5 +1,6 @@
 (global-set-key (kbd "M-c") 'kill-ring-save)  ;cua-compat
 (global-set-key (kbd "M-U") 'capitalize-word) ;since I stole M-c
+(setq kill-do-not-save-duplicates t)          ;no adjacent dupes
 
 ;; install browse-kill-ring from melpa
 (browse-kill-ring-default-keybindings)  ;this binds M-y if not preceded by C-y
