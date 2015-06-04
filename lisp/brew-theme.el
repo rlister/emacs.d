@@ -114,17 +114,16 @@
    `(rainbow-delimiters-unmatched-face ((t (:foreground ,red :background ,brew-hl :inverse-video nil))))
 
    ;; compilation, also stuff like grep output
-   `(compilation-column-face          ((t (:foreground ,yellow))))
    `(compilation-enter-directory-face ((t (:foreground ,green))))
-   `(compilation-error-face           ((t (:foreground ,red :weight bold :underline nil))))
    `(compilation-face                 ((t (:foreground ,brew-fg :underline nil))))
    `(compilation-info-face            ((t (:foreground ,blue))))
    `(compilation-info                 ((t (:foreground ,green :underline nil))))
    `(compilation-leave-directory-face ((t (:foreground ,green))))
-   `(compilation-line-face            ((t (:foreground ,yellow :underline nil))))
-   `(compilation-line-number          ((t (:foreground ,yellow :underline nil))))
-   `(compilation-message-face         ((t (:foreground ,blue))))
-   `(compilation-warning-face         ((t (:foreground ,yellow :weight bold :underline nil))))
+   `(compilation-line-number          ((t (:foreground ,brew-bg5))))
+   `(compilation-column-number        ((t (:foreground ,brew-bg3))))
+   `(compilation-message              ((t (:foreground ,blue))))
+   `(compilation-error                ((t (:foreground "IndianRed" :underline nil))))
+   `(compilation-warning              ((t (:foreground ,yellow :underline nil))))
 
    `(Man-overstrike                   ((t (:foreground "PaleGreen"))))
    `(Man-underline                    ((t (:foreground "IndianRed"))))
