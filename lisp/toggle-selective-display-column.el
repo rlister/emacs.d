@@ -5,4 +5,7 @@
   (set-selective-display
    (if selective-display nil (or (+ (current-column) 1) 1))))
 
-(global-set-key (kbd "<C-tab>")      'toggle-selective-display-column)
+;; broke in tty
+;(global-set-key (kbd "C-TAB") 'toggle-selective-display-column)
+
+(global-set-key (kbd "C-c TAB") 'toggle-selective-display-column)
