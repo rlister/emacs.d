@@ -14,6 +14,7 @@
 (load-library "mac")                    ;some mac-specific settings
 (load-library "basics")                 ;basic display and key tweaks
 (load-library "ido-cfg")                ;setup ido
+(load-library "recentf-cfg")            ;setup recentf with ido C-x C-r
 (load-library "uniquify-cfg")           ;make buffer names unique
 (load-library "kill-ring-cfg")          ;M-y
 ;; (load-library "world-time-cfg")         ;timezones
