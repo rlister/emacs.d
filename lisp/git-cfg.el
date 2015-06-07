@@ -1,5 +1,6 @@
 (setq magit-save-some-buffers nil)
 (setq magit-completing-read-function 'magit-ido-completing-read)
+(setq magit-last-seen-setup-instructions "1.4.0") ;stop warning from popping up
 
 (global-set-key (kbd "C-x g") 'magit-status) ;magit from melpa
 
