@@ -33,19 +33,13 @@
 
   (custom-theme-set-faces
    'brew
-   ;`(default                    ((t (:foreground ,brew-fg :background "Black"))))
    `(default                    ((t (:foreground ,brew-fg :background "unspec"))))
    `(underline                  ((t (:underline nil)))) ;no underlines unless I ask for them
 
-
-   ;`(mode-line                  ((t (:foreground nil :background "#040454" :slant italic)))); :box (:line-width 1 :color ,brew-bg3))))) ;midnight blue
    `(mode-line                  ((t (:foreground nil :background "#2b2b2b"))))
    `(mode-line-inactive         ((t (:foreground nil :background ,brew-bg  :slant italic)))) ;:box (:line-width 1 :color ,brew-bg1)))))
    `(mode-line-buffer-id        ((t (:foreground "PaleGreen" :background nil :weight normal))))
    ;; `(mode-line-emphasis         ((t (:foreground ,cyan :background nil :weight normal))))
-   `(persp-selected-face        ((t (:foreground ,cyan :background nil :weight normal)))) ;current perspective in mode-line
-   `(powerline-active1          ((t (:foreground ,cyan))))
-   `(powerline-inactive1        ((t (:foreground nil))))
 
    `(fringe                     ((t (:inherit default))))
    `(header-line                ((t (:inherit default))))
