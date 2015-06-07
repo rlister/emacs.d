@@ -8,7 +8,7 @@
     comment starters like // or /*.  Such will not be skipped."
     (interactive)
     (if (not (eolp))
-        (end-of-line)
+        (evil-end-of-line)
       (skip-chars-backward " \t")
       (let ((pt (point))
             (lbp (line-beginning-position))
