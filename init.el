@@ -22,10 +22,10 @@
 
 (load-library "uniquify-cfg")           ;make buffer names unique
 (load-library "kill-ring-cfg")          ;M-y
-;(load-library "insert-date-time")       ;M-x date
+(load-library "insert-date-time")       ;M-x date
 ;(load-library "safe-quit")              ;prompt to quit emacs
 ;(load-library "aliases")                ;some function shortcuts
-;(load-library "whitespace-cfg")         ;setup whitespace handling
+(load-library "whitespace-cfg")         ;setup whitespace handling
 (load-library "paren-cfg")              ;setup parentheses behaviour (inc smartparens)
 ;(load-library "hl-line-cfg")            ;highlight current line
 ;(load-library "enlarge-font-cfg")       ;C-+, C--
@@ -48,9 +48,9 @@
 ;;(load-library "visual-regexp-cfg")        ;C-c[rq]
 ;
 ;;; window movement
-;;(load-library "window-movement")        ;moving between windows
+(load-library "window-movement")        ;moving between windows
 ;(load-library "resize-windows")         ;M-left,right,up,down
-;;; (load-library "transpose-windows")      ;M-x swap
+(load-library "transpose-windows")      ;M-x swap
 ;
 ;;; completion
 (load-library "ac-complete-cfg")
