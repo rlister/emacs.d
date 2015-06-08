@@ -3,4 +3,5 @@
 ;; put my own completions in ~/.dict and call ac-clear-dictionary-cache to update
 
 (ac-config-default)
-(add-to-list 'ac-modes 'enh-ruby-mode)
+(add-to-list 'ac-modes 'enh-ruby-mode 'ruby-mode)
+
