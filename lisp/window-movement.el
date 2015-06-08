@@ -15,3 +15,6 @@
 ;; winner-mode - pop window configuration
 (when (fboundp 'winner-mode)
   (winner-mode 1))
+
+;; install from melpa
+(golden-ratio-mode 1)
