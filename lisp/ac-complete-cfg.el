@@ -5,3 +5,6 @@
 (ac-config-default)
 (add-to-list 'ac-modes 'enh-ruby-mode 'ruby-mode)
 
+;; use tab to complete instead of automatically
+(setq ac-auto-start nil)
+(ac-set-trigger-key "TAB")
