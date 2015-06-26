@@ -34,7 +34,7 @@
 ;;; movement
 ;;(load-library "open-line-and-indent")     ;C-o
 ;(load-library "beginning-or-indentation") ;C-a
-(load-library "end-of-code-or-line")      ;C-e
+;; (load-library "end-of-code-or-line")      ;C-e (obsoleted by mwim)
 (load-library "ace-jump-cfg")             ;C-x {j,w,l}, also C-cC-c in jump-char
 ;;(load-library "jump-char-cfg")            ;jump to char with M-j
 (load-library "comment-region-or-line")   ;C-;
