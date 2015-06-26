@@ -33,7 +33,7 @@
 
   (custom-theme-set-faces
    'brew
-   `(default                    ((t (:foreground ,brew-fg :background "unspec"))))
+   `(default                    ((t (:foreground ,brew-fg :background nil))))
    `(underline                  ((t (:underline nil)))) ;no underlines unless I ask for them
 
    `(mode-line                  ((t (:foreground nil :background "#2b2b2b"))))
