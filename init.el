@@ -24,7 +24,7 @@
 (load-library "kill-ring-cfg")          ;M-y
 (load-library "insert-date-time")       ;M-x date
 ;(load-library "safe-quit")              ;prompt to quit emacs
-;(load-library "aliases")                ;some function shortcuts
+(load-library "aliases")                ;some function shortcuts
 (load-library "whitespace-cfg")         ;setup whitespace handling
 (load-library "paren-cfg")              ;setup parentheses behaviour (inc smartparens)
 ;(load-library "hl-line-cfg")            ;highlight current line
@@ -75,7 +75,7 @@
 ;;(load-library "css-cfg")                ;css/scss settings
 ;;(load-library "puppet-cfg")             ;puppet-mode
 ;;(load-library "flycheck-cfg")           ;turn on globally
-;(load-library "conf-cfg")               ;conf-mode
+(load-library "conf-cfg")               ;conf-mode
 ;
 ;;; services
 ;(load-library "slack-cfg")
