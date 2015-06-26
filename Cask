@@ -32,6 +32,7 @@
 (depends-on "git-link")
 (depends-on "git-timemachine")
 (depends-on "go-mode")
+(depends-on "golden-ratio")
 (depends-on "google-this")
 (depends-on "goto-chg")
 (depends-on "haml-mode")
