@@ -36,6 +36,7 @@
 
 ;; workaround until my pull-request is merged:
 ;; https://github.com/sshaw/git-link/pull/19
+(require 'git-link)
 (defun git-link-new (link)
   ;(message (kill-new link))
   (kill-new link)
