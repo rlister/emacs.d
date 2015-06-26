@@ -68,6 +68,7 @@
 (depends-on "multi-term")
 (depends-on "multifiles")
 (depends-on "multiple-cursors")
+(depends-on "mwim")
 (depends-on "nav-flash")
 (depends-on "nginx-mode")
 (depends-on "omniref")
