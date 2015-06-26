@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t -*-
+
 ;; evil-leader has to do a little dance to load properly
 (require 'evil-leader)
 (setq evil-leader/in-all-states t)
