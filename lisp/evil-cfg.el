@@ -89,7 +89,6 @@
  "j" 'evil-ace-jump-char-mode
  "l" 'evil-ace-jump-line-mode
  "w" 'evil-ace-jump-word-mode
- (kbd "SPC") 'evil-ace-jump-char-mode
  ";" 'comment-region-or-line
  "?" '(lambda () (interactive) (find-file "~/notes/vim.cheat"))
  "g" 'magit-status
