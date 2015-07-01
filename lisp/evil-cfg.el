@@ -84,6 +84,7 @@
  "b" 'projectile-switch-to-buffer
  "D" 'projectile-dired
  "d" 'projectile-find-dir
+ "\C-d" 'dired-jump
  "a" 'ag-project
  "A" 'ag
  "q" 'evil-emacs-state
