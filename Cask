@@ -5,6 +5,7 @@
 (depends-on "ag")
 (depends-on "async")
 (depends-on "auto-complete")
+(depends-on "avy")
 (depends-on "base16-theme")
 (depends-on "browse-kill-ring")
 (depends-on "bundler")

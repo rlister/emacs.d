@@ -333,6 +333,10 @@
    `(hi-green  ((t (:background "#548B54"))))
    `(hi-red    ((t (:background "IndianRed"))))
 
+   `(avy-lead-face   ((t (:foreground "IndianRed"))))
+   `(avy-lead-face-0 ((t (:foreground "GoldenRod"))))
+   `(avy-lead-face-1 ((t (:foreground "RoyalBlue"))))
+   `(avy-lead-face-2 ((t (:foreground "PaleGreen"))))
    ))
 
 (provide-theme 'brew)

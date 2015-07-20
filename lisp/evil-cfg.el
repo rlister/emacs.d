@@ -89,9 +89,12 @@
  "A" 'ag
  "q" 'evil-emacs-state
  "x" 'smex
- "j" 'evil-ace-jump-char-mode
- "l" 'evil-ace-jump-line-mode
- "w" 'evil-ace-jump-word-mode
+ ;; "j" 'evil-ace-jump-char-mode
+ "j" 'avy-goto-char
+ ;; "l" 'evil-ace-jump-line-mode
+ "l" 'avy-goto-line
+ ;; "w" 'evil-ace-jump-word-mode
+ "w" 'avy-goto-word-1
  ";" 'comment-region-or-line
  "?" '(lambda () (interactive) (find-file "~/notes/vim.cheat"))
  "g" 'magit-status
