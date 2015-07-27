@@ -64,6 +64,7 @@ Symbols matching the text at point are put first in the completion list."
   (when push-mark-before-goto-char
     (push-mark)))
 
+(require 'cl)                           ; ido-imenu uses flet
 (defun ido-imenu-push-mark ()
   (interactive)
   (let ((push-mark-before-goto-char t))
