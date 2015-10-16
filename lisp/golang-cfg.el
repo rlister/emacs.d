@@ -12,9 +12,9 @@
   ;; (if (not (string-match "go" compile-command))
   ;;     (set (make-local-variable 'compile-command)
   ;;          "go build -v && go test -v && go vet"))
-	(set (make-local-variable 'compile-command)
-			 ;; "go build -v && go test -v && go vet")
-			 "go build -v")
+  (set (make-local-variable 'compile-command)
+       ;; "go build -v && go test -v && go vet")
+       "go build -v")
   ;; (local-set-key (kbd "M-.") 'godef-jump)) ; Godef jump key binding
   (subword-mode)                        ;handle CamelCase
   )
