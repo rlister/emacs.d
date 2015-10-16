@@ -55,19 +55,19 @@
 ;
 ;;; completion
 (load-library "ac-complete-cfg")
-;;(load-library "pabbrev-cfg")
+(load-library "pabbrev-cfg")
 ;;(load-library "discover-cfg")
 ;
 ;;; programming modes
 (load-library "git-cfg")                ;magit-mode
-;(load-library "js-cfg")                 ;javascript settings
-;(load-library "json-cfg")               ;json-mode and json-pretty-print
 (load-library "ruby-cfg")               ;ruby-mode
+(load-library "js-cfg")                 ;javascript settings
+(load-library "json-cfg")               ;json-mode and json-pretty-print
 ;(load-library "rainbow-mode-cfg")       ;show colours
-;(load-library "shell-script-cfg")       ;shell-script-mode
+(load-library "shell-script-cfg")       ;shell-script-mode
 ;(load-library "yaml-cfg")               ;yaml-mode
 ;(load-library "ag-cfg")                 ;ag, ag-project (silver searcher)
-;(load-library "golang-cfg")             ;setup go-mode
+(load-library "golang-cfg")             ;setup go-mode
 ;(load-library "nginx-cfg")              ;nginx-mode
 (load-library "terraform-cfg")          ;terraform-mode
 ;;(load-library "pretty-symbols")         ;function and lambda symbols
