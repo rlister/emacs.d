@@ -6,7 +6,9 @@
 ;; go-mode from melpa
 (defun my-go-mode-hook ()
   (add-hook 'before-save-hook 'gofmt-before-save)
-  (setq tab-width 2 indent-tabs-mode 1)
+  (setq tab-width 2)
+  (setq indent-tabs-mode 1)
+  (setq standard-indent 2)
   ;; (if (not (string-match "go" compile-command))
   ;;     (set (make-local-variable 'compile-command)
   ;;          "go build -v && go test -v && go vet"))
