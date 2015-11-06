@@ -156,9 +156,13 @@
 
 (evil-set-initial-state 'magit-blame-mode 'motion)
 (evil-define-key 'normal magit-blame-map
-  "q" 'magit-blame-mode ; toggle blame mode off
+  "q" 'magit-blame-mode ;toggle blame mode off
   )
 
 ;; evil motion for other modes
 (evil-set-initial-state 'package-menu-mode 'motion)
-(evil-set-initial-state 'help-mode         'motion)
+
+(evil-set-initial-state 'help-mode 'motion)
+(evil-define-key 'normal help-map
+  "q" 'quit-window ;kill help buffer
+  )
