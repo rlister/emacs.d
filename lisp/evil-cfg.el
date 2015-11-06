@@ -137,8 +137,9 @@
 (evil-define-key 'motion magit-status-mode-map
   "\C-f" 'evil-scroll-page-down
   "\C-b" 'evil-scroll-page-up
-  (kbd "RET") 'magit-visit-item
-  (kbd "TAB") 'magit-toggle-section
+  ;; (kbd "RET") 'magit-visit-item
+  (kbd "RET") 'magit-diff-visit-file
+  (kbd "TAB") 'magit-section-toggle
   "." 'magit-mark-item
   "=" 'magit-diff-with-mark
   "C" 'magit-add-log
