@@ -135,3 +135,9 @@
   "u" 'magit-unstage-item
   "z" 'magit-key-mode-popup-stashing
   )
+
+(evil-set-initial-state 'magit-blame-mode 'motion)
+(evil-define-key 'normal magit-blame-map
+  "q" 'magit-blame-mode ; toggle blame mode off
+  )
+
