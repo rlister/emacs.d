@@ -114,6 +114,7 @@
  "?" '(lambda () (interactive) (find-file "~/notes/vim.cheat"))
  "g" 'magit-status
  "o" 'occur
+ "m" 'evil-visual-mark-mode ; from melpa
  ;; "ci" 'evilnc-comment-or-uncomment-lines
  ;; "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
  ;; ;; "ll" 'evilnc-quick-comment-or-uncomment-to-the-line

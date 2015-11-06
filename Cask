@@ -26,6 +26,7 @@
 (depends-on "evil-matchit")
 (depends-on "evil-quickscope")
 (depends-on "evil-surround")
+(depends-on "evil-visual-mark-mode")
 (depends-on "f")
 (depends-on "flx")
 (depends-on "flx-ido")
