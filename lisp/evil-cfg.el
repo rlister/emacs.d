@@ -33,7 +33,7 @@
 ;; switch back to normal state automatically when idling in other states
 (defun switch-to-evil-normal-state ()
   (interactive)
-  (if (not (string= evil-state "emacs"))
+  (if (string= evil-state "insert")
       (progn
         (evil-normal-state)
         (set-evil-mode-line-face)
