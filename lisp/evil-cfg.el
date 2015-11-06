@@ -24,6 +24,17 @@
 
 (add-hook 'post-command-hook 'set-evil-mode-line-face)
 
+;; switch back to normal state automatically when idling in other states
+(defun switch-to-evil-normal-state ()
+  (interactive)
+  (if (not (string= evil-state "emacs"))
+      (progn
+        (evil-normal-state)
+        (set-evil-mode-line-face)
+        (message "Idled to normal state")
+        )))
+(run-with-idle-timer 10 t 'switch-to-evil-normal-state)
+
 ;; end-of-code or line not working with evil-mode so use
 ;; mwim from melpa
 (autoload 'mwim-beginning-of-code-or-line "mwim" nil t)
