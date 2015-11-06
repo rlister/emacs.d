@@ -28,3 +28,6 @@
 
 ;; was toggle-input-method
 (define-key global-map (kbd "C-\\") 'space-dwim)
+
+;; show empty lines with tilde; install from melpa
+(global-vim-empty-lines-mode)
