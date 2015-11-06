@@ -62,6 +62,7 @@
 (depends-on "json-snatcher")
 (depends-on "jump-char")
 (depends-on "key-chord")
+(depends-on "linum-relative")
 (depends-on "lorem-ipsum")
 (depends-on "magit")
 (depends-on "magit-gh-pulls")
