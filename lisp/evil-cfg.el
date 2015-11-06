@@ -8,6 +8,9 @@
 (global-evil-leader-mode)
 (evil-mode 1)
 
+;; highlights unique chars on f/F/t/T, install from melpa
+(global-evil-quickscope-mode 1)
+
 ;; override mode-line face by evil state
 (defun set-evil-mode-line-face ()
   (let ((color (cond

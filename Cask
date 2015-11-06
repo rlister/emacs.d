@@ -21,6 +21,7 @@
 (depends-on "epl")
 (depends-on "evil")
 (depends-on "evil-leader")
+(depends-on "evil-quickscope")
 (depends-on "evil-surround")
 (depends-on "f")
 (depends-on "flx")

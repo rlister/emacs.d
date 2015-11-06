@@ -337,6 +337,9 @@
    `(avy-lead-face-0 ((t (:foreground "GoldenRod"))))
    `(avy-lead-face-1 ((t (:foreground "RoyalBlue"))))
    `(avy-lead-face-2 ((t (:foreground "PaleGreen"))))
+
+   `(evil-quickscope-first-face  ((t (:foreground "IndianRed")))) ;first occurence of char
+   `(evil-quickscope-second-face ((t (:foreground "GoldenRod")))) ;second occurence
    ))
 
 (provide-theme 'brew)
