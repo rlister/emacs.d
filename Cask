@@ -32,7 +32,6 @@
 (depends-on "flx-ido")
 (depends-on "fringe-helper")
 (depends-on "gh")
-(depends-on "git-commit-mode")
 (depends-on "git-gutter")
 (depends-on "git-gutter-fringe")
 (depends-on "git-link")
