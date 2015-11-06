@@ -92,6 +92,7 @@
  ;; "j" 'evil-ace-jump-char-mode
  "j" 'avy-goto-char
  ;; "l" 'evil-ace-jump-line-mode
+ "J" 'avy-goto-char-2
  "l" 'avy-goto-line
  ;; "w" 'evil-ace-jump-word-mode
  "w" 'avy-goto-word-1
