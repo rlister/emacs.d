@@ -342,6 +342,8 @@
 
    `(evil-quickscope-first-face  ((t (:foreground "IndianRed")))) ;first occurence of char
    `(evil-quickscope-second-face ((t (:foreground "GoldenRod")))) ;second occurence
+
+   `(whitespace-newline ((t (:foreground ,brew-bg2))))
    ))
 
 (provide-theme 'brew)
