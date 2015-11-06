@@ -90,6 +90,7 @@
 (depends-on "proc-net")
 (depends-on "projectile")
 (depends-on "projectile-rails")
+(depends-on "rake")
 (depends-on "robe")
 (depends-on "rotate")
 (depends-on "rsense")
