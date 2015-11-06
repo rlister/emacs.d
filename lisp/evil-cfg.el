@@ -156,7 +156,7 @@
   )
 
 (evil-set-initial-state 'magit-blame-mode 'motion)
-(evil-define-key 'normal magit-blame-map
+(evil-define-key 'motion magit-blame-map
   "q" 'magit-blame-mode ;toggle blame mode off
   )
 (evil-set-initial-state 'magit-log-mode 'motion)
