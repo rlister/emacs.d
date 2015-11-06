@@ -141,3 +141,5 @@
   "q" 'magit-blame-mode ; toggle blame mode off
   )
 
+;; evil motion in packae list
+(evil-set-initial-state 'package-menu-mode 'motion)
