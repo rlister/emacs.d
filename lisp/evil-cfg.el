@@ -143,7 +143,7 @@
   "." 'magit-mark-item
   "=" 'magit-diff-with-mark
   "C" 'magit-add-log
-  "l" 'magit-key-mode-popup-logging
+  "l" 'magit-log-popup
   "I" 'magit-ignore-item-locally
   "S" 'magit-stage-all
   "U" 'magit-unstage-all
@@ -158,6 +158,11 @@
 (evil-set-initial-state 'magit-blame-mode 'motion)
 (evil-define-key 'normal magit-blame-map
   "q" 'magit-blame-mode ;toggle blame mode off
+  )
+(evil-set-initial-state 'magit-log-mode 'motion)
+(evil-define-key 'motion magit-log-mode-map
+  ;; "q" 'magit-blame-mode ;toggle blame mode off
+  (kbd "RET") 'magit-show-commit
   )
 
 ;; evil motion for other modes
