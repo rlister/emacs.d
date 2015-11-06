@@ -48,9 +48,9 @@
 
 ;; visible chars for TAB
 ;; can reset this with (set-window-display-table nil nil)
-(let ((d (make-display-table)))
-  (aset d 9 (vector ?⇥ ? ? ? ? ? ? ? ))
-  (set-window-display-table nil d))
+;; (let ((d (make-display-table)))
+;;   (aset d 9 (vector ?⇥ ? ? ? ? ? ? ? ))
+;;   (set-window-display-table nil d))
 
 ;; man page in same window
 (setq Man-notify-method 'pushy)
