@@ -39,7 +39,8 @@
    `(mode-line                  ((t (:foreground nil :background "#2b2b2b"))))
    `(mode-line-inactive         ((t (:foreground nil :background ,brew-bg  :slant italic)))) ;:box (:line-width 1 :color ,brew-bg1)))))
    `(mode-line-buffer-id        ((t (:foreground "PaleGreen" :background nil :weight normal))))
-   ;; `(mode-line-emphasis         ((t (:foreground ,cyan :background nil :weight normal))))
+   `(mode-line-highlight        ((t (:foreground "Orange"))))
+   `(mode-line-emphasis         ((t (:foreground "Cyan"))))
 
    `(fringe                     ((t (:inherit default))))
    `(header-line                ((t (:inherit default))))
@@ -308,8 +309,13 @@
 
    `(hiwin-face ((t (:foreground "#444444" :background "#111111"))))
 
-   `(helm-source-header ((t (:foreground ,green :background ,brew-bg2 :slant italic))))
+   ;; `(helm-source-header ((t (:foreground "PaleGreen" :slant italic))))
+   `(helm-source-header ((t (:inherit font-lock-comment-face))))
    `(helm-selection     ((t (:background ,brew-bg2))))
+   `(helm-swoop-target-word-face ((t (:foreground "IndianRed"))))
+   `(helm-swoop-target-line-face ((t (:background ,brew-bg2))))
+   `(helm-candidate-number ((t (:foreground "GoldenRod")))) ;candidate count in modeline
+   `(helm-helper ((t (:foreground "PaleGreen"))))
 
    ;; for highlight-indentation-mode
    `(highlight-indentation-face                ((t (:background ,brew-bg1))))

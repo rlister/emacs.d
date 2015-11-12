@@ -71,4 +71,5 @@ Symbols matching the text at point are put first in the completion list."
     (ido-imenu)))
 
 ;; was bound to beginning-of-buffer
-(global-set-key (kbd "M-m") 'ido-imenu-push-mark)
+;; (global-set-key (kbd "M-m") 'ido-imenu-push-mark)
+(global-set-key (kbd "M-m") 'helm-imenu)

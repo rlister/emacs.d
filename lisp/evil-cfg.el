@@ -77,9 +77,9 @@
 (define-key evil-visual-state-map "\C-k" 'kill-line)
 ;;(define-key evil-normal-state-map "Q" 'call-last-kbd-macro)
 ;;(define-key evil-visual-state-map "Q" 'call-last-kbd-macro)
-(define-key evil-normal-state-map "\M-y" 'browse-kill-ring)
-(define-key evil-insert-state-map "\M-y" 'browse-kill-ring)
-(define-key evil-visual-state-map "\M-y" 'browse-kill-ring)
+(define-key evil-normal-state-map "\M-y" 'helm-show-kill-ring)
+(define-key evil-insert-state-map "\M-y" 'helm-show-kill-ring)
+(define-key evil-visual-state-map "\M-y" 'helm-show-kill-ring)
 
 ;;; stop evil from ruining emacs smart tab behaviour
 (defun evil-undefine ()
@@ -96,13 +96,17 @@
  "e" 'ido-find-file
  "b" 'switch-to-buffer
  "k" 'kill-buffer
- "f" 'projectile-find-file
- "p" 'projectile-switch-project
- "b" 'projectile-switch-to-buffer
+ ;; "f" 'projectile-find-file
+ "f" 'helm-projectile-find-file-dwim
+ ;; "p" 'projectile-switch-project
+ "p" 'helm-projectile-switch-project
+ ;; "b" 'projectile-switch-to-buffer
+ "b" 'helm-projectile-switch-to-buffer
  "D" 'projectile-dired
  "d" 'projectile-find-dir
  "\C-d" 'dired-jump
- "a" 'ag-project
+ ;; "a" 'ag-project
+ "a" 'helm-ag
  "A" 'ag
  "q" 'evil-emacs-state
  "x" 'smex
@@ -113,8 +117,10 @@
  ";" 'comment-region-or-line
  "?" '(lambda () (interactive) (find-file "~/notes/vim.cheat"))
  "g" 'magit-status
- "o" 'occur
- "m" 'evil-visual-mark-mode ; from melpa
+ "o" 'helm-occur
+ "m" 'evil-visual-mark-mode ;from melpa
+ "s" 'helm-swoop            ;from melpa
+ "r" 'helm-all-mark-rings
  ;; "ci" 'evilnc-comment-or-uncomment-lines
  ;; "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
  ;; ;; "ll" 'evilnc-quick-comment-or-uncomment-to-the-line
