@@ -105,6 +105,7 @@
 (depends-on "s")
 (depends-on "smartparens")
 (depends-on "smex")
+(depends-on "swiper")
 (depends-on "terraform-mode")
 (depends-on "turnip")
 (depends-on "vim-empty-lines-mode")
