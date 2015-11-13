@@ -261,6 +261,7 @@
    `(egg-diff-del            ((t (:foreground "IndianRed" :background ,brew-bg))))
 
    `(magit-header                      ((t (:weight bold))))
+   `(magit-section-heading             ((t (:foreground "PaleGreen"))))
    `(magit-item-highlight              ((t (:background "gray15"))))
    `(magit-diff-hunk-heading           ((t (:foreground ,blue-d :background ,brew-bg1))))
    `(magit-diff-hunk-heading-highlight ((t (:foreground ,blue-d :background ,brew-bg2))))
@@ -310,12 +311,16 @@
    `(hiwin-face ((t (:foreground "#444444" :background "#111111"))))
 
    ;; `(helm-source-header ((t (:foreground "PaleGreen" :slant italic))))
-   `(helm-source-header ((t (:inherit font-lock-comment-face))))
-   `(helm-selection     ((t (:background ,brew-bg2))))
+   `(helm-source-header          ((t (:inherit font-lock-comment-face))))
+   `(helm-selection              ((t (:background ,brew-bg2))))
    `(helm-swoop-target-word-face ((t (:foreground "IndianRed"))))
    `(helm-swoop-target-line-face ((t (:background ,brew-bg2))))
-   `(helm-candidate-number ((t (:foreground "GoldenRod")))) ;candidate count in modeline
-   `(helm-helper ((t (:foreground "PaleGreen"))))
+   `(helm-candidate-number       ((t (:foreground "GoldenRod")))) ;candidate count in modeline
+   `(helm-helper                 ((t (:foreground "PaleGreen"))))
+   `(helm-ff-file                ((t (:inherit default))))
+   `(helm-buffer-directory       ((t (:inherit dired-directory))))
+   `(helm-buffer-file            ((t (:inherit default))))
+   `(helm-match                  ((t (:foreground ,green-l))))
 
    ;; for highlight-indentation-mode
    `(highlight-indentation-face                ((t (:background ,brew-bg1))))
