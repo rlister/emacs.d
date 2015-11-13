@@ -14,12 +14,15 @@
 
 ;; turn on fuzzy-matching for various things
 (setq
+ helm-quick-update t
+ helm-move-to-line-cycle-in-source t      ;cycle around top and bottom
  helm-display-header-line nil             ;no header line about C-j
+ helm-autoresize-mode 1
  helm-swoop-split-with-multiple-windows t ;use horizontal split even when a vert split exists
  helm-buffers-fuzzy-matching t
  helm-imenu-fuzzy-match t
  helm-M-x-fuzzy-match t
- helm-swoop-use-fuzzy-match t)
+ helm-swoop-use-fuzzy-match nil)
 
 ;; install helm-descbinds from melpa
 (helm-descbinds-mode 1)
@@ -28,3 +31,6 @@
 (global-set-key (kbd "C-x C-m") 'helm-M-x)  ;common typo
 (global-set-key (kbd "C-x b")   'helm-mini) ;replace ido-switch-buffer
 (global-set-key (kbd "M-y")     'helm-show-kill-ring) ;replaces browse-kill-ring, see also evil map
+
+;; helm-github-stars from melpa
+(setq helm-github-stars-username "rlister")
