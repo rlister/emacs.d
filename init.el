@@ -12,8 +12,8 @@
 (load-library "basics")                 ;basic display and key tweaks
 ;; (load-library "ido-cfg")                ;setup ido
 ;; (load-library "smex-cfg")               ;C-xm, C-xC-m to replace M-x
-(load-library "helm-cfg")               ;replace ido?
-
+(load-library "ivy-cfg")                ;ivy completion lib
+;; (load-library "helm-cfg")               ;replace ido?
 (load-library "evil-cfg")               ;setup evil-mode
 (load-library "key-chord-cfg")
 (load-library "brew-theme")             ;my color theme

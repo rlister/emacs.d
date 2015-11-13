@@ -96,20 +96,21 @@
  "e" 'ido-find-file
  "b" 'switch-to-buffer
  "k" 'kill-buffer
- ;; "f" 'projectile-find-file
- "f" 'helm-projectile-find-file-dwim
- ;; "p" 'projectile-switch-project
- "p" 'helm-projectile-switch-project
- ;; "b" 'projectile-switch-to-buffer
- "b" 'helm-projectile-switch-to-buffer
+ "f" 'projectile-find-file
+ ;; "f" 'helm-projectile-find-file
+ "p" 'projectile-switch-project
+ ;; "p" 'helm-projectile-switch-project
+ "b" 'projectile-switch-to-buffer
+ ;; "b" 'helm-projectile-switch-to-buffer
  "D" 'projectile-dired
  "d" 'projectile-find-dir
  "\C-d" 'dired-jump
  ;; "a" 'ag-project
- "a" 'helm-ag
+ ;; "a" 'helm-ag
+ "a" 'projectile-ag
  "A" 'ag
  "q" 'evil-emacs-state
- "x" 'smex
+ "x" 'counsel-M-x
  "j" 'avy-goto-char
  "J" 'avy-goto-char-2
  "l" 'avy-goto-line
@@ -119,8 +120,11 @@
  "g" 'magit-status
  "o" 'helm-occur
  "m" 'evil-visual-mark-mode ;from melpa
- "s" 'helm-swoop            ;from melpa
- "r" 'helm-all-mark-rings
+ ;; "s" 'helm-swoop            ;from melpa
+ "s" 'swiper
+ "r" 'ivy-resume
+ "R" 'helm-all-mark-rings
+ "u" 'counsel-unicode-char  ;insert unicode chars
  ;; "ci" 'evilnc-comment-or-uncomment-lines
  ;; "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
  ;; ;; "ll" 'evilnc-quick-comment-or-uncomment-to-the-line
