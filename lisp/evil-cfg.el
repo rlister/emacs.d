@@ -79,39 +79,33 @@
 
 ;; evil-leader-mode from melpa
 (evil-leader/set-key
- "e" 'ido-find-file
- "b" 'switch-to-buffer
- "k" 'kill-buffer
- "f" 'projectile-find-file
- ;; "f" 'helm-projectile-find-file
- "p" 'projectile-switch-project
- ;; "p" 'helm-projectile-switch-project
+ ";" 'comment-region-or-line
+ "?" '(lambda () (interactive) (find-file "~/notes/vim.cheat"))
+ "ag" 'ag                                ;ag directory
+ "ap" 'projectile-ag                     ;ag whole project
+ "ar" 'align-regexp
  "b" 'projectile-switch-to-buffer
- ;; "b" 'helm-projectile-switch-to-buffer
  "D" 'projectile-dired
  "d" 'projectile-find-dir
  "\C-d" 'dired-jump
- ;; "a" 'ag-project
- ;; "a" 'helm-ag
- "a" 'projectile-ag
- "A" 'ag
- "q" 'evil-emacs-state
- "x" 'counsel-M-x
+ "e" 'ido-find-file
+ "f" 'projectile-find-file
+ "g" 'magit-status
  "j" 'avy-goto-char
+ "k" 'kill-buffer
  "J" 'avy-goto-char-2
  "L" 'link-hint-open-link ;link-hint from melpa for avy to link
  "l" 'avy-goto-line
- "w" 'avy-goto-word-1
- ";" 'comment-region-or-line
- "?" '(lambda () (interactive) (find-file "~/notes/vim.cheat"))
- "g" 'magit-status
- "o" 'helm-occur
  "m" 'evil-visual-mark-mode ;from melpa
- ;; "s" 'helm-swoop            ;from melpa
- "s" 'swiper
- "r" 'ivy-resume
+ "o" 'helm-occur
+ "p" 'projectile-switch-project
+ "q" 'evil-emacs-state
  "R" 'helm-all-mark-rings
+ "r" 'ivy-resume
+ "s" 'swiper
  "u" 'counsel-unicode-char  ;insert unicode chars
+ "w" 'avy-goto-word-1
+ "x" 'counsel-M-x
  ;; "ci" 'evilnc-comment-or-uncomment-lines
  ;; "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
  ;; ;; "ll" 'evilnc-quick-comment-or-uncomment-to-the-line
