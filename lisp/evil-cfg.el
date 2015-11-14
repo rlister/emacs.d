@@ -45,6 +45,7 @@
 ;; mwim from melpa
 (autoload 'mwim-beginning-of-code-or-line "mwim" nil t)
 (autoload 'mwim-end-of-code-or-line "mwim" nil t)
+
 (global-set-key (kbd "C-a") 'mwim-beginning-of-code-or-line)
 (define-key evil-normal-state-map "\C-e" 'mwim-end-of-code-or-line)
 (define-key evil-insert-state-map "\C-e" 'mwim-end-of-code-or-line)
@@ -52,40 +53,25 @@
 (define-key evil-motion-state-map "\C-e" 'mwim-end-of-code-or-line)
 
 ;; other emacs keys in insert state
-;;(define-key evil-normal-state-map "\C-f" 'evil-forward-char)
 (define-key evil-insert-state-map "\C-f" 'evil-forward-char)
-;;(define-key evil-normal-state-map "\C-b" 'evil-backward-char)
 (define-key evil-insert-state-map "\C-b" 'evil-backward-char)
-;;(define-key evil-visual-state-map "\C-b" 'evil-backward-char)
-;;(define-key evil-normal-state-map "\C-d" 'evil-delete-char)
 (define-key evil-insert-state-map "\C-d" 'evil-delete-char)
-;;(define-key evil-visual-state-map "\C-d" 'evil-delete-char)
-;;(define-key evil-normal-state-map "\C-n" 'evil-next-line)
 (define-key evil-insert-state-map "\C-n" 'evil-next-line)
-;;(define-key evil-visual-state-map "\C-n" 'evil-next-line)
-;;(define-key evil-normal-state-map "\C-p" 'evil-previous-line)
 (define-key evil-insert-state-map "\C-p" 'evil-previous-line)
-;;(define-key evil-visual-state-map "\C-p" 'evil-previous-line)
-;;(define-key evil-normal-state-map "\C-w" 'evil-delete)
 (define-key evil-insert-state-map "\C-w" 'evil-delete)
-;;(define-key evil-visual-state-map "\C-w" 'evil-delete)
-;;(define-key evil-normal-state-map "\C-y" 'yank)
 (define-key evil-insert-state-map "\C-y" 'yank)
-;;(define-key evil-visual-state-map "\C-y" 'yank)
 (define-key evil-normal-state-map "\C-k" 'kill-line)
 (define-key evil-insert-state-map "\C-k" 'kill-line)
 (define-key evil-visual-state-map "\C-k" 'kill-line)
-;;(define-key evil-normal-state-map "Q" 'call-last-kbd-macro)
-;;(define-key evil-visual-state-map "Q" 'call-last-kbd-macro)
 (define-key evil-normal-state-map "\M-y" 'helm-show-kill-ring)
 (define-key evil-insert-state-map "\M-y" 'helm-show-kill-ring)
 (define-key evil-visual-state-map "\M-y" 'helm-show-kill-ring)
 
 ;;; stop evil from ruining emacs smart tab behaviour
 (defun evil-undefine ()
-(interactive)
-(let (evil-mode-map-alist)
-  (call-interactively (key-binding (this-command-keys)))))
+  (interactive)
+  (let (evil-mode-map-alist)
+    (call-interactively (key-binding (this-command-keys)))))
 (define-key evil-normal-state-map (kbd "TAB") 'evil-undefine)
 
 ;; install from melpa, see vim surround for bindings
@@ -183,3 +169,11 @@
 (evil-define-key 'normal help-map
   "q" 'quit-window ;kill help buffer
   )
+
+;; (evil-define-key 'normal peep-dired-mode-map
+;;   (kbd "<SPC>") 'peep-dired-scroll-page-down
+;;   (kbd "C-<SPC>") 'peep-dired-scroll-page-up
+;;   (kbd "<backspace>") 'peep-dired-scroll-page-up
+;;   (kbd "j") 'peep-dired-next-file
+;;   (kbd "k") 'peep-dired-prev-file)
+;; (add-hook 'peep-dired-hook 'evil-normalize-keymaps)
