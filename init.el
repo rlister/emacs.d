@@ -1,7 +1,10 @@
 (setq debug-on-error nil)               ;turn on for debugging
 
+;; install cask from homebrew, manages package dependencies
 (require 'cask "/usr/local/Cellar/cask/0.7.2/cask.el")
 (cask-initialize)
+
+;; adds/removes packages from Cask file automatically
 (require 'pallet)
 
 (add-to-list 'exec-path "/usr/local/bin") ;brew executables, etc
