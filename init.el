@@ -60,7 +60,7 @@
 ;(load-library "nginx-cfg")              ;nginx-mode
 (load-library "terraform-cfg")          ;terraform-mode
 ;;(load-library "pretty-symbols")         ;function and lambda symbols
-;;(load-library "elisp-cfg")              ;elisp hooks
+(load-library "elisp-cfg")              ;elisp hooks
 ;;(load-library "haml-cfg")               ;haml-mode
 ;;(load-library "css-cfg")                ;css/scss settings
 ;;(load-library "puppet-cfg")             ;puppet-mode
