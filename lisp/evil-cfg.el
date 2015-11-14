@@ -113,6 +113,7 @@
  "x" 'counsel-M-x
  "j" 'avy-goto-char
  "J" 'avy-goto-char-2
+ "L" 'link-hint-open-link ;link-hint from melpa for avy to link
  "l" 'avy-goto-line
  "w" 'avy-goto-word-1
  ";" 'comment-region-or-line
