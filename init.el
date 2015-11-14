@@ -55,7 +55,6 @@
 (load-library "ruby-cfg")               ;ruby-mode
 (load-library "js-cfg")                 ;javascript settings
 (load-library "json-cfg")               ;json-mode and json-pretty-print
-;(load-library "rainbow-mode-cfg")       ;show colours
 (load-library "shell-script-cfg")       ;shell-script-mode
 ;(load-library "yaml-cfg")               ;yaml-mode
 ;(load-library "ag-cfg")                 ;ag, ag-project (silver searcher)
