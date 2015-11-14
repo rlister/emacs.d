@@ -322,6 +322,14 @@
    `(helm-buffer-file            ((t (:inherit default))))
    `(helm-match                  ((t (:foreground ,green-l))))
 
+   `(ivy-current-match ((t (:background ,brew-bg2))))
+   ;; `(ivy-minibuffer-match-face-1 ((t (:inherit isearch-lazy-highlight-face))))
+   ;; `(ivy-minibuffer-match-face-2 ((t (:inherit isearch))))
+   `(ivy-minibuffer-match-face-1 ((t (:foreground "GoldenRod"))))
+   `(ivy-minibuffer-match-face-2 ((t (:foreground "GoldenRod2"))))
+   `(ivy-minibuffer-match-face-3 ((t (:foreground "GoldenRod3"))))
+   `(ivy-minibuffer-match-face-4 ((t (:foreground "GoldenRod4"))))
+
    ;; for highlight-indentation-mode
    `(highlight-indentation-face                ((t (:background ,brew-bg1))))
    `(highlight-indentation-current-column-face ((t (:background ,brew-bg2))))
