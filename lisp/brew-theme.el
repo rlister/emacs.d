@@ -36,7 +36,7 @@
    `(default                    ((t (:foreground ,brew-fg :background nil))))
    `(underline                  ((t (:underline nil)))) ;no underlines unless I ask for them
 
-   `(mode-line                  ((t (:foreground nil :background "#2b2b2b"))))
+   `(mode-line                  ((t (:foreground nil :background ,brew-bg2))))
    `(mode-line-inactive         ((t (:foreground nil :background ,brew-bg  :slant italic)))) ;:box (:line-width 1 :color ,brew-bg1)))))
    `(mode-line-buffer-id        ((t (:foreground "PaleGreen" :background nil :weight normal))))
    `(mode-line-highlight        ((t (:foreground "Orange"))))
