@@ -22,9 +22,10 @@
 (load-library "brew-theme")             ;my color theme
 (load-library "projectile-cfg")
 (load-library "mode-line")              ;setup modeline
+(load-library "hide-mode-line")
 
 (load-library "uniquify-cfg")           ;make buffer names unique
-;; (load-library "kill-ring-cfg")          ;M-y
+;(when cocoa; (load-library "kill-ring-cfg")          ;M-y
 (load-library "insert-date-time")       ;M-x date
 (load-library "aliases")                ;some function shortcuts
 (load-library "whitespace-cfg")         ;setup whitespace handling
@@ -34,7 +35,7 @@
 ;(load-library "toggle-selective-display-column") ;C-TAB
 
 ;;; movement
-(load-library "avy-cfg")                ;replaces ace-jump
+;; (load-library "avy-cfg")                ;replaces ace-jump
 (load-library "comment-region-or-line")   ;C-;
 ;(load-library "goto-line-with-feedback")  ;M-g g
 (load-library "imenu-cfg")                ;M-m
@@ -43,10 +44,10 @@
 ;;; window movement
 (load-library "window-movement")        ;moving between windows
 ;(load-library "resize-windows")         ;M-left,right,up,down
-(load-library "transpose-windows")      ;M-x swap
+;; (load-library "transpose-windows")      ;M-x swap
 ;
 ;;; completion
-(load-library "ac-complete-cfg")
+;; (load-library "ac-complete-cfg")
 (load-library "pabbrev-cfg")
 ;;(load-library "discover-cfg")
 ;
@@ -68,3 +69,4 @@
 ;;(load-library "puppet-cfg")             ;puppet-mode
 ;;(load-library "flycheck-cfg")           ;turn on globally
 (load-library "conf-cfg")               ;conf-mode
+(put 'dired-find-alternate-file 'disabled nil)
