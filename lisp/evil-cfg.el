@@ -63,9 +63,12 @@
 (define-key evil-normal-state-map "\C-k" 'kill-line)
 (define-key evil-insert-state-map "\C-k" 'kill-line)
 (define-key evil-visual-state-map "\C-k" 'kill-line)
-(define-key evil-normal-state-map "\M-y" 'helm-show-kill-ring)
-(define-key evil-insert-state-map "\M-y" 'helm-show-kill-ring)
-(define-key evil-visual-state-map "\M-y" 'helm-show-kill-ring)
+;; (define-key evil-normal-state-map "\M-y" 'helm-show-kill-ring)
+;; (define-key evil-insert-state-map "\M-y" 'helm-show-kill-ring)
+;; (define-key evil-visual-state-map "\M-y" 'helm-show-kill-ring)
+(define-key evil-normal-state-map "\M-y" 'counsel-yank-pop)
+(define-key evil-insert-state-map "\M-y" 'counsel-yank-pop)
+(define-key evil-visual-state-map "\M-y" 'counsel-yank-pop)
 
 ;;; stop evil from ruining emacs smart tab behaviour
 (defun evil-undefine ()
