@@ -1,16 +1,18 @@
-(setq magit-save-some-buffers nil)
-(setq magit-completing-read-function 'magit-ido-completing-read)
-(setq magit-last-seen-setup-instructions "1.4.0") ;stop warning from popping up
+;; (setq magit-save-some-buffers nil)
+;; (setq magit-completing-read-function 'magit-ido-completing-read)
 
 (global-set-key (kbd "C-x g") 'magit-status) ;magit from melpa
 
-(eval-after-load 'magit-mode
-  '(progn
-     (add-hook
-      'magit-mode-hook
-      (lambda ()
-        (setq magit-save-some-buffers nil)      ;do not bug me about saving files on C-x g, esp. dirs
-        ))))
+(setq magit-commit-show-diff nil)                 ;do not show diff (which is slow) on magit-commit (c c)
+(setq magit-save-some-buffers nil)  ;do not bug me about saving files on C-x g, esp. dirs
+(setq magit-push-always-verify nil) ;do not nag me about whether to push upstream
+
+;; (eval-after-load 'magit-mode
+;;   '(progn
+;;      (add-hook
+;;       'magit-mode-hook
+;;       (lambda ()
+;;         ))))
 
 ;; full screen magit-status from http://whattheemacsd.com/setup-magit.el-01.html
 (defadvice magit-status (around magit-fullscreen activate)
