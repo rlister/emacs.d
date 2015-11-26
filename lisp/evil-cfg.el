@@ -9,7 +9,7 @@
 (evil-mode 1)
 
 ;; match all the things on %, install evil-matchit from melpa
-(global-evil-matchit-mode 1)
+;(global-evil-matchit-mode 1)
 
 ;; highlights unique chars on f/F/t/T, install from melpa
 (global-evil-quickscope-mode 1)
