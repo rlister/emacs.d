@@ -218,7 +218,7 @@
    `(outline-2 ((t (:inherit outline-3 :height 1.0))))
    `(outline-1 ((t (:inherit outline-2 :height 1.1))))
 
-   `(linum ((t (:inherit font-lock-comment-face :background ,brew-bg))))
+   `(linum ((t (:inherit font-lock-comment-face))))
 
    `(company-tooltip ((t (:background ,brew-hl))))
    `(company-tooltip-selection ((t (:foreground ,yellow-l :background ,brew-hl))))
@@ -236,7 +236,7 @@
    `(erc-input-face          ((t (:foreground ,yellow))))
    `(erc-keyword-face        ((t (:foreground ,blue :weight bold))))
    `(erc-nick-default-face   ((t (:foreground ,blue :weight normal))))
-   `(erc-my-nick-face        ((t (:foreground ,red :weight bold))))
+   `(erc-my-nick-face        ((t (:foreground "IndianRed" :weight bold))))
    `(erc-nick-msg-face       ((t (:inherit erc-default))))
    ;`(erc-notice-face         ((t (:foreground ,green))))
    `(erc-notice-face         ((t (:inherit font-lock-comment-face))))
@@ -244,7 +244,7 @@
    `(erc-fool-face           ((t (:inherit erc-default))))
    ;`(erc-prompt-face         ((t (:foreground ,orange :background ,brew-bg :weight bold))))
    `(erc-prompt-face         ((t (:inherit font-lock-comment-face))))
-   `(erc-timestamp-face      ((t (:foreground ,green))))
+   `(erc-timestamp-face      ((t (:foreground "PaleGreen"))))
    `(erc-underline-face      ((t (:underline t))))
 
    ;; diff
@@ -264,10 +264,10 @@
    `(magit-diff-hunk-heading           ((t (:foreground ,blue-d :background ,brew-bg1))))
    `(magit-diff-hunk-heading-highlight ((t (:foreground ,blue-d :background ,brew-bg2))))
    `(magit-diff-file-header            ((t (:foreground ,blue))))
-   `(magit-diff-added-highlight        ((t (:foreground ,green :background "gray15"))))
-   `(magit-diff-added                  ((t (:foreground ,green))))
-   `(magit-diff-removed-highlight      ((t (:foreground ,red :background "gray15"))))
-   `(magit-diff-removed                ((t (:foreground ,red))))
+   `(magit-diff-added-highlight        ((t (:foreground "PaleGreen" :background "gray15"))))
+   `(magit-diff-added                  ((t (:foreground "PaleGreen"))))
+   `(magit-diff-removed-highlight      ((t (:foreground "IndianRed" :background "gray15"))))
+   `(magit-diff-removed                ((t (:foreground "IndianRed"))))
    `(magit-diff-context-highlight      ((t (:inherit font-lock-comment-face))))
    `(magit-diff-none                   ((t (:foreground ,brew-bg5))))
 
@@ -288,7 +288,6 @@
    `(elscreen-tab-control-face        ((t (:foreground ,green   :background ,brew-hl))))
    `(elscreen-tab-other-screen-face   ((t (:foreground ,brew-bg5 :background ,brew-bg2))))
 
-
    `(term-color-cyan    ((t (:foreground "#259286"))))
    `(term-color-blue    ((t (:foreground "#21376C7"))))
    ;; `(term-color-red     ((t (:foreground "#CD5C5C"))))
@@ -303,8 +302,8 @@
    `(trailing-whitespace ((t (:background ,brew-bg2))))
 
    ;; enh-ruby-mode
-   `(erm-syn-errline  ((t (:background "#440000")))) ;flag errors
-   `(erm-syn-warnline ((t (:background "#010100")))) ;flag errors
+   `(erm-syn-errline  ((t (:foreground "IndianRed")))) ;flag errors
+   `(erm-syn-warnline ((t (:foreground "PaleGreen")))) ;flag errors
 
    `(hiwin-face ((t (:foreground "#444444" :background "#111111"))))
 
@@ -321,8 +320,6 @@
    `(helm-match                  ((t (:foreground ,green-l))))
 
    `(ivy-current-match ((t (:background ,brew-bg2))))
-   ;; `(ivy-minibuffer-match-face-1 ((t (:inherit isearch-lazy-highlight-face))))
-   ;; `(ivy-minibuffer-match-face-2 ((t (:inherit isearch))))
    `(ivy-minibuffer-match-face-1 ((t (:foreground "GoldenRod"))))
    `(ivy-minibuffer-match-face-2 ((t (:foreground "GoldenRod2"))))
    `(ivy-minibuffer-match-face-3 ((t (:foreground "GoldenRod3"))))
