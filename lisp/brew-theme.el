@@ -52,8 +52,8 @@
 
    `(mouse                      ((t (:inherit default))))
    `(paren                      ((t (:background ,brew-bg5))))
-   `(show-paren-match           ((t (:foreground "PaleGreen" :weight normal :inverse-video nil))))
-   `(show-paren-mismatch        ((t (:foreground ,red :background ,red-d :weight normal :inverse-video nil))))
+   `(show-paren-match           ((t (:foreground "PaleGreen"))))
+   `(show-paren-mismatch        ((t (:foreground "IndianRed"))))
 
    `(trailing-whitespace        ((t (:inherit font-lock-warning))))
    `(Buffer-menu-buffer         ((t (:inherit default :background ,brew-hl))))
