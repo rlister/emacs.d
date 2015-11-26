@@ -63,13 +63,11 @@
    `(escape-glyph-face          ((t (:foreground ,red))))
    `(minibuffer-prompt          ((t (:foreground ,green))))
    `(header-line                ((t (:background ,brew-hl)))) ;buffer-specific top mode-line
-;   `(vertical-border
-
    `(region                     ((t (:background ,blue-d))))
    `(scroll-bar                 ((t (:background ,brew-hl))))
    `(secondary-selection        ((t (:foreground nil :background ,brew-bg5))))
    `(tool-bar                   ((t (:background ,brew-hl))))
-
+   `(vertical-border            ((t (:foreground ,brew-bg2 :background ,brew-bg2)))) ;color of vertical split line
    `(hl-line                    ((t (:background ,brew-bg1)))) ;hl-line-mode
 
    `(isearch        ((t (:foreground "GoldenRod" :background ,brew-hl :bold nil))))
