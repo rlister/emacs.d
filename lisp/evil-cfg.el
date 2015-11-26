@@ -80,6 +80,22 @@
 ;; install from melpa, see vim surround for bindings
 (global-evil-surround-mode 1)
 
+(defun toggle-previous-buffer ()
+  "Switch to most recent buffer. Repeated calls toggle back and forth between the most recent two buffers."
+  (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) 1)))
+
+(defun message-buffer-name ()
+  "Show current buffer name in minibuffer."
+  (interactive)
+  (message (format-mode-line "%b %*%+ %m L%l C%c")))
+
+(defun toggle-hide-mode-line ()
+  "Toggle mode-line on or off, and redraw display."
+  (interactive)
+  (hide-mode-line)
+  (redraw-display))
+
 ;; evil-leader-mode from melpa
 (evil-leader/set-key
  ";" 'comment-region-or-line
@@ -88,6 +104,7 @@
  "ap" 'projectile-ag                     ;ag whole project
  "ar" 'align-regexp
  "b" 'projectile-switch-to-buffer
+ "c" 'capitalize-word
  "D" 'projectile-dired
  "d" 'projectile-find-dir
  "\C-d" 'dired-jump
@@ -99,7 +116,9 @@
  "J" 'avy-goto-char-2
  "L" 'link-hint-open-link ;link-hint from melpa for avy to link
  "l" 'avy-goto-line
- "m" 'evil-visual-mark-mode ;from melpa
+ "M" 'evil-visual-mark-mode ;from melpa
+ "m" 'toggle-hide-mode-line
+ "n" 'message-buffer-name
  "o" 'helm-occur
  "p" 'projectile-switch-project
  "q" 'evil-emacs-state
@@ -107,8 +126,10 @@
  "r" 'ivy-resume
  "s" 'swiper
  "u" 'counsel-unicode-char  ;insert unicode chars
- "w" 'avy-goto-word-1
+ "W" 'avy-goto-word-1
+ "w" 'save-buffer
  "x" 'counsel-M-x
+ "SPC" 'toggle-previous-buffer
  ;; "ci" 'evilnc-comment-or-uncomment-lines
  ;; "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
  ;; ;; "ll" 'evilnc-quick-comment-or-uncomment-to-the-line
