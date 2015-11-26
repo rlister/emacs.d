@@ -3,6 +3,10 @@
 
 (global-set-key (kbd "C-x g") 'magit-status) ;magit from melpa
 
+;; this defaults to C-RET, but cannot bind that in terminal
+(define-key magit-status-mode-map (kbd "M-RET") 'magit-show-commit)
+
+(setq magit-last-seen-setup-instructions "1.4.0") ;stop warning from popping up
 (setq magit-commit-show-diff nil)                 ;do not show diff (which is slow) on magit-commit (c c)
 (setq magit-save-some-buffers nil)  ;do not bug me about saving files on C-x g, esp. dirs
 (setq magit-push-always-verify nil) ;do not nag me about whether to push upstream
