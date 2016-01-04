@@ -104,7 +104,8 @@
  "ap" 'projectile-ag                     ;ag whole project
  "ar" 'align-regexp
  "b" 'projectile-switch-to-buffer
- "c" 'capitalize-word
+ ;; "c" 'capitalize-word
+ "c" (lambda () (interactive) (org-capture nil "t") (evil-append-line 1))
  "D" 'projectile-dired
  "d" 'projectile-find-dir
  "\C-d" 'dired-jump
@@ -125,6 +126,7 @@
  "R" 'helm-all-mark-rings
  "r" 'ivy-resume
  "s" 'swiper
+ "t" (lambda () (interactive) (find-file "~/notes/todo.org"))
  "u" 'counsel-unicode-char  ;insert unicode chars
  "W" 'avy-goto-word-1
  "w" 'save-buffer
