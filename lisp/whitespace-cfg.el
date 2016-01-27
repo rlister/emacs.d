@@ -1,8 +1,8 @@
 ;; whitespace handling
 ;; (setq-default show-trailing-whitespace t)
 
-(defalias 'ws 'whitespace-mode)
-(defalias 'wc 'whitespace-cleanup)
+;; (defalias 'ws 'whitespace-mode)
+;; (defalias 'wc 'whitespace-cleanup)
 
 ;; toggle auto-fill
 ;; (global-set-key (kbd "C-x C-a") 'auto-fill-mode)

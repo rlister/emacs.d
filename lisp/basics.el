@@ -29,21 +29,6 @@
 
 (global-set-key (kbd "C-m") 'newline-and-indent) ;make RET indent
 
-;(global-set-key (kbd "M-z") 'undo)            ;cua-compat undo
-;(global-set-key (kbd "C-z") 'zap-to-char)     ;as I stole M-z, replace suspend-frame
-
-;(global-set-key (kbd "M-s s")   'replace-string)
-;(global-set-key (kbd "M-s M-s") 'replace-string)
-
-;(define-key global-map "\M-r"     'repeat-complex-command) ;also C-x ESC ESC
-
-;(define-key global-map "\M-["     'beginning-of-defun)
-;(define-key global-map "\M-]"     'end-of-defun)
-
-;(setq help-window-select 'always)  ;select the buffer displaying help (so I can quit it easily)
-
-;(setq-default indent-tabs-mode nil);always indent with spaces, not tabs
-
 ;; make sure help buffers popup in current window, not other-window
 (setq display-buffer-alist '((".*" display-buffer-same-window)))
 
@@ -56,26 +41,6 @@
 ;; man page in same window
 (setq Man-notify-method 'pushy)
 
-;; ;; fix background running in terminal
-;; (defun on-after-init ()
-;;   (unless (display-graphic-p (selected-frame))
-;;     (set-face-background 'default "unspecified-bg" (selected-frame))))
-;; (add-hook 'window-setup-hook 'on-after-init)
-
-;; (add-hook 'after-make-frame-functions
-;;           '(lambda (frame)
-;;              (select-frame frame)
-;;              (if window-system nil
-;;                (set-frame-parameter nil 'background-color "black"))))
-
-;; (add-hook 'server-visit-hook 'fix-bg-in-terminal)
-;; (defun fix-bg-in-terminal ()
-;;   (unless window-system
-;;     (progn
-;;       (select-frame frame)
-;;       (set-frame-parameter nil 'background-color "black"))))
-;;     ;(face-remap-add-relative 'default :background "unspecified-bg"))
-
 ;; use built-in midnight-mode to cleanup old buffers every night
-(require 'midnight)
-(setq clean-buffer-list-delay-general 1) ;kill buffers older than 1 day
+;; (require 'midnight)
+;; (setq clean-buffer-list-delay-general 1) ;kill buffers older than 1 day

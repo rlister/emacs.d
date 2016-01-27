@@ -4,5 +4,3 @@
   (if (region-active-p)
       (comment-or-uncomment-region (region-beginning) (region-end) arg)
     (comment-or-uncomment-region (line-beginning-position) (line-end-position) arg)))
-
-(define-key global-map (kbd "C-;") 'comment-region-or-line)

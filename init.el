@@ -1,31 +1,25 @@
 (setq debug-on-error nil)               ;turn on for debugging
 
 ;; install cask from homebrew, manages package dependencies
-(require 'cask "/usr/local/Cellar/cask/0.7.2/cask.el")
+(require 'cask "/usr/local/Cellar/cask/0.7.4/cask.el")
 (cask-initialize)
 
 ;; adds/removes packages from Cask file automatically
 (require 'pallet)
 
 (add-to-list 'exec-path "/usr/local/bin") ;brew executables, etc
-(add-to-list 'load-path "~/code/emacs.d/vendor")  ;3rd-party code installed by hand
+;; (add-to-list 'load-path "~/code/emacs.d/vendor")  ;3rd-party code installed by hand
 (add-to-list 'load-path "~/code/emacs.d/lisp") ;my stuff to be loaded below
 
 (load-library "mac")                    ;some mac-specific settings
 (load-library "basics")                 ;basic display and key tweaks
-;; (load-library "ido-cfg")                ;setup ido
-;; (load-library "smex-cfg")               ;C-xm, C-xC-m to replace M-x
-(load-library "ivy-cfg")                ;ivy completion lib
-;; (load-library "helm-cfg")               ;replace ido?
 (load-library "evil-cfg")               ;setup evil-mode
-(load-library "key-chord-cfg")
+(load-library "ivy-cfg")                ;ivy completion lib
 (load-library "brew-theme")             ;my color theme
 (load-library "projectile-cfg")
 (load-library "mode-line")              ;setup modeline
 (load-library "hide-mode-line")
-
 (load-library "uniquify-cfg")           ;make buffer names unique
-;(when cocoa; (load-library "kill-ring-cfg")          ;M-y
 (load-library "insert-date-time")       ;M-x date
 (load-library "aliases")                ;some function shortcuts
 (load-library "whitespace-cfg")         ;setup whitespace handling
@@ -33,6 +27,7 @@
 ;(load-library "hl-line-cfg")            ;highlight current line
 ;(load-library "enlarge-font-cfg")       ;C-+, C--
 ;(load-library "toggle-selective-display-column") ;C-TAB
+(load-library "org-cfg")                ;todo lists, etc
 
 ;;; movement
 ;; (load-library "avy-cfg")                ;replaces ace-jump
@@ -43,8 +38,6 @@
 ;
 ;;; window movement
 (load-library "window-movement")        ;moving between windows
-;(load-library "resize-windows")         ;M-left,right,up,down
-;; (load-library "transpose-windows")      ;M-x swap
 ;
 ;;; completion
 ;; (load-library "ac-complete-cfg")
@@ -62,11 +55,7 @@
 (load-library "golang-cfg")             ;setup go-mode
 ;(load-library "nginx-cfg")              ;nginx-mode
 (load-library "terraform-cfg")          ;terraform-mode
-;;(load-library "pretty-symbols")         ;function and lambda symbols
 (load-library "elisp-cfg")              ;elisp hooks
-;;(load-library "haml-cfg")               ;haml-mode
-;;(load-library "css-cfg")                ;css/scss settings
-;;(load-library "puppet-cfg")             ;puppet-mode
-;;(load-library "flycheck-cfg")           ;turn on globally
 (load-library "conf-cfg")               ;conf-mode
+
 (put 'dired-find-alternate-file 'disabled nil)
