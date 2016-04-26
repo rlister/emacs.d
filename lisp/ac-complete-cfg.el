@@ -8,3 +8,4 @@
 ;; use tab to complete instead of automatically
 (setq ac-auto-start nil)
 (ac-set-trigger-key "TAB")
+;; (setq tab-always-indent 'complete)
