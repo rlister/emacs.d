@@ -177,3 +177,23 @@
   )
 
 ;; use key-chord from melpa
+(key-chord-mode 1)
+(key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+
+(unless (display-graphic-p)
+  (require 'evil-terminal-cursor-changer))
+(setq evil-visual-state-cursor '("yellow" box)); █
+(setq evil-insert-state-cursor '("red" bar)); ⎸
+(setq evil-emacs-state-cursor '("blue" hbar)); _
+(setq evil-normal-state-cursor '("green" hbar)); _
+; '\ePtmux;\e\e[4 q\e\\']
+;; (defun etcc--make-cursor-shape-seq (shape)
+;;   "Make escape sequence for cursor shape."
+;;   (cond ((or (etcc--in-xterm?)
+;;              (etcc--in-apple-terminal?)
+;;              (etcc--in-iterm?))
+;;          (etcc--make-tmux-seq (etcc--make-xterm-cursor-shape-seq shape)))
+;;         ((etcc--in-konsole?)
+;;          (etcc--make-konsole-cursor-shape-seq shape))
+;;         ((etcc--in-dumb?)
+;;          (etcc--make-xterm-cursor-shape-seq shape))))
