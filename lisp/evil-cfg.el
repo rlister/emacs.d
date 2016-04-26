@@ -1,6 +1,4 @@
 ;;; -*- lexical-binding: t -*-
-
-;; evil-leader has to do a little dance to load properly
 (require 'evil-leader)
 (setq evil-leader/in-all-states t)
 (evil-leader/set-leader "<SPC>")
@@ -8,38 +6,27 @@
 (global-evil-leader-mode)
 (evil-mode 1)
 
-;; match all the things on %, install evil-matchit from melpa
-;(global-evil-matchit-mode 1)
+;; ;; match all the things on %, install evil-matchit from melpa
+;; ;(global-evil-matchidfj-mode 1)
 
-;; highlights unique chars on f/F/t/T, install from melpa
-(global-evil-quickscope-mode 1)
+;; ;; highlights unique chars on f/F/t/T, install from melpa
+;; (global-evil-quickscope-mode 1)
 
 ;; override mode-line face by evil state
 (defun set-evil-mode-line-face ()
   (let ((color (cond
-                ((evil-normal-state-p)  (cons nil "PaleGreen"))
-                ((evil-insert-state-p)  (cons nil "IndianRed"))
-                ((evil-visual-state-p)  (cons nil "GoldenRod"))
-                ((evil-replace-state-p) (cons nil "LightCoral"))
-                ((evil-motion-state-p)  (cons nil "RoyalBlue"))
-                ((evil-emacs-state-p)   (cons nil "CadetBlue"))
+                ((evil-normal-state-p)  (cons nil "palegreen"))
+                ((evil-insert-state-p)  (cons nil "indianred"))
+                ((evil-visual-state-p)  (cons nil "goldenrod"))
+                ((evil-replace-state-p) (cons nil "lightcoral"))
+                ((evil-motion-state-p)  (cons nil "royalblue"))
+                ((evil-emacs-state-p)   (cons nil "cadetblue"))
                 ((buffer-modified-p)    (cons "#006fa0" "#ffffff"))
-                (t                      (cons nil "Gray")))))
+                (t                      (cons nil "gray")))))
     (set-face-foreground 'mode-line (cdr color))
     ))
 
 (add-hook 'post-command-hook 'set-evil-mode-line-face)
-
-;; switch back to normal state automatically when idling in other states
-;; (defun switch-to-evil-normal-state ()
-;;   (interactive)
-;;   (if (string= evil-state "insert")
-;;       (progn
-;;         (evil-normal-state)
-;;         (set-evil-mode-line-face)
-;;         (message "Idled to normal state")
-;;         )))
-;; (run-with-idle-timer 10 t 'switch-to-evil-normal-state)
 
 ;; end-of-code or line not working with evil-mode so use
 ;; mwim from melpa
@@ -80,23 +67,12 @@
 ;; install from melpa, see vim surround for bindings
 (global-evil-surround-mode 1)
 
-(defun toggle-previous-buffer ()
-  "Switch to most recent buffer. Repeated calls toggle back and forth between the most recent two buffers."
-  (interactive)
-  (switch-to-buffer (other-buffer (current-buffer) 1)))
+;; (defun toggle-hide-mode-line ()
+;;   "Toggle mode-line on or off, and redraw display."
+;;   (interactive)
+;;   (hide-mode-line)
+;;   (redraw-display))
 
-(defun message-buffer-name ()
-  "Show current buffer name in minibuffer."
-  (interactive)
-  (message (format-mode-line "%b %*%+ %m L%l C%c")))
-
-(defun toggle-hide-mode-line ()
-  "Toggle mode-line on or off, and redraw display."
-  (interactive)
-  (hide-mode-line)
-  (redraw-display))
-
-;; evil-leader-mode from melpa
 (evil-leader/set-key
  ";" 'comment-region-or-line
  "?" '(lambda () (interactive) (find-file "~/notes/vim.cheat"))
@@ -190,10 +166,4 @@
   "q" 'quit-window ;kill help buffer
   )
 
-;; (evil-define-key 'normal peep-dired-mode-map
-;;   (kbd "<SPC>") 'peep-dired-scroll-page-down
-;;   (kbd "C-<SPC>") 'peep-dired-scroll-page-up
-;;   (kbd "<backspace>") 'peep-dired-scroll-page-up
-;;   (kbd "j") 'peep-dired-next-file
-;;   (kbd "k") 'peep-dired-prev-file)
-;; (add-hook 'peep-dired-hook 'evil-normalize-keymaps)
+;; use key-chord from melpa
