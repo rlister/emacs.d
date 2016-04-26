@@ -74,49 +74,47 @@
 ;;   (redraw-display))
 
 (evil-leader/set-key
- ";" 'comment-region-or-line
- "?" '(lambda () (interactive) (find-file "~/notes/vim.cheat"))
- "ag" 'ag                                ;ag directory
- "ap" 'projectile-ag                     ;ag whole project
- "ar" 'align-regexp
- "b" 'projectile-switch-to-buffer
- ;; "c" 'capitalize-word
- "c" (lambda () (interactive) (org-capture nil "t") (evil-append-line 1))
- "D" 'projectile-dired
- "d" 'projectile-find-dir
- "\C-d" 'dired-jump
- "e" 'ido-find-file
- "f" 'projectile-find-file
- "g" 'magit-status
- "j" 'avy-goto-char
- "k" 'kill-buffer
- "J" 'avy-goto-char-2
- "L" 'link-hint-open-link ;link-hint from melpa for avy to link
- "l" 'avy-goto-line
- "M" 'evil-visual-mark-mode ;from melpa
- "m" 'toggle-hide-mode-line
- "n" 'message-buffer-name
- "o" 'helm-occur
- "p" 'projectile-switch-project
- "q" 'evil-emacs-state
- "R" 'helm-all-mark-rings
- "r" 'ivy-resume
- "s" 'swiper
- "t" (lambda () (interactive) (find-file "~/notes/todo.org"))
- "u" 'counsel-unicode-char  ;insert unicode chars
- "W" 'avy-goto-word-1
- "w" 'save-buffer
- "x" 'counsel-M-x
- "SPC" 'toggle-previous-buffer
- ;; "ci" 'evilnc-comment-or-uncomment-lines
- ;; "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
- ;; ;; "ll" 'evilnc-quick-comment-or-uncomment-to-the-line
- ;; "cc" 'evilnc-copy-and-comment-lines
- ;; "cp" 'evilnc-comment-or-uncomment-paragraphs
- ;; "cr" 'comment-or-uncomment-region
- ;; "cv" 'evilnc-toggle-invert-comment-line-by-line
- ;; "\\" 'evilnc-comment-operator
- )
+  ";" 'comment-region-or-line
+  ;; "?" '(lambda () (interactive) (find-file "~/notes/vim.cheat"))
+  "A" 'org-agenda
+  "ag" 'ag                                ;ag directory
+  "ap" 'projectile-ag                     ;ag whole project
+  "ar" 'align-regexp
+  ;; "B" 'projectile-switch-to-buffer
+  "B" 'ivy-switch-buffer
+  "b" 'evil-buffer
+  "c" (lambda () (interactive) (org-capture nil "t") (evil-append-line 1))
+  "D" 'projectile-dired
+  "d" 'projectile-find-dir
+  "\C-d" 'dired-jump
+  "e" 'ido-find-file
+  "f" 'projectile-find-file
+  "G" 'git-timemachine-toggle
+  "g" 'magit-status
+  ;; "j" 'avy-goto-char
+  "K" 'org-cut-special
+  "k" 'evil-delete-buffer
+  ;; "J" 'avy-goto-char-2
+  ;; "L" 'link-hint-open-link ;link-hint from melpa for avy to link
+  "l" 'linum-mode
+  "M" 'evil-visual-mark-mode ;from melpa
+  ;; "m" 'toggle-hide-mode-line
+  "n" 'evil-next-buffer
+  ;; "o" 'helm-occur
+  "P" 'projectile-switch-project
+  "p" 'evil-prev-buffer
+  ;; "q" 'evil-emacs-state
+  ;; "R" 'helm-all-mark-rings
+  "r" 'ivy-resume
+  "S" (lambda () (interactive) (switch-to-buffer "*scratch*"))
+  "s" 'swiper
+  "t" (lambda () (interactive) (find-file "~/notes/inbox.org"))
+  "u" 'counsel-unicode-char  ;insert unicode chars
+  ;; "W" 'avy-goto-word-1
+  "w" 'save-buffer
+  "x" 'counsel-M-x
+  ;; "SPC" 'toggle-previous-buffer
+  )
 
 ;; get back to normal state
 (defalias 'vi 'evil-normal-state)
