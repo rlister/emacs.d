@@ -161,6 +161,16 @@
 ;; evil motion for other modes
 (evil-set-initial-state 'package-menu-mode 'motion)
 
+(evil-set-initial-state 'org-agenda-mode   'motion)
+(evil-define-key 'motion org-agenda-mode-map
+  (kbd "j") 'org-agenda-next-line)
+(evil-define-key 'motion org-agenda-mode-map
+  (kbd "k") 'org-agenda-previous-line)
+(evil-define-key 'motion org-agenda-mode-map
+  (kbd "TAB") 'org-agenda-goto)
+(evil-define-key 'motion org-agenda-mode-map
+  (kbd "F") 'org-agenda-follow-mode)
+
 (evil-set-initial-state 'help-mode 'motion)
 (evil-define-key 'normal help-map
   "q" 'quit-window ;kill help buffer
