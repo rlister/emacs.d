@@ -5,4 +5,4 @@
 
 ;; use for all files in this dir
 (add-to-list 'auto-mode-alist
-             '("spree_nginx/files/default/.*" . nginx-mode))
+             '("config/nginx/.*" . nginx-mode))
