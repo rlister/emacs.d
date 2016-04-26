@@ -13,8 +13,8 @@
 ;; (define-key global-map (kbd "M-p")   'prev-window)  ;replaces empty binding
 
 ;; winner-mode - pop window configuration
-;; (when (fboundp 'winner-mode)
-;;   (winner-mode 1))
+(when (fboundp 'winner-mode)
+  (winner-mode 1))
 
 ;; install from melpa
 (golden-ratio-mode 1)
