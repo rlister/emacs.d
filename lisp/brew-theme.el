@@ -4,6 +4,7 @@
 
 (let (
       (brew-fg  "#839496")
+      ;; (brew-fg  "#808080")
       (brew-hl  "#333333")
       (brew-bg  "#1A1A1A")
       (brew-bg0 "#0b0b0b")
@@ -13,6 +14,7 @@
       (brew-bg3 "#3f3f3f")
       (brew-bg4 "#4f4f4f")
       (brew-bg5 "#5f5f5f")
+      ;; (brew-bg5 "#808080")
 
       (yellow  "#FFFFB6")
       (orange  "#FFD2A7")
@@ -78,7 +80,7 @@
 
    `(font-lock-builtin-face             ((t (:foreground ,blue :slant italic))))
    `(font-lock-comment-delimiter-face   ((t (:foreground ,brew-bg5))))
-   `(font-lock-comment-face             ((t (:foreground ,brew-bg5 :slant italic))))
+   `(font-lock-comment-face             ((t (:foreground ,brew-bg5))))
    `(font-lock-constant-face            ((t (:foreground ,blue :weight normal :slant italic))))
    `(font-lock-doc-face                 ((t (:foreground ,cyan :slant italic))))
    `(font-lock-doc-string-face          ((t (:foreground ,blue :slant italic))))
@@ -170,7 +172,8 @@
    `(org-checkbox                  ((t (:background ,brew-bg :foreground ,brew-fg :box (:line-width 1 :style released-button)))))
    `(org-code                      ((t (:inherit font-lock-comment-face))))
    `(org-date                      ((t (:foreground ,blue :slant italic))))
-   `(org-done                      ((t (:foreground ,green :weight bold))))
+   `(org-done                      ((t (:inherit font-lock-comment-face :weight bold :italic t))))
+   `(org-headline-done             ((t (:inherit font-lock-comment-face :weight bold :strike-through t))))
    `(org-ellipsis                  ((t (:inherit font-lock-comment-face))))
    `(org-formula                   ((t (:foreground ,yellow))))
    `(org-headline-done             ((t (:foreground ,green))))
@@ -218,7 +221,7 @@
    `(outline-2 ((t (:inherit outline-3 :height 1.0))))
    `(outline-1 ((t (:inherit outline-2 :height 1.1))))
 
-   `(linum ((t (:inherit font-lock-comment-face))))
+   `(linum ((t (:foreground "#666783"))))
 
    `(company-tooltip ((t (:background ,brew-hl))))
    `(company-tooltip-selection ((t (:foreground ,yellow-l :background ,brew-hl))))
