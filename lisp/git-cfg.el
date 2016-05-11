@@ -45,6 +45,8 @@
 ;;           '(lambda ()
 ;;              (evil-normalize-keymaps)))
 
+(defalias 'blame 'magit-blame)
+
 (global-git-gutter-mode t)              ;git-gutter-fringe from melpa
 ;; (defalias 'gh 'git-link)                ;install git-link from melpa; push to kill-ring the current line/region in github
 
