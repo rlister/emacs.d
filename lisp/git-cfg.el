@@ -37,6 +37,14 @@
 
 ;; (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 
+;; keybindings for magit-blame minor mode
+(evil-define-key 'normal magit-blame-mode-map (kbd "q") 'magit-blame-quit)
+(evil-define-key 'normal magit-blame-mode-map (kbd "RET") 'magit-show-commit)
+
+;; (add-hook 'magit-blame-mode-hook
+;;           '(lambda ()
+;;              (evil-normalize-keymaps)))
+
 (global-git-gutter-mode t)              ;git-gutter-fringe from melpa
 ;; (defalias 'gh 'git-link)                ;install git-link from melpa; push to kill-ring the current line/region in github
 
