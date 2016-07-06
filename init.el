@@ -13,9 +13,10 @@
 
 (load-library "mac")                    ;some mac-specific settings
 (load-library "basics")                 ;basic display and key tweaks
-(load-library "evil-cfg")               ;setup evil-mode
-(load-library "ivy-cfg")                ;ivy completion lib
 (load-library "brew-theme")             ;my color theme
+(load-library "evil-cfg")               ;setup evil-mode
+(load-library "term-cfg")
+(load-library "ivy-cfg")                ;ivy completion lib
 (load-library "projectile-cfg")
 (load-library "mode-line")              ;setup modeline
 (load-library "hide-mode-line")
