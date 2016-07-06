@@ -30,4 +30,4 @@
 (define-key global-map (kbd "C-\\") 'space-dwim)
 
 ;; show empty lines with tilde; install from melpa
-(global-vim-empty-lines-mode)
+(global-vim-empty-lines-mode 0)
