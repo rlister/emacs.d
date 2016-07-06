@@ -35,7 +35,8 @@
 
   (custom-theme-set-faces
    'brew
-   `(default                    ((t (:foreground ,brew-fg :background nil))))
+   ;; `(default                    ((t (:foreground ,brew-fg :background nil))))
+   `(default                    ((t (:foreground ,brew-fg :background "Black"))))
    `(underline                  ((t (:underline nil)))) ;no underlines unless I ask for them
 
    `(mode-line                  ((t (:foreground nil :background ,brew-bg2))))
