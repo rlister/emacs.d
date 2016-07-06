@@ -1,4 +1,6 @@
 ;;; -*- lexical-binding: t -*-
+;; (load-library "mode-line")              ;setup modeline
+;; (load-library "hide-mode-line")
 (require 'evil-leader)
 (setq evil-leader/in-all-states t)
 (evil-leader/set-leader "<SPC>")
@@ -80,15 +82,13 @@
   "ag" 'ag                                ;ag directory
   "ap" 'projectile-ag                     ;ag whole project
   "ar" 'align-regexp
-  ;; "B" 'projectile-switch-to-buffer
-  "B" 'ivy-switch-buffer
-  "b" 'evil-buffer
+  "b" 'counsel-projectile-switch-to-buffer
   "c" (lambda () (interactive) (org-capture nil "t") (evil-append-line 1))
   "D" 'projectile-dired
-  "d" 'projectile-find-dir
+  "d" 'counsel-projectile-find-dir
   "\C-d" 'dired-jump
   "e" 'ido-find-file
-  "f" 'projectile-find-file
+  "f" 'counsel-projectile-find-file
   "G" 'git-timemachine-toggle
   "g" 'magit-status
   ;; "j" 'avy-goto-char
@@ -98,19 +98,16 @@
   ;; "L" 'link-hint-open-link ;link-hint from melpa for avy to link
   "l" 'linum-mode
   "M" 'evil-visual-mark-mode ;from melpa
-  ;; "m" 'toggle-hide-mode-line
   "n" 'evil-next-buffer
-  ;; "o" 'helm-occur
-  "P" 'projectile-switch-project
+  "P" 'counsel-projectile
   "p" 'evil-prev-buffer
   ;; "q" 'evil-emacs-state
   ;; "R" 'helm-all-mark-rings
   "r" 'ivy-resume
-  "S" (lambda () (interactive) (switch-to-buffer "*scratch*"))
-  "s" 'swiper
+  "S" 'counsel-git-grep
+  "s" 'counsel-grep-or-swiper
   "t" (lambda () (interactive) (find-file "~/notes/inbox.org"))
   "u" 'counsel-unicode-char  ;insert unicode chars
-  ;; "W" 'avy-goto-word-1
   "w" 'save-buffer
   "x" 'counsel-M-x
   ;; "SPC" 'toggle-previous-buffer
@@ -184,7 +181,7 @@
   (require 'evil-terminal-cursor-changer))
 (setq evil-visual-state-cursor '("yellow" box)); █
 (setq evil-insert-state-cursor '("red" bar)); ⎸
-(setq evil-emacs-state-cursor '("blue" hbar)); _
+(setq evil-emacs-state-cursor '("blue" bar)); ⎸
 (setq evil-normal-state-cursor '("green" hbar)); _
 ; '\ePtmux;\e\e[4 q\e\\']
 ;; (defun etcc--make-cursor-shape-seq (shape)
