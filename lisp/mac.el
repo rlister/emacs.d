@@ -1,16 +1,18 @@
 ;; set vars for testing mac-i-ness
 ;; (setq darwin (cond ((equal system-type 'darwin) t)))
-;(setq cocoa (cond ((equal window-system 'ns) t)))
+(setq cocoa (cond ((equal window-system 'ns) t)))
 
-;; (when cocoa
-;;   (ns-set-resource nil "ApplePressAndHoldEnabled" "NO") ;; allow single-key repeats
-;;   (defalias 'fs 'ns-toggle-fullscreen)
-;;   (setq ns-antialias-text t)          ;AA
-;;   (setq ns-pop-up-frames 'nil)        ;no new frame when invoking Emacs.app
-;;   (setq ns-command-modifier 'meta)    ;Command key is Meta
-;;   (setq ns-option-modifier 'super)    ;option key is Super
-;;   (setq ns-function-modifier 'hyper)  ;fn key is Hyper
-;;  )
+(when cocoa
+  ;; (ns-set-resource nil "ApplePressAndHoldEnabled" "NO") ;; allow single-key repeats
+  ;; (defalias 'fs 'ns-toggle-fullscreen)
+  ;; (setq ns-antialias-text t)          ;AA
+  ;; (setq ns-pop-up-frames 'nil)        ;no new frame when invoking Emacs.app
+  (global-set-key (kbd "M-RET") 'toggle-frame-fullscreen)
+  (setq ns-command-modifier 'meta)    ;Command key is Meta
+  (setq ns-option-modifier 'super)    ;option key is Super
+  (setq ns-function-modifier 'hyper)  ;fn key is Hyper
+  (exec-path-from-shell-initialize)   ;from melpa
+ )
 
 ;; share terminal emacs kill-ring with OSX clipboard
 (when (eq system-type 'darwin)
