@@ -174,6 +174,8 @@
   "q" 'quit-window ;kill help buffer
   )
 
+(evil-set-initial-state 'term-mode 'emacs)
+
 ;; use key-chord from melpa
 (key-chord-mode 1)
 (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
