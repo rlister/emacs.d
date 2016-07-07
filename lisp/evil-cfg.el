@@ -180,10 +180,11 @@
 
 (unless (display-graphic-p)
   (require 'evil-terminal-cursor-changer))
-(setq evil-visual-state-cursor '("yellow" box)); █
-(setq evil-insert-state-cursor '("red" bar)); ⎸
-(setq evil-emacs-state-cursor '("green" bar)); ⎸
-(setq evil-normal-state-cursor '("green" hbar)); _
+(setq evil-visual-state-cursor '("RoyalBlue" box)); █
+(setq evil-insert-state-cursor '("IndianRed" bar)); ⎸
+(setq evil-emacs-state-cursor '("LimeGreen" bar)); ⎸
+(setq evil-normal-state-cursor '("LimeGreen" hbar)); _
+(setq evil-motion-state-cursor '("RoyalBlue" hbar)); _
 ; '\ePtmux;\e\e[4 q\e\\']
 ;; (defun etcc--make-cursor-shape-seq (shape)
 ;;   "Make escape sequence for cursor shape."
