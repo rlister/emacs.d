@@ -327,7 +327,7 @@
    `(helm-buffer-file            ((t (:inherit default))))
    `(helm-match                  ((t (:foreground ,green-l))))
 
-   `(ivy-current-match ((t (:background ,brew-bg2))))
+   `(ivy-current-match           ((t (:foreground "PaleGreen"))))
    `(ivy-minibuffer-match-face-1 ((t (:foreground "GoldenRod"))))
    `(ivy-minibuffer-match-face-2 ((t (:foreground "GoldenRod2"))))
    `(ivy-minibuffer-match-face-3 ((t (:foreground "GoldenRod3"))))
