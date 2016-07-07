@@ -66,7 +66,7 @@
    `(escape-glyph-face          ((t (:foreground ,red))))
    `(minibuffer-prompt          ((t (:foreground ,green))))
    `(header-line                ((t (:background ,brew-hl)))) ;buffer-specific top mode-line
-   `(region                     ((t (:background ,blue-d))))
+   `(region                     ((t (:background "MidnightBlue"))))
    `(scroll-bar                 ((t (:background ,brew-hl))))
    `(secondary-selection        ((t (:foreground nil :background ,brew-bg5))))
    `(tool-bar                   ((t (:background ,brew-hl))))
