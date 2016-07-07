@@ -76,6 +76,7 @@
 ;;   (redraw-display))
 
 (evil-leader/set-key
+  "~" 'vim-empty-lines-mode
   ";" 'comment-region-or-line
   ;; "?" '(lambda () (interactive) (find-file "~/notes/vim.cheat"))
   "A" 'org-agenda
@@ -87,15 +88,15 @@
   "D" 'projectile-dired
   "d" 'counsel-projectile-find-dir
   "\C-d" 'dired-jump
-  "e" 'ido-find-file
   "f" 'counsel-projectile-find-file
   "G" 'git-timemachine-toggle
   "g" 'magit-status
-  ;; "j" 'avy-goto-char
-  "K" 'org-cut-special
-  "k" 'evil-delete-buffer
-  ;; "J" 'avy-goto-char-2
-  ;; "L" 'link-hint-open-link ;link-hint from melpa for avy to link
+  "J" 'avy-goto-char-2
+  "j" 'avy-goto-word-1
+  ;; "K" 'org-cut-special
+  "K" 'evil-delete-buffer
+  "k" 'kill-this-buffer
+  "L" 'link-hint-open-link ;link-hint from melpa for avy to link
   "l" 'linum-mode
   "M" 'evil-visual-mark-mode ;from melpa
   "n" 'evil-next-buffer
@@ -181,7 +182,7 @@
   (require 'evil-terminal-cursor-changer))
 (setq evil-visual-state-cursor '("yellow" box)); █
 (setq evil-insert-state-cursor '("red" bar)); ⎸
-(setq evil-emacs-state-cursor '("blue" bar)); ⎸
+(setq evil-emacs-state-cursor '("green" bar)); ⎸
 (setq evil-normal-state-cursor '("green" hbar)); _
 ; '\ePtmux;\e\e[4 q\e\\']
 ;; (defun etcc--make-cursor-shape-seq (shape)
