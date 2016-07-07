@@ -185,14 +185,3 @@
 (setq evil-emacs-state-cursor '("LimeGreen" bar)); ⎸
 (setq evil-normal-state-cursor '("LimeGreen" hbar)); _
 (setq evil-motion-state-cursor '("RoyalBlue" hbar)); _
-; '\ePtmux;\e\e[4 q\e\\']
-;; (defun etcc--make-cursor-shape-seq (shape)
-;;   "Make escape sequence for cursor shape."
-;;   (cond ((or (etcc--in-xterm?)
-;;              (etcc--in-apple-terminal?)
-;;              (etcc--in-iterm?))
-;;          (etcc--make-tmux-seq (etcc--make-xterm-cursor-shape-seq shape)))
-;;         ((etcc--in-konsole?)
-;;          (etcc--make-konsole-cursor-shape-seq shape))
-;;         ((etcc--in-dumb?)
-;;          (etcc--make-xterm-cursor-shape-seq shape))))
