@@ -279,6 +279,10 @@
    `(git-commit-nonempty-second-line-face ((t (:foreground ,brew-fg :italic :underline nil))))
    `(git-commit-summary-face              ((t (:foreground ,brew-fg))))
 
+   `(git-gutter:added    ((t (:foreground "PaleGreen"))))
+   `(git-gutter:modified ((t (:foreground ,yellow))))
+   `(git-gutter:deleted  ((t (:foreground "IndianRed"))))
+
    ;; sr-speedbar
    `(speedbar-directory-face ((t (:foreground ,blue :slant italic))))
    `(speedbar-file-face      ((t (:inherit    default))))
