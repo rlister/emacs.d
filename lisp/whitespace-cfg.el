@@ -31,3 +31,9 @@
 
 ;; show empty lines with tilde; install from melpa
 (global-vim-empty-lines-mode 0)
+(add-hook 'prog-mode-hook 'vim-empty-lines-mode)
+(add-hook 'ruby-mode-hook 'vim-empty-lines-mode)
+
+;; this is better when we have a fringe? install vi-tilde-fringe from melpa
+;; and use in all programming modes
+;; (add-hook 'prog-mode-hook 'vi-tilde-fringe-mode)
