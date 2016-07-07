@@ -30,6 +30,7 @@
 (global-set-key (kbd "C-z m") 'counsel-projectile)
 (global-set-key (kbd "C-z l") 'evil-buffer)
 (global-set-key (kbd "C-z b") 'counsel-projectile-switch-to-buffer)
+(global-set-key (kbd "C-z f") 'counsel-projectile-find-file)
 (global-set-key (kbd "C-z c") 'term-projectile-create-new) ;start a term from anywhere
 (global-set-key (kbd "C-z n") 'term-projectile-backward)
 (global-set-key (kbd "C-z p") 'term-projectile-forward)
