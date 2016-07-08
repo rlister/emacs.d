@@ -37,3 +37,6 @@
 ;; this is better when we have a fringe? install vi-tilde-fringe from melpa
 ;; and use in all programming modes
 ;; (add-hook 'prog-mode-hook 'vi-tilde-fringe-mode)
+
+(global-aggressive-indent-mode 1)
+;; (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
