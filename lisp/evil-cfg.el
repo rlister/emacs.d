@@ -83,6 +83,7 @@
   "ag" 'ag                                ;ag directory
   "ap" 'projectile-ag                     ;ag whole project
   "ar" 'align-regexp
+  "B" 'ivy-switch-buffer
   "b" 'counsel-projectile-switch-to-buffer
   "c" (lambda () (interactive) (org-capture nil "t") (evil-append-line 1))
   "D" 'projectile-dired
