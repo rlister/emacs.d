@@ -10,11 +10,13 @@
 (setq term-unbind-key-list '("C-z" "C-x"))
 
 (defun ric-term-toggle-line-char-mode ()
+  "Switch to appropriate evil states with term mode changes."
   (interactive)
   (if (term-in-line-mode)
       (progn
         (term-char-mode)
-        (evil-emacs-state))
+        (evil-emacs-state)
+        (term-send-raw-string ""))    ;back to prompt
     (progn
       (term-line-mode)
       (evil-normal-state))))
