@@ -11,12 +11,6 @@
 (setq magit-save-some-buffers nil)  ;do not bug me about saving files on C-x g, esp. dirs
 (setq magit-push-always-verify nil) ;do not nag me about whether to push upstream
 
-;; (eval-after-load 'magit-mode
-;;   '(progn
-;;      (add-hook
-;;       'magit-mode-hook
-;;       (lambda ()
-;;         ))))
 (defalias 'blame 'magit-blame)
 (defalias 'gco   'magit-checkout)
 (defalias 'gb    'magit-branch)
@@ -38,15 +32,9 @@
   ad-do-it
   (jump-to-register :magit-fullscreen))
 
-;; (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
-
 ;; keybindings for magit-blame minor mode
 (evil-define-key 'normal magit-blame-mode-map (kbd "q") 'magit-blame-quit)
 (evil-define-key 'normal magit-blame-mode-map (kbd "RET") 'magit-show-commit)
-
-;; (add-hook 'magit-blame-mode-hook
-;;           '(lambda ()
-;;              (evil-normalize-keymaps)))
 
 (global-git-gutter-mode t)              ;git-gutter-fringe from melpa
 ;; (defalias 'gh 'git-link)                ;install git-link from melpa; push to kill-ring the current line/region in github
