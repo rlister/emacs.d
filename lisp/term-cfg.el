@@ -30,7 +30,6 @@
 
 (global-set-key (kbd "C-z") nil) ;make C-z a prefix key in most modes
 (global-set-key (kbd "C-z m") 'counsel-projectile)
-(global-set-key (kbd "C-z l") 'evil-buffer)
 (global-set-key (kbd "C-z b") 'counsel-projectile-switch-to-buffer)
 (global-set-key (kbd "C-z f") 'counsel-projectile-find-file)
 (global-set-key (kbd "C-z c") 'term-projectile-create-new) ;start a term from anywhere
@@ -53,3 +52,26 @@
 
 
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+;; quick switcher between latest term and non-term buffers in a project
+(defun ric-string-match-term (s)
+  "Func to match term buffer names."
+  (string-match "^term -" s))
+
+(defun ric-project-term-buffers ()
+  "List of term buffers in current project."
+  (-filter 'ric-string-match-term (projectile-project-buffer-names)))
+
+(defun ric-project-non-term-buffers ()
+  "List of non-term buffers in current project."
+  (-remove 'ric-string-match-term (projectile-project-buffer-names)))
+
+(defun ric-project-term-buffer-switcher ()
+  "Switch to/from latest term buffer."
+  (interactive)
+  (switch-to-buffer
+   (if (ric-string-match-term (buffer-name))
+       (car (ric-project-non-term-buffers))
+     (car (ric-project-term-buffers)))))
+
+(global-set-key (kbd "C-z l") 'ric-project-term-buffer-switcher)
