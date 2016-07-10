@@ -8,4 +8,6 @@
   " " mode-line-modified " "
   '(:eval (propertize "%m" 'face 'font-lock-comment-face))
   '(:eval (propertize (or vc-mode " -") 'face 'font-lock-comment-face))
+  " "
+  '(:eval mode-line-position)
   ))
