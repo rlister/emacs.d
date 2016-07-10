@@ -184,6 +184,6 @@
   (require 'evil-terminal-cursor-changer))
 (setq evil-visual-state-cursor '("RoyalBlue" box)); █
 (setq evil-insert-state-cursor '("IndianRed" bar)); ⎸
-(setq evil-emacs-state-cursor '("LimeGreen" bar)); ⎸
+(setq evil-emacs-state-cursor  '("LimeGreen" bar)); ⎸
 (setq evil-normal-state-cursor '("LimeGreen" hbar)); _
 (setq evil-motion-state-cursor '("RoyalBlue" hbar)); _
