@@ -17,6 +17,9 @@
 ;;       'magit-mode-hook
 ;;       (lambda ()
 ;;         ))))
+(defalias 'blame 'magit-blame)
+(defalias 'gco   'magit-checkout)
+(defalias 'gb    'magit-branch)
 
 ;; full screen magit-status from http://whattheemacsd.com/setup-magit.el-01.html
 (defadvice magit-status (around magit-fullscreen activate)
@@ -44,8 +47,6 @@
 ;; (add-hook 'magit-blame-mode-hook
 ;;           '(lambda ()
 ;;              (evil-normalize-keymaps)))
-
-(defalias 'blame 'magit-blame)
 
 (global-git-gutter-mode t)              ;git-gutter-fringe from melpa
 ;; (defalias 'gh 'git-link)                ;install git-link from melpa; push to kill-ring the current line/region in github
