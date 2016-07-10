@@ -30,15 +30,15 @@
 (load-library "comment-region-or-line")   ;C-;
 (load-library "imenu-cfg")                ;M-m
 ;(load-library "toggle-selective-display-column") ;code folding with C-TAB
-;
+
 ;;; window movement
 (load-library "window-movement")        ;moving between windows
-;
+
 ;;; completion
 ;; (load-library "ac-complete-cfg")
 (load-library "pabbrev-cfg")
 ;;(load-library "discover-cfg")
-;
+
 ;;; programming modes
 (load-library "git-cfg")                ;magit-mode
 (load-library "ruby-cfg")               ;ruby-mode
