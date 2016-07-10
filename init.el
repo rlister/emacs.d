@@ -53,5 +53,5 @@
 (load-library "elisp-cfg")              ;elisp hooks
 (load-library "conf-cfg")               ;conf-mode
 
-;; (load-library "org-cfg")                ;todo lists, etc
+(load-library "org-cfg")                ;todo lists, etc
 (put 'dired-find-alternate-file 'disabled nil)
