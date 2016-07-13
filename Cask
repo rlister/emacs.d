@@ -24,6 +24,7 @@
 (depends-on "evil-leader")
 (depends-on "evil-mark-replace")
 (depends-on "evil-matchit")
+(depends-on "evil-numbers")
 (depends-on "evil-quickscope")
 (depends-on "evil-surround")
 (depends-on "evil-visual-mark-mode")
