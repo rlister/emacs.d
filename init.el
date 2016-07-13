@@ -12,6 +12,7 @@
 
 ;; adds/removes packages from Cask file automatically
 (require 'pallet)
+(pallet-mode t)
 
 (add-to-list 'exec-path "/usr/local/bin") ;brew executables, etc
 ;; (add-to-list 'load-path "~/code/emacs.d/vendor")  ;3rd-party code installed by hand
