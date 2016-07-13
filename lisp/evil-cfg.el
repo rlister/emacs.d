@@ -76,6 +76,8 @@
 ;;   (redraw-display))
 
 (evil-leader/set-key
+  "+" 'evil-numbers/inc-at-pt
+  "-" 'evil-numbers/dec-at-pt
   "~" 'vim-empty-lines-mode
   ";" 'comment-region-or-line
   ;; "?" '(lambda () (interactive) (find-file "~/notes/vim.cheat"))
