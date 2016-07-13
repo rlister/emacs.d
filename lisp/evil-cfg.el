@@ -175,6 +175,7 @@
   )
 
 (evil-set-initial-state 'term-mode 'emacs)
+(evil-set-initial-state 'ivy-occur-mode 'emacs)
 
 ;; use key-chord from melpa
 (key-chord-mode 1)
