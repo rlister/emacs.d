@@ -45,3 +45,12 @@
         (inf-ruby-minor-mode)
         (define-key enh-ruby-mode-map (kbd "M-p") 'enh-ruby-backward-sexp)
         (define-key enh-ruby-mode-map (kbd "M-n") 'enh-ruby-forward-sexp)))))
+
+
+
+;; align colon-delimited hash members
+(defun align-to-colon (begin end)
+  "Align region to char after colon"
+  (interactive "r")
+  (align-regexp begin end
+                (rx ":" (group (zero-or-more (syntax whitespace))) ) 1 1 ))
