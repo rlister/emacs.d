@@ -6,9 +6,9 @@
   (find-file (car (projectile-recentf-files))))
 
 (setq
- ;; projectile-switch-project-action 'projectile-dired
+ projectile-switch-project-action 'projectile-dired
  ;; projectile-switch-project-action 'projectile-recentf
- projectile-switch-project-action 'ric-projectile-switch-to-last-buffer
+ ;; projectile-switch-project-action 'ric-projectile-switch-to-last-buffer
  projectile-remember-window-configs nil)
 
 ;; make a unique shell buffer for each project
