@@ -1,7 +1,7 @@
 ;; melpa swiper pkg also installs ivy and counsel
 (ivy-mode 1)
 (setq
- ivy-use-virtual-buffers t ;add recentf and bookmark buffers to the list
+ ;; ivy-use-virtual-buffers t ;add recentf and bookmark buffers to the list
  projectile-completion-system 'ivy   ;use ivy for all projectile stuff
  )
 
