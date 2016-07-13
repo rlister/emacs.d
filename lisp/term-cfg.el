@@ -10,6 +10,14 @@
                  evil-emacs-state-map))
     (define-key (eval map) "\C-z" nil)))
 
+;; tell term to kill buffer after shell process exit
+(defadvice term-sentinel (around my-advice-term-sentinel (proc msg))
+  (if (memq (process-status proc) '(signal exit))
+      (let ((buffer (process-buffer proc)))
+        ad-do-it
+        (kill-buffer buffer))
+    ad-do-it))
+(ad-activate 'term-sentinel)
 
 (defun ric-term-toggle-line-char-mode ()
   "Switch to appropriate evil states with term mode changes."
