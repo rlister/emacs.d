@@ -3,6 +3,7 @@
 (setq
  ;; ivy-use-virtual-buffers t ;add recentf and bookmark buffers to the list
  projectile-completion-system 'ivy   ;use ivy for all projectile stuff
+ ivy-format-function 'ivy-format-function-arrow
  )
 
 ;; try this instead of smex
