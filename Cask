@@ -1,7 +1,5 @@
-; (source gnu)
-; (source melpa)
-(source "melpa" "https://melpa.milkbox.net/packages/")
 (source "gnu" "https://elpa.gnu.org/packages/")
+(source "melpa" "https://melpa.milkbox.net/packages/")
 
 (depends-on "ac-inf-ruby")
 (depends-on "ace-jump-mode")
