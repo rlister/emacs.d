@@ -38,7 +38,10 @@
       (evil-normal-state)
     (evil-emacs-state)))
 
-(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+(defun ric-term-counsel-yank-pop ()
+  "Send value of counsel-yank-pop to term correctly."
+  (interactive)
+  (term-send-raw-string (counsel-yank-pop)))
 
 ;; quick switcher between latest term and non-term buffers in a project
 (defun ric-string-match-term (s)
