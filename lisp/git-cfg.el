@@ -10,6 +10,7 @@
 (setq magit-commit-show-diff nil)                 ;do not show diff (which is slow) on magit-commit (c c)
 (setq magit-save-some-buffers nil)  ;do not bug me about saving files on C-x g, esp. dirs
 (setq magit-push-always-verify nil) ;do not nag me about whether to push upstream
+(setq git-commit-summary-max-length 72) ;stop bugging me about long commit msgs
 
 (defalias 'blame 'magit-blame)
 (defalias 'gco   'magit-checkout)
