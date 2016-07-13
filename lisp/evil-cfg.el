@@ -179,7 +179,7 @@
 ;; use key-chord from melpa
 (key-chord-mode 1)
 (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
-(key-chord-define evil-emacs-state-map  "jk" 'evil-normal-state)
+;; (key-chord-define evil-emacs-state-map  "jk" 'evil-normal-state)
 
 (unless (display-graphic-p)
   (require 'evil-terminal-cursor-changer))
