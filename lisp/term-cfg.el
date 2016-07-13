@@ -1,3 +1,6 @@
+;; (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+;; (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+
 ;; install term-projectile (term-manager) from melpa
 
 ;; need to unbind C-z here in special way for evil
