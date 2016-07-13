@@ -1,3 +1,4 @@
+;; from melpa
 (projectile-global-mode)
 
 (defun ric-projectile-switch-to-last-buffer ()
@@ -11,3 +12,5 @@
  ;; projectile-switch-project-action 'ric-projectile-switch-to-last-buffer
  projectile-remember-window-configs nil)
 
+;; install persp-projectile from melpa
+(persp-mode)
