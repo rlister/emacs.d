@@ -75,6 +75,12 @@
 ;;   (hide-mode-line)
 ;;   (redraw-display))
 
+(defun ric-counsel-ag ()
+  "Call counsel-ag so it will prompt for dir."
+  (interactive)
+  (let ((current-prefix-arg '(4)))
+    (call-interactively 'counsel-ag)))
+
 (evil-leader/set-key
   "+" 'evil-numbers/inc-at-pt
   "-" 'evil-numbers/dec-at-pt
@@ -82,7 +88,7 @@
   ";" 'comment-region-or-line
   ;; "?" '(lambda () (interactive) (find-file "~/notes/vim.cheat"))
   "A" 'org-agenda
-  "ag" 'ag                                ;ag directory
+  "ag" 'counsel-ag                                ;ag directory
   "ap" 'projectile-ag                     ;ag whole project
   "ar" 'align-regexp
   "B" 'ivy-switch-buffer
