@@ -12,6 +12,9 @@
 (setq magit-push-always-verify nil) ;do not nag me about whether to push upstream
 (setq git-commit-summary-max-length 72) ;stop bugging me about long commit msgs
 
+;; install from melpa
+(require 'evil-magit)
+
 (defalias 'blame 'magit-blame)
 (defalias 'gco   'magit-checkout)
 (defalias 'gb    'magit-branch)
