@@ -81,7 +81,7 @@
 
    `(font-lock-builtin-face             ((t (:foreground ,blue :slant italic))))
    `(font-lock-comment-delimiter-face   ((t (:foreground ,brew-bg5))))
-   `(font-lock-comment-face             ((t (:foreground ,brew-bg5))))
+   `(font-lock-comment-face             ((t (:foreground ,brew-bg5 :slant italic))))
    `(font-lock-constant-face            ((t (:foreground ,blue :weight normal :slant italic))))
    `(font-lock-doc-face                 ((t (:foreground ,cyan :slant italic))))
    `(font-lock-doc-string-face          ((t (:foreground ,blue :slant italic))))
