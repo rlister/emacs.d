@@ -78,14 +78,16 @@
 (global-set-key (kbd "C-z l") 'ric-project-term-buffer-switcher)
 
 ;; allow some special keys in term-mode
-(setq term-unbind-key-list '("C-z" "C-x" "M-x" "C-h"))
+(setq term-unbind-key-list '("C-z" "C-x" "M-x" "C-h" "C-c"))
 (eval-after-load "term-mode"
   (add-hook 'term-mode-hook
             (lambda ()
+              (define-key term-raw-map (kbd "C-c") nil) ;make prefix in term-mode
               (define-key term-raw-map (kbd "C-z") nil) ;make prefix in term-mode
               (define-key term-raw-map (kbd "C-x") nil) ;make prefix in term-mode
               (define-key term-raw-map (kbd "C-h") nil) ;make prefix in term-mode
               (define-key term-raw-map (kbd "M-x") nil) ;make prefix in term-mode
+              (define-key term-raw-map (kbd "C-c C-c") 'term-interrupt-subjob)
               (define-key term-raw-map (kbd "C-x m") 'counsel-M-x) ;term-mode is ignoring the global bind of this
               (define-key term-raw-map (kbd "C-y") 'term-paste) ;to make yank work properly
               (define-key term-raw-map (kbd "M-y") 'ric-term-counsel-yank-pop)
