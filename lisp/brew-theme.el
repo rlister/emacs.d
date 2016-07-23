@@ -294,6 +294,9 @@
    `(elscreen-tab-control-face        ((t (:foreground ,green   :background ,brew-hl))))
    `(elscreen-tab-other-screen-face   ((t (:foreground ,brew-bg5 :background ,brew-bg2))))
 
+   `(eshell-prompt      ((t (:foreground "RoyalBlue"))))
+   `(eshell-ls-directory ((t (:foreground ,cyan))))
+
    `(term-color-cyan    ((t (:foreground "#259286"))))
    `(term-color-blue    ((t (:foreground "#21376C7"))))
    ;; `(term-color-red     ((t (:foreground "#CD5C5C"))))
