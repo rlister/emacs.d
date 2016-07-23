@@ -11,4 +11,4 @@
 (global-set-key (kbd "C-x C-m") 'counsel-M-x)  ;common typo
 
 ;; instead of browse-kill-ring package
-(global-set-key (kbd "M-y") 'counsel-yank-pop)
+(global-set-key (kbd "M-y") 'counsel-yank-pop)(global-set-key (kbd "M-m")     'counsel-imenu)
