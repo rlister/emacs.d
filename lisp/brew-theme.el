@@ -153,7 +153,7 @@
    `(mew-face-eof-part         ((t (:foreground ,yellow))))
 
    ;; org-mode
-   `(org-level-1          ((t (:foreground ,orange :height 1.1))))
+   `(org-level-1          ((t (:foreground ,blue :height 1.1))))
    `(org-level-2          ((t (:foreground "PaleGreen"))))
    `(org-level-3          ((t (:foreground ,blue))))
    `(org-level-4          ((t (:foreground ,yellow))))
