@@ -13,6 +13,8 @@
   (setq ns-function-modifier 'hyper)  ;fn key is Hyper
   (exec-path-from-shell-initialize)   ;from melpa
  )
+  (set-face-attribute 'default nil :family "Inconsolata" :height 140 :weight 'normal :width 'normal)
+  )
 
 ;; share terminal emacs kill-ring with OSX clipboard
 (when (eq system-type 'darwin)
