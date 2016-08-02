@@ -88,7 +88,7 @@
   ";" 'comment-region-or-line
   ;; "?" '(lambda () (interactive) (find-file "~/notes/vim.cheat"))
   "A" 'org-agenda
-  "ag" 'counsel-ag                                ;ag directory
+  ;; "ag" 'ric-counsel-ag                                ;ag directory
   "ap" 'projectile-ag                     ;ag whole project
   "ar" 'align-regexp
   "B" 'ivy-switch-buffer
