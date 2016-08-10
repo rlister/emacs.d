@@ -2,17 +2,12 @@
 (require 'chruby)                   ;from melpa
 (chruby "2.3.1")
 
-(defun irb ()
-  (interactive)
-  (inf-ruby))
-
+(defalias 'irb 'inf-ruby)
+(defalias 'console 'inf-ruby-console-auto)
 (defun pry ()
   (interactive)
   (inf-ruby "pry"))
 
-(defun console ()
-  (interactive)
-  (inf-ruby-console-auto))
 
 (defalias 'bi 'bundle-install)          ;install bundler from melpa
 
