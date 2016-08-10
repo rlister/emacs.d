@@ -9,14 +9,11 @@
   (inf-ruby "pry"))
 
 
-(defalias 'bi 'bundle-install)          ;install bundler from melpa
-
-(add-to-list 'auto-mode-alist '("Procfile$"   . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.rb$"      . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.thor$"    . ruby-mode))
-(add-to-list 'auto-mode-alist '("Berksfile$"  . ruby-mode))
-(add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
-(setq enh-ruby-bounce-deep-indent t)	;gold-dust ... hit tab to toggle deep and normal indent for blocks
+;; (add-to-list 'auto-mode-alist '("Procfile$"   . ruby-mode))
+;; (add-to-list 'auto-mode-alist '("\\.rb$"      . ruby-mode))
+;; (add-to-list 'auto-mode-alist '("\\.thor$"    . ruby-mode))
+;; (add-to-list 'auto-mode-alist '("Berksfile$"  . ruby-mode))
+;; (add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
 
 (eval-after-load 'ruby-mode
   '(progn
