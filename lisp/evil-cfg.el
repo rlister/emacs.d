@@ -90,6 +90,7 @@
   "A" 'org-agenda
   ;; "ag" 'ric-counsel-ag                                ;ag directory
   "ap" 'projectile-ag                     ;ag whole project
+  "ac" 'align-to-colon                    ;see ruby-cfg for defn
   "ar" 'align-regexp
   "B" 'ivy-switch-buffer
   "b" 'counsel-projectile-switch-to-buffer
