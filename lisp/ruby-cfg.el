@@ -1,6 +1,6 @@
 (require 'cl)                       ;chruby uses mapcan and needs this
 (require 'chruby)                   ;from melpa
-(chruby "2.3.0")
+(chruby "2.3.1")
 
 (defun irb ()
   (interactive)
