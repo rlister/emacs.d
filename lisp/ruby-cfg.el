@@ -8,7 +8,6 @@
   (interactive)
   (inf-ruby "pry"))
 
-
 ;; (add-to-list 'auto-mode-alist '("Procfile$"   . ruby-mode))
 ;; (add-to-list 'auto-mode-alist '("\\.rb$"      . ruby-mode))
 ;; (add-to-list 'auto-mode-alist '("\\.thor$"    . ruby-mode))
