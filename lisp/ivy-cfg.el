@@ -24,5 +24,5 @@
       (counsel-company)
     (indent-according-to-mode)))
 (global-set-key (kbd "TAB") 'ric-indent-or-complete)
-(setq company-idle-delay nil)           ;turn off auto-popup after idle
-(setq company-frontends '())
+;; (setq company-idle-delay nil)           ;turn off auto-popup after idle
+;; (setq company-frontends '())
