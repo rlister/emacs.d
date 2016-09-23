@@ -272,6 +272,7 @@
    `(magit-diff-removed                ((t (:foreground "IndianRed"))))
    `(magit-diff-context-highlight      ((t (:inherit font-lock-comment-face))))
    `(magit-diff-none                   ((t (:foreground ,brew-bg5))))
+   `(magit-reflog-commit               ((t (:foreground "PaleGreen"))))
 
    `(git-commit-overlong-summary-face     ((t (:foreground ,brew-fg :italic :underline nil))))
    `(git-commit-nonempty-second-line-face ((t (:foreground ,brew-fg :italic :underline nil))))
