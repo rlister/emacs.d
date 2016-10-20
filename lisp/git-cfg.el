@@ -20,6 +20,7 @@
 (defalias 'gco   'magit-checkout)
 (defalias 'gb    'magit-branch)
 (defalias 'gm    'magit-merge)
+(defalias 'gu    'magit-fetch-all)
 
 ;; full screen magit-status from http://whattheemacsd.com/setup-magit.el-01.html
 (defadvice magit-status (around magit-fullscreen activate)
