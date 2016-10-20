@@ -44,6 +44,7 @@
 (depends-on "goto-chg")
 (depends-on "haml-mode")
 (depends-on "hcl-mode")
+(depends-on "ht")
 (depends-on "iedit")
 (depends-on "imenus")
 (depends-on "inf-ruby")
