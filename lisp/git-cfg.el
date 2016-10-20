@@ -21,6 +21,7 @@
 (defalias 'gb    'magit-branch)
 (defalias 'gm    'magit-merge)
 (defalias 'gu    'magit-fetch-all)
+(defalias 'gp    'magit-push-current-to-upstream)
 
 ;; full screen magit-status from http://whattheemacsd.com/setup-magit.el-01.html
 (defadvice magit-status (around magit-fullscreen activate)
