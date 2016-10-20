@@ -11,6 +11,7 @@
 (setq magit-save-some-buffers nil)  ;do not bug me about saving files on C-x g, esp. dirs
 (setq magit-push-always-verify nil) ;do not nag me about whether to push upstream
 (setq git-commit-summary-max-length 72) ;stop bugging me about long commit msgs
+(setq auto-revert-check-vc-info t) ; update git branch in modeline after all changes
 
 ;; install from melpa
 (require 'evil-magit)
