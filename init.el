@@ -22,6 +22,7 @@
 (load-library "basics")                 ;basic display and key tweaks
 (load-library "brew-theme")             ;my color theme
 (load-library "evil-cfg")               ;setup evil-mode
+(load-library "gpg-cfg")                ;for epg and epa
 (load-library "term-cfg")
 (load-library "ivy-cfg")                ;ivy completion lib
 (load-library "projectile-cfg")
