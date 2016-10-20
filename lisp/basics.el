@@ -17,6 +17,7 @@
 ;(setq x-select-enable-primary t) ;selection goes to system clipboard
 
 (setq-default indent-tabs-mode nil) ;just for pablo no tabs evah in any mode
+(setq tramp-mode nil)
 
 (fset 'yes-or-no-p 'y-or-n-p)      ;do not make me type the whole word
 
