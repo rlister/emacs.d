@@ -16,6 +16,7 @@
 (global-set-key (kbd "C-h v")   'counsel-describe-variable)
 (global-set-key (kbd "M-m")     'counsel-imenu)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "C-x b")   'ivy-switch-buffer)
 
 (defun ric-indent-or-complete ()
   "Use TAB to call indent or counsel-company."
