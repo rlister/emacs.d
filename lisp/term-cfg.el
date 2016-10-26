@@ -64,8 +64,18 @@
        (car (ric-project-non-term-buffers))
      (car (ric-project-term-buffers)))))
 
+(defun ric-all-term-buffers ()
+  "List of all term buffers, regardless of project."
+  (-filter 'ric-string-match-term (mapcar (function buffer-name) (buffer-list))))
+
+(defun ric-switch-term ()
+  "Like ivy-switch-buffer, but for term buffers only."
+  (interactive)
+  (ivy-read "Switch to term: " (ric-all-term-buffers)
+            :action (lambda (x) (switch-to-buffer x))))
+
 (global-set-key (kbd "C-z") nil) ;make C-z a prefix key in most modes
-(global-set-key (kbd "C-z M") 'counsel-projectile)
+(global-set-key (kbd "C-z M") 'counsel-projectile-switch-project)
 (global-set-key (kbd "C-z m") 'projectile-persp-switch-project)
 (global-set-key (kbd "C-z b") 'counsel-projectile-switch-to-buffer)
 (global-set-key (kbd "C-z f") 'counsel-projectile-find-file)
@@ -76,6 +86,7 @@
 (global-set-key (kbd "C-z e") 'ric-toggle-evil-state)
 (global-set-key (kbd "C-z g") 'magit-status)
 (global-set-key (kbd "C-z l") 'ric-project-term-buffer-switcher)
+(global-set-key (kbd "C-x t") 'ric-switch-term)
 
 ;; allow some special keys in term-mode
 (setq term-unbind-key-list '("C-z" "C-x" "M-x" "C-h" "C-c"))
