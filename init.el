@@ -24,6 +24,7 @@
 (load-library "evil-cfg")               ;setup evil-mode
 (load-library "gpg-cfg")                ;for epg and epa
 (load-library "term-cfg")
+;; (load-library "iterm-cfg")
 (load-library "ivy-cfg")                ;ivy completion lib
 (load-library "projectile-cfg")
 (load-library "mode-line")              ;setup modeline
