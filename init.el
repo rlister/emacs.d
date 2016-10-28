@@ -2,26 +2,24 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-(package-initialize)
+;; (package-initialize)
 
-(setq debug-on-error nil)               ;turn on for debugging
+;; (setq debug-on-error nil)               ;turn on for debugging
 
-;; install cask from homebrew, manages package dependencies
-(require 'cask "/usr/local/Cellar/cask/0.7.4/cask.el")
-(cask-initialize)
+;; ;; install cask from homebrew, manages package dependencies
+;; (require 'cask "/usr/local/Cellar/cask/0.7.4/cask.el")
+;; (cask-initialize)
 
-;; adds/removes packages from Cask file automatically
-(require 'pallet)
-(pallet-mode t)
+;; ;; adds/removes packages from Cask file automatically
+;; (require 'pallet)
+;; (pallet-mode t)
 
 (add-to-list 'exec-path "/usr/local/bin") ;brew executables, etc
-;; (add-to-list 'load-path "~/code/emacs.d/vendor")  ;3rd-party code installed by hand
 (add-to-list 'load-path "~/code/emacs.d/lisp") ;my stuff to be loaded below
 
 (load-library "mac")                    ;some mac-specific settings
 (load-library "basics")                 ;basic display and key tweaks
 (load-library "brew-theme")             ;my color theme
-(load-library "evil-cfg")               ;setup evil-mode
 (load-library "gpg-cfg")                ;for epg and epa
 (load-library "term-cfg")
 ;; (load-library "iterm-cfg")
@@ -39,6 +37,15 @@
 (load-library "comment-region-or-line")   ;C-;
 (load-library "imenu-cfg")                ;M-m
 ;(load-library "toggle-selective-display-column") ;code folding with C-TAB
+;; packages
+(load-library "package-cfg")            ;add melpa and initialize
+(load-library "swiper-cfg")
+(load-library "counsel-cfg")
+(load-library "ivy-cfg")
+(load-library "mwim-cfg")               ;intelligent beg/end of line
+(load-library "evil-cfg2")              ;setup evil-mode
+(load-library "evil-surround-cfg")
+(load-library "key-chord-cfg")          ;jk binding
 
 ;;; window movement
 (load-library "window-movement")        ;moving between windows
