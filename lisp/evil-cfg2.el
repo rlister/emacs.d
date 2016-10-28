@@ -59,6 +59,8 @@
   (evil-define-key 'motion occur-mode-map (kbd "RET") 'occur-mode-goto-occurrence-other-window)
   (evil-define-key 'motion occur-mode-map (kbd "g") 'revert-buffer)
   (evil-define-key 'normal help-map "q" 'quit-window)
+  (evil-define-key 'normal magit-blame-mode-map (kbd "q") 'magit-blame-quit)
+  (evil-define-key 'normal magit-blame-mode-map (kbd "RET") 'magit-show-commit)
   (setq evil-visual-state-cursor '("RoyalBlue" box)); █
   (setq evil-insert-state-cursor '("IndianRed" bar)); ⎸
   (setq evil-emacs-state-cursor  '("LimeGreen" bar)); ⎸

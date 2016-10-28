@@ -61,8 +61,13 @@
 ;; (load-library "pabbrev-cfg")
 ;; ;;(load-library "discover-cfg")
 
+;; packages for git
+(load-library "magit-cfg")              ;magit-mode
+(load-library "evil-magit")             ;fix keys in magit
+(load-library "git-gutter-fringe-cfg")
+(load-library "git-timemachine-cfg")    ;fixups for evil
+
 ;; ;;; programming modes
-;; (load-library "git-cfg")                ;magit-mode
 ;; (load-library "ruby-cfg")               ;ruby-mode
 ;; (load-library "js-cfg")                 ;javascript settings
 ;; (load-library "json-cfg")               ;json-mode and json-pretty-print
