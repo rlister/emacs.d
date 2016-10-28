@@ -8,11 +8,12 @@
 ;; post-forward                 name|bar/mumble   name|quux/mumble
 ;; post-forward-angle-brackets  name<bar/mumble>  name<quux/mumble>
 ;; nil                          name              name<2>
-(require 'uniquify)
-
-(setq
- uniquify-buffer-name-style 'post-forward
- uniquify-separator "|"
- uniquify-after-kill-buffer-p t      ;rename after killing buffers
- uniquify-ignore-buffers-re "^\\*"   ;leave special buffers alone
- )
+(use-package uniquify
+  :config
+  (setq
+   uniquify-buffer-name-style 'post-forward
+   uniquify-separator "|"
+   uniquify-after-kill-buffer-p t      ;rename after killing buffers
+   uniquify-ignore-buffers-re "^\\*"   ;leave special buffers alone
+   )
+  )

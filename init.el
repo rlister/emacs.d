@@ -50,6 +50,7 @@
 (load-library "persp-projectile-cfg")
 (load-library "mode-line")              ;setup modeline for evil
 (load-library "term-projectile-cfg")    ;manage terms per project
+(load-library "uniquify-cfg")           ;make buffer names unique
 
 ;;; window movement
 (load-library "window-movement")        ;moving between windows
