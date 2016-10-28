@@ -4,3 +4,5 @@
   (if (region-active-p)
       (comment-or-uncomment-region (region-beginning) (region-end) arg)
     (comment-or-uncomment-region (line-beginning-position) (line-end-position) arg)))
+
+(global-set-key (kbd "C-z ;") 'comment-region-or-line)
