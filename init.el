@@ -55,6 +55,7 @@
 
 ;;; window movement
 (load-library "window-movement")        ;moving between windows
+;; (load-library "aggressive-indent-cfg")  ;crazy
 
 ;;; completion
 ;; (load-library "ac-complete-cfg")
