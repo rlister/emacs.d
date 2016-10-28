@@ -45,3 +45,6 @@
 ;; use built-in midnight-mode to cleanup old buffers every night
 ;; (require 'midnight)
 ;; (setq clean-buffer-list-delay-general 1) ;kill buffers older than 1 day
+
+;;make C-z a prefix key in most modes, we use this a lot later
+(global-set-key (kbd "C-z") nil)

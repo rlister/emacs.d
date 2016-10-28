@@ -1,15 +1,3 @@
-;; (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
-;; (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
-
-;; install term-projectile (term-manager) from melpa
-
-;; need to unbind C-z here in special way for evil
-(eval-after-load "evil-maps"
-  (dolist (map '(evil-motion-state-map
-                 evil-insert-state-map
-                 evil-emacs-state-map))
-    (define-key (eval map) "\C-z" nil)))
-
 ;; tell term to kill buffer after shell process exit
 (defadvice term-sentinel (around my-advice-term-sentinel (proc msg))
   (if (memq (process-status proc) '(signal exit))
@@ -74,14 +62,6 @@
   (ivy-read "Switch to term: " (ric-all-term-buffers)
             :action (lambda (x) (switch-to-buffer x))))
 
-(global-set-key (kbd "C-z") nil) ;make C-z a prefix key in most modes
-(global-set-key (kbd "C-z M") 'counsel-projectile-switch-project)
-(global-set-key (kbd "C-z m") 'projectile-persp-switch-project)
-(global-set-key (kbd "C-z b") 'counsel-projectile-switch-to-buffer)
-(global-set-key (kbd "C-z f") 'counsel-projectile-find-file)
-(global-set-key (kbd "C-z c") 'term-projectile-create-new) ;start a term from anywhere
-(global-set-key (kbd "C-z n") 'term-projectile-backward)
-(global-set-key (kbd "C-z p") 'term-projectile-forward)
 (global-set-key (kbd "C-z [") 'ric-term-toggle-line-char-mode)
 (global-set-key (kbd "C-z e") 'ric-toggle-evil-state)
 (global-set-key (kbd "C-z g") 'magit-status)
@@ -93,6 +73,7 @@
 (eval-after-load "term-mode"
   (add-hook 'term-mode-hook
             (lambda ()
+              (toggle-truncate-lines)                   ;fix occasional extra newline before prompt
               (define-key term-raw-map (kbd "C-c") nil) ;make prefix in term-mode
               (define-key term-raw-map (kbd "C-z") nil) ;make prefix in term-mode
               (define-key term-raw-map (kbd "C-x") nil) ;make prefix in term-mode

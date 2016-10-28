@@ -65,4 +65,10 @@
   (setq evil-normal-state-cursor '("LimeGreen" hbar)); _
   (setq evil-motion-state-cursor '("RoyalBlue" hbar)); _
   (add-hook 'post-command-hook 'set-evil-mode-line-face)
+  ;; need to unbind C-z here in special way for evil
+  (eval-after-load "evil-maps"
+    (dolist (map '(evil-motion-state-map
+                   evil-insert-state-map
+                   evil-emacs-state-map))
+      (define-key (eval map) "\C-z" nil)))
   )
