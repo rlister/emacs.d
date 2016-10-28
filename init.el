@@ -76,7 +76,7 @@
 (load-library "yaml-cfg")               ;yaml-mode
 (load-library "ag-cfg")                 ;ag, ag-project (silver searcher)
 (load-library "golang-cfg")             ;setup go-mode
-;; (load-library "nginx-cfg")              ;nginx-mode
+(load-library "nginx-cfg")              ;nginx-mode
 ;; (load-library "terraform-cfg")          ;terraform-mode
 ;; (load-library "elisp-cfg")              ;elisp hooks
 ;; (load-library "conf-cfg")               ;conf-mode
