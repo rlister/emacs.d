@@ -77,7 +77,6 @@
 (load-library "ag-cfg")                 ;ag, ag-project (silver searcher)
 (load-library "golang-cfg")             ;setup go-mode
 (load-library "nginx-cfg")              ;nginx-mode
-;; (load-library "conf-cfg")               ;conf-mode
 
 ;; (load-library "org-cfg")                ;todo lists, etc
 ;; (put 'dired-find-alternate-file 'disabled nil)
