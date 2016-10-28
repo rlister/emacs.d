@@ -67,7 +67,7 @@
 (load-library "git-gutter-fringe-cfg")
 (load-library "git-timemachine-cfg")    ;fixups for evil
 
-;; ;;; programming modes
+;; programming modes
 (load-library "ruby-cfg")               ;ruby-mode
 (load-library "chruby-cfg")             ;chruby package
 (load-library "js-cfg")                 ;javascript settings
@@ -75,7 +75,7 @@
 (load-library "shell-script-cfg")       ;shell-script-mode
 (load-library "yaml-cfg")               ;yaml-mode
 (load-library "ag-cfg")                 ;ag, ag-project (silver searcher)
-;; (load-library "golang-cfg")             ;setup go-mode
+(load-library "golang-cfg")             ;setup go-mode
 ;; (load-library "nginx-cfg")              ;nginx-mode
 ;; (load-library "terraform-cfg")          ;terraform-mode
 ;; (load-library "elisp-cfg")              ;elisp hooks

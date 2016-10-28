@@ -3,8 +3,10 @@
 ;; (setenv "PATH" (concat (getenv "PATH") ":" "/extra/path/element"))
 (setq exec-path (append exec-path (list (expand-file-name (concat (getenv "GOPATH") "/bin")))))
 
-;; go-mode from melpa
-(defun my-go-mode-hook ()
+;; godoc is installed to this homebrew location
+(add-to-list 'exec-path "/usr/local/opt/go/libexec/bin")
+
+(defun ric-go-mode-hook ()
   (add-hook 'before-save-hook 'gofmt-before-save)
   (setq tab-width 2)
   (setq indent-tabs-mode 1)
@@ -19,36 +21,36 @@
   (subword-mode)                        ;handle CamelCase
   )
 
-(add-hook 'go-mode-hook 'my-go-mode-hook)
+(use-package go-mode
+  :config
+  (add-hook 'go-mode-hook 'ric-go-mode-hook)
+  )
 
-;; godoc is installed to this homebrew location
-(add-to-list 'exec-path "/usr/local/opt/go/libexec/bin")
+;; (defun godoc (query)
+;;   "Show Go documentation for a query, much like M-x man."
+;;   (interactive (list (godoc--read-query)))
+;;   (unless (string= query "")
+;;     (set-process-sentinel
+;;      (start-process-shell-command "godoc" (godoc--get-buffer query)
+;;                                   (concat "/usr/local/opt/go/libexec/bin/godoc " query))
+;;      'godoc--buffer-sentinel)
+;;     nil))
 
-(defun godoc (query)
-  "Show Go documentation for a query, much like M-x man."
-  (interactive (list (godoc--read-query)))
-  (unless (string= query "")
-    (set-process-sentinel
-     (start-process-shell-command "godoc" (godoc--get-buffer query)
-                                  (concat "/usr/local/opt/go/libexec/bin/godoc " query))
-     'godoc--buffer-sentinel)
-    nil))
+;; ;; go get -u github.com/dougm/goflymake
+;; (add-to-list 'load-path (concat (getenv "GOPATH") "/src/github.com/dougm/goflymake"))
+;; (require 'go-flymake)
+;; (define-key go-mode-map (kbd "H-e") 'flymake-popup-current-error-menu)
 
-;; go get -u github.com/dougm/goflymake
-(add-to-list 'load-path (concat (getenv "GOPATH") "/src/github.com/dougm/goflymake"))
-(require 'go-flymake)
-(define-key go-mode-map (kbd "H-e") 'flymake-popup-current-error-menu)
+;; ;; M-x compile
+;; (setq compilation-ask-about-save nil) ; M-x compile should not prompt for save
+;; (global-set-key (kbd "H-c") 'compile)
 
-;; M-x compile
-(setq compilation-ask-about-save nil) ; M-x compile should not prompt for save
-(global-set-key (kbd "H-c") 'compile)
+;; ;; (setq compilation-save-buffers-predicate
+;; ;; 			(lambda ()
+;; ;; 				(string-prefix-p my-compilation-root (file-truename (buffer-file-name)))))
 
-;; (setq compilation-save-buffers-predicate
-;; 			(lambda ()
-;; 				(string-prefix-p my-compilation-root (file-truename (buffer-file-name)))))
-
-(defun go-run-current-file ()
-	"go run on current filename."
-	(interactive)
-	(shell-command (concat "go run " (buffer-file-name))))
-(define-key go-mode-map (kbd "H-r") 'go-run-current-file)
+;; (defun go-run-current-file ()
+;; 	"go run on current filename."
+;; 	(interactive)
+;; 	(shell-command (concat "go run " (buffer-file-name))))
+;; (define-key go-mode-map (kbd "H-r") 'go-run-current-file)
