@@ -3,7 +3,8 @@
 (add-to-list 'exec-path "/usr/local/bin") ;brew executables, etc
 (add-to-list 'load-path "~/code/emacs.d/lisp") ;my stuff to be loaded below
 
-(load-library "mac")                    ;some mac-specific settings
+(load-library "linux")                  ;linux-specific settings
+(load-library "mac")                    ;mac-specific settings
 (load-library "basics")                 ;basic display and key tweaks
 (load-library "brew-theme")             ;my color theme
 (load-library "term-cfg")
