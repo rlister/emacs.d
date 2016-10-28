@@ -8,6 +8,7 @@
 (load-library "brew-theme")             ;my color theme
 (load-library "term-cfg")
 (load-library "whitespace-cfg")         ;setup whitespace handling
+(load-library "imenu-cfg")              ;M-m
 
 ;; install use-package and load this
 (load-library "package-cfg")            ;add melpa and initialize
@@ -33,19 +34,17 @@
 ;; other packages
 (load-library "uniquify-cfg")           ;make buffer names unique
 (load-library "smartparens-cfg")        ;setup parentheses behaviour (inc smartparens)
-;; (load-library "aggressive-indent-cfg")  ;crazy
+;(load-library "aggressive-indent-cfg")  ;crazy
 
-;; ;;; movement
-;; (load-library "imenu-cfg")                ;M-m
-;; ;(load-library "toggle-selective-display-column") ;code folding with C-TAB
+;(load-library "toggle-selective-display-column") ;code folding with C-TAB
 
 ;; ;;; window movement
 ;; (load-library "window-movement")        ;moving between windows
 
-;; ;;; completion
-;; ;; (load-library "ac-complete-cfg")
-;; (load-library "pabbrev-cfg")
-;; ;;(load-library "discover-cfg")
+;; completion
+(load-library "pabbrev-cfg")
+;(load-library "discover-cfg")
+; (load-library "ac-complete-cfg")
 
 ;; packages for git
 (load-library "magit-cfg")              ;magit-mode
