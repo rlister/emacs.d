@@ -72,7 +72,7 @@
 (load-library "chruby-cfg")             ;chruby package
 (load-library "js-cfg")                 ;javascript settings
 (load-library "json-cfg")               ;json-mode and json-pretty-print
-;; (load-library "shell-script-cfg")       ;shell-script-mode
+(load-library "shell-script-cfg")       ;shell-script-mode
 ;; ;(load-library "yaml-cfg")               ;yaml-mode
 ;; (load-library "ag-cfg")                 ;ag, ag-project (silver searcher)
 ;; (load-library "golang-cfg")             ;setup go-mode
