@@ -48,3 +48,6 @@
 
 ;;make C-z a prefix key in most modes, we use this a lot later
 (global-set-key (kbd "C-z") nil)
+
+;;parenthesis matching, steady
+(show-paren-mode 1)

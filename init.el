@@ -55,6 +55,7 @@
 
 ;;; window movement
 (load-library "window-movement")        ;moving between windows
+(load-library "smartparens-cfg")        ;setup parentheses behaviour (inc smartparens)
 ;; (load-library "aggressive-indent-cfg")  ;crazy
 
 ;;; completion
