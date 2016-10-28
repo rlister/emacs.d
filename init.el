@@ -45,6 +45,7 @@
 (load-library "mwim-cfg")               ;intelligent beg/end of line
 (load-library "evil-cfg2")              ;setup evil-mode
 (load-library "evil-surround-cfg")
+(load-library "vim-empty-lines-mode")   ;tilde for traling empty lines
 (load-library "key-chord-cfg")          ;jk binding
 (load-library "projectile-cfg")
 (load-library "persp-projectile-cfg")

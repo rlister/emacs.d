@@ -29,10 +29,6 @@
 ;; was toggle-input-method
 (define-key global-map (kbd "C-\\") 'space-dwim)
 
-;; show empty lines with tilde; install from melpa
-(global-vim-empty-lines-mode 0)
-(add-hook 'prog-mode-hook 'vim-empty-lines-mode)
-(add-hook 'ruby-mode-hook 'vim-empty-lines-mode)
 
 ;; this is better when we have a fringe? install vi-tilde-fringe from melpa
 ;; and use in all programming modes
