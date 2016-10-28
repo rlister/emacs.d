@@ -78,5 +78,5 @@
 (load-library "golang-cfg")             ;setup go-mode
 (load-library "nginx-cfg")              ;nginx-mode
 
-;; (load-library "org-cfg")                ;todo lists, etc
+(load-library "org-cfg")                ;todo lists, etc
 ;; (put 'dired-find-alternate-file 'disabled nil)
