@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t -*-
+
 (defun ric-evil-undefine ()
   "Stop evil from ruining emacs smart tab behaviour."
   (let (evil-mode-map-alist)
@@ -25,6 +27,21 @@
   (define-key evil-normal-state-map (kbd "TAB") 'ric-evil-undefine)
   )
 
+(defun set-evil-mode-line-face ()
+  "Change mode-line faces based on evil state."
+  (let ((color
+         (cond
+          ((evil-normal-state-p)  (cons nil "palegreen"))
+          ((evil-insert-state-p)  (cons nil "indianred"))
+          ((evil-visual-state-p)  (cons nil "goldenrod"))
+          ((evil-replace-state-p) (cons nil "lightcoral"))
+          ((evil-motion-state-p)  (cons nil "royalblue"))
+          ((evil-emacs-state-p)   (cons nil "cadetblue"))
+          ((buffer-modified-p)    (cons "#006fa0" "#ffffff"))
+          (t                      (cons nil "gray")))))
+    (set-face-foreground 'mode-line (cdr color))
+    ))
+
 (use-package evil
   :config
   (evil-mode 1)
@@ -47,4 +64,5 @@
   (setq evil-emacs-state-cursor  '("LimeGreen" bar)); ⎸
   (setq evil-normal-state-cursor '("LimeGreen" hbar)); _
   (setq evil-motion-state-cursor '("RoyalBlue" hbar)); _
+  (add-hook 'post-command-hook 'set-evil-mode-line-face)
   )

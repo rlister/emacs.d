@@ -1,16 +1,13 @@
-;; from melpa
-(projectile-global-mode)
+;; (defun ric-projectile-switch-to-last-buffer ()
+;;   "Switch to most recent file in project, to be called by projectile-switch-project-action."
+;;   (interactive)
+;;   (find-file (car (projectile-recentf-files))))
 
-(defun ric-projectile-switch-to-last-buffer ()
-  "Switch to most recent file in project, to be called by projectile-switch-project-action."
-  (interactive)
-  (find-file (car (projectile-recentf-files))))
-
-(setq
- projectile-switch-project-action 'projectile-dired
- ;; projectile-switch-project-action 'projectile-recentf
- ;; projectile-switch-project-action 'ric-projectile-switch-to-last-buffer
- projectile-remember-window-configs nil)
-
-;; install persp-projectile from melpa
-(persp-mode)
+(use-package projectile
+  :config
+  (projectile-global-mode)
+  (setq projectile-switch-project-action 'projectile-dired)
+  (setq projectile-remember-window-configs nil)
+  ;; projectile-switch-project-action 'projectile-recentf
+  ;; projectile-switch-project-action 'ric-projectile-switch-to-last-buffer
+  )

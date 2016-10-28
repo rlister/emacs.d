@@ -46,6 +46,9 @@
 (load-library "evil-cfg2")              ;setup evil-mode
 (load-library "evil-surround-cfg")
 (load-library "key-chord-cfg")          ;jk binding
+(load-library "projectile-cfg")
+(load-library "persp-projectile-cfg")
+(load-library "mode-line")              ;setup modeline for evil
 
 ;;; window movement
 (load-library "window-movement")        ;moving between windows

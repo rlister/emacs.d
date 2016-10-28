@@ -1,3 +1,4 @@
+;; setup modeline with evil state tag
 (setq-default
  mode-line-format
  (list
