@@ -51,3 +51,5 @@
 
 ;;parenthesis matching, steady
 (show-paren-mode 1)
+
+(global-set-key (kbd "C-k") 'kill-this-buffer) ;changed from kill-buffer
