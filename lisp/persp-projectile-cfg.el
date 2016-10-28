@@ -1,4 +1,5 @@
 (use-package persp-projectile
+  :ensure t
   :config
   (persp-mode)
   :bind

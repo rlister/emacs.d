@@ -4,6 +4,7 @@
 ;;   (find-file (car (projectile-recentf-files))))
 
 (use-package projectile
+  :ensure t
   :config
   (projectile-global-mode)
   (setq projectile-switch-project-action 'projectile-dired)
