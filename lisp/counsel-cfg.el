@@ -1,4 +1,5 @@
 (use-package counsel
+  :ensure t
   :init
   :bind (
          ("C-x m"   . counsel-M-x)
