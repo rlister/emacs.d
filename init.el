@@ -78,7 +78,6 @@
 (load-library "golang-cfg")             ;setup go-mode
 (load-library "nginx-cfg")              ;nginx-mode
 ;; (load-library "terraform-cfg")          ;terraform-mode
-;; (load-library "elisp-cfg")              ;elisp hooks
 ;; (load-library "conf-cfg")               ;conf-mode
 
 ;; (load-library "org-cfg")                ;todo lists, etc
