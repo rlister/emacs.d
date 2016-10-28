@@ -1,18 +1,4 @@
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-;; (package-initialize)
-
 ;; (setq debug-on-error nil)               ;turn on for debugging
-
-;; ;; install cask from homebrew, manages package dependencies
-;; (require 'cask "/usr/local/Cellar/cask/0.7.4/cask.el")
-;; (cask-initialize)
-
-;; ;; adds/removes packages from Cask file automatically
-;; (require 'pallet)
-;; (pallet-mode t)
 
 (add-to-list 'exec-path "/usr/local/bin") ;brew executables, etc
 (add-to-list 'load-path "~/code/emacs.d/lisp") ;my stuff to be loaded below
