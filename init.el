@@ -63,7 +63,7 @@
 
 ;; packages for git
 (load-library "magit-cfg")              ;magit-mode
-(load-library "evil-magit")             ;fix keys in magit
+(load-library "evil-magit-cfg")         ;fix keys in magit
 (load-library "git-gutter-fringe-cfg")
 (load-library "git-timemachine-cfg")    ;fixups for evil
 
