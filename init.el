@@ -10,6 +10,7 @@
 (load-library "mac")                    ;mac-specific settings
 (load-library "basics")                 ;basic display and key tweaks
 (load-library "brew-theme")             ;my color theme
+(load-library "epa-cfg")                ;epa for gpg files
 (load-library "comment-region-or-line") ;C-z ;
 (load-library "term-cfg")
 (load-library "whitespace-cfg")         ;setup whitespace handling

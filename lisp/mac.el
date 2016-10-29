@@ -18,13 +18,6 @@
 
 ;; share terminal emacs kill-ring with OSX clipboard
 (when (eq system-type 'darwin)
-  ;; 2016-09-20 update of gpg2 in brew installed:
-  ;;   gnupg2: stable 2.0.30 (bottled)
-  ;; which broke passwd prompt (now complains about ioctl)
-  ;; as a workaround for now, install from https://gpgtools.org/
-  ;; this integrates with keychain and gives graphical prompt
-  ;; check back later for fix with gnupg
-  (setq epg-gpg-program "/usr/local/MacGPG2/bin/gpg2")
 
   ;; fettle tmux cut and paste
   (unless (display-graphic-p)
