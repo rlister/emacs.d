@@ -1,12 +1,12 @@
 ;;; -*- lexical-binding: t -*-
 
-(defun ric-evil-undefine ()
+(defun ric/evil-undefine ()
   "Stop evil from ruining emacs smart tab behaviour."
   (interactive)
   (let (evil-mode-map-alist)
     (call-interactively (key-binding (this-command-keys)))))
 
-(defun ric-evil-bindings ()
+(defun ric--evil-bindings ()
   "Hacky way to setup all the keybindings."
   (define-key evil-normal-state-map "\C-e" 'mwim-end-of-code-or-line)
   (define-key evil-insert-state-map "\C-e" 'mwim-end-of-code-or-line)
@@ -25,10 +25,10 @@
   (define-key evil-normal-state-map "\M-y" 'counsel-yank-pop)
   (define-key evil-insert-state-map "\M-y" 'counsel-yank-pop)
   (define-key evil-visual-state-map "\M-y" 'counsel-yank-pop)
-  (define-key evil-normal-state-map (kbd "TAB") 'ric-evil-undefine)
+  (define-key evil-normal-state-map (kbd "TAB") 'ric/evil-undefine)
   )
 
-(defun set-evil-mode-line-face ()
+(defun ric/set-evil-mode-line-face ()
   "Change mode-line faces based on evil state."
   (let ((color
          (cond
@@ -47,7 +47,7 @@
   :ensure t
   :config
   (evil-mode 1)
-  (ric-evil-bindings)
+  (ric--evil-bindings)
   (evil-set-initial-state 'package-menu-mode 'motion)
   (evil-set-initial-state 'org-agenda-mode   'motion)
   (evil-set-initial-state 'help-mode 'motion)
@@ -68,7 +68,7 @@
   (setq evil-emacs-state-cursor  '("LimeGreen" bar)); ⎸
   (setq evil-normal-state-cursor '("LimeGreen" hbar)); _
   (setq evil-motion-state-cursor '("RoyalBlue" hbar)); _
-  (add-hook 'post-command-hook 'set-evil-mode-line-face)
+  (add-hook 'post-command-hook 'ric/set-evil-mode-line-face)
   ;; need to unbind C-z here in special way for evil
   (eval-after-load "evil-maps"
     (dolist (map '(evil-motion-state-map
