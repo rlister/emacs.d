@@ -37,4 +37,5 @@
 ;;   (kbd "RET") 'magit-show-commit
 ;;   )
 
-(use-package evil-magit)
+(use-package evil-magit
+  :ensure t)
