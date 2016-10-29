@@ -2,6 +2,7 @@
 
 (defun ric-evil-undefine ()
   "Stop evil from ruining emacs smart tab behaviour."
+  (interactive)
   (let (evil-mode-map-alist)
     (call-interactively (key-binding (this-command-keys)))))
 
