@@ -8,6 +8,9 @@
   :init
   (ric//use-gnu-ls)
   (put 'dired-find-alternate-file 'disabled nil) ;no newbie hand-holding for 'a'
+  :bind
+  ("C-x d" . dired-jump)       ;dwim entering dired
+  ("C-x D" . dired)            ;legacy
   )
 
 ;; (defface ric-dired-executable '((t (:foreground "PaleGreen"))) "Exe files in dired.")

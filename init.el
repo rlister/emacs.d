@@ -6,10 +6,19 @@
 (load-library "package-cfg")            ;bootstrap package system
 (package-initialize t)                  ;put this here or package will add it
 
+;; OS-specfics
 (load-library "linux")                  ;linux-specific settings
 (load-library "mac")                    ;mac-specific settings
+
+;; basic appearance
 (load-library "basics")                 ;basic display and key tweaks
+(load-library "menu-bar-cfg")
+(load-library "tool-bar-cfg")
+(load-library "scroll-bar-cfg")
+(load-library "frame-cfg")
+(load-library "delsel-cfg")
 (load-library "brew-theme")             ;my color theme
+
 (load-library "epa-cfg")                ;epa for gpg files
 (load-library "simple-cfg")             ;delete-trailing-whitespace
 (load-library "ric/comment-dwim")       ;C-z ; for commenting
@@ -41,6 +50,7 @@
 
 ;; other packages
 (load-library "uniquify-cfg")           ;make buffer names unique
+(load-library "paren-cfg")              ;paren matching
 (load-library "smartparens-cfg")        ;setup parentheses behaviour (inc smartparens)
 ;(load-library "aggressive-indent-cfg")  ;crazy
 

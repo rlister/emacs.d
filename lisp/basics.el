@@ -1,9 +1,3 @@
-(menu-bar-mode -1)
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
-(blink-cursor-mode -1)             ;or I will kill you
-
-(delete-selection-mode 1)          ;replace region on typing (turns on transient-mark-mode)
 (setq default-directory "~/")      ;default dir
 (setq pop-up-windows nil)          ;do not create new windows for display-buffer stuff
 (setq inhibit-startup-message t)   ;no blurb when we start up
@@ -45,10 +39,3 @@
 
 ;;make C-z a prefix key in most modes, we use this a lot later
 (global-set-key (kbd "C-z") nil)
-
-;;parenthesis matching, steady
-(show-paren-mode 1)
-
-(global-set-key (kbd "C-x k") 'kill-this-buffer) ;changed from kill-buffer
-(global-set-key (kbd "C-x d") 'dired-jump)       ;dwim entering dired
-(global-set-key (kbd "C-x D") 'dired)            ;legacy
