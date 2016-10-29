@@ -53,3 +53,5 @@
 (show-paren-mode 1)
 
 (global-set-key (kbd "C-x k") 'kill-this-buffer) ;changed from kill-buffer
+(global-set-key (kbd "C-x d") 'dired-jump)       ;dwim entering dired
+(global-set-key (kbd "C-x D") 'dired)            ;legacy
