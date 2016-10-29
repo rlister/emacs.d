@@ -5,5 +5,3 @@
  'package-archives
  '("melpa" . "https://melpa.milkbox.net/packages/")
  t)
-
-(package-initialize)
