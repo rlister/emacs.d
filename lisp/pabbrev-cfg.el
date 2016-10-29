@@ -20,6 +20,7 @@
      (ivy-completing-read "Pabbrev: " (mapcar 'car suggestion-list)))))
 
 (use-package pabbrev
+  :ensure t
   :config
   ;; modes for which we want no pabbrev
   (put 'inf-ruby       'pabbrev-global-mode-excluded-modes t)
