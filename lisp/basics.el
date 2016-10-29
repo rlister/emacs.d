@@ -27,15 +27,5 @@
 ;; make sure help buffers popup in current window, not other-window
 (setq display-buffer-alist '((".*" display-buffer-same-window)))
 
-;; visible chars for TAB
-;; can reset this with (set-window-display-table nil nil)
-;; (let ((d (make-display-table)))
-;;   (aset d 9 (vector ?⇥ ? ? ? ? ? ? ? ))
-;;   (set-window-display-table nil d))
-
-;; use built-in midnight-mode to cleanup old buffers every night
-;; (require 'midnight)
-;; (setq clean-buffer-list-delay-general 1) ;kill buffers older than 1 day
-
 ;;make C-z a prefix key in most modes, we use this a lot later
 (global-set-key (kbd "C-z") nil)
