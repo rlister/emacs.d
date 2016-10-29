@@ -1,12 +1,12 @@
-(defun ric--use-gnu-ls ()
+(defun ric//use-gnu-ls ()
   "Find and set gnu ls on macs with homebrew."
   (let ((gls-path "/usr/local/bin/gls"))
-    (when (and ric/darwin-p (file-exists-p gls-path))
+    (when (and ric-darwin-p (file-exists-p gls-path))
       (setq insert-directory-program gls-path))))
 
 (use-package dired
   :init
-  (ric--use-gnu-ls)
+  (ric//use-gnu-ls)
   (put 'dired-find-alternate-file 'disabled nil) ;no newbie hand-holding for 'a'
   )
 

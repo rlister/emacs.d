@@ -6,6 +6,6 @@
 ;; check back later for fix with gnupg
 (use-package epa
   :init
-  (when ric/darwin-p
+  (when ric-darwin-p
     (setq epg-gpg-program "/usr/local/MacGPG2/bin/gpg2"))
   )
