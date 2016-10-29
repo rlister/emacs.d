@@ -1,4 +1,3 @@
-(toggle-text-mode-auto-fill)       ;always auto-fill in text mode,
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (defun ric-space-dwim (beg end)
