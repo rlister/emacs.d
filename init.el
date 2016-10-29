@@ -17,6 +17,7 @@
 (load-library "imenu-cfg")              ;M-m
 (load-library "text-cfg")               ;text-mode
 (load-library "dired-cfg")
+(load-library "man-cfg")                ;man pages
 
 ;; packages for swiper
 (load-library "swiper-cfg")

@@ -39,9 +39,6 @@
 ;;   (aset d 9 (vector ?⇥ ? ? ? ? ? ? ? ))
 ;;   (set-window-display-table nil d))
 
-;; man page in same window
-(setq Man-notify-method 'pushy)
-
 ;; use built-in midnight-mode to cleanup old buffers every night
 ;; (require 'midnight)
 ;; (setq clean-buffer-list-delay-general 1) ;kill buffers older than 1 day
