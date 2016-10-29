@@ -11,8 +11,8 @@
 (load-library "basics")                 ;basic display and key tweaks
 (load-library "brew-theme")             ;my color theme
 (load-library "epa-cfg")                ;epa for gpg files
-(load-library "comment-region-or-line") ;C-z ;
 (load-library "simple-cfg")             ;delete-trailing-whitespace
+(load-library "ric/comment-dwim")       ;C-z ; for commenting
 (load-library "term-cfg")
 (load-library "whitespace-cfg")         ;setup whitespace handling
 (load-library "imenu-cfg")              ;M-m
