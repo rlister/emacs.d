@@ -3,8 +3,8 @@
 (add-to-list 'exec-path "/usr/local/bin") ;brew executables, etc
 (add-to-list 'load-path "~/code/emacs.d/lisp") ;my stuff to be loaded below
 
-(package-initialize)                    ;put this here or package will add it
-(load-library "package-cfg")            ;add melpa and initialize
+(load-library "package-cfg")            ;bootstrap package system
+(package-initialize t)                  ;put this here or package will add it
 
 (load-library "linux")                  ;linux-specific settings
 (load-library "mac")                    ;mac-specific settings
