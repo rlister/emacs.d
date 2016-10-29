@@ -3,7 +3,10 @@
   :init
   (setq projectile-completion-system 'ivy)
   (setq magit-completing-read-function 'ivy-completing-read)
-  )
+  :bind (
+         ("C-x b" . ivy-switch-buffer)
+         ("C-x B" . switch-to-buffer)   ;legacy
+         ))
 
 ;; (defun ric-indent-or-complete ()
 ;;   "Use TAB to call indent or counsel-company."
