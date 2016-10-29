@@ -1,5 +1,5 @@
 ;; use this to insert word from ivy completion
-(defun pabbrev-suggestions-insert-word (word)
+(defun ric//pabbrev-suggestions-insert-word (word)
   "Insert word in place of current suggestion, with no attempt to kill pabbrev-buffer."
   (let ((point))
     (save-excursion
@@ -12,11 +12,11 @@
         (goto-char point))))
 
 ;; use ivy to choose between suggestions
-(defun pabbrev-suggestions-ivy (suggestion-list)
+(defun ric//pabbrev-suggestions-ivy (suggestion-list)
   "Use ivy to display menu of all pabbrev suggestions."
   (when suggestion-list
-    (pabbrev-suggestions-insert-word pabbrev-expand-previous-word)
-    (pabbrev-suggestions-insert-word
+    (ric//pabbrev-suggestions-insert-word pabbrev-expand-previous-word)
+    (ric//pabbrev-suggestions-insert-word
      (ivy-completing-read "Pabbrev: " (mapcar 'car suggestion-list)))))
 
 (use-package pabbrev
@@ -32,7 +32,7 @@
   (setq pabbrev-read-only-error nil)
 
   ;; change suggestions definition
-  (fset 'pabbrev-suggestions-goto-buffer 'pabbrev-suggestions-ivy)
+  (fset 'pabbrev-suggestions-goto-buffer 'ric//pabbrev-suggestions-ivy)
 
   (global-pabbrev-mode t)
   )
