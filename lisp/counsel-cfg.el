@@ -10,5 +10,5 @@
          ("M-m"     . counsel-imenu)
          ("C-x C-f" . counsel-find-file)
          ("C-s"     . counsel-grep-or-swiper)
-         ("C-S"     . isearch-forward)  ;legacy
+         ;; ("C-S"     . isearch-forward)  ;legacy
          ))
