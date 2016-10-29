@@ -11,4 +11,6 @@
   (setq projectile-remember-window-configs nil)
   ;; projectile-switch-project-action 'projectile-recentf
   ;; projectile-switch-project-action 'ric-projectile-switch-to-last-buffer
-  )
+  :bind (
+         ("C-z D" . projectile-dired)
+         ))

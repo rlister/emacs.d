@@ -6,4 +6,5 @@
          ("C-x f"   . counsel-projectile-find-file)
          ("C-z f"   . counsel-projectile-find-file)
          ("C-z C-f" . counsel-projectile-find-file)
+         ("C-z d"   . counsel-projectile-find-dir)
          ))
