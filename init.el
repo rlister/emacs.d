@@ -1,4 +1,4 @@
-;; (setq debug-on-error nil)               ;turn on for debugging
+(setq debug-on-error t)               ;turn on for debugging
 
 (add-to-list 'exec-path "/usr/local/bin") ;brew executables, etc
 (add-to-list 'load-path "~/code/emacs.d/lisp") ;my stuff to be loaded below
@@ -10,14 +10,16 @@
 (load-library "linux")                  ;linux-specific settings
 (load-library "mac")                    ;mac-specific settings
 
-;; basic appearance
+;; basic appearance and behaviour
 (load-library "basics")                 ;basic display and key tweaks
 (load-library "menu-bar-cfg")
 (load-library "tool-bar-cfg")
 (load-library "scroll-bar-cfg")
 (load-library "frame-cfg")
 (load-library "delsel-cfg")
+(load-library "files-cfg")
 (load-library "brew-theme")             ;my color theme
+(load-library "narrow-cfg")
 
 (load-library "epa-cfg")                ;epa for gpg files
 (load-library "simple-cfg")             ;delete-trailing-whitespace
