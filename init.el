@@ -3,6 +3,9 @@
 (add-to-list 'exec-path "/usr/local/bin") ;brew executables, etc
 (add-to-list 'load-path "~/code/emacs.d/lisp") ;my stuff to be loaded below
 
+(package-initialize)                    ;put this here or package will add it
+(load-library "package-cfg")            ;add melpa and initialize
+
 (load-library "linux")                  ;linux-specific settings
 (load-library "mac")                    ;mac-specific settings
 (load-library "basics")                 ;basic display and key tweaks
@@ -12,13 +15,11 @@
 (load-library "whitespace-cfg")         ;setup whitespace handling
 (load-library "imenu-cfg")              ;M-m
 
-;; install use-package and load this
-(load-library "package-cfg")            ;add melpa and initialize
-
 ;; packages for swiper
 (load-library "swiper-cfg")
 (load-library "counsel-cfg")
 (load-library "ivy-cfg")
+(load-library "counsel-projectile-cfg")
 
 ;; packages for evil mode
 (load-library "mwim-cfg")               ;intelligent beg/end of line
