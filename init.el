@@ -13,8 +13,8 @@
 (load-library "epa-cfg")                ;epa for gpg files
 (load-library "simple-cfg")             ;delete-trailing-whitespace
 (load-library "ric/comment-dwim")       ;C-z ; for commenting
+(load-library "ric-space-dwim")         ;C-\ to compress whitespace
 (load-library "term-cfg")
-(load-library "whitespace-cfg")         ;setup whitespace handling
 (load-library "imenu-cfg")              ;M-m
 (load-library "text-cfg")               ;text-mode
 (load-library "dired-cfg")
