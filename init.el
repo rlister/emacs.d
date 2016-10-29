@@ -15,6 +15,7 @@
 (load-library "term-cfg")
 (load-library "whitespace-cfg")         ;setup whitespace handling
 (load-library "imenu-cfg")              ;M-m
+(load-library "text-cfg")               ;text-mode
 (load-library "dired-cfg")
 
 ;; packages for swiper
