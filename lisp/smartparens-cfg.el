@@ -1,12 +1,14 @@
 (use-package smartparens
   :ensure t
+  :init
+  (smartparens-global-mode t)
   :config
-  (smartparens-global-mode t) ;smartparens-mode, install from melpa
-  ;; default cfgs include important stuff like disable electric ' in word and lisp modes
-  (require 'smartparens-config)
-  ;; extra pairs for erb
-  (sp-pair "<% " " %>")
-  (sp-pair "<%= " " %>")
+  (progn
+    (require 'smartparens-config) ;default cfgs include e.g. disable electric ' in word and lisp modes
+    (smartparens-global-mode t)
+    (sp-pair "<% " " %>")                 ;extra pairs for erb
+    (sp-pair "<%= " " %>")
+    )
   :bind (
          ;; slurp sexps into current delimiter pair
          ("M-0" . sp-forward-slurp-sexp)
