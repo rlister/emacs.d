@@ -59,7 +59,15 @@
 (defun ric-switch-term ()
   "Like ivy-switch-buffer, but for term buffers only."
   (interactive)
-  (ivy-read "Switch to term: " (ric-all-term-buffers)
+  (ivy-read "Switch to term: "
+            (ric-all-term-buffers)
+            :action (lambda (x) (switch-to-buffer x))))
+
+(defun ric-projectile-switch-term ()
+  "Like ivy-switch-buffer, but for term buffers in this project."
+  (interactive)
+  (ivy-read (projectile-prepend-project-name "Switch to term: ")
+            (ric-project-term-buffers)
             :action (lambda (x) (switch-to-buffer x))))
 
 (global-set-key (kbd "C-z [") 'ric-term-toggle-line-char-mode)
@@ -67,6 +75,7 @@
 (global-set-key (kbd "C-z g") 'magit-status)
 (global-set-key (kbd "C-z l") 'ric-project-term-buffer-switcher)
 (global-set-key (kbd "C-x t") 'ric-switch-term)
+(global-set-key (kbd "C-z t") 'ric-projectile-switch-term)
 
 ;; allow some special keys in term-mode
 (setq term-unbind-key-list '("C-z" "C-x" "M-x" "C-h" "C-c"))
