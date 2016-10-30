@@ -29,6 +29,7 @@
 (load-library "text-cfg")               ;text-mode
 (load-library "dired-cfg")
 (load-library "man-cfg")                ;man pages
+(load-library "align-cfg")              ;C-x :
 
 ;; packages for swiper
 (load-library "swiper-cfg")
@@ -75,6 +76,7 @@
 ;; programming modes
 (load-library "ruby-cfg")               ;ruby-mode
 (load-library "chruby-cfg")             ;chruby package
+(load-library "inf-ruby-cfg")           ;irb, pry, etc
 (load-library "js-cfg")                 ;javascript settings
 (load-library "json-cfg")               ;json-mode and json-pretty-print
 (load-library "shell-script-cfg")       ;shell-script-mode
