@@ -18,8 +18,8 @@
 (load-library "frame-cfg")
 (load-library "delsel-cfg")
 (load-library "files-cfg")
-(load-library "brew-theme")             ;my color theme
 (load-library "narrow-cfg")
+(load-library "brew-theme")             ;my color theme
 
 (load-library "epa-cfg")                ;epa for gpg files
 (load-library "simple-cfg")             ;delete-trailing-whitespace
