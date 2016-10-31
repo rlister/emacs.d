@@ -39,6 +39,7 @@
 (load-library "counsel-cfg")
 (load-library "ivy-cfg")
 (load-library "counsel-projectile-cfg")
+(load-library "avy-cfg")                ;C-j for jumping
 
 ;; packages for evil mode
 (load-library "mwim-cfg")               ;intelligent beg/end of line

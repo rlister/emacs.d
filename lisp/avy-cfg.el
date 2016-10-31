@@ -1,8 +1,8 @@
-;; from melpa
-(setq avy-background t) ; gray background
-(setq avy-all-windows nil) ; should just show candidates from current window
-(setq avy-case-fold-search nil) ; do not ignore case
-
-;; jump to exact case given
-(setq avy-keys (number-sequence ?a ?z))
-;; (setq avy-keys (append (number-sequence ?a ?z) (number-sequence ?A ?Z)))
+(use-package avy
+  :init
+  (setq avy-background t)         ; gray background
+  (setq avy-all-windows nil)      ; should just show candidates from current window
+  (setq avy-case-fold-search nil) ; do not ignore case
+  (setq avy-keys (number-sequence ?a ?z))
+  :bind ("C-j" . avy-goto-word-1)
+  )
