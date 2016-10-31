@@ -20,6 +20,7 @@
 (load-library "files-cfg")
 (load-library "narrow-cfg")
 (load-library "brew-theme")             ;my color theme
+(load-library "face-remap-cfg")         ;M-{=,-,0}
 
 (load-library "epa-cfg")                ;epa for gpg files
 (load-library "simple-cfg")             ;delete-trailing-whitespace
