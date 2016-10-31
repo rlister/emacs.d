@@ -1,4 +1,4 @@
-(add-hook 'js-mode-hook
-          '(lambda ()
-             (setq js-indent-level 2)
-             ))
+(use-package js
+  :init
+  (setq js-indent-level 2)
+  )
