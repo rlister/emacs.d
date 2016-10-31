@@ -1,6 +1,8 @@
 (use-package align
   :bind
   ("C-x :" . ric/align-to-colon)
+  :config
+  (defalias 'ar 'align-regexp)
   )
 
 (defun ric/align-to-colon (begin end)
