@@ -87,4 +87,4 @@
 (load-library "nginx-cfg")              ;nginx-mode
 
 (load-library "org-cfg")                ;todo lists, etc
-;; (put 'dired-find-alternate-file 'disabled nil)
+(load-library "org-protocol-cfg")       ;capture to org buffers
