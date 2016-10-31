@@ -76,6 +76,7 @@
 (load-library "evil-magit-cfg")         ;fix keys in magit
 (load-library "git-gutter-fringe-cfg")
 (load-library "git-timemachine-cfg")    ;fixups for evil
+(load-library "git-link-cfg")           ;git-link
 
 ;; programming modes
 (load-library "chruby-cfg")             ;chruby package
