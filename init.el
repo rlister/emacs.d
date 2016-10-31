@@ -74,9 +74,9 @@
 (load-library "git-timemachine-cfg")    ;fixups for evil
 
 ;; programming modes
-(load-library "ruby-cfg")               ;ruby-mode
 (load-library "chruby-cfg")             ;chruby package
 (load-library "inf-ruby-cfg")           ;irb, pry, etc
+(load-library "ruby-cfg")               ;ruby-mode
 (load-library "js-cfg")                 ;javascript settings
 (load-library "json-cfg")               ;json-mode and json-pretty-print
 (load-library "shell-script-cfg")       ;shell-script-mode
