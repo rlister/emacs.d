@@ -31,6 +31,7 @@
 (load-library "dired-k-cfg")            ;git status and colour
 (load-library "man-cfg")                ;man pages
 (load-library "align-cfg")              ;C-x :
+(load-library "winner-cfg")             ;C-c left/right
 
 ;; packages for swiper
 (load-library "swiper-cfg")
