@@ -3,7 +3,6 @@
 (setq ric-cocoa-p  (cond ((equal window-system 'ns) t)))
 
 (when ric-cocoa-p
-  (global-set-key (kbd "M-RET") 'toggle-frame-fullscreen)
   (setq ns-auto-hide-menu-bar nil)
   (setq ns-command-modifier 'meta)    ;Command key is Meta
   (setq ns-option-modifier 'super)    ;option key is Super
