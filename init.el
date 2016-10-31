@@ -34,6 +34,7 @@
 (load-library "man-cfg")                ;man pages
 (load-library "align-cfg")              ;C-x :
 (load-library "winner-cfg")             ;C-c left/right
+(load-library "windsize-cfg")           ;M-{left,right,up,down}
 
 ;; packages for swiper
 (load-library "swiper-cfg")
