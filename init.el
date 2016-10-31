@@ -29,6 +29,7 @@
 (load-library "text-cfg")               ;text-mode
 (load-library "dired-cfg")
 (load-library "dired-k-cfg")            ;git status and colour
+(load-library "wdired-cfg")             ;e to edit dired filenames
 (load-library "man-cfg")                ;man pages
 (load-library "align-cfg")              ;C-x :
 (load-library "winner-cfg")             ;C-c left/right
