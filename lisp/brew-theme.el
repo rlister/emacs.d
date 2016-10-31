@@ -353,6 +353,11 @@
    `(diredp-no-priv     ((t (:foreground ,brew-bg5))))
    `(diredp-dir-heading ((t (:foreground ,cyan :background nil))))
 
+   `(dired-k-directory  ((t (:foreground "RoyalBlue"))))
+   `(dired-k-modified   ((t (:foreground "IndianRed"))))
+   `(dired-k-commited   ((t (:foreground "PaleGreen")))) ;sic
+   `(dired-k-untracked  ((t (:foreground "GoldenRod"))))
+
    ;; hi-lock mode, e.g. highlight-* commands
    `(hi-yellow ((t (:background "#A57706"))))
    `(hi-blue   ((t (:background "MidnightBlue"))))

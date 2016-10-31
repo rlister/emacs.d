@@ -30,3 +30,5 @@
 ;;   (lambda () (interactive) (find-alternate-file ".."))) ; was dired-up-directory
 ;; (define-key dired-mode-map [M-up]
 ;;   (lambda () (interactive) (find-alternate-file "..")))
+
+;; (put 'dired-find-alternate-file 'disabled nil)
