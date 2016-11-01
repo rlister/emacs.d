@@ -1,4 +1,4 @@
-(defun transpose-windows (arg)
+(defun ric/transpose-windows (arg)
   "Transpose the buffers shown in two windows."
   (interactive "p")
   (let ((selector (if (>= arg 0) 'next-window 'previous-window)))
@@ -10,4 +10,4 @@
         (select-window (funcall selector)))
       (setq arg (if (plusp arg) (1- arg) (1+ arg))))))
 
-(defalias 'swap 'transpose-windows)
+(defalias 'swap 'ric/transpose-windows)
