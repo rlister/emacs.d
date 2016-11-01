@@ -15,6 +15,7 @@
          ("C-x m" . counsel-M-x) ;term-mode is ignoring the global bind of this
          ("C-y" . term-paste) ;to make yank work properly
          ("M-y" . ric/term-counsel-yank-pop)
+         ("M-,"     . counsel-projectile-switch-project)
          ))
 
 ;; tell term to kill buffer after shell process exit
