@@ -14,7 +14,7 @@
   (defalias 'gco   'magit-checkout)
   (defalias 'gb    'magit-branch)
   (defalias 'gm    'magit-merge)
-  (defalias 'gu    'magit-fetch-all)
+  (defalias 'gu    'ric/magit-git-up)
   (defalias 'gp    'magit-push-current-to-upstream)
   (defalias 'gbco  'magit-branch-and-checkout)
 
@@ -23,4 +23,10 @@
     (window-configuration-to-register :magit-fullscreen)
     ad-do-it
     (delete-other-windows))
+
+  (defun ric/magit-git-up ()
+    "Do a git pull with rebase and autostash, like git-up."
+    (interactive)
+    (run-hooks 'magit-credential-hook)
+    (magit-run-git-with-editor "pull" "--rebase" "--autostash"))
   )
