@@ -27,6 +27,7 @@
 (load-library "ric-comment-dwim")       ;C-z ; for commenting
 (load-library "ric-space-dwim")         ;C-\ to compress whitespace
 (load-library "ric-transpose-windows")  ;swap
+(load-library "ric-mini-shell-cfg")     ;C-,
 (load-library "imenu-cfg")              ;M-m
 (load-library "text-cfg")               ;text-mode
 (load-library "dired-cfg")
