@@ -3,16 +3,15 @@
 (set-default 'cursor-type 'bar)
 
 (let (
-      (brew-fg  "#839496")
-      (brew-hl  "#333333")
-      (brew-bg  "#1A1A1A")
-      (brew-bg0 "#0b0b0b")
-      (brew-bg0a "#0f0f0f")
-      (brew-bg1 "#1b1b1b")
-      (brew-bg2 "#2b2b2b")
-      (brew-bg3 "#3f3f3f")
-      (brew-bg4 "#4f4f4f")
-      (brew-bg5 "#5f5f5f")
+      (brew-fg  "#839496")              ;azure4-ish?
+      (brew-hl  "grey20")              ;"gray20"
+      (brew-bg  "grey10")
+      (brew-bg0 "grey5")
+      (brew-bg1 "grey10")
+      (brew-bg2 "grey17")
+      (brew-bg3 "grey25")
+      (brew-bg4 "grey31")
+      (brew-bg5 "grey37")
       )
 
   (custom-theme-set-faces
@@ -324,6 +323,7 @@
    ;; flymake
    `(flymake-errline ((t (:underline (:style wave :color "IndianRed")))))
 
+   `(dired-directory    ((t (:foreground "LightSkyBlue"))))
    `(diredp-number      ((t (:foreground "PaleGoldenrod"))))
    `(diredp-file-name   ((t (:inherit default))))
    `(diredp-file-suffix ((t (:foreground "PaleGreen"))))
