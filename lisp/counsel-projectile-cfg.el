@@ -1,6 +1,7 @@
 (use-package counsel-projectile
   :ensure t
   :bind (
+         ("M-,"     . counsel-projectile-switch-project)
          ("C-z m"   . counsel-projectile-switch-project)
          ("C-z M"   . counsel-projectile-switch-project)
          ("C-z b"   . counsel-projectile-switch-to-buffer)
