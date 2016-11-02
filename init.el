@@ -98,4 +98,4 @@
 (load-library "nginx-cfg")              ;nginx-mode
 
 (load-library "org-cfg")                ;todo lists, etc
-(load-library "org-protocol-cfg")       ;capture to org buffers
+(load-library "org-capture-cfg")        ;capture to org buffers
