@@ -1,18 +1,13 @@
 (use-package org
   :init
   (add-hook 'org-add-hook 'ric//modify-org-done-face)
-  :bind (
-         :map org-mode-map
-         ("C-c d" . org-cut-subtree)
-         )
-  :config
   (setq org-replace-disputed-keys 't
         org-use-speed-commands 't ;use speedkeys at start of headline (? for list of keys)
         org-startup-folded t      ;no expand all levels on opening file
         org-src-fontify-natively t
         org-directory "~/notes"
-        ;; org-mobile-directory "~/Dropbox/Apps/MobileOrg"
         org-agenda-files '("~/notes/calendar.org" "~/notes/listers.org" "~/notes/inbox.org")
+        ;; org-mobile-directory "~/Dropbox/Apps/MobileOrg"
         ;; org-mobile-inbox-for-pull "~/notes/Inbox.org"
         org-todo-keywords '("MTNG" "TODO" "TEST" "|" "DONE" "DUMP")
         org-todo-interpretation 'sequence
@@ -26,16 +21,10 @@
           ("DEFERRED" .  (:foreground "yellow"         :weight 'normal))
           ("DONE" .      (:foreground "ForestGreen"    :weight 'normal))
           )
-        org-capture-templates
-        '(("t" "Todo" entry (file+headline "~/notes/inbox.org" "Inbox")
-           "* TODO %?\n  %i")
-          ("x" "store todo item from command line" entry (file+headline "~/notes/inbox.org" "Inbox")
-           ;; "* TODO %:link : %:description : %i" :immediate-finish t)
-           "* TODO %:link" :immediate-finish t)
-          ("b" "Bookmark" entry (file+headline "~/notes/bookmarks.org" "Bookmarks")
-           "* %?\n  %i\n  %a")
-          ("j" "Journal" entry (file+datetree "~/notes/journal.org" "Journal")
-           "* %?\nEntered on %U\n  %i\n  %a"))
+        )
+  :bind (
+         :map org-mode-map
+         ("C-c d" . org-cut-subtree)
         )
   )
 
