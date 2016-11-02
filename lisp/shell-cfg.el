@@ -1,6 +1,10 @@
 (use-package shell
   :init
   (setq comint-process-echoes t)        ;do not echo command
+  :bind (
+         :shell-mode-map
+         ("C-a" . mwim-beginning-of-code-or-line)
+         )
   )
 
 ;; ;; below uses ido for dir completion in shell
