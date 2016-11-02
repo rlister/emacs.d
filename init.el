@@ -27,7 +27,6 @@
 (load-library "ric-comment-dwim")       ;C-z ; for commenting
 (load-library "ric-space-dwim")         ;C-\ to compress whitespace
 (load-library "ric-transpose-windows")  ;swap
-(load-library "ric-mini-shell-cfg")     ;C-,
 (load-library "imenu-cfg")              ;M-m
 (load-library "text-cfg")               ;text-mode
 (load-library "dired-cfg")
@@ -56,8 +55,12 @@
 (load-library "projectile-cfg")
 ;; (load-library "persp-projectile-cfg")
 (load-library "mode-line")              ;setup modeline for evil and projectile
+
+;; terminals and shells
 (load-library "term-cfg")               ;term-mode
 (load-library "term-projectile-cfg")    ;manage terms per project
+(load-library "shell-cfg")              ;shell
+(load-library "ric-mini-shell-cfg")     ;C-,
 
 ;; other packages
 (load-library "uniquify-cfg")           ;make buffer names unique
