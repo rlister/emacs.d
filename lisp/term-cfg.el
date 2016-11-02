@@ -1,7 +1,4 @@
 (use-package term
-  :config
-  (ad-activate 'term-sentinel)                                 ;for old-style defadvice
-  (setq term-unbind-key-list '("C-z" "C-x" "M-x" "C-h" "C-c")) ;allow some special keys in term-mode
   :bind (
          ("C-z [" . ric/term-toggle-line-char-mode)
          ("C-z e" . ric/toggle-evil-state)
@@ -16,17 +13,22 @@
          ("C-y" . term-paste) ;to make yank work properly
          ("M-y" . ric/term-counsel-yank-pop)
          ("M-,"     . counsel-projectile-switch-project)
-         ))
+         )
+  :config
+  (setq term-unbind-key-list '("C-z" "C-x" "M-x" "C-h" "C-c")) ;allow some special keys in term-mode
 
-;; tell term to kill buffer after shell process exit
-;; TODO: replace this with new advice system for newer emacsen
-;; e.g. wrap this in (when (version<= "24.4" emacs-version))
-(defadvice term-sentinel (around my-advice-term-sentinel (proc msg))
-  (if (memq (process-status proc) '(signal exit))
-      (let ((buffer (process-buffer proc)))
-        ad-do-it
-        (kill-buffer buffer))
-    ad-do-it))
+  ;; tell term to kill buffer after shell process exit
+  ;; TODO: replace this with new advice system for newer emacsen
+  ;; e.g. wrap this in (when (version<= "24.4" emacs-version))
+  (defadvice term-sentinel (around my-advice-term-sentinel (proc msg))
+    (if (memq (process-status proc) '(signal exit))
+        (let ((buffer (process-buffer proc)))
+          ad-do-it
+          (kill-buffer buffer))
+      ad-do-it))
+  (ad-activate 'term-sentinel)                                 ;for old-style defadvice
+
+  )
 
 ;; TODO: this will replace defadvice for emacs >24.3
 ;; see https://www.gnu.org/software/emacs/manual/html_node/elisp/Porting-old-advice.html#Porting-old-advice
