@@ -28,6 +28,12 @@
       ad-do-it))
   (ad-activate 'term-sentinel)                                 ;for old-style defadvice
 
+  ;; tell term buffer to keep ~ for HOME in buffer name
+  (defadvice term-handle-ansi-terminal-messages (around ric//skip-expand-file-name activate)
+    "Hack expand-file-name as a no-op so term buffers preserve dir ~ in buffer name."
+    (cl-letf (((symbol-function 'expand-file-name)
+               (lambda (name) name)))
+      ad-do-it))
   )
 
 ;; TODO: this will replace defadvice for emacs >24.3
