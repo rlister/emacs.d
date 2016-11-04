@@ -32,12 +32,12 @@
   "Change mode-line faces based on evil state."
   (let ((color
          (cond
-          ((evil-normal-state-p)  (cons nil "palegreen"))
-          ((evil-insert-state-p)  (cons nil "indianred"))
+          ((evil-normal-state-p)  (cons nil "LimeGreen"))
+          ((evil-insert-state-p)  (cons nil "IndianRed"))
           ((evil-visual-state-p)  (cons nil "goldenrod"))
-          ((evil-replace-state-p) (cons nil "lightcoral"))
-          ((evil-motion-state-p)  (cons nil "royalblue"))
-          ((evil-emacs-state-p)   (cons nil "cadetblue"))
+          ((evil-replace-state-p) (cons nil "LightCoral"))
+          ((evil-motion-state-p)  (cons nil "RoyalBlue"))
+          ((evil-emacs-state-p)   (cons nil "CadetBlue"))
           ((buffer-modified-p)    (cons "#006fa0" "#ffffff"))
           (t                      (cons nil "gray")))))
     (set-face-foreground 'mode-line (cdr color))
