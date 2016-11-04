@@ -26,6 +26,8 @@
    `(mode-line-highlight        ((t (:foreground "Orange"))))
    `(mode-line-emphasis         ((t (:foreground "Cyan"))))
 
+   `(which-func                 ((t (:foreground "SlateGray3")))) ;function lighter in mode-line
+
    `(fringe                     ((t (:inherit default))))
    `(header-line                ((t (:inherit default))))
    `(highlight                  ((t (:foreground nil :background ,brew-hl :underline nil))))
