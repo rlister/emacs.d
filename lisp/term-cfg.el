@@ -1,4 +1,6 @@
 (use-package term
+  :init
+  (add-hook 'term-mode-hook 'term-pager-enable)
   :bind (
          ("C-z [" . ric/term-toggle-line-char-mode)
          ("C-z e" . ric/toggle-evil-state)
