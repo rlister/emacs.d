@@ -1,5 +1,6 @@
 (use-package smartparens
   :ensure t
+  :diminish smartparens-mode
   :init
   (smartparens-global-mode t)
   :config

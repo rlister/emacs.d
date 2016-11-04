@@ -45,6 +45,7 @@
 
 (use-package evil
   :ensure t
+  :diminish undo-tree-mode
   :config
   (evil-mode 1)
   (ric--evil-bindings)

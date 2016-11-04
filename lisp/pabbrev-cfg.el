@@ -21,6 +21,7 @@
 
 (use-package pabbrev
   :ensure t
+  :diminish pabbrev-mode
   :config
   ;; modes for which we want no pabbrev
   (put 'inf-ruby       'pabbrev-global-mode-excluded-modes t)

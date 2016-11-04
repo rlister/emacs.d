@@ -5,6 +5,7 @@
 
 (use-package projectile
   :ensure t
+  :diminish projectile-mode
   :config
   (projectile-global-mode)
   (setq projectile-switch-project-action 'projectile-dired)
@@ -13,4 +14,5 @@
   ;; projectile-switch-project-action 'ric-projectile-switch-to-last-buffer
   :bind (
          ("C-z D" . projectile-dired)
-         ))
+         )
+  )
