@@ -85,6 +85,7 @@
 (load-library "git-gutter-fringe-cfg")
 (load-library "git-timemachine-cfg")    ;fixups for evil
 (load-library "git-link-cfg")           ;git-link
+(load-library "autorevert-cfg")         ;update git branch in modeline
 
 ;; programming modes
 (load-library "chruby-cfg")             ;chruby package
