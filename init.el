@@ -56,6 +56,7 @@
 (load-library "projectile-cfg")
 ;; (load-library "persp-projectile-cfg")
 (load-library "mode-line")              ;setup modeline for evil and projectile
+(load-library "which-func-cfg")         ;which-function in mode-line
 
 ;; terminals and shells
 (load-library "term-cfg")               ;term-mode
