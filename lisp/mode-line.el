@@ -1,14 +1,27 @@
-;; setup modeline with evil state tag
+(defvar ric-mode-line-project
+  '(:eval (format "[%s]" (projectile-project-name)))
+  "Mode line entry for projectile project name.")
+(put 'ric-mode-line-project 'risky-local-variable t)
+
+;; basically the default mode-line-format with few additions
 (setq-default
  mode-line-format
  (list
-  '(:eval evil-mode-line-tag)
-  '(:eval (propertize (format "[%s]" (projectile-project-name))'face 'font-lock-type-face))
+  "%e"
+  'mode-line-front-space
+  'mode-line-mule-info
+  'mode-line-client
+  'mode-line-modified
+  'mode-line-remote
+  'mode-line-frame-identification
+  'ric-mode-line-project
   " "
-  '(:eval (propertize "%b" 'face 'mode-line-buffer-id))
-  " " mode-line-modified " "
-  '(:eval (propertize "%m" 'face 'font-lock-comment-face))
-  '(:eval (propertize (or vc-mode " -") 'face 'font-lock-comment-face))
-  " "
-  '(:eval mode-line-position)
+  'mode-line-buffer-identification
+  "   "
+  'mode-line-position
+  '(vc-mode vc-mode)
+  "  "
+  'mode-line-modes
+  'mode-line-misc-info
+  'mode-line-end-spaces
   ))
