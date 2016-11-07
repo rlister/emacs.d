@@ -3,5 +3,7 @@
   :mode (
          "\\.yml\\'"
          "\\.yml.erb\\'"
+         "\\.service\\'"
+         "\\.timer\\'"
          )
   )
