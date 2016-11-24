@@ -15,6 +15,7 @@
          ("C-y" . term-paste) ;to make yank work properly
          ("M-y" . ric/term-counsel-yank-pop)
          ("M-,"     . counsel-projectile-switch-project)
+         ("M-:" . eval-expression)
          )
   :config
   (setq term-unbind-key-list '("C-z" "C-x" "M-x" "C-h" "C-c")) ;allow some special keys in term-mode
