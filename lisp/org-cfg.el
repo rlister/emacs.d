@@ -25,6 +25,7 @@
   :bind (
          :map org-mode-map
          ("C-c d" . org-cut-subtree)
+         ("C-c a" . org-agenda)
         )
   )
 
