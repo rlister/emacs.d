@@ -17,6 +17,13 @@
   "List of term buffers in current project."
   (-filter 'ric//term-projectile-string-match (projectile-project-buffer-names)))
 
+;; (defun ric/term-projectile-backward ()
+;;   "Switch backward to the next term-projectile ansi-term buffer.
+;; Make a new one if none exists."
+;;   (interactive)
+;;   (message "%s" projectile-project-root)
+;;   (term-projectile-switch :delta -1 :symbol (intern (projectile-project-root))))
+
 (defun ric//term-projectile-non-term-buffers ()
   "List of non-term buffers in current project."
   (-remove 'ric//term-projectile-string-match (projectile-project-buffer-names)))
