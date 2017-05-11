@@ -99,6 +99,7 @@
 (load-library "ag-cfg")                 ;ag, ag-project (silver searcher)
 (load-library "golang-cfg")             ;setup go-mode
 (load-library "nginx-cfg")              ;nginx-mode
+(load-library "markdown-cfg")           ;markdown-mode
 
 (load-library "org-cfg")                ;todo lists, etc
 (load-library "org-capture-cfg")        ;capture to org buffers
