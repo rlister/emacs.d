@@ -1,4 +1,5 @@
 (use-package avy
+  :ensure t
   :init
   (setq avy-background t)         ; gray background
   (setq avy-all-windows nil)      ; should just show candidates from current window
