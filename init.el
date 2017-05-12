@@ -100,6 +100,7 @@
 (load-library "golang-cfg")             ;setup go-mode
 (load-library "nginx-cfg")              ;nginx-mode
 (load-library "markdown-cfg")           ;markdown-mode
+(load-library "dockerfile-cfg")         ;dockerfile-mode
 
 (load-library "org-cfg")                ;todo lists, etc
 (load-library "org-capture-cfg")        ;capture to org buffers
