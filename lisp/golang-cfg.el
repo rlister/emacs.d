@@ -26,32 +26,3 @@
   :config
   (add-hook 'go-mode-hook 'ric-go-mode-hook)
   )
-
-;; (defun godoc (query)
-;;   "Show Go documentation for a query, much like M-x man."
-;;   (interactive (list (godoc--read-query)))
-;;   (unless (string= query "")
-;;     (set-process-sentinel
-;;      (start-process-shell-command "godoc" (godoc--get-buffer query)
-;;                                   (concat "/usr/local/opt/go/libexec/bin/godoc " query))
-;;      'godoc--buffer-sentinel)
-;;     nil))
-
-;; ;; go get -u github.com/dougm/goflymake
-;; (add-to-list 'load-path (concat (getenv "GOPATH") "/src/github.com/dougm/goflymake"))
-;; (require 'go-flymake)
-;; (define-key go-mode-map (kbd "H-e") 'flymake-popup-current-error-menu)
-
-;; ;; M-x compile
-;; (setq compilation-ask-about-save nil) ; M-x compile should not prompt for save
-;; (global-set-key (kbd "H-c") 'compile)
-
-;; ;; (setq compilation-save-buffers-predicate
-;; ;; 			(lambda ()
-;; ;; 				(string-prefix-p my-compilation-root (file-truename (buffer-file-name)))))
-
-;; (defun go-run-current-file ()
-;; 	"go run on current filename."
-;; 	(interactive)
-;; 	(shell-command (concat "go run " (buffer-file-name))))
-;; (define-key go-mode-map (kbd "H-r") 'go-run-current-file)
