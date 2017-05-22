@@ -22,6 +22,7 @@
   )
 
 (use-package go-mode
+  :ensure t
   :config
   (add-hook 'go-mode-hook 'ric-go-mode-hook)
   )
