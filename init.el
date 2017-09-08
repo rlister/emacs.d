@@ -68,7 +68,6 @@
 (load-library "uniquify-cfg")           ;make buffer names unique
 (load-library "paren-cfg")              ;paren matching
 (load-library "smartparens-cfg")        ;setup parentheses behaviour (inc smartparens)
-;(load-library "aggressive-indent-cfg")  ;crazy
 
 ;(load-library "toggle-selective-display-column") ;code folding with C-TAB
 
@@ -78,7 +77,6 @@
 ;; completion
 (load-library "pabbrev-cfg")
 ;(load-library "discover-cfg")
-; (load-library "ac-complete-cfg")
 
 ;; packages for git
 (load-library "magit-cfg")              ;magit-mode

@@ -1,4 +1,5 @@
 (use-package git-timemachine
+  :ensure t
   :config
   ;; fix git-timemachine keys in evil
   ;; see https://bitbucket.org/lyro/evil/issue/511/let-certain-minor-modes-key-bindings
