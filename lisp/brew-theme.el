@@ -2,26 +2,14 @@
 
 (set-default 'cursor-type 'bar)
 
-(let (
-      (brew-fg  "#839496")              ;azure4-ish?
-      (brew-hl  "grey20")              ;"gray20"
-      (brew-bg  "grey10")
-      (brew-bg0 "grey5")
-      (brew-bg1 "grey10")
-      (brew-bg2 "grey17")
-      (brew-bg3 "grey25")
-      (brew-bg4 "grey31")
-      (brew-bg5 "grey37")
-      )
-
+(let ((brew-fg  "azure4")
   (custom-theme-set-faces
    'brew
-   ;; `(default                    ((t (:foreground ,brew-fg :background nil))))
    `(default                    ((t (:foreground ,brew-fg :background "Black"))))
    `(underline                  ((t (:underline nil)))) ;no underlines unless I ask for them
 
-   `(mode-line                  ((t (:foreground nil :background ,brew-bg2))))
-   `(mode-line-inactive         ((t (:foreground nil :background ,brew-bg  :slant italic)))) ;:box (:line-width 1 :color ,brew-bg1)))))
+   `(mode-line                  ((t (:foreground nil :background "grey17"))))
+   `(mode-line-inactive         ((t (:foreground nil :background "grey10"  :slant italic)))) ;:box (:line-width 1 :color "grey10")))))
    `(mode-line-buffer-id        ((t (:foreground "PaleGreen" :background nil :weight normal))))
    `(mode-line-highlight        ((t (:foreground "Orange"))))
    `(mode-line-emphasis         ((t (:foreground "Cyan"))))
@@ -30,41 +18,41 @@
 
    `(fringe                     ((t (:inherit default))))
    `(header-line                ((t (:inherit default))))
-   `(highlight                  ((t (:foreground nil :background ,brew-hl :underline nil))))
+   `(highlight                  ((t (:foreground nil :background "grey20" :underline nil))))
    `(hover-highlight            ((t (:foreground "PaleGoldenrod" :underline nil))))
 
-   `(match                      ((t (:foreground ,brew-fg :background ,brew-hl :weight bold))))
-   `(menu                       ((t (:background ,brew-hl))))
+   `(match                      ((t (:foreground ,brew-fg :background "grey20" :weight bold))))
+   `(menu                       ((t (:background "grey20"))))
 
    `(mouse                      ((t (:inherit default))))
-   `(paren                      ((t (:background ,brew-bg5))))
+   `(paren                      ((t (:background "grey37"))))
    `(show-paren-match           ((t (:foreground "PaleGreen"))))
    `(show-paren-mismatch        ((t (:foreground "IndianRed"))))
 
    `(trailing-whitespace        ((t (:inherit font-lock-warning))))
-   `(Buffer-menu-buffer         ((t (:inherit default :background ,brew-hl))))
-   `(border                     ((t (:background ,brew-bg))))
-   `(button                     ((t (:foreground "CadetBlue" :background ,brew-bg :box nil))))
+   `(Buffer-menu-buffer         ((t (:inherit default :background "grey20"))))
+   `(border                     ((t (:background "grey10"))))
+   `(button                     ((t (:foreground "CadetBlue" :background "grey10" :box nil))))
    `(cursor                     ((t (:foreground nil :background "PaleGreen"))))
    `(escape-glyph-face          ((t (:foreground "IndianRed"))))
    `(minibuffer-prompt          ((t (:foreground "PaleGreen"))))
-   `(header-line                ((t (:background ,brew-hl)))) ;buffer-specific top mode-line
+   `(header-line                ((t (:background "grey20")))) ;buffer-specific top mode-line
    `(region                     ((t (:background "MidnightBlue"))))
-   `(scroll-bar                 ((t (:background ,brew-hl))))
-   `(secondary-selection        ((t (:foreground nil :background ,brew-bg5))))
-   `(tool-bar                   ((t (:background ,brew-hl))))
-   `(vertical-border            ((t (:foreground ,brew-bg2 :background ,brew-bg2)))) ;color of vertical split line
-   `(hl-line                    ((t (:background ,brew-bg1)))) ;hl-line-mode
+   `(scroll-bar                 ((t (:background "grey20"))))
+   `(secondary-selection        ((t (:foreground nil :background "grey37"))))
+   `(tool-bar                   ((t (:background "grey20"))))
+   `(vertical-border            ((t (:foreground "grey17" :background "grey17")))) ;color of vertical split line
+   `(hl-line                    ((t (:background "grey10")))) ;hl-line-mode
 
-   `(isearch        ((t (:foreground "LightGoldenrod" :background ,brew-hl :bold nil))))
-   `(isearch-fail   ((t (:foreground "IndianRed" :background ,brew-bg :bold nil))))
-   `(lazy-highlight ((t (:foreground "DarkGoldenrod" :background ,brew-bg :bold nil))))
+   `(isearch        ((t (:foreground "LightGoldenrod" :background "grey20" :bold nil))))
+   `(isearch-fail   ((t (:foreground "IndianRed" :background "grey10" :bold nil))))
+   `(lazy-highlight ((t (:foreground "DarkGoldenrod" :background "grey10" :bold nil))))
 
    `(link ((t (:foreground "PaleGreen")))) ;this is e.g. package-list, who knows what else
 
    `(font-lock-builtin-face             ((t (:foreground "DodgerBlue2" :slant italic))))
-   `(font-lock-comment-delimiter-face   ((t (:foreground ,brew-bg5))))
-   `(font-lock-comment-face             ((t (:foreground ,brew-bg5 :slant italic))))
+   `(font-lock-comment-delimiter-face   ((t (:foreground "grey37"))))
+   `(font-lock-comment-face             ((t (:foreground "grey37" :slant italic))))
    `(font-lock-constant-face            ((t (:foreground "RoyalBlue" :weight normal :slant italic))))
    `(font-lock-doc-face                 ((t (:foreground "LightSkyBlue" :slant italic))))
    `(font-lock-doc-string-face          ((t (:foreground "PaleTurquoise" :slant italic))))
@@ -90,7 +78,7 @@
    `(rainbow-delimiters-depth-10-face  ((t (:foreground "yellow"))))
    `(rainbow-delimiters-depth-11-face  ((t (:foreground "blue"))))
    `(rainbow-delimiters-depth-12-face  ((t (:foreground "red"))))
-   `(rainbow-delimiters-unmatched-face ((t (:foreground "red" :background ,brew-hl :inverse-video nil))))
+   `(rainbow-delimiters-unmatched-face ((t (:foreground "red" :background "grey20" :inverse-video nil))))
 
    ;; compilation, also stuff like grep output
    `(compilation-enter-directory-face ((t (:foreground "PaleGreen"))))
@@ -98,8 +86,8 @@
    `(compilation-info-face            ((t (:foreground "CornflowerBlue"))))
    `(compilation-info                 ((t (:foreground "PaleGreen" :underline nil))))
    `(compilation-leave-directory-face ((t (:foreground "PaleGreen"))))
-   `(compilation-line-number          ((t (:foreground ,brew-bg5))))
-   `(compilation-column-number        ((t (:foreground ,brew-bg3))))
+   `(compilation-line-number          ((t (:foreground "grey37"))))
+   `(compilation-column-number        ((t (:foreground "grey25"))))
    `(compilation-message              ((t (:foreground "CornflowerBlue"))))
    `(compilation-error                ((t (:foreground "IndianRed" :underline nil))))
    `(compilation-warning              ((t (:foreground "PaleGoldenrod" :underline nil))))
@@ -146,14 +134,14 @@
    `(org-level-8          ((t (:foreground "RoyalBlue3"))))
 
    `(org-agenda-structure          ((t (:inherit font-lock-comment-face))))
-   `(org-agenda-date               ((t (:foreground ,brew-fg :background ,brew-hl :weight bold :box (:line-width 4 :color ,brew-hl) ))) t)
+   `(org-agenda-date               ((t (:foreground ,brew-fg :background "grey20" :weight bold :box (:line-width 4 :color "grey20") ))) t)
    `(org-agenda-date-weekend       ((t (:inherit org-agenda-date :slant italic))) t)
    `(org-agenda-date-today         ((t (:inherit org-agenda-date :slant italic underline: t))) t)
    `(org-agenda-done               ((t (:foreground "PaleGreen"))) t)
    `(org-archived                  ((t (:inherit font-lock-comment-face :weight normal))))
    `(org-block                     ((t (:inherit font-lock-comment-face))))
    `(org-block-begin-line          ((t (:inherit font-lock-comment-face :slant italic))))
-   `(org-checkbox                  ((t (:background ,brew-bg :foreground ,brew-fg :box (:line-width 1 :style released-button)))))
+   `(org-checkbox                  ((t (:background "grey10" :foreground ,brew-fg :box (:line-width 1 :style released-button)))))
    `(org-code                      ((t (:inherit font-lock-comment-face))))
    `(org-date                      ((t (:foreground "CornflowerBlue" :slant italic))))
    `(org-done                      ((t (:inherit font-lock-comment-face :weight bold :italic t))))
@@ -161,7 +149,7 @@
    `(org-ellipsis                  ((t (:inherit font-lock-comment-face))))
    `(org-formula                   ((t (:foreground "PaleGoldenrod"))))
    `(org-headline-done             ((t (:foreground "PaleGreen"))))
-   `(org-hide                      ((t (:foreground ,brew-hl))))
+   `(org-hide                      ((t (:foreground "grey20"))))
    `(org-link                      ((t (:foreground "LightSlateBlue" :slant italic :underline t))))
    `(org-sexp-date                 ((t (:foreground "SlateBlue3"))))
    `(org-scheduled                 ((t (:foreground "PaleGreen"))))
@@ -185,8 +173,8 @@
    `(org-agenda-dimmed-todo-face   ((t (:inherit font-lock-comment-face))))
    `(org-agenda-restriction-lock   ((t (:background "PaleGoldenrod"))))
    `(org-clock-overlay             ((t (:background "PaleGoldenrod"))))
-   `(org-column                    ((t (:background ,brew-hl :strike-through nil :underline nil :slant normal :weight normal))))
-   `(org-column-title              ((t (:background ,brew-hl :underline t :weight bold))))
+   `(org-column                    ((t (:background "grey20" :strike-through nil :underline nil :slant normal :weight normal))))
+   `(org-column-title              ((t (:background "grey20" :underline t :weight bold))))
    `(org-date-selected             ((t (:foreground "IndianRed4" :inverse-video t))))
    `(org-document-info             ((t (:foreground ,brew-fg))))
    `(org-document-title            ((t (:foreground "CornflowerBlue"  :weight bold :height 1.44))))
@@ -205,11 +193,11 @@
    `(outline-2 ((t (:inherit outline-3 :height 1.0))))
    `(outline-1 ((t (:inherit outline-2 :height 1.1))))
 
-   `(linum ((t (:foreground "#666783"))))
+   `(linum ((t (:foreground "grey40"))))
 
-   `(company-tooltip ((t (:background ,brew-hl))))
-   `(company-tooltip-selection ((t (:foreground "goldenrod" :background ,brew-hl))))
-   `(company-tooltip-common-selection ((t (:foreground "goldenrod" :background ,brew-hl))))
+   `(company-tooltip                  ((t (:background "grey20"))))
+   `(company-tooltip-selection        ((t (:foreground "goldenrod" :background "grey20"))))
+   `(company-tooltip-common-selection ((t (:foreground "goldenrod" :background "grey20"))))
 
    ;; erc
    `(erc-default-face        ((t (:foreground ,brew-fg))))
@@ -234,27 +222,27 @@
 
    ;; diff
    `(diff-context     ((t :inherit font-lock-comment-face)))
-   `(diff-header      ((t :background ,brew-bg3)))
-   `(diff-file-header ((t :background ,brew-bg3 :foreground "SkyBlue")))
-   `(diff-hunk-header ((t :background ,brew-hl)))
+   `(diff-header      ((t :background "grey25")))
+   `(diff-file-header ((t :background "grey25" :foreground "SkyBlue")))
+   `(diff-hunk-header ((t :background "grey20")))
    `(diff-added       ((t :foreground "PaleGreen")))
 
    `(egg-diff-hunk-header    ((t (:inherit font-lock-comment-face))))
-   `(egg-diff-add            ((t (:foreground "PaleGreen" :background ,brew-bg))))
-   `(egg-diff-del            ((t (:foreground "IndianRed" :background ,brew-bg))))
+   `(egg-diff-add            ((t (:foreground "PaleGreen" :background "grey10"))))
+   `(egg-diff-del            ((t (:foreground "IndianRed" :background "grey10"))))
 
    `(magit-header                      ((t (:weight bold))))
    `(magit-section-heading             ((t (:foreground "PaleGreen"))))
    `(magit-item-highlight              ((t (:background "gray15"))))
-   `(magit-diff-hunk-heading           ((t (:foreground "CornflowerBlue" :background ,brew-bg1))))
-   `(magit-diff-hunk-heading-highlight ((t (:foreground "CornflowerBlue" :background ,brew-bg2))))
+   `(magit-diff-hunk-heading           ((t (:foreground "CornflowerBlue" :background "grey10"))))
+   `(magit-diff-hunk-heading-highlight ((t (:foreground "CornflowerBlue" :background "grey17"))))
    `(magit-diff-file-header            ((t (:foreground "CornflowerBlue"))))
    `(magit-diff-added-highlight        ((t (:foreground "PaleGreen" :background "gray15"))))
    `(magit-diff-added                  ((t (:foreground "PaleGreen"))))
    `(magit-diff-removed-highlight      ((t (:foreground "IndianRed" :background "gray15"))))
    `(magit-diff-removed                ((t (:foreground "IndianRed"))))
    `(magit-diff-context-highlight      ((t (:inherit font-lock-comment-face))))
-   `(magit-diff-none                   ((t (:foreground ,brew-bg5))))
+   `(magit-diff-none                   ((t (:foreground "grey37"))))
    `(magit-reflog-commit               ((t (:foreground "PaleGreen"))))
 
    `(git-commit-overlong-summary-face     ((t (:foreground ,brew-fg :italic :underline nil))))
@@ -271,19 +259,18 @@
    `(speedbar-button-face    ((t (:foreground "PaleGreen"))))
    `(speedbar-selected-face  ((t (:foreground "IndianRed"))))
    `(speedbar-tag-face       ((t (:foreground "PaleGoldenrod"))))
-   `(speedbar-highlight-face ((t (:background ,brew-hl))))
+   `(speedbar-highlight-face ((t (:background "grey20"))))
 
    ;; elscreen
-   `(elscreen-tab-current-screen-face ((t (:foreground "PaleGreen"   :background ,brew-bg3))))
-   `(elscreen-tab-control-face        ((t (:foreground "PaleGreen"   :background ,brew-hl))))
-   `(elscreen-tab-other-screen-face   ((t (:foreground ,brew-bg5 :background ,brew-bg2))))
+   `(elscreen-tab-current-screen-face ((t (:foreground "PaleGreen"   :background "grey25"))))
+   `(elscreen-tab-control-face        ((t (:foreground "PaleGreen"   :background "grey20"))))
+   `(elscreen-tab-other-screen-face   ((t (:foreground "grey37" :background "grey17"))))
 
    `(eshell-prompt      ((t (:foreground "RoyalBlue"))))
    `(eshell-ls-directory ((t (:foreground "SkyBlue"))))
 
    `(term-color-cyan    ((t (:foreground "#259286"))))
    `(term-color-blue    ((t (:foreground "#21376C7"))))
-   ;; `(term-color-red     ((t (:foreground "#CD5C5C"))))
    `(term-color-red     ((t (:foreground "IndianRed"))))
    `(term-color-green   ((t (:foreground "#548B54"))))
    `(term-color-yellow  ((t (:foreground "#A57706"))))
@@ -292,19 +279,19 @@
    `(ido-first-match    ((t (:weight normal))))
    `(flx-highlight-face ((t (:foreground "PaleGreen"-l)))) ;for flx-ido-mode char highlights
 
-   `(trailing-whitespace ((t (:background ,brew-bg2))))
+   `(trailing-whitespace ((t (:background "grey17"))))
 
    ;; enh-ruby-mode
    `(erm-syn-errline  ((t (:foreground "IndianRed")))) ;flag errors
    `(erm-syn-warnline ((t (:foreground "PaleGreen")))) ;flag errors
 
-   `(hiwin-face ((t (:foreground "#444444" :background "#111111"))))
+   `(hiwin-face ((t (:foreground "grey27" :background "grey7"))))
 
    ;; `(helm-source-header ((t (:foreground "PaleGreen" :slant italic))))
    `(helm-source-header          ((t (:inherit font-lock-comment-face))))
-   `(helm-selection              ((t (:background ,brew-bg2))))
+   `(helm-selection              ((t (:background "grey17"))))
    `(helm-swoop-target-word-face ((t (:foreground "IndianRed"))))
-   `(helm-swoop-target-line-face ((t (:background ,brew-bg2))))
+   `(helm-swoop-target-line-face ((t (:background "grey17"))))
    `(helm-candidate-number       ((t (:foreground "goldenrod")))) ;candidate count in modeline
    `(helm-helper                 ((t (:foreground "PaleGreen"))))
    `(helm-ff-file                ((t (:inherit default))))
@@ -319,8 +306,8 @@
    `(ivy-minibuffer-match-face-4 ((t (:foreground "goldenrod4"))))
 
    ;; For highlight-indentation-mode
-   `(highlight-indentation-face                ((t (:background ,brew-bg1))))
-   `(highlight-indentation-current-column-face ((t (:background ,brew-bg2))))
+   `(highlight-indentation-face                ((t (:background "grey10"))))
+   `(highlight-indentation-current-column-face ((t (:background "grey17"))))
 
    ;; flymake
    `(flymake-errline ((t (:underline (:style wave :color "IndianRed")))))
@@ -334,7 +321,7 @@
    `(diredp-read-priv   ((t (:foreground "IndianRed"))))
    `(diredp-write-priv  ((t (:foreground "PaleGreen"))))
    `(diredp-exec-priv   ((t (:foreground "goldenrod"))))
-   `(diredp-no-priv     ((t (:foreground ,brew-bg5))))
+   `(diredp-no-priv     ((t (:foreground "grey37"))))
    `(diredp-dir-heading ((t (:foreground "SkyBlue" :background nil))))
 
    `(dired-k-directory  ((t (:foreground "RoyalBlue"))))
@@ -356,7 +343,7 @@
    `(evil-quickscope-first-face  ((t (:foreground "IndianRed")))) ;first occurence of char
    `(evil-quickscope-second-face ((t (:foreground "goldenrod")))) ;second occurence
 
-   `(whitespace-newline ((t (:foreground ,brew-bg2))))
+   `(whitespace-newline ((t (:foreground "grey17"))))
    ))
 
 (provide-theme 'brew)
