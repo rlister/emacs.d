@@ -262,11 +262,11 @@
    `(speedbar-highlight-face ((t (:background "grey20"))))
 
    ;; elscreen
-   `(elscreen-tab-current-screen-face ((t (:foreground "PaleGreen"   :background "grey25"))))
-   `(elscreen-tab-control-face        ((t (:foreground "PaleGreen"   :background "grey20"))))
-   `(elscreen-tab-other-screen-face   ((t (:foreground "grey37" :background "grey17"))))
+   `(elscreen-tab-current-screen-face ((t (:foreground "PaleGreen" :background "grey25"))))
+   `(elscreen-tab-control-face        ((t (:foreground "PaleGreen" :background "grey20"))))
+   `(elscreen-tab-other-screen-face   ((t (:foreground "grey37"    :background "grey17"))))
 
-   `(eshell-prompt      ((t (:foreground "RoyalBlue"))))
+   `(eshell-prompt       ((t (:foreground "RoyalBlue"))))
    `(eshell-ls-directory ((t (:foreground "SkyBlue"))))
 
    `(term-color-cyan    ((t (:foreground "#259286"))))
