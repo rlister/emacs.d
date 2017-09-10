@@ -27,10 +27,10 @@
 
 (deftheme brew "Brew theme")
 
-(let ((brew-fg "azure4"))
+(let ((fg "azure4"))
   (custom-theme-set-faces
    'brew
-   `(default                    ((t (:foreground ,brew-fg :background "Black"))))
+   `(default                    ((t (:foreground ,fg :background "Black"))))
    `(underline                  ((t (:underline nil)))) ;no underlines unless I ask for them
 
    `(mode-line                  ((t (:foreground nil :background "grey17"))))
@@ -46,7 +46,7 @@
    `(highlight                  ((t (:foreground nil :background "grey20" :underline nil))))
    `(hover-highlight            ((t (:foreground "PaleGoldenrod" :underline nil))))
 
-   `(match                      ((t (:foreground ,brew-fg :background "grey20" :weight bold))))
+   `(match                      ((t (:foreground ,fg :background "grey20" :weight bold))))
    `(menu                       ((t (:background "grey20"))))
 
    `(mouse                      ((t (:inherit default))))
@@ -107,7 +107,7 @@
 
    ;; compilation, also stuff like grep output
    `(compilation-enter-directory-face ((t (:foreground "PaleGreen"))))
-   `(compilation-face                 ((t (:foreground ,brew-fg :underline nil))))
+   `(compilation-face                 ((t (:foreground ,fg :underline nil))))
    `(compilation-info-face            ((t (:foreground "CornflowerBlue"))))
    `(compilation-info                 ((t (:foreground "PaleGreen" :underline nil))))
    `(compilation-leave-directory-face ((t (:foreground "PaleGreen"))))
@@ -125,10 +125,10 @@
    `(mew-face-header-from      ((t (:foreground "PaleGoldenrod"))))
    `(mew-face-header-date      ((t (:foreground "PaleGreen"))))
    `(mew-face-header-to        ((t (:foreground "SkyBlue"))))
-   `(mew-face-header-key       ((t (:foreground ,brew-fg))))
+   `(mew-face-header-key       ((t (:foreground ,fg))))
    `(mew-face-header-private   ((t (:foreground "PaleGreen"))))
    `(mew-face-header-important ((t (:inherit font-lock-comment))))
-   `(mew-face-header-marginal  ((t (:foreground ,brew-fg :weight bold))))
+   `(mew-face-header-marginal  ((t (:foreground ,fg :weight bold))))
    `(mew-face-header-warning   ((t (:foreground "IndianRed"))))
    `(mew-face-header-xmew      ((t (:inherit font-lock-comment))))
    `(mew-face-header-xmew-bad  ((t (:foreground "IndianRed"))))
@@ -159,14 +159,14 @@
    `(org-level-8          ((t (:foreground "RoyalBlue3"))))
 
    `(org-agenda-structure          ((t (:inherit font-lock-comment-face))))
-   `(org-agenda-date               ((t (:foreground ,brew-fg :background "grey20" :weight bold :box (:line-width 4 :color "grey20") ))) t)
+   `(org-agenda-date               ((t (:foreground ,fg :background "grey20" :weight bold :box (:line-width 4 :color "grey20") ))) t)
    `(org-agenda-date-weekend       ((t (:inherit org-agenda-date :slant italic))) t)
    `(org-agenda-date-today         ((t (:inherit org-agenda-date :slant italic underline: t))) t)
    `(org-agenda-done               ((t (:foreground "PaleGreen"))) t)
    `(org-archived                  ((t (:inherit font-lock-comment-face :weight normal))))
    `(org-block                     ((t (:inherit font-lock-comment-face))))
    `(org-block-begin-line          ((t (:inherit font-lock-comment-face :slant italic))))
-   `(org-checkbox                  ((t (:background "grey10" :foreground ,brew-fg :box (:line-width 1 :style released-button)))))
+   `(org-checkbox                  ((t (:background "grey10" :foreground ,fg :box (:line-width 1 :style released-button)))))
    `(org-code                      ((t (:inherit font-lock-comment-face))))
    `(org-date                      ((t (:foreground "CornflowerBlue" :slant italic))))
    `(org-done                      ((t (:inherit font-lock-comment-face :weight bold :italic t))))
@@ -201,7 +201,7 @@
    `(org-column                    ((t (:background "grey20" :strike-through nil :underline nil :slant normal :weight normal))))
    `(org-column-title              ((t (:background "grey20" :underline t :weight bold))))
    `(org-date-selected             ((t (:foreground "IndianRed4" :inverse-video t))))
-   `(org-document-info             ((t (:foreground ,brew-fg))))
+   `(org-document-info             ((t (:foreground ,fg))))
    `(org-document-title            ((t (:foreground "CornflowerBlue"  :weight bold :height 1.44))))
    `(org-drawer                    ((t (:foreground "SkyBlue"))))
    `(org-footnote                  ((t (:foreground "magenta" :underline t))))
@@ -225,7 +225,7 @@
    `(company-tooltip-common-selection ((t (:foreground "goldenrod" :background "grey20"))))
 
    ;; erc
-   `(erc-default-face        ((t (:foreground ,brew-fg))))
+   `(erc-default-face        ((t (:foreground ,fg))))
    `(erc-direct-msg-face     ((t (:inherit erc-default))))
    `(erc-action-face         ((t (:inherit erc-default-face))))
    `(erc-bold-face           ((t (:weight bold))))
@@ -270,9 +270,9 @@
    `(magit-diff-none                   ((t (:foreground "grey37"))))
    `(magit-reflog-commit               ((t (:foreground "PaleGreen"))))
 
-   `(git-commit-overlong-summary-face     ((t (:foreground ,brew-fg :italic :underline nil))))
-   `(git-commit-nonempty-second-line-face ((t (:foreground ,brew-fg :italic :underline nil))))
-   `(git-commit-summary-face              ((t (:foreground ,brew-fg))))
+   `(git-commit-overlong-summary-face     ((t (:foreground ,fg :italic :underline nil))))
+   `(git-commit-nonempty-second-line-face ((t (:foreground ,fg :italic :underline nil))))
+   `(git-commit-summary-face              ((t (:foreground ,fg))))
 
    `(git-gutter:added    ((t (:foreground "PaleGreen"))))
    `(git-gutter:modified ((t (:foreground "PaleGoldenrod"))))
