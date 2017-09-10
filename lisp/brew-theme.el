@@ -27,7 +27,7 @@
 
 (deftheme brew "Brew theme")
 
-(let ((brew-fg  "azure4")
+(let ((brew-fg "azure4"))
   (custom-theme-set-faces
    'brew
    `(default                    ((t (:foreground ,brew-fg :background "Black"))))
@@ -83,7 +83,7 @@
    `(font-lock-doc-string-face          ((t (:foreground "PaleTurquoise" :slant italic))))
    `(font-lock-function-name-face       ((t (:foreground "LightSlateBlue" :height 1.0))))
    `(font-lock-keyword-face             ((t (:foreground "PaleGreen" :weight normal))))
-   `(font-lock-negation-char-face       ((t (:foreground "#839496"))))
+   `(font-lock-negation-char-face       ((t (:foreground "azure3"))))
    `(font-lock-preprocessor-face        ((t (:foreground "SlateGray3"))))
    `(font-lock-string-face              ((t (:foreground "SkyBlue" :slant italic))))
    `(font-lock-type-face                ((t (:foreground "SlateBlue3"))))
@@ -294,12 +294,12 @@
    `(eshell-prompt       ((t (:foreground "RoyalBlue"))))
    `(eshell-ls-directory ((t (:foreground "SkyBlue"))))
 
-   `(term-color-cyan    ((t (:foreground "#259286"))))
-   `(term-color-blue    ((t (:foreground "#21376C7"))))
+   `(term-color-cyan    ((t (:foreground "DarkSlateGray3"))))
+   `(term-color-blue    ((t (:foreground "RoyalBlue"))))
    `(term-color-red     ((t (:foreground "IndianRed"))))
-   `(term-color-green   ((t (:foreground "#548B54"))))
-   `(term-color-yellow  ((t (:foreground "#A57706"))))
-   `(term-color-magenta ((t (:foreground "#C61C6F"))))
+   `(term-color-green   ((t (:foreground "PaleGreen"))))
+   `(term-color-yellow  ((t (:foreground "PaleGoldenrod"))))
+   `(term-color-magenta ((t (:foreground "magenta3"))))
 
    `(ido-first-match    ((t (:weight normal))))
    `(flx-highlight-face ((t (:foreground "PaleGreen"-l)))) ;for flx-ido-mode char highlights
@@ -355,9 +355,9 @@
    `(dired-k-untracked  ((t (:foreground "goldenrod"))))
 
    ;; hi-lock mode, e.g. highlight-* commands
-   `(hi-yellow ((t (:background "#A57706"))))
+   `(hi-yellow ((t (:background "goldenrod"))))
    `(hi-blue   ((t (:background "MidnightBlue"))))
-   `(hi-green  ((t (:background "#548B54"))))
+   `(hi-green  ((t (:background "PaleGreen"))))
    `(hi-red    ((t (:background "IndianRed"))))
 
    `(avy-lead-face   ((t (:foreground "IndianRed"))))
