@@ -6,6 +6,8 @@
 (setq-default indent-tabs-mode nil) ;just for pablo no tabs evah in any mode
 (fset 'yes-or-no-p 'y-or-n-p)      ;do not make me type the whole word
 
+(set-default 'cursor-type 'bar)
+
 ;; make sure help buffers popup in current window, not other-window
 (setq display-buffer-alist '((".*" display-buffer-same-window)))
 

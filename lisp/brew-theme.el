@@ -1,6 +1,5 @@
 (deftheme brew "Brew theme")
 
-(set-default 'cursor-type 'bar)
 
 (let ((brew-fg  "azure4")
   (custom-theme-set-faces
