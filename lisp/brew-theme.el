@@ -297,8 +297,8 @@
    `(term-color-cyan    ((t (:foreground "DarkSlateGray3"))))
    `(term-color-blue    ((t (:foreground "RoyalBlue"))))
    `(term-color-red     ((t (:foreground "IndianRed"))))
-   `(term-color-green   ((t (:foreground "PaleGreen"))))
-   `(term-color-yellow  ((t (:foreground "PaleGoldenrod"))))
+   `(term-color-green   ((t (:foreground "PaleGreen3"))))
+   `(term-color-yellow  ((t (:foreground "LightGoldenrod"))))
    `(term-color-magenta ((t (:foreground "magenta3"))))
 
    `(ido-first-match    ((t (:weight normal))))
