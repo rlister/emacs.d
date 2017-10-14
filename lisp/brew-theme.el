@@ -33,8 +33,8 @@
    `(default                    ((t (:foreground ,fg :background "Black"))))
    `(underline                  ((t (:underline nil)))) ;no underlines unless I ask for them
 
-   `(mode-line                  ((t (:foreground nil :background "grey17"))))
-   `(mode-line-inactive         ((t (:foreground nil :background "grey10"  :slant italic)))) ;:box (:line-width 1 :color "grey10")))))
+   `(mode-line                  ((t (:inherit default :overline "grey30")))) ;:box (:line-width 1 :color "grey30")))))
+   `(mode-line-inactive         ((t (:foreground "DarkSeaGreen4" :overline "grey20"  :slant italic))))
    `(mode-line-buffer-id        ((t (:foreground "PaleGreen" :background nil :weight normal))))
    `(mode-line-highlight        ((t (:foreground "Orange"))))
    `(mode-line-emphasis         ((t (:foreground "Cyan"))))
