@@ -1,5 +1,6 @@
 ;; git info in dired buffers
 (use-package dired-k
+  :ensure t
   :init
   (add-hook 'dired-initial-position-hook 'dired-k)
   (add-hook 'dired-after-readin-hook #'dired-k-no-revert)
