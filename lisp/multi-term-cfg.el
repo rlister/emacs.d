@@ -54,6 +54,7 @@
           (lambda ()
             (setq term-eol-on-send nil) ;allows me to hit return in middle of command and not have duplicate content sent to shell
             (define-key term-raw-map (kbd "C-y")   'term-paste) ;to make yank work properly
+            (define-key term-raw-map (kbd "M-SPC") 'ag-project) ;force this to work in term
             (define-key term-raw-map (kbd "M-DEL") 'term-send-raw-meta) ;actually kill in shell instead of just buffer
             (define-key term-raw-map (kbd "M-d")   'term-send-raw-meta) ;ditto
             (define-key term-raw-map (kbd "M-b")   'term-send-backward-word) ;ditto
