@@ -54,7 +54,7 @@
           (lambda ()
             (setq term-eol-on-send nil) ;allows me to hit return in middle of command and not have duplicate content sent to shell
             (define-key term-raw-map (kbd "C-y")   'term-paste) ;to make yank work properly
-            (define-key term-raw-map (kbd "M-SPC") 'ag-project) ;force this to work in term
+            (define-key term-raw-map (kbd "M-SPC") 'ric/term-toggle-line-char-mode)
             (define-key term-raw-map (kbd "M-DEL") 'term-send-raw-meta) ;actually kill in shell instead of just buffer
             (define-key term-raw-map (kbd "M-d")   'term-send-raw-meta) ;ditto
             (define-key term-raw-map (kbd "M-b")   'term-send-backward-word) ;ditto
@@ -67,7 +67,9 @@
             (add-to-list 'term-bind-key-alist '("C-z z" . term-send-ctrl-z))
             (add-to-list 'term-bind-key-alist '("C-z m" . term-toggle-line-char-mode))
             (add-to-list 'term-bind-key-alist '("C-z [" . term-toggle-line-char-mode)) ;char-mode
+            (define-key term-mode-map (kbd "M-SPC") 'ric/term-toggle-line-char-mode)
             (define-key term-mode-map (kbd "C-z [")      'term-toggle-line-char-mode)  ;line-mode
+            (define-key term-mode-map (kbd "<return>")      'ric/term-toggle-line-char-mode)  ;line-mode
             (add-to-list 'term-bind-key-alist '("C-z C-z" . term-toggle-line-char-mode))
             (add-to-list 'term-bind-key-alist '("M-w"     . kill-ring-save-switch-to-char-mode)) ;bind in char-mode
             (define-key term-mode-map (kbd "M-w")   'kill-ring-save-switch-to-char-mode)         ;bind in line-mode
