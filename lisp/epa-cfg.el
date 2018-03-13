@@ -16,5 +16,6 @@
   :init
   (when ric-darwin-p
     ;; (setq epg-gpg-program "/usr/local/MacGPG2/bin/gpg2"))
-    (setq epg-gpg-program "/usr/local/bin/gpg"))
+    (custom-set-variables '(epg-gpg-program  "/usr/local/bin/gpg")))
+    ;; (setq epg-gpg-program "/usr/local/bin/gpg"))
   )
