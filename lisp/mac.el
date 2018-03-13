@@ -8,8 +8,7 @@
   (setq ns-option-modifier 'super)    ;option key is Super
   (setq ns-function-modifier 'hyper)  ;fn key is Hyper
   ;; (exec-path-from-shell-initialize)   ;from melpa
-  (set-face-attribute 'default nil :family "Inconsolata" :height 140 :weight 'normal :width 'normal)
-  )
+  (set-face-attribute 'default nil :family "Roboto Mono" :height 140 :weight 'normal :width 'normal)
 
 ;; fix tmux cut and paste in terminal
 (when ric-darwin-p
