@@ -20,7 +20,7 @@
 (load-library "files-cfg")
 (load-library "narrow-cfg")
 (load-library "brew-theme")             ;my color theme
-(load-library "diminish-cfg")
+;; (load-library "diminish-cfg")
 (load-library "face-remap-cfg")         ;M-{=,-,0}
 
 (load-library "epa-cfg")                ;epa for gpg files
@@ -61,7 +61,7 @@
 ;; terminals and shells
 (load-library "term-cfg")               ;term-mode
 (load-library "term-projectile-cfg")    ;manage terms per project
-(load-library "shell-cfg")              ;shell
+;; (load-library "shell-cfg")              ;shell
 (load-library "ric-mini-shell-cfg")     ;C-,
 
 ;; other packages
@@ -81,7 +81,7 @@
 ;; packages for git
 (load-library "magit-cfg")              ;magit-mode
 (load-library "evil-magit-cfg")         ;fix keys in magit
-(load-library "git-gutter-fringe-cfg")
+;; (load-library "git-gutter-fringe-cfg")
 (load-library "git-timemachine-cfg")    ;fixups for evil
 (load-library "git-link-cfg")           ;git-link
 (load-library "autorevert-cfg")         ;update git branch in modeline
