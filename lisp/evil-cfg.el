@@ -54,6 +54,8 @@
   (evil-set-initial-state 'help-mode 'motion)
   (evil-set-initial-state 'term-mode 'emacs)
   (evil-set-initial-state 'ivy-occur-mode 'emacs)
+  (evil-set-initial-state 'inf-ruby-mode 'emacs)
+  (evil-set-initial-state 'shell-mode 'emacs)
   (evil-set-initial-state 'occur-mode 'motion)
   (evil-set-initial-state 'git-timemachine-mode 'motion)
   (evil-define-key 'motion org-agenda-mode-map (kbd "j") 'org-agenda-next-line)
