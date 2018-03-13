@@ -1,4 +1,6 @@
-(use-package git-link)
+(use-package git-link
+  :ensure t
+  )
 
 ;; (defalias 'gh 'git-link)                ;install git-link from melpa; push to kill-ring the current line/region in github
 
