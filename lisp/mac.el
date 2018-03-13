@@ -10,19 +10,20 @@
   ;; (exec-path-from-shell-initialize)   ;from melpa
   (set-face-attribute 'default nil :family "Roboto Mono" :height 140 :weight 'normal :width 'normal)
 
-;; fix tmux cut and paste in terminal
-(when ric-darwin-p
-  (unless (display-graphic-p)
-    (when (and (> (length (getenv "TMUX")) 0) (executable-find "reattach-to-user-namespace"))
 
-      (defun ric//cut-to-osx (text &optional push)
-        (let ((process-connection-type nil))
-          (let ((proc (start-process "pbcopy" "*Messages*" "reattach-to-user-namespace" "pbcopy") ))
-            (process-send-string proc text)
-            (process-send-eof proc))))
+  ;; fix tmux cut and paste in terminal
+  (when ric-darwin-p
+    (unless (display-graphic-p)
+      (when (and (> (length (getenv "TMUX")) 0) (executable-find "reattach-to-user-namespace"))
 
-      (defun ric//paste-from-osx ()
-        (shell-command-to-string "reattach-to-user-namespace pbpaste") )
+        (defun ric//cut-to-osx (text &optional push)
+          (let ((process-connection-type nil))
+            (let ((proc (start-process "pbcopy" "*Messages*" "reattach-to-user-namespace" "pbcopy") ))
+              (process-send-string proc text)
+              (process-send-eof proc))))
 
-      (setq interprogram-cut-function   'ric//cut-to-osx)
-      (setq interprogram-paste-function 'ric//paste-from-osx))))
+        (defun ric//paste-from-osx ()
+          (shell-command-to-string "reattach-to-user-namespace pbpaste") )
+
+        (setq interprogram-cut-function   'ric//cut-to-osx)
+        (setq interprogram-paste-function 'ric//paste-from-osx)))))
