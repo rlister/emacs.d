@@ -91,6 +91,7 @@
 (load-library "inf-ruby-cfg")           ;irb, pry, etc
 (load-library "ruby-cfg")               ;ruby-mode
 (load-library "js-cfg")                 ;javascript settings
+(load-library "python-cfg")             ;python-mode
 (load-library "json-cfg")               ;json-mode and json-pretty-print
 (load-library "sh-script-cfg")          ;shell-script-mode
 (load-library "yaml-cfg")               ;yaml-mode
