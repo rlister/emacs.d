@@ -1,4 +1,4 @@
-(setq debug-on-error t)               ;turn on for debugging
+(setq debug-on-error nil)               ;turn on for debugging
 
 (add-to-list 'exec-path "/usr/local/bin") ;brew executables, etc
 (add-to-list 'load-path "~/code/emacs.d/lisp") ;my stuff to be loaded below
