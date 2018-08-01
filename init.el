@@ -102,6 +102,7 @@
 (load-library "dockerfile-cfg")         ;dockerfile-mode
 (load-library "dumb-jump-cfg")          ;dumb-jump
 (load-library "string-inflection-cfg")  ;toggle camel/snake-cases
+(load-library "auctex-cfg")             ;TeX
 
 (load-library "org-cfg")                ;todo lists, etc
 (load-library "org-capture-cfg")        ;capture to org buffers
