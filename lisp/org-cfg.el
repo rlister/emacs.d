@@ -59,7 +59,7 @@
 (defun inbox ()
   "Jump to GTD inbox."
   (interactive)
-  (find-file "~/notes/inbox.org"))
+  (find-file "~/notes/gtd/inbox.org"))
 
 ;; (define-key org-agenda-mode-map (kbd "M->") 'org-agenda-later)
 ;; (define-key org-agenda-mode-map (kbd "M-<") 'org-agenda-earlier)
