@@ -3,10 +3,10 @@
   :init
   (require 'org-protocol)               ;get protocol loaded
   (setq org-capture-templates
-        '(("t" "Todo" entry (file+headline "~/notes/inbox.org" "Inbox")
+        '(
+          ("t" "Todo" entry (file+headline "~/notes/gtd/inbox.org" "Inbox")
            "* TODO %?\n  %i")
-          ("x" "store todo item from command line" entry (file+headline "~/notes/inbox.org" "Inbox")
-           ;; "* TODO %:link : %:description : %i" :immediate-finish t)
+          ("x" "store todo item from command line" entry (file+headline "~/notes/gtd/inbox.org" "Inbox")
            "* TODO %:link" :immediate-finish t)
           ("b" "Bookmark" entry (file+headline "~/notes/bookmarks.org" "Bookmarks")
            "* %?\n  %i\n  %a")
