@@ -17,6 +17,7 @@
                            "~/notes/gtd/tickler.org"
                            )
         org-fontify-done-headline t
+        org-todo-keywords '("TODO" "WAIT" "|" "DONE" "CANCELLED")
         org-todo-interpretation 'sequence
         org-todo-keyword-faces
         '(
