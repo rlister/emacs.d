@@ -34,10 +34,20 @@
          :map org-mode-map
          ("C-c d" . org-cut-subtree)
          ("C-c a" . org-agenda)
+         ("C-c p" . ric/org-convert-todo-to-project)
          ([C-return] . counsel-projectile-find-file)
         )
   )
 
+(defun ric/org-convert-todo-to-project ()
+    "Convert a TODO item to a project with subheadings."
+    (interactive)
+    (org-todo "")
+    (end-of-line)
+    (insert " [/]")
+    (open-line 1)
+    (org-insert-todo-subheading nil)
+  )
 
 (defun om ()
   "Insert org magic at point and turn on org-mode."
