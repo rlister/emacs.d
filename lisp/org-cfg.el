@@ -5,10 +5,17 @@
         org-startup-folded t      ;no expand all levels on opening file
         org-src-fontify-natively t
         org-directory "~/notes"
-        org-agenda-files '("~/notes/calendar.org" "~/notes/listers.org" "~/notes/inbox.org")
-        ;; org-mobile-directory "~/Dropbox/Apps/MobileOrg"
-        ;; org-mobile-inbox-for-pull "~/notes/Inbox.org"
-        org-todo-keywords '("MTNG" "TODO" "TEST" "|" "DONE" "DUMP")
+        org-refile-targets '(
+                             (nil :maxlevel . 1)
+                             ("~/notes/gtd/gtd.org" :maxlevel . 2)
+                             ("~/notes/gtd/someday.org" :level . 1)
+                             ("~/notes/gtd/tickler.org" :maxlevel . 2)
+                             )
+        org-agenda-files '(
+                           "~/notes/gtd/inbox.org"
+                           "~/notes/gtd/gtd.org"
+                           "~/notes/gtd/tickler.org"
+                           )
         org-fontify-done-headline t
         org-todo-interpretation 'sequence
         org-todo-keyword-faces
