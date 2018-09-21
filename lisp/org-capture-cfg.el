@@ -8,10 +8,8 @@
            "* TODO %?\n  %i")
           ("x" "store todo item from command line" entry (file+headline "~/notes/gtd/inbox.org" "Inbox")
            "* TODO %:link" :immediate-finish t)
-          ("b" "Bookmark" entry (file+headline "~/notes/bookmarks.org" "Bookmarks")
-           "* %?\n  %i\n  %a")
-          ("j" "Journal" entry (file+datetree "~/notes/journal.org" "Journal")
-           "* %?\nEntered on %U\n  %i\n  %a")))
+          )
+        )
   :bind (
          ("C-c c" . ric/org-capture-inbox)
          )
