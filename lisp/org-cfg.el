@@ -36,6 +36,8 @@
          ("C-c a" . org-agenda)
          ("C-c p" . ric/org-convert-todo-to-project)
          ([C-return] . counsel-projectile-find-file)
+         :map global-map
+         ("M-i" . ric/org-inbox)
         )
   )
 
@@ -56,7 +58,8 @@
   (insert "-*- mode: org; -*-\n\n")
   (org-mode))
 
-(defun inbox ()
+
+(defun ric/org-inbox ()
   "Jump to GTD inbox."
   (interactive)
   (find-file "~/notes/gtd/inbox.org"))
