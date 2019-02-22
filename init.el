@@ -1,7 +1,7 @@
 (setq debug-on-error nil)               ;turn on for debugging
 
 (add-to-list 'exec-path "/usr/local/bin") ;brew executables, etc
-(add-to-list 'load-path "~/code/emacs.d/lisp") ;my stuff to be loaded below
+(add-to-list 'load-path "~/etc/emacs.d/lisp") ;my stuff to be loaded below
 
 (load-library "package-cfg")            ;bootstrap package system
 (package-initialize t)                  ;put this here or package will add it
