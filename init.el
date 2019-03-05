@@ -74,7 +74,7 @@
 ;(load-library "toggle-selective-display-column") ;code folding with C-TAB
 
 ;; ;;; window movement
-;; (load-library "window-movement")        ;moving between windows
+(load-library "window-movement")        ;moving between windows
 
 ;; completion
 (load-library "pabbrev-cfg")

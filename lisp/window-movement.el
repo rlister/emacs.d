@@ -4,13 +4,17 @@
 
 ;; C-x o is other-window, which is next window in clockwise order
 ;; make C-x p go anti-clockwise (previous window)
-;; (defun prev-window ()
-;;   (interactive)
-;;   (other-window -1))
+(defun prev-window ()
+  (interactive)
+  (other-window -1))
 
-;; (define-key global-map (kbd "C-x p") 'prev-window)
+(define-key global-map (kbd "C-x p") 'prev-window)
+
+;; TODO: get these workig in exwm
+(define-key global-map (kbd "M-j") 'other-window)
+(define-key global-map (kbd "M-k") 'prev-window)
 ;; (define-key global-map (kbd "M-o")   'other-window) ;convenience, replaces facemenu-keymap
 ;; (define-key global-map (kbd "M-p")   'prev-window)  ;replaces empty binding
 
 ;; install from melpa
-(golden-ratio-mode 1)
+;; (golden-ratio-mode 1)
