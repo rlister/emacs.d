@@ -1,6 +1,7 @@
 (setq debug-on-error nil)               ;turn on for debugging
 
 (add-to-list 'exec-path "/usr/local/bin") ;brew executables, etc
+(add-to-list 'exec-path "~/bin") ;brew executables, etc
 (add-to-list 'load-path "~/etc/emacs.d/lisp") ;my stuff to be loaded below
 
 (load-library "package-cfg")            ;bootstrap package system
