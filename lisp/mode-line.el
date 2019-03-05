@@ -25,3 +25,6 @@
   'mode-line-misc-info
   'mode-line-end-spaces
   ))
+
+;; time and load in mode-line
+(display-time)
