@@ -33,8 +33,8 @@
 (load-library "imenu-cfg")              ;M-m
 (load-library "text-cfg")               ;text-mode
 (load-library "dired-cfg")
-(load-library "dired-k-cfg")            ;git status and colour
-(load-library "wdired-cfg")             ;e to edit dired filenames
+;; (load-library "dired-k-cfg")            ;git status and colour
+;; (load-library "wdired-cfg")             ;e to edit dired filenames
 (load-library "man-cfg")                ;man pages
 (load-library "align-cfg")              ;C-x :
 (load-library "winner-cfg")             ;C-c left/right
@@ -58,7 +58,7 @@
 (load-library "projectile-cfg")
 ;; (load-library "persp-projectile-cfg")
 (load-library "mode-line")              ;setup modeline for evil and projectile
-(load-library "which-func-cfg")         ;which-function in mode-line
+;; (load-library "which-func-cfg")         ;which-function in mode-line
 
 ;; terminals and shells
 (load-library "term-cfg")               ;term-mode
@@ -90,7 +90,7 @@
 
 ;; programming modes
 (load-library "chruby-cfg")             ;chruby package
-(load-library "inf-ruby-cfg")           ;irb, pry, etc
+;; (load-library "inf-ruby-cfg")           ;irb, pry, etc
 (load-library "ruby-cfg")               ;ruby-mode
 (load-library "js-cfg")                 ;javascript settings
 (load-library "python-cfg")             ;python-mode
@@ -102,10 +102,11 @@
 (load-library "nginx-cfg")              ;nginx-mode
 (load-library "markdown-cfg")           ;markdown-mode
 (load-library "dockerfile-cfg")         ;dockerfile-mode
-(load-library "dumb-jump-cfg")          ;dumb-jump
+;; (load-library "dumb-jump-cfg")          ;dumb-jump
 (load-library "string-inflection-cfg")  ;toggle camel/snake-cases
-(load-library "auctex-cfg")             ;TeX
+;; (load-library "auctex-cfg")             ;TeX
 ;(load-library "rust-cfg")               ;rust-mode
 
 (load-library "org-cfg")                ;todo lists, etc
 (load-library "org-capture-cfg")        ;capture to org buffers
+;; (load-library "mu4e-cfg")
