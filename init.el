@@ -4,6 +4,8 @@
 (add-to-list 'exec-path "~/bin") ;brew executables, etc
 (add-to-list 'load-path "~/etc/emacs.d/lisp") ;my stuff to be loaded below
 
+(load-theme 'brew t)
+
 (load-library "package-cfg")            ;bootstrap package system
 (package-initialize t)                  ;put this here or package will add it
 
@@ -20,7 +22,6 @@
 (load-library "delsel-cfg")
 (load-library "files-cfg")
 (load-library "narrow-cfg")
-(load-library "brew-theme")             ;my color theme
 ;; (load-library "diminish-cfg")
 (load-library "face-remap-cfg")         ;M-{=,-,0}
 
