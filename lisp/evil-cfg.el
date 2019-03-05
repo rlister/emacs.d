@@ -58,6 +58,10 @@
   (evil-set-initial-state 'shell-mode 'emacs)
   (evil-set-initial-state 'occur-mode 'motion)
   (evil-set-initial-state 'git-timemachine-mode 'motion)
+  (evil-set-initial-state 'Man-mode 'motion)
+  (evil-set-initial-state 'eww-mode 'motion)
+  (evil-set-initial-state 'eww-bookmark-mode 'motion)
+
   (evil-define-key 'motion org-agenda-mode-map (kbd "j") 'org-agenda-next-line)
   (evil-define-key 'motion org-agenda-mode-map (kbd "k") 'org-agenda-previous-line)
   (evil-define-key 'motion org-agenda-mode-map (kbd "TAB") 'org-agenda-goto)
