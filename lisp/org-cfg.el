@@ -48,6 +48,8 @@
           ;; ("DONE" .      (:foreground "ForestGreen"    :weight 'normal))
           )
         )
+  :config
+  (setq auto-mode-alist (rassq-delete-all 'dcl-mode auto-mode-alist)) ;no dcl for .com files
   :bind (
          :map org-mode-map
          ("C-c d" . org-cut-subtree)
