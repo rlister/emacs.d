@@ -3,10 +3,10 @@
   :bind
   ("C-x c" . term-projectile-create-new)
   ("C-z c" . term-projectile-create-new)
-  ("C-z n" . term-projectile-backward)
-  ("C-z p" . term-projectile-forward)
-  ("C-z l" . ric/term-projectile-term-buffer-toggle)
-  ("C-z t" . ric/term-projectile-switch-term-project)
+  ;; ("C-z n" . term-projectile-backward)
+  ;; ("C-z p" . term-projectile-forward)
+  ;; ("C-z l" . ric/term-projectile-term-buffer-toggle)
+  ;; ("C-z t" . ric/term-projectile-switch-term-project)
   ("C-x t" . ric/term-projectile-switch-term)
   )
 
