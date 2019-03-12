@@ -6,4 +6,4 @@
     (comment-or-uncomment-region (line-beginning-position) (line-end-position) arg)))
 
 (global-set-key (kbd "C-;") 'ric/comment-dwim)
-(global-set-key (kbd "C-z ;") 'ric/comment-dwim)
+;(global-set-key (kbd "C-z ;") 'ric/comment-dwim)
