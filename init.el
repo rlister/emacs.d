@@ -30,12 +30,12 @@
 (load-library "ric-comment-dwim")       ;C-; for commenting
 (load-library "ric-space-dwim")         ;C-\ to compress whitespace
 (load-library "imenu-cfg")              ;M-m
-(load-library "text-cfg")               ;text-mode
-(load-library "dired-cfg")
+;; (load-library "text-cfg")               ;text-mode
+;; (load-library "dired-cfg")
 ;; (load-library "dired-k-cfg")            ;git status and colour
 ;; (load-library "wdired-cfg")             ;e to edit dired filenames
 (load-library "man-cfg")                ;man pages
-(load-library "align-cfg")              ;C-x :
+;; (load-library "align-cfg")              ;C-x :
 (load-library "winner-cfg")             ;C-c left/right
 (load-library "windsize-cfg")           ;M-{left,right,up,down}
 
@@ -44,14 +44,14 @@
 (load-library "counsel-cfg")
 (load-library "ivy-cfg")
 (load-library "counsel-projectile-cfg")
-(load-library "avy-cfg")                ;C-j for jumping
+;; (load-library "avy-cfg")                ;C-j for jumping
 
 ;; packages for evil mode
 (load-library "mwim-cfg")               ;intelligent beg/end of line
 (load-library "evil-cfg")               ;setup evil-mode
 (load-library "evil-surround-cfg")
-(load-library "vim-empty-lines-cfg")    ;tilde for traling empty lines
-(load-library "key-chord-cfg")          ;jk binding
+;; (load-library "vim-empty-lines-cfg")    ;tilde for traling empty lines
+;; (load-library "key-chord-cfg")          ;jk binding
 
 ;; packages for projectile and perspective
 (load-library "projectile-cfg")
@@ -63,7 +63,7 @@
 (load-library "term-cfg")               ;term-mode
 (load-library "term-projectile-cfg")    ;manage terms per project
 ;; (load-library "shell-cfg")              ;shell
-(load-library "ric-mini-shell-cfg")     ;C-,
+;; (load-library "ric-mini-shell-cfg")     ;C-,
 
 ;; other packages
 (load-library "uniquify-cfg")           ;make buffer names unique
@@ -72,8 +72,8 @@
 
 ;(load-library "toggle-selective-display-column") ;code folding with C-TAB
 
-;; ;;; window movement
-(load-library "window-movement")        ;moving between windows
+;; window movement
+;(load-library "window-movement")        ;moving between windows
 
 ;; completion
 (load-library "pabbrev-cfg")
