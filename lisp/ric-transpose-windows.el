@@ -1,3 +1,4 @@
+;; from 26.1 this can be replaced with built-in window-swap-states
 (defun ric/transpose-windows (arg)
   "Transpose the buffers shown in two windows."
   (interactive "p")
