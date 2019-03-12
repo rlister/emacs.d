@@ -22,7 +22,7 @@
 (load-library "delsel-cfg")
 (load-library "files-cfg")
 (load-library "narrow-cfg")
-;; (load-library "diminish-cfg")
+(load-library "diminish-cfg")
 (load-library "face-remap-cfg")         ;M-{=,-,0}
 
 (load-library "epa-cfg")                ;epa for gpg files
