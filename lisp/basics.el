@@ -9,7 +9,7 @@
 (set-default 'cursor-type 'bar)
 
 ;; make sure help buffers popup in current window, not other-window
-(setq display-buffer-alist '((".*" display-buffer-same-window)))
+(add-to-list 'same-window-buffer-names "*Help*")
 
 (use-package select
   :config
