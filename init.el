@@ -31,7 +31,7 @@
 (load-library "ric-space-dwim")         ;C-\ to compress whitespace
 (load-library "imenu-cfg")              ;M-m
 ;; (load-library "text-cfg")               ;text-mode
-;; (load-library "dired-cfg")
+(load-library "dired-cfg")
 ;; (load-library "dired-k-cfg")            ;git status and colour
 ;; (load-library "wdired-cfg")             ;e to edit dired filenames
 (load-library "man-cfg")                ;man pages
