@@ -9,7 +9,8 @@
 (set-default 'cursor-type 'bar)
 
 ;; make sure help buffers popup in current window, not other-window
-(add-to-list 'same-window-buffer-names "*Help*")
+(add-to-list 'same-window-buffer-names "*Help*") ;use this for strings
+(add-to-list 'same-window-regexps "\\*ag search text:") ;use this for regexps
 
 (use-package select
   :config
