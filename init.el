@@ -19,6 +19,7 @@
 (load-library "tool-bar-cfg")
 (load-library "scroll-bar-cfg")
 (load-library "frame-cfg")
+(load-library "help-cfg")               ;C-h as backspace
 (load-library "delsel-cfg")
 (load-library "files-cfg")
 (load-library "narrow-cfg")
