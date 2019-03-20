@@ -44,6 +44,7 @@
 (load-library "swiper-cfg")
 (load-library "counsel-cfg")
 (load-library "ivy-cfg")
+(load-library "ivy-rich-cfg")
 (load-library "counsel-projectile-cfg")
 ;; (load-library "avy-cfg")                ;C-j for jumping
 
