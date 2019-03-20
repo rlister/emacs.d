@@ -62,7 +62,7 @@
 
 ;; terminals and shells
 (load-library "term-cfg")               ;term-mode
-(load-library "term-projectile-cfg")    ;manage terms per project
+;; (load-library "term-projectile-cfg")    ;manage terms per project
 ;; (load-library "shell-cfg")              ;shell
 ;; (load-library "ric-mini-shell-cfg")     ;C-,
 
