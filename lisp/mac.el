@@ -5,6 +5,7 @@
 (when ric-cocoa-p
   (setq ns-auto-hide-menu-bar nil)
   (setq ns-command-modifier 'meta)    ;Command key is Meta
+  (setq ns-right-command-modifier 'control)
   (setq ns-option-modifier 'super)    ;option key is Super
   (setq ns-function-modifier 'hyper)  ;fn key is Hyper
   ;; (exec-path-from-shell-initialize)   ;from melpa
