@@ -6,6 +6,7 @@
          )
   :config
   ;; bindings in char mode
+  (define-key global-map   (kbd "<C-M-return>") 'ric/term)
   (define-key term-raw-map (kbd "C-j") 'ric/term-toggle)
   (define-key term-raw-map (kbd "C-y") 'term-paste)
   (define-key term-raw-map (kbd "M-y") 'ric/term-pop)
