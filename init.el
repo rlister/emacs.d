@@ -112,7 +112,3 @@
 (load-library "org-cfg")                ;todo lists, etc
 (load-library "org-capture-cfg")        ;capture to org buffers
 ;; (load-library "mu4e-cfg")
-
-(require 'exwm)
-(require 'exwm-config)
-(exwm-config-default)
