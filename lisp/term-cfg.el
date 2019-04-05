@@ -6,7 +6,6 @@
          )
   :config
   ;; bindings in char mode
-  (define-key global-map   (kbd "<C-M-return>") 'ric/term)
   (define-key term-raw-map (kbd "C-j") 'ric/term-toggle)
   (define-key term-raw-map (kbd "C-y") 'term-paste)
   (define-key term-raw-map (kbd "M-y") 'ric/term-pop)
@@ -15,11 +14,6 @@
       (after term-kill-buffer-on-exit activate)
     "Kill term buffers on exiting term (C-d or `exit`)."
     (kill-buffer))
-
-  (defun ric/term ()
-    "Start term with my shell."
-    (interactive)
-    (ansi-term (getenv "SHELL")))
 
   (defun ric/term-toggle ()
     "Switch to appropriate evil states with term mode changes."
@@ -40,3 +34,10 @@
       (interactive)
       (term-send-raw-string (counsel-yank-pop)))
   )
+
+(defun ric/term ()
+  "Start term with my shell."
+  (interactive)
+  (ansi-term (getenv "SHELL")))
+
+(define-key global-map   (kbd "<C-M-return>") 'ric/term)
