@@ -8,6 +8,7 @@
   (interactive)
   (other-window -1))
 
+(define-key global-map (kbd "C-o") 'other-window)
 (define-key global-map (kbd "C-x p") 'prev-window)
 
 ;; TODO: get these workig in exwm
@@ -18,3 +19,9 @@
 
 ;; install from melpa
 ;; (golden-ratio-mode 1)
+
+;; splits
+(define-key global-map (kbd "C-0") 'delete-window)
+(define-key global-map (kbd "C-1") 'delete-other-windows)
+(define-key global-map (kbd "C-2") 'split-window-below)
+(define-key global-map (kbd "C-3") 'split-window-right)
