@@ -4,10 +4,11 @@
 
 (when ric-cocoa-p
   (setq ns-auto-hide-menu-bar nil)
-  (setq ns-command-modifier 'meta)    ;Command key is Meta
+  (setq ns-command-modifier 'control)
   (setq ns-right-command-modifier 'control)
-  (setq ns-option-modifier 'super)    ;option key is Super
-  (setq ns-function-modifier 'hyper)  ;fn key is Hyper
+  (setq ns-option-modifier 'meta)
+  (setq ns-control-modifier 'control)
+  (setq ns-function-modifier 'hyper)
   ;; (exec-path-from-shell-initialize)   ;from melpa
   (set-face-attribute 'default nil :family "Roboto Mono" :height 140 :weight 'normal :width 'normal)
 
