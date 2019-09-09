@@ -1,3 +1,0 @@
-#!/bin/sh
-source ${HOME}/etc/profile
-exec /usr/local/Cellar/emacs/24.4/Emacs.app/Contents/MacOS/Emacs
