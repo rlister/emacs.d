@@ -52,6 +52,7 @@
   (setq auto-mode-alist (rassq-delete-all 'dcl-mode auto-mode-alist)) ;no dcl for .com files
   :bind (
          :map org-mode-map
+         ("C-j" . other-window)    ;do not steal this
          ("C-c d" . org-cut-subtree)
          ("C-c a" . org-agenda)
          ("C-c p" . ric/org-convert-todo-to-project)
