@@ -1,12 +1,12 @@
 (use-package term
   :bind (
          ;; bindings in line mode
-         ("C-j" . ric/term-toggle)
+         ("C-l" . ric/term-toggle)
          ("M-:" . eval-expression)
          )
   :config
   ;; bindings in char mode
-  (define-key term-raw-map (kbd "C-j") 'ric/term-toggle)
+  (define-key term-raw-map (kbd "C-l") 'ric/term-toggle)
   (define-key term-raw-map (kbd "C-y") 'term-paste)
   (define-key term-raw-map (kbd "M-y") 'ric/term-pop)
 
