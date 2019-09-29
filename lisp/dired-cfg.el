@@ -14,6 +14,9 @@
   ("C-x D" . dired)            ;legacy
   )
 
+;; this works only if bound outside use-package
+(define-key dired-mode-map (kbd "C-o") 'counsel-projectile-find-file)
+
 ;; (defface ric-dired-executable '((t (:foreground "PaleGreen"))) "Exe files in dired.")
 ;; (defvar  ric-dired-face-executable 'ric-dired-executable)
 
