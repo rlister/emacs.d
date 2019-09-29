@@ -27,3 +27,15 @@
 
 ;;make C-z a prefix key in most modes, we use this a lot later
 (global-set-key (kbd "C-z") nil)
+
+(defun prev-window ()
+  (interactive)
+  (other-window -1))
+
+(global-set-key (kbd "<C-return>") 'switch-to-buffer)
+(global-set-key (kbd "C-j") 'other-window)
+(global-set-key (kbd "C-k") 'prev-window)
+(global-set-key (kbd "C-0") 'delete-window)
+(global-set-key (kbd "C-1") 'delete-other-windows)
+(global-set-key (kbd "C-2") 'split-window-below)
+(global-set-key (kbd "C-3") 'split-window-right)
