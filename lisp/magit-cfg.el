@@ -1,6 +1,7 @@
 (use-package magit
   :ensure t
-  :bind ("C-x g" . magit-status)
+  :bind
+  ("C-x g" . magit-status)
   :config
   (setq magit-last-seen-setup-instructions "1.4.0") ;stop warning from popping up
   (setq magit-commit-show-diff nil)                 ;do not show diff (which is slow) on magit-commit (c c)
