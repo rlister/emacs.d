@@ -7,7 +7,7 @@
 (load-theme 'brew t)
 
 (load-library "package-cfg")            ;bootstrap package system
-(package-initialize t)                  ;put this here or package will add it
+;; (package-initialize t)                  ;put this here or package will add it
 
 ;; OS-specfics
 (load-library "linux")                  ;linux-specific settings
