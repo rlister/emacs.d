@@ -5,10 +5,15 @@
   (setq counsel-projectile-remove-current-buffer t)
   (define-key counsel-projectile-switch-to-buffer-map (kbd "C-k") 'ivy-previous-line)
   :bind (
-         ("C-x p"      . (lambda () (interactive) (counsel-projectile-switch-project "D")))
-         ("C-,"        . (lambda () (interactive) (counsel-projectile-switch-project "D")))
-         ("M-,"        . (lambda () (interactive) (counsel-projectile-switch-project "D")))
+         ("C-x p"      . ric/switch-project)
+         ("C-,"        . ric/switch-project)
          ("C-<return>" . switch-to-buffer)
          ("C-o"        . counsel-projectile-find-file)
          ("C-x C-d"    . counsel-projectile-find-dir)
          ))
+
+(defun ric/switch-project ()
+  "Switch to project and open dired at git home."
+  (interactive)
+  (counsel-projectile-switch-project "D")
+  )
