@@ -9,6 +9,7 @@
   (setq git-commit-summary-max-length 72) ;stop bugging me about long commit msgs
 
   ;; aliases like cmdline
+  (defalias 'g     'magit-status)
   (defalias 'blame 'magit-blame)
   (defalias 'gco   'magit-checkout)
   (defalias 'gb    'magit-branch)

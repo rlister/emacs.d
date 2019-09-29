@@ -8,6 +8,7 @@
   :init
   (ric//use-gnu-ls)
   (put 'dired-find-alternate-file 'disabled nil) ;no newbie hand-holding for 'a'
+  (defalias 'd 'dired-jump)
   :bind
   ("C-x d" . dired-jump)       ;dwim entering dired
   ("C-x D" . dired)            ;legacy
