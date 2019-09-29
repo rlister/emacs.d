@@ -5,6 +5,7 @@
          ("M-:" . eval-expression)
          ("C-j" . other-window)
          ("C-k" . prev-window)
+         ("C-o" . counsel-projectile-find-file)
          )
   :config
   ;; bindings in char mode
@@ -13,6 +14,7 @@
   (define-key term-raw-map (kbd "M-y") 'ric/term-pop)
   (define-key term-raw-map (kbd "C-j") 'other-window)
   (define-key term-raw-map (kbd "C-k") 'prev-window)
+  (define-key term-raw-map (kbd "C-o") 'counsel-projectile-find-file)
 
   (defadvice term-handle-exit
       (after term-kill-buffer-on-exit activate)
