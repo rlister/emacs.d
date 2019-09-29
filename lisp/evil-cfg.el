@@ -29,6 +29,7 @@
   (define-key evil-normal-state-map "\M-y" 'counsel-yank-pop)
   (define-key evil-insert-state-map "\M-y" 'counsel-yank-pop)
   (define-key evil-visual-state-map "\M-y" 'counsel-yank-pop)
+  (define-key evil-normal-state-map "f" 'avy-goto-word-1)
   (define-key evil-normal-state-map (kbd "TAB") 'ric/evil-undefine)
   )
 
