@@ -5,6 +5,7 @@
   (setq magit-completing-read-function 'ivy-completing-read)
   ;; (ivy-set-display-transformer
   ;;  'ivy-switch-buffer 'ric/ivy-switch-buffer-transformer)
+  (define-key global-map [remap switch-to-buffer] 'ivy-switch-buffer)
 
 ;; (defalias 'ric/ivy--term-p
 ;;   (lambda (name)
