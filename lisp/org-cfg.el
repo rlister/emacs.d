@@ -55,12 +55,12 @@
          ("C-j" . other-window)    ;do not steal this
          ("C-k" . prev-window)    ;do not steal this
          ("C-," . ric/switch-project)
-         ("C-c d" . org-cut-subtree)
-         ("C-c a" . org-agenda)
-         ("C-c p" . ric/org-convert-todo-to-project)
-         :map global-map
-         ("M-i" . ric/org-inbox)
+         ;; ("C-c d" . org-cut-subtree)
+         ;; ("C-c a" . org-agenda)
+         ;; ("C-c p" . ric/org-convert-todo-to-project)
          ([C-return] . switch-to-buffer)
+         ;; :map global-map
+         ;; ("M-i" . ric/org-inbox)
         )
   )
 
