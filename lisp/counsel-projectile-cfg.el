@@ -3,6 +3,7 @@
   :init
   (setq counsel-projectile-remove-current-project t)
   (setq counsel-projectile-remove-current-buffer t)
+  :config
   (define-key counsel-projectile-switch-to-buffer-map (kbd "C-k") 'ivy-previous-line)
   :bind (
          ("C-x p"      . ric/switch-project)
