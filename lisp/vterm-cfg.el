@@ -1,0 +1,17 @@
+(use-package vterm
+  :config
+  (define-key vterm-mode-map (kbd "C-SPC") 'counsel-M-x)
+  (define-key vterm-mode-map (kbd "C-j") 'other-window)
+  (define-key vterm-mode-map (kbd "C-k") 'prev-window)
+  (define-key vterm-mode-map (kbd "C-o") 'counsel-projectile-find-file)
+  (define-key vterm-mode-map (kbd "C-l") 'vterm-copy-mode)
+  (define-key vterm-copy-mode-map (kbd "C-l") 'vterm-copy-mode)
+  )
+
+(defun ric//vterm-copy-mode (orig-fun &rest args)
+  "Change evil state when toggling vterm-copy-mode."
+  (if vterm-copy-mode
+      (evil-motion-state)
+    (evil-emacs-state)))
+
+(advice-add 'vterm-copy-mode :after #'ric//vterm-copy-mode)
