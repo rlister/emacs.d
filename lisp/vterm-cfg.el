@@ -5,6 +5,7 @@
   (define-key vterm-mode-map (kbd "C-k") 'prev-window)
   (define-key vterm-mode-map (kbd "C-o") 'counsel-projectile-find-file)
   (define-key vterm-mode-map (kbd "C-l") 'vterm-copy-mode)
+  (define-key vterm-mode-map (kbd "M-y") 'ric/vterm-yank-pop)
   (define-key vterm-copy-mode-map (kbd "C-l") 'vterm-copy-mode)
   )
 
@@ -15,3 +16,9 @@
     (evil-emacs-state)))
 
 (advice-add 'vterm-copy-mode :after #'ric//vterm-copy-mode)
+
+(defun ric/vterm-yank-pop ()
+  "Call my version of yank-pop and insert in vterm."
+  (interactive)
+  (let ((inhibit-read-only t))
+    (vterm-send-string (counsel-yank-pop))))
