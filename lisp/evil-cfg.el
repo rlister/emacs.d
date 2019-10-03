@@ -58,6 +58,8 @@
   (evil-set-initial-state 'org-agenda-mode   'motion)
   (evil-set-initial-state 'help-mode 'motion)
   (evil-set-initial-state 'term-mode 'emacs)
+  (evil-set-initial-state 'vterm-mode 'emacs)
+  (evil-set-initial-state 'vterm-copy-mode 'motion)
   (evil-set-initial-state 'ivy-occur-mode 'emacs)
   (evil-set-initial-state 'inf-ruby-mode 'emacs)
   (evil-set-initial-state 'shell-mode 'emacs)
