@@ -62,7 +62,8 @@
 ;; (load-library "which-func-cfg")         ;which-function in mode-line
 
 ;; terminals and shells
-(load-library "term-cfg")               ;term-mode
+(load-library "vterm-cfg")               ;vterm-mode
+;; (load-library "term-cfg")               ;term-mode
 ;; (load-library "term-projectile-cfg")    ;manage terms per project
 ;; (load-library "shell-cfg")              ;shell
 ;; (load-library "ric-mini-shell-cfg")     ;C-,
