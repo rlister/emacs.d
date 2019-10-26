@@ -44,6 +44,7 @@
 (load-library "counsel-cfg")
 (load-library "ivy-cfg")
 (load-library "ivy-rich-cfg")
+(load-library "ivy-prescient")
 (load-library "counsel-projectile-cfg")
 (load-library "avy-cfg")
 (load-library "link-hint")
