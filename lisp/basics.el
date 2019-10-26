@@ -32,9 +32,10 @@
   (interactive)
   (other-window -1))
 
-(global-set-key (kbd "<C-return>") 'switch-to-buffer)
-(global-set-key (kbd "C-j") 'other-window)
-(global-set-key (kbd "C-k") 'prev-window)
+(global-set-key (kbd "H-j") 'other-window)
+(global-set-key (kbd "H-k") 'prev-window)
+(global-set-key (kbd "H-b") 'switch-to-buffer)
+
 (global-set-key (kbd "C-0") 'delete-window)
 (global-set-key (kbd "C-1") 'delete-other-windows)
 (global-set-key (kbd "C-2") 'split-window-below)

@@ -6,6 +6,8 @@
   (define-key global-map [remap isearch-forward] 'counsel-grep-or-swiper)
   (define-key global-map [remap describe-function] 'counsel-describe-function)
   (define-key global-map [remap describe-variable] 'counsel-describe-variable)
+  (define-key global-map (kbd "H-i") 'counsel-imenu)
+  (define-key global-map (kbd "H-m") 'counsel-M-x)
   :bind (
          ("C-SPC"   . counsel-M-x)
          ("C-x m"   . counsel-M-x)

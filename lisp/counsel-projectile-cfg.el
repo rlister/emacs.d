@@ -7,6 +7,7 @@
   (define-key counsel-projectile-switch-to-buffer-map (kbd "C-k") 'ivy-previous-line)
   :bind (
          ("C-x p"      . ric/switch-project)
+         ("H-p"        . ric/switch-project)
          ("C-,"        . ric/switch-project)
          ("C-<return>" . switch-to-buffer)
          ("C-o"        . counsel-projectile-find-file)

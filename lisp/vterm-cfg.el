@@ -2,11 +2,11 @@
   :config
   (define-key vterm-mode-map (kbd "C-SPC") 'counsel-M-x)
   (define-key vterm-mode-map (kbd "C-j") 'other-window)
-  (define-key vterm-mode-map (kbd "C-k") 'prev-window)
   (define-key vterm-mode-map (kbd "C-o") 'counsel-projectile-find-file)
-  (define-key vterm-mode-map (kbd "C-l") 'vterm-copy-mode)
   (define-key vterm-mode-map (kbd "M-y") 'ric/vterm-yank-pop)
-  (define-key vterm-copy-mode-map (kbd "C-l") 'vterm-copy-mode)
+  (define-key vterm-mode-map (kbd "H-l") 'vterm-copy-mode)
+  (define-key vterm-copy-mode-map (kbd "H-l") 'vterm-copy-mode)
+  (define-key global-map (kbd "H-t") 'vterm)
   )
 
 (defun ric//vterm-copy-mode (orig-fun &rest args)

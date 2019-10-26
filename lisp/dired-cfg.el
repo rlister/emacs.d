@@ -13,6 +13,7 @@
   (define-key dired-mode-map (kbd "C-o") 'counsel-projectile-find-file) ;neeeded after package load
   :bind
   ("C-x d" . dired-jump)       ;dwim entering dired
+  ("H-d"   . dired-jump)
   ("C-x D" . dired)            ;legacy
   )
 
