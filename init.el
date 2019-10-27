@@ -101,6 +101,7 @@
 (load-library "sh-script-cfg")          ;shell-script-mode
 (load-library "yaml-cfg")               ;yaml-mode
 (load-library "ag-cfg")                 ;ag, ag-project (silver searcher)
+(load-library "rg-cfg")                 ;ripgrep
 (load-library "golang-cfg")             ;setup go-mode
 (load-library "nginx-cfg")              ;nginx-mode
 (load-library "markdown-cfg")           ;markdown-mode
