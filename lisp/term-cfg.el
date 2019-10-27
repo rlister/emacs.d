@@ -1,7 +1,6 @@
 (use-package term
   :bind (
          ;; bindings in line mode
-         ("C-l" . ric/term-toggle)
          ("M-:" . eval-expression)
          ("C-j" . other-window)
          ("C-k" . prev-window)
@@ -9,7 +8,6 @@
          )
   :config
   ;; bindings in char mode
-  (define-key term-raw-map (kbd "C-l") 'ric/term-toggle)
   (define-key term-raw-map (kbd "C-y") 'term-paste)
   (define-key term-raw-map (kbd "M-y") 'ric/term-pop)
   (define-key term-raw-map (kbd "C-j") 'other-window)
