@@ -54,7 +54,7 @@
 (load-library "evil-cfg")               ;setup evil-mode
 (load-library "evil-surround-cfg")
 ;; (load-library "vim-empty-lines-cfg")    ;tilde for traling empty lines
-;; (load-library "key-chord-cfg")          ;jk binding
+(load-library "key-chord-cfg")          ;jk binding
 
 ;; packages for projectile and perspective
 (load-library "projectile-cfg")
