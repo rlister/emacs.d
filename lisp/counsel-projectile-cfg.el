@@ -11,6 +11,7 @@
          ("C-,"        . ric/switch-project)
          ("C-<return>" . switch-to-buffer)
          ("C-o"        . counsel-projectile-find-file)
+         ("H-o"        . counsel-projectile-find-file)
          ("C-x C-d"    . counsel-projectile-find-dir)
          ))
 
