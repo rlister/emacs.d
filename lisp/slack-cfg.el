@@ -8,6 +8,7 @@
   (setq slack-prefer-current-team t)
   (setq slack-buffer-create-on-notify t)
   :bind
+  ([f7] . slack-all-unreads)
   ([f8] . tracking-next-buffer)
   ([C-f8] . slack-channel-select)
   ([M-f8] . slack-im-select)
