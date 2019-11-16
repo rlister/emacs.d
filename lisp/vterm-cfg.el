@@ -1,5 +1,7 @@
 (use-package vterm
   :config
+  (define-key vterm-mode-map (kbd "<kp-add>") (kbd "+"))
+  (define-key vterm-mode-map (kbd "<kp-subtract>") (kbd "-"))
   (define-key vterm-mode-map (kbd "C-SPC") 'counsel-M-x)
   (define-key vterm-mode-map (kbd "C-j") 'other-window)
   (define-key vterm-mode-map (kbd "C-o") 'counsel-projectile-find-file)
