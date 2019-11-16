@@ -4,17 +4,13 @@
         org-use-speed-commands 't ;use speedkeys at start of headline (? for list of keys)
         org-startup-folded t      ;no expand all levels on opening file
         org-src-fontify-natively t
-        org-directory "~/notes"
+        org-directory "~/doc"
         org-refile-targets '(
                              (nil :maxlevel . 1)
-                             ("~/notes/gtd/gtd.org" :maxlevel . 2)
-                             ("~/notes/gtd/someday.org" :level . 1)
-                             ("~/notes/gtd/tickler.org" :maxlevel . 2)
+                             ("~/doc/journalx.org" :maxlevel . 3)
                              )
         org-agenda-files '(
-                           "~/notes/gtd/inbox.org"
-                           "~/notes/gtd/gtd.org"
-                           "~/notes/gtd/tickler.org"
+                           "~/doc/journalx.org"
                            )
         org-agenda-custom-commands '(
                                      ("w" "Agenda and work tasks"
@@ -35,7 +31,7 @@
                                      ;;  (search . " %i %-12:c"))
                                      )
         org-fontify-done-headline t
-        org-todo-keywords '("TODO" "WAIT" "|" "DONE" "CANCELLED")
+        org-todo-keywords '("TODO" "WAIT" "WIP" "|" "DONE" "CANCELLED")
         org-todo-interpretation 'sequence
         org-todo-keyword-faces
         '(
@@ -43,10 +39,13 @@
           ;; ("STARTED" .   (:foreground "SalmonPink"     :weight 'normal))
           ;; ("APPT" .      (:foreground "LightGoldenRod" :weight 'normal))
           ("WAIT" .      (:foreground "LightGoldenRod"))
+          ("WIP"  .      (:foreground "LightGoldenRod"))
           ;; ("CANCELLED" . (:foreground "PaleGreen"      :weight 'normal))
           ;; ("DEFERRED" .  (:foreground "yellow"         :weight 'normal))
           ;; ("DONE" .      (:foreground "ForestGreen"    :weight 'normal))
           )
+        org-log-done 'time
+        org-agenda-show-log t
         )
   :config
   (setq auto-mode-alist (rassq-delete-all 'dcl-mode auto-mode-alist)) ;no dcl for .com files
@@ -59,8 +58,10 @@
          ;; ("C-c a" . org-agenda)
          ;; ("C-c p" . ric/org-convert-todo-to-project)
          ([C-return] . switch-to-buffer)
-         ;; :map global-map
+         :map global-map
          ;; ("M-i" . ric/org-inbox)
+         ("H-a" . org-agenda)
+         ("C-c a" . org-agenda)
         )
   )
 
