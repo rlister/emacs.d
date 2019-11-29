@@ -17,6 +17,7 @@
   :bind (
          :map global-map
          ("H-c" . org-capture)
+         ("C-M-s-c" . org-capture)
          ("C-c c" . org-capture)
          ;;        ("C-c c" . ric/org-capture-inbox)
          )

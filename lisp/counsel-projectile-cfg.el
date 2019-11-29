@@ -8,10 +8,12 @@
   :bind (
          ("C-x p"      . ric/switch-project)
          ("H-p"        . ric/switch-project)
+         ("C-M-s-p"    . ric/switch-project)
          ("C-,"        . ric/switch-project)
          ("C-<return>" . switch-to-buffer)
          ("C-o"        . counsel-projectile-find-file)
          ("H-o"        . counsel-projectile-find-file)
+         ("C-M-s-o"    . counsel-projectile-find-file)
          ("C-x C-d"    . counsel-projectile-find-dir)
          ))
 

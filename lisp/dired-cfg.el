@@ -14,6 +14,7 @@
   :bind
   ("C-x d" . dired-jump)       ;dwim entering dired
   ("H-d"   . dired-jump)
+  ("C-M-s-d" . dired-jump)
   ("C-x D" . dired)            ;legacy
   )
 
