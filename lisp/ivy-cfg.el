@@ -6,8 +6,8 @@
   ;; (ivy-set-display-transformer
   ;;  'ivy-switch-buffer 'ric/ivy-switch-buffer-transformer)
   (define-key global-map [remap switch-to-buffer] 'ivy-switch-buffer)
-  (define-key ivy-minibuffer-map (kbd "C-j") 'ivy-next-line)
-  (define-key ivy-minibuffer-map (kbd "C-k") 'ivy-previous-line)
+  (define-key ivy-minibuffer-map (kbd "C-n") 'ivy-next-line)
+  (define-key ivy-minibuffer-map (kbd "C-e") 'ivy-previous-line)
   (define-key ivy-minibuffer-map (kbd "C-l") 'ivy-alt-done)
   )
 
