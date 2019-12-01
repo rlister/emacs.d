@@ -13,7 +13,6 @@
   (define-key global-map (kbd "H-m") 'counsel-M-x)
   (define-key global-map (kbd "C-M-s-m") 'counsel-M-x)
   :bind (
-         ("C-SPC"   . counsel-M-x)
          ("C-x m"   . counsel-M-x)
          ("C-x C-m" . counsel-M-x)
          ))
