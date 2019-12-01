@@ -114,4 +114,5 @@
 
 (load-library "org-cfg")                ;todo lists, etc
 (load-library "org-capture-cfg")        ;capture to org buffers
+(load-library "org-agenda-cfg")         ;org agenda
 ;; (load-library "mu4e-cfg")
