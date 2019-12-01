@@ -8,7 +8,7 @@
   :init
   (ric//use-gnu-ls)
   (put 'dired-find-alternate-file 'disabled nil) ;no newbie hand-holding for 'a'
-  (defalias 'd 'dired-jump)
+  ;; (defalias 'd 'dired-jump)
   :config
   (define-key dired-mode-map (kbd "C-o") 'counsel-projectile-find-file) ;neeeded after package load
   :bind
