@@ -17,6 +17,8 @@
          ("H-d"   . dired-jump)
          ("C-M-s-d" . dired-jump)
          ("C-x D" . dired)            ;legacy
+         :map dired-mode-map
+         ("e" . dired-previous-line)
    )
   )
 
