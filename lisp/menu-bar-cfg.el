@@ -2,7 +2,7 @@
   :config
   (menu-bar-mode -1)
   :bind
-  ("C-x k" . kill-this-buffer) ;changed from kill-buffer
-  ("H-k"   . kill-this-buffer)
-  ("C-M-s-k" . kill-this-buffer)
+  ("C-x k" .   kill-current-buffer) ;changed from kill-this-buffer
+  ("H-k"   .   kill-current-buffer)
+  ("C-M-s-k" . kill-current-buffer)
   )
