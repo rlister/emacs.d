@@ -54,7 +54,7 @@
 (load-library "evil-cfg")               ;setup evil-mode
 (load-library "evil-surround-cfg")
 ;; (load-library "vim-empty-lines-cfg")    ;tilde for traling empty lines
-(load-library "key-chord-cfg")          ;jk binding
+;;(load-library "key-chord-cfg")          ;jk binding
 
 ;; packages for projectile and perspective
 (load-library "projectile-cfg")
@@ -85,7 +85,7 @@
 
 ;; packages for git
 (load-library "magit-cfg")              ;magit-mode
-(load-library "evil-magit-cfg")         ;fix keys in magit
+;; (load-library "evil-magit-cfg")         ;fix keys in magit
 ;; (load-library "git-gutter-fringe-cfg")
 (load-library "git-timemachine-cfg")    ;fixups for evil
 (load-library "git-link-cfg")           ;git-link
