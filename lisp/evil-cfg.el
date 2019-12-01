@@ -8,6 +8,10 @@
 
 (defun ric--evil-bindings ()
   "Hacky way to setup all the keybindings."
+  (define-key evil-normal-state-map "n" 'evil-next-line)
+  (define-key evil-normal-state-map "e" 'evil-previous-line)
+  (define-key evil-motion-state-map "n" 'evil-next-line)
+  (define-key evil-motion-state-map "e" 'evil-previous-line)
   (define-key evil-normal-state-map "\C-e" 'mwim-end-of-code-or-line)
   (define-key evil-insert-state-map "\C-e" 'mwim-end-of-code-or-line)
   (define-key evil-visual-state-map "\C-e" 'mwim-end-of-code-or-line)
@@ -55,7 +59,6 @@
   (evil-mode 1)
   (ric--evil-bindings)
   (evil-set-initial-state 'package-menu-mode 'motion)
-  (evil-set-initial-state 'org-agenda-mode   'motion)
   (evil-set-initial-state 'help-mode 'motion)
   (evil-set-initial-state 'term-mode 'emacs)
   (evil-set-initial-state 'vterm-mode 'emacs)
@@ -69,10 +72,6 @@
   (evil-set-initial-state 'eww-mode 'motion)
   (evil-set-initial-state 'eww-bookmark-mode 'motion)
 
-  (evil-define-key 'motion org-agenda-mode-map (kbd "j") 'org-agenda-next-line)
-  (evil-define-key 'motion org-agenda-mode-map (kbd "k") 'org-agenda-previous-line)
-  (evil-define-key 'motion org-agenda-mode-map (kbd "TAB") 'org-agenda-goto)
-  (evil-define-key 'motion org-agenda-mode-map (kbd "F") 'org-agenda-follow-mode)
   (evil-define-key 'motion occur-mode-map (kbd "RET") 'occur-mode-goto-occurrence-other-window)
   (evil-define-key 'motion occur-mode-map (kbd "g") 'revert-buffer)
   (evil-define-key 'normal help-map "q" 'quit-window)
