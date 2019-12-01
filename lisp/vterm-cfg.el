@@ -9,6 +9,7 @@
   (define-key vterm-mode-map (kbd "H-l") 'vterm-copy-mode)
   (define-key vterm-copy-mode-map (kbd "H-l") 'vterm-copy-mode)
   (define-key global-map (kbd "H-t") 'vterm)
+  (define-key global-map (kbd "C-M-s-t") 'vterm)
   )
 
 (defun ric//vterm-copy-mode (orig-fun &rest args)
