@@ -11,11 +11,13 @@
   ;; (defalias 'd 'dired-jump)
   :config
   (define-key dired-mode-map (kbd "C-o") 'counsel-projectile-find-file) ;neeeded after package load
-  :bind
-  ("C-x d" . dired-jump)       ;dwim entering dired
-  ("H-d"   . dired-jump)
-  ("C-M-s-d" . dired-jump)
-  ("C-x D" . dired)            ;legacy
+  :bind (
+         :map global-map
+         ("C-x d" . dired-jump)       ;dwim entering dired
+         ("H-d"   . dired-jump)
+         ("C-M-s-d" . dired-jump)
+         ("C-x D" . dired)            ;legacy
+   )
   )
 
 ;; (defface ric-dired-executable '((t (:foreground "PaleGreen"))) "Exe files in dired.")
