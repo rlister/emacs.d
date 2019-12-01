@@ -23,8 +23,8 @@
          )
   )
 
-(defun ric/org-capture-inbox ()
-  "org-capture, select todo, and start evil insert state."
-  (interactive)
-  (org-capture nil "t")
-  (evil-append-line 1))
+;; (defun ric/org-capture-inbox ()
+;;   "org-capture, select todo, and start evil insert state."
+;;   (interactive)
+;;   (org-capture nil "t")
+;;   (evil-append-line 1))
