@@ -5,7 +5,7 @@
          ("C-x g" . magit-status)
          ("H-g" . magit-status)
          ("C-M-s-g" . magit-status)
-         :map magit-status-mode-map
+         :map magit-mode-map            ;parent inherited by other maps
          ("e" . magit-section-backward)
          )
   :config
