@@ -3,6 +3,7 @@
   (defalias 'ar 'align-regexp)
   :bind
   ("C-x :" . ric/align-to-colon)
+  ("C-M-s-a" . align-regexp)
   )
 
 (defun ric/align-to-colon (begin end)
