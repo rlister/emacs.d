@@ -58,7 +58,7 @@
   :config
   (evil-mode 1)
   (ric--evil-bindings)
-  (evil-set-initial-state 'package-menu-mode 'motion)
+  (evil-set-initial-state 'package-menu-mode 'emacs)
   (evil-set-initial-state 'help-mode 'motion)
   (evil-set-initial-state 'term-mode 'emacs)
   (evil-set-initial-state 'vterm-mode 'emacs)
