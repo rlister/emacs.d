@@ -27,7 +27,7 @@
 ;;   "z" 'magit-key-mode-popup-stashing
 ;;   )
 
-;; (evil-set-initial-state 'magit-blame-mode 'motion)
+(evil-set-initial-state 'magit-blame-mode 'emacs)
 ;; (evil-define-key 'motion magit-blame-map
 ;;   "q" 'magit-blame-mode ;toggle blame mode off
 ;;   )
