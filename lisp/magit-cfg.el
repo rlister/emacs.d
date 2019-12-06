@@ -6,7 +6,13 @@
          ("H-g"     . magit-status)
          ("C-M-s-g" . magit-status)
          :map magit-mode-map            ;parent inherited by other maps
-         ("e" . magit-section-backward)
+         ("e" . magit-section-backward) ;colemak
+         ("j" . magit-section-forward)  ;qwerty
+         ("k" . magit-section-backward) ;qwerty
+         :map magit-blame-mode-map
+         ("e" . magit-blame-previous-chunk) ;colemak
+         ("j" . magit-blame-next-chunk)     ;qwerty
+         ("k" . magit-blame-previous-chunk) ;qwerty
          )
   :config
   (setq magit-last-seen-setup-instructions "1.4.0") ;stop warning from popping up
@@ -17,7 +23,7 @@
 
   ;; aliases like cmdline
   ;; (defalias 'g     'magit-status)
-  ;; (defalias 'blame 'magit-blame)
+  (defalias 'blame 'magit-blame)
   ;; (defalias 'gco   'magit-checkout)
   ;; (defalias 'gb    'magit-branch)
   ;; (defalias 'gm    'magit-merge)
