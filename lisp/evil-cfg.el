@@ -12,6 +12,8 @@
   (define-key evil-normal-state-map "e" 'evil-previous-line)
   (define-key evil-motion-state-map "n" 'evil-next-line)
   (define-key evil-motion-state-map "e" 'evil-previous-line)
+  (define-key evil-visual-state-map "n" 'evil-next-line)
+  (define-key evil-visual-state-map "e" 'evil-previous-line)
   (define-key evil-normal-state-map "\C-e" 'mwim-end-of-code-or-line)
   (define-key evil-insert-state-map "\C-e" 'mwim-end-of-code-or-line)
   (define-key evil-visual-state-map "\C-e" 'mwim-end-of-code-or-line)
