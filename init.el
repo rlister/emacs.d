@@ -73,6 +73,7 @@
 (load-library "uniquify-cfg")           ;make buffer names unique
 (load-library "paren-cfg")              ;paren matching
 (load-library "smartparens-cfg")        ;setup parentheses behaviour (inc smartparens)
+(load-library "which-key-cfg")          ;help with keybindings
 
 ;(load-library "toggle-selective-display-column") ;code folding with C-TAB
 
