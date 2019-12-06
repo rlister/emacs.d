@@ -7,24 +7,26 @@
         org-directory "~/doc"
         org-refile-targets '(
                              (nil :maxlevel . 1)
-                             ("~/doc/journalx.org" :maxlevel . 3)
-                             ("~/doc/home.org"     :maxlevel . 3)
+                             ("~/doc/work.org" :maxlevel . 3)
+                             ("~/doc/home.org" :maxlevel . 3)
                              )
         org-fontify-done-headline t
-        org-todo-keywords '("TODO" "WAIT" "WIP" "|" "DONE" "CANCELLED")
+        org-todo-keywords '("TODO" "BLOCK(b@/!)" "WIP(w!)" "|" "DONE(d!)" "CANCELLED(c@)")
         org-todo-interpretation 'sequence
         org-todo-keyword-faces
         '(
           ;; ("TODO" .      (:foreground "IndianRed"      :weight 'normal))
           ;; ("STARTED" .   (:foreground "SalmonPink"     :weight 'normal))
           ;; ("APPT" .      (:foreground "LightGoldenRod" :weight 'normal))
-          ("WAIT" .      (:foreground "LightGoldenRod"))
-          ("WIP"  .      (:foreground "LightGoldenRod"))
+          ("BLOCK" .  (:foreground "LightGoldenRod"))
+          ("WAIT"  .  (:foreground "LightGoldenRod"))
+          ("WIP"   .  (:foreground "LightGoldenRod"))
           ;; ("CANCELLED" . (:foreground "PaleGreen"      :weight 'normal))
           ;; ("DEFERRED" .  (:foreground "yellow"         :weight 'normal))
           ;; ("DONE" .      (:foreground "ForestGreen"    :weight 'normal))
           )
-        org-log-done 'time
+        ;; org-log-done 'time
+        org-log-done nil
         )
   :config
   (setq auto-mode-alist (rassq-delete-all 'dcl-mode auto-mode-alist)) ;no dcl for .com files
