@@ -4,14 +4,16 @@
   ;; (require 'org-protocol)               ;get protocol loaded
   (setq org-capture-templates
         '(
-          ("t" "Todo" entry (file+headline "~/notes/gtd/inbox.org" "Inbox")
-           "* TODO %?\n  %i")
-          ("x" "store todo item from command line" entry (file+headline "~/notes/gtd/inbox.org" "Inbox")
-           "* TODO %:link" :immediate-finish t)
-          ("j" "Journal" entry (file+olp+datetree "~/doc/journalx.org")
-           "* %<%H:%M> %?"
-           :empty-lines 0
-           :tree-type week)
+          ;; ("x" "store todo item from command line" entry (file+headline "~/notes/gtd/inbox.org" "Inbox")
+          ;;  "* TODO %:link" :immediate-finish t)
+          ("j" "Journal" entry (file+olp+datetree "~/doc/work.org")
+           "* %<%H:%M> %?" :empty-lines 0 :tree-type week)
+          ("t" "Todo" entry (file+olp+datetree "~/doc/work.org")
+           "* TODO %?" :empty-lines 0 :tree-type week)
+          ("m" "Meeting" entry (file+olp+datetree "~/doc/work.org")
+           "* MTG %?" :empty-lines 0 :tree-type week)
+          ("h" "Home" entry (file+olp+datetree "~/doc/home.org")
+           "* TODO %?" :empty-lines 0 :tree-type week)
           )
         )
   :bind (
