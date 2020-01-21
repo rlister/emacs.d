@@ -239,7 +239,9 @@ This must be loaded /before/ counsel.
   (define-key global-map (kbd "C-c p") (lambda () (interactive) (counsel-projectile-switch-project "D")))
 #+end_src
 
-* Magit
+* Version control
+
+** magit
 
 [[https://magit.vc/][Magit]] git porcelain.
 
@@ -255,6 +257,13 @@ This must be loaded /before/ counsel.
       ad-do-it
       (delete-other-windows))
     )
+#+end_src
+
+** git-link
+
+#+begin_src emacs-lisp
+  (use-package git-link
+    :straight t)
 #+end_src
 
 * Org mode
