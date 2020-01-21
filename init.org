@@ -38,7 +38,7 @@ Change from ~kill-buffer~ so there is no prompt for buffer name.
   (define-key global-map (kbd "C-x k") 'kill-current-buffer)
 #+end_src
 
-Change style for unique buffer names to show path after filename. 
+Change style for unique buffer names to show path after filename.
 
 #+begin_src emacs-lisp
   (setq uniquify-buffer-name-style 'post-forward)
@@ -134,9 +134,12 @@ Load my theme.
 
 #+begin_src emacs-lisp
   (straight-use-package
-     '(brew-theme :type git :host github :repo "rlister/brew-theme")
-     :init
-     (load-theme 'brew t))
+   '(brew-theme :type git :repo "git@github.com:rlister/brew-theme.git")
+   :config
+   (add-to-list 'custom-theme-load-path (expand-file-name  "straight/repos/brew-theme" straight-base-dir))
+   (load-theme 'brew t))
+#+end_src
+
 #+end_src
 
 * macOS specifics
