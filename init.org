@@ -146,8 +146,12 @@ Load my theme.
 Choose correct font based on my various screen sizes.
 
 #+begin_src emacs-lisp
-  (when (= 1440 (x-display-pixel-width))
-    (set-face-attribute 'default nil :family "Roboto Mono" :height 140 :weight 'normal :width 'normal))
+  (when (display-graphic-p)
+    (when (= 1440 (x-display-pixel-width))
+      (set-face-attribute 'default nil :family "Roboto Mono" :height 140 :weight 'normal :width 'normal))
+    (when (= 2560 (x-display-pixel-width))
+      (set-face-attribute 'default nil :family "Roboto Mono" :height 110 :weight 'normal :width 'normal))
+    )
 #+end_src
 
 * Parentheses
@@ -302,6 +306,7 @@ Magit extensions for issues and pull requests.
 
 #+begin_src emacs-lisp
   (use-package org
+    :straight t
     :init
     (setq org-adapt-indentation nil)
     (setq org-src-fontify-natively t)
@@ -357,6 +362,7 @@ Latex is available as both =l= and =L=, so reuse =l= for =emacs-lisp=.
 
  #+begin_src emacs-lisp
    (use-package org-tempo
+     :after org
      :init
      (add-to-list 'org-structure-template-alist '("l" . "src emacs-lisp")))
 #+end_src
