@@ -496,3 +496,38 @@ Toggle comments on region or line, without moving point. This works better as a 
     :straight t
     :defer t)
 #+end_src
+
+* Programming modes
+
+** ruby
+
+Some extra filenames to use =ruby-mode=.
+
+#+begin_src emacs-lisp
+  (use-package ruby-mode
+    :defer t
+    :mode
+    "Staxfile"
+    "Envfile")
+#+end_src
+
+** yaml
+
+Load yaml mode.
+
+#+begin_src emacs-lisp
+  (use-package yaml-mode
+    :straight t
+    :defer t)
+#+end_src
+
+** python
+
+Mess with indent level.
+
+#+begin_src emacs-lisp
+  (use-package python
+    :defer t
+    :init
+    (setq python-indent 2))
+#+end_src
