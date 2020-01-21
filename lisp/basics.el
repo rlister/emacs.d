@@ -32,14 +32,18 @@
   (interactive)
   (other-window -1))
 
-(global-set-key (kbd "H-j") 'other-window)
+(global-set-key (kbd "H-j")     'other-window)
 (global-set-key (kbd "C-M-s-n") 'other-window)
-(global-set-key (kbd "H-k") 'prev-window)
+(global-set-key (kbd "H-k")     'prev-window)
 (global-set-key (kbd "C-M-s-e") 'prev-window)
-(global-set-key (kbd "H-b") 'switch-to-buffer)
+(global-set-key (kbd "H-b")     'switch-to-buffer)
 (global-set-key (kbd "C-M-s-b") 'switch-to-buffer)
-(global-set-key (kbd "H-s") 'save-buffer)
+(global-set-key (kbd "H-s")     'save-buffer)
 (global-set-key (kbd "C-M-s-s") 'save-buffer)
+
+;; same binding as tabs in firefox
+(global-set-key (kbd "C-<prior>") 'previous-buffer)
+(global-set-key (kbd "C-<next>")  'next-buffer)
 
 (global-set-key (kbd "C-0") 'delete-window)
 (global-set-key (kbd "C-1") 'delete-other-windows)
