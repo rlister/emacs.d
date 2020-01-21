@@ -140,6 +140,15 @@ Load my theme.
    (load-theme 'brew t))
 #+end_src
 
+* Font
+
+Choose correct font based on my various screen sizes.
+
+#+begin_src emacs-lisp
+  (when (= 1440 (x-display-pixel-width))
+    (set-face-attribute 'default nil :family "Roboto Mono" :height 140 :weight 'normal :width 'normal))
+#+end_src
+
 #+end_src
 
 * macOS specifics
