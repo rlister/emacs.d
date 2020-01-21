@@ -386,7 +386,7 @@ Set up [[https://orgmode.org/org.html#Capture-templates][capture templates]].
 
 On linux we can install from MELPA and compilation happens correctly inside emacs during install.
 
-#+begin_src emacs-lisp 
+#+begin_src emacs-lisp
   (use-package vterm
     :if (equal system-type 'gnu/linux)
     :straight t
@@ -423,7 +423,7 @@ then load the compiled lib in emacs:
   (use-package mwim
     :straight t
     :bind
-    ("C-a" . mwim-beginning)          
+    ("C-a" . mwim-beginning)
     ("C-e" . mwim-end))
 #+end_src
 
@@ -432,11 +432,7 @@ then load the compiled lib in emacs:
 #+begin_src emacs-lisp
   (use-package avy
     :straight t
-    ;:init		  
-    ;; (setq avy-background t)         ; gray background
-    ;; (setq avy-all-windows nil)      ; should just show candidates from current window
-    ;; (setq avy-case-fold-search nil) ; do not ignore case
-
+    :init
     (setq avy-keys (number-sequence ?a ?z))
     :bind
     ("C-c j" . avy-goto-char-timer)
