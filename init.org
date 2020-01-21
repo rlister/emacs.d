@@ -49,11 +49,12 @@ Change style for unique buffer names to show path after filename.
 
 Emacs makes backups of changed files, ending in =~=, unless ~make-backup-files~ is set to ~nil~.
 
-Move these files out of the way to a dedicated dir, and make multiple, numbered backups.
+Move these files out of the way to a dedicated dir, make multiple, numbered backups, and don't ask me before deleting old backups.
 
 #+begin_src emacs-lisp
   (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
   (setq version-control t)
+  (setq delete-old-versions t)
 #+end_src
 
 * Mode line
