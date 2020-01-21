@@ -475,4 +475,15 @@ Toggle comments on region or line, without moving point. This works better as a 
     :bind
     ("C-c r" . rg))
 #+end_src
+* Undo
+
+#+begin_src emacs-lisp
+  (use-package undo-tree
+    :straight t
+    :defer t
+    :config
+    (setq undo-tree-visualizer-timestamps t)
+    (setq undo-tree-visualizer-diff t)
+    (global-undo-tree-mode))
+#+end_src
 
