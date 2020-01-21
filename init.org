@@ -1,0 +1,447 @@
+#+TITLE: Emacs config
+#+PROPERTY: header-args:emacs-lisp :tangle "~/.emacs.d/init.el"
+
+* Paths
+
+#+begin_src emacs-lisp
+  (add-to-list 'exec-path "/usr/local/bin")
+#+end_src
+
+* Basic defaults
+
+Remove distractions.
+
+#+begin_src emacs-lisp
+  (blink-cursor-mode -1)
+  (menu-bar-mode -1)
+  (setq default-directory "~/")
+  (setq inhibit-startup-message t)
+  (setq initial-scratch-message "")
+  (setq ring-bell-function 'ignore)
+  (setq pop-up-windows nil)
+  (fset 'yes-or-no-p 'y-or-n-p)
+#+end_src
+
+Turn off GUI features.
+
+#+begin_src emacs-lisp
+  (when (display-graphic-p)
+    (tool-bar-mode -1)
+    (scroll-bar-mode -1))
+#+end_src
+
+* Buffers
+
+Change from ~kill-buffer~ so there is no prompt for buffer name.
+
+#+begin_src emacs-lisp
+  (define-key global-map (kbd "C-x k") 'kill-current-buffer)
+#+end_src
+
+Change style for unique buffer names to show path after filename. 
+
+#+begin_src emacs-lisp
+  (setq uniquify-buffer-name-style 'post-forward)
+  (setq uniquify-separator " | ")
+#+end_src
+
+* Backups
+
+Emacs makes backups of changed files, ending in =~=, unless ~make-backup-files~ is set to ~nil~.
+
+Move these files out of the way to a dedicated dir, and make multiple, numbered backups.
+
+#+begin_src emacs-lisp
+  (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
+  (setq version-control t)
+#+end_src
+
+* Mode line
+
+Display time in mode-line.
+
+#+begin_src emacs-lisp
+  (setq display-time-24hr-format t)
+  (display-time-mode 1)
+#+end_src
+
+* Window handling
+
+Enable =C-c left= and =C-c right= for undo/redo of window configuration.
+
+#+begin_src emacs-lisp
+  (winner-mode 1)
+#+end_src
+
+* Whitespace handling
+
+On save, delete whitespace chars trailing each line.
+
+#+begin_src emacs-lisp
+  (add-hook 'before-save-hook 'delete-trailing-whitespace)
+#+end_src
+
+Always uses spaces (never tabs) for indentation.
+
+#+begin_src emacs-lisp
+  (setq-default indent-tabs-mode nil)
+#+end_src
+
+* Dired
+
+Jump straight to current dir listing, instead of prompting.
+
+#+begin_src emacs-lisp
+  (define-key global-map (kbd "C-x d") 'dired-jump)
+#+end_src
+
+* GPG and EasyPG
+
+Set this to ~loopback~ to redirect all gpg pinentry queries to the caller: in this case emacs minibuffer.
+
+#+begin_src emacs-lisp
+  (setq epg-pinentry-mode 'loopback)
+#+end_src
+
+* Straight package manager
+
+Bootstrap straight on new emacs installs:
+
+#+begin_src emacs-lisp
+  (defvar bootstrap-version)
+  (let ((bootstrap-file
+	 (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+	(bootstrap-version 5))
+    (unless (file-exists-p bootstrap-file)
+      (with-current-buffer
+	  (url-retrieve-synchronously
+	   "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+	   'silent 'inhibit-cookies)
+	(goto-char (point-max))
+	(eval-print-last-sexp)))
+    (load bootstrap-file nil 'nomessage))
+#+end_src
+
+Turn on ~use-package~ integration:
+
+#+begin_src emacs-lisp
+  (straight-use-package 'use-package)
+#+end_src
+
+* Theme
+
+Load my theme.
+
+#+begin_src emacs-lisp
+  (straight-use-package
+     '(brew-theme :type git :host github :repo "rlister/brew-theme")
+     :init
+     (load-theme 'brew t))
+#+end_src
+
+* macOS specifics
+
+Fix modifier keys in macOS.
+
+#+begin_src emacs-lisp
+  (when (equal window-system 'ns)
+    (setq ns-auto-hide-menu-bar nil)
+    (setq ns-command-modifier 'control)
+    (setq ns-right-command-modifier 'control)
+    (setq ns-option-modifier 'meta)
+    (setq ns-control-modifier 'control)
+    (setq ns-function-modifier 'hyper))
+#+end_src
+
+* Ivy, counsel and swiper
+
+Ivy provides a completion mechanism.
+
+#+begin_src emacs-lisp
+  (use-package ivy
+    :straight t
+    :init
+    (setq ivy-format-function 'ivy-format-function-arrow)
+    (define-key global-map [remap switch-to-buffer] 'ivy-switch-buffer)
+    )
+#+end_src
+
+Counsel provides common emacs commands, customized to use ivy.
+
+#+begin_src emacs-lisp
+  (use-package counsel
+    :straight t
+    :init
+    (define-key global-map [remap isearch-forward] 'counsel-grep-or-swiper)
+    (define-key global-map [remap find-file] 'counsel-find-file)
+    (define-key global-map [remap describe-variable] 'counsel-describe-variable)
+    (define-key global-map [remap describe-function] 'counsel-describe-function)
+    (define-key global-map [remap yank-pop] 'counsel-yank-pop)
+    :bind
+    ("C-x m" . counsel-M-x)
+    ("C-c m" . counsel-imenu)
+    )
+#+end_src
+
+[[https://github.com/Yevgnen/ivy-rich][ivy-rich]] adds extra information to various ivy completion candidates.
+
+#+begin_src emacs-lisp
+(use-package ivy-rich
+  :straight t
+  :init
+  (setq org-src-fontify-natively t)
+  (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line)
+  ;(setq ivy-format-function #'ivy-format-function-line)
+  :config
+  (ivy-rich-mode 1)
+ )
+#+end_src
+
+[[https://github.com/raxod502/prescient.el][Prescient]] is a library for sorting candidate lists using the algorithm: last few, most frequent, remaining by length.
+This must be loaded /before/ counsel.
+
+#+begin_src emacs-lisp
+  (use-package ivy-prescient
+    :straight t
+    :config
+    (ivy-prescient-mode t))
+#+end_src
+
+* Projectile
+
+[[https://www.projectile.mx][Projectile]] library for project interaction.
+
+#+begin_src emacs-lisp
+  (use-package projectile
+    :straight t
+    :diminish projectile-mode
+    :config
+    (projectile-mode)
+    (setq projectile-switch-project-action 'projectile-dired)
+    (setq projectile-remember-window-configs nil)
+  )
+#+end_src
+
+[[https://github.com/ericdanan/counsel-projectile][Counsel-projectile]] adds variants of projectile commands with ivy integration.
+
+#+begin_src emacs-lisp
+  (use-package counsel-projectile
+    :straight t
+    :init
+    (setq counsel-projectile-remove-current-project t)
+    (setq counsel-projectile-remove-current-buffer t)
+    :bind
+    ("C-c f" . counsel-projectile-find-file)
+    ("C-c d" . counsel-projectile-find-dir)
+    ("C-c b" . counsel-projectile-switch-to-buffer))
+
+  ;; open projects with dired
+  (define-key global-map (kbd "C-c p") (lambda () (interactive) (counsel-projectile-switch-project "D")))
+#+end_src
+
+* Magit
+
+[[https://magit.vc/][Magit]] git porcelain.
+
+#+begin_src emacs-lisp
+  (use-package magit
+    :straight t
+    :bind
+    ("C-c g" . magit-status)
+    :config
+    ;; full screen magit-status from http://whattheemacsd.com/setup-magit.el-01.html
+    (defadvice magit-status (around magit-fullscreen activate)
+      (window-configuration-to-register :magit-fullscreen)
+      ad-do-it
+      (delete-other-windows))
+    )
+#+end_src
+
+* Org mode
+** org
+
+#+begin_src emacs-lisp
+  (use-package org
+    :init
+    (setq org-adapt-indentation nil)
+    (setq org-src-fontify-natively t)
+    (setq org-use-speed-commands 't) ;use speedkeys at start of headline (? for list of keys)
+    (setq org-startup-folded t)      ;no expand all levels on opening file
+    (setq org-directory "~/doc")
+    (setq org-refile-targets '((nil :maxlevel . 1)
+                               ("~/doc/work.org" :maxlevel . 3)
+                               ("~/doc/home.org" :maxlevel . 3)))
+    (setq org-fontify-done-headline t)
+    (setq org-todo-keywords '("TODO" "BLOCK(b@/!)" "WIP(w!)" "|" "DONE(d!)" "CANCELLED(c@)"))
+    (setq org-todo-interpretation 'sequence)
+    (setq org-todo-keyword-faces
+          '(("BLOCK" .  (:foreground "LightGoldenRod"))
+            ("WAIT"  .  (:foreground "LightGoldenRod"))
+            ("WIP"   .  (:foreground "LightGoldenRod"))))
+    (setq org-log-done 'time)
+    :config
+    (setq auto-mode-alist (rassq-delete-all 'dcl-mode auto-mode-alist)) ;no dcl for .com files
+    )
+#+end_src
+
+** org-agenda
+
+#+begin_src emacs-lisp
+  (use-package org-agenda
+    :init
+    (setq org-agenda-files '("~/doc/work.org" "~/doc/home.org"))
+    (setq org-agenda-custom-commands
+          '(
+            ("c" "Composite agenda and todo"
+             ((agenda "")
+              (alltodo)))
+            ("h" "Home tasks"
+             agenda ""
+             ((org-agenda-files '("~/doc/home.org"))
+              (org-agenda-text-search-extra-files nil)))
+            ("w" "Work tasks"
+             agenda ""
+             ((org-agenda-files '("~/doc/work.org"))
+              (org-agenda-text-search-extra-files nil)))))
+    (setq org-agenda-show-log t)
+    (setq org-agenda-log-mode-items '(closed clock state))
+    :bind
+    ("C-c a" . org-agenda)
+    )
+#+end_src
+
+** org-tempo
+
+Structure templates starting with e.g. =<s<TAB>=. See ~org-structure-template-alist~ and ~org-tempo-keywords-alist~ for structure types.
+Latex is available as both =l= and =L=, so reuse =l= for =emacs-lisp=.
+
+ #+begin_src emacs-lisp
+   (use-package org-tempo
+     :init
+     (add-to-list 'org-structure-template-alist '("l" . "src emacs-lisp")))
+#+end_src
+
+** org-capture
+
+Set up [[https://orgmode.org/org.html#Capture-templates][capture templates]].
+
+#+begin_src emacs-lisp
+  (use-package org-capture
+    :init
+    (setq org-capture-templates
+          '(
+            ("j" "Journal" entry (file+olp+datetree "~/doc/work.org")
+             "* %<%H:%M> %?" :empty-lines 0 :tree-type week)
+            ("t" "Todo" entry (file+olp+datetree "~/doc/work.org")
+             "* TODO %?" :empty-lines 0 :tree-type week)
+            ("m" "Meeting" entry (file+olp+datetree "~/doc/work.org")
+             "* MTG %?" :empty-lines 0 :tree-type week)
+            ("h" "Home" entry (file+olp+datetree "~/doc/home.org")
+             "* TODO %?" :empty-lines 0 :tree-type week)
+            )
+          )
+    :bind
+    ("C-c c" . org-capture)
+    )
+#+end_src
+
+* vterm
+
+[[https://github.com/akermu/emacs-libvterm][Emacs-vterm]] bridge to [[https://github.com/neovim/libvterm][libvterm]].
+
+On linux we can install from MELPA and compilation happens correctly inside emacs during install.
+
+#+begin_src emacs-lisp 
+  (use-package vterm
+    :if (equal system-type 'gnu/linux)
+    :straight t
+    :bind
+    ("C-c t" . vterm))
+#+end_src
+
+On macOS we need to download and compile emacs-vterm manually.
+
+#+begin_src sh
+  git clone https://github.com/akermu/emacs-libvterm.git
+  cd emacs-libvterm
+  mkdir -p build
+  cd build
+  cmake ..
+  make
+#+end_src
+
+then load the compiled lib in emacs:
+
+#+begin_src emacs-lisp
+  (use-package vterm
+    :if (equal system-type 'darwin)
+    :load-path "~/src/emacs-libvterm"
+    :bind
+    ("C-c t" . vterm))
+#+end_src
+
+* Movement commands
+
+[[https://github.com/alezost/mwim.el][Mwim]] enhances ~C-a~ and ~C-e~ to move where I mean.
+
+#+begin_src emacs-lisp
+  (use-package mwim
+    :straight t
+    :bind
+    ("C-a" . mwim-beginning)          
+    ("C-e" . mwim-end))
+#+end_src
+
+[[https://github.com/abo-abo/avy][Avy]] jumps to visible text.
+
+#+begin_src emacs-lisp
+  (use-package avy
+    :straight t
+    ;:init		  
+    ;; (setq avy-background t)         ; gray background
+    ;; (setq avy-all-windows nil)      ; should just show candidates from current window
+    ;; (setq avy-case-fold-search nil) ; do not ignore case
+
+    (setq avy-keys (number-sequence ?a ?z))
+    :bind
+    ("C-c j" . avy-goto-char-timer)
+    )
+#+end_src
+
+[[https://github.com/noctuid/link-hint.el][Link-hint]] jumps to various kinds of links with avy interface.
+
+#+begin_src emacs-lisp
+  (use-package link-hint
+    :straight t
+    :bind
+    ("C-c l" . link-hint-open-link)
+    ("C-c L" . link-hint-copy-link)
+    )
+#+end_src
+
+* Comments
+
+Toggle comments on region or line, without moving point. This works better as a toggle than ~comment-dwim~.
+
+#+begin_src emacs-lisp
+  (defun ric/comment-dwim (&optional arg)
+    "Toggle comments on region if active, otherwise toggle comment on line."
+    (interactive "P")
+    (if (region-active-p)
+	(comment-or-uncomment-region (region-beginning) (region-end) arg)
+      (comment-or-uncomment-region (line-beginning-position) (line-end-position) arg)))
+
+  (global-set-key (kbd "C-;") 'ric/comment-dwim)
+#+end_src
+
+* Ripgrep
+
+[[https://github.com/dajva/rg.el][Rg]] is a classic emacs interface to [[https://github.com/BurntSushi/ripgrep][ripgrep]].
+
+#+begin_src emacs-lisp
+  (use-package rg
+    :straight t
+    :bind
+    ("C-c r" . rg))
+#+end_src
+
