@@ -301,6 +301,15 @@ Magit extensions for issues and pull requests.
     :straight t)
 #+end_src
 
+** git-timemachine
+
+[[https://gitlab.com/pidu/git-timemachine][git-timemachine]] steps back through file versions in git.
+
+#+begin_src emacs-lisp
+  (use-package git-timemachine
+    :straight t)
+#+end_src
+
 * Org mode
 ** org
 
