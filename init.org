@@ -30,6 +30,12 @@ Turn off GUI features.
     (scroll-bar-mode -1))
 #+end_src
 
+Typed text replaces region.
+
+#+begin_src emacs-lisp
+  (delete-selection-mode 1)
+#+end_src
+
 * Buffers
 
 Change from ~kill-buffer~ so there is no prompt for buffer name.
