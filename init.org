@@ -87,6 +87,12 @@ Names of buffers that ~display-buffer~ should show in the current window.
     (add-to-list 'same-window-buffer-names name))
 #+end_src
 
+Use current window for =man= command.
+
+#+begin_src emacs-lisp
+  (setq Man-notify-method 'pushy)
+#+end_src
+
 Enable =C-c left= and =C-c right= for undo/redo of window configuration.
 
 #+begin_src emacs-lisp
