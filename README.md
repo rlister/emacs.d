@@ -9,14 +9,12 @@ inevitable madness and a lingering, painful demise.
 ## Installation
 
 Do not install as `~/.emacs.d`, since that directory tends to get
-polluted by various application caches and other files. Instead create
-a symlink to `init.el`:
+polluted by various application caches and other files.
 
-```
-mkdir -p ~/.emacs.d
-cd ~/.emacs.d
-ln -s ../etc/emacs.d/init.el .
-```
+The config is written in a literate programming style using [org-babel](https://orgmode.org/worg/org-contrib/babel/intro.html)
+in the file [init.org](./init.org).
+
+Clone this repo anywhere, open `init.org` and run `org-babel-tangle`, which will generate `~/.emacs.d/init.el`.
 
 ## Install emacs
 
