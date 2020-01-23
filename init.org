@@ -198,7 +198,7 @@ Fix modifier keys in macOS.
 
 * Ivy, counsel and swiper
 
-Ivy provides a completion mechanism.
+[[https://github.com/abo-abo/swiper#ivy][Ivy]] provides a completion mechanism.
 
 #+begin_src emacs-lisp
   (use-package ivy
@@ -232,6 +232,8 @@ This must be loaded /before/ counsel.
     :config
     (ivy-prescient-mode t))
 #+end_src
+
+[[https://github.com/abo-abo/swiper#counsel][Counsel]] provides common emacs commands, customized to use ivy.
 
 #+begin_src emacs-lisp
   (use-package counsel
