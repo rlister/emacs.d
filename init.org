@@ -1,6 +1,12 @@
 #+TITLE: Emacs config
 #+PROPERTY: header-args:emacs-lisp :tangle "~/.emacs.d/init.el"
 
+* Installation
+
+This config uses [[https://orgmode.org/worg/org-contrib/babel/intro.html][org-babel]] in a literate programming style.
+
+To install, clone this repo anywhere, and run ~C-c C-v t~ [[help:org-babel-tangle][(org-babel-tangle]]), which will generate a new [[file:~/.emacs.d/init.el][~/.emacs.d/init.el]].
+
 * Paths
 
 #+begin_src emacs-lisp
