@@ -18,7 +18,7 @@ Remove distractions.
   (setq inhibit-startup-message t)
   (setq initial-scratch-message "")
   (setq ring-bell-function 'ignore)
-  (setq pop-up-windows nil)
+  (setq pop-up-windows t)
   (fset 'yes-or-no-p 'y-or-n-p)
 #+end_src
 
@@ -67,6 +67,13 @@ Display time in mode-line.
 #+end_src
 
 * Window handling
+
+Names of buffers that ~display-buffer~ should show in the current window.
+
+#+begin_src emacs-lisp
+  (dolist (name '("*Help*" "*Buffer List*"))
+    (add-to-list 'same-window-buffer-names name))
+#+end_src
 
 Enable =C-c left= and =C-c right= for undo/redo of window configuration.
 
