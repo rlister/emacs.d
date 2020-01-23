@@ -320,6 +320,8 @@ Magit extensions for issues and pull requests.
 * Org mode
 ** org
 
+Use straight to get latest [[https://code.orgmode.org/bzg/org-mode][org-mode]] from source rather than old version shipped with emacs.
+
 #+begin_src emacs-lisp
   (use-package org
     :straight t
