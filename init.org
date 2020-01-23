@@ -134,11 +134,11 @@ Turn on ~use-package~ integration:
 Load my theme.
 
 #+begin_src emacs-lisp
-  (straight-use-package
-   '(brew-theme :type git :repo "git@github.com:rlister/brew-theme.git")
-   :config
-   (add-to-list 'custom-theme-load-path (expand-file-name  "straight/repos/brew-theme" straight-base-dir))
-   (load-theme 'brew t))
+  (use-package brew-theme
+    :straight (brew-theme :type git :repo "git@github.com:rlister/brew-theme.git")
+    :config
+    (add-to-list 'custom-theme-load-path (expand-file-name  "straight/repos/brew-theme" straight-base-dir))
+    )
 #+end_src
 
 * Font
