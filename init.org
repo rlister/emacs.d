@@ -163,6 +163,7 @@ Load my theme.
     :straight (brew-theme :type git :repo "git@github.com:rlister/brew-theme.git")
     :config
     (add-to-list 'custom-theme-load-path (expand-file-name  "straight/repos/brew-theme" straight-base-dir))
+    (load-theme 'brew t)
     )
 #+end_src
 
