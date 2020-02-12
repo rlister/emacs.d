@@ -588,3 +588,12 @@ Mess with indent level.
     :init
     (setq python-indent 2))
 #+end_src
+
+** docker
+
+Load [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]].
+
+#+begin_src emacs-lisp
+  (use-package dockerfile-mode
+    :straight t)
+#+end_src
