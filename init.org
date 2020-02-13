@@ -610,5 +610,7 @@ Load [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]].
 
 #+begin_src emacs-lisp
   (use-package dockerfile-mode
-    :straight t)
+    :straight t
+    :config
+    (put 'dockerfile-image-name 'safe-local-variable #'stringp))
 #+end_src
