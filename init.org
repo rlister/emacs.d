@@ -495,6 +495,12 @@ then load the compiled lib in emacs:
 
 * Movement commands
 
+I use this more than =zap-to-char=. Use arg for n'th occurrence, negative for backwards.
+
+#+begin_src emacs-lisp
+  (define-key global-map (kbd "C-z") 'zap-up-to-char)
+#+end_src
+
 [[https://github.com/alezost/mwim.el][Mwim]] enhances ~C-a~ and ~C-e~ to move where I mean.
 
 #+begin_src emacs-lisp
