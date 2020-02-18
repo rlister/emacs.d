@@ -608,3 +608,11 @@ Load [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]].
   (use-package dockerfile-mode
     :straight t)
 #+end_src
+** string inflection for camelcase
+
+#+begin_src emacs-lisp
+  (use-package string-inflection
+    :straight t
+    :bind
+    ("C-c i" . string-inflection-all-cycle))
+#+end_src
