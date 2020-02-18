@@ -217,20 +217,6 @@ Fix modifier keys in macOS.
     )
 #+end_src
 
-[[https://github.com/Yevgnen/ivy-rich][ivy-rich]] adds extra information to various ivy completion candidates.
-
-#+begin_src emacs-lisp
-(use-package ivy-rich
-  :straight t
-  :init
-  (setq org-src-fontify-natively t)
-  (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line)
-  ;(setq ivy-format-function #'ivy-format-function-line)
-  :config
-  (ivy-rich-mode 1)
- )
-#+end_src
-
 [[https://github.com/raxod502/prescient.el][Prescient]] is a library for sorting candidate lists using the algorithm: last few, most frequent, remaining by length.
 This must be loaded /before/ counsel.
 
@@ -266,6 +252,21 @@ This must be loaded /before/ counsel.
     ("C-x m" . counsel-M-x)
     ("C-c m" . counsel-imenu)
     )
+#+end_src
+
+[[https://github.com/Yevgnen/ivy-rich][ivy-rich]] adds extra information to various ivy completion candidates.
+
+#+begin_src emacs-lisp
+(use-package ivy-rich
+  :straight t
+  :after counsel
+  :init
+  (setq org-src-fontify-natively t)
+  (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line)
+  ;(setq ivy-format-function #'ivy-format-function-line)
+  :config
+  (ivy-rich-mode 1)
+ )
 #+end_src
 
 * Projectile
