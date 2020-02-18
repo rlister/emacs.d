@@ -616,3 +616,13 @@ Load [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]].
     :bind
     ("C-c i" . string-inflection-all-cycle))
 #+end_src
+* Help
+
+#+begin_src emacs-lisp
+  (use-package which-key
+    :straight t
+    :config
+    (which-key-mode)
+    :bind
+    ("C-c k" . which-key-show-major-mode))
+#+end_src
