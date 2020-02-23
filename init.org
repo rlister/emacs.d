@@ -76,6 +76,7 @@ Display time in mode-line.
 #+begin_src emacs-lisp
   (setq display-time-24hr-format t)
   (display-time-mode 1)
+  (display-battery-mode 1)
 #+end_src
 
 * Window handling
