@@ -7,6 +7,12 @@ This config uses [[https://orgmode.org/worg/org-contrib/babel/intro.html][org-ba
 
 To install, clone this repo anywhere, and run ~C-c C-v t~ [[help:org-babel-tangle][(org-babel-tangle]]), which will generate a new [[file:~/.emacs.d/init.el][~/.emacs.d/init.el]].
 
+* Debug
+
+#+begin_src emacs-lisp
+  (setq debug-on-error nil)
+#+end_src
+
 * Paths
 
 #+begin_src emacs-lisp
