@@ -644,3 +644,11 @@ Load [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]].
     :bind
     ("C-c k" . which-key-show-major-mode))
 #+end_src
+* Mew
+
+[[http://mew.org/en/][Mew mailreader]]. Install as an OS package, and configure in =~/.mew.el=.
+
+#+begin_src emacs-lisp
+  (use-package mew)
+#+end_src
+
