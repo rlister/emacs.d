@@ -39,7 +39,8 @@ Turn off GUI features.
 #+begin_src emacs-lisp
   (when (display-graphic-p)
     (tool-bar-mode -1)
-    (scroll-bar-mode -1))
+    (scroll-bar-mode -1)
+    (setq default-frame-alist '((undecorated . t))))
 #+end_src
 
 Typed text replaces region.
