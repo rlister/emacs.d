@@ -661,3 +661,11 @@ Load [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]].
   (use-package mew)
 #+end_src
 
+* Social
+
+Install, then run `twit` to authenticate via oauth in browser.
+
+#+begin_src emacs-lisp
+  (use-package twittering-mode
+    :straight (twittering-mode :type git :host github :repo "hayamiz/twittering-mode"))
+#+end_src
