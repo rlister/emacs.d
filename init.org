@@ -247,6 +247,7 @@ This must be loaded /before/ counsel.
     :straight t
     :after ivy-prescient
     :init
+    (define-key global-map [remap execute-extended-command] 'counsel-M-x)
     (define-key global-map [remap isearch-forward] 'counsel-grep-or-swiper)
     (define-key global-map [remap find-file] 'counsel-find-file)
     (define-key global-map [remap describe-variable] 'counsel-describe-variable)
