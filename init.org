@@ -254,6 +254,7 @@ This must be loaded /before/ counsel.
     :straight t
     :after ivy-prescient
     :init
+    (define-key global-map [remap execute-extended-command] 'counsel-M-x)
     (define-key global-map [remap isearch-forward] 'counsel-grep-or-swiper)
     (define-key global-map [remap find-file] 'counsel-find-file)
     (define-key global-map [remap describe-variable] 'counsel-describe-variable)
@@ -668,3 +669,11 @@ Load [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]].
   (use-package mew)
 #+end_src
 
+* Social
+
+Install, then run `twit` to authenticate via oauth in browser.
+
+#+begin_src emacs-lisp
+  (use-package twittering-mode
+    :straight (twittering-mode :type git :host github :repo "hayamiz/twittering-mode"))
+#+end_src
