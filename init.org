@@ -409,8 +409,9 @@ Use straight to get latest [[https://code.orgmode.org/bzg/org-mode][org-mode]] f
              agenda ""
              ((org-agenda-files '("~/doc/work.org"))
               (org-agenda-text-search-extra-files nil)))))
-    (setq org-agenda-show-log t)
-    (setq org-agenda-log-mode-items '(closed clock state))
+    (setq org-log-done 'time)
+    (setq org-agenda-log-mode-items '(clock state))
+    ;(setq org-agenda-show-log t)
     :bind
     ("C-c a" . org-agenda)
     )
