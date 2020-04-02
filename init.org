@@ -393,6 +393,14 @@ Use straight to get latest [[https://code.orgmode.org/bzg/org-mode][org-mode]] f
     (setq org-agenda-files '("~/doc/work.org" "~/doc/home.org"))
     (setq org-agenda-custom-commands
           '(
+            ("g" "Geekbot"
+             agenda ""
+             ((org-agenda-files '("~/doc/work.org"))
+              (org-agenda-overriding-header "Standup")
+              (org-agenda-show-log t)
+              (org-agenda-todo-keyword-format "- %-4s")
+              (org-agenda-remove-tags t)
+              (org-agenda-prefix-format "")))
             ("c" "Composite agenda and todo"
              ((agenda "")
               (alltodo)))
@@ -403,7 +411,9 @@ Use straight to get latest [[https://code.orgmode.org/bzg/org-mode][org-mode]] f
             ("w" "Work tasks"
              agenda ""
              ((org-agenda-files '("~/doc/work.org"))
-              (org-agenda-text-search-extra-files nil)))))
+              (org-agenda-text-search-extra-files nil)))
+            ))
+
     (setq org-log-done 'time)
     (setq org-agenda-log-mode-items '(clock state))
     ;(setq org-agenda-show-log t)
