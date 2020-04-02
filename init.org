@@ -395,9 +395,19 @@ Use straight to get latest [[https://code.orgmode.org/bzg/org-mode][org-mode]] f
 #+begin_src emacs-lisp
   (use-package org-agenda
     :init
+    (setq org-agenda-window-setup 'current-window)
+    (setq org-agenda-align-tags-to-column 80)
     (setq org-agenda-files '("~/doc/work.org" "~/doc/home.org"))
     (setq org-agenda-custom-commands
           '(
+            ("g" "Geekbot"
+             agenda ""
+             ((org-agenda-files '("~/doc/work.org"))
+              (org-agenda-overriding-header "Standup")
+              (org-agenda-show-log t)
+              (org-agenda-todo-keyword-format "- %-4s")
+              (org-agenda-remove-tags t)
+              (org-agenda-prefix-format "")))
             ("c" "Composite agenda and todo"
              ((agenda "")
               (alltodo)))
@@ -408,7 +418,9 @@ Use straight to get latest [[https://code.orgmode.org/bzg/org-mode][org-mode]] f
             ("w" "Work tasks"
              agenda ""
              ((org-agenda-files '("~/doc/work.org"))
-              (org-agenda-text-search-extra-files nil)))))
+              (org-agenda-text-search-extra-files nil)))
+            ))
+
     (setq org-log-done 'time)
     (setq org-agenda-log-mode-items '(clock state))
     ;(setq org-agenda-show-log t)
@@ -439,14 +451,16 @@ Set up [[https://orgmode.org/org.html#Capture-templates][capture templates]].
     :init
     (setq org-capture-templates
           '(
-            ("j" "Journal" entry (file+olp+datetree "~/doc/work.org")
-             "* %<%H:%M> %?" :empty-lines 0 :tree-type week)
             ("t" "Todo" entry (file+olp+datetree "~/doc/work.org")
              "* TODO %?" :empty-lines 0 :tree-type week)
+            ("d" "Done" entry (file+olp+datetree "~/doc/work.org")
+             "* DONE %?\n- State \"DONE\" %U" :empty-lines 0 :tree-type week)
             ("m" "Meeting" entry (file+olp+datetree "~/doc/work.org")
              "* MTG %?" :empty-lines 0 :tree-type week)
             ("h" "Home" entry (file+olp+datetree "~/doc/home.org")
              "* TODO %?" :empty-lines 0 :tree-type week)
+            ("j" "Journal" entry (file+olp+datetree "~/doc/work.org")
+             "* %<%H:%M> %?" :empty-lines 0 :tree-type week)
             )
           )
     :bind
