@@ -444,8 +444,6 @@ Set up [[https://orgmode.org/org.html#Capture-templates][capture templates]].
     :init
     (setq org-capture-templates
           '(
-            ("j" "Journal" entry (file+olp+datetree "~/doc/work.org")
-             "* %<%H:%M> %?" :empty-lines 0 :tree-type week)
             ("t" "Todo" entry (file+olp+datetree "~/doc/work.org")
              "* TODO %?" :empty-lines 0 :tree-type week)
             ("d" "Done" entry (file+olp+datetree "~/doc/work.org")
@@ -454,6 +452,8 @@ Set up [[https://orgmode.org/org.html#Capture-templates][capture templates]].
              "* MTG %?" :empty-lines 0 :tree-type week)
             ("h" "Home" entry (file+olp+datetree "~/doc/home.org")
              "* TODO %?" :empty-lines 0 :tree-type week)
+            ("j" "Journal" entry (file+olp+datetree "~/doc/work.org")
+             "* %<%H:%M> %?" :empty-lines 0 :tree-type week)
             )
           )
     :bind
