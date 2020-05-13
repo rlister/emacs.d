@@ -610,6 +610,12 @@ Tell [[https://www.emacswiki.org/emacs/eww][shr and eww]] not to use colors from
 
 * Programming modes
 
+** sh
+
+#+begin_src emacs-lisp
+(setq sh-basic-offset 2)
+#+end_src
+
 ** ruby
 
 Some extra filenames to use =ruby-mode=.
