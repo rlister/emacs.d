@@ -7,6 +7,12 @@ This config uses [[https://orgmode.org/worg/org-contrib/babel/intro.html][org-ba
 
 To install, clone this repo anywhere, and run ~C-c C-v t~ [[help:org-babel-tangle][(org-babel-tangle]]), which will generate a new [[file:~/.emacs.d/init.el][~/.emacs.d/init.el]].
 
+* Debug
+
+#+begin_src emacs-lisp
+  (setq debug-on-error nil)
+#+end_src
+
 * Paths
 
 #+begin_src emacs-lisp
@@ -33,7 +39,8 @@ Turn off GUI features.
 #+begin_src emacs-lisp
   (when (display-graphic-p)
     (tool-bar-mode -1)
-    (scroll-bar-mode -1))
+    (scroll-bar-mode -1)
+    (setq default-frame-alist '((undecorated . t))))
 #+end_src
 
 Typed text replaces region.
@@ -364,6 +371,7 @@ Use straight to get latest [[https://code.orgmode.org/bzg/org-mode][org-mode]] f
     :init
     (setq org-adapt-indentation nil)
     (setq org-src-fontify-natively t)
+    (setq org-src-window-setup 'current-window) ;do not split windows
     (setq org-use-speed-commands 't) ;use speedkeys at start of headline (? for list of keys)
     (setq org-startup-folded t)      ;no expand all levels on opening file
     (setq org-directory "~/doc")
@@ -667,6 +675,38 @@ Load [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]].
     :bind
     ("C-c i" . string-inflection-all-cycle))
 #+end_src
+* RSS
+
+#+begin_src emacs-lisp
+  (use-package elfeed
+    :straight t
+    :config
+    (setq shr-use-fonts nil)
+    (setq elfeed-feeds
+          '(
+            ;("http://feeds.bbci.co.uk/news/rss.xml" news)
+            ("https://www.archlinux.org/feeds/news/" linux)
+            ("https://wiki.archlinux.org/index.php?title=Special:RecentChanges&feed=rss" linux)
+            ("https://archlinux.org/feeds/planet" linux)
+            ("https://www.archlinux.org/feeds/news/" linux)
+            ("https://www.economist.com/the-economist-explains/rss.xml" news)
+            ("https://www.economist.com/britain/rss.xml" news)
+            ("https://www.economist.com/special-report/rss.xml" news)
+            ("https://www.economist.com/united-states/rss.xml" news)
+            ("http://pragmaticemacs.com/feed/" emacs)
+            ("https://with-emacs.com/rss.xml" emacs)
+            ("https://planet.emacslife.com/atom.xml" emacs)
+            ("https://emacsair.me/feed.xml" emacs)
+            ("http://emacs.stackexchange.com/feeds" emacs)
+            ("http://planet.gnu.org/rss20.xml" gnu tech)
+            ("https://aws.amazon.com/new/feed/" aws tech)
+            ("http://feeds.feedburner.com/AmazonWebServicesBlog" aws tech)
+            ("https://nullprogram.com/feed/" tech)
+            ("https://www.jwz.org/blog/feed/" tech)
+            ("http://theweeklylist.org/feed/?post_type=weekly-list" news)
+            )))
+#+end_src
+
 * Help
 
 #+begin_src emacs-lisp
@@ -677,6 +717,7 @@ Load [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]].
     :bind
     ("C-c k" . which-key-show-major-mode))
 #+end_src
+
 * Mew
 
 [[http://mew.org/en/][Mew mailreader]]. Install as an OS package, and configure in =~/.mew.el=.
