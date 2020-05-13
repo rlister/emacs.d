@@ -388,6 +388,7 @@ Use straight to get latest [[https://code.orgmode.org/bzg/org-mode][org-mode]] f
 #+begin_src emacs-lisp
   (use-package org-agenda
     :init
+    (add-hook 'org-agenda-mode-hook 'hl-line-mode)
     (setq org-agenda-window-setup 'current-window)
     (setq org-agenda-align-tags-to-column 80)
     (setq org-agenda-files '("~/doc/work.org" "~/doc/home.org"))
