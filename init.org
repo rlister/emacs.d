@@ -734,3 +734,11 @@ Install, then run `twit` to authenticate via oauth in browser.
   (use-package twittering-mode
     :straight (twittering-mode :type git :host github :repo "hayamiz/twittering-mode"))
 #+end_src
+* Server
+
+Start server if not running in this or any other emacs process.
+
+#+begin_src emacs-lisp
+  (unless (server-running-p)
+    (server-start))
+#+end_src
