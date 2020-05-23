@@ -734,6 +734,22 @@ Install, then run `twit` to authenticate via oauth in browser.
   (use-package twittering-mode
     :straight (twittering-mode :type git :host github :repo "hayamiz/twittering-mode"))
 #+end_src
+
+* Web
+
+Store bookmarks in git-controlled location, and add missing bindings.
+
+#+begin_src emacs-lisp
+  (use-package eww
+    :config
+    (setq eww-bookmarks-directory "~/doc/")
+    :bind (("C-h C-b" . eww-list-bookmarks)
+           :map eww-bookmark-mode-map
+           ("n" . next-line)
+           ("p" . previous-line)
+           ))
+#+end_src
+
 * Server
 
 Start server if not running in this or any other emacs process.
