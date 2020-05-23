@@ -739,6 +739,7 @@ Install, then run `twit` to authenticate via oauth in browser.
 Start server if not running in this or any other emacs process.
 
 #+begin_src emacs-lisp
+  (require 'server)
   (unless (server-running-p)
     (server-start))
 #+end_src
