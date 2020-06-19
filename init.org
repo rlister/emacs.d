@@ -500,8 +500,14 @@ On linux we can install from MELPA and compilation happens correctly inside emac
   (use-package vterm
     :if (equal system-type 'gnu/linux)
     :straight t
-    :bind
-    ("C-c t" . vterm))
+    :bind (
+           ("C-c t" . vterm)
+           ("<M-return>" . vterm-copy-mode)
+           :map vterm-mode-map
+           ("<C-backspace>" . vterm-send-meta-backspace)
+           ("M-v" . (lambda () (interactive) (vterm-copy-mode) (scroll-down-command)))
+           ("C-p" . (lambda () (interactive) (vterm-copy-mode) (previous-line)))
+           ))
 #+end_src
 
 On macOS we need to download and compile emacs-vterm manually.
