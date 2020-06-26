@@ -415,10 +415,10 @@ Use straight to get latest [[https://code.orgmode.org/bzg/org-mode][org-mode]] f
     (setq org-src-window-setup 'current-window) ;do not split windows
     (setq org-use-speed-commands 't) ;use speedkeys at start of headline (? for list of keys)
     (setq org-startup-folded t)      ;no expand all levels on opening file
-    (setq org-directory "~/doc")
+    (setq org-directory "~/src/doc")
     (setq org-refile-targets '((nil :maxlevel . 1)
-                               ("~/doc/work.org" :maxlevel . 3)
-                               ("~/doc/home.org" :maxlevel . 3)))
+                               ("~/src/doc/work.org" :maxlevel . 3)
+                               ("~/src/doc/home.org" :maxlevel . 3)))
     (setq org-fontify-done-headline t)
     (setq org-todo-keywords '("TODO" "BLOCK(b@/!)" "WIP(w!)" "|" "DONE(d!)" "CANCELLED(c@)"))
     (setq org-todo-interpretation 'sequence)
@@ -442,12 +442,12 @@ Use straight to get latest [[https://code.orgmode.org/bzg/org-mode][org-mode]] f
     (add-hook 'org-agenda-mode-hook 'hl-line-mode)
     (setq org-agenda-window-setup 'current-window)
     (setq org-agenda-align-tags-to-column 80)
-    (setq org-agenda-files '("~/doc/work.org" "~/doc/home.org"))
+    (setq org-agenda-files '("~/src/doc/work.org" "~/src/doc/home.org"))
     (setq org-agenda-custom-commands
           '(
             ("g" "Geekbot"
              agenda ""
-             ((org-agenda-files '("~/doc/work.org" "~/.org-jira/"))
+             ((org-agenda-files '("~/src/doc/work.org" "~/.org-jira/"))
               (org-agenda-overriding-header "Standup")
               (org-agenda-show-log t)
               (org-agenda-todo-keyword-format "- %-4s")
@@ -458,11 +458,11 @@ Use straight to get latest [[https://code.orgmode.org/bzg/org-mode][org-mode]] f
               (alltodo)))
             ("h" "Home tasks"
              agenda ""
-             ((org-agenda-files '("~/doc/home.org"))
+             ((org-agenda-files '("~/src/doc/home.org"))
               (org-agenda-text-search-extra-files nil)))
             ("w" "Work tasks"
              ((agenda ""
-                      ((org-agenda-files '("~/doc/work.org" "~/.org-jira/"))
+                      ((org-agenda-files '("~/src/doc/work.org" "~/.org-jira/"))
                        (org-agenda-text-search-extra-files nil)))
               (alltodo ""
                        ((org-agenda-files '("~/.org-jira/"))))
@@ -497,15 +497,15 @@ Set up [[https://orgmode.org/org.html#Capture-templates][capture templates]].
     :init
     (setq org-capture-templates
           '(
-            ("t" "Todo" entry (file+olp+datetree "~/doc/work.org")
+            ("t" "Todo" entry (file+olp+datetree "~/src/doc/work.org")
              "* TODO %?" :empty-lines 0 :tree-type week)
-            ("d" "Done" entry (file+olp+datetree "~/doc/work.org")
+            ("d" "Done" entry (file+olp+datetree "~/src/doc/work.org")
              "* DONE %?\n- State \"DONE\" %U" :empty-lines 0 :tree-type week)
-            ("m" "Meeting" entry (file+olp+datetree "~/doc/work.org")
+            ("m" "Meeting" entry (file+olp+datetree "~/src/doc/work.org")
              "* MTG %?" :empty-lines 0 :tree-type week)
-            ("h" "Home" entry (file+olp+datetree "~/doc/home.org")
+            ("h" "Home" entry (file+olp+datetree "~/src/doc/home.org")
              "* TODO %?" :empty-lines 0 :tree-type week)
-            ("j" "Journal" entry (file+olp+datetree "~/doc/work.org")
+            ("j" "Journal" entry (file+olp+datetree "~/src/doc/work.org")
              "* %<%H:%M> %?" :empty-lines 0 :tree-type week)
             )
           )
@@ -740,6 +740,7 @@ Load [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]].
     :straight t
     :config
     (setq shr-use-fonts nil)
+    (setq elfeed-search-filter "@2-weeks-ago +unread")
     (setq elfeed-feeds
           '(
             ;("http://feeds.bbci.co.uk/news/rss.xml" news)
@@ -808,7 +809,7 @@ Store bookmarks in git-controlled location, and add missing bindings.
 #+begin_src emacs-lisp
   (use-package eww
     :config
-    (setq eww-bookmarks-directory "~/doc/")
+    (setq eww-bookmarks-directory "~/src/doc/")
     :bind (("C-h C-b" . eww-list-bookmarks)
            :map eww-bookmark-mode-map
            ("n" . next-line)
