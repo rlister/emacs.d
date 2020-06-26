@@ -107,6 +107,19 @@ Enable =C-c left= and =C-c right= for undo/redo of window configuration.
   (winner-mode 1)
 #+end_src
 
+#+begin_src emacs-lisp
+  (defun ric/split-dwim ()
+    "Split."
+    (interactive)
+    (if (= (count-windows) 1)
+        (split-window-sensibly)
+      (delete-other-windows)))
+
+
+  (define-key global-map (kbd "C-j") 'other-window)
+  (define-key global-map (kbd "M-j") 'ric/split-dwim)
+#+end_src
+
 * Whitespace handling
 
 On save, delete whitespace chars trailing each line.
@@ -405,7 +418,9 @@ Use straight to get latest [[https://code.orgmode.org/bzg/org-mode][org-mode]] f
     (setq org-log-done 'time)
     :config
     (setq auto-mode-alist (rassq-delete-all 'dcl-mode auto-mode-alist)) ;no dcl for .com files
-    )
+    :config
+    ;; unbind to use global binding
+    (define-key org-mode-map (kbd "C-j") nil))
 #+end_src
 
 ** org-agenda
