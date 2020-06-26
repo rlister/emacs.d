@@ -51,6 +51,14 @@ Typed text replaces region.
 
 * Buffers
 
+Nicer buffer bindings.
+
+#+begin_src emacs-lisp
+  (define-key global-map (kbd "M-'") 'switch-to-buffer)
+  (define-key global-map (kbd "C-t") 'switch-to-buffer)
+  (define-key global-map (kbd "M-s M-s") 'save-buffer)
+#+end_src
+
 Change from ~kill-buffer~ so there is no prompt for buffer name.
 
 #+begin_src emacs-lisp
@@ -534,12 +542,21 @@ On linux we can install from MELPA and compilation happens correctly inside emac
     :straight t
     :bind (
            ("C-c t" . vterm)
+           ("M-m" . vterm)
+           :map vterm-copy-mode-map
            ("<M-return>" . vterm-copy-mode)
            :map vterm-mode-map
            ("<C-backspace>" . vterm-send-meta-backspace)
+           ("<M-return>" . vterm-copy-mode)
            ("M-v" . (lambda () (interactive) (vterm-copy-mode) (scroll-down-command)))
-           ("C-p" . (lambda () (interactive) (vterm-copy-mode) (previous-line)))
-           ))
+           ;; ("C-p" . (lambda () (interactive) (vterm-copy-mode) (previous-line)))
+           )
+    :config
+    (define-key vterm-mode-map (kbd "C-j") nil)
+    (define-key vterm-mode-map (kbd "M-j") nil)
+    (define-key vterm-mode-map (kbd "C-t") nil)
+    (define-key vterm-mode-map (kbd "M-m") nil)
+    )
 #+end_src
 
 On macOS we need to download and compile emacs-vterm manually.
