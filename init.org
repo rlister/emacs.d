@@ -257,7 +257,10 @@ This must be loaded /before/ counsel.
   (use-package ivy-prescient
     :straight t
     :config
-    (ivy-prescient-mode t))
+    (ivy-prescient-mode t)
+    :init
+    (setq ivy-prescient-sort-commands
+          '(:not swiper ivy-switch-buffer counsel-yank-pop)))
 #+end_src
 
 [[https://github.com/ecraven/ivy-pass][ivy-pass]] searches =pass= store using =ivy=.
