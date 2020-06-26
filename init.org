@@ -291,16 +291,16 @@ This must be loaded /before/ counsel.
 [[https://github.com/Yevgnen/ivy-rich][ivy-rich]] adds extra information to various ivy completion candidates.
 
 #+begin_src emacs-lisp
-(use-package ivy-rich
-  :straight t
-  :after counsel
-  :init
-  (setq org-src-fontify-natively t)
-  (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line)
-  ;(setq ivy-format-function #'ivy-format-function-line)
-  :config
-  (ivy-rich-mode 1)
- )
+  (use-package ivy-rich
+    :straight t
+    :after counsel
+    :init
+    (setq org-src-fontify-natively t)
+    (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line)
+                                          ;(setq ivy-format-function #'ivy-format-function-line)
+    :config
+    (ivy-rich-mode 1)
+    )
 #+end_src
 
 * Projectile
