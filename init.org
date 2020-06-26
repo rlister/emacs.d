@@ -125,6 +125,7 @@ Enable =C-c left= and =C-c right= for undo/redo of window configuration.
 
 
   (define-key global-map (kbd "C-j") 'other-window)
+  (define-key lisp-interaction-mode-map (kbd "C-j") nil)
   (define-key global-map (kbd "M-j") 'ric/split-dwim)
 #+end_src
 
@@ -148,7 +149,8 @@ Jump straight to current dir listing, instead of prompting.
 
 #+begin_src emacs-lisp
   (define-key global-map (kbd "C-x d") 'dired-jump)
-  (setq dired-guess-shell-alist-user '(("\\.pdf\\'" "mupdf")))
+  (define-key dired-mode-map (kbd "C-t") nil) ;do not clobber
+  (setq dired-guess-shell-alist-user '(("\\.pdf\\'" "mupdf"))) ;external programs to use
 #+end_src
 
 * GPG and EasyPG
