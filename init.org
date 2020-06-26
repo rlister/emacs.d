@@ -309,9 +309,25 @@ This must be loaded /before/ counsel.
     ("C-c f" . counsel-projectile-find-file)
     ("C-c d" . counsel-projectile-find-dir)
     ("C-c b" . counsel-projectile-switch-to-buffer))
+#+end_src
 
-  ;; open projects with dired
+Open projects with dired.
+
+#+begin_src emacs-lisp
   (define-key global-map (kbd "C-c p") (lambda () (interactive) (counsel-projectile-switch-project "D")))
+#+end_src
+
+Open files with projectile if in a project, with =find-file= otherwise.
+
+#+begin_src emacs-lisp
+  (defun ric/find-file-dwim ()
+    "Find file using projectile if in a project."
+    (interactive)
+    (if (equal (projectile-project-name) "-")
+        (counsel-find-file)
+      (counsel-projectile-find-file)))
+
+  (define-key global-map (kbd "M-o") 'ric/find-file-dwim)
 #+end_src
 
 * Version control
