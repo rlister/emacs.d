@@ -127,6 +127,7 @@ Jump straight to current dir listing, instead of prompting.
 
 #+begin_src emacs-lisp
   (define-key global-map (kbd "C-x d") 'dired-jump)
+  (setq dired-guess-shell-alist-user '(("\\.pdf\\'" "mupdf")))
 #+end_src
 
 * GPG and EasyPG
