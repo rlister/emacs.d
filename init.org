@@ -609,6 +609,15 @@ I use this more than =zap-to-char=. Use arg for n'th occurrence, negative for ba
   (define-key global-map (kbd "M-z") 'zap-up-to-char)
 #+end_src
 
+Better key placement for common movement:
+
+#+begin_src emacs-lisp
+  (define-key global-map (kbd "M-f") 'forward-same-syntax)
+  (define-key global-map (kbd "M-b") (lambda () (interactive) (forward-same-syntax -1)))
+  (define-key global-map (kbd "M-p") 'backward-paragraph)
+  (define-key global-map (kbd "M-n") 'forward-paragraph)
+#+end_src
+
 [[https://github.com/alezost/mwim.el][Mwim]] enhances ~C-a~ and ~C-e~ to move where I mean.
 
 #+begin_src emacs-lisp
