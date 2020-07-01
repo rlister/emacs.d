@@ -144,16 +144,6 @@ Always uses spaces (never tabs) for indentation.
   (setq-default indent-tabs-mode nil)
 #+end_src
 
-* Dired
-
-Jump straight to current dir listing, instead of prompting.
-
-#+begin_src emacs-lisp
-  (define-key global-map (kbd "C-x d") 'dired-jump)
-  (define-key dired-mode-map (kbd "C-t") nil) ;do not clobber
-  (setq dired-guess-shell-alist-user '(("\\.pdf\\'" "mupdf"))) ;external programs to use
-#+end_src
-
 * GPG and EasyPG
 
 Set this to ~loopback~ to redirect all gpg pinentry queries to the caller: in this case emacs minibuffer.
@@ -215,6 +205,19 @@ Choose correct font based on my various screen sizes.
     (when (= 2560 (x-display-pixel-width))
       (set-face-attribute 'default nil :family "Roboto Mono" :height 110 :weight 'normal :width 'normal))
     )
+#+end_src
+
+* Dired
+
+Jump straight to current dir listing, instead of prompting.
+
+#+begin_src emacs-lisp
+  (use-package dired
+    :init
+    (setq dired-guess-shell-alist-user '(("\\.pdf\\'" "mupdf"))) ;external programs to use
+    :bind (("C-x d" . dired-jump)
+           :map dired-mode-map
+           ("C-t" . nil)))
 #+end_src
 
 * Parentheses
