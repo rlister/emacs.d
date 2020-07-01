@@ -86,9 +86,10 @@ Move these files out of the way to a dedicated dir, make multiple, numbered back
 
 * Mode line
 
-Display time in mode-line.
+Display things in mode-line.
 
 #+begin_src emacs-lisp
+  (column-number-mode t)
   (setq display-time-24hr-format t)
   (display-time-mode 1)
   (display-battery-mode 1)
