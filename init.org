@@ -605,7 +605,8 @@ Fix =M-y= binding using counsel at prompt. This is based on [[help:vterm-yank-po
 I use this more than =zap-to-char=. Use arg for n'th occurrence, negative for backwards.
 
 #+begin_src emacs-lisp
-  (define-key global-map (kbd "C-z") 'zap-up-to-char)
+  (define-key global-map (kbd "C-z") 'undo)
+  (define-key global-map (kbd "M-z") 'zap-up-to-char)
 #+end_src
 
 [[https://github.com/alezost/mwim.el][Mwim]] enhances ~C-a~ and ~C-e~ to move where I mean.
