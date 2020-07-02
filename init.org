@@ -780,6 +780,7 @@ Load [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]].
     :config
     (put 'dockerfile-image-name 'safe-local-variable #'stringp))
 #+end_src
+
 ** string inflection for camelcase
 
 #+begin_src emacs-lisp
@@ -788,6 +789,7 @@ Load [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]].
     :bind
     ("C-c i" . string-inflection-all-cycle))
 #+end_src
+
 * RSS
 
 #+begin_src emacs-lisp
