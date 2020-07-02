@@ -132,6 +132,12 @@ Enable =C-c left= and =C-c right= for undo/redo of window configuration.
 
 * Whitespace handling
 
+Combine =just-one-space= and =delete-horizontal-space= on one toggle key:
+
+#+begin_src emacs-lisp
+  (define-key global-map (kbd "M-SPC") 'cycle-spacing)
+#+end_src
+
 On save, delete whitespace chars trailing each line.
 
 #+begin_src emacs-lisp
