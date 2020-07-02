@@ -611,6 +611,25 @@ Fix =M-y= binding using counsel at prompt. This is based on [[help:vterm-yank-po
 
 * Movement commands
 
+Preserve point position on scroll, so reverse operation returns to same location:
+
+#+begin_src emacs-lisp
+  (setq scroll-preserve-screen-position t)
+#+end_src
+
+At beginning of line, =kill-line= kills newline as well:
+
+#+begin_src emacs-lisp
+  (setq kill-whole-line t)
+#+end_src
+
+Motion starting at end of line keeps to ends of lines:
+
+#+begin_src emacs-lisp
+  (setq line-move-visual nil)
+  (setq track-eol t)
+#+end_src
+
 I use this more than =zap-to-char=. Use arg for n'th occurrence, negative for backwards.
 
 #+begin_src emacs-lisp
