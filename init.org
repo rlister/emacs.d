@@ -572,6 +572,9 @@ On linux we can install from MELPA and compilation happens correctly inside emac
     (define-key vterm-mode-map (kbd "M-j") nil)
     (define-key vterm-mode-map (kbd "C-t") nil)
     (define-key vterm-mode-map (kbd "M-m") nil)
+    (define-key vterm-mode-map (kbd "<f6>") nil)
+    (define-key vterm-mode-map (kbd "<f7>") nil)
+    (define-key vterm-mode-map (kbd "<f8>") nil)
     )
 #+end_src
 
