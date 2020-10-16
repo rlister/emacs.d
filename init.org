@@ -823,7 +823,9 @@ Load [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]].
             ("https://nullprogram.com/feed/" tech)
             ("https://www.jwz.org/blog/feed/" tech)
             ("http://theweeklylist.org/feed/?post_type=weekly-list" news)
-            )))
+            ))
+    :bind (:map elfeed-show-mode-map
+                ("r" . elfeed-kill-buffer)))
 #+end_src
 
 * Help
