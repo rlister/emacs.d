@@ -116,6 +116,9 @@ Enable =C-c left= and =C-c right= for undo/redo of window configuration.
   (winner-mode 1)
 #+end_src
 
+Split window horizontally or vertically, based on width, and toggle
+between split and unsplit.
+
 #+begin_src emacs-lisp
   (defun ric/split-dwim ()
     "Split."
@@ -124,10 +127,15 @@ Enable =C-c left= and =C-c right= for undo/redo of window configuration.
         (split-window-sensibly)
       (delete-other-windows)))
 
+  (setq split-width-threshold 250)
+  (define-key global-map (kbd "M-j") 'ric/split-dwim)
+#+end_src
 
+Nicer binding for =other-window=.
+
+#+begin_src emacs-lisp
   (define-key global-map (kbd "C-j") 'other-window)
   (define-key lisp-interaction-mode-map (kbd "C-j") nil)
-  (define-key global-map (kbd "M-j") 'ric/split-dwim)
 #+end_src
 
 * Whitespace handling
