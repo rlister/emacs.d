@@ -781,6 +781,17 @@ Mess with indent level.
     (setq python-indent 2))
 #+end_src
 
+** javascript
+
+Mess with indent level.
+
+#+begin_src emacs-lisp
+  (use-package javascript-mode
+    :defer t
+    :init
+    (setq js-indent-level 2))
+#+end_src
+
 ** docker
 
 Load [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]].
