@@ -257,17 +257,16 @@ Fix modifier keys in macOS.
     (setq ns-function-modifier 'hyper))
 #+end_src
 
-* Ivy, counsel and swiper
+* Selectrum
 
-[[https://github.com/abo-abo/swiper#ivy][Ivy]] provides a completion mechanism.
+[[https://github.com/raxod502/selectrum/][Selectrum]] selection completion drop-in for completing-read:
 
 #+begin_src emacs-lisp
-  (use-package ivy
+  (use-package selectrum
     :straight t
-    :init
-    (setq ivy-format-function 'ivy-format-function-arrow)
-    (define-key global-map [remap switch-to-buffer] 'ivy-switch-buffer)
-    )
+    :config
+    (selectrum-mode +1)
+  )
 #+end_src
 
 [[https://github.com/raxod502/prescient.el][Prescient]] is a library for sorting candidate lists using the algorithm: last few, most frequent, remaining by length.
