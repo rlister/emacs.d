@@ -211,15 +211,15 @@ Choose correct font based on my various screen sizes.
 #+begin_src emacs-lisp
   (when (display-graphic-p)
     (when (= 1440 (x-display-pixel-width))
-      (set-face-attribute 'default nil        :family "Roboto Mono" :height 140 :weight 'normal :width 'normal)
-      (set-face-attribute 'variable-pitch nil :family "Roboto Mono" :height 140 :weight 'normal :width 'normal))
+      (set-face-font 'default "Roboto Mono-14:foundry=GOOG:slant=0"))
     (when (= 1920 (x-display-pixel-width))
-      (set-face-attribute 'default nil        :family "Roboto Mono" :height 130 :weight 'normal :width 'normal)
-      (set-face-attribute 'variable-pitch nil :family "Roboto Mono" :height 120 :weight 'normal :width 'normal))
+      (set-face-font 'default "Roboto Mono-13:foundry=GOOG:slant=0"))
     (when (= 2560 (x-display-pixel-width))
-      (set-face-attribute 'default nil :family "Roboto Mono" :height 110 :weight 'normal :width 'normal))
+      (set-face-font 'default "Roboto Mono-11:foundry=GOOG:slant=0"))
     )
 #+end_src
+
+        ;; (set-face-attribute 'variable-pitch nil :family "Roboto Mono" :height 140 :weight 'normal :width 'normal))
 
 * Dired
 
@@ -508,6 +508,16 @@ Set up [[https://orgmode.org/org.html#Capture-templates][capture templates]].
     )
 #+end_src
 
+** org-jira
+
+#+begin_src emacs-lisp
+  (use-package org-jira
+    :straight (org-jira :type git :host github :repo "ahungry/org-jira")
+    :config
+    (setq jiralib-url "https://arcadiapower.atlassian.net")
+  )
+#+end_src
+
 * vterm
 
 [[https://github.com/akermu/emacs-libvterm][Emacs-vterm]] bridge to [[https://github.com/neovim/libvterm][libvterm]].
@@ -538,6 +548,7 @@ On linux we can install from MELPA and compilation happens correctly inside emac
     (define-key vterm-mode-map (kbd "<f6>") nil)
     (define-key vterm-mode-map (kbd "<f7>") nil)
     (define-key vterm-mode-map (kbd "<f8>") nil)
+    (setq vterm-max-scrollback 10000)
     )
 #+end_src
 
@@ -745,6 +756,14 @@ Mess with indent level.
     :defer t
     :init
     (setq js-indent-level 2))
+
+** rust
+
+#+begin_src emacs-lisp
+  (use-package rust-mode
+    :straight t
+  :init
+  (setq rust-indent-offset 2))
 #+end_src
 
 ** docker
@@ -765,6 +784,16 @@ Load [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]].
     :straight t
     :bind
     ("C-c i" . string-inflection-all-cycle))
+#+end_src
+
+** dumb-jump
+
+#+begin_src emacs-lisp
+  (use-package dumb-jump
+    :straight t
+    :init
+    (dumb-jump-mode t)
+  )
 #+end_src
 
 * RSS
@@ -861,4 +890,13 @@ Start server if not running in this or any other emacs process.
   (require 'server)
   (unless (server-running-p)
     (server-start))
+#+end_src
+
+* Mouse
+
+Turn off mouse clicks from trackpad.
+
+#+begin_src emacs-lisp
+  (dolist (key '([mouse-1] [down-mouse-1] [C-down-mouse-1]))
+    (global-unset-key key))
 #+end_src
