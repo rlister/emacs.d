@@ -322,15 +322,15 @@ Open projects with dired.
   (define-key global-map (kbd "C-c p") (lambda () (interactive) (projectile-switch-project "D")))
 #+end_src
 
-Open files with projectile if in a project, with =find-file= otherwise.
+Find files appropriately depending on whether in a project:
 
 #+begin_src emacs-lisp
   (defun ric/find-file-dwim ()
-    "Find file using projectile if in a project."
+    "Find file using project.el if in a project."
     (interactive)
-    (if (equal (projectile-project-name) "-")
-        (find-file)
-      (projectile-find-file)))
+    (if (project-current)
+        (project-find-file)
+      (call-interactively 'find-file)))
 
   (define-key global-map (kbd "M-o") 'ric/find-file-dwim)
 #+end_src
