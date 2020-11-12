@@ -219,8 +219,6 @@ Choose correct font based on my various screen sizes.
     )
 #+end_src
 
-        ;; (set-face-attribute 'variable-pitch nil :family "Roboto Mono" :height 140 :weight 'normal :width 'normal))
-
 * Dired
 
 Jump straight to current dir listing, instead of prompting.
@@ -289,10 +287,6 @@ Fix modifier keys in macOS.
     :config
     (ctrlf-mode +1)
   )
-#+end_src
-
-
-#+begin_src emacs-lisp
 #+end_src
 
 * Projectile
@@ -756,14 +750,6 @@ Mess with indent level.
     :defer t
     :init
     (setq js-indent-level 2))
-
-** rust
-
-#+begin_src emacs-lisp
-  (use-package rust-mode
-    :straight t
-  :init
-  (setq rust-indent-offset 2))
 #+end_src
 
 ** docker
@@ -784,16 +770,6 @@ Load [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]].
     :straight t
     :bind
     ("C-c i" . string-inflection-all-cycle))
-#+end_src
-
-** dumb-jump
-
-#+begin_src emacs-lisp
-  (use-package dumb-jump
-    :straight t
-    :init
-    (dumb-jump-mode t)
-  )
 #+end_src
 
 * RSS
