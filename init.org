@@ -100,7 +100,7 @@ Display things in mode-line.
 Names of buffers that ~display-buffer~ should show in the current window.
 
 #+begin_src emacs-lisp
-  (dolist (name '("*Help*" "*Buffer List*"))
+  (dolist (name '("*Help*" "*Buffer List*" "*Bufler*"))
     (add-to-list 'same-window-buffer-names name))
 #+end_src
 
