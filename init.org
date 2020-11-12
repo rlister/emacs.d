@@ -502,16 +502,6 @@ Set up [[https://orgmode.org/org.html#Capture-templates][capture templates]].
     )
 #+end_src
 
-** org-jira
-
-#+begin_src emacs-lisp
-  (use-package org-jira
-    :straight (org-jira :type git :host github :repo "ahungry/org-jira")
-    :config
-    (setq jiralib-url "https://arcadiapower.atlassian.net")
-  )
-#+end_src
-
 * vterm
 
 [[https://github.com/akermu/emacs-libvterm][Emacs-vterm]] bridge to [[https://github.com/neovim/libvterm][libvterm]].
