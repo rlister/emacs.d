@@ -279,14 +279,6 @@ Fix modifier keys in macOS.
   )
 #+end_src
 
-[[https://github.com/ecraven/ivy-pass][ivy-pass]] searches =pass= store using =ivy=.
-
-#+begin_src emacs-lisp
-  (use-package ivy-pass
-    :straight t
-    :bind
-    ("C-c P" . ivy-pass))
-#+end_src
 
 [[https://github.com/abo-abo/swiper#counsel][Counsel]] provides common emacs commands, customized to use ivy.
 
