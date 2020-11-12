@@ -270,16 +270,13 @@ Fix modifier keys in macOS.
 #+end_src
 
 [[https://github.com/raxod502/prescient.el][Prescient]] is a library for sorting candidate lists using the algorithm: last few, most frequent, remaining by length.
-This must be loaded /before/ counsel.
 
 #+begin_src emacs-lisp
-  (use-package ivy-prescient
+  (use-package selectrum-prescient
     :straight t
     :config
-    (ivy-prescient-mode t)
-    :init
-    (setq ivy-prescient-sort-commands
-          '(:not swiper ivy-switch-buffer counsel-yank-pop)))
+    (selectrum-prescient-mode +1)
+  )
 #+end_src
 
 [[https://github.com/ecraven/ivy-pass][ivy-pass]] searches =pass= store using =ivy=.
