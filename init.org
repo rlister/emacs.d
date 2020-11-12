@@ -291,19 +291,8 @@ Fix modifier keys in macOS.
   )
 #+end_src
 
-[[https://github.com/Yevgnen/ivy-rich][ivy-rich]] adds extra information to various ivy completion candidates.
 
 #+begin_src emacs-lisp
-  (use-package ivy-rich
-    :straight t
-    :after counsel
-    :init
-    (setq org-src-fontify-natively t)
-    (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line)
-                                          ;(setq ivy-format-function #'ivy-format-function-line)
-    :config
-    (ivy-rich-mode 1)
-    )
 #+end_src
 
 * Projectile
@@ -321,24 +310,10 @@ Fix modifier keys in macOS.
   )
 #+end_src
 
-[[https://github.com/ericdanan/counsel-projectile][Counsel-projectile]] adds variants of projectile commands with ivy integration.
-
-#+begin_src emacs-lisp
-  (use-package counsel-projectile
-    :straight t
-    :init
-    (setq counsel-projectile-remove-current-project t)
-    (setq counsel-projectile-remove-current-buffer t)
-    :bind
-    ("C-c f" . counsel-projectile-find-file)
-    ("C-c d" . counsel-projectile-find-dir)
-    ("C-c b" . counsel-projectile-switch-to-buffer))
-#+end_src
-
 Open projects with dired.
 
 #+begin_src emacs-lisp
-  (define-key global-map (kbd "C-c p") (lambda () (interactive) (counsel-projectile-switch-project "D")))
+  (define-key global-map (kbd "C-c p") (lambda () (interactive) (projectile-switch-project "D")))
 #+end_src
 
 Open files with projectile if in a project, with =find-file= otherwise.
@@ -348,8 +323,8 @@ Open files with projectile if in a project, with =find-file= otherwise.
     "Find file using projectile if in a project."
     (interactive)
     (if (equal (projectile-project-name) "-")
-        (counsel-find-file)
-      (counsel-projectile-find-file)))
+        (find-file)
+      (projectile-find-file)))
 
   (define-key global-map (kbd "M-o") 'ric/find-file-dwim)
 #+end_src
