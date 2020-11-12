@@ -257,73 +257,42 @@ Fix modifier keys in macOS.
     (setq ns-function-modifier 'hyper))
 #+end_src
 
-* Ivy, counsel and swiper
+* Selectrum
 
-[[https://github.com/abo-abo/swiper#ivy][Ivy]] provides a completion mechanism.
+[[https://github.com/raxod502/selectrum/][Selectrum]] selection completion drop-in for completing-read:
 
 #+begin_src emacs-lisp
-  (use-package ivy
+  (use-package selectrum
     :straight t
-    :init
-    (setq ivy-format-function 'ivy-format-function-arrow)
-    (define-key global-map [remap switch-to-buffer] 'ivy-switch-buffer)
-    )
+    :config
+    (selectrum-mode +1)
+  )
 #+end_src
 
 [[https://github.com/raxod502/prescient.el][Prescient]] is a library for sorting candidate lists using the algorithm: last few, most frequent, remaining by length.
-This must be loaded /before/ counsel.
 
 #+begin_src emacs-lisp
-  (use-package ivy-prescient
+  (use-package selectrum-prescient
     :straight t
     :config
-    (ivy-prescient-mode t)
-    :init
-    (setq ivy-prescient-sort-commands
-          '(:not swiper ivy-switch-buffer counsel-yank-pop)))
+    (selectrum-prescient-mode +1)
+  )
 #+end_src
 
-[[https://github.com/ecraven/ivy-pass][ivy-pass]] searches =pass= store using =ivy=.
+* Ctrlf search
+
+[[https://github.com/raxod502/ctrlf][Ctrlf]] is an enhanced form of isearch.
 
 #+begin_src emacs-lisp
-  (use-package ivy-pass
+  (use-package ctrlf
     :straight t
-    :bind
-    ("C-c P" . ivy-pass))
-#+end_src
-
-[[https://github.com/abo-abo/swiper#counsel][Counsel]] provides common emacs commands, customized to use ivy.
-
-#+begin_src emacs-lisp
-  (use-package counsel
-    :straight t
-    :after ivy-prescient
-    :init
-    (define-key global-map [remap execute-extended-command] 'counsel-M-x)
-    (define-key global-map [remap isearch-forward] 'counsel-grep-or-swiper)
-    (define-key global-map [remap find-file] 'counsel-find-file)
-    (define-key global-map [remap describe-variable] 'counsel-describe-variable)
-    (define-key global-map [remap describe-function] 'counsel-describe-function)
-    (define-key global-map [remap yank-pop] 'counsel-yank-pop)
-    :bind
-    ("C-x m" . counsel-M-x)
-    ("C-c m" . counsel-imenu)
-    )
-#+end_src
-
-[[https://github.com/Yevgnen/ivy-rich][ivy-rich]] adds extra information to various ivy completion candidates.
-
-#+begin_src emacs-lisp
-  (use-package ivy-rich
-    :straight t
-    :after counsel
-    :init
-    (setq org-src-fontify-natively t)
-    (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line)
-                                          ;(setq ivy-format-function #'ivy-format-function-line)
     :config
-    (ivy-rich-mode 1)
-    )
+    (ctrlf-mode +1)
+  )
+#+end_src
+
+
+#+begin_src emacs-lisp
 #+end_src
 
 * Projectile
@@ -341,24 +310,10 @@ This must be loaded /before/ counsel.
   )
 #+end_src
 
-[[https://github.com/ericdanan/counsel-projectile][Counsel-projectile]] adds variants of projectile commands with ivy integration.
-
-#+begin_src emacs-lisp
-  (use-package counsel-projectile
-    :straight t
-    :init
-    (setq counsel-projectile-remove-current-project t)
-    (setq counsel-projectile-remove-current-buffer t)
-    :bind
-    ("C-c f" . counsel-projectile-find-file)
-    ("C-c d" . counsel-projectile-find-dir)
-    ("C-c b" . counsel-projectile-switch-to-buffer))
-#+end_src
-
 Open projects with dired.
 
 #+begin_src emacs-lisp
-  (define-key global-map (kbd "C-c p") (lambda () (interactive) (counsel-projectile-switch-project "D")))
+  (define-key global-map (kbd "C-c p") (lambda () (interactive) (projectile-switch-project "D")))
 #+end_src
 
 Open files with projectile if in a project, with =find-file= otherwise.
@@ -368,8 +323,8 @@ Open files with projectile if in a project, with =find-file= otherwise.
     "Find file using projectile if in a project."
     (interactive)
     (if (equal (projectile-project-name) "-")
-        (counsel-find-file)
-      (counsel-projectile-find-file)))
+        (find-file)
+      (projectile-find-file)))
 
   (define-key global-map (kbd "M-o") 'ric/find-file-dwim)
 #+end_src
@@ -610,14 +565,14 @@ then load the compiled lib in emacs:
 Fix =M-y= binding using counsel at prompt. This is based on [[help:vterm-yank-pop]]:
 
 #+begin_src emacs-lisp
-  (defun ric/vterm-yank-pop (&optional arg)
-    "Yank in vterm using counsel."
-    (interactive "p")
-    (let ((inhibit-read-only t)
-          (yank-undo-function #'(lambda (_start _end) (vterm-undo))))
-      (cl-letf (((symbol-function 'insert-for-yank)
-                 #'(lambda (str) (vterm-send-string (concat " " str) t))))
-        (counsel-yank-pop arg))))
+  ;; (defun ric/vterm-yank-pop (&optional arg)
+  ;;   "Yank in vterm using counsel."
+  ;;   (interactive "p")
+  ;;   (let ((inhibit-read-only t)
+  ;;         (yank-undo-function #'(lambda (_start _end) (vterm-undo))))
+  ;;     (cl-letf (((symbol-function 'insert-for-yank)
+  ;;                #'(lambda (str) (vterm-send-string (concat " " str) t))))
+  ;;       (counsel-yank-pop arg))))
 #+end_src
 
 * Movement commands
