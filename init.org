@@ -292,6 +292,15 @@ Fix modifier keys in macOS.
   )
 #+end_src
 
+* Bufler
+
+[[https://github.com/alphapapa/bufler.el][Bufler]] is an =ibuffer= replacement:
+
+#+begin_src emacs-lisp
+  (use-package bufler
+    :straight t)
+#+end_src
+
 * Projectile
 
 [[https://www.projectile.mx][Projectile]] library for project interaction.
