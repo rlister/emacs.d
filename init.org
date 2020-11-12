@@ -288,6 +288,7 @@ Fix modifier keys in macOS.
     :straight t
     :config
     (ctrlf-mode +1)
+    (setq ctrlf--style "fuzzy")
   )
 #+end_src
 
