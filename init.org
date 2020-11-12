@@ -370,7 +370,7 @@ Magit extensions for issues and pull requests.
 
 #+begin_src emacs-lisp
   (use-package forge
-    :straight t
+    :straight (forge :type git :host github :repo "magit/forge")
     :after magit
     :defer t)
 #+end_src
