@@ -565,14 +565,14 @@ then load the compiled lib in emacs:
 Fix =M-y= binding using counsel at prompt. This is based on [[help:vterm-yank-pop]]:
 
 #+begin_src emacs-lisp
-  (defun ric/vterm-yank-pop (&optional arg)
-    "Yank in vterm using counsel."
-    (interactive "p")
-    (let ((inhibit-read-only t)
-          (yank-undo-function #'(lambda (_start _end) (vterm-undo))))
-      (cl-letf (((symbol-function 'insert-for-yank)
-                 #'(lambda (str) (vterm-send-string (concat " " str) t))))
-        (counsel-yank-pop arg))))
+  ;; (defun ric/vterm-yank-pop (&optional arg)
+  ;;   "Yank in vterm using counsel."
+  ;;   (interactive "p")
+  ;;   (let ((inhibit-read-only t)
+  ;;         (yank-undo-function #'(lambda (_start _end) (vterm-undo))))
+  ;;     (cl-letf (((symbol-function 'insert-for-yank)
+  ;;                #'(lambda (str) (vterm-send-string (concat " " str) t))))
+  ;;       (counsel-yank-pop arg))))
 #+end_src
 
 * Movement commands
