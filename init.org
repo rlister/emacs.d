@@ -340,7 +340,7 @@ Open files with projectile if in a project, with =find-file= otherwise.
   (use-package project
     :straight t
     :config
-    (add-to-list 'project-switch-commands '(?t "Vterm" projectile-run-vterm)))
+    (add-to-list 'project-switch-commands '(?t "Vterm" projectile-run-vterm))
     (add-to-list 'project-switch-commands '(?b "Buffer" project-switch-to-buffer)))
 #+end_src
 
