@@ -280,23 +280,9 @@ Fix modifier keys in macOS.
 #+end_src
 
 
-[[https://github.com/abo-abo/swiper#counsel][Counsel]] provides common emacs commands, customized to use ivy.
 
 #+begin_src emacs-lisp
-  (use-package counsel
     :straight t
-    :after ivy-prescient
-    :init
-    (define-key global-map [remap execute-extended-command] 'counsel-M-x)
-    (define-key global-map [remap isearch-forward] 'counsel-grep-or-swiper)
-    (define-key global-map [remap find-file] 'counsel-find-file)
-    (define-key global-map [remap describe-variable] 'counsel-describe-variable)
-    (define-key global-map [remap describe-function] 'counsel-describe-function)
-    (define-key global-map [remap yank-pop] 'counsel-yank-pop)
-    :bind
-    ("C-x m" . counsel-M-x)
-    ("C-c m" . counsel-imenu)
-    )
 #+end_src
 
 [[https://github.com/Yevgnen/ivy-rich][ivy-rich]] adds extra information to various ivy completion candidates.
