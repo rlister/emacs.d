@@ -534,7 +534,7 @@ On linux we can install from MELPA and compilation happens correctly inside emac
     :if (equal system-type 'gnu/linux)
     :straight t
     :bind (
-           ("C-c t" . vterm)
+           ("C-c t" . projectile-run-vterm)
            ("M-m" . vterm)
            :map vterm-copy-mode-map
            ("<M-return>" . vterm-copy-mode)
