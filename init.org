@@ -215,7 +215,6 @@ Choose correct font based on my various screen sizes.
     (when (= 1920 (x-display-pixel-width))
       (set-face-font 'default "Roboto Mono-13:foundry=GOOG:slant=0"))
     (when (= 2560 (x-display-pixel-width))
-      (set-face-font 'default "Roboto Mono-11:foundry=GOOG:slant=0"))
       (set-face-attribute 'default nil :family "Roboto Mono" :height 110 :weight 'normal :width 'normal))
     (when (= 3840 (x-display-pixel-width))
       (set-face-attribute 'default nil :family "Roboto Mono" :height 110 :weight 'normal :width 'normal))
