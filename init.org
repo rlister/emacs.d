@@ -279,10 +279,16 @@ Fix modifier keys in macOS.
   )
 #+end_src
 
+* Ctrlf search
 
+[[https://github.com/raxod502/ctrlf][Ctrlf]] is an enhanced form of isearch.
 
 #+begin_src emacs-lisp
+  (use-package ctrlf
     :straight t
+    :config
+    (ctrlf-mode +1)
+  )
 #+end_src
 
 [[https://github.com/Yevgnen/ivy-rich][ivy-rich]] adds extra information to various ivy completion candidates.
