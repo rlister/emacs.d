@@ -641,18 +641,6 @@ Better key placement for common movement:
     ("C-e" . mwim-end))
 #+end_src
 
-[[https://github.com/abo-abo/avy][Avy]] jumps to visible text.
-
-#+begin_src emacs-lisp
-  (use-package avy
-    :straight t
-    :init
-    (setq avy-keys (number-sequence ?a ?z))
-    :bind
-    ("C-c j" . avy-goto-char-timer)
-    )
-#+end_src
-
 [[https://github.com/noctuid/link-hint.el][Link-hint]] jumps to various kinds of links with avy interface.
 
 #+begin_src emacs-lisp
