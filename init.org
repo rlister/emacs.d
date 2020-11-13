@@ -322,6 +322,28 @@ Open projects with dired.
   (define-key global-map (kbd "C-c p") (lambda () (interactive) (projectile-switch-project "D")))
 #+end_src
 
+* Project.el
+
+Old version included in emacs, but get latest from melpa:
+
+#+begin_src emacs-lisp
+  (use-package project
+    :straight t
+    :config
+    (add-to-list 'project-switch-commands '(?t "Vterm" ric/vterm-dwim))
+    (add-to-list 'project-switch-commands '(?b "Buffer" project-switch-to-buffer)))
+#+end_src
+
+Get project name:
+
+#+begin_src emacs-lisp
+  (defun ric//project-name ()
+    "Get simple directory name of current project, or nil if no project."
+    (let ((path (cdr (project-current))))
+      (if path
+          (file-name-nondirectory (directory-file-name path)))))
+#+end_src
+
 Find files appropriately depending on whether in a project:
 
 #+begin_src emacs-lisp
@@ -333,16 +355,6 @@ Find files appropriately depending on whether in a project:
       (call-interactively 'find-file)))
 
   (define-key global-map (kbd "M-o") 'ric/find-file-dwim)
-#+end_src
-
-* Project.el
-
-#+begin_src emacs-lisp
-  (use-package project
-    :straight t
-    :config
-    (add-to-list 'project-switch-commands '(?t "Vterm" projectile-run-vterm))
-    (add-to-list 'project-switch-commands '(?b "Buffer" project-switch-to-buffer)))
 #+end_src
 
 * Version control
@@ -535,8 +547,7 @@ On linux we can install from MELPA and compilation happens correctly inside emac
     :if (equal system-type 'gnu/linux)
     :straight t
     :bind (
-           ("C-c t" . projectile-run-vterm)
-           ("M-m" . vterm)
+           ("C-c t" . ric/vterm-dwim)
            :map vterm-copy-mode-map
            ("<M-return>" . vterm-copy-mode)
            :map vterm-mode-map
@@ -556,6 +567,18 @@ On linux we can install from MELPA and compilation happens correctly inside emac
     (define-key vterm-mode-map (kbd "<f8>") nil)
     (setq vterm-max-scrollback 10000)
     )
+#+end_src
+
+Create vterm and name for project:
+
+#+begin_src emacs-lisp
+  (defun ric/vterm-dwim (&optional buffer-name)
+    "Create a new vterm, named for project if appropriate."
+    (interactive)
+    (let ((bufname (ric//project-name)))
+      (if bufname
+          (vterm (format "vterm %s" bufname))
+        (vterm))))
 #+end_src
 
 On macOS we need to download and compile emacs-vterm manually.
