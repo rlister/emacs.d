@@ -169,6 +169,12 @@ Set this to ~loopback~ to redirect all gpg pinentry queries to the caller: in th
 
 * Straight package manager
 
+Use =develop= branch instead of the infrequently-updated  =master=:
+
+#+begin_src emacs-lisp
+  (setq straight-repository-branch "develop")
+#+end_src
+
 Bootstrap straight on new emacs installs:
 
 #+begin_src emacs-lisp
