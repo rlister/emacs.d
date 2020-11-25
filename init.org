@@ -304,6 +304,18 @@ style to fuzzy search:
   )
 #+end_src
 
+* Kill ring
+
+[[https://github.com/browse-kill-ring/browse-kill-ring][browse-kill-ring]] is a better binding than =yank-pop=.
+
+#+begin_src emacs-lisp
+  (use-package browse-kill-ring
+    :straight t
+    :config
+    (browse-kill-ring-default-keybindings) ;M-y
+  )
+#+end_src
+
 * Bufler
 
 [[https://github.com/alphapapa/bufler.el][Bufler]] is an =ibuffer= replacement:
