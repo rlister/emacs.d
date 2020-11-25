@@ -310,7 +310,10 @@ style to fuzzy search:
 
 #+begin_src emacs-lisp
   (use-package bufler
-    :straight t)
+    :straight t
+    :bind
+    ("C-x C-b" . bufler)
+    )
 #+end_src
 
 * Project.el
