@@ -912,3 +912,138 @@ Turn off mouse clicks from trackpad.
   (dolist (key '([mouse-1] [down-mouse-1] [C-down-mouse-1]))
     (global-unset-key key))
 #+end_src
+
+* Slack
+
+Emacs slack mode. Slack team name and token are set in authinfo file in format:
+
+#+begin_example
+machine slack login <team> password <xoxs-...>
+#+end_example
+
+#+begin_src emacs-lisp
+  (use-package slack
+    :straight (slack :type git :host github :repo "yuya373/emacs-slack")
+    :commands (slack-start)
+    :init
+    (setq slack-buffer-emojify t)
+    (setq slack-prefer-current-team t)
+    (setq slack-display-team-name nil) ;just channel etc name
+    (setq slack-buffer-function #'switch-to-buffer) ;use same window
+    (setq slack-modeline-count-only-subscribed-channel nil)
+    (setq lui-time-stamp-format "[%a %H:%M] ")
+    (setq lui-time-stamp-position 'left)
+    :bind (
+           ([f6] . slack-select-rooms)
+           ([f7] . slack-all-unreads)
+           ([f8] . tracking-next-buffer)
+           ("M-s u" . slack-all-unreads)
+           ("M-s s" . tracking-next-buffer)
+           ("M-s i" . slack-im-select)
+           ("M-s r" . slack-message-add-reaction)
+           ("M-s b" . slack-message-write-another-buffer)
+           :map slack-mode-map
+           ("M-[" . slack-buffer-goto-prev-message)
+           ("M-]" . slack-buffer-goto-next-message)
+           ("@" . slack-message-embed-mention)
+           ("C-c C-e". slack-message-edit)
+           ("C-c C-k". slack-message-delete)
+           ("C-;" . ":+1:")
+           )
+    :config
+    (slack-register-team
+     :default t
+     :name (plist-get (car (auth-source-search :host "slack")) :user)
+     :token (auth-source-pick-first-password :host "slack")
+     :display-profile-image nil
+     :mark-as-read-immediately t
+     :modeline-enabled t
+     :modeline-name "ap"
+     :visible-threads t
+     :disable-block-format t
+     )
+
+    ;; remove user status and image
+    (defun slack-user-status (_id _team) "")
+
+    ;; disable user images
+    (cl-defun slack-user-image (user team &optional (size 32)) nil)
+
+    ;; shorten buffer names
+    (cl-defmethod slack-buffer-name ((this slack-message-buffer))
+      (slack-if-let* ((team (slack-buffer-team this))
+                      (room (slack-buffer-room this))
+                      (room-name (slack-room-name room team)))
+          (format  "*%s:%s*"
+                   (s-word-initials (oref team name))
+                   room-name)))
+
+    ;; implement https://github.com/yuya373/emacs-slack/pull/532 until merged upstream
+    ;; so that we can load channels with a giphy image
+    (defclass slack-image-block-element (slack-block-element)
+      ((type :initarg :type :type string :initform "image")
+       (image-url :initarg :image_url :type string)
+       (alt-text :initarg :alt_text :type string)
+       (image-height :initarg :image_height :type (or number null))
+       (image-width :initarg :image_width :type (or number null))
+       (image-bytes :initarg :image_bytes :type (or number null))))
+
+    ;; slack-insert-emoji breaks with selectrum
+    ;; implement patch from https://github.com/maurelio1234/emacs-slack/commit/db57f08bcff529cffe7f68d2ba95eb3f527c17f0
+    ;; until this is fixed: https://github.com/yuya373/emacs-slack/issues/517
+    (defun slack-select-emoji (team)
+      (if (and (fboundp 'emojify-completing-read)
+               (fboundp 'emojify-download-emoji-maybe))
+          (progn (emojify-download-emoji-maybe)
+                 (cl-labels
+                     ((select ()
+                              (emojify-completing-read "Select Emoji: "
+                                                       #'(lambda (data)
+                                                           (or (gethash data
+                                                                        slack-emoji-master
+                                                                        nil)
+                                                               (gethash data
+                                                                        (oref team emoji-master)
+                                                                        nil))))))
+                   (if (< 0 (hash-table-count slack-emoji-master))
+                       (select)
+                     (slack-emoji-fetch-master-data (car (hash-table-values slack-teams-by-token)))
+                     (select))))
+        (read-from-minibuffer "Emoji: ")))
+
+    (defun slack-emoji-fetch-master-data (team)
+      (cl-labels
+          ((success (&key data &allow-other-keys)
+                    (slack-request-handle-error
+                     (data "slack-emoji-fetch-master-data")
+                     (cl-loop for emoji in data
+                              do (let ((short-names (plist-get emoji :short_names)))
+                                   (when short-names
+                                     (cl-loop for name in short-names
+                                              do (let* ((emoji-key (format ":%s:" name))
+                                                        (emoji (emojify-get-emoji emoji-key))
+                                                        (emoji-name (if emoji (ht-get emoji "name") ""))
+                                                        (emoji-style (if emoji (ht-get emoji "style") "")))
+                                                   (puthash (format "%s - %s (%s)" emoji-key emoji-name emoji-style)
+                                                            t
+                                                            slack-emoji-master)))))))))
+        (slack-request
+         (slack-request-create
+          slack-emoji-master-data-url
+          team
+          :type "GET"
+          :success #'success
+          :without-auth t
+          :sync t
+          ))))
+    )
+#+end_src
+
+Set up =alert= for slack notification.
+
+#+begin_src emacs-lisp
+  (use-package alert
+    :commands (alert)
+    :init
+    (setq alert-default-style 'libnotify))
+#+end_src
