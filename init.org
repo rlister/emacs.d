@@ -681,6 +681,7 @@ We no longer need =back-to-indentation=, so use the binding for =imenu=:
 
 #+begin_src emacs-lisp
   (define-key global-map (kbd "M-m") 'imenu)
+  (define-key global-map (kbd "C-c m") 'imenu)
 #+end_src
 
 [[https://github.com/noctuid/link-hint.el][Link-hint]] jumps to various kinds of links with avy interface.
