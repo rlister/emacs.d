@@ -561,6 +561,8 @@ Set up [[https://orgmode.org/org.html#Capture-templates][capture templates]].
 
 [[https://github.com/akermu/emacs-libvterm][Emacs-vterm]] bridge to [[https://github.com/neovim/libvterm][libvterm]].
 
+** linux install
+
 On linux we can install from MELPA and compilation happens correctly inside emacs during install.
 
 #+begin_src emacs-lisp
@@ -589,17 +591,7 @@ On linux we can install from MELPA and compilation happens correctly inside emac
     )
 #+end_src
 
-Create vterm and name for project:
-
-#+begin_src emacs-lisp
-  (defun ric/vterm-dwim (&optional buffer-name)
-    "Create a new vterm, named for project if appropriate."
-    (interactive)
-    (let ((bufname (ric//project-name)))
-      (if bufname
-          (vterm (format "vterm %s" bufname))
-        (vterm))))
-#+end_src
+** macos install
 
 On macOS we need to download and compile emacs-vterm manually.
 
@@ -620,6 +612,20 @@ then load the compiled lib in emacs:
     :load-path "~/src/emacs-libvterm"
     :bind
     ("C-c t" . vterm))
+#+end_src
+
+** create project vterm
+
+Create vterm and name for project:
+
+#+begin_src emacs-lisp
+  (defun ric/vterm-dwim (&optional buffer-name)
+    "Create a new vterm, named for project if appropriate."
+    (interactive)
+    (let ((bufname (ric//project-name)))
+      (if bufname
+          (vterm (format "vterm %s" bufname))
+        (vterm))))
 #+end_src
 
 * Movement commands
