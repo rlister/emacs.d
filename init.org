@@ -122,7 +122,7 @@ between split and unsplit.
 
 #+begin_src emacs-lisp
   (defun ric/split-dwim ()
-    "Split."
+    "Split, based on split-width-threshold, or unsplit."
     (interactive)
     (if (= (count-windows) 1)
         (split-window-sensibly)
@@ -161,7 +161,7 @@ Always uses spaces (never tabs) for indentation.
 
 ** Paragraph formatting
 
-Source from [[https://www.emacswiki.org/emacs/UnfillParagraph][EmacsWiki]].
+The missing reverse operation to =fill-paragraph=; source from [[https://www.emacswiki.org/emacs/UnfillParagraph][EmacsWiki]].
 
 #+begin_src emacs-lisp
   (defun unfill-paragraph (&optional region)
