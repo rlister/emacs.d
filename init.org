@@ -669,6 +669,12 @@ Better key placement for common movement:
     ("C-e" . mwim-end))
 #+end_src
 
+We no longer need =back-to-indentation=, so use the binding for =imenu=:
+
+#+begin_src emacs-lisp
+  (define-key global-map (kbd "M-m") 'imenu)
+#+end_src
+
 [[https://github.com/noctuid/link-hint.el][Link-hint]] jumps to various kinds of links with avy interface.
 
 #+begin_src emacs-lisp
