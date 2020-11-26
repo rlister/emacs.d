@@ -159,6 +159,21 @@ Always uses spaces (never tabs) for indentation.
   (setq-default indent-tabs-mode nil)
 #+end_src
 
+** Paragraph formatting
+
+Source from [[https://www.emacswiki.org/emacs/UnfillParagraph][EmacsWiki]].
+
+#+begin_src emacs-lisp
+  (defun unfill-paragraph (&optional region)
+    "Opposite of fill-paragraph".
+    (interactive (progn (barf-if-buffer-read-only) '(t)))
+    (let ((fill-column (point-max))
+          (emacs-lisp-docstring-fill-column t))
+      (fill-paragraph nil region)))
+
+  (define-key global-map (kbd "M-Q") 'unfill-paragraph)
+#+end_src
+
 * GPG and EasyPG
 
 Set this to ~loopback~ to redirect all gpg pinentry queries to the caller: in this case emacs minibuffer.
