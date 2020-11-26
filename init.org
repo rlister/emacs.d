@@ -411,6 +411,8 @@ Magit extensions for issues and pull requests.
 
 ** git-link
 
+Generate urls to git remote for region.
+
 #+begin_src emacs-lisp
   (use-package git-link
     :straight t)
@@ -878,7 +880,7 @@ Load [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]].
 
 * Social
 
-Install, then run `twit` to authenticate via oauth in browser.
+Install, then run =twit= to authenticate via oauth in browser.
 
 #+begin_src emacs-lisp
   (use-package twittering-mode
