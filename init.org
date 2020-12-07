@@ -469,6 +469,7 @@ Use straight to get latest [[https://code.orgmode.org/bzg/org-mode][org-mode]] f
     (setq org-agenda-window-setup 'current-window)
     (setq org-agenda-align-tags-to-column 80)
     (setq org-agenda-files '("~/src/doc/work.org" "~/src/doc/home.org"))
+    (setq org-agenda-todo-ignore-scheduled 'all)
     (setq org-agenda-custom-commands
           '(
             ("g" "Geekbot"
