@@ -159,6 +159,13 @@ Always uses spaces (never tabs) for indentation.
   (setq-default indent-tabs-mode nil)
 #+end_src
 
+Use single space, rather than double space, as sentence delimiter for
+moving and killing by sentence.
+
+#+begin_src emacs-lisp
+  (setq sentence-end-double-space nil)
+#+end_src
+
 ** Paragraph formatting
 
 The missing reverse operation to =fill-paragraph=; source from [[https://www.emacswiki.org/emacs/UnfillParagraph][EmacsWiki]].
