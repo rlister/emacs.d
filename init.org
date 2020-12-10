@@ -634,7 +634,7 @@ Create vterm and name for project:
     (interactive)
     (let ((bufname (ric//project-name)))
       (if bufname
-          (vterm (format "vterm %s" bufname))
+          (vterm (format "*vterm %s*" bufname))
         (vterm))))
 #+end_src
 
