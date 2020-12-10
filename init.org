@@ -948,6 +948,7 @@ machine slack login <team> password <xoxs-...>
     (setq slack-display-team-name nil) ;just channel etc name
     (setq slack-buffer-function #'switch-to-buffer) ;use same window
     (setq slack-modeline-count-only-subscribed-channel nil)
+    (setq slack-thread-also-send-to-room nil)
     (setq lui-time-stamp-format "[%a %H:%M] ")
     (setq lui-time-stamp-position 'left)
     :bind (
@@ -960,8 +961,8 @@ machine slack login <team> password <xoxs-...>
            ("M-s r" . slack-message-add-reaction)
            ("M-s b" . slack-message-write-another-buffer)
            :map slack-mode-map
-           ("M-[" . slack-buffer-goto-prev-message)
-           ("M-]" . slack-buffer-goto-next-message)
+           ("M-p" . slack-buffer-goto-prev-message)
+           ("M-n" . slack-buffer-goto-next-message)
            ("@" . slack-message-embed-mention)
            ("C-c C-e". slack-message-edit)
            ("C-c C-k". slack-message-delete)
