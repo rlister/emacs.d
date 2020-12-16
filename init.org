@@ -258,6 +258,7 @@ Jump straight to current dir listing, instead of prompting.
   (use-package dired
     :init
     (setq dired-guess-shell-alist-user '(("\\.pdf\\'" "mupdf"))) ;external programs to use
+    (setq dired-listing-switches "-alh")                         ;human-readable file sizes
     :bind (("C-x d" . dired-jump)
            :map dired-mode-map
            ("C-t" . nil)))
