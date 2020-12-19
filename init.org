@@ -1067,9 +1067,7 @@ machine slack login <team> password <xoxs-...>
           :type "GET"
           :success #'success
           :without-auth t
-          :sync t
-          ))))
-    )
+          :sync t)))))
 #+end_src
 
 Set up =alert= for slack notification.
