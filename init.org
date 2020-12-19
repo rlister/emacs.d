@@ -40,7 +40,8 @@ Turn off GUI features.
 #+begin_src emacs-lisp
   (when (display-graphic-p)
     (tool-bar-mode -1)
-    (scroll-bar-mode -1)
+    (customize-set-variable 'scroll-bar-mode nil)
+    (customize-set-variable 'horizontal-scroll-bar-mode nil)
     (setq default-frame-alist '((undecorated . t))))
 #+end_src
 
