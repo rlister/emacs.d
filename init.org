@@ -966,6 +966,7 @@ machine slack login <team> password <xoxs-...>
     (setq lui-time-stamp-format "[%a %H:%M] ")
     (setq lui-time-stamp-position 'left)
     :bind (
+           ([f5] . ric/slack-update-mark)
            ([f6] . slack-select-rooms)
            ([f7] . slack-all-unreads)
            ([f8] . tracking-next-buffer)
@@ -1079,3 +1080,17 @@ Set up =alert= for slack notification.
     :init
     (setq alert-default-style 'libnotify))
 #+end_src
+
+Some DMs fail to update the mark correctly, and thus continue to show
+huge numbers of unreads. Bind this to a key to force update.
+
+#+begin_src emacs-lisp
+  (defun ric/slack-update-mark ()
+    "Force the read mark to the end of the channel."
+    (interactive)
+    (end-of-buffer)
+    (slack-buffer-goto-prev-message)
+    (slack-message-update-mark)
+    (end-of-buffer))
+#+end_src
+
