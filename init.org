@@ -51,6 +51,12 @@ Typed text replaces region.
   (delete-selection-mode 1)
 #+end_src
 
+Bind a key for [[info:autotype#Hippie Expand][info:autotype#Hippie Expand]].
+
+#+begin_src emacs-lisp
+  (global-set-key (kbd "<C-tab>") 'hippie-expand)
+#+end_src
+
 * Buffers
 
 Nicer buffer bindings.
