@@ -57,6 +57,12 @@ Bind a key for [[info:autotype#Hippie Expand][info:autotype#Hippie Expand]].
   (global-set-key (kbd "<C-tab>") 'hippie-expand)
 #+end_src
 
+Never want to suspend frame by mistake, and not needed w/tiling wm.
+
+#+begin_src emacs-lisp
+  (global-set-key (kbd "C-x C-z") nil)
+#+end_src
+
 * Buffers
 
 Nicer buffer bindings.
