@@ -51,6 +51,13 @@ Typed text replaces region.
   (delete-selection-mode 1)
 #+end_src
 
+
+Control-based binding for =M-x=.
+
+#+begin_src emacs-lisp
+  (global-set-key (kbd "C-x m") 'execute-extended-command)
+#+end_src
+
 Bind a key for [[info:autotype#Hippie Expand][info:autotype#Hippie Expand]].
 
 #+begin_src emacs-lisp
