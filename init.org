@@ -1084,6 +1084,38 @@ machine slack login <team> password <xoxs-...>
           :sync t)))))
 #+end_src
 
+** Transient bindings
+
+#+begin_src emacs-lisp
+  (define-transient-command ric/slack-transient ()
+    "Slack commands."
+    [["Buffers"
+      ("s" "next buffer" tracking-next-buffer)
+      ("s-s" "next buffer" tracking-next-buffer)]
+     ["Rooms"
+      ("u" "all unreads" slack-all-unreads)
+      ("c" "room select" slack-select-rooms)]
+     ["Threads"
+      ("i" "im select" slack-im-select)
+      ("t" "go to thread" slack-thread-show-or-create)
+      ("T" "all threads" slack-all-threads)]
+     ["Compose"
+      ("b" "write buffer" slack-message-write-another-buffer)
+      ("k" "delete message" slack-message-delete)
+      ("m" "update mark" ric/slack-update-mark)
+      ("y" "clipboard upload" slack-clipboard-image-upload)
+      ("f" "file upload" slack-file-upload)]
+     ["Emoji"
+      ("e" "insert emoji" slack-insert-emoji)
+      ("r" "add reaction" slack-message-add-reaction)]
+     ["Server"
+      ("S" "start server" slack-start)
+      ("C" "close websocket" slack-ws-close)
+      ("K" "kill message buffers" ric/kill-slack-message-buffers)]])
+
+  (define-key global-map (kbd "s-s") 'ric/slack-transient)
+#+end_src
+
 Set up =alert= for slack notification.
 
 #+begin_src emacs-lisp
