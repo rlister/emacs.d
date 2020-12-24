@@ -992,6 +992,10 @@ machine slack login <team> password <xoxs-...>
            ("C-c C-e". slack-message-edit)
            ("C-c C-k". slack-message-delete)
            ("C-;" . ":+1:")
+           :map slack-thread-message-buffer-mode-map
+           ("M-p" . slack-buffer-goto-prev-message)
+           ("M-n" . slack-buffer-goto-next-message)
+           ("@" . slack-message-embed-mention)
            )
     :config
     (slack-register-team
