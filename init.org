@@ -1116,6 +1116,8 @@ machine slack login <team> password <xoxs-...>
   (define-key global-map (kbd "s-s") 'ric/slack-transient)
 #+end_src
 
+** Alerts
+
 Set up =alert= for slack notification.
 
 #+begin_src emacs-lisp
@@ -1124,6 +1126,8 @@ Set up =alert= for slack notification.
     :init
     (setq alert-default-style 'libnotify))
 #+end_src
+
+** Mark hack
 
 Some DMs fail to update the mark correctly, and thus continue to show
 huge numbers of unreads. Bind this to a key to force update.
