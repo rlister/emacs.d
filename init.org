@@ -58,10 +58,10 @@ Control-based binding for =M-x=.
   (global-set-key (kbd "C-x m") 'execute-extended-command)
 #+end_src
 
-Bind a key for [[info:autotype#Hippie Expand][info:autotype#Hippie Expand]].
+Steal =dabbrev= key for [[info:autotype#Hippie Expand][info:autotype#Hippie Expand]].
 
 #+begin_src emacs-lisp
-  (global-set-key (kbd "<C-tab>") 'hippie-expand)
+  (global-set-key (kbd "<M-/>") 'hippie-expand)
 #+end_src
 
 Never want to suspend frame by mistake, and not needed w/tiling wm.
