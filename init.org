@@ -419,14 +419,7 @@ Find files appropriately depending on whether in a project:
     :bind
     ("C-c g" . magit-status)
     :config
-    (setq magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1)
-    ;; full screen magit-status from http://whattheemacsd.com/setup-magit.el-01.html
-    ;; (defadvice magit-status (around magit-fullscreen activate)
-    ;;   (window-configuration-to-register :magit-fullscreen)
-    ;;   ad-do-it
-    ;;   (delete-other-windows))
-    ;;
-    )
+    (setq magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1))
 #+end_src
 
 ** forge
