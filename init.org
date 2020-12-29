@@ -425,6 +425,7 @@ Find files appropriately depending on whether in a project:
     :straight t
     :bind
     ("C-c g" . magit-status)
+    ("C-x g" . magit-status)
     :config
     (setq magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1))
 #+end_src
