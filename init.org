@@ -549,9 +549,8 @@ Use straight to get latest [[https://code.orgmode.org/bzg/org-mode][org-mode]] f
              ((agenda "")
               (alltodo)))
             ("h" "Home tasks"
-             agenda ""
-             ((org-agenda-files '("~/src/doc/home.org" "~/.local/share/ric.org" "~/.local/share/listers.org"))
-              (org-agenda-text-search-extra-files nil)))
+             ((agenda "" ((org-agenda-files '("~/src/doc/home.org"))))
+              (alltodo "" ((org-agenda-files '("~/src/doc/home.org"))))))
             ("w" "Work tasks"
              ((agenda ""
                       ((org-agenda-files '("~/src/doc/work.org" "~/.org-jira/"))
