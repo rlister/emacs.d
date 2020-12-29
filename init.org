@@ -242,7 +242,15 @@ Turn on ~use-package~ integration:
 
 * Theme
 
-Load my theme.
+Load my theme without prompting for safety.
+
+#+begin_src emacs-lisp
+  (defun brew-theme ()
+    (interactive)
+    (load-theme 'brew t))
+#+end_src
+
+Install theme from github.
 
 #+begin_src emacs-lisp
   (use-package brew-theme
