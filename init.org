@@ -622,6 +622,21 @@ Set up [[https://orgmode.org/org.html#Capture-templates][capture templates]].
     )
 #+end_src
 
+** org-jira
+
+[[https://github.com/ahungry/org-jira][org-jira]] populates org-mode files with jira issue data.
+
+#+begin_src emacs-lisp
+    (use-package org-jira
+      :straight (org-jira :type git :host github :repo "ahungry/org-jira")
+      :commands (org-jira-get-issue org-jira-get-issues)
+      :config
+      (let ((url (plist-get (nth 0 (auth-source-search :host "atlassian.net" :max 1 t)) :url)))
+        (setq jiralib-url url)))
+#+end_src
+
+Now run =org-jira-get-issues=.
+
 * vterm
 
 [[https://github.com/akermu/emacs-libvterm][Emacs-vterm]] bridge to [[https://github.com/neovim/libvterm][libvterm]].
