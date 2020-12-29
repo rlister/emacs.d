@@ -454,6 +454,12 @@ Magit extensions for issues and pull requests.
       ("r" "reject" github-review-reject)]])
 #+end_src
 
+Requires an authinfo entry like:
+
+#+begin_src
+machine api.github.com login <user>^github-review password <password>
+#+end_src
+
 ** git-link
 
 Generate urls to git remote for region.
