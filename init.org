@@ -274,8 +274,8 @@ Choose correct font based on my various screen sizes.
       (set-face-attribute 'default nil :family "Roboto Mono" :height 110 :weight 'normal :width 'normal)
       (set-face-attribute 'variable-pitch nil :family "Roboto" :height 120 :weight 'normal :width 'normal))
     (when (= 3840 (x-display-pixel-width))
-      (set-face-attribute 'default nil :family "Roboto Mono" :height 110 :weight 'normal :width 'normal)
       (set-face-attribute 'variable-pitch nil :family "Cantarell" :height 130 :weight 'normal :width 'normal)))
+      (set-face-font 'default "Roboto Mono-11:foundry=GOOG")
 #+end_src
 
 * Dired
