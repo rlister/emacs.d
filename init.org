@@ -355,6 +355,16 @@ style to fuzzy search:
   )
 #+end_src
 
+* Transient
+
+[[https://github.com/magit/transient][transient]] is loaded by =magit=, but ensure we load
+=define-transient-command= before we call it during init.
+
+#+begin_src emacs-lisp
+  (use-package transient
+    :straight t)
+#+end_src
+
 * Kill ring
 
 [[https://github.com/browse-kill-ring/browse-kill-ring][browse-kill-ring]] is a better binding than =yank-pop=.
