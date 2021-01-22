@@ -1060,7 +1060,9 @@ machine slack login <team> password <xoxs-...>
            ("M-p" . slack-buffer-goto-prev-message)
            ("M-n" . slack-buffer-goto-next-message)
            ("@" . slack-message-embed-mention)
-           ("#" . slack-message-embed-channel))
+           ("#" . slack-message-embed-channel)
+           ("C-c C-e". slack-message-edit)
+           ("C-c C-k". slack-message-delete))
     :config
     (slack-register-team
      :default t
