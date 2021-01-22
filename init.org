@@ -1043,7 +1043,7 @@ machine slack login <team> password <xoxs-...>
            ([f6] . slack-select-rooms)
            ([f7] . slack-all-unreads)
            ([f8] . tracking-next-buffer)
-           ("M-s u" . slack-all-unreads)
+           ("M-s u" . slack-select-unread-rooms)
            ("M-s s" . tracking-next-buffer)
            ("M-s i" . slack-im-select)
            ("M-s r" . slack-message-add-reaction)
@@ -1156,7 +1156,7 @@ machine slack login <team> password <xoxs-...>
       ("s" "next buffer" tracking-next-buffer)
       ("s-s" "next buffer" tracking-next-buffer)]
      ["Rooms"
-      ("u" "all unreads" slack-all-unreads)
+      ("u" "unread rooms" slack-select-unread-rooms)
       ("c" "room select" slack-select-rooms)]
      ["Threads"
       ("i" "im select" slack-im-select)
