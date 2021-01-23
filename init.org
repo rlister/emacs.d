@@ -892,6 +892,15 @@ Mess with indent level.
     (setq js-indent-level 2))
 #+end_src
 
+** css
+
+#+begin_src emacs-lisp
+  (use-package css-mode
+    :defer t
+    :init
+    (setq css-indent-offset 2))
+#+end_src
+
 ** docker
 
 Load [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]].
