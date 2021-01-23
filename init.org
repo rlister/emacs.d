@@ -799,6 +799,20 @@ We no longer need =back-to-indentation=, so use the binding for =imenu=:
     ("C-=" . 'er/expand-region))
 #+end_src
 
+Soup up =mark-word= to move backwards if at end of line, give or take
+any non-word chars, and use a nicer binding than =C-@= on my keyboard.
+
+#+begin_src emacs-lisp
+  (defun ric/mark-word-args (&optional arg allow-extend)
+    "Advise mark-word to move backwards if we are effectively at end of line."
+    (if (looking-at "\\W*$")
+        (list -1 t)
+      (list arg t)))
+
+  (advice-add 'mark-word :filter-args #'ric/mark-word-args)
+  (global-set-key (kbd "<insert>") 'mark-word)
+#+end_src
+
 * Comments
 
 Toggle comments on region or line, without moving point. This works better as a toggle than ~comment-dwim~.
