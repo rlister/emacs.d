@@ -1309,3 +1309,15 @@ huge numbers of unreads. Bind this to a key to force update.
           '((home . "~/.config/gcalcli/home")
             (work . "~/.config/gcalcli/work"))))
 #+end_src
+
+* bbdb
+
+Install bbdb and vcard importer.
+
+#+begin_src emacs-lisp
+  (use-package bbdb
+    :straight t)
+
+  (use-package bbdb-vcard
+    :straight t)
+#+end_src
