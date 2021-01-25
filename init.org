@@ -211,6 +211,11 @@ Set this to ~loopback~ to redirect all gpg pinentry queries to the caller: in th
 
 * Straight package manager
 
+#+begin_src emacs-lisp
+  (add-to-list 'package-archives
+               '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+#+end_src
+
 Use =develop= branch instead of the infrequently-updated  =master=:
 
 #+begin_src emacs-lisp
