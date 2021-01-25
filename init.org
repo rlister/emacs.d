@@ -1046,6 +1046,33 @@ Store bookmarks in git-controlled location, and add missing bindings.
            ))
 #+end_src
 
+** w3m
+
+Install package:
+
+#+begin_src sh
+  git clone https://aur.archlinux.org/emacs-w3m-git.git
+#+end_src
+
+Config:
+
+#+begin_src emacs-lisp
+  (use-package w3m
+    :load-path "/usr/share/emacs/site-lisp/w3m"
+    :config
+    (setq w3m-search-default-engine "duckduckgo")
+    (setq w3m-use-favicon nil)
+    :bind (("C-h C-b" . w3m-bookmark-view)
+           :map w3m-mode-map
+           ("n" . w3m-next-anchor)
+           ("C-<next>" . w3m-next-buffer)
+           ("p" . w3m-previous-anchor)
+           ("C-<prior>" . w3m-previous-buffer)
+           ("x" . w3m-delete-buffer)
+           ("C-t" . switch-to-buffer)
+           ("M-n" . forward-paragraph)))
+#+end_src
+
 * Server
 
 Start server if not running in this or any other emacs process.
