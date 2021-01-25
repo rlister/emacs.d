@@ -51,7 +51,6 @@ Typed text replaces region.
   (delete-selection-mode 1)
 #+end_src
 
-
 Control-based binding for =M-x=.
 
 #+begin_src emacs-lisp
