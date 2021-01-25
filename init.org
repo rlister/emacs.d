@@ -267,15 +267,13 @@ Choose correct font based on my various screen sizes.
 #+begin_src emacs-lisp
   (when (display-graphic-p)
     (when (= 1440 (x-display-pixel-width))
-      (set-face-font 'default "Roboto Mono-14:foundry=GOOG:slant=0"))
+      (set-face-font 'default "Roboto Mono-14:foundry=GOOG"))
     (when (= 1920 (x-display-pixel-width))
-      (set-face-font 'default "Roboto Mono-13:foundry=GOOG:slant=0"))
+      (set-face-font 'default "Roboto Mono-13:foundry=GOOG"))
     (when (= 2560 (x-display-pixel-width))
-      (set-face-attribute 'default nil :family "Roboto Mono" :height 110 :weight 'normal :width 'normal)
-      (set-face-attribute 'variable-pitch nil :family "Roboto" :height 120 :weight 'normal :width 'normal))
+      (set-face-font 'default "Roboto Mono-11:foundry=GOOG"))
     (when (= 3840 (x-display-pixel-width))
-      (set-face-attribute 'variable-pitch nil :family "Cantarell" :height 130 :weight 'normal :width 'normal)))
-      (set-face-font 'default "Roboto Mono-11:foundry=GOOG")
+      (set-face-font 'default "Roboto Mono-11:foundry=GOOG")))
 #+end_src
 
 * Dired
