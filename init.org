@@ -670,7 +670,7 @@ On linux we can install from MELPA and compilation happens correctly inside emac
     :if (equal system-type 'gnu/linux)
     :straight t
     :bind (
-           ("C-c t" . ric/vterm-dwim)
+           ("C-c t" . vterm)
            :map vterm-copy-mode-map
            ("<M-return>" . vterm-copy-mode)
            :map vterm-mode-map
@@ -679,6 +679,7 @@ On linux we can install from MELPA and compilation happens correctly inside emac
            ("M-v" . (lambda () (interactive) (vterm-copy-mode) (scroll-down-command)))
            ;; ("C-p" . (lambda () (interactive) (vterm-copy-mode) (previous-line)))
            )
+    (setq vterm-buffer-name-string "*vterm %s*")
     :config
     (define-key vterm-mode-map (kbd "C-j") nil)
     (define-key vterm-mode-map (kbd "M-j") nil)
@@ -714,19 +715,6 @@ then load the compiled lib in emacs:
     ("C-c t" . vterm))
 #+end_src
 
-** create project vterm
-
-Create vterm and name for project:
-
-#+begin_src emacs-lisp
-  (defun ric/vterm-dwim (&optional buffer-name)
-    "Create a new vterm, named for project if appropriate."
-    (interactive)
-    (let ((bufname (ric//project-name)))
-      (if bufname
-          (vterm (format "*vterm %s*" bufname))
-        (vterm))))
-#+end_src
 
 * Movement commands
 
