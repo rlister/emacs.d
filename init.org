@@ -1033,6 +1033,8 @@ Install, then run =twit= to authenticate via oauth in browser.
 
 * Web
 
+** eww
+
 Store bookmarks in git-controlled location, and add missing bindings.
 
 #+begin_src emacs-lisp
