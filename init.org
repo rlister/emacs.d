@@ -999,22 +999,6 @@ Load [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]].
     ("C-c k" . which-key-show-major-mode))
 #+end_src
 
-* Mew
-
-[[http://mew.org/en/][Mew mailreader]]. Install as an OS package, and configure in =~/.mew.el=.
-
-#+begin_src emacs-lisp
-  (use-package mew
-    :init
-    (add-hook 'mew-summary-mode-hook 'hl-line-mode)
-    :config
-    (setq mew-refile-guess-alist
-          '(("To:"
-             (".*"   "%[Gmail]/Spam"))
-            ))
-    )
-#+end_src
-
 * Social
 
 Install, then run =twit= to authenticate via oauth in browser.
@@ -1323,4 +1307,20 @@ Install bbdb and vcard importer.
 
   (use-package bbdb-vcard
     :straight t)
+#+end_src
+
+* Mew
+
+[[http://mew.org/en/][Mew mailreader]]. Install as an OS package, and configure in =~/.mew.el=.
+
+#+begin_src emacs-lisp
+  (use-package mew
+    :init
+    (add-hook 'mew-summary-mode-hook 'hl-line-mode)
+    :config
+    (setq mew-refile-guess-alist
+          '(("To:"
+             (".*"   "%[Gmail]/Spam"))
+            ))
+    )
 #+end_src
