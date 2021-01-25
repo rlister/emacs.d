@@ -709,8 +709,22 @@ On linux we can install from MELPA and compilation happens correctly inside emac
 
 On macOS we need to download and compile emacs-vterm manually.
 
+Dependencies:
+
 #+begin_src sh
+  brew install cmake libtool
+#+end_src
+
+Download:
+
+#+begin_src sh
+  cd ~/src
   git clone https://github.com/akermu/emacs-libvterm.git
+#+end_src
+
+Compile:
+
+#+begin_src sh
   cd emacs-libvterm
   mkdir -p build
   cd build
