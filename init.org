@@ -1091,6 +1091,7 @@ machine slack login <team> password <xoxs-...>
     :commands (slack-start)
     :init
     (setq slack-buffer-emojify t)
+    (setq slack-render-image-p t)
     (setq slack-buffer-emojify nil)
     (setq slack-prefer-current-team t)
     (setq slack-display-team-name nil) ;just channel etc name
