@@ -1090,7 +1090,6 @@ machine slack login <team> password <xoxs-...>
     :straight (slack :type git :host github :repo "yuya373/emacs-slack")
     :commands (slack-start)
     :init
-    (setq slack-buffer-emojify t)
     (setq slack-render-image-p t)
     (setq slack-buffer-emojify nil)
     (setq slack-prefer-current-team t)
