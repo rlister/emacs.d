@@ -1219,7 +1219,8 @@ machine slack login <team> password <xoxs-...>
       ("s-s" "next buffer" tracking-next-buffer)]
      ["Rooms"
       ("u" "unread rooms" slack-select-unread-rooms)
-      ("c" "room select" slack-select-rooms)]
+      ("c" "room select" slack-select-rooms)
+      ("g" "group select" slack-group-select)]
      ["Threads"
       ("i" "im select" slack-im-select)
       ("t" "go to thread" slack-thread-show-or-create)
