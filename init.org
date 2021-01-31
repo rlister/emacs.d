@@ -77,6 +77,15 @@ Allow disabled commands.
 #+end_src
 
 * Package management
+** Archives
+
+Show packages from [[https://melpa.org/][MELPA]] archive.
+
+#+begin_src emacs-lisp
+  (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+#+end_src
+
+** Straight package manager
 * Buffers
 
 Nicer buffer bindings.
