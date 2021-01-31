@@ -1112,15 +1112,6 @@ machine slack login <team> password <xoxs-...>
     (setq lui-time-stamp-format "[%a %H:%M] ")
     (setq lui-time-stamp-position 'left)
     :bind (
-           ([f5] . ric/slack-update-mark)
-           ([f6] . slack-select-rooms)
-           ([f7] . slack-all-unreads)
-           ([f8] . tracking-next-buffer)
-           ("M-s u" . slack-select-unread-rooms)
-           ("M-s s" . tracking-next-buffer)
-           ("M-s i" . slack-im-select)
-           ("M-s r" . slack-message-add-reaction)
-           ("M-s b" . slack-message-write-another-buffer)
            :map slack-mode-map
            ("M-p" . slack-buffer-goto-prev-message)
            ("M-n" . slack-buffer-goto-next-message)
