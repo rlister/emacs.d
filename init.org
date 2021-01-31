@@ -816,8 +816,7 @@ We no longer need =back-to-indentation=, so use the binding for =imenu=:
     :straight t
     :bind
     ("C-c l" . link-hint-open-link)
-    ("C-c L" . link-hint-copy-link)
-    )
+    ("C-c L" . link-hint-copy-link))
 #+end_src
 
 [[https://github.com/magnars/expand-region.el][expand-region]] increase/decrease region, semantically.
