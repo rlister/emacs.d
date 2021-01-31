@@ -427,7 +427,7 @@ Old version included in emacs, but get latest from melpa:
   (use-package project
     :straight t
     :config
-    (add-to-list 'project-switch-commands '(?t "Vterm" ric/vterm-dwim))
+    (add-to-list 'project-switch-commands '(?t "Vterm" vterm))
     (add-to-list 'project-switch-commands '(?b "Buffer" project-switch-to-buffer)))
 #+end_src
 
