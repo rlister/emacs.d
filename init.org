@@ -325,6 +325,12 @@ Jump straight to current dir listing, instead of prompting.
   (setq show-paren-when-point-in-periphery t)
 #+end_src
 
+Insert parentheses in pairs.
+
+#+begin_src emacs-lisp
+  (electric-pair-mode 1)
+#+end_src
+
 * macOS specifics
 
 Fix modifier keys in macOS.
