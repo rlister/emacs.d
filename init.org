@@ -235,6 +235,7 @@ Nicer binding for =other-window=.
 #+begin_src emacs-lisp
   (define-key global-map (kbd "C-j") 'other-window)
   (define-key lisp-interaction-mode-map (kbd "C-j") nil)
+#+end_src
 
 * Mark and region
 
