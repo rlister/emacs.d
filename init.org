@@ -694,10 +694,10 @@ On linux we can install from MELPA and compilation happens correctly inside emac
            :map vterm-copy-mode-map
            ("<M-return>" . vterm-copy-mode)
            :map vterm-mode-map
+           ("<M-return>" . vterm-copy-mode)
            ("M-r" . vterm-send-C-r)
            ("<C-backspace>" . vterm-send-meta-backspace)
            ("<C-return>" . ric/vterm-mark-last-output)
-           ("<M-return>" . vterm-copy-mode)
            ("M-v" . (lambda () (interactive) (vterm-copy-mode) (scroll-down-command)))
            ;; ("C-p" . (lambda () (interactive) (vterm-copy-mode) (previous-line)))
            )
@@ -706,13 +706,7 @@ On linux we can install from MELPA and compilation happens correctly inside emac
     (setq vterm-copy-exclude-prompt t)    ;exclude prompt from copy in vterm-copy-mode-done
     (setq vterm-buffer-name-string "*vterm %s*")
     :config
-    (define-key vterm-mode-map (kbd "C-j") nil)
-    (define-key vterm-mode-map (kbd "M-j") nil)
     (define-key vterm-mode-map (kbd "C-t") nil)
-    (define-key vterm-mode-map (kbd "M-m") nil)
-    (define-key vterm-mode-map (kbd "<f6>") nil)
-    (define-key vterm-mode-map (kbd "<f7>") nil)
-    (define-key vterm-mode-map (kbd "<f8>") nil)
 
     (defun ric/vterm-mark-last-output ()
       "Mark the last batch of output from a shell command."
