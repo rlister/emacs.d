@@ -440,16 +440,6 @@ Old version included in emacs, but get latest from melpa:
     (add-to-list 'project-switch-commands '(?b "Buffer" project-switch-to-buffer)))
 #+end_src
 
-Get project name:
-
-#+begin_src emacs-lisp
-  (defun ric//project-name ()
-    "Get simple directory name of current project, or nil if no project."
-    (let ((path (cdr (project-current))))
-      (if path
-          (file-name-nondirectory (directory-file-name path)))))
-#+end_src
-
 Find files appropriately depending on whether in a project:
 
 #+begin_src emacs-lisp
