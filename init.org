@@ -217,7 +217,11 @@ Use current window for =man= command.
 Enable =C-c left= and =C-c right= for undo/redo of window configuration.
 
 #+begin_src emacs-lisp
-  (winner-mode 1)
+  (use-package winner
+    :init
+    (winner-mode 1)
+    :bind
+    ("C-c u" . winner-undo))
 #+end_src
 
 Split window horizontally or vertically, based on width, and toggle
