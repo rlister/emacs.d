@@ -1300,7 +1300,7 @@ huge numbers of unreads. Bind this to a key to force update.
 
 #+begin_src emacs-lisp
   (use-package gcalcli-mode
-    :straight (gcalcli-mode :type git :host github :repo "rlister/gcalcli-mode")
+    :straight (gcalcli-mode :type git :host github :repo "rlister/gcalcli-mode" :branch "main")
     :config
     (setq gcalcli-bin "~/.asdf/shims/gcalcli")
     (setq gcalcli-config-alist
