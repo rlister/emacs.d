@@ -813,7 +813,6 @@ Better key placement for common movement:
 We no longer need =back-to-indentation=, so use the binding for =imenu=:
 
 #+begin_src emacs-lisp
-  (define-key global-map (kbd "M-m") 'imenu)
   (define-key global-map (kbd "C-c m") 'imenu)
 #+end_src
 
@@ -848,6 +847,7 @@ any non-word chars, and use a nicer binding than =C-@= on my keyboard.
 
   (advice-add 'mark-word :filter-args #'ric/mark-word-args)
   (global-set-key (kbd "<insert>") 'mark-word)
+  (define-key global-map (kbd "M-m") 'mark-word)
 #+end_src
 
 * Comments
