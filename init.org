@@ -68,6 +68,7 @@ Allow disabled commands.
 #+begin_src emacs-lisp
   (put 'upcase-region 'disabled nil)
   (put 'downcase-region 'disabled nil)
+  (put 'narrow-to-region 'disabled nil)
 #+end_src
 
 * Package management
