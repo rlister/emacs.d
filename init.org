@@ -792,8 +792,6 @@ I use this more than =zap-to-char=. Use arg for n'th occurrence, negative for ba
 Better key placement for common movement:
 
 #+begin_src emacs-lisp
-  (define-key global-map (kbd "M-f") 'forward-same-syntax)
-  (define-key global-map (kbd "M-b") (lambda () (interactive) (forward-same-syntax -1)))
   (define-key global-map (kbd "M-p") 'backward-paragraph)
   (define-key global-map (kbd "M-n") 'forward-paragraph)
 #+end_src
@@ -804,7 +802,6 @@ Better key placement for common movement:
   (use-package mwim
     :straight t
     :bind
-    ("C-a" . mwim-beginning)
     ("C-e" . mwim-end))
 #+end_src
 
