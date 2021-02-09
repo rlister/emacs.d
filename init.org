@@ -207,6 +207,10 @@ Names of buffers that ~display-buffer~ should show in the current window.
 Use current window for =man= command.
 
 #+begin_src emacs-lisp
+  (global-set-key (kbd "C-.") 'other-window)
+#+end_src
+
+#+begin_src emacs-lisp
   (setq Man-notify-method 'pushy)
 #+end_src
 
