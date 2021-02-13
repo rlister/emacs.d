@@ -406,18 +406,6 @@ Show isearch match count in minibuffer.
   )
 #+end_src
 
-* Bufler
-
-[[https://github.com/alphapapa/bufler.el][Bufler]] is an =ibuffer= replacement:
-
-#+begin_src emacs-lisp
-  (use-package bufler
-    :straight t
-    :bind
-    ("C-x C-b" . bufler)
-    )
-#+end_src
-
 * Project.el
 
 Old version included in emacs, but get latest from melpa:
@@ -750,7 +738,6 @@ then load the compiled lib in emacs:
     :bind
     ("C-c t" . vterm))
 #+end_src
-
 
 * Movement commands
 
