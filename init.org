@@ -31,7 +31,6 @@ Remove distractions.
   (setq initial-scratch-message "")
   (setq warning-minimum-level :error)
   (setq ring-bell-function 'ignore)
-  (setq pop-up-windows t)
   (fset 'yes-or-no-p 'y-or-n-p)
 #+end_src
 
