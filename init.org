@@ -378,8 +378,10 @@ Fix modifier keys in macOS.
 
 * Search
 
+Show isearch match count in minibuffer.
 
 #+begin_src emacs-lisp
+  (setq isearch-lazy-count t)
 #+end_src
 
 * Transient
