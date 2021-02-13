@@ -1182,54 +1182,7 @@ machine slack login <team> password <xoxs-...>
        (image-height :initarg :image_height :type (or number null))
        (image-width :initarg :image_width :type (or number null))
        (image-bytes :initarg :image_bytes :type (or number null))))
-
-    ;; slack-insert-emoji breaks with selectrum
-    ;; implement patch from https://github.com/maurelio1234/emacs-slack/commit/db57f08bcff529cffe7f68d2ba95eb3f527c17f0
-    ;; until this is fixed: https://github.com/yuya373/emacs-slack/issues/517
-    (defun slack-select-emoji (team)
-      (if (and (fboundp 'emojify-completing-read)
-               (fboundp 'emojify-download-emoji-maybe))
-          (progn (emojify-download-emoji-maybe)
-                 (cl-labels
-                     ((select ()
-                              (emojify-completing-read "Select Emoji: "
-                                                       #'(lambda (data)
-                                                           (or (gethash data
-                                                                        slack-emoji-master
-                                                                        nil)
-                                                               (gethash data
-                                                                        (oref team emoji-master)
-                                                                        nil))))))
-                   (if (< 0 (hash-table-count slack-emoji-master))
-                       (select)
-                     (slack-emoji-fetch-master-data (car (hash-table-values slack-teams-by-token)))
-                     (select))))
-        (read-from-minibuffer "Emoji: ")))
-
-    (defun slack-emoji-fetch-master-data (team)
-      (cl-labels
-          ((success (&key data &allow-other-keys)
-                    (slack-request-handle-error
-                     (data "slack-emoji-fetch-master-data")
-                     (cl-loop for emoji in data
-                              do (let ((short-names (plist-get emoji :short_names)))
-                                   (when short-names
-                                     (cl-loop for name in short-names
-                                              do (let* ((emoji-key (format ":%s:" name))
-                                                        (emoji (emojify-get-emoji emoji-key))
-                                                        (emoji-name (if emoji (ht-get emoji "name") ""))
-                                                        (emoji-style (if emoji (ht-get emoji "style") "")))
-                                                   (puthash (format "%s - %s (%s)" emoji-key emoji-name emoji-style)
-                                                            t
-                                                            slack-emoji-master)))))))))
-        (slack-request
-         (slack-request-create
-          slack-emoji-master-data-url
-          team
-          :type "GET"
-          :success #'success
-          :without-auth t
-          :sync t)))))
+  )
 #+end_src
 
 ** Transient bindings
