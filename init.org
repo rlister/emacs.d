@@ -1189,6 +1189,7 @@ machine slack login <team> password <xoxs-...>
       ("r" "add reaction" slack-message-add-reaction)]
      ["Server"
       ("S" "start server" slack-start)
+      ("U" "update user list" slack-user-list-update)
       ("C" "close websocket" slack-ws-close)
       ("K" "kill message buffers" ric/kill-slack-message-buffers)]])
 
