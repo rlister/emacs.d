@@ -782,7 +782,7 @@ Better key placement for common movement:
     ("C-e" . mwim-end))
 #+end_src
 
-We no longer need =back-to-indentation=, so use the binding for =imenu=:
+Binding for =imenu=:
 
 #+begin_src emacs-lisp
   (define-key global-map (kbd "C-c m") 'imenu)
