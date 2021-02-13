@@ -376,22 +376,10 @@ Fix modifier keys in macOS.
   )
 #+end_src
 
-* Ctrlf search
+* Search
 
-[[https://github.com/raxod502/ctrlf][Ctrlf]] is an enhanced form of isearch. Turn it on, and change default
-style to fuzzy search:
 
 #+begin_src emacs-lisp
-  (use-package ctrlf
-    :straight t
-    :config
-    (ctrlf-mode +1)
-    (setq ctrlf-mode-bindings
-          '(("C-s"   . ctrlf-forward-fuzzy)
-            ("C-r"   . ctrlf-backward-fuzzy)
-            ("C-M-s" . ctrlf-forward-regexp)
-            ("C-M-r" . ctrlf-backward-regexp)))
-  )
 #+end_src
 
 * Transient
