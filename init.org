@@ -153,9 +153,7 @@ Choose correct font based on my various screen sizes.
 Nicer buffer bindings.
 
 #+begin_src emacs-lisp
-;  (define-key global-map (kbd "M-'") 'switch-to-buffer)
   (define-key global-map (kbd "C-t") 'switch-to-buffer)
- ; (define-key global-map (kbd "M-s M-s") 'save-buffer)
 #+end_src
 
 Change from ~kill-buffer~ so there is no prompt for buffer name.
