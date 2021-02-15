@@ -454,16 +454,17 @@ Magit extensions for issues and pull requests.
     :straight t
     :bind
     (:map github-review-mode-map
-          ("C-c C-c" . ric/github-review-transient)))
+          ("C-c C-c" . ric/github-review-transient))
+    :config
+    (define-transient-command ric/github-review-transient ()
+      "Github review commands."
+      [["Submit"
+        ("a" "approve" github-review-approve)
+        ("c" "comment" github-review-comment)
+        ("r" "reject" github-review-reject)]]))
 #+end_src
 
 #+begin_src emacs-lisp
-  (define-transient-command ric/github-review-transient ()
-    "Github review commands."
-    [["Submit"
-      ("a" "approve" github-review-approve)
-      ("c" "comment" github-review-comment)
-      ("r" "reject" github-review-reject)]])
 #+end_src
 
 Requires an authinfo entry like:
