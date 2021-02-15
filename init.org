@@ -634,9 +634,28 @@ Now run =org-jira-get-issues=.
 
 On linux we can install from MELPA and compilation happens correctly inside emacs during install.
 
+** macos install
+
+On macOS we need to download and compile emacs-vterm manually.
+
+#+begin_src sh
+  brew install cmake libtool
+  git clone https://github.com/akermu/emacs-libvterm.git
+  cd emacs-libvterm/build
+  cmake .. && make
+#+end_src
+
+Add compiled file location to =load-path=.
+
+#+begin_src emacs-lisp
+  (when (equal system-type 'darwin)
+    (add-to-list 'load-path "~/src/emacs-libvterm"))
+#+end_src
+
+** package install and config
+
 #+begin_src emacs-lisp
   (use-package vterm
-    :if (equal system-type 'gnu/linux)
     :straight t
     :bind (
            ("C-c t" . vterm)
@@ -665,43 +684,6 @@ On linux we can install from MELPA and compilation happens correctly inside emac
       (set-mark-command nil)
       (vterm-previous-prompt 1)
       (forward-line 1)))
-#+end_src
-
-** macos install
-
-On macOS we need to download and compile emacs-vterm manually.
-
-Dependencies:
-
-#+begin_src sh
-  brew install cmake libtool
-#+end_src
-
-Download:
-
-#+begin_src sh
-  cd ~/src
-  git clone https://github.com/akermu/emacs-libvterm.git
-#+end_src
-
-Compile:
-
-#+begin_src sh
-  cd emacs-libvterm
-  mkdir -p build
-  cd build
-  cmake ..
-  make
-#+end_src
-
-then load the compiled lib in emacs:
-
-#+begin_src emacs-lisp
-  (use-package vterm
-    :if (equal system-type 'darwin)
-    :load-path "~/src/emacs-libvterm"
-    :bind
-    ("C-c t" . vterm))
 #+end_src
 
 * Movement commands
