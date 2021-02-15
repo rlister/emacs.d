@@ -745,15 +745,6 @@ Binding for =imenu=:
     ("C-c L" . link-hint-copy-link))
 #+end_src
 
-[[https://github.com/magnars/expand-region.el][expand-region]] increase/decrease region, semantically.
-
-#+begin_src emacs-lisp
-  (use-package expand-region
-    :straight t
-    :bind
-    ("C-=" . 'er/expand-region))
-#+end_src
-
 Soup up =mark-word= to move backwards if at end of line, give or take
 any non-word chars, and use a nicer binding than =C-@= on my keyboard.
 
