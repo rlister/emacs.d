@@ -582,10 +582,11 @@ Set up [[https://orgmode.org/org.html#Capture-templates][capture templates]].
 
 #+begin_src emacs-lisp
   (use-package org-capture
-    :init
+    :bind
+    ("C-c c" . org-capture)
+    :config
     (setq org-capture-templates
-          '(
-            ("t" "Todo" entry (file+olp+datetree "~/src/doc/work.org")
+          '(("t" "Todo" entry (file+olp+datetree "~/src/doc/work.org")
              "* TODO %?" :empty-lines 0 :tree-type week)
             ("d" "Done" entry (file+olp+datetree "~/src/doc/work.org")
              "* DONE %?\n- State \"DONE\" %U" :empty-lines 0 :tree-type week)
@@ -594,12 +595,7 @@ Set up [[https://orgmode.org/org.html#Capture-templates][capture templates]].
             ("h" "Home" entry (file+olp+datetree "~/src/doc/home.org")
              "* TODO %?" :empty-lines 0 :tree-type week)
             ("j" "Journal" entry (file+olp+datetree "~/src/doc/work.org")
-             "* %<%H:%M> %?" :empty-lines 0 :tree-type week)
-            )
-          )
-    :bind
-    ("C-c c" . org-capture)
-    )
+             "* %<%H:%M> %?" :empty-lines 0 :tree-type week))))
 #+end_src
 
 ** org-present
