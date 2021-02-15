@@ -149,7 +149,7 @@ Choose correct font based on my various screen sizes.
 Nicer buffer bindings.
 
 #+begin_src emacs-lisp
-  (define-key global-map (kbd "C-t") 'switch-to-buffer)
+  ;; (define-key global-map (kbd "C-t") 'switch-to-buffer)
 #+end_src
 
 Change from ~kill-buffer~ so there is no prompt for buffer name.
@@ -235,8 +235,6 @@ between split and unsplit.
 Nicer binding for =other-window=.
 
 #+begin_src emacs-lisp
-  (define-key global-map (kbd "C-j") 'other-window)
-  (define-key lisp-interaction-mode-map (kbd "C-j") nil)
 #+end_src
 
 * Mark and region
@@ -514,10 +512,7 @@ Use straight to get latest [[https://code.orgmode.org/bzg/org-mode][org-mode]] f
             ("WIP"   .  (:foreground "LightGoldenRod"))))
     (setq org-log-done 'time)
     :config
-    (setq auto-mode-alist (rassq-delete-all 'dcl-mode auto-mode-alist)) ;no dcl for .com files
-    :config
-    ;; unbind to use global binding
-    (define-key org-mode-map (kbd "C-j") nil))
+    (setq auto-mode-alist (rassq-delete-all 'dcl-mode auto-mode-alist))) ;no dcl for .com files
 #+end_src
 
 ** org-agenda
@@ -1035,7 +1030,6 @@ Config:
            ("p" . w3m-previous-anchor)
            ("C-<prior>" . w3m-previous-buffer)
            ("x" . w3m-delete-buffer)
-           ("C-t" . switch-to-buffer)
            ("M-n" . forward-paragraph)))
 #+end_src
 
@@ -1259,4 +1253,17 @@ Fix modifier keys in macOS.
     (setq ns-option-modifier 'meta)
     (setq ns-control-modifier 'control)
     (setq ns-function-modifier 'hyper))
+#+end_src
+
+** Keybindings
+
+#+begin_src emacs-lisp
+  (define-minor-mode ric-keys-mode
+    "Set up global bindings to override other modes."
+    :lighter " rk"
+    :init-value 1
+    :global t
+    :keymap
+    '(("\C-j" . other-window)
+      ("\C-t" . switch-to-buffer)))
 #+end_src
