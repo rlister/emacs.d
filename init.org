@@ -337,20 +337,6 @@ Insert parentheses in pairs.
   (electric-pair-mode 1)
 #+end_src
 
-* macOS specifics
-
-Fix modifier keys in macOS.
-
-#+begin_src emacs-lisp
-  (when (equal window-system 'ns)
-    (setq ns-auto-hide-menu-bar nil)
-    (setq ns-command-modifier 'control)
-    (setq ns-right-command-modifier 'control)
-    (setq ns-option-modifier 'meta)
-    (setq ns-control-modifier 'control)
-    (setq ns-function-modifier 'hyper))
-#+end_src
-
 * Selectrum
 
 [[https://github.com/raxod502/selectrum/][Selectrum]] selection completion drop-in for completing-read:
@@ -1272,4 +1258,18 @@ Install bbdb and vcard importer.
           '(("To:"
              (".*"   "%[Gmail]/Spam"))
             )))
+#+end_src
+
+* macOS specifics
+
+Fix modifier keys in macOS.
+
+#+begin_src emacs-lisp
+  (when (equal window-system 'ns)
+    (setq ns-auto-hide-menu-bar nil)
+    (setq ns-command-modifier 'control)
+    (setq ns-right-command-modifier 'control)
+    (setq ns-option-modifier 'meta)
+    (setq ns-control-modifier 'control)
+    (setq ns-function-modifier 'hyper))
 #+end_src
