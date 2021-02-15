@@ -385,8 +385,7 @@ Show isearch match count in minibuffer.
   (use-package browse-kill-ring
     :straight t
     :config
-    (browse-kill-ring-default-keybindings) ;M-y
-  )
+    (browse-kill-ring-default-keybindings)) ;M-y
 #+end_src
 
 * Project.el
@@ -415,7 +414,6 @@ Find files appropriately depending on whether in a project:
 #+end_src
 
 * Version control
-
 ** magit
 
 [[https://magit.vc/][Magit]] git porcelain.
