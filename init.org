@@ -190,18 +190,15 @@ Display things in mode-line.
 
 * Window handling
 
-Names of buffers that ~display-buffer~ should show in the current window.
+See [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Window-Choice.html#Window-Choice][How display-buffer works]].
+
+Whether =display-buffer= should create new windows.
 
 #+begin_src emacs-lisp
-  (dolist (name '("*Help*" "*Buffer List*" "*Faces*" "*Bufler*" "*eww bookmarks*"))
-     (add-to-list 'same-window-buffer-names name))
+  (setq pop-up-windows nil)
 #+end_src
 
-Use current window for =man= command.
-
-#+begin_src emacs-lisp
-  (global-set-key (kbd "C-.") 'other-window)
-#+end_src
+Use current window for =man= command, and do not use other frames.
 
 #+begin_src emacs-lisp
   (setq Man-notify-method 'pushy)
