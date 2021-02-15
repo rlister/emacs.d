@@ -1125,11 +1125,6 @@ machine slack login <team> password <xoxs-...>
         ("K" "kill message buffers" ric/kill-slack-message-buffers)]]))
 #+end_src
 
-** Transient bindings
-
-#+begin_src emacs-lisp
-#+end_src
-
 ** Alerts
 
 Set up =alert= for slack notification.
