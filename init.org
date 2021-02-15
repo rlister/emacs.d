@@ -613,8 +613,7 @@ Set up [[https://orgmode.org/org.html#Capture-templates][capture templates]].
                                (org-present-small)
                                (org-remove-inline-images)
                                (org-present-show-cursor)
-                               (org-present-read-write))))
-    )
+                               (org-present-read-write)))))
 #+end_src
 
 ** org-jira
