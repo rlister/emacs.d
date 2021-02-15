@@ -1084,7 +1084,7 @@ machine slack login <team> password <xoxs-...>
     (setq slack-thread-also-send-to-room nil)
     (setq lui-time-stamp-format "[%a %H:%M] ")
     (setq lui-time-stamp-position 'left)
-    :bind (
+    :bind (("s-s" . ric/slack-transient)
            :map slack-mode-map
            ("M-p" . slack-buffer-goto-prev-message)
            ("M-n" . slack-buffer-goto-next-message)
@@ -1123,9 +1123,9 @@ machine slack login <team> password <xoxs-...>
       (slack-if-let* ((team (slack-buffer-team this))
                       (room (slack-buffer-room this))
                       (room-name (slack-room-name room team)))
-          (format  "*%s:%s*"
-                   (s-word-initials (oref team name))
-                   room-name)))
+                     (format "*%s:%s*"
+                             (s-word-initials (oref team name))
+                             room-name)))
 
     ;; implement https://github.com/yuya373/emacs-slack/pull/532 until merged upstream
     ;; so that we can load channels with a giphy image
@@ -1136,41 +1136,38 @@ machine slack login <team> password <xoxs-...>
        (image-height :initarg :image_height :type (or number null))
        (image-width :initarg :image_width :type (or number null))
        (image-bytes :initarg :image_bytes :type (or number null))))
-  )
+    (define-transient-command ric/slack-transient ()
+      "Slack commands."
+      [["Buffers"
+        ("s" "next buffer" tracking-next-buffer)
+        ("s-s" "next buffer" tracking-next-buffer)]
+       ["Rooms"
+        ("u" "unread rooms" slack-select-unread-rooms)
+        ("c" "room select" slack-select-rooms)
+        ("g" "group select" slack-group-select)]
+       ["Threads"
+        ("i" "im select" slack-im-select)
+        ("t" "go to thread" slack-thread-show-or-create)
+        ("T" "all threads" slack-all-threads)]
+       ["Compose"
+        ("b" "write buffer" slack-message-write-another-buffer)
+        ("k" "delete message" slack-message-delete)
+        ("m" "update mark" ric/slack-update-mark)
+        ("y" "clipboard upload" slack-clipboard-image-upload)
+        ("f" "file upload" slack-file-upload)]
+       ["Emoji"
+        ("e" "insert emoji" slack-insert-emoji)
+        ("r" "add reaction" slack-message-add-reaction)]
+       ["Server"
+        ("S" "start server" slack-start)
+        ("U" "update user list" slack-user-list-update)
+        ("C" "close websocket" slack-ws-close)
+        ("K" "kill message buffers" ric/kill-slack-message-buffers)]]))
 #+end_src
 
 ** Transient bindings
 
 #+begin_src emacs-lisp
-  (define-transient-command ric/slack-transient ()
-    "Slack commands."
-    [["Buffers"
-      ("s" "next buffer" tracking-next-buffer)
-      ("s-s" "next buffer" tracking-next-buffer)]
-     ["Rooms"
-      ("u" "unread rooms" slack-select-unread-rooms)
-      ("c" "room select" slack-select-rooms)
-      ("g" "group select" slack-group-select)]
-     ["Threads"
-      ("i" "im select" slack-im-select)
-      ("t" "go to thread" slack-thread-show-or-create)
-      ("T" "all threads" slack-all-threads)]
-     ["Compose"
-      ("b" "write buffer" slack-message-write-another-buffer)
-      ("k" "delete message" slack-message-delete)
-      ("m" "update mark" ric/slack-update-mark)
-      ("y" "clipboard upload" slack-clipboard-image-upload)
-      ("f" "file upload" slack-file-upload)]
-     ["Emoji"
-      ("e" "insert emoji" slack-insert-emoji)
-      ("r" "add reaction" slack-message-add-reaction)]
-     ["Server"
-      ("S" "start server" slack-start)
-      ("U" "update user list" slack-user-list-update)
-      ("C" "close websocket" slack-ws-close)
-      ("K" "kill message buffers" ric/kill-slack-message-buffers)]])
-
-  (define-key global-map (kbd "s-s") 'ric/slack-transient)
 #+end_src
 
 ** Alerts
