@@ -1193,17 +1193,18 @@ Install bbdb and vcard importer.
 
 * Mew
 
-[[http://mew.org/en/][Mew mailreader]]. Install as an OS package, and configure in =~/.mew.el=.
+[[http://mew.org/en/][Mew mailreader]]. Install as an OS package since it includes binaries:
+
+#+begin_src sh
+  sudo pacman -Q emacs-mew
+#+end_src
+
+Autoload here, configure in =~/.mew.el=.
 
 #+begin_src emacs-lisp
   (use-package mew
     :init
-    (add-hook 'mew-summary-mode-hook 'hl-line-mode)
-    :config
-    (setq mew-refile-guess-alist
-          '(("To:"
-             (".*"   "%[Gmail]/Spam"))
-            )))
+    (add-hook 'mew-summary-mode-hook 'hl-line-mode))
 #+end_src
 
 * macOS specifics
