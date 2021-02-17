@@ -951,22 +951,6 @@ Load [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]].
     ("C-c k" . which-key-show-major-mode))
 #+end_src
 
-* Social
-
-Install, then run =twit= to authenticate via oauth in browser.
-
-#+begin_src emacs-lisp
-  (use-package twittering-mode
-    :straight (twittering-mode :type git :host github :repo "hayamiz/twittering-mode")
-    :bind
-    (:map twittering-mode-map
-        ("n" . twittering-goto-next-status)
-        ("p" . twittering-goto-previous-status)
-        ("e" . twittering-goto-previous-status)
-        ("N" . twittering-goto-next-status-of-user)
-        ("P" . twittering-goto-previous-status-of-user)))
-#+end_src
-
 * Web
 
 ** eww
