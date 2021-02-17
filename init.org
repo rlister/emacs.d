@@ -346,8 +346,7 @@ Insert parentheses in pairs.
   (use-package selectrum-prescient
     :straight t
     :config
-    (selectrum-prescient-mode +1)
-  )
+    (selectrum-prescient-mode +1))
 #+end_src
 
 * Search
@@ -356,6 +355,14 @@ Show isearch match count in minibuffer.
 
 #+begin_src emacs-lisp
   (setq isearch-lazy-count t)
+#+end_src
+
+Space will match any non-greedy series of characters, for fuzzy
+search.
+
+#+begin_src emacs-lisp
+  (setq isearch-lax-whitespace t)
+  (setq search-whitespace-regexp ".*?")
 #+end_src
 
 * Transient
