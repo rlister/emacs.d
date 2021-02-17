@@ -357,6 +357,14 @@ Show isearch match count in minibuffer.
   (setq isearch-lazy-count t)
 #+end_src
 
+Space will match any non-greedy series of characters, for fuzzy
+search.
+
+#+begin_src emacs-lisp
+  (setq isearch-lax-whitespace t)
+  (setq search-whitespace-regexp ".*?")
+#+end_src
+
 * Transient
 
 [[https://github.com/magit/transient][transient]] is loaded by =magit=, but ensure we load
