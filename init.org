@@ -688,7 +688,7 @@ Add compiled file location to =load-path=.
       "Mark the last batch of output from a shell command."
       (interactive)
       (vterm-copy-mode)
-      (previous-line)
+      (beginning-of-line)
       (set-mark-command nil)
       (vterm-previous-prompt 1)
       (forward-line 1)))
