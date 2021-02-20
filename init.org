@@ -672,6 +672,7 @@ Add compiled file location to =load-path=.
            ("<M-return>" . vterm-copy-mode)
            ("M-r" . vterm-send-C-r)
            ("<C-backspace>" . vterm-send-meta-backspace)
+           ("M-h" . ric/vterm-mark-last-output)
            ("<C-return>" . ric/vterm-mark-last-output)
            ("M-v" . (lambda () (interactive) (vterm-copy-mode) (scroll-down-command)))
            ;; ("C-p" . (lambda () (interactive) (vterm-copy-mode) (previous-line)))
