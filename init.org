@@ -327,6 +327,10 @@ search.
 #+begin_src emacs-lisp
   (setq isearch-lax-whitespace t)
   (setq search-whitespace-regexp ".*?")
+  (use-package isearch
+    :config
+    (setq isearch-lax-whitespace t)
+    (setq search-whitespace-regexp ".*?"))
 #+end_src
 
 * Transient
