@@ -702,6 +702,7 @@ any non-word chars, and use a nicer binding than =C-@= on my keyboard.
   (define-key global-map (kbd "M-m") 'mark-word)
 #+end_src
 
+
 Duplicate the current line.
 
 #+begin_src emacs-lisp
