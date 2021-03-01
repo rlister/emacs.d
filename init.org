@@ -1166,6 +1166,19 @@ Fix modifier keys in macOS.
 
 * Keybindings
 
+In GUI emacs we can distinguish =C-m= from =RET= and thus get a better
+binding than =C-@=.
+
+#+begin_src emacs-lisp
+  (when (display-graphic-p)
+    (define-key input-decode-map [?\C-i] [C-i])
+    (global-set-key (kbd "<C-i>") #'project-find-file)
+    (define-key input-decode-map [?\C-m] [C-m])
+    (global-set-key (kbd "<C-m>") #'mark-word))
+#+end_src
+
+Overrides using minor mode.
+
 #+begin_src emacs-lisp
   (define-minor-mode ric-keys-mode
     "Set up global bindings to override other modes."
