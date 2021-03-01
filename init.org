@@ -353,17 +353,7 @@ Old version included in emacs, but get latest from melpa:
     (add-to-list 'project-switch-commands '(?b "Buffer" project-switch-to-buffer)))
 #+end_src
 
-Find files appropriately depending on whether in a project:
-
 #+begin_src emacs-lisp
-  (defun ric/find-file-dwim ()
-    "Find file using project.el if in a project."
-    (interactive)
-    (if (project-current)
-        (project-find-file)
-      (call-interactively 'find-file)))
-
-  (define-key global-map (kbd "M-o") 'ric/find-file-dwim)
 #+end_src
 
 * Version control
