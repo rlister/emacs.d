@@ -1126,10 +1126,11 @@ Install bbdb and vcard importer.
 
 * Mew
 
-[[http://mew.org/en/][Mew mailreader]]. Install as an OS package since it includes binaries:
+[[http://mew.org/en/][Mew mailreader]]. Install as an OS package since it includes binaries.
 
 #+begin_src sh
-  sudo pacman -Q emacs-mew
+  git clone https://aur.archlinux.org/emacs-mew.git
+  makepkg -sic
 #+end_src
 
 Autoload here, configure in =~/.mew.el=.
