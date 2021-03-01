@@ -24,24 +24,21 @@ To install, clone this repo anywhere, and run ~C-c C-v t~ [[help:org-babel-tangl
 Remove distractions.
 
 #+begin_src emacs-lisp
-  (blink-cursor-mode -1)
-  (menu-bar-mode -1)
-  (setq default-directory "~/")
   (setq inhibit-startup-message t)
   (setq initial-scratch-message "")
-  (setq warning-minimum-level :error)
-  (setq ring-bell-function 'ignore)
+   ;; (setq warning-minimum-level :error)
+   ;; (setq ring-bell-function 'ignore)
   (fset 'yes-or-no-p 'y-or-n-p)
 #+end_src
 
 Turn off GUI features.
 
 #+begin_src emacs-lisp
-  (when (display-graphic-p)
-    (tool-bar-mode -1)
-    (customize-set-variable 'scroll-bar-mode nil)
-    (customize-set-variable 'horizontal-scroll-bar-mode nil)
-    (setq default-frame-alist '((undecorated . t))))
+  ;; (when (display-graphic-p)
+  ;;   (tool-bar-mode -1)
+  ;;   (customize-set-variable 'scroll-bar-mode nil)
+  ;;   (customize-set-variable 'horizontal-scroll-bar-mode nil)
+  ;;   (setq default-frame-alist '((undecorated . t))))
 #+end_src
 
 Control-based binding for =M-x=.
@@ -1205,15 +1202,24 @@ Fix modifier keys in macOS.
 
 #+begin_src emacs-lisp
   (when (equal window-system 'ns)
+    (set-face-font 'default "Roboto Mono-11:foundry=GOOG")
+    (setq default-directory "~/")
+    (blink-cursor-mode -1)
+    (menu-bar-mode -1)
     (setq ns-auto-hide-menu-bar nil)
     (setq ns-command-modifier 'control)
     (setq ns-right-command-modifier 'control)
     (setq ns-option-modifier 'meta)
     (setq ns-control-modifier 'control)
-    (setq ns-function-modifier 'hyper))
+    (setq ns-function-modifier 'hyper)
+    (when (display-graphic-p)
+      (tool-bar-mode -1)
+      (customize-set-variable 'scroll-bar-mode nil)
+      (customize-set-variable 'horizontal-scroll-bar-mode nil)
+      (setq default-frame-alist '((undecorated . t)))))
 #+end_src
 
-** Keybindings
+* Keybindings
 
 #+begin_src emacs-lisp
   (define-minor-mode ric-keys-mode
