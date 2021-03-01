@@ -1104,11 +1104,18 @@ huge numbers of unreads. Bind this to a key to force update.
 
 * gcalcli
 
+Install gcalcli with system python.
+
+#+begin_src sh
+  sudo pacman -S python python-pip
+  pip install gcalcli
+#+end_src
+
 #+begin_src emacs-lisp
   (use-package gcalcli-mode
     :straight (gcalcli-mode :type git :host github :repo "rlister/gcalcli-mode" :branch "main")
     :config
-    (setq gcalcli-bin "~/.asdf/shims/gcalcli")
+    (setq gcalcli-bin "~/.local/bin/gcalcli")
     (setq gcalcli-config-alist
           '((home . "~/.config/gcalcli/home")
             (work . "~/.config/gcalcli/work"))))
