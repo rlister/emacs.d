@@ -315,22 +315,19 @@ Insert parentheses in pairs.
 
 * Search
 
-Show isearch match count in minibuffer.
-
-#+begin_src emacs-lisp
-  (setq isearch-lazy-count t)
-#+end_src
-
 Space will match any non-greedy series of characters, for fuzzy
 search.
 
 #+begin_src emacs-lisp
-  (setq isearch-lax-whitespace t)
-  (setq search-whitespace-regexp ".*?")
   (use-package isearch
     :config
     (setq isearch-lax-whitespace t)
     (setq search-whitespace-regexp ".*?"))
+#+end_src
+
+#+begin_src emacs-lisp
+  (use-package anzu
+    :straight t)
 #+end_src
 
 * Transient
