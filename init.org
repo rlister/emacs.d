@@ -109,38 +109,6 @@ Turn on ~use-package~ integration:
   (straight-use-package 'use-package)
 #+end_src
 
-* Theme
-
-Load my theme without prompting for safety.
-
-#+begin_src emacs-lisp
-  (defun brew-theme ()
-    (interactive)
-    (load-theme 'brew t))
-#+end_src
-
-Install theme from github.
-
-#+begin_src emacs-lisp
-  (use-package brew-theme
-    :straight (brew-theme :type git :repo "git@github.com:rlister/brew-theme.git")
-    :config
-    (add-to-list 'custom-theme-load-path (expand-file-name  "straight/repos/brew-theme" straight-base-dir))
-    (brew-theme))
-#+end_src
-
-* Font
-
-Choose correct font based on my various screen sizes.
-
-#+begin_src emacs-lisp
-  (when (display-graphic-p)
-    (let ((w (x-display-pixel-width)))
-      (cond ((= w 1440)  (set-face-font 'default "Roboto Mono-14:foundry=GOOG"))
-            ((= w 1920)  (set-face-font 'default "Roboto Mono-13:foundry=GOOG"))
-            ((>= w 2560) (set-face-font 'default "Roboto Mono-11:foundry=GOOG")))))
-#+end_src
-
 * Buffers
 
 Nicer buffer bindings.
