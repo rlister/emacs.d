@@ -301,8 +301,7 @@ Insert parentheses in pairs.
   (use-package selectrum
     :straight t
     :config
-    (selectrum-mode +1)
-  )
+    (selectrum-mode +1))
 #+end_src
 
 [[https://github.com/raxod502/prescient.el][Prescient]] is a library for sorting candidate lists using the algorithm: last few, most frequent, remaining by length.
