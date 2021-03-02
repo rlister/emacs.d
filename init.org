@@ -154,7 +154,6 @@ Display things in mode-line.
   (column-number-mode t)
   (setq display-time-24hr-format t)
   (display-time-mode 1)
-  (display-battery-mode 1)
 #+end_src
 
 * Window handling
