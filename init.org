@@ -1,6 +1,10 @@
 #+TITLE: Emacs config
 #+PROPERTY: header-args:emacs-lisp :tangle "~/.emacs.d/init.el"
 
+#+begin_src emacs-lisp
+  (setq gc-cons-threshold (* 50 1000 1000))
+#+end_src
+
 * Installation
 
 This config uses [[https://orgmode.org/worg/org-contrib/babel/intro.html][org-babel]] in a literate programming style.
