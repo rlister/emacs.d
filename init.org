@@ -989,6 +989,13 @@ machine slack login <team> password <xoxs-...>
        (image-height :initarg :image_height :type (or number null))
        (image-width :initarg :image_width :type (or number null))
        (image-bytes :initarg :image_bytes :type (or number null))))
+    (defun ric/slack-update-mark ()
+      "Force the read mark to the end of the channel."
+      (interactive)
+      (end-of-buffer)
+      (slack-buffer-goto-prev-message)
+      (slack-message-update-mark)
+      (end-of-buffer))
     (define-transient-command ric/slack-transient ()
       "Slack commands."
       [["Buffers"
@@ -1034,16 +1041,6 @@ Set up =alert= for slack notification.
 
 Some DMs fail to update the mark correctly, and thus continue to show
 huge numbers of unreads. Bind this to a key to force update.
-
-#+begin_src emacs-lisp
-  (defun ric/slack-update-mark ()
-    "Force the read mark to the end of the channel."
-    (interactive)
-    (end-of-buffer)
-    (slack-buffer-goto-prev-message)
-    (slack-message-update-mark)
-    (end-of-buffer))
-#+end_src
 
 ** Kill all slack message buffers
 
