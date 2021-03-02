@@ -313,9 +313,9 @@ search.
 #+begin_src emacs-lisp
   (use-package browse-kill-ring
     :straight t
-    :config
-    (browse-kill-ring-default-keybindings)) ;M-y
     :defer 5
+    :bind
+    ("C-c y" . browse-kill-ring))
 #+end_src
 
 * Project.el
@@ -718,6 +718,7 @@ Toggle comments on region or line, without moving point. This works better as a 
     :bind
     ("C-c r" . rg))
 #+end_src
+
 * Color display
 
 Tell [[https://www.emacswiki.org/emacs/eww][shr and eww]] not to use colors from HTML (which are often ugly and broken).
