@@ -301,9 +301,13 @@ search.
     (setq search-whitespace-regexp ".*?"))
 #+end_src
 
+Use [[https://github.com/emacsorphanage/anzu][anzu]] for incremental query-replace and match count in modeline.
+
 #+begin_src emacs-lisp
   (use-package anzu
-    :straight t)
+    :straight t
+    :bind
+    ("M-s r" . anzu-query-replace))
 #+end_src
 
 * Kill ring
