@@ -173,6 +173,7 @@ Enable =C-c left= and =C-c right= for undo/redo of window configuration.
 
 #+begin_src emacs-lisp
   (use-package winner
+    :defer 5
     :init
     (winner-mode 1)
     :bind
@@ -252,10 +253,7 @@ Jump straight to current dir listing, instead of prompting.
   (use-package dired
     :config
     (setq dired-guess-shell-alist-user '(("\\.pdf\\'" "mupdf"))) ;external programs to use
-    (setq dired-listing-switches "-alh")                         ;human-readable file sizes
-    :bind (("C-x d" . dired-jump)
-           :map dired-mode-map
-           ("C-t" . nil)))
+    (setq dired-listing-switches "-alh"))                        ;human-readable file sizes
 #+end_src
 
 * Parentheses
@@ -313,6 +311,7 @@ search.
     :straight t
     :config
     (browse-kill-ring-default-keybindings)) ;M-y
+    :defer 5
 #+end_src
 
 * Project.el
@@ -379,6 +378,7 @@ Magit extensions for issues and pull requests.
 #+end_src
 
 #+begin_src emacs-lisp
+    :defer 10)
 #+end_src
 
 Requires an authinfo entry like:
@@ -921,6 +921,7 @@ Start server if not running in this or any other emacs process.
   (require 'server)
   (unless (server-running-p)
     (server-start))
+    :defer 10
 #+end_src
 
 * Mouse
@@ -943,6 +944,7 @@ machine slack login <team> password <xoxs-...>
 #+begin_src emacs-lisp
   (use-package slack
     :straight (slack :type git :host github :repo "yuya373/emacs-slack")
+    :defer 10
     :commands (slack-start)
     :bind (("s-s" . ric/slack-transient)
            :map slack-mode-map
@@ -1041,6 +1043,7 @@ Set up =alert= for slack notification.
 #+begin_src emacs-lisp
   (use-package alert
     :commands (alert)
+    :after slack
     :config
     (setq alert-default-style 'libnotify))
 #+end_src
