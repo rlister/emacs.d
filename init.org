@@ -851,16 +851,6 @@ Load [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]].
                 ("r" . elfeed-kill-buffer)))
 #+end_src
 
-* Help
-
-#+begin_src emacs-lisp
-  (use-package which-key
-    :straight t
-    :config
-    (which-key-mode)
-    :bind
-    ("C-c k" . which-key-show-major-mode))
-#+end_src
 
 * Web
 
