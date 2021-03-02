@@ -979,9 +979,7 @@ machine slack login <team> password <xoxs-...>
       (slack-if-let* ((team (slack-buffer-team this))
                       (room (slack-buffer-room this))
                       (room-name (slack-room-name room team)))
-                     (format "*%s:%s*"
-                             (s-word-initials (oref team name))
-                             room-name)))
+          (format "*Slack: %s*" room-name)))
 
     ;; implement https://github.com/yuya373/emacs-slack/pull/532 until merged upstream
     ;; so that we can load channels with a giphy image
