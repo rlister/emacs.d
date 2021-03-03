@@ -812,7 +812,6 @@ Complete with [[info:autotype#Hippie Expand][info:autotype#Hippie Expand]].
                 ("r" . elfeed-kill-buffer)))
 #+end_src
 
-
 * Web
 
 ** eww
@@ -861,10 +860,11 @@ Config:
 Start server if not running in this or any other emacs process.
 
 #+begin_src emacs-lisp
-  (require 'server)
-  (unless (server-running-p)
-    (server-start))
+  (use-package server
     :defer 10
+    :config
+    (unless (server-running-p)
+      (server-start)))
 #+end_src
 
 * Mouse
