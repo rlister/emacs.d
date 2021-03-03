@@ -163,7 +163,7 @@ See [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Window-Choice.ht
 Whether =display-buffer= should create new windows.
 
 #+begin_src emacs-lisp
-  (setq pop-up-windows nil)
+  (setq pop-up-windows t)
 #+end_src
 
 Use current window for =man= command, and do not use other frames.
