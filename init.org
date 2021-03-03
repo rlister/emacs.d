@@ -29,34 +29,6 @@ Remove distractions.
   (fset 'yes-or-no-p 'y-or-n-p)
 #+end_src
 
-Turn off GUI features.
-
-#+begin_src emacs-lisp
-  ;; (when (display-graphic-p)
-  ;;   (tool-bar-mode -1)
-  ;;   (customize-set-variable 'scroll-bar-mode nil)
-  ;;   (customize-set-variable 'horizontal-scroll-bar-mode nil)
-  ;;   (setq default-frame-alist '((undecorated . t))))
-#+end_src
-
-Control-based binding for =M-x=.
-
-#+begin_src emacs-lisp
-  (global-set-key (kbd "C-x m") 'execute-extended-command)
-#+end_src
-
-Complete with [[info:autotype#Hippie Expand][info:autotype#Hippie Expand]].
-
-#+begin_src emacs-lisp
-  (global-set-key (kbd "<C-tab>") 'hippie-expand)
-#+end_src
-
-Never want to suspend frame by mistake, and not needed w/tiling wm.
-
-#+begin_src emacs-lisp
-  (global-set-key (kbd "C-x C-z") nil)
-#+end_src
-
 Allow disabled commands.
 
 #+begin_src emacs-lisp
@@ -108,18 +80,6 @@ Turn on ~use-package~ integration:
 #+end_src
 
 * Buffers
-
-Nicer buffer bindings.
-
-#+begin_src emacs-lisp
-  ;; (define-key global-map (kbd "C-t") 'switch-to-buffer)
-#+end_src
-
-Change from ~kill-buffer~ so there is no prompt for buffer name.
-
-#+begin_src emacs-lisp
-  (define-key global-map (kbd "C-x k") 'kill-current-buffer)
-#+end_src
 
 Change style for unique buffer names to show path after filename.
 
@@ -193,12 +153,6 @@ transient-mark-mode, if it is not needed for middle-click paste.
 #+end_src
 
 * Whitespace handling
-
-Combine =just-one-space= and =delete-horizontal-space= on one toggle key:
-
-#+begin_src emacs-lisp
-  (define-key global-map (kbd "M-SPC") 'cycle-spacing)
-#+end_src
 
 On save, delete whitespace chars trailing each line.
 
