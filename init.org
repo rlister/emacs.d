@@ -767,6 +767,16 @@ Load [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]].
     ("C-c i" . string-inflection-all-cycle))
 #+end_src
 
+** completion
+
+Complete with [[info:autotype#Hippie Expand][info:autotype#Hippie Expand]].
+
+#+begin_src emacs-lisp
+  (use-package hippie-exp
+    :bind
+    ("<C-tab>" . hippie-expand))
+#+end_src
+
 * RSS
 
 #+begin_src emacs-lisp
