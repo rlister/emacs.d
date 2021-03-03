@@ -345,7 +345,7 @@ Old version included in emacs, but get latest from melpa:
     ("C-c g" . magit-status)
     ("C-x g" . magit-status)
     :config
-    (setq magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1))
+    (setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1))
 #+end_src
 
 Requires an authinfo entry like:
