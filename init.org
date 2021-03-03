@@ -929,9 +929,7 @@ machine slack login <team> password <xoxs-...>
 #+begin_src emacs-lisp
   (use-package slack
     :straight (slack :type git :host github :repo "yuya373/emacs-slack")
-    :defer 10
     :commands (slack-start)
-    :bind (("s-s" . ric/slack-transient)
            :map slack-mode-map
            ("M-p" . slack-buffer-goto-prev-message)
            ("M-n" . slack-buffer-goto-next-message)
@@ -990,40 +988,14 @@ machine slack login <team> password <xoxs-...>
        (image-height :initarg :image_height :type (or number null))
        (image-width :initarg :image_width :type (or number null))
        (image-bytes :initarg :image_bytes :type (or number null))))
+
     (defun ric/slack-update-mark ()
       "Force the read mark to the end of the channel."
       (interactive)
       (end-of-buffer)
       (slack-buffer-goto-prev-message)
       (slack-message-update-mark)
-      (end-of-buffer))
-    (define-transient-command ric/slack-transient ()
-      "Slack commands."
-      [["Buffers"
-        ("s" "next buffer" tracking-next-buffer)
-        ("s-s" "next buffer" tracking-next-buffer)]
-       ["Rooms"
-        ("u" "unread rooms" slack-select-unread-rooms)
-        ("c" "room select" slack-select-rooms)
-        ("g" "group select" slack-group-select)]
-       ["Threads"
-        ("i" "im select" slack-im-select)
-        ("t" "go to thread" slack-thread-show-or-create)
-        ("T" "all threads" slack-all-threads)]
-       ["Compose"
-        ("b" "write buffer" slack-message-write-another-buffer)
-        ("k" "delete message" slack-message-delete)
-        ("m" "update mark" ric/slack-update-mark)
-        ("y" "clipboard upload" slack-clipboard-image-upload)
-        ("f" "file upload" slack-file-upload)]
-       ["Emoji"
-        ("e" "insert emoji" slack-insert-emoji)
-        ("r" "add reaction" slack-message-add-reaction)]
-       ["Server"
-        ("S" "start server" slack-start)
-        ("U" "update user list" slack-user-list-update)
-        ("C" "close websocket" slack-ws-close)
-        ("K" "kill message buffers" ric/kill-slack-message-buffers)]]))
+      (end-of-buffer)))
 #+end_src
 
 ** Alerts
