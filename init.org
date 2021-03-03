@@ -1095,5 +1095,9 @@ Overrides using minor mode.
     :global t
     :keymap
     '(("\C-j" . other-window)
-      ("\C-t" . switch-to-buffer)))
+      ("\C-t" . switch-to-buffer)
+      ("\C-x m" . execute-extended-command)
+      ("\C-x \C-z" . nil)
+      ("\C-x k" .kill-current-buffer)
+      ("\M-SPC" . cycle-spacing)))
 #+end_src
