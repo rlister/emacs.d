@@ -1094,10 +1094,13 @@ Overrides using minor mode.
     :init-value 1
     :global t
     :keymap
-    '(("\C-j" . other-window)
-      ("\C-t" . switch-to-buffer)
-      ("\C-x m" . execute-extended-command)
-      ("\C-x \C-z" . nil)
-      ("\C-x k" .kill-current-buffer)
-      ("\M-SPC" . cycle-spacing)))
+    (let ((map (make-sparse-keymap)))
+      (define-key map (kbd "C-j") 'other-window)
+      (define-key map (kbd "C-t") 'switch-to-buffer)
+      (define-key map (kbd "C-x m") 'execute-extended-command)
+      (define-key map (kbd "C-z") nil)
+      (define-key map (kbd "C-x C-z") nil)
+      (define-key map (kbd "C-x k") 'kill-current-buffer)
+      (define-key map (kbd "M-SPC") 'cycle-spacing)
+      map))
 #+end_src
