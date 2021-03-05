@@ -1,10 +1,6 @@
 #+TITLE: Emacs config
 #+PROPERTY: header-args:emacs-lisp :tangle "~/.emacs.d/init.el"
 
-#+begin_src emacs-lisp
-  (setq gc-cons-threshold (* 50 1000 1000))
-#+end_src
-
 * Installation
 
 This config uses [[https://orgmode.org/worg/org-contrib/babel/intro.html][org-babel]] in a literate programming style.
@@ -17,15 +13,28 @@ To install, clone this repo anywhere, and run ~C-c C-v t~ [[help:org-babel-tangl
   (add-to-list 'exec-path "/usr/local/bin")
 #+end_src
 
-* Basic defaults
+* Startup
 
-Remove distractions.
+Reduce GC for faster startup.
 
 #+begin_src emacs-lisp
-  (setq inhibit-startup-message t)
+  (setq gc-cons-threshold (* 50 1000 1000))
+#+end_src
+
+Remove unnecessary initial work.
+
+#+begin_src emacs-lisp
+  (setq initial-major-mode 'fundamental-mode)
   (setq initial-scratch-message "")
-   ;; (setq warning-minimum-level :error)
-   ;; (setq ring-bell-function 'ignore)
+  (setq inhibit-startup-message t)
+  (setq inhibit-startup-echo-area-message "ric")
+  ;; (setq warning-minimum-level :error)
+  ;; (setq ring-bell-function 'ignore)
+#+end_src
+
+Answer questions more easily.
+
+#+begin_src emacs-lisp
   (fset 'yes-or-no-p 'y-or-n-p)
 #+end_src
 
