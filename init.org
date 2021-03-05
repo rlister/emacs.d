@@ -211,6 +211,7 @@ Jump straight to current dir listing, instead of prompting.
 
 #+begin_src emacs-lisp
   (use-package dired
+    :bind ("C-x d" . dired-jump)
     :config
     (setq dired-guess-shell-alist-user '(("\\.pdf\\'" "mupdf"))) ;external programs to use
     (setq dired-listing-switches "-alh"))                        ;human-readable file sizes
@@ -912,6 +913,7 @@ machine slack login <team> password <xoxs-...>
            ("C-c C-r" . slack-message-add-reaction)
            ("C-c m" . ric/slack-update-mark)
            ("C-c C-y" . slack-clipboard-image-upload)
+           ("<C-return>" . slack-thread-show-or-create)
            :map slack-thread-message-buffer-mode-map
            ("M-p" . slack-buffer-goto-prev-message)
            ("M-n" . slack-buffer-goto-next-message)
@@ -1102,12 +1104,12 @@ Overrides using minor mode.
     :global t
     :keymap
     (let ((map (make-sparse-keymap)))
-      (define-key map (kbd "C-j") 'other-window)
-      (define-key map (kbd "C-t") 'switch-to-buffer)
-      (define-key map (kbd "C-x m") 'execute-extended-command)
+      (define-key map (kbd "C-j") #'other-window)
+      (define-key map (kbd "C-t") #'switch-to-buffer)
+      (define-key map (kbd "C-x m") #'execute-extended-command)
       (define-key map (kbd "C-z") nil)
       (define-key map (kbd "C-x C-z") nil)
-      (define-key map (kbd "C-x k") 'kill-current-buffer)
-      (define-key map (kbd "M-SPC") 'cycle-spacing)
+      (define-key map (kbd "C-x k") #'kill-current-buffer)
+      (define-key map (kbd "M-SPC") #'cycle-spacing)
       map))
 #+end_src
