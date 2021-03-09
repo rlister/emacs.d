@@ -144,15 +144,10 @@ Use current window for =man= command, and do not use other frames.
   (setq Man-notify-method 'pushy)
 #+end_src
 
-Enable =C-c left= and =C-c right= for undo/redo of window configuration.
+Undo/redo of window configuration.
 
 #+begin_src emacs-lisp
-  (use-package winner
-    :defer 5
-    :init
-    (winner-mode 1)
-    :bind
-    ("C-c u" . winner-undo))
+  (winner-mode 1)
 #+end_src
 
 * Mark and region
