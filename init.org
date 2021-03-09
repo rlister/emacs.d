@@ -205,14 +205,12 @@ Set this to ~loopback~ to redirect all gpg pinentry queries to the caller: in th
 
 * Dired
 
-Jump straight to current dir listing, instead of prompting.
+Set external programs to use and human-readable file sizes.
 
 #+begin_src emacs-lisp
-  (use-package dired
-    :bind ("C-x d" . dired-jump)
-    :config
-    (setq dired-guess-shell-alist-user '(("\\.pdf\\'" "mupdf"))) ;external programs to use
-    (setq dired-listing-switches "-alh"))                        ;human-readable file sizes
+  (with-eval-after-load 'dired
+    (setq dired-guess-shell-alist-user '(("\\.pdf\\'" "mupdf")))
+    (setq dired-listing-switches "-alh"))
 #+end_src
 
 * Parentheses
