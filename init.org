@@ -560,16 +560,6 @@ Some extra filenames to use =ruby-mode=.
   (add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode))
 #+end_src
 
-** completion
-
-Complete with [[info:autotype#Hippie Expand][info:autotype#Hippie Expand]].
-
-#+begin_src emacs-lisp
-  (use-package hippie-exp
-    :bind
-    ("<C-tab>" . hippie-expand))
-#+end_src
-
 * elfeed
 
 [[https://github.com/skeeto/elfeed][elfeed]] RSS reader. We keep feed list in =doc/elfeed.opml=, for a new
@@ -597,19 +587,16 @@ Install package:
 Config:
 
 #+begin_src emacs-lisp
-  (use-package w3m
-    :load-path "/usr/share/emacs/site-lisp/w3m"
-    :config
+  ;;  load-path "/usr/share/emacs/site-lisp/w3m"
+  (with-eval-after-load 'w3m
     (setq w3m-search-default-engine "duckduckgo")
     (setq w3m-use-favicon nil)
-    :bind (("C-h C-b" . w3m-bookmark-view)
-           :map w3m-mode-map
-           ("n" . w3m-next-anchor)
-           ("C-<next>" . w3m-next-buffer)
-           ("p" . w3m-previous-anchor)
-           ("C-<prior>" . w3m-previous-buffer)
-           ("x" . w3m-delete-buffer)
-           ("M-n" . forward-paragraph)))
+    (define-key map (kbd "n") #'w3m-next-anchor)
+    (define-key map (kbd "C-<next>") #'w3m-next-buffer)
+    (define-key map (kbd "p") #'w3m-previous-anchor)
+    (define-key map (kbd "C-<prior>") #'w3m-previous-buffer)
+    (define-key map (kbd "x") #'w3m-delete-buffer)
+    (define-key map (kbd "M-n") #'forward-paragraph))
 #+end_src
 
 * Mouse
@@ -710,10 +697,7 @@ machine slack login <team> password <xoxs-...>
 Set up =alert= for slack notification.
 
 #+begin_src emacs-lisp
-  (use-package alert
-    :commands (alert)
-    :after slack
-    :config
+  (with-eval-after-load 'alert
     (setq alert-default-style 'libnotify))
 #+end_src
 
@@ -818,6 +802,7 @@ Overrides using minor mode.
     :global t
     :keymap
     (let ((map (make-sparse-keymap)))
+      (define-key map (kbd "<C-tab>") #'hippie-expand)
       (define-key map (kbd "C-j") #'other-window)
       (define-key map (kbd "C-t") #'switch-to-buffer)
       (define-key map (kbd "C-;") #'ric/comment-dwim)
