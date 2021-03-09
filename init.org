@@ -835,6 +835,8 @@ Overrides using minor mode.
       (define-key map (kbd "C-c l") #'link-hint-open-link)
       (define-key map (kbd "C-c L") #'link-hint-copy-link)
       (define-key map (kbd "C-c m") #'imenu)
+      (define-key map (kbd "C-c o") #'org-agenda)
+      (define-key map (kbd "C-c c") #'org-capture)
       (define-key map (kbd "C-c r") #'rg)
       (define-key map (kbd "C-c t") #'vterm)
       (define-key map (kbd "C-c y") #'browse-kill-ring)
