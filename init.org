@@ -88,6 +88,15 @@ Turn on ~use-package~ integration:
   (straight-use-package 'use-package)
 #+end_src
 
+** Customizations
+
+Do not write customizations to =init.el=.
+
+#+begin_src emacs-lisp
+  (with-eval-after-load 'cus-edit
+    (setq custom-file "~/.emacs.d/custom.el"))
+#+end_src
+
 * Buffers
 
 Change style for unique buffer names to show path after filename.
