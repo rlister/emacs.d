@@ -752,21 +752,6 @@ Feed database is stored in =~/.elfeed=.
 
 * Web
 
-** eww
-
-Store bookmarks in git-controlled location, and add missing bindings.
-
-#+begin_src emacs-lisp
-  (use-package eww
-    :config
-    (setq eww-bookmarks-directory "~/src/doc/")
-    :bind (("C-h C-b" . eww-list-bookmarks)
-           :map eww-bookmark-mode-map
-           ("n" . next-line)
-           ("p" . previous-line)
-           ))
-#+end_src
-
 ** w3m
 
 Install package:
