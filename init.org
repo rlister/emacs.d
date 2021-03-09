@@ -269,12 +269,10 @@ modeline.
 
 * Project.el
 
-Old version included in emacs, but get latest from melpa:
+Old version included in emacs27, so get latest from melpa for now.
 
 #+begin_src emacs-lisp
-  (use-package project
-    :straight t
-    :config
+  (with-eval-after-load 'project
     (add-to-list 'project-switch-commands '(?t "Vterm" vterm))
     (add-to-list 'project-switch-commands '(?b "Buffer" project-switch-to-buffer)))
 #+end_src
@@ -520,26 +518,18 @@ Add compiled file location to =load-path=.
 ** package install and config
 
 #+begin_src emacs-lisp
-  (use-package vterm
-    :straight t
-    :bind (
-           ("C-c t" . vterm)
-           :map vterm-copy-mode-map
-           ("<M-return>" . vterm-copy-mode)
-           :map vterm-mode-map
-           ("<M-return>" . vterm-copy-mode)
-           ("M-r" . vterm-send-C-r)
-           ("<C-backspace>" . vterm-send-meta-backspace)
-           ("M-h" . ric/vterm-mark-last-output)
-           ("<C-return>" . ric/vterm-mark-last-output)
-           ("M-v" . (lambda () (interactive) (vterm-copy-mode) (scroll-down-command)))
-           ;; ("C-p" . (lambda () (interactive) (vterm-copy-mode) (previous-line)))
-           )
-    :config
+  (with-eval-after-load 'vterm
+    (define-key vterm-copy-mode-map (kbd "<M-return>") #'vterm-copy-mode)
+    (define-key vterm-mode-map (kbd "C-t") nil)
+    (define-key vterm-mode-map (kbd "<M-return>") #'vterm-copy-mode)
+    (define-key vterm-mode-map (kbd "M-r") #'vterm-send-C-r)
+    (define-key vterm-mode-map (kbd "<C-backspace>") #'vterm-send-meta-backspace)
+    (define-key vterm-mode-map (kbd "M-h") #'ric/vterm-mark-last-output)
+    (define-key vterm-mode-map (kbd "<C-return>") #'ric/vterm-mark-last-output)
+    (define-key vterm-mode-map (kbd "M-v") #'(lambda () (interactive) (vterm-copy-mode) (scroll-down-command)))
+    (setq vterm-buffer-name-string "*vterm %s*")
     (setq vterm-max-scrollback 10000)
     (setq vterm-copy-exclude-prompt t)    ;exclude prompt from copy in vterm-copy-mode-done
-    (setq vterm-buffer-name-string "*vterm %s*")
-    (define-key vterm-mode-map (kbd "C-t") nil)
 
     (defun ric/vterm-mark-last-output ()
       "Mark the last batch of output from a shell command."
@@ -614,7 +604,6 @@ any non-word chars, and use a nicer binding than =C-@= on my keyboard.
   (global-set-key (kbd "<insert>") 'mark-word)
   (define-key global-map (kbd "M-m") 'mark-word)
 #+end_src
-
 
 Duplicate the current line.
 
@@ -997,6 +986,7 @@ Overrides using minor mode.
       (define-key map (kbd "C-c i") #'string-inflection-all-cycle)
       (define-key map (kbd "C-c l") #'link-hint-open-link)
       (define-key map (kbd "C-c L") #'link-hint-copy-link)
+      (define-key map (kbd "C-c t") #'vterm)
       (define-key map (kbd "C-c y") #'browse-kill-ring)
       (define-key map (kbd "M-s r") #'anzu-query-replace)
       (define-key map (kbd "C-c u") #'winner-undo)
