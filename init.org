@@ -280,15 +280,10 @@ Old version included in emacs27, so get latest from melpa for now.
 * Version control
 ** magit
 
-[[https://magit.vc/][Magit]] git porcelain.
+[[https://magit.vc/][Magit]] git porcelain. Use whole frame for status view.
 
 #+begin_src emacs-lisp
-  (use-package magit
-    :straight t
-    :bind
-    ("C-c g" . magit-status)
-    ("C-x g" . magit-status)
-    :config
+  (with-eval-after-load 'magit
     (setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1))
 #+end_src
 
@@ -296,51 +291,6 @@ Requires an authinfo entry like:
 
 #+begin_src
 machine api.github.com login <user>^forge password <password>
-#+end_src
-
-** forge
-
-Magit extensions for issues and pull requests.
-
-#+begin_src emacs-lisp
-  (use-package forge
-    :straight (forge :type git :host github :repo "magit/forge")
-    :after magit
-    :defer t)
-#+end_src
-
-** github-review
-
-[[https://github.com/charignon/github-review/][github-review]] for github inline comments on code reviews.
-
-#+begin_src emacs-lisp
-  (use-package github-review
-    :straight t
-    :defer 10)
-#+end_src
-
-Requires an authinfo entry like:
-
-#+begin_src
-machine api.github.com login <user>^github-review password <password>
-#+end_src
-
-** git-link
-
-Generate urls to git remote for region.
-
-#+begin_src emacs-lisp
-  (use-package git-link
-    :straight t)
-#+end_src
-
-** git-timemachine
-
-[[https://gitlab.com/pidu/git-timemachine][git-timemachine]] steps back through file versions in git.
-
-#+begin_src emacs-lisp
-  (use-package git-timemachine
-    :straight t)
 #+end_src
 
 * Org mode
@@ -831,9 +781,9 @@ Install gcalcli with system python.
 #+end_src
 
 #+begin_src emacs-lisp
-  (use-package gcalcli-mode
-    :straight (gcalcli-mode :type git :host github :repo "rlister/gcalcli-mode" :branch "main")
-    :config
+  (add-to-list 'load-path "~/src/gcalcli-mode")
+  (autoload 'gcalcli-agenda "gcalcli-mode" nil t)
+  (with-eval-after-load 'gcalcli-mode
     (setq gcalcli-bin "~/.local/bin/gcalcli")
     (setq gcalcli-config-alist
           '((home . "~/.config/gcalcli/home")
@@ -915,6 +865,7 @@ Overrides using minor mode.
       (define-key map (kbd "C-c d") #'ric/duplicate-line)
       (define-key map (kbd "M-s r") #'anzu-query-replace)
       (define-key map (kbd "C-c u") #'winner-undo)
+      (define-key map (kbd "C-x g") #'magit-status)
       (define-key map (kbd "C-x m") #'execute-extended-command)
       (define-key map (kbd "C-z") #'zap-up-to-char)
       (define-key map (kbd "C-x C-z") nil)
