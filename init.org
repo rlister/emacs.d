@@ -546,52 +546,31 @@ Add compiled file location to =load-path=.
 Preserve point position on scroll, so reverse operation returns to same location:
 
 #+begin_src emacs-lisp
-  (setq scroll-preserve-screen-position t)
+  ;; (setq scroll-preserve-screen-position t)
 #+end_src
 
 At beginning of line, =kill-line= kills newline as well:
 
 #+begin_src emacs-lisp
-  (setq kill-whole-line t)
+  ;; (setq kill-whole-line t)
 #+end_src
 
 Motion starting at end of line keeps to ends of lines:
 
 #+begin_src emacs-lisp
-  (setq line-move-visual nil)
-  (setq track-eol t)
-#+end_src
-
-I use this more than =zap-to-char=. Use arg for n'th occurrence, negative for backwards.
-
-#+begin_src emacs-lisp
-  (define-key global-map (kbd "C-z") 'zap-up-to-char)
+  ;; (setq line-move-visual nil)
+  ;; (setq track-eol t)
 #+end_src
 
 Better key placement for common movement:
 
 #+begin_src emacs-lisp
-  (define-key global-map (kbd "M-p") 'backward-paragraph)
-  (define-key global-map (kbd "M-n") 'forward-paragraph)
-#+end_src
-
-[[https://github.com/alezost/mwim.el][Mwim]] enhances ~C-a~ and ~C-e~ to move where I mean.
-
-#+begin_src emacs-lisp
-  (use-package mwim
-    :straight t
-    :bind
-    ("C-e" . mwim-end))
-#+end_src
-
-Binding for =imenu=:
-
-#+begin_src emacs-lisp
-  (define-key global-map (kbd "C-c m") 'imenu)
+  ;; (define-key global-map (kbd "M-p") 'backward-paragraph)
+  ;; (define-key global-map (kbd "M-n") 'forward-paragraph)
 #+end_src
 
 Soup up =mark-word= to move backwards if at end of line, give or take
-any non-word chars, and use a nicer binding than =C-@= on my keyboard.
+any non-word chars.
 
 #+begin_src emacs-lisp
   (defun ric/mark-word-args (&optional arg allow-extend)
@@ -601,8 +580,6 @@ any non-word chars, and use a nicer binding than =C-@= on my keyboard.
       (list arg t)))
 
   (advice-add 'mark-word :filter-args #'ric/mark-word-args)
-  (global-set-key (kbd "<insert>") 'mark-word)
-  (define-key global-map (kbd "M-m") 'mark-word)
 #+end_src
 
 Duplicate the current line.
@@ -617,8 +594,6 @@ Duplicate the current line.
       (open-line 1)
       (forward-line)
       (yank)))
-
-  (global-set-key (kbd "C-c d") 'ric/duplicate-line)
 #+end_src
 
 * Comments
@@ -986,12 +961,14 @@ Overrides using minor mode.
       (define-key map (kbd "C-c i") #'string-inflection-all-cycle)
       (define-key map (kbd "C-c l") #'link-hint-open-link)
       (define-key map (kbd "C-c L") #'link-hint-copy-link)
+      (define-key global-map (kbd "C-c m") #'imenu)
       (define-key map (kbd "C-c t") #'vterm)
       (define-key map (kbd "C-c y") #'browse-kill-ring)
+      (define-key map (kbd "C-c d") #'ric/duplicate-line)
       (define-key map (kbd "M-s r") #'anzu-query-replace)
       (define-key map (kbd "C-c u") #'winner-undo)
       (define-key map (kbd "C-x m") #'execute-extended-command)
-      (define-key map (kbd "C-z") nil)
+      (define-key map (kbd "C-z") #'zap-up-to-char)
       (define-key map (kbd "C-x C-z") nil)
       (define-key map (kbd "C-x k") #'kill-current-buffer)
       (define-key map (kbd "M-SPC") #'cycle-spacing)
