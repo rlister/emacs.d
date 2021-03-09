@@ -598,7 +598,8 @@ Duplicate the current line.
 
 * Comments
 
-Toggle comments on region or line, without moving point. This works better as a toggle than ~comment-dwim~.
+Toggle comments on region or line, without moving point. This works
+better as a toggle than ~comment-dwim~.
 
 #+begin_src emacs-lisp
   (defun ric/comment-dwim (&optional arg)
@@ -607,19 +608,6 @@ Toggle comments on region or line, without moving point. This works better as a 
     (if (region-active-p)
 	(comment-or-uncomment-region (region-beginning) (region-end) arg)
       (comment-or-uncomment-region (line-beginning-position) (line-end-position) arg)))
-
-  (global-set-key (kbd "C-;") 'ric/comment-dwim)
-#+end_src
-
-* Ripgrep
-
-[[https://github.com/dajva/rg.el][Rg]] is a classic emacs interface to [[https://github.com/BurntSushi/ripgrep][ripgrep]].
-
-#+begin_src emacs-lisp
-  (use-package rg
-    :straight t
-    :bind
-    ("C-c r" . rg))
 #+end_src
 
 * Color display
@@ -957,11 +945,13 @@ Overrides using minor mode.
     (let ((map (make-sparse-keymap)))
       (define-key map (kbd "C-j") #'other-window)
       (define-key map (kbd "C-t") #'switch-to-buffer)
+      (define-key map (kbd "C-;") #'ric/comment-dwim)
       (define-key map (kbd "C-x d") #'dired-jump)
       (define-key map (kbd "C-c i") #'string-inflection-all-cycle)
       (define-key map (kbd "C-c l") #'link-hint-open-link)
       (define-key map (kbd "C-c L") #'link-hint-copy-link)
-      (define-key global-map (kbd "C-c m") #'imenu)
+      (define-key map (kbd "C-c m") #'imenu)
+      (define-key map (kbd "C-c r") #'rg)
       (define-key map (kbd "C-c t") #'vterm)
       (define-key map (kbd "C-c y") #'browse-kill-ring)
       (define-key map (kbd "C-c d") #'ric/duplicate-line)
