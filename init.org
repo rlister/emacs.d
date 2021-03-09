@@ -56,38 +56,6 @@ Show packages from [[https://melpa.org/][MELPA]] archive.
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 #+end_src
 
-** Straight package manager
-
-When installing [[https://github.com/raxod502/straight.el][straight.el]], use =develop= branch instead of the
-infrequently-updated =master=.
-
-#+begin_src emacs-lisp
-  (setq straight-repository-branch "develop")
-#+end_src
-
-Bootstrap straight on new emacs installs.
-
-#+begin_src emacs-lisp
-  (defvar bootstrap-version)
-  (let ((bootstrap-file
-	 (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-	(bootstrap-version 5))
-    (unless (file-exists-p bootstrap-file)
-      (with-current-buffer
-	  (url-retrieve-synchronously
-	   "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
-	   'silent 'inhibit-cookies)
-	(goto-char (point-max))
-	(eval-print-last-sexp)))
-    (load bootstrap-file nil 'nomessage))
-#+end_src
-
-Turn on ~use-package~ integration:
-
-#+begin_src emacs-lisp
-  (straight-use-package 'use-package)
-#+end_src
-
 ** Customizations
 
 Do not write customizations to =init.el=.
