@@ -1,0 +1,44 @@
+#+TITLE: Emacs early init
+#+PROPERTY: header-args:emacs-lisp :tangle "~/.emacs.d/early-init.el"
+
+* Startup
+
+https://www.gnu.org/software/emacs/manual/html_node/elisp/Startup-Summary.html
+https://www.gnu.org/software/emacs/manual/html_node/emacs/Early-Init-File.html#Early-Init-File
+
+Reduce GC for faster startup.
+
+#+begin_src emacs-lisp
+ (setq gc-cons-threshold (* 50 1000 1000))
+#+end_src
+
+Start package manager before loading init. From emacs 27 should no longer need initialize.
+
+#+begin_src emacs-lisp
+  (setq package-enable-at-startup t)
+#+end_src
+
+Load from the precomputed autoload file.
+
+#+begin_src emacs-lisp
+  (setq package-quickstart t)
+#+end_src
+
+Disable GUI stuff.
+
+#+begin_src emacs-lisp
+  ;(menu-bar-mode -1)
+  ;(tool-bar-mode -1)
+  ;(scroll-bar-mode -1)
+  (setq use-dialog-box nil)
+  (setq use-file-dialog nil)
+#+end_src
+
+Remove unnecessary initial work.
+
+#+begin_src emacs-lisp
+  (setq initial-major-mode 'fundamental-mode)
+  (setq initial-scratch-message "")
+  (setq inhibit-startup-message t)
+  (setq inhibit-startup-echo-area-message "ric")
+#+end_src

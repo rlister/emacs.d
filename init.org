@@ -15,23 +15,6 @@ To install, clone this repo anywhere, and run ~C-c C-v t~ [[help:org-babel-tangl
 
 * Startup
 
-Reduce GC for faster startup.
-
-#+begin_src emacs-lisp
-  (setq gc-cons-threshold (* 50 1000 1000))
-#+end_src
-
-Remove unnecessary initial work.
-
-#+begin_src emacs-lisp
-  (setq initial-major-mode 'fundamental-mode)
-  (setq initial-scratch-message "")
-  (setq inhibit-startup-message t)
-  (setq inhibit-startup-echo-area-message "ric")
-  ;; (setq warning-minimum-level :error)
-  ;; (setq ring-bell-function 'ignore)
-#+end_src
-
 Answer questions more easily.
 
 #+begin_src emacs-lisp
