@@ -289,24 +289,20 @@ machine api.github.com login <user>^forge password <password>
 * Org mode
 ** org
 
-Use straight to get latest [[https://code.orgmode.org/bzg/org-mode][org-mode]] from source rather than old version shipped with emacs.
+Maybe get latest [[https://code.orgmode.org/bzg/org-mode][org-mode]] from melpa rather than old version shipped with emacs.
 
 #+begin_src emacs-lisp
-  (use-package org
-    :straight t
-    :config
-    (set-face-attribute 'org-todo nil :foreground "IndianRed")
-    (set-face-attribute 'org-done nil :foreground "grey37" :strike-through t)
-    (set-face-attribute 'org-headline-done nil :foreground "grey37" :strike-through t)
+  (with-eval-after-load 'org
     (setq org-adapt-indentation nil)
     (setq org-src-fontify-natively t)
     (setq org-src-window-setup 'current-window) ;do not split windows
     (setq org-use-speed-commands 't) ;use speedkeys at start of headline (? for list of keys)
     (setq org-startup-folded t)      ;no expand all levels on opening file
     (setq org-directory "~/src/doc")
-    (setq org-refile-targets '((nil :maxlevel . 1)
-                               ("~/src/doc/work.org" :maxlevel . 3)
-                               ("~/src/doc/home.org" :maxlevel . 3)))
+    (setq org-refile-targets
+          '((nil :maxlevel . 1)
+            ("~/src/doc/work.org" :maxlevel . 3)
+            ("~/src/doc/home.org" :maxlevel . 3)))
     (setq org-fontify-done-headline t)
     (setq org-todo-keywords '("TODO" "BLOCK(b@/!)" "WIP(w!)" "|" "DONE(d!)" "CANCELLED(c@)"))
     (setq org-todo-interpretation 'sequence)
@@ -321,19 +317,15 @@ Use straight to get latest [[https://code.orgmode.org/bzg/org-mode][org-mode]] f
 ** org-agenda
 
 #+begin_src emacs-lisp
-  (use-package org-agenda
-    :config
-    (set-face-attribute 'org-agenda-done nil :foreground "grey37" :strike-through t)
+  (with-eval-after-load 'org-agenda
     (add-hook 'org-agenda-mode-hook 'hl-line-mode)
-    (setq org-log-done 'time)
     (setq org-agenda-window-setup 'current-window)
     (setq org-agenda-align-tags-to-column 80)
     (setq org-agenda-todo-ignore-scheduled 'all)
     (setq org-agenda-files '("~/src/doc/work.org" "~/src/doc/home.org"))
     (setq org-agenda-log-mode-items '(clock state))
     (setq org-agenda-custom-commands
-          '(
-            ("g" "Geekbot"
+          '(("g" "Geekbot"
              agenda ""
              ((org-agenda-files '("~/src/doc/work.org" "~/.org-jira/"))
               (org-agenda-overriding-header "Standup")
@@ -352,22 +344,19 @@ Use straight to get latest [[https://code.orgmode.org/bzg/org-mode][org-mode]] f
                       ((org-agenda-files '("~/src/doc/work.org" "~/.org-jira/"))
                        (org-agenda-text-search-extra-files nil)))
               (alltodo ""
-                       ((org-agenda-files '("~/.org-jira/"))))
-              ))))
-    :bind
-    ("C-c a" . org-agenda))
+                       ((org-agenda-files '("~/.org-jira/")))))))))
 #+end_src
 
 ** org-tempo
 
-Structure templates starting with e.g. =<s<TAB>=. See ~org-structure-template-alist~ and ~org-tempo-keywords-alist~ for structure types.
-Latex is available as both =l= and =L=, so reuse =l= for =emacs-lisp=.
+Structure templates starting with e.g. =<s<TAB>=. See
+=org-structure-template-alist= and =org-tempo-keywords-alist= for
+structure types. Latex is available as both =l= and =L=, so reuse =l=
+for =emacs-lisp=.
 
 #+begin_src emacs-lisp
-   (use-package org-tempo
-     :after org
-     :config
-     (setcdr (assoc "l" org-structure-template-alist) "src emacs-lisp"))
+  (with-eval-after-load 'org-tempo
+    (setcdr (assoc "l" org-structure-template-alist) "src emacs-lisp"))
 #+end_src
 
 ** org-capture
@@ -375,10 +364,7 @@ Latex is available as both =l= and =L=, so reuse =l= for =emacs-lisp=.
 Set up [[https://orgmode.org/org.html#Capture-templates][capture templates]].
 
 #+begin_src emacs-lisp
-  (use-package org-capture
-    :bind
-    ("C-c c" . org-capture)
-    :config
+  (with-eval-after-load 'org-capture
     (setq org-capture-templates
           '(("t" "Todo" entry (file+olp+datetree "~/src/doc/work.org")
              "* TODO %?" :empty-lines 0 :tree-type week)
@@ -395,19 +381,17 @@ Set up [[https://orgmode.org/org.html#Capture-templates][capture templates]].
 ** org-present
 
 #+begin_src emacs-lisp
-  (use-package org-present
-    :straight (org-present :type git :host github :repo "rlister/org-present")
-    :hook
-    ((org-present-mode . (lambda ()
-                           (org-present-big)
-                           (org-display-inline-images)
-                           (org-present-hide-cursor)
-                           (org-present-read-only)))
-     (org-present-mode-quit . (lambda ()
-                               (org-present-small)
-                               (org-remove-inline-images)
-                               (org-present-show-cursor)
-                               (org-present-read-write)))))
+  ;;   need hook
+  ;;   ((org-present-mode . (lambda ()
+  ;;                          (org-present-big)
+  ;;                          (org-display-inline-images)
+  ;;                          (org-present-hide-cursor)
+  ;;                          (org-present-read-only)))
+  ;;    (org-present-mode-quit . (lambda ()
+  ;;                              (org-present-small)
+  ;;                              (org-remove-inline-images)
+  ;;                              (org-present-show-cursor)
+  ;;                              (org-present-read-write)))))
 #+end_src
 
 ** org-jira
@@ -422,10 +406,9 @@ machine <account>.atlassian.net user <email> port 443 password <passwd>
 #+end_src
 
 #+begin_src emacs-lisp
-  (use-package org-jira
-    :straight (org-jira :type git :host github :repo "ahungry/org-jira")
-    :commands (org-jira-get-issue org-jira-get-issues)
-    :config
+  ;; repo "ahungry/org-jira"
+  ;; commands (org-jira-get-issue org-jira-get-issues
+  (with-eval-after-load 'org-jira
     (let ((url (plist-get (nth 0 (auth-source-search :host "atlassian.net" :max 1 t)) :url)))
       (setq jiralib-url url)))
 #+end_src
