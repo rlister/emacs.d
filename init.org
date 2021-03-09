@@ -785,39 +785,18 @@ Complete with [[info:autotype#Hippie Expand][info:autotype#Hippie Expand]].
     ("<C-tab>" . hippie-expand))
 #+end_src
 
-* RSS
+* elfeed
+
+[[https://github.com/skeeto/elfeed][elfeed]] RSS reader. We keep feed list in =doc/elfeed.opml=, for a new
+emacs instance, run =elfeed-load-opml=.
+
+Feed database is stored in =~/.elfeed=.
 
 #+begin_src emacs-lisp
-  (use-package elfeed
-    :straight t
-    :config
+  (with-eval-after-load 'elfeed
     (setq shr-use-fonts nil)
     (setq elfeed-search-filter "@2-weeks-ago +unread")
-    (setq elfeed-feeds
-          '(
-            ;("http://feeds.bbci.co.uk/news/rss.xml" news)
-            ("https://www.archlinux.org/feeds/news/" linux)
-            ("https://wiki.archlinux.org/index.php?title=Special:RecentChanges&feed=rss" linux)
-            ("https://archlinux.org/feeds/planet" linux)
-            ("https://www.archlinux.org/feeds/news/" linux)
-            ("https://www.economist.com/the-economist-explains/rss.xml" news)
-            ("https://www.economist.com/britain/rss.xml" news)
-            ("https://www.economist.com/special-report/rss.xml" news)
-            ("https://www.economist.com/united-states/rss.xml" news)
-            ("http://pragmaticemacs.com/feed/" emacs)
-            ("https://with-emacs.com/rss.xml" emacs)
-            ("https://planet.emacslife.com/atom.xml" emacs)
-            ("https://emacsair.me/feed.xml" emacs)
-            ("http://emacs.stackexchange.com/feeds" emacs)
-            ("http://planet.gnu.org/rss20.xml" gnu tech)
-            ("https://aws.amazon.com/new/feed/" aws tech)
-            ("http://feeds.feedburner.com/AmazonWebServicesBlog" aws tech)
-            ("https://nullprogram.com/feed/" tech)
-            ("https://www.jwz.org/blog/feed/" tech)
-            ("http://theweeklylist.org/feed/?post_type=weekly-list" news)
-            ))
-    :bind (:map elfeed-show-mode-map
-                ("r" . elfeed-kill-buffer)))
+    (define-key elfeed-show-mode-map "r" #'elfeed-kill-buffer))
 #+end_src
 
 * Web
