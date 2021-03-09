@@ -173,12 +173,6 @@ On save, delete whitespace chars trailing each line.
   (add-hook 'before-save-hook 'delete-trailing-whitespace)
 #+end_src
 
-Always uses spaces (never tabs) for indentation.
-
-#+begin_src emacs-lisp
-  (setq-default indent-tabs-mode nil)
-#+end_src
-
 Use single space, rather than double space, as sentence delimiter for
 moving and killing by sentence.
 
