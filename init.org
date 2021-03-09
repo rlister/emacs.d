@@ -686,18 +686,6 @@ Config:
            ("M-n" . forward-paragraph)))
 #+end_src
 
-* Server
-
-Start server if not running in this or any other emacs process.
-
-#+begin_src emacs-lisp
-  (use-package server
-    :defer 10
-    :config
-    (unless (server-running-p)
-      (server-start)))
-#+end_src
-
 * Mouse
 
 Turn off mouse clicks from trackpad.
@@ -945,4 +933,14 @@ Overrides using minor mode.
       (define-key map (kbd "C-x k") #'kill-current-buffer)
       (define-key map (kbd "M-SPC") #'cycle-spacing)
       map))
+#+end_src
+
+* Server
+
+Start server if not running in this or any other emacs process.
+
+#+begin_src emacs-lisp
+  (require 'server)
+  (unless (server-running-p)
+    (server-start))
 #+end_src
