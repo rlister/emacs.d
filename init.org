@@ -256,13 +256,17 @@ search.
     (setq search-whitespace-regexp ".*?"))
 #+end_src
 
-Use [[https://github.com/emacsorphanage/anzu][anzu]] for incremental query-replace and match count in modeline.
+* Search
+
+Space will match any non-greedy series of characters, for fuzzy
+search. Turn on [[https://github.com/emacsorphanage/anzu][anzu]] for incremental query-replace and match count in
+modeline.
 
 #+begin_src emacs-lisp
-  (use-package anzu
-    :straight t
-    :bind
-    ("M-s r" . anzu-query-replace))
+  (with-eval-after-load 'isearch
+    (setq isearch-lax-whitespace t)
+    (setq search-whitespace-regexp ".*?")
+    (global-anzu-mode +1))
 #+end_src
 
 * Kill ring
