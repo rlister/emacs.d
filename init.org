@@ -704,7 +704,10 @@ Tell [[https://www.emacswiki.org/emacs/eww][shr and eww]] not to use colors from
 
 ** indentation
 
+Always uses 2 spaces (never tabs) for indentation.
+
 #+begin_src emacs-lisp
+  (setq-default indent-tabs-mode nil)
   (setq-default tab-width 2)
   (setq-default c-basic-offset 2)
   (setq-default sh-basic-offset 2)
