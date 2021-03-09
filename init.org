@@ -610,16 +610,6 @@ Binding for =imenu=:
   (define-key global-map (kbd "C-c m") 'imenu)
 #+end_src
 
-[[https://github.com/noctuid/link-hint.el][Link-hint]] jumps to various kinds of links with avy interface.
-
-#+begin_src emacs-lisp
-  (use-package link-hint
-    :straight t
-    :bind
-    ("C-c l" . link-hint-open-link)
-    ("C-c L" . link-hint-copy-link))
-#+end_src
-
 Soup up =mark-word= to move backwards if at end of line, give or take
 any non-word chars, and use a nicer binding than =C-@= on my keyboard.
 
@@ -1014,6 +1004,8 @@ Overrides using minor mode.
       (define-key map (kbd "C-j") #'other-window)
       (define-key map (kbd "C-t") #'switch-to-buffer)
       (define-key map (kbd "C-c i") #'string-inflection-all-cycle)
+      (define-key map (kbd "C-c l") #'link-hint-open-link)
+      (define-key map (kbd "C-c L") #'link-hint-copy-link)
       (define-key map (kbd "C-c u") #'winner-undo)
       (define-key map (kbd "C-x m") #'execute-extended-command)
       (define-key map (kbd "C-z") nil)
