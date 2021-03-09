@@ -262,7 +262,8 @@ Maybe get latest [[https://code.orgmode.org/bzg/org-mode][org-mode]] from melpa 
             ("WAIT"  .  (:foreground "LightGoldenRod"))
             ("WIP"   .  (:foreground "LightGoldenRod"))))
     (setq org-log-done 'time)
-    (setq auto-mode-alist (rassq-delete-all 'dcl-mode auto-mode-alist))) ;no dcl for .com files
+    (setq auto-mode-alist (rassq-delete-all 'dcl-mode auto-mode-alist)) ;no dcl for .com files
+    (setcdr (assoc "l" org-structure-template-alist) "src emacs-lisp"))
 #+end_src
 
 ** org-agenda
@@ -296,18 +297,6 @@ Maybe get latest [[https://code.orgmode.org/bzg/org-mode][org-mode]] from melpa 
                        (org-agenda-text-search-extra-files nil)))
               (alltodo ""
                        ((org-agenda-files '("~/.org-jira/")))))))))
-#+end_src
-
-** org-tempo
-
-Structure templates starting with e.g. =<s<TAB>=. See
-=org-structure-template-alist= and =org-tempo-keywords-alist= for
-structure types. Latex is available as both =l= and =L=, so reuse =l=
-for =emacs-lisp=.
-
-#+begin_src emacs-lisp
-  (with-eval-after-load 'org-tempo
-    (setcdr (assoc "l" org-structure-template-alist) "src emacs-lisp"))
 #+end_src
 
 ** org-capture
