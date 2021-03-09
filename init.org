@@ -267,18 +267,6 @@ modeline.
     (global-anzu-mode +1))
 #+end_src
 
-* Kill ring
-
-[[https://github.com/browse-kill-ring/browse-kill-ring][browse-kill-ring]] is a better binding than =yank-pop=.
-
-#+begin_src emacs-lisp
-  (use-package browse-kill-ring
-    :straight t
-    :defer 5
-    :bind
-    ("C-c y" . browse-kill-ring))
-#+end_src
-
 * Project.el
 
 Old version included in emacs, but get latest from melpa:
@@ -1009,6 +997,7 @@ Overrides using minor mode.
       (define-key map (kbd "C-c i") #'string-inflection-all-cycle)
       (define-key map (kbd "C-c l") #'link-hint-open-link)
       (define-key map (kbd "C-c L") #'link-hint-copy-link)
+      (define-key map (kbd "C-c y") #'browse-kill-ring)
       (define-key map (kbd "M-s r") #'anzu-query-replace)
       (define-key map (kbd "C-c u") #'winner-undo)
       (define-key map (kbd "C-x m") #'execute-extended-command)
