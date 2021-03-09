@@ -224,34 +224,27 @@ Set external programs to use and human-readable file sizes.
 
 * Selectrum
 
-[[https://github.com/raxod502/selectrum/][Selectrum]] selection completion drop-in for completing-read:
+[[https://github.com/raxod502/selectrum/][Selectrum]] selection completion drop-in for completing-read.
 
 #+begin_src emacs-lisp
-  (use-package selectrum
-    :straight t
-    :config
-    (selectrum-mode +1))
+  (selectrum-mode +1)
 #+end_src
 
-[[https://github.com/raxod502/prescient.el][Prescient]] is a library for sorting candidate lists using the algorithm: last few, most frequent, remaining by length.
+[[https://github.com/raxod502/prescient.el][Prescient]] is a library for sorting candidate lists using the
+algorithm: last few, most frequent, remaining by length.
 
 #+begin_src emacs-lisp
-  (use-package selectrum-prescient
-    :straight t
-    :config
+  (with-eval-after-load 'selectrum
     (selectrum-prescient-mode +1))
 #+end_src
 
-* Search
-
-Space will match any non-greedy series of characters, for fuzzy
-search.
+[[https://github.com/minad/marginalia][Marginalia]] is a library to add annotations to selectrum candidates.
+Turn it on when needed with =M-x marginalia-mode=.
 
 #+begin_src emacs-lisp
-  (use-package isearch
-    :config
-    (setq isearch-lax-whitespace t)
-    (setq search-whitespace-regexp ".*?"))
+  (with-eval-after-load 'marginalia
+    (setq marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil))
+    (define-key minibuffer-local-map (kbd "C-=") #'marginalia-cycle))
 #+end_src
 
 * Search
