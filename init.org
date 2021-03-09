@@ -98,7 +98,7 @@ Use current window for =man= command, and do not use other frames.
 Undo/redo of window configuration.
 
 #+begin_src emacs-lisp
-  (winner-mode 1)
+  (add-hook 'after-init-hook #'winner-mode)
 #+end_src
 
 * Mark and region
@@ -106,7 +106,7 @@ Undo/redo of window configuration.
 Typed text replaces region.
 
 #+begin_src emacs-lisp
-  (delete-selection-mode 1)
+  (add-hook 'after-init-hook #'delete-selection-mode)
 #+end_src
 
 Do not waste resources loading the X primary selection in
@@ -178,7 +178,7 @@ Set external programs to use and human-readable file sizes.
 [[https://github.com/raxod502/selectrum/][Selectrum]] selection completion drop-in for completing-read.
 
 #+begin_src emacs-lisp
-  (selectrum-mode +1)
+  (add-hook 'after-init-hook #'selectrum-mode)
 #+end_src
 
 [[https://github.com/raxod502/prescient.el][Prescient]] is a library for sorting candidate lists using the
