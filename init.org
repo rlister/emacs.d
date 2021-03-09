@@ -610,22 +610,6 @@ better as a toggle than ~comment-dwim~.
       (comment-or-uncomment-region (line-beginning-position) (line-end-position) arg)))
 #+end_src
 
-* Color display
-
-Tell [[https://www.emacswiki.org/emacs/eww][shr and eww]] not to use colors from HTML (which are often ugly and broken).
-
-#+begin_src emacs-lisp
-  (setq shr-use-colors nil)
-#+end_src
-
-[[http://elpa.gnu.org/packages/rainbow-mode.html][Rainbow-mode]] to set background color for strings that match color names.
-
-#+begin_src emacs-lisp
-  (use-package rainbow-mode
-    :straight t
-    :defer t)
-#+end_src
-
 * Programming modes
 
 ** indentation
@@ -892,9 +876,7 @@ Install bbdb and vcard importer.
 Autoload here, configure in =~/.mew.el=.
 
 #+begin_src emacs-lisp
-  (use-package mew
-    :config
-    (add-hook 'mew-summary-mode-hook 'hl-line-mode))
+  (autoload 'mew "mew" nil t)
 #+end_src
 
 * macOS specifics
