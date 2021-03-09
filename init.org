@@ -707,10 +707,15 @@ Tell [[https://www.emacswiki.org/emacs/eww][shr and eww]] not to use colors from
 
 * Programming modes
 
-** sh
+** indentation
 
 #+begin_src emacs-lisp
-  (setq sh-basic-offset 2)
+  (setq-default tab-width 2)
+  (setq-default c-basic-offset 2)
+  (setq-default sh-basic-offset 2)
+  (setq-default python-indent 2)
+  (setq-default js-indent-level 2)
+  (setq-default css-indent-offset 2)
 #+end_src
 
 ** ruby
@@ -718,70 +723,7 @@ Tell [[https://www.emacswiki.org/emacs/eww][shr and eww]] not to use colors from
 Some extra filenames to use =ruby-mode=.
 
 #+begin_src emacs-lisp
-  (use-package ruby-mode
-    :defer t
-    :mode "Staxfile" "Envfile")
-#+end_src
-
-** yaml
-
-Load yaml mode.
-
-#+begin_src emacs-lisp
-  (use-package yaml-mode
-    :straight t
-    :defer t)
-#+end_src
-
-** python
-
-Mess with indent level.
-
-#+begin_src emacs-lisp
-  (use-package python
-    :defer t
-    :config
-    (setq python-indent 2))
-#+end_src
-
-** javascript
-
-Mess with indent level.
-
-#+begin_src emacs-lisp
-  (use-package javascript-mode
-    :defer t
-    :config
-    (setq js-indent-level 2))
-#+end_src
-
-** css
-
-#+begin_src emacs-lisp
-  (use-package css-mode
-    :defer t
-    :config
-    (setq css-indent-offset 2))
-#+end_src
-
-** docker
-
-Load [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]].
-
-#+begin_src emacs-lisp
-  (use-package dockerfile-mode
-    :straight t
-    :config
-    (put 'dockerfile-image-name 'safe-local-variable #'stringp))
-#+end_src
-
-** string inflection for camelcase
-
-#+begin_src emacs-lisp
-  (use-package string-inflection
-    :straight t
-    :bind
-    ("C-c i" . string-inflection-all-cycle))
+  (add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode))
 #+end_src
 
 ** completion
@@ -1094,6 +1036,7 @@ Overrides using minor mode.
     (let ((map (make-sparse-keymap)))
       (define-key map (kbd "C-j") #'other-window)
       (define-key map (kbd "C-t") #'switch-to-buffer)
+      (define-key map (kbd "C-c i") #'string-inflection-all-cycle)
       (define-key map (kbd "C-x m") #'execute-extended-command)
       (define-key map (kbd "C-z") nil)
       (define-key map (kbd "C-x C-z") nil)
