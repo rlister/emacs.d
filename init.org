@@ -454,6 +454,15 @@ Duplicate the current line.
       (yank)))
 #+end_src
 
+** avy
+
+This is used by link-hint. Use Colemak-friendly keys for hints.
+
+#+begin_src emacs-lisp
+  (with-eval-after-load 'avy
+    (setq avy-keys '(?t ?n ?s ?e ?r ?i ?a ?o ?f ?u ?d ?h ?l ?p ?g ?m ?c)))
+#+end_src
+
 * Comments
 
 Toggle comments on region or line, without moving point. This works
