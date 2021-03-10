@@ -1,9 +1,0 @@
-(use-package yaml-mode
-  :ensure t
-  :mode (
-         "\\.yml\\'"
-         "\\.yml.erb\\'"
-         "\\.service\\'"
-         "\\.timer\\'"
-         )
-  )
