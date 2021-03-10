@@ -15,3 +15,14 @@
     (customize-set-variable 'scroll-bar-mode nil)
     (customize-set-variable 'horizontal-scroll-bar-mode nil)
     (setq default-frame-alist '((undecorated . t)))))
+
+;; On macOS we need to download and compile emacs-vterm manually.
+;; brew install cmake libtool
+;; git clone https://github.com/akermu/emacs-libvterm.git
+;; cd emacs-libvterm/build
+;; cmake .. && make
+
+;; Add compiled file location to =load-path=.
+
+(when (equal system-type 'darwin)
+  (add-to-list 'load-path "~/src/emacs-libvterm"))

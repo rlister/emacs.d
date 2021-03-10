@@ -357,31 +357,8 @@ Now run =org-jira-get-issues=.
 
 * vterm
 
-[[https://github.com/akermu/emacs-libvterm][Emacs-vterm]] bridge to [[https://github.com/neovim/libvterm][libvterm]].
-
-** linux install
-
-On linux we can install from MELPA and compilation happens correctly inside emacs during install.
-
-** macos install
-
-On macOS we need to download and compile emacs-vterm manually.
-
-#+begin_src sh
-  brew install cmake libtool
-  git clone https://github.com/akermu/emacs-libvterm.git
-  cd emacs-libvterm/build
-  cmake .. && make
-#+end_src
-
-Add compiled file location to =load-path=.
-
-#+begin_src emacs-lisp
-  (when (equal system-type 'darwin)
-    (add-to-list 'load-path "~/src/emacs-libvterm"))
-#+end_src
-
-** package install and config
+[[https://github.com/akermu/emacs-libvterm][Emacs-vterm]] bridge to [[https://github.com/neovim/libvterm][libvterm]]. Can install from melpa, will be
+compiled on first run.
 
 #+begin_src emacs-lisp
   (with-eval-after-load 'vterm
