@@ -237,21 +237,6 @@ Requires an authinfo entry like:
 machine api.github.com login <user>^forge password <password>
 #+end_src
 
-** autorevert
-
-=magit= turns on =auto-revert-mode= for tracked files, so update git
-branch in modeline after all changes.
-
-See:
-- [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Auto-Revert.html#Auto-Revert][Auto Revert: Keeping buffers automatically up-to-date]]
-- [[https://magit.vc/manual/magit/Automatic-Reverting-of-File_002dVisiting-Buffers.html][Automatic Reverting of File-Visiting Buffers]]
-- [[https://www.gnu.org/software/emacs/manual/html_node/emacs/VC-Mode-Line.html][Version Control and the Mode Line]]
-
-#+begin_src emacs-lisp
-  (with-eval-after-load 'autorevert
-    (setq auto-revert-check-vc-info t))
-#+end_src
-
 * Org mode
 ** org
 
