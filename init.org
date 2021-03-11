@@ -18,6 +18,7 @@ To install, clone this repo anywhere, and run ~C-c C-v t~ [[help:org-babel-tangl
 Answer questions more easily.
 
 #+begin_src emacs-lisp
+  (setq inhibit-startup-echo-area-message "ric")
   (fset 'yes-or-no-p 'y-or-n-p)
 #+end_src
 

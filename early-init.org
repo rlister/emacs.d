@@ -40,5 +40,4 @@ Remove unnecessary initial work.
   (setq initial-major-mode 'fundamental-mode)
   (setq initial-scratch-message "")
   (setq inhibit-startup-message t)
-  (setq inhibit-startup-echo-area-message "ric")
 #+end_src
