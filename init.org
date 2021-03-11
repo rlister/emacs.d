@@ -616,7 +616,19 @@ machine slack login <team> password <xoxs-...>
       (end-of-buffer)
       (slack-buffer-goto-prev-message)
       (slack-message-update-mark)
-      (end-of-buffer)))
+      (end-of-buffer))
+
+    (defun ric/kill-slack-message-buffers ()
+      "Kill all slack message buffers."
+      (interactive)
+      (save-excursion
+        (let ((count 0))
+          (dolist (buffer (buffer-list))
+            (set-buffer buffer)
+            (when (equal major-mode 'slack-message-buffer-mode)
+              (setq count (1+ count))
+              (kill-buffer buffer)))
+          (message "Killed %i slack buffers" count)))))
 #+end_src
 
 ** Alerts
@@ -628,26 +640,6 @@ Set up =alert= for slack notification.
     (setq alert-default-style 'libnotify))
 #+end_src
 
-** Mark hack
-
-Some DMs fail to update the mark correctly, and thus continue to show
-huge numbers of unreads. Bind this to a key to force update.
-
-** Kill all slack message buffers
-
-#+begin_src emacs-lisp
-  (defun ric/kill-slack-message-buffers ()
-    "Kill all slack message buffers."
-    (interactive)
-    (save-excursion
-      (let ((count 0))
-        (dolist (buffer (buffer-list))
-          (set-buffer buffer)
-          (when (equal major-mode 'slack-message-buffer-mode)
-            (setq count (1+ count))
-            (kill-buffer buffer)))
-        (message "Killed %i slack buffers" count))))
-#+end_src
 
 * gcalcli
 
