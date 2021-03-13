@@ -667,6 +667,13 @@ Install gcalcli with system python.
             (work . "~/.config/gcalcli/work"))))
 #+end_src
 
+Set terminal color string used to display gcalcli output in comint.
+
+#+begin_src emacs-lisp
+  (with-eval-after-load 'ansi-color
+    (setq ansi-color-names-vector ["Black" "IndianRed" "PaleGreen" "LightYellow" "RoyalBlue" "Magenta" "CadetBlue" "#839496"]))
+#+end_src
+
 * Mew
 
 [[http://mew.org/en/][Mew mailreader]]. Install as an OS package since it includes binaries.
