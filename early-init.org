@@ -27,9 +27,9 @@ Load from the precomputed autoload file.
 Disable GUI stuff.
 
 #+begin_src emacs-lisp
-  ;(menu-bar-mode -1)
-  ;(tool-bar-mode -1)
-  ;(scroll-bar-mode -1)
+  (menu-bar-mode -1)
+  (blink-cursor-mode -1)                  ;no blink in gui
+  (setq visible-cursor nil)               ;no blink in xterm
   (setq use-dialog-box nil)
   (setq use-file-dialog nil)
 #+end_src
