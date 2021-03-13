@@ -110,11 +110,18 @@ Typed text replaces region.
   (add-hook 'after-init-hook #'delete-selection-mode)
 #+end_src
 
-Do not waste resources loading the X primary selection in
-transient-mark-mode, if it is not needed for middle-click paste.
+Do not send every active region to primary selection. This means we
+need explicit kill in emacs, but not an explicit copy in other
+applications.
 
 #+begin_src emacs-lisp
   (setq select-active-regions nil)
+#+end_src
+
+=yank= will use primary selection, if set.
+
+#+begin_src emacs-lisp
+  (setq select-enable-primary t)
 #+end_src
 
 * Whitespace handling
