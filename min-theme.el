@@ -3,6 +3,35 @@
 (custom-theme-set-faces
  'min
 
+ ;; standard faces
+ '(default             ((t (:foreground "azure4" :background "Black"))))
+ '(cursor              ((t (:background "PaleGreen"))))
+ '(shadow              ((t (:foreground "DarkSlateGray4"))))
+ '(success             ((t (:foreground "PaleGreen"))))
+ '(warning             ((t (:foreground "PaleGoldenrod"))))
+ '(error               ((t (:foreground "IndianRed"))))
+ '(match               ((t (:foreground "RosyBrown" :background "Black"))))
+ '(highlight           ((t (:background "grey10"))))
+ '(link                ((t (:foreground "CornflowerBlue" :underline nil))))
+ '(region              ((t (:background "MidnightBlue"))))
+ '(lazy-highlight      ((t (:inherit (warning highlight)))))
+ '(secondary-selection ((t (:inherit highlight))))
+ '(trailing-whitespace ((t (:inherit error))))
+ '(italic              ((t (:underline nil))))
+ '(underline           ((t (:underline nil))))
+
+ ;; mode-line
+ '(mode-line           ((t (:foreground "aquamarine3" :background "grey14" :box nil))))
+ '(mode-line-inactive  ((t (:foreground "grey50" :background "grey7" :box nil :weight normal))))
+ '(mode-line-buffer-id ((t (:foregrount "PaleGreen"))))
+ '(mode-line-highlight ((t (:foreground "Cyan" :box nil))))
+
+ ;; other parts of frame and ui elements
+ '(header-line   ((t (:inherit highlight :foreground: MediumAquamarine))))
+ '(fringe        ((t (:inherit default))))
+ '(custom-button ((t (:inherit mode-line))))
+ '(widget-field  ((t (:inherit mode-line-inactive))))
+
  ;; font-lock
  '(font-lock-function-name-face        ((t (:foreground "LightBlue"))))
  '(font-lock-keyword-face              ((t (:foreground "LightSkyBlue"))))
@@ -20,11 +49,14 @@
  '(font-lock-regexp-grouping-construct ((t (:inherit isearch))))
  '(font-lock-warning-face              ((t (:inherit warning))))
 
- ;; ui elements
- '(custom-button ((t (:inherit mode-line))))
- '(widget-field  ((t (:inherit mode-line-inactive))))
+ ;; minibuffer
+ '(minibuffer-prompt ((t (:inherit success))))
+ '(completions-annotations ((t (:inherit warning))))
 
- '(completions-annotations ((t (:inherit font-lock-doc-face))))
+ ;; search and replace
+ '(isearch             ((t (:inherit success))))
+ '(isearch-fail        ((t (:inherit error))))
+ '(query-replace       ((t (:inherit success))))
 
  ;; show-paren
  '(show-paren-match    ((t (:inherit success))))
