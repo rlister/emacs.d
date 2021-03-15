@@ -731,9 +731,6 @@ Overrides using minor mode.
       (define-key map (kbd "C-z") #'zap-up-to-char)
       (define-key map (kbd "M-SPC") #'cycle-spacing)
       (define-key map (kbd "M-s r") #'anzu-query-replace)
-      (when (display-graphic-p)
-        (define-key input-decode-map [?\C-i] [C-i])
-        (define-key map (kbd "<C-i>") #'project-find-file))
       map))
 #+end_src
 
