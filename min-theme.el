@@ -8,7 +8,7 @@
  '(cursor              ((t (:background "PaleGreen"))))
  '(shadow              ((t (:foreground "DarkSlateGray4"))))
  '(success             ((t (:foreground "PaleGreen"))))
- '(warning             ((t (:foreground "PaleGoldenrod"))))
+ '(warning             ((t (:foreground "DarkGoldenrod"))))
  '(error               ((t (:foreground "IndianRed"))))
  '(match               ((t (:foreground "RosyBrown" :background "Black"))))
  '(highlight           ((t (:background "grey10"))))
