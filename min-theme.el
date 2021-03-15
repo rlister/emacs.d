@@ -32,6 +32,11 @@
  '(custom-button ((t (:inherit mode-line))))
  '(widget-field  ((t (:inherit mode-line-inactive))))
 
+ ;; search and replace
+ '(isearch       ((t (:inherit success))))
+ '(isearch-fail  ((t (:inherit error))))
+ '(query-replace ((t (:inherit success))))
+
  ;; font-lock
  '(font-lock-function-name-face        ((t (:foreground "LightBlue"))))
  '(font-lock-keyword-face              ((t (:foreground "LightSkyBlue"))))
@@ -52,11 +57,6 @@
  ;; minibuffer
  '(minibuffer-prompt ((t (:inherit success))))
  '(completions-annotations ((t (:inherit warning))))
-
- ;; search and replace
- '(isearch             ((t (:inherit success))))
- '(isearch-fail        ((t (:inherit error))))
- '(query-replace       ((t (:inherit success))))
 
  ;; show-paren
  '(show-paren-match    ((t (:inherit success))))
@@ -79,6 +79,7 @@
  '(org-date                 ((t (:inherit font-lock-string-face))))
  '(org-done                 ((t (:inherit font-lock-comment-face :strike-through t))))
  '(org-todo                 ((t (:inherit error))))
+ '(org-headline-done        ((t (:inherit org-done))))
  '(org-upcoming-deadline    ((t (:inherit warning))))
  '(org-warning              ((t (:inherit warning))))
  '(org-link                 ((t (:inherit link))))
