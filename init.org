@@ -742,6 +742,5 @@ Overrides using minor mode.
 Load my color theme.
 
 #+begin_src emacs-lisp
-  (setq custom-safe-themes t)
-  (add-hook 'after-init-hook (lambda () (load-theme 'min)))
+  (add-hook 'after-init-hook (lambda () (load-theme 'min t)))
 #+end_src
