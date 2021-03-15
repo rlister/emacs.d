@@ -538,8 +538,17 @@ Config:
 Turn off mouse clicks from trackpad.
 
 #+begin_src emacs-lisp
-  (dolist (key '([mouse-1] [down-mouse-1] [C-down-mouse-1]))
-    (global-unset-key key))
+  (define-minor-mode no-mouse-mode
+    "Minor mode to disable trackpad clicks."
+    :lighter " nm"
+    :global t
+    :keymap
+    (let ((map (make-sparse-keymap)))
+      (define-key map [mouse-1] #'ignore)
+      (define-key map [down-mouse-1] #'ignore)
+      (define-key map [mouse-3] #'ignore)
+      (define-key map [down-mouse-3] #'ignore)
+      map))
 #+end_src
 
 * Slack
