@@ -647,7 +647,6 @@ Set up =alert= for slack notification.
     (setq alert-default-style 'libnotify))
 #+end_src
 
-
 * gcalcli
 
 Install gcalcli with system python.
@@ -691,17 +690,6 @@ Autoload here, configure in =~/.mew.el=.
 
 * Keybindings
 
-In GUI emacs we can distinguish =C-m= from =RET= and thus get a better
-binding than =C-@=.
-
-#+begin_src emacs-lisp
-  (when (display-graphic-p)
-    (define-key input-decode-map [?\C-i] [C-i])
-    (global-set-key (kbd "<C-i>") #'project-find-file)
-    (define-key input-decode-map [?\C-m] [C-m])
-    (global-set-key (kbd "<C-m>") #'mark-word))
-#+end_src
-
 Overrides using minor mode.
 
 #+begin_src emacs-lisp
@@ -720,6 +708,8 @@ Overrides using minor mode.
       (define-key map (kbd "C-= g") #'slack-group-select)
       (define-key map (kbd "C-= i") #'slack-im-select)
       (define-key map (kbd "C-= u") #'slack-select-unread-rooms)
+      (define-key map (kbd "C-\\") #'mark-word)
+      (define-key map (kbd "M-\\") #'mark-sexp)
       (define-key map (kbd "C-c L") #'link-hint-copy-link)
       (define-key map (kbd "C-c c") #'org-capture)
       (define-key map (kbd "C-c d") #'ric/duplicate-line)
@@ -741,6 +731,9 @@ Overrides using minor mode.
       (define-key map (kbd "C-z") #'zap-up-to-char)
       (define-key map (kbd "M-SPC") #'cycle-spacing)
       (define-key map (kbd "M-s r") #'anzu-query-replace)
+      (when (display-graphic-p)
+        (define-key input-decode-map [?\C-i] [C-i])
+        (define-key map (kbd "<C-i>") #'project-find-file))
       map))
 #+end_src
 
