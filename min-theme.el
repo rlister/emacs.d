@@ -136,6 +136,8 @@
  '(vterm-color-cyan    ((t (:foreground "cyan3"         :background "cyan1"))))
  '(vterm-color-white   ((t (:foreground "azure4"        :background "azure1"))))
 
+ '(markdown-code-face ((t (:inherit (font-lock-doc-face fixed-pitch)))))
+
  ;; slack faces (uses lui)
  '(lui-button-face                    ((t (:inherit (link underline)))))
  '(lui-time-stamp-face                ((t (:inherit font-lock-variable-name-face))))
