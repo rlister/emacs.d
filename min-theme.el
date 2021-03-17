@@ -193,6 +193,8 @@
  '(avy-lead-face-0 ((t (:inherit font-lock-comment-face))))
  '(avy-lead-face-1 ((t (:inherit font-lock-comment-face))))
  '(avy-lead-face-2 ((t (:inherit font-lock-comment-face))))
+
+ '(selectrum-current-candidate ((t (:inherit (success highlight)))))
 )
 
 (provide-theme 'min)
