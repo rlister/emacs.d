@@ -49,6 +49,16 @@ Do not write customizations to =init.el=.
     (setq custom-file "~/.emacs.d/custom.el"))
 #+end_src
 
+[[help:Package][package.el]] hardcodes button face (such as the =Install= button) for
+package =*Help*= buffer. Use a standard face from theme instead.
+
+#+begin_src emacs-lisp
+  (with-eval-after-load 'package
+    (defun package-make-button (text &rest properties)
+      "Override hard-coded button face from package.el."
+      (apply #'insert-text-button text 'face 'button 'follow-link t properties)))
+#+end_src
+
 * Buffers
 
 Change style for unique buffer names to show path after filename.
