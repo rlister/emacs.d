@@ -723,6 +723,11 @@ Autoload here, configure in =~/.mew.el=.
 Overrides using minor mode.
 
 #+begin_src emacs-lisp
+  (defun prev-window ()
+    "Reverse other-window."
+    (interactive)
+    (other-window -1))
+
   (define-minor-mode ric-keys-mode
     "Set up global bindings to override other modes."
     :lighter " rk"
@@ -732,6 +737,8 @@ Overrides using minor mode.
     (let ((map (make-sparse-keymap)))
       (define-key map (kbd "<C-tab>") #'hippie-expand)
       (define-key map (kbd "C-;") #'ric/comment-dwim)
+      (define-key map (kbd "C-.") #'other-window)
+      (define-key map (kbd "C-,") #'prev-window)
       (define-key map (kbd "C-= C-=") #'tracking-next-buffer)
       (define-key map (kbd "C-= T") #'slack-all-threads)
       (define-key map (kbd "C-= c") #'slack-select-rooms)
