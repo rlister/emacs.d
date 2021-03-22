@@ -26,6 +26,9 @@
  '(mode-line-buffer-id ((t (:foregrount "PaleGreen"))))
  '(mode-line-highlight ((t (:foreground "Cyan" :box nil))))
 
+ ;; gui elements when using lucid
+ '(menu ((t (:inherit mode-line))))
+
  ;; other parts of frame and ui elements
  '(header-line   ((t (:inherit highlight :foreground: MediumAquamarine))))
  '(fringe        ((t (:inherit default))))
