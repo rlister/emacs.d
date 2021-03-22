@@ -125,10 +125,11 @@ Undo/redo of window configuration.
 
 * Mark and region
 
-Typed text replaces region.
+Expt with turning off transient-mark-mode.
 
 #+begin_src emacs-lisp
-  (add-hook 'after-init-hook #'delete-selection-mode)
+  (transient-mark-mode -1)
+  ;; (add-hook 'after-init-hook #'delete-selection-mode)
 #+end_src
 
 Do not send every active region to primary selection. This means we
