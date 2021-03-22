@@ -47,7 +47,8 @@ Allow disabled commands.
 Show packages from [[https://melpa.org/][MELPA]] archive.
 
 #+begin_src emacs-lisp
-  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+  (with-eval-after-load 'package
+    (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t))
 #+end_src
 
 ** Customizations
