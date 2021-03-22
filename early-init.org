@@ -28,6 +28,7 @@ Disable GUI stuff.
 
 #+begin_src emacs-lisp
   (menu-bar-mode -1)
+  (tooltip-mode -1)                       ;display tooltips in minibuffer
   (blink-cursor-mode -1)                  ;no blink in gui
   (setq visible-cursor nil)               ;no blink in xterm
   (setq use-dialog-box nil)
