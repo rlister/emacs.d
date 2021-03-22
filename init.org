@@ -185,12 +185,6 @@ Set this to ~loopback~ to redirect all gpg pinentry queries to the caller: in th
 
 * Dired
 
-Autoload extra dired functionality so we can call from keybinding.
-
-#+begin_src emacs-lisp
-  (autoload 'dired-jump "dired-x" nil t)
-#+end_src
-
 Set external programs to use and human-readable file sizes.
 
 #+begin_src emacs-lisp
