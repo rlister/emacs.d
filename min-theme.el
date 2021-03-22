@@ -193,11 +193,11 @@
  '(elfeed-search-feed-face         ((t (:inherit font-lock-type-face))))
  '(elfeed-search-tag-face          ((t (:inherit font-lock-variable-name-face))))
 
-  ;; avy faces are used by link-hint
+ ;; avy faces are used by link-hint
  '(avy-lead-face   ((t (:inherit error))))
- '(avy-lead-face-0 ((t (:inherit font-lock-comment-face))))
- '(avy-lead-face-1 ((t (:inherit font-lock-comment-face))))
- '(avy-lead-face-2 ((t (:inherit font-lock-comment-face))))
+ '(avy-lead-face-0 ((t (:inherit warning))))
+ '(avy-lead-face-1 ((t (:inherit warning))))
+ '(avy-lead-face-2 ((t (:inherit warning))))
 
  '(selectrum-current-candidate ((t (:inherit (success highlight)))))
 )
