@@ -15,11 +15,21 @@ To install, clone this repo anywhere, and run ~C-c C-v t~ [[help:org-babel-tangl
 
 * Startup
 
-Answer questions more easily.
+Inhibit minibuffer messages for new emacs frame or new emacslient
+frame.
 
 #+begin_src emacs-lisp
   (setq inhibit-startup-echo-area-message "ric")
-  (fset 'yes-or-no-p 'y-or-n-p)
+  (setq server-client-instructions nil)
+#+end_src
+
+Answer questions more easily. Emacs 28 has new option for this: [[file:/usr/share/emacs/28.0.50/etc/NEWS::New user option
+ 'use-short-answers'.][use-short-answers]].
+
+#+begin_src emacs-lisp
+  (if (>= emacs-major-version 28)
+      (setq use-short-answers t)
+    (fset 'yes-or-no-p 'y-or-n-p))
 #+end_src
 
 Allow disabled commands.
