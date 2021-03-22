@@ -392,7 +392,9 @@ compiled on first run.
 #+begin_src emacs-lisp
   (with-eval-after-load 'vterm
     (define-key vterm-copy-mode-map (kbd "<M-return>") #'vterm-copy-mode)
-    (define-key vterm-mode-map (kbd "C-t") nil)
+    (setq vterm-keymap-exceptions
+          '("C-," "C-." "C-t" "C-c" "C-x" "C-u" "C-g" "C-h" "C-l" "M-x" "M-o" "C-v" "M-v" "C-y" "M-y"))
+    ;; (define-key vterm-mode-map (kbd "C-t") nil)
     (define-key vterm-mode-map (kbd "<M-return>") #'vterm-copy-mode)
     (define-key vterm-mode-map (kbd "M-r") #'vterm-send-C-r)
     (define-key vterm-mode-map (kbd "<C-backspace>") #'vterm-send-meta-backspace)
