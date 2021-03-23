@@ -11,7 +11,7 @@
  '(warning             ((t (:foreground "DarkGoldenrod"))))
  '(error               ((t (:foreground "IndianRed"))))
  '(match               ((t (:foreground "RosyBrown" :background "Black"))))
- '(highlight           ((t (:background "grey10"))))
+ '(highlight           ((t (:background "grey10" :underline nil))))
  '(link                ((t (:foreground "CornflowerBlue" :underline nil))))
  '(region              ((t (:background "MidnightBlue"))))
  '(lazy-highlight      ((t (:inherit (warning highlight)))))
@@ -26,12 +26,10 @@
  '(mode-line-buffer-id ((t (:foregrount "PaleGreen"))))
  '(mode-line-highlight ((t (:foreground "Cyan" :box nil))))
 
- ;; gui elements when using lucid
- '(menu ((t (:inherit mode-line))))
-
  ;; other parts of frame and ui elements
- '(header-line   ((t (:inherit highlight :foreground: MediumAquamarine))))
- '(fringe        ((t (:inherit default))))
+ '(header-line   ((t (:inherit highlight :foreground "MediumAquamarine"))))
+ '(fringe        ((t (:inherit default :background "Black"))))
+ '(button        ((t (:inherit link))))
  '(custom-button ((t (:inherit mode-line))))
  '(widget-field  ((t (:inherit mode-line-inactive))))
 
