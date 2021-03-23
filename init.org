@@ -766,7 +766,6 @@ Overrides using minor mode.
       (define-key map (kbd "C-c t") #'vterm)
       (define-key map (kbd "C-c u") #'winner-undo)
       (define-key map (kbd "C-c y") #'browse-kill-ring)
-      (define-key map (kbd "C-j") #'other-window)
       (define-key map (kbd "C-t") #'switch-to-buffer)
       (define-key map (kbd "C-x C-z") nil)
       (define-key map (kbd "C-x d") #'dired-jump)
