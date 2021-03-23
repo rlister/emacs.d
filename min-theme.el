@@ -140,7 +140,7 @@
  '(vterm-color-cyan    ((t (:foreground "cyan3"         :background "cyan1"))))
  '(vterm-color-white   ((t (:foreground "azure4"        :background "azure1"))))
 
- '(markdown-code-face ((t (:inherit (font-lock-doc-face fixed-pitch)))))
+ '(markdown-code-face ((t (:inherit (font-lock-preprocessor-face fixed-pitch)))))
 
  ;; slack faces (uses lui)
  '(lui-button-face                    ((t (:inherit (link underline)))))
@@ -155,8 +155,9 @@
  '(slack-channel-button-face          ((t (:inherit font-lock-builtin-face))))
  '(slack-select-block-element-face    ((t (:inherit highlight))))
  '(slack-preview-face                 ((t (:inherit highlight :extend t))))
- '(slack-mrkdwn-code-face             ((t (:inherit font-lock-string-face))))
+ '(slack-mrkdwn-code-face             ((t (:inherit markdown-code-face))))
  '(slack-mrkdwn-block-face            ((t (:inherit highlight :extend t))))
+ '(slack-mrkdwn-code-block-face       ((t (:inherit (markdown-code-face highlight) :extend t))))
 
  ;; parent faces for various mail and news modes
  '(message-header-name       ((t (:inherit font-lock-comment-face))))
