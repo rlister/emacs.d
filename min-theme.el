@@ -116,6 +116,7 @@
  ;; magit
  '(magit-header                      ((t (:weight bold))))
  '(magit-section-heading             ((t (:inherit font-lock-keyword-face))))
+ '(magit-section-highlight           ((t (:inherit highlight))))
  '(magit-item-highlight              ((t (:inherit highlight))))
  '(magit-diff-hunk-heading           ((t (:inherit diff-header))))
  '(magit-diff-hunk-heading-highlight ((t (:inherit diff-header :extend t))))
@@ -128,7 +129,6 @@
  '(magit-diff-removed-highlight      ((t (:inherit (diff-removed highlight) :extend t))))
  ;; '(magit-diff-none                   ((t (:foreground "grey37"))))
  ;; '(magit-reflog-commit               ((t (:foreground "PaleGreen"))))
- '(magit-section-highlight           ((t (:inherit highlight))))
 
  ;; vterm ansi faces, fg is ansi 0-7, bg is ansi 8-15
  '(vterm-color-black   ((t (:foreground "SlateGrey"     :background "LightSlateGrey"))))
