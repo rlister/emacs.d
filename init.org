@@ -541,25 +541,24 @@ Feed database is stored in =~/.elfeed=.
 
 ** w3m
 
-Install package:
+Can install from melpa, but needs =w3m= binary.
 
 #+begin_src sh
-  git clone https://aur.archlinux.org/emacs-w3m-git.git
+  pacman -S w3m
 #+end_src
 
-Config:
+Config.
 
 #+begin_src emacs-lisp
-  ;;  load-path "/usr/share/emacs/site-lisp/w3m"
   (with-eval-after-load 'w3m
     (setq w3m-search-default-engine "duckduckgo")
     (setq w3m-use-favicon nil)
-    (define-key map (kbd "n") #'w3m-next-anchor)
-    (define-key map (kbd "C-<next>") #'w3m-next-buffer)
-    (define-key map (kbd "p") #'w3m-previous-anchor)
-    (define-key map (kbd "C-<prior>") #'w3m-previous-buffer)
-    (define-key map (kbd "x") #'w3m-delete-buffer)
-    (define-key map (kbd "M-n") #'forward-paragraph))
+    (setq-default w3m-use-tab nil)
+    (setq w3m-display-mode 'plain)
+    (define-key w3m-mode-map (kbd "n") #'w3m-next-anchor)
+    (define-key w3m-mode-map (kbd "p") #'w3m-previous-anchor)
+    (define-key w3m-mode-map (kbd "l") #'w3m-view-previous-page)
+    (define-key w3m-mode-map (kbd "x") #'w3m-delete-buffer))
 #+end_src
 
 * Mouse
