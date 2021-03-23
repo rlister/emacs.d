@@ -422,6 +422,13 @@ Preserve point position on scroll, so reverse operation returns to same location
   ;; (setq scroll-preserve-screen-position t)
 #+end_src
 
+If this value is greater than 100, moving past end of screen will not
+recenter point, but scroll smoothly.
+
+#+begin_src emacs-lisp
+  (setq scroll-conservatively 101)
+#+end_src
+
 At beginning of line, =kill-line= kills newline as well:
 
 #+begin_src emacs-lisp
