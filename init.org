@@ -743,9 +743,10 @@ Overrides using minor mode.
     :keymap
     (let ((map (make-sparse-keymap)))
       (define-key map (kbd "<C-tab>") #'hippie-expand)
-      (define-key map (kbd "C-;") #'ric/comment-dwim)
       (define-key map (kbd "C-.") #'other-window)
       (define-key map (kbd "C-,") #'prev-window)
+      (define-key map (kbd "C-;") #'comment-or-uncomment-region)
+      (define-key map (kbd "C-j") #'forward-whitespace)
       (define-key map (kbd "C-= C-=") #'tracking-next-buffer)
       (define-key map (kbd "C-= T") #'slack-all-threads)
       (define-key map (kbd "C-= c") #'slack-select-rooms)
