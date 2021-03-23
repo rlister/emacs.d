@@ -19,6 +19,7 @@
  '(trailing-whitespace ((t (:inherit error))))
  '(italic              ((t (:underline nil))))
  '(underline           ((t (:underline nil))))
+ '(visible-mark-active ((t (:inherit highlight :underline t))))
 
  ;; mode-line
  '(mode-line           ((t (:foreground "aquamarine3" :background "grey14" :box nil))))
