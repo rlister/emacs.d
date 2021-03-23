@@ -33,6 +33,9 @@
  '(custom-button ((t (:inherit mode-line))))
  '(widget-field  ((t (:inherit mode-line-inactive))))
 
+ ;; gui elements when using lucid
+ '(menu ((t (:inherit mode-line))))
+
  ;; search and replace
  '(isearch       ((t (:inherit success))))
  '(isearch-fail  ((t (:inherit error))))
