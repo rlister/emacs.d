@@ -449,17 +449,18 @@ Better key placement for common movement:
   ;; (define-key global-map (kbd "M-n") 'forward-paragraph)
 #+end_src
 
-Soup up =mark-word= to move backwards if at end of line, give or take
-any non-word chars.
+Advise =mark-word= and =mark-sexp= to move backward if at end of
+line, give or take any non-word chars.
 
 #+begin_src emacs-lisp
-  (defun ric/mark-word-args (&optional arg allow-extend)
+  (defun ric/mark-args (&optional arg allow-extend)
     "Advise mark-word to move backwards if we are effectively at end of line."
     (if (looking-at "\\W*$")
         (list -1 t)
       (list arg t)))
 
-  (advice-add 'mark-word :filter-args #'ric/mark-word-args)
+  (advice-add 'mark-word :filter-args #'ric/mark-args)
+  (advice-add 'mark-sexp :filter-args #'ric/mark-args)
 #+end_src
 
 Duplicate the current line.
