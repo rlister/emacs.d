@@ -533,14 +533,23 @@ Feed database is stored in =~/.elfeed=.
 
 #+begin_src emacs-lisp
   (with-eval-after-load 'elfeed
-    (setq shr-use-fonts nil)
     (setq elfeed-search-filter "@2-weeks-ago +unread")
     (define-key elfeed-show-mode-map "r" #'elfeed-kill-buffer))
 #+end_src
 
-* Web
+* shr
 
-** w3m
+Used in elfeed and mew to render html.
+
+Turn off proportional fonts and ignore html colors.
+
+#+begin_src emacs-lisp
+  (with-eval-after-load 'shr
+    (setq shr-use-fonts nil)
+    (setq shr-use-colors nil))
+#+end_src
+
+* w3m
 
 Can install from melpa, but needs =w3m= binary.
 
