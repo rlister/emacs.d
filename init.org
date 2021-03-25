@@ -743,6 +743,7 @@ Overrides using minor mode.
       (define-key map (kbd "C-,") #'(lambda () (interactive) (other-window -1)))
       (define-key map (kbd "C-;") #'comment-or-uncomment-region)
       (define-key map (kbd "C-j") #'forward-whitespace)
+      (define-key map (kbd "M-j") #'(lambda () (interactive) (forward-whitespace -1)))
       (define-key map (kbd "C-= C-=") #'tracking-next-buffer)
       (define-key map (kbd "C-= T") #'slack-all-threads)
       (define-key map (kbd "C-= c") #'slack-select-rooms)
