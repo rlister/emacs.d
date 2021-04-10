@@ -526,13 +526,12 @@ Some extra filenames to use =ruby-mode=.
 
 * elfeed
 
-[[https://github.com/skeeto/elfeed][elfeed]] RSS reader. We keep feed list in =doc/elfeed.opml=, for a new
-emacs instance, run =elfeed-load-opml=.
-
-Feed database is stored in =~/.elfeed=.
+[[https://github.com/skeeto/elfeed][elfeed]] RSS reader. We keep feed list in =doc/elfeed.opml=. Feed
+database is stored in =~/.elfeed=.
 
 #+begin_src emacs-lisp
   (with-eval-after-load 'elfeed
+    (elfeed-load-opml "~/src/doc/elfeed.opml")
     (setq elfeed-search-filter "@2-weeks-ago +unread")
     (define-key elfeed-show-mode-map "r" #'elfeed-kill-buffer))
 #+end_src
