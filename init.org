@@ -486,20 +486,6 @@ This is used by link-hint. Use Colemak-friendly keys for hints.
     (setq avy-keys '(?t ?n ?s ?e ?r ?i ?a ?o ?f ?u ?d ?h ?l ?p ?g ?m ?c)))
 #+end_src
 
-* Comments
-
-Toggle comments on region or line, without moving point. This works
-better as a toggle than ~comment-dwim~.
-
-#+begin_src emacs-lisp
-  (defun ric/comment-dwim (&optional arg)
-    "Toggle comments on region if active, otherwise toggle comment on line."
-    (interactive "P")
-    (if (region-active-p)
-	(comment-or-uncomment-region (region-beginning) (region-end) arg)
-      (comment-or-uncomment-region (line-beginning-position) (line-end-position) arg)))
-#+end_src
-
 * Programming modes
 
 ** indentation
