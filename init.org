@@ -310,7 +310,7 @@ Maybe get latest [[https://code.orgmode.org/bzg/org-mode][org-mode]] from melpa 
     (setq org-agenda-custom-commands
           '(("g" "Geekbot"
              agenda ""
-             ((org-agenda-files '("~/src/doc/work.org" "~/.org-jira/"))
+             ((org-agenda-files '("~/src/doc/work.org"))
               (org-agenda-overriding-header "Standup")
               (org-agenda-show-log t)
               (org-agenda-todo-keyword-format "- %-4s")
