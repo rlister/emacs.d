@@ -285,10 +285,11 @@ Maybe get latest [[https://code.orgmode.org/bzg/org-mode][org-mode]] from melpa 
             ("~/src/doc/work.org" :maxlevel . 3)
             ("~/src/doc/home.org" :maxlevel . 3)))
     (setq org-fontify-done-headline t)
-    (setq org-todo-keywords '("TODO" "BLOCK(b@/!)" "WIP(w!)" "|" "DONE(d!)" "CANCELLED(c@)"))
+    (setq org-todo-keywords '("TODO" "BLOCK(b@/!)" "REVIEW(r@/!)" "WIP(w!)" "|" "DONE(d!)" "CANCELLED(c@)"))
     (setq org-todo-interpretation 'sequence)
     (setq org-todo-keyword-faces
           '(("BLOCK" .  (:foreground "LightGoldenRod"))
+            ("REVIEW" . (:foreground "LightGoldenRod"))
             ("WAIT"  .  (:foreground "LightGoldenRod"))
             ("WIP"   .  (:foreground "LightGoldenRod"))))
     (setq org-log-done 'time)
