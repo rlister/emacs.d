@@ -778,3 +778,15 @@ Load my color theme.
 #+begin_src emacs-lisp
   (add-hook 'after-init-hook (lambda () (load-theme 'min t)))
 #+end_src
+
+* Text scale
+
+Advise the built-in =text-scale= commands to apply to all buffers, rather than just current.
+
+#+begin_src emacs-lisp
+  (with-eval-after-load 'face-remap
+    (defadvice text-scale-increase (around all-buffers (arg) activate)
+      (dolist (buffer (buffer-list))
+        (with-current-buffer buffer
+          ad-do-it))))
+#+end_src
