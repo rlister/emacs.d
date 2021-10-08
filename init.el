@@ -100,7 +100,8 @@
   (setq ansi-color-names-vector ["Black" "IndianRed" "PaleGreen" "LightYellow" "RoyalBlue" "Magenta" "CadetBlue" "#839496"]))
 
 (with-eval-after-load 'selectrum
-  (selectrum-prescient-mode +1))
+  (selectrum-prescient-mode +1)
+  (marginalia-mode +1))
 
 (with-eval-after-load 'marginalia
   (setq marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil))
