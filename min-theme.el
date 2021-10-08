@@ -72,6 +72,9 @@
  '(Man-underline  ((t (:inherit error))))
  '(Man-reverse    ((t (:inherit warning))))
 
+ ;; grep-like modes
+ '(wgrep-face ((t (:inherit highlight))))
+
  ;; org-mode
  '(org-level-1              ((t (:inherit font-lock-function-name-face :height 1.2))))
  '(org-level-2              ((t (:inherit font-lock-keyword--face :height 1.1))))
