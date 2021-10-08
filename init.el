@@ -37,14 +37,11 @@
 ;; (setq pop-up-windows t) ;how display-buffer should behave
 ;; (setq Man-notify-method 'pushy)
 
-;; make forward/backward-sentence more useful
-(setq sentence-end-double-space nil)
+(setq sentence-end-double-space nil) ;make forward/backward-sentence more useful
 
-;; pinentry queries in minibuffer
-(setq epg-pinentry-mode 'loopback)
+(setq epg-pinentry-mode 'loopback) ;pinentry queries in minibuffer
 
-;; highlight matching delimiters
-(show-paren-mode 1)
+(show-paren-mode 1) ;highlight matching delimiters
 (setq show-paren-when-point-in-periphery t)
 
 (setq scroll-preserve-screen-position t) ;do not lose point
@@ -182,7 +179,7 @@
         '((home . "~/.config/gcalcli/home")
           (work . "~/.config/gcalcli/work"))))
 
-(autoload 'mew "mew" nil t)             ;loads mew config from ~/.mew.el
+(autoload 'mew "mew" nil t)           ;loads mew config from ~/.mew.el
 
 (with-eval-after-load 'slack
   (load "init-slack"))
