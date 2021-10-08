@@ -94,7 +94,7 @@
  '(org-special-keyword      ((t (:inherit font-lock-comment-face))))
  '(org-scheduled            ((t (:inherit font-lock-comment-face))))
  '(org-scheduled-previously ((t (:inherit default))))
- '(org-scheduled-today      ((t (:inherit success))))
+ '(org-scheduled-today      ((t (:inherit default))))
  '(org-time-grid            ((t (:inherit font-lock-comment-face))))
 
  ;; org-agenda
