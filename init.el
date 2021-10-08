@@ -81,8 +81,13 @@
   (global-anzu-mode +1))
 
 (with-eval-after-load 'project
-  (add-to-list 'project-switch-commands '(?t "Vterm" vterm))
-  (add-to-list 'project-switch-commands '(?b "Buffer" project-switch-to-buffer)))
+  (setq project-switch-commands
+        '((project-switch-to-buffer "buffer" ?b)
+          (project-dired "dir" ?d)
+          (project-find-file "file" ?f)
+          (magit-project-status "magit" ?m)
+          (rg-project "rg" ?r)
+          (vterm "vterm" ?t))))
 
 (with-eval-after-load 'package
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
