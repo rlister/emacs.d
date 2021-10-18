@@ -1,4 +1,5 @@
-(setq debug-on-error t)               ;turn on for debugging
+(setq debug-on-error nil)               ;turn on for debugging
+
 (add-to-list 'load-path "~/src/emacs.d")
 
 ;; inhibit minibuffer messages for new emacs frame or new emacslient frame
