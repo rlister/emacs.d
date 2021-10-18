@@ -180,6 +180,7 @@
           (work . "~/.config/gcalcli/work"))))
 
 (autoload 'mew "mew" nil t)           ;loads mew config from ~/.mew.el
+(autoload 'font-height-increase "font-height" nil t)
 
 (with-eval-after-load 'slack
   (load "init-slack"))
