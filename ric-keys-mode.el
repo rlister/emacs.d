@@ -42,4 +42,7 @@
     (define-key map (kbd "M-SPC") #'cycle-spacing)
     (define-key map (kbd "M-o") #'project-find-file)
     (define-key map (kbd "M-s r") #'anzu-query-replace)
+    (define-key map (kbd "<f2>") #'font-height-decrease)
+    (define-key map (kbd "<f3>") #'font-height-increase)
+    (define-key map (kbd "<f4>") #'font-height-reset)
     map))
