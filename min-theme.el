@@ -85,6 +85,7 @@
  '(org-level-7              ((t (:inherit font-lock-variable-name-face))))
  '(org-level-8              ((t (:inherit font-lock-doc-face))))
  '(org-date                 ((t (:inherit font-lock-string-face))))
+ '(org-table                ((t (:inherit default))))
  '(org-done                 ((t (:inherit font-lock-comment-face :strike-through t))))
  '(org-todo                 ((t (:inherit error))))
  '(org-headline-done        ((t (:inherit org-done))))
