@@ -25,6 +25,7 @@
     (define-key map (kbd "C-c c") #'org-capture)
     (define-key map (kbd "C-c d") #'ric/duplicate-line)
     (define-key map (kbd "C-c i") #'string-inflection-all-cycle)
+    (define-key map (kbd "C-c j") #'avy-goto-word-1)
     (define-key map (kbd "C-c l") #'link-hint-open-link)
     (define-key map (kbd "C-c m") #'imenu)
     (define-key map (kbd "C-c o") #'org-agenda)
