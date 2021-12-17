@@ -30,6 +30,7 @@
     (define-key map (kbd "C-c m") #'imenu)
     (define-key map (kbd "C-c o") #'org-agenda)
     (define-key map (kbd "C-c r") #'rg)
+    (define-key map (kbd "C-c R") #'ric/code-review-link-hint)
     (define-key map (kbd "C-c t") #'vterm)
     (define-key map (kbd "C-c u") #'winner-undo)
     (define-key map (kbd "C-c y") #'browse-kill-ring)
