@@ -195,6 +195,13 @@
 (with-eval-after-load 'slack
   (load "init-slack"))
 
+(with-eval-after-load 'code-review
+  (setq code-review-new-buffer-window-strategy #'switch-to-buffer)
+  (defun ric/code-review-link-hint ()
+    (interactive)
+    (link-hint-copy-link)
+    (code-review-start (current-kill 0))))
+
 (add-hook 'after-init-hook #'(lambda () (load-theme 'min t)))
 (add-hook 'after-init-hook #'(lambda () (load "ric-keys-mode")));TODO convert to autoload
 (add-hook 'after-init-hook #'winner-mode)
