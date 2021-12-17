@@ -55,13 +55,13 @@
 
 ;; implement https://github.com/yuya373/emacs-slack/pull/532 until merged upstream
 ;; so that we can load channels with a giphy image
-(defclass slack-image-block-element (slack-block-element)
-  ((type :initarg :type :type string :initform "image")
-   (image-url :initarg :image_url :type string)
-   (alt-text :initarg :alt_text :type string)
-   (image-height :initarg :image_height :type (or number null))
-   (image-width :initarg :image_width :type (or number null))
-   (image-bytes :initarg :image_bytes :type (or number null))))
+;; (defclass slack-image-block-element (slack-block-element)
+;;   ((type :initarg :type :type string :initform "image")
+;;    (image-url :initarg :image_url :type string)
+;;    (alt-text :initarg :alt_text :type string)
+;;    (image-height :initarg :image_height :type (or number null))
+;;    (image-width :initarg :image_width :type (or number null))
+;;    (image-bytes :initarg :image_bytes :type (or number null))))
 
 (defun ric/slack-update-mark ()
   "Force the read mark to the end of the channel."
