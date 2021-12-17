@@ -38,6 +38,10 @@
 ;; (setq pop-up-windows t) ;how display-buffer should behave
 (setq Man-notify-method 'pushy)
 
+(setq display-buffer-alist
+      '(("\\*Help\\*" (display-buffer-same-window))
+        ("\\*Code Review\\*" (display-buffer-same-window))
+        ("\\*rg\\*" (display-buffer-same-window))))
 
 (setq sentence-end-double-space nil) ;make forward/backward-sentence more useful
 
