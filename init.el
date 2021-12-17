@@ -119,7 +119,9 @@
   (load "init-org"))
 
 (with-eval-after-load 'org-agenda
-  (load "init-org-agenda"))
+  (load "init-org-agenda")
+  (define-key org-agenda-mode-map (kbd "<C-down>") #'org-agenda-next-date-line)
+  (define-key org-agenda-mode-map (kbd "<C-up>") #'org-agenda-previous-date-line))
 
 (with-eval-after-load 'org-capture
   (load "init-org-capture"))
