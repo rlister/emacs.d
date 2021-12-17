@@ -94,9 +94,6 @@
     "Override hard-coded button face from package.el."
     (apply #'insert-text-button text 'face 'button 'follow-link t properties)))
 
-(with-eval-after-load 'text-mode
-  (toggle-text-mode-auto-fill))
-
 ;; use this for gcalcli rendering
 (with-eval-after-load 'ansi-color
   (setq ansi-color-names-vector ["Black" "IndianRed" "PaleGreen" "LightYellow" "RoyalBlue" "Magenta" "CadetBlue" "#839496"]))
