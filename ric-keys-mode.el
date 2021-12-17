@@ -47,3 +47,7 @@
     (define-key map (kbd "<f4>") #'font-height-reset)
     map))
     (define-key map (kbd "C-\\") #'mark-sexp)
+    (define-key map (kbd "H-i") #'project-find-file)
+    (define-key map (kbd "H-m") #'easy-kill)
+  (keyboard-translate ?\C-i ?\H-i)
+  (keyboard-translate ?\C-m ?\H-m)
