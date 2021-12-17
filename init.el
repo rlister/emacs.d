@@ -1,5 +1,4 @@
 (setq debug-on-error nil)               ;turn on for debugging
-
 (add-to-list 'load-path "~/src/emacs.d")
 
 ;; inhibit minibuffer messages for new emacs frame or new emacslient frame
@@ -37,11 +36,11 @@
 
 ;; (setq pop-up-windows t) ;how display-buffer should behave
 (setq Man-notify-method 'pushy)
-
 (setq display-buffer-alist
       '(("\\*Help\\*" (display-buffer-same-window))
         ("\\*Code Review\\*" (display-buffer-same-window))
-        ("\\*rg\\*" (display-buffer-same-window))))
+        ("\\*rg\\*" (display-buffer-same-window))
+        ("\\*Packages\\*" (display-buffer-same-window))))
 
 (setq sentence-end-double-space nil) ;make forward/backward-sentence more useful
 
@@ -65,7 +64,7 @@
 (add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode))
 
 (setq-default python-check-command "flake8")
-
+
 ;; less garish html rendering
 (with-eval-after-load 'shr
   (setq shr-use-fonts nil)
@@ -73,7 +72,7 @@
 
 (with-eval-after-load 'cus-edit
   (setq custom-file "~/.emacs.d/custom.el")) ;stop customize from polluting init.el
-
+
 (with-eval-after-load 'dired
   (setq dired-guess-shell-alist-user '(("\\.pdf\\'" "mupdf")))
   (setq dired-listing-switches "-alh"))
@@ -208,3 +207,4 @@
 (add-hook 'after-init-hook #'winner-mode)
 (add-hook 'after-init-hook #'selectrum-mode)
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
+(put 'narrow-to-page 'disabled nil)
