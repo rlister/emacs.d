@@ -77,7 +77,7 @@
 
  ;; org-mode
  '(org-level-1              ((t (:inherit font-lock-function-name-face :height 1.2))))
- '(org-level-2              ((t (:inherit font-lock-keyword--face :height 1.1))))
+ '(org-level-2              ((t (:inherit font-lock-keyword-face :height 1.1))))
  '(org-level-3              ((t (:inherit font-lock-type-face))))
  '(org-level-4              ((t (:inherit font-lock-builtin-face))))
  '(org-level-5              ((t (:inherit font-lock-constant-face))))
