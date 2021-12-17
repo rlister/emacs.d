@@ -36,7 +36,8 @@
 (setq select-enable-primary t)          ;yank from primary set in other apps
 
 ;; (setq pop-up-windows t) ;how display-buffer should behave
-;; (setq Man-notify-method 'pushy)
+(setq Man-notify-method 'pushy)
+
 
 (setq sentence-end-double-space nil) ;make forward/backward-sentence more useful
 
