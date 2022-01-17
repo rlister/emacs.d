@@ -60,6 +60,10 @@
     (define-key map (kbd "C-\\") #'mark-sexp)
     (define-key map (kbd "H-i") #'project-find-file)
     (define-key map (kbd "H-m") #'easy-kill)
+    (define-key map (kbd "<insert> <insert>") #'project-switch-project)
+    (define-key map (kbd "<insert> f") #'project-find-file)
+    (define-key map (kbd "<insert> b") #'project-switch-to-buffer)
+    (define-key map (kbd "<insert> t") #'project-switch-to-buffer)
     map)
   )
 
