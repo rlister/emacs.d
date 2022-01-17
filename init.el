@@ -102,10 +102,6 @@
 (with-eval-after-load 'ansi-color
   (setq ansi-color-names-vector ["Black" "IndianRed" "PaleGreen" "LightYellow" "RoyalBlue" "Magenta" "CadetBlue" "#839496"]))
 
-;; (with-eval-after-load 'selectrum
-;;   (selectrum-prescient-mode +1)
-;;   (marginalia-mode +1))
-
 (with-eval-after-load 'vertico
   (setq completion-styles '(orderless))
   (marginalia-mode +1))
