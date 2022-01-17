@@ -102,8 +102,12 @@
 (with-eval-after-load 'ansi-color
   (setq ansi-color-names-vector ["Black" "IndianRed" "PaleGreen" "LightYellow" "RoyalBlue" "Magenta" "CadetBlue" "#839496"]))
 
-(with-eval-after-load 'selectrum
-  (selectrum-prescient-mode +1)
+;; (with-eval-after-load 'selectrum
+;;   (selectrum-prescient-mode +1)
+;;   (marginalia-mode +1))
+
+(with-eval-after-load 'vertico
+  (setq completion-styles '(orderless))
   (marginalia-mode +1))
 
 (with-eval-after-load 'marginalia
@@ -206,5 +210,6 @@
 (add-hook 'after-init-hook #'(lambda () (load-theme 'min t)))
 (add-hook 'after-init-hook #'(lambda () (load "ric-keys-mode")));TODO convert to autoload
 (add-hook 'after-init-hook #'winner-mode)
-(add-hook 'after-init-hook #'selectrum-mode)
+;; delayed loads
+(add-hook 'after-init-hook #'vertico-mode)
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
