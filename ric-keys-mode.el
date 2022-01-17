@@ -56,3 +56,5 @@
   (keyboard-translate ?\C-i ?\H-i)
   (keyboard-translate ?\C-m ?\H-m)
   )
+
+(provide 'ric-keys-mode)

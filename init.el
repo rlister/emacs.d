@@ -176,8 +176,11 @@
     (code-review-start (current-kill 0))))
 
 (add-hook 'after-init-hook #'(lambda () (load-theme 'min t)))
-(add-hook 'after-init-hook #'(lambda () (load "ric-keys-mode")));TODO convert to autoload
 (add-hook 'after-init-hook #'winner-mode)
+;; load keybindings
+(autoload 'ric-keys-mode "ric-keys-mode" nil t)
+(add-hook 'window-setup-hook #'ric-keys-mode)
+
 ;; delayed loads
 (add-hook 'after-init-hook #'vertico-mode)
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
