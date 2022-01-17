@@ -167,18 +167,6 @@
   (define-key w3m-mode-map (kbd "l") #'w3m-view-previous-page)
   (define-key w3m-mode-map (kbd "x") #'w3m-delete-buffer))
 
-(define-minor-mode no-mouse-mode
-  "Minor mode to disable trackpad clicks."
-  :lighter " nm"
-  :global t
-  :keymap
-  (let ((map (make-sparse-keymap)))
-    (define-key map [mouse-1] #'ignore)
-    (define-key map [down-mouse-1] #'ignore)
-    (define-key map [mouse-3] #'ignore)
-    (define-key map [down-mouse-3] #'ignore)
-    map))
-
 (with-eval-after-load 'alert
   (setq alert-default-style 'libnotify))
 
