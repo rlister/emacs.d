@@ -72,6 +72,9 @@
  '(Man-underline  ((t (:inherit error))))
  '(Man-reverse    ((t (:inherit warning))))
 
+ ;; info
+ '(Info-quoted ((t (:inherit markdown-code-face))))
+
  ;; grep-like modes
  '(wgrep-face ((t (:inherit highlight))))
 
