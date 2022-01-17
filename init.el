@@ -175,14 +175,20 @@
     (link-hint-copy-link)
     (code-review-start (current-kill 0))))
 
-(add-hook 'after-init-hook #'winner-mode)
+;; load theme
 (autoload 'min-theme "min-theme" nil t)
 (add-hook 'after-init-hook #'min-theme)
+
 ;; load keybindings
 (autoload 'ric-keys-mode "ric-keys-mode" nil t)
 (add-hook 'window-setup-hook #'ric-keys-mode)
 
+(autoload 'mew "mew" nil t)           ;loads mew config from ~/.mew.el
+(autoload 'font-height-increase "font-height" nil t)
+(autoload 'no-mouse-mode "no-mouse-mode" nil t)
+
 ;; delayed loads
 (add-hook 'after-init-hook #'vertico-mode)
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
+(add-hook 'window-setup-hook #'winner-mode)
 (add-hook 'server-after-make-frame-hook #'ric/key-translations)
