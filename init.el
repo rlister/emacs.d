@@ -192,3 +192,4 @@
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
 (add-hook 'window-setup-hook #'winner-mode)
 (add-hook 'server-after-make-frame-hook #'ric/key-translations)
+(run-with-idle-timer 5 nil #'global-visible-mark-mode)
