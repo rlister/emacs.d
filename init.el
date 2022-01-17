@@ -159,9 +159,6 @@
         '((home . "~/.config/gcalcli/home")
           (work . "~/.config/gcalcli/work"))))
 
-(autoload 'mew "mew" nil t)           ;loads mew config from ~/.mew.el
-(autoload 'font-height-increase "font-height" nil t)
-
 (with-eval-after-load 'markdown-mode
   (add-hook 'markdown-mode-hook #'visual-line-mode))
 
