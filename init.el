@@ -143,16 +143,6 @@
 (advice-add 'mark-word :filter-args #'ric/mark-args)
 (advice-add 'mark-sexp :filter-args #'ric/mark-args)
 
-(defun ric/duplicate-line ()
-  "Duplicate current line, leaving point in current position."
-  (interactive)
-  (save-excursion
-    (end-of-line)
-    (copy-region-as-kill (line-beginning-position) (point))
-    (open-line 1)
-    (forward-line)
-    (yank)))
-
 (with-eval-after-load 'elfeed
   (elfeed-load-opml "~/src/doc/elfeed.opml")
   (setq elfeed-search-filter "@2-weeks-ago +unread")
