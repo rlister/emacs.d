@@ -1,3 +1,4 @@
+EMACS = emacs
 FILES = init.el early-init.el
 DIR := ~/.emacs.d
 
@@ -13,3 +14,6 @@ check:
 
 clean:
 	rm -f $(TARGETS)
+
+packages:
+	$(EMACS) -batch -l packages.el
