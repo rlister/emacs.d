@@ -148,16 +148,6 @@
   (setq elfeed-search-filter "@2-weeks-ago +unread")
   (define-key elfeed-show-mode-map "r" #'elfeed-kill-buffer))
 
-(with-eval-after-load 'w3m
-  (setq w3m-search-default-engine "duckduckgo")
-  (setq w3m-use-favicon nil)
-  (setq-default w3m-use-tab nil)
-  (setq w3m-display-mode 'plain)
-  (define-key w3m-mode-map (kbd "n") #'w3m-next-anchor)
-  (define-key w3m-mode-map (kbd "p") #'w3m-previous-anchor)
-  (define-key w3m-mode-map (kbd "l") #'w3m-view-previous-page)
-  (define-key w3m-mode-map (kbd "x") #'w3m-delete-buffer))
-
 (with-eval-after-load 'alert
   (setq alert-default-style 'libnotify))
 
