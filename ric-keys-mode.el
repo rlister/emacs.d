@@ -6,6 +6,8 @@
   :keymap
   (let ((map (make-sparse-keymap)))
     (define-key map (kbd "<C-tab>") #'hippie-expand)
+    (define-key map (kbd "C-<return>") #'make-frame-command)
+    (define-key map (kbd "M-RET") #'delete-frame)
     (define-key map (kbd "C-.") #'other-window)
     (define-key map (kbd "M-,") #'beginning-of-buffer)
     (define-key map (kbd "M-.") #'end-of-buffer)
