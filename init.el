@@ -186,3 +186,4 @@
 (add-hook 'after-init-hook #'vertico-mode)
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
 (put 'narrow-to-page 'disabled nil)
+(add-hook 'server-after-make-frame-hook #'ric/key-translations)

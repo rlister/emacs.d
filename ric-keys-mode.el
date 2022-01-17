@@ -1,3 +1,9 @@
+(defun ric/key-translations ()
+  (when (display-graphic-p)
+    (keyboard-translate ?\C-i ?\H-i)
+    (keyboard-translate ?\C-m ?\H-m)))
+
+;;;###autoload
 (define-minor-mode ric-keys-mode
   "Set up global bindings to override other modes."
   :lighter " rk"
@@ -55,8 +61,6 @@
     (define-key map (kbd "H-i") #'project-find-file)
     (define-key map (kbd "H-m") #'easy-kill)
     map)
-  (keyboard-translate ?\C-i ?\H-i)
-  (keyboard-translate ?\C-m ?\H-m)
   )
 
 (provide 'ric-keys-mode)
