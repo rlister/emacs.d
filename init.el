@@ -175,8 +175,9 @@
     (link-hint-copy-link)
     (code-review-start (current-kill 0))))
 
-(add-hook 'after-init-hook #'(lambda () (load-theme 'min t)))
 (add-hook 'after-init-hook #'winner-mode)
+(autoload 'min-theme "min-theme" nil t)
+(add-hook 'after-init-hook #'min-theme)
 ;; load keybindings
 (autoload 'ric-keys-mode "ric-keys-mode" nil t)
 (add-hook 'window-setup-hook #'ric-keys-mode)

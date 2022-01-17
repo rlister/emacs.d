@@ -218,4 +218,8 @@
  '(w3m-header-line-content ((t (:inherit mode-line :family fixed-pitch))))
 )
 
+;;;###autoload
+(defun min-theme ()
+  (load-theme 'min t))
+
 (provide-theme 'min)
