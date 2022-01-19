@@ -177,6 +177,10 @@
 (add-hook 'window-setup-hook #'ric-keys-mode)
 
 (autoload 'mew "mew" nil t)           ;loads mew config from ~/.mew.el
+(autoload 'mu4e "mu4e" nil t)
+(with-eval-after-load 'mu4e
+  (load "init-mu4e"))
+
 (autoload 'font-height-increase "font-height" nil t)
 (autoload 'no-mouse-mode "no-mouse-mode" nil t)
 
