@@ -107,8 +107,7 @@
   (marginalia-mode +1))
 
 (with-eval-after-load 'marginalia
-  (setq marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil))
-  (define-key minibuffer-local-map (kbd "C-=") #'marginalia-cycle))
+  (setq marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil)))
 
 (with-eval-after-load 'magit
   (setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1))
