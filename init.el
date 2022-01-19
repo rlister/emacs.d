@@ -65,7 +65,7 @@
 (add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode))
 
 (setq-default python-check-command "flake8")
-
+
 ;; less garish html rendering
 (with-eval-after-load 'shr
   (setq shr-use-fonts nil)
@@ -73,7 +73,7 @@
 
 (with-eval-after-load 'cus-edit
   (setq custom-file "~/.emacs.d/custom.el")) ;stop customize from polluting init.el
-
+
 (with-eval-after-load 'dired
   (setq dired-guess-shell-alist-user '(("\\.pdf\\'" "mupdf")))
   (setq dired-listing-switches "-alh"))
