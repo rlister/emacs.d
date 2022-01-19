@@ -16,3 +16,6 @@ the following files to `~/.emacs.d`:
 
 - [early-init.el](./early-init.el)
 - [init.el](./init.el)
+
+Install packages using `make packages` (this is idempotent). Packages
+are listed in `packages.el`.
