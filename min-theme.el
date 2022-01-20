@@ -172,9 +172,16 @@
  '(message-header-name       ((t (:inherit font-lock-comment-face))))
  '(message-header-newsgroups ((t (:inherit font-lock-keyword-face))))
  '(message-header-subject    ((t (:inherit font-lock-function-name-face))))
- '(message-header-to         ((t (:inherit font-lock-type-face))))
+ '(message-header-to         ((t (:inherit (font-lock-type-face fixed-pitch)))))
  '(message-header-other      ((t (:inherit font-lock-variable-name-face))))
  '(message-header-xheader    ((t (:inherit font-lock-comment-face))))
+
+ '(gnus-header-name ((t (:inherit message-header-newsgroups))))
+ '(gnus-header-from ((t (:inherit message-header-newsgroups))))
+ '(gnus-header-subject ((t (:inherit message-header-subject))))
+ '(gnus-header-content ((t (:inherit message-header-to))))
+
+ '(mu4e-header-highlight-face ((t (:inherit hl-line))))
 
  ;; mew
  '(mew-face-body-cite1       ((t (:inherit font-lock-comment-face))))
