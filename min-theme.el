@@ -135,6 +135,7 @@
  '(magit-diff-added-highlight        ((t (:inherit (diff-indicator-added highlight) :extend t))))
  '(magit-diff-removed                ((t (:inherit diff-removed))))
  '(magit-diff-removed-highlight      ((t (:inherit (diff-removed highlight) :extend t))))
+ '(magit-filename                    ((t (:inherit fixed-pitch))))
  ;; '(magit-diff-none                   ((t (:foreground "grey37"))))
  ;; '(magit-reflog-commit               ((t (:foreground "PaleGreen"))))
 
