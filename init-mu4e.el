@@ -3,6 +3,7 @@
 (setq mu4e-drafts-folder "/drafts")
 (setq mu4e-sent-messages-behavior 'delete) ;do not save to Sent: gmail imap takes care of this
 (setq mu4e-context-policy 'pick-first)     ;start with default context
+(setq mu4e-main-buffer-name "*mu4e-main*") ;remove leading spc to unhide buffer
 
 (setq mu4e-contexts
       `(
