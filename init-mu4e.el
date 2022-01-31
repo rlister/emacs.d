@@ -39,3 +39,4 @@
 (setq message-sendmail-f-is-evil t)         ;do not add username to cmdline
 (setq message-sendmail-extra-arguments '("--read-envelope-from")) ;get cfg from sender
 (setq message-send-mail-function 'message-send-mail-with-sendmail)
+(setq gnus-inhibit-mime-unbuttonizing t) ;show attachment buttons for all mime parts, including inline images
