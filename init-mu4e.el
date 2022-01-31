@@ -26,17 +26,18 @@
           :match-func (lambda (m) (when m (string-match-p "^/work" (mu4e-message-field m :maildir))))
           :vars '((user-mail-address . "ric.lister@arcadia.com" )
                   (mu4e-get-mail-command . "mbsync work")
-                  (mu4e-sent-folder . "/work/[Gmail]/Sent Mail")
-                  (mu4e-refile-folder . "/work/[Gmail]/archive")
-                  (mu4e-trash-folder . "/work/[Gmail]/Trash")
+                  (mu4e-sent-folder . "/work/sent")
+                  (mu4e-refile-folder . "/work/archive")
+                  (mu4e-trash-folder . "/work/trash")
                   (mu4e-drafts-folder . "/work/drafts")
-                  (mu4e-maildir-shortcuts . ((:maildir "/work/Inbox" :key ?i)
-                                             (:maildir "/work/[Gmail]/Sent Mail" :key ?S)
-                                             (:maildir "/work/[Gmail]/Trash" :key ?t)))))))
+                  (mu4e-maildir-shortcuts . ((:maildir "/work/inbox" :key ?i)
+                                             (:maildir "/work/sent" :key ?S)
+                                             (:maildir "/work/trash" :key ?t)))))))
 
 (setq sendmail-program "/usr/bin/msmtp")
 (setq send-mail-function 'smtpmail-send-it) ;do not query
 (setq message-sendmail-f-is-evil t)         ;do not add username to cmdline
 (setq message-sendmail-extra-arguments '("--read-envelope-from")) ;get cfg from sender
 (setq message-send-mail-function 'message-send-mail-with-sendmail)
+
 (setq gnus-inhibit-mime-unbuttonizing t) ;show attachment buttons for all mime parts, including inline images
