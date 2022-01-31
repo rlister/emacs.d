@@ -113,6 +113,10 @@
   (setq completion-styles '(orderless))
   (marginalia-mode +1))
 
+(with-eval-after-load 'orderless
+  (setq completion-category-defaults nil) ;prevent overrides of styles
+  (setq orderless-matching-styles '(orderless-flex)))
+
 (with-eval-after-load 'marginalia
   (setq marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil)))
 
