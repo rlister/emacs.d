@@ -56,6 +56,10 @@
 (setq scroll-preserve-screen-position t) ;do not lose point
 (setq scroll-conservatively 101)         ;do not center point, less jumpy
 
+(setq completion-ignore-case t)
+(setq read-file-name-completion-ignore-case t)
+(setq read-buffer-completion-ignore-case t)
+
 ;; default all programming modes to 2 char indent
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)

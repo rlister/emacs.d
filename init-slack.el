@@ -9,6 +9,7 @@
 (define-key slack-mode-map (kbd "C-c C-y") #'slack-clipboard-image-upload)
 (define-key slack-mode-map (kbd "C-c w") #'slack-message-write-another-buffer)
 (define-key slack-mode-map (kbd "<C-return>") #'slack-thread-show-or-create)
+(define-key slack-mode-map (kbd "C-c <return>") #'slack-thread-show-or-create)
 (define-key slack-mode-map (kbd "<M-return>") #'slack-thread-show-or-create)
 (define-key slack-message-buffer-mode-map (kbd "C-c C-c") #'ric/slack-update-mark)
 (define-key slack-thread-message-buffer-mode-map (kbd "M-p") #'slack-buffer-goto-prev-message)
