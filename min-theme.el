@@ -206,7 +206,7 @@
  ;; elfeed
  '(elfeed-search-date-face         ((t (:inherit message-header-other))))
  '(elfeed-search-title-face        ((t (:inherit font-lock-comment-face :strike-through t))))
- '(elfeed-search-unread-title-face ((t (:inherit default :weight normal))))
+ '(elfeed-search-unread-title-face ((t (:inherit default))))
  '(elfeed-search-unread-title-face ((t (:inherit default :strike-through nil))))
  '(elfeed-search-feed-face         ((t (:inherit font-lock-type-face))))
  '(elfeed-search-tag-face          ((t (:inherit font-lock-variable-name-face))))
