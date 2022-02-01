@@ -182,6 +182,7 @@
  '(gnus-header-content ((t (:inherit message-header-to))))
 
  '(mu4e-header-highlight-face ((t (:inherit hl-line))))
+ '(mu4e-replied-face          ((t (:inherit font-lock-comment-face))))
 
  ;; mew
  '(mew-face-body-cite1       ((t (:inherit font-lock-comment-face))))
