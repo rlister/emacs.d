@@ -82,8 +82,8 @@
   (setq custom-file "~/.emacs.d/custom.el")) ;stop customize from polluting init.el
 
 (with-eval-after-load 'dired
-  (setq dired-guess-shell-alist-user '(("\\.pdf\\'" "mupdf")))
   (setq dired-listing-switches "-alh"))
+  (setq dired-guess-shell-alist-user '(("\\." "xdg-open")))
 
 (with-eval-after-load 'isearch
   (setq isearch-lax-whitespace t)       ;space matches any non-word
