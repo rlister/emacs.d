@@ -180,6 +180,7 @@
  '(gnus-header-from ((t (:inherit message-header-newsgroups))))
  '(gnus-header-subject ((t (:inherit message-header-subject))))
  '(gnus-header-content ((t (:inherit message-header-to))))
+ '(mm-uu-extract ((t (:inherit (font-lock-preprocessor-face fixed-pitch)))))
 
  '(mu4e-header-highlight-face ((t (:inherit hl-line))))
  '(mu4e-replied-face          ((t (:inherit font-lock-comment-face))))
