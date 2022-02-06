@@ -23,7 +23,7 @@
 
  ;; mode-line
  '(mode-line           ((t (:foreground "aquamarine3" :background "grey14" :box nil))))
- '(mode-line-inactive  ((t (:foreground "grey50" :background "grey7" :box nil :weight normal))))
+ '(mode-line-inactive  ((t (:foreground "grey50" :background "grey7" :box nil))))
  '(mode-line-buffer-id ((t (:foregrount "PaleGreen"))))
  '(mode-line-highlight ((t (:foreground "Cyan" :box nil))))
 
