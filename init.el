@@ -1,6 +1,6 @@
 (setq debug-on-error nil)               ;turn on for debugging
 ;; (setq warning-minimum-level :emergency) ;prevent warnings buffer
-(setq native-comp-async-report-warnings-errors :silent) ;log warnings but not pop up the *Warnings* buffer
+(setq native-comp-async-report-warnings-errors 'silent) ;log warnings but not pop up the *Warnings* buffer
 
 (add-to-list 'load-path "~/src/emacs.d")
 
