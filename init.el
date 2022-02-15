@@ -111,7 +111,8 @@
 
 (with-eval-after-load 'vertico
   (setq completion-styles '(orderless))
-  (marginalia-mode +1))
+  (marginalia-mode +1)
+  (define-key vertico-map [remap switch-to-buffer] #'vertico-exit))
 
 (with-eval-after-load 'orderless
   (setq completion-category-defaults nil)) ;prevent overrides of styles
