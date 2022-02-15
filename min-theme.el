@@ -78,6 +78,11 @@
  ;; grep-like modes
  '(wgrep-face ((t (:inherit highlight))))
 
+ '(dired-broken-symlink     ((t (:inherit error))))
+ '(dired-async-mode-message ((t (:inherit warning))))
+ '(dired-async-message      ((t (:inherit success))))
+ '(dired-async-failures     ((t (:inherit error))))
+
  ;; org-mode
  '(org-level-1              ((t (:inherit font-lock-function-name-face :height 1.2))))
  '(org-level-2              ((t (:inherit font-lock-keyword-face :height 1.1))))
