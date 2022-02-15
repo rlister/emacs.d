@@ -178,6 +178,7 @@
  '(message-header-newsgroups ((t (:inherit font-lock-keyword-face))))
  '(message-header-subject    ((t (:inherit font-lock-function-name-face))))
  '(message-header-to         ((t (:inherit (font-lock-type-face fixed-pitch)))))
+ '(message-header-cc         ((t (:inherit (font-lock-type-face fixed-pitch)))))
  '(message-header-other      ((t (:inherit font-lock-variable-name-face))))
  '(message-header-xheader    ((t (:inherit font-lock-comment-face))))
 
