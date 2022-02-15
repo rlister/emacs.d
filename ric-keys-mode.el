@@ -34,7 +34,7 @@
     (define-key map (kbd "C-c i") #'string-inflection-all-cycle)
     (define-key map (kbd "C-c j") #'avy-goto-word-1)
     (define-key map (kbd "C-c l") #'link-hint-open-link)
-    (define-key map (kbd "C-c m") #'imenu)
+    (define-key map (kbd "C-c m") #'mu4e)
     (define-key map (kbd "C-c o") #'org-agenda)
     (define-key map (kbd "C-c r") #'rg)
     (define-key map (kbd "C-c R") #'ric/code-review-link-hint)
