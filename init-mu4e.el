@@ -41,4 +41,8 @@
 (setq message-sendmail-extra-arguments '("--read-envelope-from")) ;get cfg from sender
 (setq message-send-mail-function 'message-send-mail-with-sendmail)
 
+(define-key mu4e-main-mode-map (kbd "q") #'bury-buffer)
+(define-key mu4e-main-mode-map (kbd "Q") #'mu4e-quit)
+(define-key mu4e-main-mode-map (kbd "i") (kbd "ji"))
+
 (setq gnus-inhibit-mime-unbuttonizing t) ;show attachment buttons for all mime parts, including inline images
