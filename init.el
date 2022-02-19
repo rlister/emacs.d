@@ -139,6 +139,9 @@
 (with-eval-after-load 'org-capture
   (load "init-org-capture"))
 
+(with-eval-after-load 'eshell
+  (setq eshell-banner-message ""))
+
 (with-eval-after-load 'vterm
   (load "init-vterm"))
 
