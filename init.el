@@ -196,6 +196,8 @@
 (with-eval-after-load 'mu4e
   (load "init-mu4e"))
 
+(add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
+
 (autoload 'font-height-increase "font-height" nil t)
 (autoload 'no-mouse-mode "no-mouse-mode" nil t)
 
