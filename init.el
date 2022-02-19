@@ -171,7 +171,9 @@
           (work . "~/.config/gcalcli/work"))))
 
 (with-eval-after-load 'markdown-mode
-  (add-hook 'markdown-mode-hook #'visual-line-mode))
+  (add-hook 'markdown-mode-hook #'visual-line-mode)
+  (define-key markdown-mode-map (kbd "C-c v") #'markdown-view-mode)
+  (define-key markdown-view-mode-map (kbd "C-c v") #'markdown-mode))
 
 (with-eval-after-load 'slack
   (load "init-slack"))
