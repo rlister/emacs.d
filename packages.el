@@ -4,6 +4,7 @@
     bbdb-vcard
     code-review
     dockerfile-mode
+    dumb-jump
     easy-kill
     elfeed
     forge
@@ -17,6 +18,7 @@
     org-present
     rainbow-mode
     slack
+    string-inflection
     vertico
     visible-mark
     vterm)
