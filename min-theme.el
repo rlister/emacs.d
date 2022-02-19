@@ -144,6 +144,10 @@
  ;; '(magit-diff-none                   ((t (:foreground "grey37"))))
  ;; '(magit-reflog-commit               ((t (:foreground "PaleGreen"))))
 
+ '(eshell-prompt        ((t (:inherit link))))
+ '(eshell-ls-executable ((t (:weight normal :inherit success))))
+ '(eshell-ls-missing    ((t (:weight normal :inherit error))))
+
  ;; vterm ansi faces, fg is ansi 0-7, bg is ansi 8-15
  '(vterm-color-black   ((t (:foreground "SlateGrey"     :background "LightSlateGrey"))))
  '(vterm-color-red     ((t (:foreground "IndianRed"     :background "IndianRed1"))))
