@@ -33,6 +33,7 @@
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 (setq version-control t)
 (setq delete-old-versions t)
+(setq bookmark-save-flag 1)             ;save after any modification
 
 (transient-mark-mode -1)                ;do not highlight region
 (setq select-active-regions nil)        ;do not send all regions to primary
