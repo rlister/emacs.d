@@ -62,7 +62,6 @@
     (define-key map (kbd "<insert> f") #'project-find-file)
     (define-key map (kbd "<insert> b") #'project-switch-to-buffer)
     (define-key map (kbd "<insert> t") #'project-switch-to-buffer)
-    map)
-  )
+    map))
 
 (provide 'ric-keys-mode)
