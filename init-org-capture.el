@@ -1,3 +1,5 @@
+(setq org-capture-bookmark nil)
+
 (setq org-capture-templates
       '(("t" "Todo" entry (file+olp+datetree "~/src/doc/work.org")
          "* TODO %?" :empty-lines 0 :tree-type week)
