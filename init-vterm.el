@@ -16,6 +16,8 @@
 (define-key vterm-mode-map (kbd "<C-down>") #'vterm-next-prompt)
 (define-key vterm-mode-map (kbd "C-z") #'vterm--self-insert)
 
+(define-key vterm-copy-mode-map (kbd "<C-return>") #'vterm-copy-mode)
+
 (defun ric/vterm-mark-last-output ()
   "Mark the last batch of output from a shell command."
   (interactive)
