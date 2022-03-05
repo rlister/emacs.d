@@ -19,11 +19,6 @@
 (put 'narrow-to-region 'disabled nil)
 (put 'narrow-to-page 'disabled nil)
 
-;; modeline display
-(setq display-time-24hr-format t)
-(display-time-mode 1)
-(column-number-mode t)
-
 ;; buffer name display
 ;; (setq uniquify-buffer-name-style 'post-forward)
 (setq uniquify-buffer-name-style 'forward)
