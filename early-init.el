@@ -10,6 +10,7 @@
 (tooltip-mode -1)                       ;display tooltips in minibuffer
 (blink-cursor-mode -1)                  ;no blink in gui
 (setq visible-cursor nil)               ;no blink in xterm
+(setq copy-region-blink-delay 0)        ;no blink on copy
 (setq use-dialog-box nil)               ;no dialog for mouse commands
 (setq use-file-dialog nil)              ;ditto
 
