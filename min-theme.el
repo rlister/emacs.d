@@ -148,13 +148,21 @@
  '(eshell-ls-executable ((t (:weight normal :inherit success))))
  '(eshell-ls-missing    ((t (:weight normal :inherit error))))
 
+ '(term-color-yellow  ((t (:foreground "PaleGoldenrod" :background "LightGoldenrod"))))
+ '(term-color-yellow  ((t (:foreground "PaleGoldenrod" :background "LightGoldenrod"))))
+ '(term-color-red     ((t (:foreground "IndianRed"     :background "IndianRed1"))))
+
+ '(ansi-color-yellow  ((t (:inherit term-color-yellow))))
+ '(ansi-color-magenta ((t (:inherit term-color-magenta))))
+ '(ansi-color-red     ((t (:inherit term-color-red))))
+
  ;; vterm ansi faces, fg is ansi 0-7, bg is ansi 8-15
  '(vterm-color-black   ((t (:foreground "SlateGrey"     :background "LightSlateGrey"))))
  '(vterm-color-red     ((t (:foreground "IndianRed"     :background "IndianRed1"))))
  '(vterm-color-green   ((t (:foreground "PaleGreen"     :background "PaleGreen1"))))
- '(vterm-color-yellow  ((t (:foreground "PaleGoldenrod" :background "LightGoldenrod"))))
+ '(vterm-color-yellow  ((t (:inherit term-color-yellow))))
  '(vterm-color-blue    ((t (:foreground "DodgerBlue"    :background "DodgerBlue1"))))
- '(vterm-color-magenta ((t (:foreground "#B5A0FF"       :background "MediumPurple1"))))
+ '(vterm-color-magenta ((t (:inherit term-color-magenta))))
  '(vterm-color-cyan    ((t (:foreground "cyan3"         :background "cyan1"))))
  '(vterm-color-white   ((t (:foreground "azure4"        :background "azure1"))))
 
