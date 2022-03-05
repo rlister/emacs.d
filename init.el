@@ -73,8 +73,8 @@
   (setq custom-file "~/.emacs.d/custom.el")) ;stop customize from polluting init.el
 
 (with-eval-after-load 'dired
-  (setq dired-listing-switches "-alh"))
   (setq dired-guess-shell-alist-user '(("\\." "xdg-open")))
+  (setq dired-listing-switches "-alh"))
 
 (with-eval-after-load 'isearch
   (setq isearch-lax-whitespace t)       ;space matches any non-word
@@ -182,7 +182,6 @@
 (autoload 'ric-keys-mode "ric-keys-mode" nil t)
 (add-hook 'window-setup-hook #'ric-keys-mode)
 
-(autoload 'mew "mew" nil t)           ;loads mew config from ~/.mew.el
 (autoload 'mu4e "mu4e" nil t)
 (with-eval-after-load 'mu4e
   (load "init-mu4e"))
