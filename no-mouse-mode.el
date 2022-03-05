@@ -6,9 +6,13 @@
   :keymap
   (let ((map (make-sparse-keymap)))
     (define-key map [mouse-1] #'ignore)
+    (define-key map [C-mouse-1] #'ignore)
     (define-key map [down-mouse-1] #'ignore)
+    (define-key map [C-down-mouse-1] #'ignore)
     (define-key map [mouse-3] #'ignore)
+    (define-key map [C-mouse-3] #'ignore)
     (define-key map [down-mouse-3] #'ignore)
+    (define-key map [C-down-mouse-3] #'ignore)
     map))
 
 (provide 'no-mouse-mode)

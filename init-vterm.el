@@ -6,6 +6,8 @@
 
 (setq vterm-shell "screen")
 
+;; (define-key vterm-mode-map (kbd "<M-return>") #'vterm-copy-mode)
+(define-key vterm-mode-map (kbd "M-r") #'vterm-send-C-r)
 (define-key vterm-mode-map (kbd "<C-backspace>") #'vterm-send-meta-backspace)
 (define-key vterm-mode-map (kbd "<C-return>") #'ric/vterm-mark-last-output)
 (define-key vterm-mode-map (kbd "<C-up>") #'vterm-previous-prompt)
