@@ -23,7 +23,7 @@
     (define-key map (kbd "C-= g") #'slack-group-select)
     (define-key map (kbd "C-= i") #'slack-im-select)
     (define-key map (kbd "C-= u") #'slack-select-unread-rooms)
-    (define-key map (kbd "M-\\") #'mark-sexp)
+    (define-key map (kbd "C-\\") #'mark-sexp)
     (define-key map (kbd "C-c L") #'link-hint-copy-link)
     (define-key map (kbd "C-c c") #'org-capture)
     (define-key map (kbd "C-c e") #'eshell)
