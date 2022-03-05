@@ -12,10 +12,8 @@
   :keymap
   (let ((map (make-sparse-keymap)))
     (define-key map (kbd "<C-tab>") #'hippie-expand)
-    (define-key map (kbd "C-<return>") #'make-frame-command)
-    (define-key map (kbd "M-RET") #'delete-frame)
-    (define-key map (kbd "C-.") #'end-of-buffer)
-    (define-key map (kbd "C-,") #'beginning-of-buffer)
+    (define-key map (kbd "C-,") #'previous-buffer)
+    (define-key map (kbd "C-.") #'next-buffer)
     (define-key map (kbd "C-;") #'comment-or-uncomment-region)
     (define-key map (kbd "C-j") #'forward-whitespace)
     (define-key map (kbd "M-j") #'(lambda () (interactive) (forward-whitespace -1)))
