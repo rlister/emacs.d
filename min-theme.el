@@ -203,6 +203,8 @@
  '(mu4e-header-highlight-face ((t (:inherit hl-line))))
  '(mu4e-replied-face          ((t (:inherit font-lock-comment-face))))
 
+ '(shr-selected-link ((t (:inherit warning))))
+
  ;; mew
  '(mew-face-body-cite1       ((t (:inherit font-lock-comment-face))))
  '(mew-face-body-cite2       ((t (:inherit font-lock-comment-face))))
