@@ -51,6 +51,8 @@
 (setq read-file-name-completion-ignore-case t)
 (setq read-buffer-completion-ignore-case t)
 
+(setq view-read-only t)
+
 ;; default all programming modes to 2 char indent
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
