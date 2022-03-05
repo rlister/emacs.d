@@ -19,12 +19,6 @@
 (put 'narrow-to-region 'disabled nil)
 (put 'narrow-to-page 'disabled nil)
 
-;; buffer name display
-;; (setq uniquify-buffer-name-style 'post-forward)
-(setq uniquify-buffer-name-style 'forward)
-;; (setq uniquify-buffer-name-style 'post-forward)
-;; (setq uniquify-separator " | ")
-
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 (setq version-control t)
 (setq delete-old-versions t)
