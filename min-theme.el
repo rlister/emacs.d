@@ -252,6 +252,9 @@
 
  '(selectrum-current-candidate ((t (:inherit (success highlight)))))
 
+ '(eww-form-submit ((t (:inherit button))))
+ '(eww-form-text   ((t (:inherit mode-line))))
+
  '(w3m-anchor              ((t (:inherit link))))
  '(w3m-image               ((t (:inherit font-lock-comment-face))))
  '(w3m-image-anchor        ((t (:inherit link))))
