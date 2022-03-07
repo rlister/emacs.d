@@ -76,7 +76,9 @@
 
 (with-eval-after-load 'dired
   (setq dired-guess-shell-alist-user '(("\\." "xdg-open")))
-  (setq dired-listing-switches "-alh"))
+  (setq dired-listing-switches "-alh")
+  (define-key dired-mode-map (kbd "_") #'(lambda () (interactive) (dired-do-rename-regexp "^.*$" "_\\&"))) ;prepend underscore
+  (define-key dired-mode-map (kbd "C-c _") #'(lambda () (interactive) (dired-do-rename-regexp "^_" ""))))  ;remove leading underscore
 
 (with-eval-after-load 'isearch
   (setq isearch-lax-whitespace t)       ;space matches any non-word
