@@ -9,8 +9,8 @@
 
 (setq org-refile-targets
       '((nil :maxlevel . 1)
-        ("~/src/doc/work.org" :maxlevel . 3)
-        ("~/src/doc/home.org" :maxlevel . 3)))
+        ("~/src/doc/work.org" :maxlevel . 4)
+        ("~/src/doc/home.org" :maxlevel . 4)))
 
 (setq org-todo-keywords
       '("TODO" "BLOCK(b@/!)" "REVIEW(r@/!)" "WIP(w!)" "|" "DONE(d!)" "CANCELLED(c@)"))
