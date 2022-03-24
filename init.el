@@ -165,6 +165,8 @@
   (load "init-slack"))
 
 (with-eval-after-load 'code-review
+  (setq code-review-new-buffer-window-strategy #'switch-to-buffer))
+
 (with-eval-after-load 'pabbrev
   (load "init-pabbrev"))
 
