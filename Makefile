@@ -15,5 +15,8 @@ check:
 clean:
 	rm -f $(TARGETS)
 
-packages:
-	$(EMACS) -batch -l packages.el
+remote:
+	$(EMACS) -batch -l make.el -f install-remote
+
+local:
+	$(EMACS) -batch -l make.el -f install-local
