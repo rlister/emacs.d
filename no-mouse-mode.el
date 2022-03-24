@@ -6,6 +6,7 @@
 (define-minor-mode no-mouse-mode
   "Minor mode to disable trackpad clicks."
   :lighter " nm"
+  :group 'mouse
   :global t
   :keymap
   (let ((map (make-sparse-keymap)))
