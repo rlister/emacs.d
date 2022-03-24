@@ -137,14 +137,8 @@
 (with-eval-after-load 'vterm
   (load "init-vterm"))
 
-(defun ric/mark-args (&optional arg allow-extend)
-  "Advise mark-word to move backwards if we are effectively at end of line."
-  (if (looking-at "\\W*$")
-      (list -1 t)
-    (list arg t)))
-
-(advice-add 'mark-word :filter-args #'ric/mark-args)
-(advice-add 'mark-sexp :filter-args #'ric/mark-args)
+;; (advice-add 'mark-word :filter-args #'ric-mark-args)
+(advice-add 'mark-sexp :filter-args #'ric-mark-args)
 
 (with-eval-after-load 'elfeed
   (elfeed-load-opml "~/src/doc/elfeed.opml")
@@ -171,11 +165,6 @@
   (load "init-slack"))
 
 (with-eval-after-load 'code-review
-  (setq code-review-new-buffer-window-strategy #'switch-to-buffer)
-  (defun ric/code-review-link-hint ()
-    (interactive)
-    (link-hint-copy-link)
-    (code-review-start (current-kill 0))))
 (with-eval-after-load 'pabbrev
   (load "init-pabbrev"))
 
