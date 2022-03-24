@@ -191,7 +191,7 @@
 (add-hook 'after-init-hook #'vertico-mode)
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
 (add-hook 'window-setup-hook #'winner-mode)
-(add-hook 'server-after-make-frame-hook #'ric/key-translations)
+(add-hook 'server-after-make-frame-hook #'ric-key-translations)
 (run-with-idle-timer 5 nil #'global-visible-mark-mode)
 (run-with-idle-timer 10 nil #'pixel-scroll-mode)
 (run-with-idle-timer 60 nil #'midnight-mode)

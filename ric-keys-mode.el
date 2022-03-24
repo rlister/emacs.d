@@ -1,4 +1,9 @@
-(defun ric/key-translations ()
+;;; ric-keys-mode.el --- minor mode to set keybindings
+
+;; Version: 0
+
+;;;###autoload
+(defun ric-key-translations ()
   (when (display-graphic-p)
     (keyboard-translate ?\C-i ?\H-i)
     (keyboard-translate ?\C-m ?\H-m)))
@@ -7,8 +12,9 @@
 (define-minor-mode ric-keys-mode
   "Set up global bindings to override other modes."
   :lighter " rk"
-  :init-value 1
+  :group 'keyboard
   :global t
+  :init-value 1
   :keymap
   (let ((map (make-sparse-keymap)))
     (define-key map (kbd "<C-tab>") #'hippie-expand)
@@ -73,3 +79,5 @@
     map))
 
 (provide 'ric-keys-mode)
+
+;;; ric-keys-mode.el ends here
