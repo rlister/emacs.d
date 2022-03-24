@@ -40,7 +40,6 @@
 
 (setq epg-pinentry-mode 'loopback) ;pinentry queries in minibuffer
 
-(show-paren-mode 1) ;highlight matching delimiters
 (setq show-paren-when-point-in-periphery t)
 
 (setq scroll-preserve-screen-position t) ;do not lose point
@@ -65,6 +64,9 @@
 (add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode))
 
 (setq-default python-check-command "flake8")
+
+(with-eval-after-load 'prog-mode
+  (show-paren-mode 1))
 
 ;; less garish html rendering
 (with-eval-after-load 'shr
