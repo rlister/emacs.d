@@ -266,6 +266,9 @@
  '(w3m-form-button         ((t (:inherit font-lock-comment-face))))
  '(w3m-header-line-title   ((t (:inherit mode-line))))
  '(w3m-header-line-content ((t (:inherit mode-line :family fixed-pitch))))
+
+ '(pabbrev-suggestions-face ((t (:inherit error))))
+
 )
 
 ;;;###autoload

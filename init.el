@@ -176,6 +176,8 @@
     (interactive)
     (link-hint-copy-link)
     (code-review-start (current-kill 0))))
+(with-eval-after-load 'pabbrev
+  (load "init-pabbrev"))
 
 ;; load theme
 (autoload 'min-theme "min-theme" nil t)
