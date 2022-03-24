@@ -1,3 +1,7 @@
+;;; no-mouse-mode.el --- disable mouse and trackpad
+
+;; Version: 0
+
 ;;;###autoload
 (define-minor-mode no-mouse-mode
   "Minor mode to disable trackpad clicks."
@@ -16,3 +20,5 @@
     map))
 
 (provide 'no-mouse-mode)
+
+;;; no-mouse-mode.el ends here
