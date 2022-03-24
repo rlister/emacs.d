@@ -151,8 +151,6 @@
 (with-eval-after-load 'alert
   (setq alert-default-style 'libnotify))
 
-(add-to-list 'load-path "~/src/gcalcli-mode")
-(autoload 'gcalcli-agenda "gcalcli-mode" nil t)
 (with-eval-after-load 'gcalcli-mode
   (setq gcalcli-bin "~/.local/bin/gcalcli")
   (setq gcalcli-config-alist
