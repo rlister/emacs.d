@@ -1,3 +1,7 @@
+;;; font-height.el --- scale font height for entire frame, including mode-line
+
+;; Version: 0
+
 (defun font-height-adjust (factor)
   "Adjust default font height for current frame by scaling factor."
   (let* ((cur (face-attribute 'default :height))
@@ -19,10 +23,11 @@
   (interactive)
   (font-height-adjust 0.9))
 
-;;;###autoload
 (defun font-height-reset ()
   "Reset font height to value configured at startup."
   (interactive)
   (set-face-font 'default "fontset-startup"))
 
 (provide 'font-height)
+
+;;; font-height.el ends here
