@@ -26,7 +26,8 @@
 
 (defconst local-packages
   '(ric-lib
-    font-height)
+    font-height
+    no-mouse-mode)
   "Local packages to install.")
 
 ;; setup package.el
