@@ -216,6 +216,9 @@
 
  '(shr-selected-link ((t (:inherit warning))))
 
+ '(flyspell-duplicate ((t (:underline (:color "DarkGoldenrod")))))
+ '(flyspell-incorrect ((t (:underline (:color "IndianRed1")))))
+
  ;; mew
  '(mew-face-body-cite1       ((t (:inherit font-lock-comment-face))))
  '(mew-face-body-cite2       ((t (:inherit font-lock-comment-face))))
