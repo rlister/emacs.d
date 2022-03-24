@@ -61,12 +61,13 @@
 (setq-default js-indent-level 2)
 (setq-default css-indent-offset 2)
 
-(add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode))
-
 (setq-default python-check-command "flake8")
 
 (with-eval-after-load 'prog-mode
   (show-paren-mode 1))
+
+(with-eval-after-load 'ruby-mode
+  (add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode)))
 
 ;; less garish html rendering
 (with-eval-after-load 'shr
