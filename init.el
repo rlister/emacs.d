@@ -201,3 +201,4 @@
 (add-hook 'server-after-make-frame-hook #'ric/key-translations)
 (run-with-idle-timer 5 nil #'global-visible-mark-mode)
 (run-with-idle-timer 10 nil #'pixel-scroll-mode)
+(run-with-idle-timer 60 nil #'midnight-mode)
