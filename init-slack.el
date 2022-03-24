@@ -4,7 +4,7 @@
 (define-key slack-mode-map (kbd "#") #'slack-message-embed-channel)
 (define-key slack-mode-map (kbd "C-c C-e") #'slack-message-edit)
 (define-key slack-mode-map (kbd "C-c C-k") #'slack-message-delete)
-(define-key slack-mode-map (kbd "C-c e") #'slack-insert-emoji)
+(define-key slack-mode-map (kbd "C-c C-;") #'slack-insert-emoji)
 (define-key slack-mode-map (kbd "C-c C-r") #'slack-message-add-reaction)
 (define-key slack-mode-map (kbd "C-c C-y") #'slack-clipboard-image-upload)
 (define-key slack-mode-map (kbd "C-c w") #'slack-message-write-another-buffer)
