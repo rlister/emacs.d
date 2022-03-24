@@ -27,6 +27,7 @@
 (defconst local-packages
   '(ric-lib
     font-height
+    min-theme
     no-mouse-mode)
   "Local packages to install.")
 

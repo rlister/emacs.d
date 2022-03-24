@@ -1,3 +1,7 @@
+;;; min-theme.el --- Minimalist theme
+
+;; Version: 0
+
 (deftheme min "Minimalist theme")
 
 (custom-theme-set-faces
@@ -276,3 +280,5 @@
   (load-theme 'min t))
 
 (provide-theme 'min)
+
+;;; min-theme.el ends here
