@@ -76,6 +76,10 @@
     (define-key map (kbd "M-i") #'imenu)
     (define-key map (kbd "M-o") #'project-find-file)
     (define-key map (kbd "M-s r") #'anzu-query-replace)
+    (define-key map (kbd "s-<up>") #'enlarge-window)
+    (define-key map (kbd "s-<down>") #'shrink-window)
+    (define-key map (kbd "s-<right>") #'enlarge-window-horizontally)
+    (define-key map (kbd "s-<left>") #'shrink-window-horizontally)
     map))
 
 (provide 'ric-keys-mode)
