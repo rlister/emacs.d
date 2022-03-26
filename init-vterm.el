@@ -10,7 +10,7 @@
 (define-key vterm-mode-map (kbd "<C-down>") #'vterm-next-prompt)
 (define-key vterm-mode-map (kbd "C-z") #'vterm--self-insert)
 (define-key vterm-mode-map (kbd "M-r") #'vterm-send-C-r)
-(define-key vterm-mode-map (kbd "M-v") #'(lambda () (interactive) (vterm-copy-mode) (scroll-down-command)))
+(define-key vterm-mode-map (kbd "M-v") (lambda () (interactive) (vterm-copy-mode) (scroll-down-command)))
 
 (define-key vterm-copy-mode-map (kbd "<C-return>") #'vterm-copy-mode)
 (define-key vterm-copy-mode-map (kbd "<C-up>") #'vterm-previous-prompt)

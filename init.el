@@ -81,8 +81,8 @@
   (setq dired-guess-shell-alist-user '(("\\." "xdg-open")))
   (setq dired-listing-switches "-alh")
   (add-hook 'dired-mode-hook 'turn-on-gnus-dired-mode) ;attach files from dired to mu4e
-  (define-key dired-mode-map (kbd "_") #'(lambda () (interactive) (dired-do-rename-regexp "^.*$" "_\\&"))) ;prepend underscore
-  (define-key dired-mode-map (kbd "C-c _") #'(lambda () (interactive) (dired-do-rename-regexp "^_" ""))))  ;remove leading underscore
+  (define-key dired-mode-map (kbd "_") (lambda () (interactive) (dired-do-rename-regexp "^.*$" "_\\&"))) ;prepend underscore
+  (define-key dired-mode-map (kbd "C-c _") (lambda () (interactive) (dired-do-rename-regexp "^_" ""))))  ;remove leading underscore
 
 (with-eval-after-load 'isearch
   (setq isearch-lax-whitespace t)       ;space matches any non-word

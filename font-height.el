@@ -9,7 +9,7 @@
          (rnd (* 10 (round new 10))))    ;round to nearest 10
     (set-face-attribute 'default (selected-frame) :height rnd)
     (message "font height %d -> %d" cur rnd)
-    (run-with-timer 3 nil #'(lambda () (message nil)))))
+    (run-with-timer 3 nil (lambda () (message nil)))))
 
 ;;;###autoload
 (defun font-height-increase ()
