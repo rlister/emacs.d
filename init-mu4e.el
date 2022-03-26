@@ -4,12 +4,11 @@
 (setq mu4e-context-policy 'pick-first)     ;start with default context
 (setq mu4e-main-buffer-name "*mu4e-main*") ;remove leading spc to unhide buffer
 (setq mu4e-headers-thread-last-child-prefix '("\\>" . "└ ")) ;nicer ascii char
-(setq mu4e-completing-read-function 'completing-read) ;default is ido for some reason
+(setq mu4e-completing-read-function #'completing-read) ;default is ido for some reason
 (setq mu4e-headers-fields '((:human-date . 12) (:flags . 6) (:maildir . 15) (:mailing-list . 10) (:from-or-to . 22) (:subject)))
 
 (setq mu4e-contexts
-      `(
-        ,(make-mu4e-context
+      `(,(make-mu4e-context
           :name "home"
           :match-func (lambda (m) (when m (string-match-p "^/home" (mu4e-message-field m :maildir))))
           :vars '((user-mail-address . "rlister@gmail.com"  )
@@ -36,7 +35,7 @@
                                              (:maildir "/work/trash" :key ?t)))))))
 
 (setq sendmail-program "/usr/bin/msmtp")
-(setq send-mail-function 'smtpmail-send-it) ;do not query
+(setq send-mail-function #'smtpmail-send-it) ;do not query
 (setq message-sendmail-f-is-evil t)         ;do not add username to cmdline
 (setq message-sendmail-extra-arguments '("--read-envelope-from")) ;get cfg from sender
 (setq message-send-mail-function 'message-send-mail-with-sendmail)
