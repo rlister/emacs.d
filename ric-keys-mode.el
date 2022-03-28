@@ -36,6 +36,7 @@
     (define-key map (kbd "C-= u") #'slack-select-unread-rooms)
     (define-key map (kbd "C-\\") #'mark-sexp)
     (define-key map (kbd "C-`") #'ric-mark-string-backward)
+    (define-key map (kbd "C-c '") #'ruby-toggle-string-quotes)
     (define-key map (kbd "C-c I") #'mark-inside-backward-sexp)
     (define-key map (kbd "C-c L") #'link-hint-copy-link)
     (define-key map (kbd "C-c O") #'mark-backward-sexp)
