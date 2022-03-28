@@ -63,6 +63,10 @@
 
 (setq-default python-check-command "flake8")
 
+(with-eval-after-load 'view-mode
+  (define-key view-mode-map (kbd "n") #'next-line)
+  (define-key view-mode-map (kbd "p") #'previous-line))
+
 (with-eval-after-load 'prog-mode
   (show-paren-mode 1))
 
