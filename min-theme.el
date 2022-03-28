@@ -182,6 +182,7 @@
  '(vterm-color-white   ((t (:inherit term-color-white))))
 
  '(markdown-code-face ((t (:inherit (font-lock-preprocessor-face fixed-pitch)))))
+ '(markdown-line-break-face ((t (:underline nil))))
 
  ;; slack faces (uses lui)
  '(lui-button-face                    ((t (:inherit (link underline)))))
