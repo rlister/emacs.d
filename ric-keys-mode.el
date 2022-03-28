@@ -42,6 +42,7 @@
     (define-key map (kbd "C-c O") #'mark-backward-sexp)
     (define-key map (kbd "C-c R") #'ric-code-review-link-hint)
     (define-key map (kbd "C-c a") #'org-agenda)
+    (define-key map (kbd "C-c b") #'project-switch-to-buffer)
     (define-key map (kbd "C-c c") #'org-capture)
     (define-key map (kbd "C-c d") #'ric-duplicate-line)
     (define-key map (kbd "C-c e") #'eshell)
