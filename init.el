@@ -71,6 +71,7 @@
   (show-paren-mode 1))
 
 (with-eval-after-load 'ruby-mode
+  (add-to-list 'auto-mode-alist '("Envfile" . ruby-mode))
   (add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode)))
 
 ;; less garish html rendering
