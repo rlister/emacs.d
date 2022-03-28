@@ -24,9 +24,9 @@
 (setq delete-old-versions t)
 (setq bookmark-save-flag 1)             ;save after any modification
 
-(transient-mark-mode -1)                ;do not highlight region
-(setq select-active-regions nil)        ;do not send all regions to primary
-(setq select-enable-primary t)          ;yank from primary set in other apps
+(setq transient-mark-mode nil)    ;do not highlight region
+(setq select-active-regions nil)  ;do not send all regions to primary
+(setq select-enable-primary t)    ;yank from primary set in other apps
 
 ;; (setq pop-up-windows t) ;how display-buffer should behave
 (setq Man-notify-method 'pushy)
