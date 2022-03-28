@@ -176,6 +176,10 @@
 (with-eval-after-load 'pabbrev
   (load "init-pabbrev"))
 
+(with-eval-after-load 'expand-region
+  (setq expand-region-autocopy-register "e")
+  (setq expand-region-show-usage-message nil))
+
 ;; load theme
 (autoload 'min-theme "min-theme" nil t)
 (add-hook 'after-init-hook #'min-theme)
