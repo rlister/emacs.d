@@ -30,3 +30,6 @@
         ;;   (alltodo ""
         ;;            ((org-agenda-files '("~/.org-jira/"))))))
         ))
+
+(define-key org-agenda-mode-map (kbd "C-<down>") #'org-agenda-next-date-line)
+(define-key org-agenda-mode-map (kbd "C-<up>") #'org-agenda-previous-date-line)
