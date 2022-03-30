@@ -55,6 +55,7 @@
     (define-key map (kbd "C-c r") #'rg)
     (define-key map (kbd "C-c t") #'vterm)
     (define-key map (kbd "C-c u") #'winner-undo)
+    (define-key map (kbd "C-c v") #'view-mode)
     (define-key map (kbd "C-c y") #'browse-kill-ring)
     (define-key map (kbd "C-j") #'forward-whitespace)
     (define-key map (kbd "C-t") #'switch-to-buffer)
