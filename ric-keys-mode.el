@@ -24,7 +24,7 @@
     (define-key map (kbd "<insert>") #'kill-ring-save)
     (define-key map (kbd "C-'") #'ric-mark-string-forward)
     (define-key map (kbd "C-(") #'ric-mark-paren-backward)
-    (define-key map (kbd "C-)") #'ric-mark-paren)
+    (define-key map (kbd "C-)") #'ric-mark-paren-forward)
     (define-key map (kbd "C-,") #'previous-buffer)
     (define-key map (kbd "C-.") #'next-buffer)
     (define-key map (kbd "C-;") #'comment-or-uncomment-region)
