@@ -274,6 +274,8 @@
 
  '(pabbrev-suggestions-face ((t (:inherit error))))
 
+ '(embrace-help-pair-face ((t (:inherit font-lock-string-face))))
+ '(embrace-help-mark-func-face ((t (:inherit font-lock-type-face))))
 )
 
 ;;;###autoload
