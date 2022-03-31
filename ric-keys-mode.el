@@ -75,7 +75,7 @@
     (define-key map (kbd "M-Q") #'ric-unfill-paragraph)
     (define-key map (kbd "M-SPC") #'cycle-spacing)
     (define-key map (kbd "M-[") #'ric-mark-paren-backward)
-    (define-key map (kbd "M-]") #'ric-mark-paren)
+    (define-key map (kbd "M-]") #'ric-mark-paren-forward)
     (define-key map (kbd "M-i") #'imenu)
     (define-key map (kbd "M-o") #'project-find-file)
     (define-key map (kbd "M-s r") #'anzu-query-replace)
