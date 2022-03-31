@@ -2,8 +2,8 @@
 
 ;; Version: 0
 
-;;;###autoload
 (defun ric-key-translations ()
+  "Make C-i and C-m available at hyper bindings."
   (when (display-graphic-p)
     (keyboard-translate ?\C-i ?\H-i)
     (keyboard-translate ?\C-m ?\H-m)))
@@ -15,6 +15,7 @@
   :group 'keyboard
   :global t
   :init-value 1
+  :after-hook (ric-key-translations)
   :keymap
   (let ((map (make-sparse-keymap)))
     (define-key map (kbd "<C-tab>") #'hippie-expand)
