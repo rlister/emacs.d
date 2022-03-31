@@ -22,7 +22,6 @@
     (define-key map (kbd "<f2>") #'font-height-decrease)
     (define-key map (kbd "<f3>") #'font-height-increase)
     (define-key map (kbd "<f4>") #'font-height-reset)
-    (define-key map (kbd "<insert>") #'kill-ring-save)
     (define-key map (kbd "C-'") #'ric-mark-string-forward)
     (define-key map (kbd "C-(") #'ric-mark-paren-backward)
     (define-key map (kbd "C-)") #'ric-mark-paren-forward)
@@ -83,6 +82,8 @@
     (define-key map (kbd "s-<down>") #'shrink-window)
     (define-key map (kbd "s-<right>") #'enlarge-window-horizontally)
     (define-key map (kbd "s-<left>") #'shrink-window-horizontally)
+    (define-key map (kbd "<insert>") #'insert-register)
+    (define-key map (kbd "M-<insert>") #'copy-to-register)
     map))
 
 (provide 'ric-keys-mode)
