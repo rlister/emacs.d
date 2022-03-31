@@ -179,28 +179,24 @@
   (setq expand-region-autocopy-register "e")
   (setq expand-region-show-usage-message nil))
 
-;; load theme
-(autoload 'min-theme "min-theme" nil t)
-(add-hook 'after-init-hook #'min-theme)
-
-;; load keybindings
-(autoload 'ric-keys-mode "ric-keys-mode" nil t)
-(add-hook 'window-setup-hook #'ric-keys-mode)
-
 (autoload 'mu4e "mu4e" nil t)
 (with-eval-after-load 'mu4e
   (load "init-mu4e"))
 
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
+(autoload 'min-theme "min-theme" nil t)
+(autoload 'ric-keys-mode "ric-keys-mode" nil t)
 (autoload 'font-height-increase "font-height" nil t)
 (autoload 'no-mouse-mode "no-mouse-mode" nil t)
 
 ;; delayed loads
+(add-hook 'after-init-hook #'min-theme)
 (add-hook 'after-init-hook #'vertico-mode)
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
 (add-hook 'window-setup-hook #'winner-mode)
 (add-hook 'server-after-make-frame-hook #'ric-key-translations)
+(add-hook 'window-setup-hook #'ric-keys-mode)
 (run-with-idle-timer 5 nil #'global-visible-mark-mode)
-(run-with-idle-timer 10 nil #'pixel-scroll-mode)
+(run-with-idle-timer 15 nil #'pixel-scroll-mode)
 (run-with-idle-timer 60 nil #'midnight-mode)
