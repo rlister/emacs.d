@@ -145,7 +145,6 @@
 (with-eval-after-load 'vterm
   (load "init-vterm"))
 
-;; (advice-add 'mark-word :filter-args #'ric-mark-args)
 (advice-add 'mark-sexp :filter-args #'ric-mark-args)
 
 (with-eval-after-load 'elfeed
