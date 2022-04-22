@@ -127,6 +127,10 @@
 (with-eval-after-load 'magit
   (setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1))
 
+(with-eval-after-load 'smerge-mode
+  (define-key smerge-mode-map (kbd "C-<down>") #'smerge-next)
+  (define-key smerge-mode-map (kbd "C-<up>") #'smerge-prev))
+
 (with-eval-after-load 'avy
   (setq avy-keys '(?t ?n ?s ?e ?r ?i ?a ?o ?f ?u ?d ?h ?l ?p ?g ?m ?c))) ;colemak-friendly keys
 
