@@ -151,7 +151,6 @@
 (with-eval-after-load 'vterm
   (load "init-vterm"))
 
-;; (advice-add 'mark-word :filter-args #'ric-mark-args)
 (advice-add 'mark-sexp :filter-args #'ric-mark-args)
 
 (with-eval-after-load 'elfeed
@@ -186,19 +185,19 @@
   (setq expand-region-autocopy-register "e")
   (setq expand-region-show-usage-message nil))
 
-;; load theme
-;; (autoload 'min-theme "min-theme" nil t)
-
-;; load keybindings
-;; (autoload 'ric-keys-mode "ric-keys-mode" nil t)
-
 (autoload 'mu4e "mu4e" nil t)
 (with-eval-after-load 'mu4e
   (load "init-mu4e"))
 
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
+;; (autoload 'min-theme "min-theme" nil t)
+;; (autoload 'ric-keys-mode "ric-keys-mode" nil t)
+(autoload 'font-height-increase "font-height" nil t)
+(autoload 'no-mouse-mode "no-mouse-mode" nil t)
+
 ;; delayed loads
+(add-hook 'after-init-hook #'min-theme)
 (add-hook 'after-init-hook #'vertico-mode)
 (add-hook 'after-init-hook #'min-theme)
 (add-hook 'window-setup-hook #'ric-keys-mode)

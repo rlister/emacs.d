@@ -2,8 +2,8 @@
 
 ;; Version: 0
 
-;;;###autoload
 (defun ric-key-translations ()
+  "Make C-i and C-m available at hyper bindings."
   (when (display-graphic-p)
     (keyboard-translate ?\C-i ?\H-i)
     (keyboard-translate ?\C-m ?\H-m)))
@@ -15,13 +15,13 @@
   :group 'keyboard
   :global t
   :init-value 1
+  :after-hook (ric-key-translations)
   :keymap
   (let ((map (make-sparse-keymap)))
     (define-key map (kbd "<C-tab>") #'hippie-expand)
     (define-key map (kbd "<f2>") #'font-height-decrease)
     (define-key map (kbd "<f3>") #'font-height-increase)
     (define-key map (kbd "<f4>") #'font-height-reset)
-    (define-key map (kbd "<insert>") #'kill-ring-save)
     (define-key map (kbd "C-'") #'ric-mark-string-forward)
     (define-key map (kbd "C-(") #'ric-mark-paren-backward)
     (define-key map (kbd "C-)") #'ric-mark-paren-forward)
@@ -74,7 +74,7 @@
     (define-key map (kbd "M-Q") #'ric-unfill-paragraph)
     (define-key map (kbd "M-SPC") #'cycle-spacing)
     (define-key map (kbd "M-[") #'ric-mark-paren-backward)
-    (define-key map (kbd "M-]") #'ric-mark-paren)
+    (define-key map (kbd "M-]") #'ric-mark-paren-forward)
     (define-key map (kbd "M-i") #'imenu)
     (define-key map (kbd "M-o") #'project-find-file)
     (define-key map (kbd "M-s r") #'anzu-query-replace)
@@ -82,6 +82,8 @@
     (define-key map (kbd "s-<down>") #'shrink-window)
     (define-key map (kbd "s-<right>") #'enlarge-window-horizontally)
     (define-key map (kbd "s-<left>") #'shrink-window-horizontally)
+    (define-key map (kbd "<insert>") #'insert-register)
+    (define-key map (kbd "M-<insert>") #'copy-to-register)
     map))
 
 (provide 'ric-keys-mode)
