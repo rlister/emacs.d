@@ -75,13 +75,13 @@
   (end-of-buffer))
 
 (defun ric/kill-slack-message-buffers ()
-  "Kill all slack message buffers."
+  "Kill all slack message and thread buffers."
   (interactive)
   (save-excursion
     (let ((count 0))
       (dolist (buffer (buffer-list))
         (set-buffer buffer)
-        (when (equal major-mode 'slack-message-buffer-mode)
+        (when (string-match "^slack-" (symbol-name major-mode))
           (setq count (1+ count))
           (kill-buffer buffer)))
       (message "Killed %i slack buffers" count))))
