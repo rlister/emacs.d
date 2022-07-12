@@ -35,6 +35,7 @@
  :default t
  :name (plist-get (car (auth-source-search :host "slack")) :user)
  :token (auth-source-pick-first-password :host "slack")
+ :cookie (auth-source-pick-first-password :host "slack^cookie")
  :display-profile-image nil
  :mark-as-read-immediately t
  :modeline-enabled t
