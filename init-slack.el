@@ -19,6 +19,7 @@
 (define-key slack-thread-message-buffer-mode-map (kbd "C-c e") #'slack-insert-emoji)
 (define-key slack-thread-message-buffer-mode-map (kbd "C-c C-r") #'slack-message-add-reaction)
 (define-key slack-thread-message-buffer-mode-map (kbd "C-c C-y") #'slack-clipboard-image-upload)
+(define-key slack-thread-message-buffer-mode-map (kbd "C-c C-;") #'slack-insert-emoji)
 
 (setq slack-render-image-p t)
 (setq slack-buffer-emojify nil)
