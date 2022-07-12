@@ -220,6 +220,9 @@
  '(gnus-header-content ((t (:inherit message-header-to))))
  '(mm-uu-extract ((t (:inherit (font-lock-preprocessor-face fixed-pitch)))))
 
+ ;; suspicious links in gnus/shr
+ '(textsec-suspicious ((t (:inherit error))))
+
  '(mu4e-header-highlight-face ((t (:inherit hl-line))))
  '(mu4e-replied-face          ((t (:inherit font-lock-comment-face))))
 
