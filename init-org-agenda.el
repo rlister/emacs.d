@@ -20,6 +20,9 @@
         ("h" "Home tasks"
          ((agenda "" ((org-agenda-files '("~/src/doc/home.org"))))
           (alltodo "" ((org-agenda-files '("~/src/doc/home.org"))))))
+        ("m" "Music"
+         ((agenda "" ((org-agenda-files '("~/src/doc/music.org"))))
+          (alltodo "" ((org-agenda-files '("~/src/doc/music.org"))))))
         ("w" "Work tasks"
          ((agenda "" ((org-agenda-files '("~/src/doc/work.org"))))
           (alltodo "" ((org-agenda-files '("~/src/doc/work.org"))))))
