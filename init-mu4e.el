@@ -44,5 +44,6 @@
 (define-key mu4e-main-mode-map (kbd "q") #'bury-buffer)
 (define-key mu4e-main-mode-map (kbd "Q") #'mu4e-quit)
 (define-key mu4e-main-mode-map (kbd "i") (kbd "ji"))
+(define-key mu4e-headers-mode-map (kbd "c") #'mu4e-context-switch)
 
 (setq gnus-inhibit-mime-unbuttonizing t) ;show attachment buttons for all mime parts, including inline images
