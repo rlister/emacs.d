@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t -*-
+
 (define-key slack-mode-map (kbd "M-p") #'slack-buffer-goto-prev-message)
 (define-key slack-mode-map (kbd "M-n") #'slack-buffer-goto-next-message)
 (define-key slack-mode-map (kbd "@") #'slack-message-embed-mention)
