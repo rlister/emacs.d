@@ -193,7 +193,7 @@
  '(lui-time-stamp-face                ((t (:inherit font-lock-variable-name-face))))
  '(slack-new-message-marker-face      ((t (:inherit font-lock-comment-face :height 0.8))))
  '(slack-message-output-header        ((t (:inherit font-lock-type-face))))
- '(slack-message-output-text          ((t (:inherit default))))
+ '(slack-message-output-text          ((t (:inherit font-lock-comment-face))))
  '(slack-message-output-reaction      ((t (:inherit font-lock-comment-face))))
  '(slack-message-mention-face         ((t (:inherit font-lock-string-face))))
  '(slack-message-mention-keyword-face ((t (:inherit font-lock-variable-name-face))))
