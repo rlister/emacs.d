@@ -7,6 +7,8 @@
          "* DONE %?\n- State \"DONE\" %U" :empty-lines 0 :tree-type week)
         ("m" "Meeting" entry (file+olp+datetree "~/src/doc/work.org")
          "* MTG %?" :empty-lines 0 :tree-type week)
+        ("s" "Music" entry (file+olp+datetree "~/src/doc/music.org")
+         "* MTG %?" :empty-lines 0 :tree-type week)
         ("h" "Home" entry (file+olp+datetree "~/src/doc/home.org")
          "* TODO %?" :empty-lines 0 :tree-type week)
         ("j" "Journal" entry (file+olp+datetree "~/src/doc/work.org")
