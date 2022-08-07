@@ -45,5 +45,6 @@
 (define-key mu4e-main-mode-map (kbd "Q") #'mu4e-quit)
 (define-key mu4e-main-mode-map (kbd "i") (kbd "ji"))
 (define-key mu4e-headers-mode-map (kbd "c") #'mu4e-context-switch)
+(define-key mu4e-view-mode-map (kbd "<backspace>") #'scroll-down)
 
 (setq gnus-inhibit-mime-unbuttonizing t) ;show attachment buttons for all mime parts, including inline images
