@@ -1,4 +1,6 @@
 (add-hook 'org-agenda-mode-hook 'hl-line-mode)
+(add-hook 'org-agenda-after-show-hook #'org-narrow-to-subtree)
+
 (setq org-agenda-window-setup 'current-window)
 (setq org-agenda-align-tags-to-column 80)
 (setq org-agenda-todo-ignore-scheduled 'all)
