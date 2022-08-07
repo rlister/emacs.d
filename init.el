@@ -126,7 +126,8 @@
   (setq marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil)))
 
 (with-eval-after-load 'magit
-  (setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1))
+  (setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
+  (defun forge--contrast-color (color) "black"))
 
 (with-eval-after-load 'smerge-mode
   (define-key smerge-mode-map (kbd "C-<down>") #'smerge-next)
