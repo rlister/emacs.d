@@ -43,6 +43,7 @@
     (define-key map (kbd "C-c c") #'org-capture)
     (define-key map (kbd "C-c d") #'ric-duplicate-line)
     (define-key map (kbd "C-c e") #'eshell)
+    (define-key map (kbd "C-c h") #'eldoc)
     (define-key map (kbd "C-c i") #'string-inflection-all-cycle)
     (define-key map (kbd "C-c j") #'avy-goto-word-1)
     (define-key map (kbd "C-c k") #'kill-whole-line)
