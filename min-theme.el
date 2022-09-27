@@ -233,6 +233,9 @@
  '(flyspell-duplicate ((t (:underline (:color "DarkGoldenrod")))))
  '(flyspell-incorrect ((t (:underline (:color "IndianRed1")))))
 
+ '(flymake-error   ((t (:underline nil :inherit error))))
+ '(flymake-warning ((t (:underline nil :inherit warning))))
+
  ;; mew
  '(mew-face-body-cite1       ((t (:inherit font-lock-comment-face))))
  '(mew-face-body-cite2       ((t (:inherit font-lock-comment-face))))
