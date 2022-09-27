@@ -76,6 +76,12 @@
   (add-to-list 'auto-mode-alist '("Envfile" . ruby-mode))
   (add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode)))
 
+(with-eval-after-load 'go-mode
+  (add-hook 'go-mode-hook #'eglot-ensure))
+
+(with-eval-after-load 'eglot
+  (define-key eglot-mode-map (kbd "C-c C-r") #'eglot-rename))
+
 ;; less garish html rendering
 (with-eval-after-load 'shr
   (setq shr-use-fonts nil)
@@ -118,6 +124,11 @@
   (setq completion-styles '(orderless))
   (marginalia-mode +1)
   (define-key vertico-map [remap switch-to-buffer] #'vertico-exit))
+
+(with-eval-after-load 'corfu
+  (setq corfu-quit-no-match nil)
+  (setq corfu-on-exact-match nil)
+  (define-key corfu-map (kbd "SPC") #'corfu-insert-separator))
 
 (with-eval-after-load 'orderless
   (setq completion-category-defaults nil)) ;prevent overrides of styles
@@ -198,7 +209,7 @@
 (autoload 'font-height-increase "font-height" nil t)
 (autoload 'no-mouse-mode "no-mouse-mode" nil t)
 
-;; delayed loads
+;; hooks
 (add-hook 'after-init-hook #'min-theme)
 (add-hook 'after-init-hook #'vertico-mode)
 (add-hook 'after-init-hook #'min-theme)
@@ -206,6 +217,8 @@
 (add-hook 'window-setup-hook #'winner-mode)
 (add-hook 'server-after-make-frame-hook #'ric-key-translations)
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
+
+;; delayed loads
 (run-with-idle-timer 5 nil #'global-visible-mark-mode)
 (run-with-idle-timer 5 nil #'global-pabbrev-mode)
 (run-with-idle-timer 10 nil #'pixel-scroll-mode)

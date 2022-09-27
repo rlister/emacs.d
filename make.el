@@ -3,9 +3,11 @@
     avy
     bbdb-vcard
     code-review
+    corfu
     dockerfile-mode
     dumb-jump
     easy-kill
+    eglot
     elfeed
     forge
     git-link
