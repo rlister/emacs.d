@@ -21,7 +21,8 @@
     string-inflection
     vertico
     visible-mark
-    vterm)
+    vterm
+    yaml-mode)
   "Packages to install.")
 
 (defconst local-packages
