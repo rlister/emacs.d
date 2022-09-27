@@ -82,6 +82,10 @@
 (with-eval-after-load 'eglot
   (define-key eglot-mode-map (kbd "C-c C-r") #'eglot-rename))
 
+(with-eval-after-load 'flymake-mode
+  (define-key flymake-mode-map (kbd "C-c C-p") #'flymake-goto-prev-error)
+  (define-key flymake-mode-map (kbd "C-c C-n") #'flymake-goto-next-error))
+
 ;; less garish html rendering
 (with-eval-after-load 'shr
   (setq shr-use-fonts nil)
