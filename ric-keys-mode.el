@@ -18,7 +18,7 @@
   :after-hook (ric-key-translations)
   :keymap
   (let ((map (make-sparse-keymap)))
-    (define-key map (kbd "<C-tab>") #'hippie-expand)
+    (define-key map (kbd "<C-tab>") #'complete-symbol)
     (define-key map (kbd "<f2>") #'font-height-decrease)
     (define-key map (kbd "<f3>") #'font-height-increase)
     (define-key map (kbd "<f4>") #'font-height-reset)
