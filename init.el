@@ -110,10 +110,12 @@
   (global-anzu-mode +1))
 
 (with-eval-after-load 'project
+  (setq-default xref-search-program 'ugrep)
   (setq project-switch-commands
         '((project-switch-to-buffer "buffer" ?b)
           (project-dired "dir" ?d)
           (project-find-file "file" ?f)
+          (project-find-regexp "grep" ?g)
           (magit-project-status "magit" ?m)
           (rg-project "rg" ?r)
           (vterm "vterm" ?t))))
