@@ -66,7 +66,7 @@
     (define-key map (kbd "ESC <down>") #'end-of-buffer)
     (define-key map (kbd "ESC <up>") #'beginning-of-buffer)
     (define-key map (kbd "H-i") #'project-find-file)
-    (define-key map (kbd "H-m") #'er/expand-region)
+    (define-key map (kbd "H-m") #'easy-kill)
     (define-key map (kbd "M-<down>") #'end-of-buffer)
     (define-key map (kbd "M-<up>") #'beginning-of-buffer)
     (define-key map (kbd "M-Q") #'ric-unfill-paragraph)
