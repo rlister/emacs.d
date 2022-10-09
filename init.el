@@ -77,7 +77,8 @@
   (add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode)))
 
 (with-eval-after-load 'go-mode
-  (add-hook 'go-mode-hook #'eglot-ensure))
+  (add-hook 'go-mode-hook #'eglot-ensure)
+  (add-hook 'go-mode-hook #'subword-mode))
 
 (with-eval-after-load 'eglot
   (define-key eglot-mode-map (kbd "C-c C-r") #'eglot-rename))
