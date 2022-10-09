@@ -222,7 +222,6 @@
 ;; hooks
 (add-hook 'after-init-hook #'min-theme)
 (add-hook 'after-init-hook #'vertico-mode)
-(add-hook 'after-init-hook #'min-theme)
 (add-hook 'window-setup-hook #'ric-keys-mode)
 (add-hook 'window-setup-hook #'winner-mode)
 (add-hook 'server-after-make-frame-hook #'ric-key-translations)
