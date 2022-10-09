@@ -83,7 +83,7 @@
 (with-eval-after-load 'eglot
   (define-key eglot-mode-map (kbd "C-c C-r") #'eglot-rename))
 
-(with-eval-after-load 'flymake-mode
+(with-eval-after-load 'flymake
   (define-key flymake-mode-map (kbd "C-c C-p") #'flymake-goto-prev-error)
   (define-key flymake-mode-map (kbd "C-c C-n") #'flymake-goto-next-error))
 
