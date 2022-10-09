@@ -14,6 +14,14 @@
     (yank)))
 
 ;;;###autoload
+(defun ric-copy-line ()
+  "Copy whole line, leaving point in current position."
+  (interactive)
+  (save-excursion
+    (end-of-line)
+    (copy-region-as-kill (line-beginning-position) (point))))
+
+;;;###autoload
 (defun ric-isearch-exit-other-end ()
   "Exit isearch at other end of string."
   (interactive)
