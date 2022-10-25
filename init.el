@@ -70,13 +70,16 @@
   (define-key view-mode-map (kbd "p") #'previous-line))
 
 (with-eval-after-load 'prog-mode
-  (show-paren-mode 1))
+  (show-paren-mode 1)
+  (global-tree-sitter-mode 1))
 
 (with-eval-after-load 'ruby-mode
+  (add-hook 'ruby-mode-hook #'tree-sitter-hl-mode)
   (add-to-list 'auto-mode-alist '("Envfile" . ruby-mode))
   (add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode)))
 
 (with-eval-after-load 'go-mode
+  (add-hook 'go-mode-hook #'tree-sitter-hl-mode)
   (add-hook 'go-mode-hook #'eglot-ensure)
   (add-hook 'go-mode-hook #'subword-mode))
 
