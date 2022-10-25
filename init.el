@@ -122,7 +122,8 @@
           (project-find-regexp "grep" ?g)
           (magit-project-status "magit" ?m)
           (rg-project "rg" ?r)
-          (vterm "vterm" ?t))))
+          (vterm "vterm" ?t)
+          (vc-dir "vc" ?v))))
 
 (with-eval-after-load 'package
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
