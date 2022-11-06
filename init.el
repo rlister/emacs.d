@@ -165,6 +165,10 @@
   (setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
   (defun forge--contrast-color (color) "black"))
 
+(with-eval-after-load 'forge
+  (define-key forge-topic-mode-map (kbd "r") #'forge-edit-topic-review-requests)
+  (define-key forge-topic-mode-map (kbd "w") #'forge-browse-topic))
+
 (with-eval-after-load 'smerge-mode
   (define-key smerge-mode-map (kbd "C-<down>") #'smerge-next)
   (define-key smerge-mode-map (kbd "C-<up>") #'smerge-prev))
@@ -194,6 +198,8 @@
 (with-eval-after-load 'elfeed
   (elfeed-load-opml "~/src/doc/elfeed.opml")
   (setq elfeed-search-filter "@2-weeks-ago +unread")
+  (define-key elfeed-search-mode-map "d" #'elfeed-search-untag-all-unread)
+  (define-key elfeed-show-mode-map "d" #'elfeed-kill-buffer)
   (define-key elfeed-show-mode-map "r" #'elfeed-kill-buffer))
 
 (with-eval-after-load 'alert
