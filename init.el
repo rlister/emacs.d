@@ -7,10 +7,10 @@
 (setq use-short-answers t)
 
 ;; allow disabled commands
-(put 'upcase-region 'disabled nil)
-(put 'downcase-region 'disabled nil)
-(put 'narrow-to-region 'disabled nil)
-(put 'narrow-to-page 'disabled nil)
+;; (put 'upcase-region 'disabled nil)
+;; (put 'downcase-region 'disabled nil)
+;; (put 'narrow-to-region 'disabled nil)
+;; (put 'narrow-to-page 'disabled nil)
 
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 (setq version-control t)
@@ -52,7 +52,7 @@
 (with-eval-after-load 'minibuffer
   (setq completion-show-help nil)
   (setq completions-format 'one-column)
-  (setq completion-styles '(partial-completion flex)) ;(substring flex))
+  (setq completion-styles '(initials partial-completion substring flex)) ;(substring flex))
   (setq completion-auto-help 'always)
   (setq completion-ignore-case t)
   (setq read-file-name-completion-ignore-case t)
@@ -190,8 +190,6 @@
 (with-eval-after-load 'vterm
   (load "init-vterm"))
 
-(advice-add 'mark-sexp :filter-args #'ric-mark-args)
-
 (with-eval-after-load 'elfeed
   (elfeed-load-opml "~/src/doc/elfeed.opml")
   (setq elfeed-search-filter "@2-weeks-ago +unread")
@@ -226,6 +224,15 @@
 (with-eval-after-load 'mu4e
   (load "init-mu4e"))
 
+(add-to-list 'load-path "~/src/weechat.el")
+(autoload 'weechat-connect "weechat" nil t)
+(with-eval-after-load 'weechat
+  (load "init-weechat")
+  (add-hook 'weechat-mode-hook #'visual-line-mode)
+  (setq weechat-modules '(weechat-button weechat-complete weechat-tracking))
+  (setq weechat-sync-buffer-read-status t)
+  (setq weechat-tracking-types '(:highlight :message))
+  (setq weechat-completing-read-function 'completing-read))
 
 (advice-add 'mark-sexp :filter-args #'ric-mark-args)
 
