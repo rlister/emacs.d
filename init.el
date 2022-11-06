@@ -157,21 +157,9 @@
     "Override hard-coded button face from package.el."
     (apply #'insert-text-button text 'face 'button 'follow-link t properties)))
 
-(with-eval-after-load 'vertico
-  (setq completion-styles '(orderless))
-  (marginalia-mode +1)
-  (define-key vertico-map [remap switch-to-buffer] #'vertico-exit))
-
-(with-eval-after-load 'corfu
-  (setq corfu-quit-no-match nil)
-  (setq corfu-on-exact-match nil)
-  (define-key corfu-map (kbd "SPC") #'corfu-insert-separator))
-
-(with-eval-after-load 'orderless
-  (setq completion-category-defaults nil)) ;prevent overrides of styles
-
-(with-eval-after-load 'marginalia
-  (setq marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil)))
+;; (setq completion-auto-help 't)
+;; (with-eval-after-load 'marginalia
+;;   (setq marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil)))
 
 (with-eval-after-load 'magit
   (setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
