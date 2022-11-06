@@ -8,10 +8,7 @@
 (setq inhibit-startup-echo-area-message "ric")
 (setq server-client-instructions nil)
 
-;; answer questions with one char
-(if (>= emacs-major-version 28)
-    (setq use-short-answers t)
-  (fset 'yes-or-no-p 'y-or-n-p))
+(setq use-short-answers t)
 
 ;; allow disabled commands
 (put 'upcase-region 'disabled nil)
