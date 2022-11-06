@@ -43,11 +43,6 @@
 (setq scroll-preserve-screen-position t) ;do not lose point
 (setq scroll-conservatively 101)         ;do not center point, less jumpy
 
-(setq completion-show-help nil)
-(setq completion-ignore-case t)
-(setq read-file-name-completion-ignore-case t)
-(setq read-buffer-completion-ignore-case t)
-
 (setq view-read-only t)
 
 ;; default all programming modes to 2 char indent
@@ -60,6 +55,31 @@
 (setq-default css-indent-offset 2)
 
 (setq-default python-check-command "flake8")
+;; (with-eval-after-load 'vertico
+;;   (setq completion-styles '(orderless))
+;;   ;; (marginalia-mode +1)
+;;   (define-key vertico-map [remap switch-to-buffer] #'vertico-exit))
+
+;; (with-eval-after-load 'corfu
+;;   (setq corfu-quit-no-match nil)
+;;   (setq corfu-on-exact-match nil)
+;;   (define-key corfu-map (kbd "SPC") #'corfu-insert-separator))
+
+;; (with-eval-after-load 'orderless
+;;   (setq completion-category-defaults nil)) ;prevent overrides of styles
+
+(with-eval-after-load 'minibuffer
+  (setq completion-show-help nil)
+  (setq completions-format 'one-column)
+  (setq completion-styles '(partial-completion flex)) ;(substring flex))
+  (setq completion-auto-help 'always)
+  (setq completion-ignore-case t)
+  (setq read-file-name-completion-ignore-case t)
+  (setq read-buffer-completion-ignore-case t)
+  (define-key minibuffer-local-must-match-map (kbd "<up>") #'minibuffer-previous-completion)
+  (define-key minibuffer-local-must-match-map (kbd "<down>") #'minibuffer-next-completion)
+  (define-key minibuffer-local-map (kbd "C-n") #'next-history-element)
+  (define-key minibuffer-local-map (kbd "C-p") #'previous-history-element))
 
 (with-eval-after-load 'man
   (setq Man-notify-method 'pushy))
@@ -83,6 +103,7 @@
   (add-hook 'go-mode-hook #'subword-mode))
 
 (with-eval-after-load 'eglot
+  ;; (global-corfu-mode 1)
   (define-key eglot-mode-map (kbd "C-c C-r") #'eglot-rename))
 
 (with-eval-after-load 'flymake
@@ -221,7 +242,7 @@
 
 ;; hooks
 (add-hook 'after-init-hook #'min-theme)
-(add-hook 'after-init-hook #'vertico-mode)
+;; (add-hook 'after-init-hook #'vertico-mode)
 (add-hook 'window-setup-hook #'ric-keys-mode)
 (add-hook 'window-setup-hook #'winner-mode)
 (add-hook 'server-after-make-frame-hook #'ric-key-translations)
