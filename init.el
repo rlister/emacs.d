@@ -196,9 +196,6 @@
   (define-key elfeed-show-mode-map "d" #'elfeed-kill-buffer)
   (define-key elfeed-show-mode-map "r" #'elfeed-kill-buffer))
 
-(with-eval-after-load 'alert
-  (setq alert-default-style 'libnotify))
-
 (with-eval-after-load 'gcalcli-mode
   (setq gcalcli-bin "~/.local/bin/gcalcli")
   (setq gcalcli-config-alist
@@ -210,8 +207,11 @@
   (define-key markdown-mode-map (kbd "C-c v") #'markdown-view-mode)
   (define-key markdown-view-mode-map (kbd "C-c v") #'markdown-mode))
 
-(with-eval-after-load 'slack
-  (load "init-slack"))
+;; (with-eval-after-load 'slack
+;;   (load "init-slack"))
+
+;; (with-eval-after-load 'alert
+;;   (setq alert-default-style 'libnotify))
 
 (with-eval-after-load 'code-review
   (setq code-review-new-buffer-window-strategy #'switch-to-buffer))
