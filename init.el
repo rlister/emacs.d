@@ -128,9 +128,6 @@
   (define-key isearch-mode-map [remap isearch-delete-char] 'isearch-del-char) ;backspace should edit search string
   (global-anzu-mode +1))
 
-(with-eval-after-load 'grep
-  (grep-apply-setting 'grep-template "ugrep --color=always -0Iinr --include=<F> -e <R>"))
-
 (with-eval-after-load 'project
   (setq-default xref-search-program 'ugrep)
   (setq project-switch-commands
