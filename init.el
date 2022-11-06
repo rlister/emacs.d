@@ -26,7 +26,6 @@
 (setq select-enable-primary t)    ;yank from primary set in other apps
 
 ;; (setq pop-up-windows t) ;how display-buffer should behave
-(setq Man-notify-method 'pushy)
 (setq display-buffer-alist
       '(("\\*Help\\*" (display-buffer-same-window))
         ("\\*Code Review\\*" (display-buffer-same-window))
@@ -61,6 +60,9 @@
 (setq-default css-indent-offset 2)
 
 (setq-default python-check-command "flake8")
+
+(with-eval-after-load 'man
+  (setq Man-notify-method 'pushy))
 
 (with-eval-after-load 'view-mode
   (define-key view-mode-map (kbd "n") #'next-line)
