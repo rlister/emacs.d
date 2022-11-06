@@ -62,6 +62,9 @@
   (define-key minibuffer-local-map (kbd "C-n") #'next-history-element)
   (define-key minibuffer-local-map (kbd "C-p") #'previous-history-element))
 
+(with-eval-after-load 'bs-show
+  (add-hook 'bs-mode-hook 'hl-line-mode))
+
 (with-eval-after-load 'man
   (setq Man-notify-method 'pushy))
 
