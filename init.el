@@ -57,10 +57,13 @@
   (setq completion-ignore-case t)
   (setq read-file-name-completion-ignore-case t)
   (setq read-buffer-completion-ignore-case t)
+  (define-key minibuffer-local-map (kbd "C-n") #'next-history-element)
+  (define-key minibuffer-local-map (kbd "C-p") #'previous-history-element)
   (define-key minibuffer-local-must-match-map (kbd "<up>") #'minibuffer-previous-completion)
   (define-key minibuffer-local-must-match-map (kbd "<down>") #'minibuffer-next-completion)
-  (define-key minibuffer-local-map (kbd "C-n") #'next-history-element)
-  (define-key minibuffer-local-map (kbd "C-p") #'previous-history-element))
+  (define-key completion-in-region-mode-map (kbd "<up>") #'minibuffer-previous-completion)
+  (define-key completion-in-region-mode-map (kbd "<down>") #'minibuffer-next-completion)
+  (define-key completion-in-region-mode-map (kbd "RET") #'minibuffer-choose-completion))
 
 (with-eval-after-load 'bs-show
   (add-hook 'bs-mode-hook 'hl-line-mode))
