@@ -3,7 +3,7 @@
 ;; inhibit minibuffer messages for new emacs frame or new emacslient frame
 (setq inhibit-startup-echo-area-message "ric")
 (setq server-client-instructions nil)
-
+(setq eww-auto-rename-buffer 'title)
 (setq use-short-answers t)
 
 ;; allow disabled commands
