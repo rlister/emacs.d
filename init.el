@@ -136,6 +136,7 @@
           (project-dired "dir" ?d)
           (project-find-file "file" ?f)
           (project-find-regexp "grep" ?g)
+          (project-kill-buffers "kill" ?k)
           (magit-project-status "magit" ?m)
           (rg-project "rg" ?r)
           (vterm "vterm" ?t)
