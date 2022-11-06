@@ -66,6 +66,7 @@
  ;; minibuffer
  '(minibuffer-prompt ((t (:inherit success))))
  '(completions-annotations ((t (:inherit warning))))
+ '(completions-common-part ((t (:inherit success))))
 
  '(sh-heredoc ((t (:inherit font-lock-string-face))))
 
@@ -90,6 +91,8 @@
  '(dired-async-failures     ((t (:inherit error))))
 
  '(shortdoc-section ((t (:inherit default))))
+
+ '(icomplete-first-match ((t (:inherit warning))))
 
  ;; org-mode
  '(org-level-1              ((t (:inherit font-lock-function-name-face :height 1.2))))
@@ -206,6 +209,8 @@
  '(slack-mrkdwn-code-face             ((t (:inherit markdown-code-face))))
  '(slack-mrkdwn-block-face            ((t (:inherit highlight :extend t))))
  '(slack-mrkdwn-code-block-face       ((t (:inherit (markdown-code-face highlight) :extend t))))
+
+ '(weechat-highlight-face ((t (:inherit success))))
 
  ;; parent faces for various mail and news modes
  '(message-header-name       ((t (:inherit font-lock-comment-face))))
