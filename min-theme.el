@@ -288,6 +288,10 @@
 
  '(embrace-help-pair-face ((t (:inherit font-lock-string-face))))
  '(embrace-help-mark-func-face ((t (:inherit font-lock-type-face))))
+
+ '(highlight-indentation-face ((t (:inherit highlight))))
+ '(highlight-indentation-current-column-face ((t (:inherit highlight))))
+
 )
 
 ;;;###autoload

@@ -21,6 +21,8 @@
     rainbow-mode
     slack
     string-inflection
+    tree-sitter
+    tree-sitter-lang
     vertico
     visible-mark
     vterm

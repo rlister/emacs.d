@@ -41,7 +41,6 @@
 (setq scroll-preserve-screen-position t) ;do not lose point
 (setq scroll-conservatively 101)         ;do not center point, less jumpy
 
-
 ;; (with-eval-after-load 'vertico
 ;;   (setq completion-styles '(orderless))
 ;;   ;; (marginalia-mode +1)
@@ -91,16 +90,14 @@
   (setq show-paren-context-when-offscreen t)
   (setq show-paren-when-point-in-periphery t)
   (show-paren-mode 1)
-  (global-tree-sitter-mode 1))
+  ;; (global-tree-sitter-mode 1))
   (electric-pair-mode))
 
 (add-to-list 'auto-mode-alist '("Envfile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode))
-;; (with-eval-after-load 'ruby-mode
-  ;; (add-hook 'ruby-mode-hook #'tree-sitter-hl-mode))
 
 (with-eval-after-load 'go-mode
-  (add-hook 'go-mode-hook #'tree-sitter-hl-mode)
+  ;; (add-hook 'go-mode-hook #'tree-sitter-hl-mode)
   (add-hook 'go-mode-hook #'eglot-ensure)
   (add-hook 'go-mode-hook #'subword-mode))
 
