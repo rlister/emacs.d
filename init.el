@@ -220,7 +220,6 @@
 (with-eval-after-load 'mu4e
   (load "init-mu4e"))
 
-(add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
 (advice-add 'mark-sexp :filter-args #'ric-mark-args)
 
