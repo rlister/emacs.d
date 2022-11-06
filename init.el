@@ -38,23 +38,10 @@
 
 (setq epg-pinentry-mode 'loopback) ;pinentry queries in minibuffer
 
-(setq show-paren-when-point-in-periphery t)
-
 (setq scroll-preserve-screen-position t) ;do not lose point
 (setq scroll-conservatively 101)         ;do not center point, less jumpy
 
-(setq view-read-only t)
 
-;; default all programming modes to 2 char indent
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 2)
-(setq-default c-basic-offset 2)
-(setq-default sh-basic-offset 2)
-(setq-default python-indent 2)
-(setq-default js-indent-level 2)
-(setq-default css-indent-offset 2)
-
-(setq-default python-check-command "flake8")
 ;; (with-eval-after-load 'vertico
 ;;   (setq completion-styles '(orderless))
 ;;   ;; (marginalia-mode +1)
@@ -93,13 +80,24 @@
   (define-key view-mode-map (kbd "k") #'kill-current-buffer))
 
 (with-eval-after-load 'prog-mode
+  (setq-default indent-tabs-mode nil)
+  (setq-default tab-width 2)
+  (setq-default c-basic-offset 2)
+  (setq-default sh-basic-offset 2)
+  (setq-default python-indent 2)
+  (setq-default js-indent-level 2)
+  (setq-default css-indent-offset 2)
+  (setq-default python-check-command "flake8")
+  (setq show-paren-context-when-offscreen t)
+  (setq show-paren-when-point-in-periphery t)
   (show-paren-mode 1)
   (global-tree-sitter-mode 1))
+  (electric-pair-mode))
 
-(with-eval-after-load 'ruby-mode
-  (add-hook 'ruby-mode-hook #'tree-sitter-hl-mode)
-  (add-to-list 'auto-mode-alist '("Envfile" . ruby-mode))
-  (add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode)))
+(add-to-list 'auto-mode-alist '("Envfile" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode))
+;; (with-eval-after-load 'ruby-mode
+  ;; (add-hook 'ruby-mode-hook #'tree-sitter-hl-mode))
 
 (with-eval-after-load 'go-mode
   (add-hook 'go-mode-hook #'tree-sitter-hl-mode)
