@@ -223,10 +223,12 @@
 
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
-;; (autoload 'min-theme "min-theme" nil t)
-;; (autoload 'ric-keys-mode "ric-keys-mode" nil t)
-(autoload 'font-height-increase "font-height" nil t)
-(autoload 'no-mouse-mode "no-mouse-mode" nil t)
+(advice-add 'mark-sexp :filter-args #'ric-mark-args)
+
+(autoload 'min-theme "min-theme" nil t)
+(autoload 'ric-keys-mode "ric-keys-mode" nil t)
+;; (autoload 'font-height-increase "font-height" nil t)
+;; (autoload 'no-mouse-mode "no-mouse-mode" nil t)
 
 ;; hooks
 (add-hook 'after-init-hook #'min-theme)
@@ -235,6 +237,7 @@
 (add-hook 'window-setup-hook #'winner-mode)
 (add-hook 'server-after-make-frame-hook #'ric-key-translations)
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
+(add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
 ;; delayed loads
 (run-with-idle-timer 5 nil #'global-visible-mark-mode)
