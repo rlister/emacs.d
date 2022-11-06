@@ -129,6 +129,7 @@
   (global-anzu-mode +1))
 
 (with-eval-after-load 'project
+  (setq global-mode-string (append global-mode-string '((:eval (project-root (project-current))))))
   (setq-default xref-search-program 'ugrep)
   (setq project-switch-commands
         '((project-switch-to-buffer "buffer" ?b)
