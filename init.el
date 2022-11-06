@@ -84,9 +84,13 @@
 (with-eval-after-load 'man
   (setq Man-notify-method 'pushy))
 
+(add-to-list 'auto-mode-alist '("\\.out\\'" . view-mode))
 (with-eval-after-load 'view-mode
+  (setq view-read-only t)
   (define-key view-mode-map (kbd "n") #'next-line)
-  (define-key view-mode-map (kbd "p") #'previous-line))
+  (define-key view-mode-map (kbd "p") #'previous-line)
+  (define-key view-mode-map (kbd "i") #'view-mode)
+  (define-key view-mode-map (kbd "k") #'kill-current-buffer))
 
 (with-eval-after-load 'prog-mode
   (show-paren-mode 1)
