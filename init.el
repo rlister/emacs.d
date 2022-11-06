@@ -208,10 +208,6 @@
 (with-eval-after-load 'pabbrev
   (load "init-pabbrev"))
 
-(with-eval-after-load 'expand-region
-  (setq expand-region-autocopy-register "e")
-  (setq expand-region-show-usage-message nil))
-
 (autoload 'mu4e "mu4e" nil t)
 (with-eval-after-load 'mu4e
   (load "init-mu4e"))
