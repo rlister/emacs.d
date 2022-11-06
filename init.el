@@ -21,7 +21,6 @@
 (setq select-active-regions nil)  ;do not send all regions to primary
 (setq select-enable-primary t)    ;yank from primary set in other apps
 
-;; (setq pop-up-windows t) ;how display-buffer should behave
 (setq display-buffer-alist
       '(("\\*Help\\*" (display-buffer-same-window))
         ("\\*Code Review\\*" (display-buffer-same-window))
