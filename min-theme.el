@@ -277,6 +277,7 @@
 
  '(eww-form-submit ((t (:inherit button))))
  '(eww-form-text   ((t (:inherit mode-line))))
+ '(eww-form-select ((t (:inherit button))))
 
  '(w3m-anchor              ((t (:inherit link))))
  '(w3m-image               ((t (:inherit font-lock-comment-face))))
