@@ -275,8 +275,6 @@
  '(avy-lead-face-1 ((t (:inherit warning))))
  '(avy-lead-face-2 ((t (:inherit warning))))
 
- '(selectrum-current-candidate ((t (:inherit (success highlight)))))
-
  '(eww-form-submit ((t (:inherit button))))
  '(eww-form-text   ((t (:inherit mode-line))))
 
