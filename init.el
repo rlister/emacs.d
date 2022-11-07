@@ -1,3 +1,5 @@
+(setq native-comp-async-report-warnings-errors 'silent) ;log warnings but not pop up the *Warnings* buffer
+
 (add-to-list 'load-path "~/src/emacs.d")
 
 ;; inhibit minibuffer messages for new emacs frame or new emacslient frame
