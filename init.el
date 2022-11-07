@@ -114,6 +114,7 @@
 
 ;; less garish html rendering
 (with-eval-after-load 'shr
+  (setq shr-inhibit-images t)
   (setq shr-use-fonts nil)
   (setq shr-use-colors nil))
 
