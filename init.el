@@ -165,7 +165,11 @@
   (define-key org-agenda-mode-map (kbd "<C-up>") #'org-agenda-previous-date-line))
 
 (with-eval-after-load 'org-capture
-  (load "init-org-capture"))
+  (setq org-capture-templates
+        '(("t" "Todo"  entry (file+olp+datetree "work.org") "* TODO %?\n%i" :empty-lines 0 :tree-type week)
+          ("m" "Mtg"   entry (file+olp+datetree "work.org") "* MTG %?" :empty-lines 0 :tree-type week)
+          ("h" "Home"  entry (file+olp+datetree "home.org") "* TODO %?" :empty-lines 0 :tree-type week)
+          ("s" "Music" entry (file+olp+datetree "music.org") "* TODO %?" :empty-lines 0 :tree-type week))))
 
 (with-eval-after-load 'eshell
   (setq eshell-banner-message ""))
