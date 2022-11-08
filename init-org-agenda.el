@@ -10,5 +10,3 @@
         ("n" "Next" tags "next" ((org-agenda-files '("work.org"))))
         ("w" "Work" agenda "" ((org-agenda-files '("work.org"))))))
 
-(define-key org-agenda-mode-map (kbd "C-<down>") #'org-agenda-next-date-line)
-(define-key org-agenda-mode-map (kbd "C-<up>") #'org-agenda-previous-date-line)
