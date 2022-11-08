@@ -1,7 +1,6 @@
 (defconst remote-packages
   '(anzu
     avy
-    bbdb-vcard
     code-review
     corfu
     dockerfile-mode
@@ -16,14 +15,9 @@
     magit
     marginalia
     nginx-mode
-    orderless
     org-present
     rainbow-mode
-    slack
     string-inflection
-    tree-sitter
-    tree-sitter-lang
-    vertico
     visible-mark
     vterm
     yaml-mode)
