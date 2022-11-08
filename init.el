@@ -77,14 +77,12 @@
   (add-hook 'go-mode-hook #'subword-mode))
 
 (with-eval-after-load 'eglot
-  ;; (global-corfu-mode 1)
   (define-key eglot-mode-map (kbd "C-c C-r") #'eglot-rename))
 
 (with-eval-after-load 'flymake
   (define-key flymake-mode-map (kbd "C-c C-p") #'flymake-goto-prev-error)
   (define-key flymake-mode-map (kbd "C-c C-n") #'flymake-goto-next-error))
 
-;; less garish html rendering
 (with-eval-after-load 'shr
   (setq shr-inhibit-images t)
   (setq shr-use-fonts nil)
@@ -107,11 +105,11 @@
   (setq search-whitespace-regexp ".*?") ;very loose matching
   (define-key isearch-mode-map (kbd "C-<return>") 'ric-isearch-exit-other-end)
   (define-key isearch-mode-map [remap isearch-delete-char] 'isearch-del-char) ;backspace should edit search string
-  (global-anzu-mode +1))
+  (global-anzu-mode 1))
 
 (with-eval-after-load 'project
-  (setq global-mode-string (append global-mode-string '((:eval (project-root (project-current))))))
-  (setq-default xref-search-program 'ugrep)
+  (setq global-mode-string (append global-mode-string '((:eval (project-root (project-current)))))) ;project in modeline
+  ;; (setq-default xref-search-program 'ugrep)
   (setq project-switch-commands
         '((project-switch-to-buffer "buffer" ?b)
           (project-dired "dir" ?d)
@@ -128,10 +126,6 @@
   (defun package-make-button (text &rest properties)
     "Override hard-coded button face from package.el."
     (apply #'insert-text-button text 'face 'button 'follow-link t properties)))
-
-;; (setq completion-auto-help 't)
-;; (with-eval-after-load 'marginalia
-;;   (setq marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil)))
 
 (with-eval-after-load 'magit
   (setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
@@ -209,7 +203,7 @@
   (setq weechat-tracking-types '(:highlight :message))
   (setq weechat-completing-read-function 'completing-read))
 
-(advice-add 'mark-sexp :filter-args #'ric-mark-args)
+;; (advice-add 'mark-sexp :filter-args #'ric-mark-args)
 
 (autoload 'min-theme "min-theme" nil t)
 (autoload 'ric-keys-mode "ric-keys-mode" nil t)
@@ -218,7 +212,6 @@
 
 ;; hooks
 (add-hook 'after-init-hook #'min-theme)
-;; (add-hook 'after-init-hook #'vertico-mode)
 (add-hook 'window-setup-hook #'ric-keys-mode)
 (add-hook 'window-setup-hook #'winner-mode)
 (add-hook 'server-after-make-frame-hook #'ric-key-translations)
