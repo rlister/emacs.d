@@ -152,7 +152,15 @@
   (setq org-todo-keywords '("TODO" "BLOCK(b@/!)" "REVIEW(r@/!)" "WIP(w!)" "|" "DONE(d!)" "CANCELLED(c@)")))
 
 (with-eval-after-load 'org-agenda
-  (load "init-org-agenda")
+  (setq org-agenda-window-setup 'current-window)
+  (setq org-agenda-custom-commands
+        '(("b" "Backlog" alltodo "" ((org-agenda-files '("work.org"))))
+          ("g" "Report" agenda "" ((org-agenda-files '("work.org")) (org-agenda-prefix-format "")))
+          ("h" "Home" ((agenda "") (alltodo "")) ((org-agenda-files '("home.org"))))
+          ("n" "Next" tags "next" ((org-agenda-files '("work.org"))))
+          ("w" "Work" agenda "" ((org-agenda-files '("work.org"))))))
+  (add-hook 'org-agenda-mode-hook #'hl-line-mode)
+  (add-hook 'org-agenda-after-show-hook #'org-narrow-to-subtree)
   (define-key org-agenda-mode-map (kbd "<C-down>") #'org-agenda-next-date-line)
   (define-key org-agenda-mode-map (kbd "<C-up>") #'org-agenda-previous-date-line))
 
