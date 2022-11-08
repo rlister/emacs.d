@@ -31,6 +31,9 @@
         ("\\*rg\\*" (display-buffer-same-window))
         ("\\*Packages\\*" (display-buffer-same-window))))
 
+(add-to-list 'auto-mode-alist '("Envfile" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.out\\'" . view-mode))
 
 (with-eval-after-load 'minibuffer
   (define-key minibuffer-local-map (kbd "C-n") #'minibuffer-next-completion)
@@ -45,7 +48,6 @@
 (with-eval-after-load 'man
   (setq Man-notify-method 'pushy))
 
-(add-to-list 'auto-mode-alist '("\\.out\\'" . view-mode))
 (with-eval-after-load 'view-mode
   (setq view-read-only t)
   (define-key view-mode-map (kbd "n") #'next-line)
@@ -55,21 +57,19 @@
 
 (with-eval-after-load 'prog-mode
   (setq-default indent-tabs-mode nil)
-  (setq-default tab-width 2)
   (setq-default c-basic-offset 2)
-  (setq-default sh-basic-offset 2)
-  (setq-default python-indent 2)
-  (setq-default js-indent-level 2)
   (setq-default css-indent-offset 2)
+  (setq-default js-indent-level 2)
   (setq-default python-check-command "flake8")
-  (setq show-paren-context-when-offscreen t)
-  (setq show-paren-when-point-in-periphery t)
-  (show-paren-mode 1)
-  ;; (global-tree-sitter-mode 1))
+  (setq-default python-indent 2)
+  (setq-default sh-basic-offset 2)
+  (setq-default tab-width 2)
+  ;; (show-paren-mode 1)
   (electric-pair-mode))
 
-(add-to-list 'auto-mode-alist '("Envfile" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode))
+(with-eval-after-load 'paren
+  (setq show-paren-context-when-offscreen t)
+  (setq show-paren-when-point-in-periphery t))
 
 (with-eval-after-load 'go-mode
   ;; (add-hook 'go-mode-hook #'tree-sitter-hl-mode)
