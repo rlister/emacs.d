@@ -242,26 +242,6 @@
  '(flymake-error   ((t (:underline nil :inherit error))))
  '(flymake-warning ((t (:underline nil :inherit warning))))
 
- ;; mew
- '(mew-face-body-cite1       ((t (:inherit font-lock-comment-face))))
- '(mew-face-body-cite2       ((t (:inherit font-lock-comment-face))))
- '(mew-face-body-cite3       ((t (:inherit font-lock-comment-face))))
- '(mew-face-body-cite4       ((t (:inherit font-lock-comment-face))))
- '(mew-face-body-cite5       ((t (:inherit font-lock-comment-face))))
- '(mew-face-body-url         ((t (:inherit link))))
- '(mew-face-eof-message      ((t (:inherit success))))
- '(mew-face-header-date      ((t (:inherit message-header-other))))
- '(mew-face-header-from      ((t (:inherit message-header-newsgroups))))
- '(mew-face-header-to        ((t (:inherit message-header-to))))
- '(mew-face-header-subject   ((t (:inherit message-header-subject))))
- '(mew-face-header-important ((t (:inherit message-header-name))))
- '(mew-face-header-key       ((t (:inherit message-header-name))))
- '(mew-face-header-marginal  ((t (:inherit message-header-xheader))))
- '(mew-face-header-xmew      ((t (:inherit message-header-xheader))))
- '(mew-face-header-xmew-bad  ((t (:inherit message-header-xheader))))
- '(mew-face-mark-delete      ((t (:inherit error))))
- '(mew-face-mark-refile      ((t (:inherit success))))
-
  ;; elfeed
  '(elfeed-search-date-face         ((t (:inherit message-header-other))))
  '(elfeed-search-title-face        ((t (:inherit font-lock-comment-face :strike-through t))))
