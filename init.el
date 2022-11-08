@@ -1,27 +1,28 @@
-(setq native-comp-async-report-warnings-errors 'silent) ;log warnings but not pop up the *Warnings* buffer
-
 (add-to-list 'load-path "~/src/emacs.d")
 
-;; inhibit minibuffer messages for new emacs frame or new emacslient frame
-(setq inhibit-startup-echo-area-message "ric")
-(setq server-client-instructions nil)
-(setq eww-auto-rename-buffer 'title)
-(setq use-short-answers t)
-
-;; allow disabled commands
-;; (put 'upcase-region 'disabled nil)
-;; (put 'downcase-region 'disabled nil)
-;; (put 'narrow-to-region 'disabled nil)
-;; (put 'narrow-to-page 'disabled nil)
-
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
-(setq version-control t)
-(setq delete-old-versions t)
 (setq bookmark-save-flag 1)             ;save after any modification
-
-(setq transient-mark-mode nil)    ;do not highlight region
+(setq completion-auto-help 'always)
+(setq completion-ignore-case t)
+(setq completion-show-help nil)
+(setq completion-styles '(initials partial-completion substring flex))
+(setq completions-format 'one-column)
+(setq delete-old-versions t)
+(setq epg-pinentry-mode 'loopback)     ;pinentry queries in minibuffer
+(setq eww-auto-rename-buffer 'title)
+(setq inhibit-startup-echo-area-message "ric")
+(setq native-comp-async-report-warnings-errors 'silent) ;log warnings but not pop up the *Warnings* buffer
+(setq read-buffer-completion-ignore-case t)
+(setq read-file-name-completion-ignore-case t)
+(setq scroll-conservatively 101)      ;do not center point, less jumpy
+(setq scroll-preserve-screen-position t) ;do not lose point
 (setq select-active-regions nil)  ;do not send all regions to primary
 (setq select-enable-primary t)    ;yank from primary set in other apps
+(setq sentence-end-double-space nil) ;make forward/backward-sentence more useful
+(setq server-client-instructions nil)
+(setq transient-mark-mode nil)          ;do not highlight region
+(setq use-short-answers t)
+(setq version-control t)
 
 (setq display-buffer-alist
       '(("\\*Help\\*" (display-buffer-same-window))
@@ -30,13 +31,6 @@
         ("\\*Occur\\*" (display-buffer-same-window))
         ("\\*rg\\*" (display-buffer-same-window))
         ("\\*Packages\\*" (display-buffer-same-window))))
-
-(setq sentence-end-double-space nil) ;make forward/backward-sentence more useful
-
-(setq epg-pinentry-mode 'loopback) ;pinentry queries in minibuffer
-
-(setq scroll-preserve-screen-position t) ;do not lose point
-(setq scroll-conservatively 101)         ;do not center point, less jumpy
 
 ;; (with-eval-after-load 'vertico
 ;;   (setq completion-styles '(orderless))
@@ -52,19 +46,10 @@
 ;;   (setq completion-category-defaults nil)) ;prevent overrides of styles
 
 (with-eval-after-load 'minibuffer
-  (setq completion-show-help nil)
-  (setq completions-format 'one-column)
-  (setq completion-styles '(initials partial-completion substring flex)) ;(substring flex))
-  (setq completion-auto-help 'always)
-  (setq completion-ignore-case t)
-  (setq read-file-name-completion-ignore-case t)
-  (setq read-buffer-completion-ignore-case t)
-  (define-key minibuffer-local-map (kbd "C-n") #'next-history-element)
-  (define-key minibuffer-local-map (kbd "C-p") #'previous-history-element)
-  (define-key minibuffer-local-must-match-map (kbd "<up>") #'minibuffer-previous-completion)
-  (define-key minibuffer-local-must-match-map (kbd "<down>") #'minibuffer-next-completion)
-  (define-key completion-in-region-mode-map (kbd "<up>") #'minibuffer-previous-completion)
-  (define-key completion-in-region-mode-map (kbd "<down>") #'minibuffer-next-completion)
+  (define-key minibuffer-local-map (kbd "C-n") #'minibuffer-next-completion)
+  (define-key minibuffer-local-map (kbd "C-p") #'minibuffer-previous-completion)
+  (define-key completion-in-region-mode-map (kbd "C-n") #'minibuffer-next-completion)
+  (define-key completion-in-region-mode-map (kbd "C-p") #'minibuffer-previous-completion)
   (define-key completion-in-region-mode-map (kbd "RET") #'minibuffer-choose-completion))
 
 (with-eval-after-load 'bs-show
