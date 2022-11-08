@@ -31,18 +31,6 @@
         ("\\*rg\\*" (display-buffer-same-window))
         ("\\*Packages\\*" (display-buffer-same-window))))
 
-;; (with-eval-after-load 'vertico
-;;   (setq completion-styles '(orderless))
-;;   ;; (marginalia-mode +1)
-;;   (define-key vertico-map [remap switch-to-buffer] #'vertico-exit))
-
-;; (with-eval-after-load 'corfu
-;;   (setq corfu-quit-no-match nil)
-;;   (setq corfu-on-exact-match nil)
-;;   (define-key corfu-map (kbd "SPC") #'corfu-insert-separator))
-
-;; (with-eval-after-load 'orderless
-;;   (setq completion-category-defaults nil)) ;prevent overrides of styles
 
 (with-eval-after-load 'minibuffer
   (define-key minibuffer-local-map (kbd "C-n") #'minibuffer-next-completion)
