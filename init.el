@@ -27,7 +27,6 @@
 (setq display-buffer-alist
       '(("\\*Help\\*" (display-buffer-same-window))
         ("\\*Code Review\\*" (display-buffer-same-window))
-        ("\\*docker-" (display-buffer-same-window))
         ("\\*Occur\\*" (display-buffer-same-window))
         ("\\*rg\\*" (display-buffer-same-window))
         ("\\*Packages\\*" (display-buffer-same-window))))
