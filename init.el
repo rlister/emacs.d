@@ -175,7 +175,13 @@
   (setq eshell-banner-message ""))
 
 (with-eval-after-load 'vterm
-  (load "init-vterm"))
+  (setq vterm-buffer-name-string "*vterm %s*") ;include shell title in buffer namen
+  (setq vterm-keymap-exceptions '("C-," "C-." "C-t" "C-c" "C-x" "C-u" "C-g" "C-h" "C-l" "M-x" "M-o" "C-v" "M-v" "C-y" "M-y"))
+  (setq vterm-shell "screen")
+  (define-key vterm-mode-map (kbd "<C-backspace>") #'vterm-send-meta-backspace)
+  (define-key vterm-mode-map (kbd "C-z") #'vterm--self-insert)
+  (define-key vterm-mode-map (kbd "<C-return>") #'vterm-copy-mode)
+  (define-key vterm-copy-mode-map (kbd "<C-return>") #'vterm-copy-mode))
 
 (with-eval-after-load 'elfeed
   (elfeed-load-opml "~/src/doc/elfeed.opml")
