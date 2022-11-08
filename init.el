@@ -65,7 +65,6 @@
   (setq-default python-indent 2)
   (setq-default sh-basic-offset 2)
   (setq-default tab-width 2)
-  ;; (show-paren-mode 1)
   (electric-pair-mode))
 
 (with-eval-after-load 'paren
