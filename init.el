@@ -123,10 +123,10 @@
           (vc-dir "vc" ?v))))
 
 (with-eval-after-load 'package
-  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-  (defun package-make-button (text &rest properties)
-    "Override hard-coded button face from package.el."
-    (apply #'insert-text-button text 'face 'button 'follow-link t properties)))
+  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t))
+  ;; (defun package-make-button (text &rest properties)
+  ;;   "Override hard-coded button face from package.el."
+  ;;   (apply #'insert-text-button text 'face 'button 'follow-link t properties)))
 
 (with-eval-after-load 'magit
   (setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
