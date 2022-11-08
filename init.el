@@ -22,6 +22,7 @@
 (setq server-client-instructions nil)
 (setq transient-mark-mode nil)          ;do not highlight region
 (setq use-short-answers t)
+(setq vc-follow-symlinks nil)
 (setq version-control t)
 
 (setq display-buffer-alist
