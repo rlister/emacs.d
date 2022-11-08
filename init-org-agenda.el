@@ -2,7 +2,6 @@
 (add-hook 'org-agenda-after-show-hook #'org-narrow-to-subtree)
 
 (setq org-agenda-window-setup 'current-window)
-(setq org-agenda-files '("~/src/doc/work.org" "~/src/doc/home.org"))
 
 (setq org-agenda-custom-commands
       '(("g" "Geekbot"
