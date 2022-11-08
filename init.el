@@ -144,7 +144,12 @@
   (setq avy-keys '(?t ?n ?s ?e ?r ?i ?a ?o ?f ?u ?d ?h ?l ?p ?g ?m ?c))) ;colemak-friendly keys
 
 (with-eval-after-load 'org
-  (load "init-org"))
+  (setq org-directory "~/src/doc")
+  (setq org-log-done 'time)
+  (setq org-src-window-setup 'current-window)
+  (setq org-todo-interpretation 'sequence)
+  (setq org-todo-keyword-faces '(("BLOCK" . link) ("REVIEW" . warning) ("WIP" . success)))
+  (setq org-todo-keywords '("TODO" "BLOCK(b@/!)" "REVIEW(r@/!)" "WIP(w!)" "|" "DONE(d!)" "CANCELLED(c@)")))
 
 (with-eval-after-load 'org-agenda
   (load "init-org-agenda")
