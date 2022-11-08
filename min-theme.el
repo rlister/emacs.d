@@ -69,6 +69,7 @@
  '(completions-common-part ((t (:inherit success))))
 
  '(sh-heredoc ((t (:inherit font-lock-string-face))))
+ '(sh-quoted-exec ((t (:inherit font-lock-preprocessor-face))))
 
  ;; show-paren
  '(show-paren-match    ((t (:inherit success))))
