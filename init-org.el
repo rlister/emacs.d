@@ -1,8 +1,4 @@
-(setq org-adapt-indentation nil)
-(setq org-src-fontify-natively t)
 (setq org-src-window-setup 'current-window) ;do not split windows
-(setq org-use-speed-commands 't) ;use speedkeys at start of headline (? for list of keys)
-(setq org-startup-folded t)      ;no expand all levels on opening file
 (setq org-directory "~/src/doc")
 (setq org-log-done 'time)
 (setq org-fontify-done-headline t)
