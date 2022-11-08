@@ -190,6 +190,18 @@
 (with-eval-after-load 'pabbrev
   (load "init-pabbrev"))
 
+(with-eval-after-load 'sendmail
+  (setq send-mail-function #'smtpmail-send-it) ;no query
+  (setq sendmail-program "/usr/bin/msmtp"))
+
+(with-eval-after-load 'message
+  (setq message-sendmail-f-is-evil t)         ;do not add username to cmdline
+  (setq message-sendmail-extra-arguments '("--read-envelope-from")) ;get cfg from sender
+  (setq message-send-mail-function 'message-send-mail-with-sendmail))
+
+(with-eval-after-load 'gnus-art
+  (setq gnus-inhibit-mime-unbuttonizing t)) ;show attachment buttons for all mime parts, including inline images
+
 (autoload 'mu4e "mu4e" nil t)
 (with-eval-after-load 'mu4e
   (load "init-mu4e"))

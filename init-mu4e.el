@@ -35,11 +35,6 @@
                                              (:maildir "/work/sent" :key ?S)
                                              (:maildir "/work/trash" :key ?t)))))))
 
-(setq sendmail-program "/usr/bin/msmtp")
-(setq send-mail-function #'smtpmail-send-it) ;do not query
-(setq message-sendmail-f-is-evil t)         ;do not add username to cmdline
-(setq message-sendmail-extra-arguments '("--read-envelope-from")) ;get cfg from sender
-(setq message-send-mail-function 'message-send-mail-with-sendmail)
 
 (define-key mu4e-main-mode-map (kbd "q") #'bury-buffer)
 (define-key mu4e-main-mode-map (kbd "Q") #'mu4e-quit)
@@ -47,4 +42,3 @@
 (define-key mu4e-headers-mode-map (kbd "c") #'mu4e-context-switch)
 (define-key mu4e-view-mode-map (kbd "<backspace>") #'scroll-down)
 
-(setq gnus-inhibit-mime-unbuttonizing t) ;show attachment buttons for all mime parts, including inline images
