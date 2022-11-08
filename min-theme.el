@@ -121,7 +121,7 @@
  ;; org-agenda
  '(org-agenda-structure        ((t (:inherit font-lock-comment-face))))
  '(org-agenda-date             ((t (:inherit font-lock-function-name-face :weight bold))))
- '(org-agenda-date-weekend     ((t (:inherit org-agenda-date :weight normal))))
+ '(org-agenda-date-weekend     ((t (:inherit org-agenda-date :weight medium))))
  '(org-agenda-date-today       ((t (:inherit (org-agenda-date highlight)))))
  '(org-agenda-done             ((t (:inherit org-done))))
  '(org-agenda-dimmed-todo-face ((t (:inherit font-lock-comment-face))))
