@@ -28,6 +28,7 @@
 
 (setq display-buffer-alist
       '(("\\*Help\\*" (display-buffer-same-window))
+        ("\\*Shortdoc" (display-buffer-same-window))
         ("\\*Code Review\\*" (display-buffer-same-window))
         ("\\*Occur\\*" (display-buffer-same-window))
         ("\\*rg\\*" (display-buffer-same-window))
