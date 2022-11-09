@@ -13,6 +13,7 @@
 (setq eww-auto-rename-buffer 'title)
 (setq inhibit-startup-echo-area-message "ric")
 (setq native-comp-async-report-warnings-errors 'silent) ;log warnings but not pop up the *Warnings* buffer
+(setq next-error-message-highlight t)
 (setq read-buffer-completion-ignore-case t)
 (setq read-file-name-completion-ignore-case t)
 (setq scroll-conservatively 101)      ;do not center point, less jumpy
