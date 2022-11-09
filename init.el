@@ -6,12 +6,14 @@
 (setq completion-ignore-case t)
 (setq completion-show-help nil)
 (setq completion-styles '(initials partial-completion substring flex))
+(setq completions-detailed t)
 (setq completions-format 'one-column)
 (setq delete-old-versions t)
 (setq epg-pinentry-mode 'loopback)     ;pinentry queries in minibuffer
 (setq eww-auto-rename-buffer 'title)
 (setq inhibit-startup-echo-area-message "ric")
 (setq native-comp-async-report-warnings-errors 'silent) ;log warnings but not pop up the *Warnings* buffer
+(setq next-error-message-highlight t)
 (setq read-buffer-completion-ignore-case t)
 (setq read-file-name-completion-ignore-case t)
 (setq scroll-conservatively 101)      ;do not center point, less jumpy
@@ -27,6 +29,7 @@
 
 (setq display-buffer-alist
       '(("\\*Help\\*" (display-buffer-same-window))
+        ("\\*Shortdoc" (display-buffer-same-window))
         ("\\*Code Review\\*" (display-buffer-same-window))
         ("\\*Occur\\*" (display-buffer-same-window))
         ("\\*rg\\*" (display-buffer-same-window))
