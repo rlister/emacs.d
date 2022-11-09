@@ -24,6 +24,7 @@
 (setq server-client-instructions nil)
 (setq transient-mark-mode nil)          ;do not highlight region
 (setq use-short-answers t)
+(setq vc-follow-symlinks nil)
 (setq version-control t)
 
 (setq display-buffer-alist
@@ -67,7 +68,6 @@
   (setq-default python-indent 2)
   (setq-default sh-basic-offset 2)
   (setq-default tab-width 2)
-  ;; (show-paren-mode 1)
   (electric-pair-mode))
 
 (with-eval-after-load 'paren
@@ -146,21 +146,44 @@
   (setq avy-keys '(?t ?n ?s ?e ?r ?i ?a ?o ?f ?u ?d ?h ?l ?p ?g ?m ?c))) ;colemak-friendly keys
 
 (with-eval-after-load 'org
-  (load "init-org"))
+  (setq org-directory "~/src/doc")
+  (setq org-log-done 'time)
+  (setq org-src-window-setup 'current-window)
+  (setq org-todo-interpretation 'sequence)
+  (setq org-todo-keyword-faces '(("BLOCK" . link) ("REVIEW" . warning) ("WIP" . success)))
+  (setq org-todo-keywords '("TODO" "BLOCK(b@/!)" "REVIEW(r@/!)" "WIP(w!)" "|" "DONE(d!)" "CANCELLED(c@)")))
 
 (with-eval-after-load 'org-agenda
-  (load "init-org-agenda")
+  (setq org-agenda-window-setup 'current-window)
+  (setq org-agenda-custom-commands
+        '(("b" "Backlog" alltodo "" ((org-agenda-files '("work.org"))))
+          ("g" "Report" agenda "" ((org-agenda-files '("work.org")) (org-agenda-prefix-format "")))
+          ("h" "Home" ((agenda "") (alltodo "")) ((org-agenda-files '("home.org"))))
+          ("n" "Next" tags "next" ((org-agenda-files '("work.org"))))
+          ("w" "Work" agenda "" ((org-agenda-files '("work.org"))))))
+  (add-hook 'org-agenda-mode-hook #'hl-line-mode)
+  (add-hook 'org-agenda-after-show-hook #'org-narrow-to-subtree)
   (define-key org-agenda-mode-map (kbd "<C-down>") #'org-agenda-next-date-line)
   (define-key org-agenda-mode-map (kbd "<C-up>") #'org-agenda-previous-date-line))
 
 (with-eval-after-load 'org-capture
-  (load "init-org-capture"))
+  (setq org-capture-templates
+        '(("t" "Todo"  entry (file+olp+datetree "work.org") "* TODO %?\n%i")
+          ("m" "Mtg"   entry (file+olp+datetree "work.org") "* MTG %?")
+          ("h" "Home"  entry (file+olp+datetree "home.org") "* TODO %?")
+          ("s" "Music" entry (file+olp+datetree "music.org") "* TODO %?"))))
 
 (with-eval-after-load 'eshell
   (setq eshell-banner-message ""))
 
 (with-eval-after-load 'vterm
-  (load "init-vterm"))
+  (setq vterm-buffer-name-string "*vterm %s*") ;include shell title in buffer namen
+  (setq vterm-keymap-exceptions '("C-," "C-." "C-t" "C-c" "C-x" "C-u" "C-g" "C-h" "C-l" "M-x" "M-o" "C-v" "M-v" "C-y" "M-y"))
+  (setq vterm-shell "screen")
+  (define-key vterm-mode-map (kbd "<C-backspace>") #'vterm-send-meta-backspace)
+  (define-key vterm-mode-map (kbd "C-z") #'vterm--self-insert)
+  (define-key vterm-mode-map (kbd "<C-return>") #'vterm-copy-mode)
+  (define-key vterm-copy-mode-map (kbd "<C-return>") #'vterm-copy-mode))
 
 (with-eval-after-load 'elfeed
   (elfeed-load-opml "~/src/doc/elfeed.opml")
@@ -191,6 +214,18 @@
 
 (with-eval-after-load 'pabbrev
   (load "init-pabbrev"))
+
+(with-eval-after-load 'sendmail
+  (setq send-mail-function #'smtpmail-send-it) ;no query
+  (setq sendmail-program "/usr/bin/msmtp"))
+
+(with-eval-after-load 'message
+  (setq message-sendmail-f-is-evil t)         ;do not add username to cmdline
+  (setq message-sendmail-extra-arguments '("--read-envelope-from")) ;get cfg from sender
+  (setq message-send-mail-function 'message-send-mail-with-sendmail))
+
+(with-eval-after-load 'gnus-art
+  (setq gnus-inhibit-mime-unbuttonizing t)) ;show attachment buttons for all mime parts, including inline images
 
 (autoload 'mu4e "mu4e" nil t)
 (with-eval-after-load 'mu4e
