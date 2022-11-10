@@ -52,7 +52,7 @@
 (with-eval-after-load 'man
   (setq Man-notify-method 'pushy))
 
-(with-eval-after-load 'view-mode
+(with-eval-after-load 'view
   (setq view-read-only t)
   (define-key view-mode-map (kbd "n") #'next-line)
   (define-key view-mode-map (kbd "p") #'previous-line)
