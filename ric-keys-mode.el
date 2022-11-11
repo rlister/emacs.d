@@ -48,7 +48,6 @@
     (define-key map (kbd "C-c i") #'string-inflection-all-cycle)
     (define-key map (kbd "C-c j") #'avy-goto-word-1)
     (define-key map (kbd "C-c k") #'kill-whole-line)
-    (define-key map (kbd "C-c w") #'copy-whole-line)
     (define-key map (kbd "C-c l") #'link-hint-open-link)
     (define-key map (kbd "C-c m") #'mu4e)
     (define-key map (kbd "C-c o") #'org-agenda)
@@ -92,9 +91,3 @@
     map))
 
 (provide 'ric-keys-mode)
-
-(defun copy-whole-line (arg)
-  "Copy lines (as many as prefix argument) in the kill ring"
-  (interactive "p")
-  (kill-ring-save (line-beginning-position)
-                  (line-beginning-position (+ 1 arg))))
