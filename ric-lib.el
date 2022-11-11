@@ -3,17 +3,6 @@
 ;; Version: 0
 
 ;;;###autoload
-(defun ric-duplicate-line ()
-  "Duplicate current line, leaving point in current position."
-  (interactive)
-  (save-excursion
-    (end-of-line)
-    (copy-region-as-kill (line-beginning-position) (point))
-    (open-line 1)
-    (forward-line)
-    (yank)))
-
-;;;###autoload
 (defun ric-copy-line ()
   "Copy whole line, leaving point in current position."
   (interactive)
