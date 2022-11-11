@@ -64,6 +64,7 @@
 
 (with-eval-after-load 'prog-mode
   (setq-default indent-tabs-mode nil)
+  (setq-default standard-indent 2)
   (setq-default c-basic-offset 2)
   (setq-default css-indent-offset 2)
   (setq-default js-indent-level 2)
