@@ -156,7 +156,7 @@
  ;; '(magit-diff-none                   ((t (:foreground "grey37"))))
  ;; '(magit-reflog-commit               ((t (:foreground "PaleGreen"))))
 
- '(forge-topic-label ((t (:inherit fixed-pitch :box nil :inverse-video t))))
+ '(forge-topic-label ((t (:inherit fixed-pitch :box nil :inverse-video nil))))
 
  '(eshell-prompt        ((t (:inherit link))))
  '(eshell-ls-executable ((t (:weight normal :inherit success))))
