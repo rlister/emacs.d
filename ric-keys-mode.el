@@ -19,6 +19,10 @@
   :keymap
   (let ((map (make-sparse-keymap)))
     (define-key map (kbd "<C-tab>") #'complete-symbol)
+    (define-key map (kbd "<f12> +") 'global-text-scale-adjust)
+    (define-key map (kbd "<f12> =") 'global-text-scale-adjust)
+    (define-key map (kbd "<f12> -") 'global-text-scale-adjust)
+    (define-key map (kbd "<f12> 0") 'global-text-scale-adjust)
     (define-key map (kbd "<f2>") #'font-height-decrease)
     (define-key map (kbd "<f3>") #'font-height-increase)
     (define-key map (kbd "<f4>") #'font-height-reset)
