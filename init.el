@@ -213,7 +213,8 @@
   (setq code-review-new-buffer-window-strategy #'switch-to-buffer))
 
 (with-eval-after-load 'pabbrev
-  (load "init-pabbrev"))
+  (put 'org-mode 'pabbrev-global-mode-excluded-modes t) ;org-mode has post-command-hook bug with pabbrev
+  (setq pabbrev-idle-timer-verbose nil))
 
 (with-eval-after-load 'sendmail
   (setq send-mail-function #'smtpmail-send-it) ;no query

@@ -1,8 +1,3 @@
-;; there is a post-command-hook bug with pabbrev in org mode
-(put 'org-mode 'pabbrev-global-mode-excluded-modes t)
-
-(setq pabbrev-idle-timer-verbose nil) ;no minibuffer messages about scavenging
-
 (defun ric-pabbrev-suggestions-insert (word)
   "Insert suggestion from completing-read."
   (let ((point))
