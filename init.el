@@ -40,6 +40,8 @@
 (add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.out\\'" . view-mode))
 
+(put 'narrow-to-region 'disabled nil)
+
 (with-eval-after-load 'minibuffer
   (define-key minibuffer-local-map (kbd "C-n") #'minibuffer-next-completion)
   (define-key minibuffer-local-map (kbd "C-p") #'minibuffer-previous-completion)
