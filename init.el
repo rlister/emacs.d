@@ -6,6 +6,7 @@
 (setq completion-ignore-case t)
 (setq completion-show-help nil)
 (setq completion-styles '(initials partial-completion substring flex))
+(setq completion-category-overrides '((project-file (styles flex))))
 (setq completions-detailed t)
 (setq completions-format 'one-column)
 (setq delete-old-versions t)
