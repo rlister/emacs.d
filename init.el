@@ -65,7 +65,7 @@
   (setq-default css-indent-offset 2)
   (setq-default js-indent-level 2)
   (setq-default python-check-command "flake8")
-  (setq-default python-indent 2)
+  (setq-default python-indent-offset 2)
   (setq-default sh-basic-offset 2)
   (setq-default tab-width 2)
   (electric-pair-mode))
