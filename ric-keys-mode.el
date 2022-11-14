@@ -67,7 +67,6 @@
     (define-key map (kbd "C-c v") #'view-mode)
     (define-key map (kbd "C-c y") #'browse-kill-ring)
     (define-key map (kbd "C-j") #'forward-to-word)
-    ;; (define-key map (kbd "C-t") #'bs-show)
     (define-key map (kbd "C-h C-,") #'bs-show)
     (define-key map (kbd "C-t") #'switch-to-buffer)
     (define-key map (kbd "C-x C-z") nil)
