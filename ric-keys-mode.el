@@ -84,7 +84,6 @@
     (define-key map (kbd "M-]") #'ric-mark-paren-forward)
     (define-key map (kbd "M-i") #'imenu)
     (define-key map (kbd "M-o") #'project-find-file)
-    (define-key map (kbd "M-s r") #'anzu-query-replace)
     ;; (define-key map (kbd "M-<down>") #'end-of-buffer)
     ;; (define-key map (kbd "M-<up>") #'beginning-of-buffer)
     (define-key map (kbd "ESC <down>") #'end-of-buffer)
