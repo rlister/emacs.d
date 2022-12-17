@@ -23,7 +23,7 @@
 (setq select-enable-primary t)    ;yank from primary set in other apps
 (setq sentence-end-double-space nil) ;make forward/backward-sentence more useful
 (setq server-client-instructions nil)
-(setq transient-mark-mode nil)          ;do not highlight region
+(setq transient-mark-mode nil)
 (setq use-short-answers t)
 (setq vc-follow-symlinks nil)
 (setq version-control t)
@@ -246,6 +246,7 @@
 
 (autoload 'min-theme "min-theme" nil t)
 (autoload 'ric-keys-mode "ric-keys-mode" nil t)
+(autoload 'ric-code-review-link-hint "ric-lib" nil t)
 ;; (autoload 'font-height-increase "font-height" nil t)
 ;; (autoload 'no-mouse-mode "no-mouse-mode" nil t)
 
@@ -262,3 +263,4 @@
 (run-with-idle-timer 5 nil #'global-pabbrev-mode)
 (run-with-idle-timer 10 nil #'pixel-scroll-mode)
 (run-with-idle-timer 60 nil #'midnight-mode)
+(run-with-idle-timer 60 nil #'recentf-mode)
