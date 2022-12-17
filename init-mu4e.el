@@ -3,7 +3,7 @@
 (setq mu4e-context-policy 'pick-first)     ;start with default context
 (setq mu4e-main-buffer-name "*mu4e-main*") ;remove leading spc to unhide buffer
 (setq mu4e-completing-read-function #'completing-read) ;default is ido for some reason
-(setq mu4e-headers-thread-last-child-prefix '("> " . "└ ")) ;nicer ascii char
+(setq mu4e-headers-thread-last-child-prefix '(" >" . "└ ")) ;nicer ascii char
 (setq mu4e-headers-fields '((:human-date . 12) (:flags . 6) (:maildir . 15) (:mailing-list . 10) (:from-or-to . 22) (:subject)))
 (setq mu4e-split-view 'single-window)
 
@@ -17,10 +17,7 @@
                   (mu4e-refile-folder . "/home/archive")
                   (mu4e-trash-folder . "/home/trash")
                   (mu4e-drafts-folder . "/home/drafts")
-                  (mu4e-maildir-shortcuts . ((:maildir "/home/inbox" :key ?i)
-                                             (:maildir "/home/spam" :key ?s)
-                                             (:maildir "/home/sent" :key ?S)
-                                             (:maildir "/home/trash" :key ?t)))))
+                  (mu4e-maildir-shortcuts . ((:maildir "/home/inbox" :key ?i) (:maildir "/home/spam" :key ?s) (:maildir "/home/sent" :key ?S) (:maildir "/home/trash" :key ?t)))))
         ,(make-mu4e-context
           :name "work"
           :match-func (lambda (m) (when m (string-match-p "^/work" (mu4e-message-field m :maildir))))
@@ -30,14 +27,14 @@
                   (mu4e-refile-folder . "/work/archive")
                   (mu4e-trash-folder . "/work/trash")
                   (mu4e-drafts-folder . "/work/drafts")
-                  (mu4e-maildir-shortcuts . ((:maildir "/work/inbox" :key ?i)
-                                             (:maildir "/work/sent" :key ?S)
-                                             (:maildir "/work/trash" :key ?t)))))))
-
+                  (mu4e-maildir-shortcuts . ((:maildir "/work/inbox" :key ?i) (:maildir "/work/spam" :key ?s) (:maildir "/work/sent" :key ?S) (:maildir "/work/trash" :key ?t)))))))
 
 (define-key mu4e-main-mode-map (kbd "q") #'bury-buffer)
 (define-key mu4e-main-mode-map (kbd "Q") #'mu4e-quit)
 (define-key mu4e-main-mode-map (kbd "i") (kbd "ji"))
+
 (define-key mu4e-headers-mode-map (kbd "c") #'mu4e-context-switch)
 (define-key mu4e-view-mode-map (kbd "<backspace>") #'scroll-down)
 
+;; borken
+;; (advice-add 'mu4e-view-mark-for-trash :after #'kill-current-buffer)
