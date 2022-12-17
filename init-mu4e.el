@@ -1,11 +1,10 @@
 (setq mu4e-change-filenames-when-moving t) ;important for mbsync
 (setq mu4e-sent-messages-behavior 'delete) ;do not save to Sent: gmail imap takes care of this
 (setq mu4e-context-policy 'pick-first)     ;start with default context
-(setq mu4e-main-buffer-name "*mu4e-main*") ;remove leading spc to unhide buffer
 (setq mu4e-completing-read-function #'completing-read) ;default is ido for some reason
 (setq mu4e-headers-thread-last-child-prefix '(" >" . "└ ")) ;nicer ascii char
 (setq mu4e-headers-fields '((:human-date . 12) (:flags . 6) (:maildir . 15) (:mailing-list . 10) (:from-or-to . 22) (:subject)))
-(setq mu4e-split-view 'single-window)
+;; (setq mu4e-split-view 'single-window)
 
 (setq mu4e-contexts
       `(,(make-mu4e-context
