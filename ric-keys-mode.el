@@ -51,6 +51,7 @@
     (define-key map (kbd "C-c c") #'org-capture)
     (define-key map (kbd "C-c d") #'duplicate-dwim)
     (define-key map (kbd "C-c e") #'eshell)
+    (define-key map (kbd "C-c f") #'recentf)
     (define-key map (kbd "C-c g") #'magit-file-dispatch)
     (define-key map (kbd "C-c h") #'eldoc)
     (define-key map (kbd "C-c i") #'string-inflection-all-cycle)
