@@ -118,7 +118,6 @@
   (global-anzu-mode 1))
 
 (with-eval-after-load 'project
-  (setq global-mode-string (append global-mode-string '((:eval (project-root (project-current)))))) ;project in modeline
   (setq project-switch-commands
         '((project-switch-to-buffer "buffer" ?b)
           (project-dired "dir" ?d)
