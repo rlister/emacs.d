@@ -83,6 +83,9 @@
   (add-hook 'go-mode-hook #'eglot-ensure)
   (add-hook 'go-mode-hook #'subword-mode))
 
+(with-eval-after-load 'terraform-mode
+  (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode))
+
 (with-eval-after-load 'eglot
   (define-key eglot-mode-map (kbd "C-c C-r") #'eglot-rename))
 
