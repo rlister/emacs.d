@@ -1,37 +1,62 @@
-(add-to-list 'load-path "~/src/emacs.d")
-
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
-(setq completion-auto-help 'always)
 (setq bookmark-save-flag 1)              ;save after any modification
 (setq clean-buffer-list-delay-general 1) ;midnight-mode days
+;; (setq completion-auto-help t)
 (setq completion-ignore-case t)
 (setq completion-show-help nil)
-(setq completion-styles '(initials partial-completion substring flex))
-(setq completion-category-overrides '((project-file (styles substring flex))))
+;; (setq completion-styles '(initials partial-completion substring flex))
+;; (setq completion-styles ';; (basic partial-completion emacs22))
+;; (setq completion-category-overrides '((project-file (styles substring flex))))
+;; (setq completion-category-overrides nil)
 (setq completions-detailed t)
-(setq completions-format 'one-column)
+;; (setq completions-format 'one-column)
+(setq custom-file "~/.emacs.d/custom.el") ;stop customize from polluting init.el
 (setq delete-old-versions t)
 (setq epg-pinentry-mode 'loopback)     ;pinentry queries in minibuffer
 (setq eshell-banner-message "")
 (setq eww-auto-rename-buffer 'title)
+(setq gnus-inhibit-mime-unbuttonizing t) ;show attachment buttons for all mime parts, including inline images
 (setq icomplete-prospects-height 1)     ;stop minibuffer height from jumping
 (setq icomplete-separator "  ")
 (setq inhibit-startup-echo-area-message "ric")
 (setq Man-notify-method 'pushy)
+(setq message-sendmail-f-is-evil t)         ;do not add username to cmdline
+(setq message-sendmail-extra-arguments '("--read-envelope-from")) ;get cfg from sender
+(setq message-send-mail-function 'message-send-mail-with-sendmail)
 (setq native-comp-async-report-warnings-errors 'silent) ;log warnings but not pop up the *Warnings* buffer
 (setq next-error-message-highlight t)
+(setq pabbrev-idle-timer-verbose t)
 (setq read-buffer-completion-ignore-case t)
 (setq read-file-name-completion-ignore-case t)
 (setq scroll-conservatively 101)      ;do not center point, less jumpy
 (setq scroll-preserve-screen-position t) ;do not lose point
 (setq select-active-regions nil)  ;do not send all regions to primary
 (setq select-enable-primary t)    ;yank from primary set in other apps
+(setq send-mail-function #'smtpmail-send-it) ;no query
+(setq sendmail-program "/usr/bin/msmtp")
 (setq sentence-end-double-space nil) ;make forward/backward-sentence more useful
 (setq server-client-instructions nil)
+(setq show-paren-context-when-offscreen t)
+(setq show-paren-when-point-in-periphery t)
+(setq shr-inhibit-images t)
+(setq shr-use-fonts nil)
+(setq shr-use-colors nil)
 (setq transient-mark-mode nil)
 (setq use-short-answers t)
 (setq vc-follow-symlinks nil)
 (setq version-control t)
+(setq view-read-only t)
+
+(setq-default indent-tabs-mode nil)
+(setq-default standard-indent 2)
+(setq-default c-basic-offset 2)
+(setq-default css-indent-offset 2)
+(setq-default js-indent-level 2)
+(setq-default python-check-command "flake8")
+(setq-default python-indent-offset 2)
+(setq-default sh-basic-offset 2)
+(setq-default tab-width 2)
+(setq-default nginx-indent-level 2)
 
 (setq display-buffer-alist
       '(("\\*Help\\*" (display-buffer-same-window))
@@ -41,45 +66,13 @@
         ("\\*rg\\*" (display-buffer-same-window))
         ("\\*Packages\\*" (display-buffer-same-window))))
 
+(add-to-list 'load-path "~/src/emacs.d")
 (add-to-list 'auto-mode-alist '("Envfile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.out\\'" . view-mode))
+;; (add-to-list 'auto-mode-alist '("\\.out\\'" . view-mode))
 
 (put 'narrow-to-region 'disabled nil)
 
-(with-eval-after-load 'minibuffer
-  (define-key minibuffer-local-map (kbd "C-n") #'minibuffer-next-completion)
-  (define-key minibuffer-local-map (kbd "C-p") #'minibuffer-previous-completion)
-  (define-key completion-in-region-mode-map (kbd "C-n") #'minibuffer-next-completion)
-  (define-key completion-in-region-mode-map (kbd "C-p") #'minibuffer-previous-completion)
-  (define-key completion-in-region-mode-map (kbd "RET") #'minibuffer-choose-completion))
-
-(with-eval-after-load 'bs-show
-  (add-hook 'bs-mode-hook 'hl-line-mode))
-
-
-(with-eval-after-load 'view
-  (setq view-read-only t)
-  (define-key view-mode-map (kbd "n") #'next-line)
-  (define-key view-mode-map (kbd "p") #'previous-line)
-  (define-key view-mode-map (kbd "i") #'view-mode)
-  (define-key view-mode-map (kbd "k") #'kill-current-buffer))
-
-(with-eval-after-load 'prog-mode
-  (setq-default indent-tabs-mode nil)
-  (setq-default standard-indent 2)
-  (setq-default c-basic-offset 2)
-  (setq-default css-indent-offset 2)
-  (setq-default js-indent-level 2)
-  (setq-default python-check-command "flake8")
-  (setq-default python-indent-offset 2)
-  (setq-default sh-basic-offset 2)
-  (setq-default tab-width 2)
-  (setq-default nginx-indent-level 2))
-
-(with-eval-after-load 'paren
-  (setq show-paren-context-when-offscreen t)
-  (setq show-paren-when-point-in-periphery t))
 
 (with-eval-after-load 'go-mode
   ;; (add-hook 'go-mode-hook #'tree-sitter-hl-mode)
@@ -95,14 +88,6 @@
 (with-eval-after-load 'flymake
   (define-key flymake-mode-map (kbd "C-c C-p") #'flymake-goto-prev-error)
   (define-key flymake-mode-map (kbd "C-c C-n") #'flymake-goto-next-error))
-
-(with-eval-after-load 'shr
-  (setq shr-inhibit-images t)
-  (setq shr-use-fonts nil)
-  (setq shr-use-colors nil))
-
-(with-eval-after-load 'cus-edit
-  (setq custom-file "~/.emacs.d/custom.el")) ;stop customize from polluting init.el
 
 (with-eval-after-load 'dired
   (setq dired-guess-shell-alist-user '(("\\." "xdg-open")))
@@ -155,6 +140,7 @@
   (setq avy-keys '(?t ?n ?s ?e ?r ?i ?a ?o ?f ?u ?d ?h ?l ?p ?g ?m ?c))) ;colemak-friendly keys
 
 (with-eval-after-load 'org
+  (define-key pabbrev-mode-map [tab] 'pabbrev-expand-maybe) ;https://lists.gnu.org/archive/html/emacs-orgmode/2016-02/msg00311.html
   (setq org-directory "~/src/doc")
   (setq org-log-done 'time)
   (setq org-src-window-setup 'current-window)
@@ -188,6 +174,7 @@
   (setq vterm-shell "screen")
   (define-key vterm-mode-map (kbd "<C-backspace>") #'vterm-send-meta-backspace)
   (define-key vterm-mode-map (kbd "C-z") #'vterm--self-insert)
+  ;; (define-key vterm-mode-map (kbd "C-c C-c") #'vterm--self-insert)
   (define-key vterm-mode-map (kbd "<C-return>") #'vterm-copy-mode)
   (define-key vterm-copy-mode-map (kbd "<C-return>") #'vterm-copy-mode))
 
@@ -209,25 +196,6 @@
   (define-key markdown-mode-map (kbd "C-c v") #'markdown-view-mode)
   (define-key markdown-view-mode-map (kbd "C-c v") #'markdown-mode))
 
-(with-eval-after-load 'code-review
-  (setq code-review-new-buffer-window-strategy #'switch-to-buffer))
-
-(with-eval-after-load 'pabbrev
-  (put 'org-mode 'pabbrev-global-mode-excluded-modes t) ;org-mode has post-command-hook bug with pabbrev
-  (setq pabbrev-idle-timer-verbose nil))
-
-(with-eval-after-load 'sendmail
-  (setq send-mail-function #'smtpmail-send-it) ;no query
-  (setq sendmail-program "/usr/bin/msmtp"))
-
-(with-eval-after-load 'message
-  (setq message-sendmail-f-is-evil t)         ;do not add username to cmdline
-  (setq message-sendmail-extra-arguments '("--read-envelope-from")) ;get cfg from sender
-  (setq message-send-mail-function 'message-send-mail-with-sendmail))
-
-(with-eval-after-load 'gnus-art
-  (setq gnus-inhibit-mime-unbuttonizing t)) ;show attachment buttons for all mime parts, including inline images
-
 (autoload 'mu4e "mu4e" nil t)
 (with-eval-after-load 'mu4e
   (load "init-mu4e"))
@@ -240,7 +208,6 @@
 ;; (autoload 'font-height-increase "font-height" nil t)
 ;; (autoload 'no-mouse-mode "no-mouse-mode" nil t)
 
-;; hooks
 (add-hook 'after-init-hook #'min-theme)
 (add-hook 'window-setup-hook #'ric-keys-mode)
 (add-hook 'window-setup-hook #'winner-mode)
@@ -249,7 +216,6 @@
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
-;; delayed loads
 (run-with-idle-timer 5 nil #'global-visible-mark-mode)
 (run-with-idle-timer 5 nil #'global-pabbrev-mode)
 (run-with-idle-timer 10 nil #'pixel-scroll-mode)
