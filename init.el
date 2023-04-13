@@ -75,6 +75,7 @@
   (setq-default python-indent-offset 2)
   (setq-default sh-basic-offset 2)
   (setq-default tab-width 2)
+  (setq-default nginx-indent-level 2))
 
 (with-eval-after-load 'paren
   (setq show-paren-context-when-offscreen t)
