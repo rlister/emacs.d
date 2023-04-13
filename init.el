@@ -13,6 +13,8 @@
 (setq delete-old-versions t)
 (setq epg-pinentry-mode 'loopback)     ;pinentry queries in minibuffer
 (setq eww-auto-rename-buffer 'title)
+(setq icomplete-prospects-height 1)     ;stop minibuffer height from jumping
+(setq icomplete-separator "  ")
 (setq inhibit-startup-echo-area-message "ric")
 (setq native-comp-async-report-warnings-errors 'silent) ;log warnings but not pop up the *Warnings* buffer
 (setq next-error-message-highlight t)
@@ -257,6 +259,7 @@
 (add-hook 'after-init-hook #'min-theme)
 (add-hook 'window-setup-hook #'ric-keys-mode)
 (add-hook 'window-setup-hook #'winner-mode)
+(add-hook 'window-setup-hook #'fido-mode)
 (add-hook 'server-after-make-frame-hook #'ric-key-translations)
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
