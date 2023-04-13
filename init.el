@@ -12,10 +12,12 @@
 (setq completions-format 'one-column)
 (setq delete-old-versions t)
 (setq epg-pinentry-mode 'loopback)     ;pinentry queries in minibuffer
+(setq eshell-banner-message "")
 (setq eww-auto-rename-buffer 'title)
 (setq icomplete-prospects-height 1)     ;stop minibuffer height from jumping
 (setq icomplete-separator "  ")
 (setq inhibit-startup-echo-area-message "ric")
+(setq Man-notify-method 'pushy)
 (setq native-comp-async-report-warnings-errors 'silent) ;log warnings but not pop up the *Warnings* buffer
 (setq next-error-message-highlight t)
 (setq read-buffer-completion-ignore-case t)
@@ -55,8 +57,6 @@
 (with-eval-after-load 'bs-show
   (add-hook 'bs-mode-hook 'hl-line-mode))
 
-(with-eval-after-load 'man
-  (setq Man-notify-method 'pushy))
 
 (with-eval-after-load 'view
   (setq view-read-only t)
@@ -181,9 +181,6 @@
           ("m" "Mtg"   entry (file+olp+datetree "work.org") "* MTG %?")
           ("h" "Home"  entry (file+olp+datetree "home.org") "* TODO %?")
           ("s" "Music" entry (file+olp+datetree "music.org") "* TODO %?"))))
-
-(with-eval-after-load 'eshell
-  (setq eshell-banner-message ""))
 
 (with-eval-after-load 'vterm
   (setq vterm-buffer-name-string "*vterm %s*") ;include shell title in buffer namen
