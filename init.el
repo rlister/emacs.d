@@ -1,8 +1,9 @@
 (add-to-list 'load-path "~/src/emacs.d")
 
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
-(setq bookmark-save-flag 1)             ;save after any modification
 (setq completion-auto-help 'always)
+(setq bookmark-save-flag 1)              ;save after any modification
+(setq clean-buffer-list-delay-general 1) ;midnight-mode days
 (setq completion-ignore-case t)
 (setq completion-show-help nil)
 (setq completion-styles '(initials partial-completion substring flex))
