@@ -93,7 +93,7 @@
 
  '(shortdoc-section ((t (:inherit default))))
 
- '(icomplete-first-match ((t (:inherit warning))))
+ '(icomplete-first-match ((t (:foreground "Cyan"))))
 
  ;; org-mode
  '(org-level-1              ((t (:inherit font-lock-function-name-face :height 1.2))))
