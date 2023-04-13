@@ -232,16 +232,6 @@
 (with-eval-after-load 'mu4e
   (load "init-mu4e"))
 
-(add-to-list 'load-path "~/src/weechat.el")
-(autoload 'weechat-connect "weechat" nil t)
-(with-eval-after-load 'weechat
-  (load "init-weechat")
-  (add-hook 'weechat-mode-hook #'visual-line-mode)
-  (setq weechat-modules '(weechat-button weechat-complete weechat-tracking))
-  (setq weechat-sync-buffer-read-status t)
-  (setq weechat-tracking-types '(:highlight :message))
-  (setq weechat-completing-read-function 'completing-read))
-
 ;; (advice-add 'mark-sexp :filter-args #'ric-mark-args)
 
 (autoload 'min-theme "min-theme" nil t)
