@@ -121,6 +121,10 @@
   (global-anzu-mode 1))
 
 (with-eval-after-load 'project
+  (defun ric-project-vterm ()
+    (interactive)
+    (let ((default-directory (project-root (project-current t))))
+      (vterm)))
   (setq project-switch-commands
         '((project-switch-to-buffer "buffer" ?b)
           (project-dired "dir" ?d)
@@ -129,7 +133,7 @@
           (project-kill-buffers "kill" ?k)
           (magit-project-status "magit" ?m)
           (rg-project "rg" ?r)
-          (vterm "vterm" ?t)
+          (ric-project-vterm "vterm" ?t)
           (vc-dir "vc" ?v))))
 
 (with-eval-after-load 'package
