@@ -144,6 +144,10 @@
 (with-eval-after-load 'avy
   (setq avy-keys '(?t ?n ?s ?e ?r ?i ?a ?o ?f ?u ?d ?h ?l ?p ?g ?m ?c))) ;colemak-friendly keys
 
+(with-eval-after-load 'pabbrev
+  (put 'org-mode 'pabbrev-global-mode-excluded-modes t) ;org-mode has post-command-hook bug with pabbrev
+  (define-key pabbrev-mode-map [tab] 'pabbrev-expand-maybe)) ;https://lists.gnu.org/archive/html/emacs-orgmode/2016-02/msg00311.html
+
 (with-eval-after-load 'org
   (define-key pabbrev-mode-map [tab] 'pabbrev-expand-maybe) ;https://lists.gnu.org/archive/html/emacs-orgmode/2016-02/msg00311.html
   (setq org-directory "~/src/doc")
