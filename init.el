@@ -9,25 +9,31 @@
 ;; (setq completion-category-overrides '((project-file (styles substring flex))))
 ;; (setq completion-category-overrides nil)
 (setq completions-detailed t)
-;; (setq completions-format 'one-column)
+(setq completions-format 'one-column)
+(setq completion-auto-help 'always)
+(setq completion-auto-select 'second-tab)
 (setq custom-file "~/.emacs.d/custom.el") ;stop customize from polluting init.el
 (setq delete-old-versions t)
 (setq epg-pinentry-mode 'loopback)     ;pinentry queries in minibuffer
 (setq eshell-banner-message "")
+(setq enable-recursive-minibuffers t)
+(minibuffer-depth-indicate-mode)
 (setq eww-auto-rename-buffer 'title)
 (setq gnus-inhibit-mime-unbuttonizing t) ;show attachment buttons for all mime parts, including inline images
-(setq icomplete-prospects-height 1)     ;stop minibuffer height from jumping
+(setq icomplete-prospects-height 1) ;minibuffer height
 (setq icomplete-separator "  ")
 (setq inhibit-startup-echo-area-message "ric")
 (setq Man-notify-method 'pushy)
 (setq message-sendmail-f-is-evil t)         ;do not add username to cmdline
 (setq message-sendmail-extra-arguments '("--read-envelope-from")) ;get cfg from sender
 (setq message-send-mail-function 'message-send-mail-with-sendmail)
+(setq minibuffer-default-prompt-format "")
 (setq native-comp-async-report-warnings-errors 'silent) ;log warnings but not pop up the *Warnings* buffer
 (setq next-error-message-highlight t)
 (setq pabbrev-idle-timer-verbose t)
 (setq read-buffer-completion-ignore-case t)
 (setq read-file-name-completion-ignore-case t)
+(setq resize-mini-windows nil)
 (setq scroll-conservatively 101)      ;do not center point, less jumpy
 (setq scroll-preserve-screen-position t) ;do not lose point
 (setq select-active-regions nil)  ;do not send all regions to primary
