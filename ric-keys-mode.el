@@ -73,8 +73,6 @@
     (define-key map (kbd "H-i") #'project-find-file)
     (define-key map (kbd "H-m") #'easy-kill)
     (define-key map (kbd "M-Q") #'ric-unfill-paragraph)
-    (define-key map (kbd "M-[") #'ric-mark-paren-backward)
-    (define-key map (kbd "M-]") #'ric-mark-paren-forward)
     (define-key map (kbd "M-g l") #'avy-goto-line)
     (define-key map (kbd "M-i") #'imenu)
     (define-key map (kbd "M-o") #'project-find-file)
