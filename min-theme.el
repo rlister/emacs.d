@@ -28,8 +28,9 @@
  ;; mode-line
  '(mode-line           ((t (:foreground "aquamarine3" :background "grey14" :box nil))))
  '(mode-line-inactive  ((t (:foreground "grey50" :background "grey7" :box nil))))
- '(mode-line-buffer-id ((t (:foregrount "PaleGreen"))))
- '(mode-line-highlight ((t (:foreground "Cyan" :box nil))))
+ '(mode-line-buffer-id ((t (:foreground "PaleGreen"))))
+ '(mode-line-highlight ((t (:foreground "Cyan" :box nil :background "grey14"))))
+ '(mode-line-emphasis  ((t (:foreground "IndianRed" :background "grey14" :box nil))))
 
  ;; other parts of frame and ui elements
  '(header-line   ((t (:inherit highlight :foreground "MediumAquamarine"))))
@@ -63,10 +64,12 @@
  '(font-lock-regexp-grouping-construct ((t (:inherit isearch))))
  '(font-lock-warning-face              ((t (:inherit warning))))
 
- ;; minibuffer
  '(minibuffer-prompt ((t (:inherit success))))
  '(completions-annotations ((t (:inherit warning))))
  '(completions-common-part ((t (:inherit success))))
+ '(completions-highlight ((t (:foreground "Cyan"))))
+
+ '(icomplete-first-match ((t (:inherit completions-highlight))))
 
  '(sh-heredoc ((t (:inherit font-lock-string-face))))
  '(sh-quoted-exec ((t (:inherit font-lock-preprocessor-face))))
@@ -92,9 +95,6 @@
  '(dired-async-failures     ((t (:inherit error))))
 
  '(shortdoc-section ((t (:inherit default))))
-
- '(icomplete-first-match ((t (:foreground "Cyan"))))
-
  ;; org-mode
  '(org-level-1              ((t (:inherit font-lock-function-name-face :height 1.2))))
  '(org-level-2              ((t (:inherit font-lock-keyword-face :height 1.1))))
