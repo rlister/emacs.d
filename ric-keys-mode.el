@@ -68,7 +68,7 @@
     (define-key map (kbd "C-x d") #'dired-jump)
     (define-key map (kbd "C-x g") #'magit-status)
     (define-key map (kbd "C-x k") #'kill-current-buffer)
-    (define-key map (kbd "C-x m") #'execute-extended-command)
+    (keymap-set map "C-x m" #'smex)
     (define-key map (kbd "C-z") #'zap-up-to-char)
     (define-key map (kbd "H-i") #'project-find-file)
     (define-key map (kbd "H-m") #'easy-kill)

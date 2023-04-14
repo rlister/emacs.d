@@ -17,7 +17,6 @@
 (setq epg-pinentry-mode 'loopback)     ;pinentry queries in minibuffer
 (setq eshell-banner-message "")
 (setq enable-recursive-minibuffers t)
-(minibuffer-depth-indicate-mode)
 (setq eww-auto-rename-buffer 'title)
 (setq gnus-inhibit-mime-unbuttonizing t) ;show attachment buttons for all mime parts, including inline images
 (setq icomplete-prospects-height 1) ;minibuffer height
@@ -78,7 +77,6 @@
 ;; (add-to-list 'auto-mode-alist '("\\.out\\'" . view-mode))
 
 (put 'narrow-to-region 'disabled nil)
-
 
 (with-eval-after-load 'go-mode
   ;; (add-hook 'go-mode-hook #'tree-sitter-hl-mode)
@@ -232,3 +230,4 @@
 (run-with-idle-timer 10 nil #'pixel-scroll-mode)
 (run-with-idle-timer 60 nil #'midnight-mode)
 (run-with-idle-timer 60 nil #'recentf-mode)
+(run-with-idle-timer 60 nil #'minibuffer-depth-indicate-mode)
