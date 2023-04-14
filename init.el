@@ -158,6 +158,8 @@
   (setq org-todo-keywords '("TODO" "BLOCK(b@/!)" "REVIEW(r@/!)" "WIP(w!)" "|" "DONE(d!)" "CANCELLED(c@)")))
 
 (with-eval-after-load 'org-agenda
+  (defun org-agenda-set-mode-name ()
+    (setq mode-name (list "Org-Agenda")))
   (setq org-agenda-window-setup 'current-window)
   (setq org-agenda-custom-commands
         '(("b" "Backlog" alltodo "" ((org-agenda-files '("work.org"))))
