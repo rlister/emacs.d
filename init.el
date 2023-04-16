@@ -240,13 +240,10 @@
 
 (with-eval-after-load 'vterm
   (setq vterm-buffer-name-string "*vterm %s*") ;include shell title in buffer namen
-  (setq vterm-keymap-exceptions '("C-," "C-." "C-t" "C-c" "C-x" "C-u" "C-g" "C-h" "C-l" "M-x" "M-o" "C-v" "M-v" "C-y" "M-y"))
   (setq vterm-shell "screen")
-  (define-key vterm-mode-map (kbd "<C-backspace>") #'vterm-send-meta-backspace)
-  (define-key vterm-mode-map (kbd "C-z") #'vterm--self-insert)
-  ;; (define-key vterm-mode-map (kbd "C-c C-c") #'vterm--self-insert)
-  (define-key vterm-mode-map (kbd "<C-return>") #'vterm-copy-mode)
-  (define-key vterm-copy-mode-map (kbd "<C-return>") #'vterm-copy-mode))
+  (keymap-set vterm-mode-map "C-t" nil)
+  (keymap-set vterm-mode-map "C-<return>" #'vterm-copy-mode)
+  (keymap-set vterm-copy-mode-map "C-<return>" #'vterm-copy-mode))
 
 (autoload 'mu4e "mu4e" nil t)
 (with-eval-after-load 'mu4e
