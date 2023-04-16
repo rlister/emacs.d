@@ -11,7 +11,6 @@
 ;; (setq completion-category-overrides nil)
 (setq completions-detailed t)
 (setq completions-format 'one-column)
-(setq completion-auto-help 'always)
 (setq completion-auto-select 'second-tab)
 (setq custom-file "~/.emacs.d/custom.el") ;stop customize from polluting init.el
 (setq delete-old-versions t)
