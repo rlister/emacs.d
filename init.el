@@ -48,7 +48,7 @@
 (setq shr-inhibit-images t)
 (setq shr-use-fonts nil)
 (setq shr-use-colors nil)
-(setq transient-mark-mode nil)
+;; (setq transient-mark-mode nil)
 (setq use-short-answers t)
 (setq vc-follow-symlinks nil)
 (setq version-control t)
