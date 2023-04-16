@@ -261,8 +261,6 @@
 ;; (autoload 'no-mouse-mode "no-mouse-mode" nil t)
 
 (add-hook 'after-init-hook #'min-theme)
-(add-hook 'window-setup-hook #'winner-mode)
-;; (add-hook 'window-setup-hook #'ric-keys-mode)
 (add-hook 'window-setup-hook #'fido-mode)
 ;; (add-hook 'server-after-make-frame-hook #'ric-key-translations)
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
@@ -270,7 +268,8 @@
 
 (run-with-idle-timer 5 nil #'global-visible-mark-mode)
 (run-with-idle-timer 5 nil #'global-pabbrev-mode)
+(run-with-idle-timer 5 nil #'winner-mode)
 (run-with-idle-timer 10 nil #'pixel-scroll-mode)
+(run-with-idle-timer 10 nil #'minibuffer-depth-indicate-mode)
 (run-with-idle-timer 60 nil #'midnight-mode)
 (run-with-idle-timer 60 nil #'recentf-mode)
-(run-with-idle-timer 60 nil #'minibuffer-depth-indicate-mode)
