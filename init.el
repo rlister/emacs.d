@@ -19,6 +19,7 @@
 (setq enable-recursive-minibuffers t)
 (setq eww-auto-rename-buffer 'title)
 (setq gnus-inhibit-mime-unbuttonizing t) ;show attachment buttons for all mime parts, including inline images
+(setq icomplete-compute-delay 0)
 (setq icomplete-prospects-height 1) ;minibuffer height
 (setq icomplete-separator "  ")
 (setq inhibit-startup-echo-area-message "ric")
