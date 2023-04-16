@@ -158,11 +158,10 @@
   ;; (add-hook 'go-mode-hook #'tree-sitter-hl-mode)
   (add-hook 'go-mode-hook #'eglot-ensure)
   (add-hook 'go-mode-hook #'subword-mode))
+
 (with-eval-after-load 'isearch
   (setq isearch-lax-whitespace t)       ;space matches any non-word
   (setq search-whitespace-regexp ".*?") ;very loose matching
-  (define-key isearch-mode-map (kbd "C-<return>") 'ric-isearch-exit-other-end)
-  (define-key isearch-mode-map [remap isearch-delete-char] 'isearch-del-char) ;backspace should edit search string
   (global-anzu-mode 1))
 
 (with-eval-after-load 'magit
