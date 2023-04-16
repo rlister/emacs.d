@@ -71,6 +71,48 @@
         ("\\*rg\\*" (display-buffer-same-window))
         ("\\*Packages\\*" (display-buffer-same-window))))
 
+(keymap-global-set "C-," #'previous-buffer)
+(keymap-global-set "C-." #'next-buffer)
+(keymap-global-set "C-;" #'comment-line)
+(keymap-global-set "C-j" #'avy-goto-char)
+(keymap-global-set "C-t" #'switch-to-buffer)
+(keymap-global-set "C-z" #'zap-up-to-char)
+
+(keymap-global-set "C-c c" #'org-capture)
+(keymap-global-set "C-c d" #'duplicate-dwim)
+(keymap-global-set "C-c f" #'avy-goto-char-in-line)
+(keymap-global-set "C-c j" #'avy-goto-char)
+(keymap-global-set "C-c k" #'kill-whole-line)
+(keymap-global-set "C-c l" #'link-hint-open-link)
+(keymap-global-set "C-c m" #'easy-kill)
+(keymap-global-set "C-c t" #'vterm)
+(keymap-global-set "C-c u" #'winner-undo)
+(keymap-global-set "C-c o" #'org-agenda)
+
+(keymap-set esc-map "<down>" #'end-of-buffer)
+(keymap-set esc-map "<up>" #'beginning-of-buffer)
+(keymap-set esc-map "c" #'capitalize-dwim)
+(keymap-set esc-map "l" #'downcase-dwim)
+(keymap-set esc-map "u" #'upcase-dwim)
+
+(keymap-set ctl-x-map "d" #'dired-jump)
+(keymap-set ctl-x-map "g" #'magit-status)
+(keymap-set ctl-x-map "k" #'kill-current-buffer)
+(keymap-set ctl-x-map "m" #'smex)
+
+(keymap-global-set "s-<up>" #'enlarge-window)
+(keymap-global-set "s-<down>" #'shrink-window)
+(keymap-global-set "s-<right>" #'enlarge-window-horizontally)
+(keymap-global-set "s-<left>" #'shrink-window-horizontally)
+(keymap-global-set "s-o" #'other-window)
+
+(when (display-graphic-p)
+  (keyboard-translate ?\C-i ?\H-i)
+  (keyboard-translate ?\C-m ?\H-m))
+
+(keymap-global-set "H-i" #'project-find-file)
+(keymap-global-set "H-m" #'mark-sexp)
+
 (add-to-list 'load-path "~/src/emacs.d")
 (add-to-list 'auto-mode-alist '("Envfile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode))
@@ -212,16 +254,15 @@
 ;; (advice-add 'mark-sexp :filter-args #'ric-mark-args)
 
 (autoload 'min-theme "min-theme" nil t)
-(autoload 'ric-keys-mode "ric-keys-mode" nil t)
 (autoload 'ric-code-review-link-hint "ric-lib" nil t)
 ;; (autoload 'font-height-increase "font-height" nil t)
 ;; (autoload 'no-mouse-mode "no-mouse-mode" nil t)
 
 (add-hook 'after-init-hook #'min-theme)
-(add-hook 'window-setup-hook #'ric-keys-mode)
 (add-hook 'window-setup-hook #'winner-mode)
+;; (add-hook 'window-setup-hook #'ric-keys-mode)
 (add-hook 'window-setup-hook #'fido-mode)
-(add-hook 'server-after-make-frame-hook #'ric-key-translations)
+;; (add-hook 'server-after-make-frame-hook #'ric-key-translations)
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
