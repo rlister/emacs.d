@@ -65,12 +65,12 @@
 (setq-default nginx-indent-level 2)
 
 (setq display-buffer-alist
-      '(("\\*Help\\*" (display-buffer-same-window))
-        ("\\*Shortdoc" (display-buffer-same-window))
-        ("\\*Code Review\\*" (display-buffer-same-window))
+      '(("\\*Code Review\\*" (display-buffer-same-window))
+        ("\\*Help\\*" (display-buffer-same-window))
         ("\\*Occur\\*" (display-buffer-same-window))
+        ("\\*Packages\\*" (display-buffer-same-window))
         ("\\*rg\\*" (display-buffer-same-window))
-        ("\\*Packages\\*" (display-buffer-same-window))))
+        ("\\*Shortdoc" (display-buffer-same-window))))
 
 (keymap-global-set "C-," #'previous-buffer)
 (keymap-global-set "C-." #'next-buffer)
@@ -82,11 +82,17 @@
 (keymap-global-set "C-c c" #'org-capture)
 (keymap-global-set "C-c d" #'duplicate-dwim)
 (keymap-global-set "C-c f" #'avy-goto-char-in-line)
+(keymap-global-set "C-c g" #'magit-file-dispatch)
 (keymap-global-set "C-c j" #'avy-goto-char)
 (keymap-global-set "C-c k" #'kill-whole-line)
+(keymap-global-set "C-c L" #'link-hint-copy-link)
 (keymap-global-set "C-c l" #'link-hint-open-link)
-(keymap-global-set "C-c m" #'easy-kill)
+(keymap-global-set "C-c m" #'mu4e)
+(keymap-global-set "C-c p" #'project-switch-project)
+(keymap-global-set "C-c R" #'ric-code-review-link-hint)
+(keymap-global-set "C-c r" #'rg)
 (keymap-global-set "C-c t" #'vterm)
+(keymap-global-set "C-c s" #'magit-branch-checkout)
 (keymap-global-set "C-c u" #'winner-undo)
 (keymap-global-set "C-c o" #'org-agenda)
 
@@ -126,6 +132,7 @@
   (setq dired-listing-switches "-alh")
   (add-hook 'dired-mode-hook 'turn-on-gnus-dired-mode) ;attach files from dired to mu4e
   (add-to-list 'dired-font-lock-keywords (list dired-re-exe '(".+" (dired-move-to-filename) nil (0 'success))) 'append) ;face for exec files
+  (keymap-set dired-mode-map "C-t" nil)
   (define-key dired-mode-map (kbd "f") #'find-name-dired)
   (define-key dired-mode-map (kbd "_") (lambda () (interactive) (dired-do-rename-regexp "^.*$" "_\\&"))) ;prepend underscore
   (define-key dired-mode-map (kbd "C-c _") (lambda () (interactive) (dired-do-rename-regexp "^_" ""))))  ;remove leading underscore
@@ -145,8 +152,8 @@
   (define-key flymake-mode-map (kbd "C-c C-n") #'flymake-goto-next-error))
 
 (with-eval-after-load 'forge
-  (define-key forge-topic-mode-map (kbd "r") #'forge-edit-topic-review-requests)
-  (define-key forge-topic-mode-map (kbd "w") #'forge-browse-topic))
+  (keymap-set forge-topic-mode-map "r" #'forge-edit-topic-review-requests)
+  (keymap-set forge-topic-mode-map "w" #'forge-browse-topic))
 
 (with-eval-after-load 'gcalcli-mode
   (setq gcalcli-bin "~/.local/bin/gcalcli")
@@ -170,8 +177,9 @@
 
 (with-eval-after-load 'markdown-mode
   (add-hook 'markdown-mode-hook #'visual-line-mode)
-  (define-key markdown-mode-map (kbd "C-c v") #'markdown-view-mode)
-  (define-key markdown-view-mode-map (kbd "C-c v") #'markdown-mode))
+  ;; (define-key markdown-mode-map (kbd "C-c v") #'markdown-view-mode)
+  ;; (define-key markdown-view-mode-map (kbd "C-c v") #'markdown-mode)
+  )
 
 ;; (with-eval-after-load 'org-capture
 ;;   (add-hook 'org-capture-mode-hook #'pabbrev-mode))
@@ -183,7 +191,8 @@
   (setq org-src-window-setup 'current-window)
   (setq org-todo-interpretation 'sequence)
   (setq org-todo-keyword-faces '(("BLOCK" . link) ("REVIEW" . warning) ("WIP" . success)))
-  (setq org-todo-keywords '("TODO" "BLOCK(b@/!)" "REVIEW(r@/!)" "WIP(w!)" "|" "DONE(d!)" "CANCELLED(c@)")))
+  (setq org-todo-keywords '("TODO" "BLOCK(b@/!)" "REVIEW(r@/!)" "WIP(w!)" "|" "DONE(d!)" "CANCELLED(c@)"))
+  (keymap-set org-mode-map "C-," nil))
 
 (with-eval-after-load 'org-agenda
   (defun org-agenda-set-mode-name ()
