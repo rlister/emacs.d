@@ -54,6 +54,7 @@
 (setq vc-follow-symlinks nil)
 (setq version-control t)
 (setq view-read-only t)
+(setq wgrep-auto-save-buffer t)
 
 (setq-default indent-tabs-mode nil)
 (setq-default standard-indent 2)
