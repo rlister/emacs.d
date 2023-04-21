@@ -81,7 +81,6 @@
 (keymap-global-set "C-," #'previous-buffer)
 (keymap-global-set "C-." #'next-buffer)
 (keymap-global-set "C-;" #'comment-line)
-(keymap-global-set "C-j" #'avy-goto-char)
 (keymap-global-set "C-t" #'switch-to-buffer)
 (keymap-global-set "C-z" #'zap-up-to-char)
 
