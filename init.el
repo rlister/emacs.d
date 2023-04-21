@@ -193,6 +193,7 @@
   ;; (define-key pabbrev-mode-map [tab] 'pabbrev-expand-maybe) ;https://lists.gnu.org/archive/html/emacs-orgmode/2016-02/msg00311.html
   (setq org-directory "~/src/doc")
   (setq org-log-done 'time)
+  (setq org-support-shift-select t)
   (setq org-src-window-setup 'current-window)
   (setq org-todo-interpretation 'sequence)
   (setq org-todo-keyword-faces '(("BLOCK" . link) ("REVIEW" . warning) ("WIP" . success)))
