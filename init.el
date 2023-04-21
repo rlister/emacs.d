@@ -14,6 +14,7 @@
 (setq completion-auto-select 'second-tab)
 (setq custom-file "~/.emacs.d/custom.el") ;stop customize from polluting init.el
 (setq dabbrev-case-replace t)
+(setq dabbrev-check-other-buffers nil)
 (setq delete-old-versions t)
 (setq epg-pinentry-mode 'loopback)     ;pinentry queries in minibuffer
 (setq eshell-banner-message "")
