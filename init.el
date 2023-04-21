@@ -75,6 +75,9 @@
         ("\\*rg\\*" (display-buffer-same-window))
         ("\\*Shortdoc" (display-buffer-same-window))))
 
+(keymap-global-set "<home>" #'beginning-of-buffer)
+(keymap-global-set "<end>" #'end-of-buffer)
+
 (keymap-global-set "C-," #'previous-buffer)
 (keymap-global-set "C-." #'next-buffer)
 (keymap-global-set "C-;" #'comment-line)
