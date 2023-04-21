@@ -186,8 +186,8 @@
   ;; (define-key markdown-view-mode-map (kbd "C-c v") #'markdown-mode)
   )
 
-;; (with-eval-after-load 'org-capture
-;;   (add-hook 'org-capture-mode-hook #'pabbrev-mode))
+(with-eval-after-load 'org-capture
+  (add-hook 'org-capture-mode-hook (lambda () (pabbrev-mode -1))))
 
 (with-eval-after-load 'org
   ;; (define-key pabbrev-mode-map [tab] 'pabbrev-expand-maybe) ;https://lists.gnu.org/archive/html/emacs-orgmode/2016-02/msg00311.html
