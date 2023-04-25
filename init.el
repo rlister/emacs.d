@@ -181,10 +181,7 @@
   (defun forge--contrast-color (color) "black"))
 
 (with-eval-after-load 'markdown-mode
-  (add-hook 'markdown-mode-hook #'visual-line-mode)
-  ;; (define-key markdown-mode-map (kbd "C-c v") #'markdown-view-mode)
-  ;; (define-key markdown-view-mode-map (kbd "C-c v") #'markdown-mode)
-  )
+  (add-hook 'markdown-mode-hook #'visual-line-mode))
 
 (with-eval-after-load 'org-capture
   (add-hook 'org-capture-mode-hook (lambda () (pabbrev-mode -1))))
