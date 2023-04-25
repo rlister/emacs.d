@@ -208,9 +208,7 @@
           ("n" "Next" tags "next" ((org-agenda-files '("work.org"))))
           ("w" "Work" agenda "" ((org-agenda-files '("work.org"))))))
   (add-hook 'org-agenda-mode-hook #'hl-line-mode)
-  (add-hook 'org-agenda-after-show-hook #'org-narrow-to-subtree)
-  (define-key org-agenda-mode-map (kbd "<C-down>") #'org-agenda-next-date-line)
-  (define-key org-agenda-mode-map (kbd "<C-up>") #'org-agenda-previous-date-line))
+  (add-hook 'org-agenda-after-show-hook #'org-narrow-to-subtree))
 
 (with-eval-after-load 'org-capture
   (add-hook 'org-capture-mode-hook #'pabbrev-mode)
