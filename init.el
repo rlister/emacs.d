@@ -1,3 +1,4 @@
+(setq async-shell-command-display-buffer nil)
 (setq avy-keys '(?t ?n ?s ?e ?r ?i ?a ?o ?f ?u ?d ?h ?l ?p ?g ?m ?c))
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 (setq bookmark-save-flag 1)              ;save after any modification
