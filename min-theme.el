@@ -194,6 +194,9 @@
  '(markdown-code-face ((t (:inherit (font-lock-preprocessor-face fixed-pitch)))))
  '(markdown-line-break-face ((t (:underline nil))))
 
+ '(dictionary-word-definition-face ((t (:inherit default))))
+ '(dictionary-reference-face ((t (:inherit font-lock-keyword-face))))
+
  ;; slack faces (uses lui)
  '(lui-button-face                    ((t (:inherit (link underline)))))
  '(lui-time-stamp-face                ((t (:inherit font-lock-variable-name-face))))
