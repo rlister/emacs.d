@@ -1,14 +1,13 @@
 ;;; ric-lib.el --- useful functions
 
 ;; Version: 0
-
 ;;;###autoload
-(defun ric-copy-line ()
-  "Copy whole line, leaving point in current position."
+(defun mark-line ()
+  "Mark whole line, leaving point in current position."
   (interactive)
-  (save-excursion
-    (end-of-line)
-    (copy-region-as-kill (line-beginning-position) (point))))
+  (end-of-line)
+  (set-mark (line-beginning-position))
+  (activate-mark))
 
 ;; ;;;###autoload
 ;; (defun ric-isearch-exit-other-end ()
