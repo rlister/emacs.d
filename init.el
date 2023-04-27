@@ -118,6 +118,11 @@
         '((home . "~/.config/gcalcli/home")
           (work . "~/.config/gcalcli/work"))))
 
+(with-eval-after-load 'github-review
+  (keymap-set github-review-mode-map "C-c A" #'github-review-approve)
+  (keymap-set github-review-mode-map "C-c C" #'github-review-comment)
+  (keymap-set github-review-mode-map "C-c R" #'github-review-reject))
+
 (with-eval-after-load 'go-mode
   ;; (add-hook 'go-mode-hook #'tree-sitter-hl-mode)
   (add-hook 'go-mode-hook #'eglot-ensure)
