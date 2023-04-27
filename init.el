@@ -39,8 +39,8 @@
 (setq resize-mini-windows nil)
 (setq scroll-conservatively 101)      ;do not center point, less jumpy
 (setq scroll-preserve-screen-position t) ;do not lose point
-(setq select-active-regions nil)  ;do not send all regions to primary
-(setq select-enable-primary t)    ;yank from primary set in other apps
+;; (setq select-active-regions t)  ;do not send all regions to primary
+;; (setq select-enable-primary nil)    ;yank from primary set in other apps
 (setq send-mail-function #'smtpmail-send-it) ;no query
 (setq sendmail-program "/usr/bin/msmtp")
 (setq sentence-end-double-space nil) ;make forward/backward-sentence more useful
