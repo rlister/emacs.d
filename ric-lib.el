@@ -24,18 +24,12 @@
         (emacs-lisp-docstring-fill-column t))
     (fill-paragraph nil region)))
 
-;;;###autoload
-(defun ric-mark-args (&optional arg allow-extend)
-  "Advise mark-word to move backwards if we are effectively at end of line."
-  (if (looking-at "\\W*$")
-      (list -1 t)
-    (list arg t)))
-
-;;;###autoload
-(defun ric-code-review-link-hint ()
-  (interactive)
-  (link-hint-copy-link)
-  (code-review-start (current-kill 0)))
+;; ;;;###autoload
+;; (defun ric-mark-args (&optional arg allow-extend)
+;;   "Advise mark-word to move backwards if we are effectively at end of line."
+;;   (if (looking-at "\\W*$")
+;;       (list -1 t)
+;;     (list arg t)))
 
 ;;;###autoload
 (defun ric-mark-inside-thing (thing &optional exchange)
