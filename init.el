@@ -154,6 +154,7 @@
   (defun org-agenda-set-mode-name ()
     (setq mode-name (list "OrgAgenda")))
   (setq org-agenda-window-setup 'current-window)
+  (setq org-agenda-span 'day)
   (setq org-agenda-custom-commands
         '(("b" "Backlog" alltodo "" ((org-agenda-files '("work.org"))))
           ("g" "Report" agenda "" ((org-agenda-files '("work.org")) (org-agenda-prefix-format "")))
