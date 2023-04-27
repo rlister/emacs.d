@@ -10,12 +10,12 @@
     (end-of-line)
     (copy-region-as-kill (line-beginning-position) (point))))
 
-;;;###autoload
-(defun ric-isearch-exit-other-end ()
-  "Exit isearch at other end of string."
-  (interactive)
-  (isearch-exit)
-  (goto-char isearch-other-end))
+;; ;;;###autoload
+;; (defun ric-isearch-exit-other-end ()
+;;   "Exit isearch at other end of string."
+;;   (interactive)
+;;   (isearch-exit)
+;;   (goto-char isearch-other-end))
 
 ;;;###autoload
 (defun ric-unfill-paragraph (&optional region)
