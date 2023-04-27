@@ -207,22 +207,42 @@
   (keymap-set vterm-mode-map "C-<return>" #'vterm-copy-mode)
   (keymap-set vterm-copy-mode-map "C-<return>" #'vterm-copy-mode))
 
+(defun mark-line ()
+  "Mark whole line, leaving point in current position."
+  (interactive)
+  (end-of-line)
+  (set-mark (line-beginning-position))
+  (activate-mark))
+
+(defun code-review-link ()
+  "Use link hint to open a pull request url."
+  (interactive)
+  (link-hint-copy-link)
+  (github-review-start (current-kill 0)))
+  ;; (code-review-start (current-kill 0)))
+
+(defun translate-gui-keys ()
+  "Translate some keys that can be differentiated in gui frames."
+  (when (display-graphic-p)
+    (keyboard-translate ?\C-i ?\H-i)
+    (keyboard-translate ?\C-m ?\H-m)
+    (keymap-global-set "H-i" #'project-find-file)
+    (keymap-global-set "H-m" #'mark-sexp)))
+
 (autoload 'mu4e "mu4e" nil t)
 (with-eval-after-load 'mu4e
   (load "init-mu4e"))
 
-;; (advice-add 'mark-sexp :filter-args #'ric-mark-args)
-
+(add-to-list 'load-path "~/src/emacs.d")
 (autoload 'min-theme "min-theme" nil t)
-(autoload 'ric-code-review-link-hint "ric-lib" nil t)
-;; (autoload 'no-mouse-mode "no-mouse-mode" nil t)
 
 (add-hook 'after-init-hook #'min-theme)
 (add-hook 'window-setup-hook #'fido-mode)
+(add-hook 'window-setup-hook #'translate-gui-keys)
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
-;; (run-with-idle-timer 5 nil #'global-visible-mark-mode)
+(run-with-idle-timer 5 nil #'global-pabbrev-mode)
 (run-with-idle-timer 5 nil #'global-pabbrev-mode)
 (run-with-idle-timer 5 nil #'winner-mode)
 (run-with-idle-timer 10 nil #'pixel-scroll-mode)
@@ -270,12 +290,9 @@
 (keymap-set ctl-x-map "k" #'kill-current-buffer)
 (keymap-set ctl-x-map "m" #'smex)
 
-;; (keymap-set esc-map "<down>" #'end-of-buffer)
-;; (keymap-set esc-map "<up>" #'beginning-of-buffer)
 (keymap-set esc-map "'" #'insert-pair)
 (keymap-set esc-map "\"" #'insert-pair)
 (keymap-set esc-map "c" #'capitalize-dwim)
 (keymap-set esc-map "l" #'downcase-dwim)
 (keymap-set esc-map "o" #'other-window)
 (keymap-set esc-map "u" #'upcase-dwim)
-
