@@ -87,9 +87,10 @@
   (add-hook 'dired-mode-hook 'turn-on-gnus-dired-mode) ;attach files from dired to mu4e
   (add-to-list 'dired-font-lock-keywords (list dired-re-exe '(".+" (dired-move-to-filename) nil (0 'success))) 'append) ;face for exec files
   (keymap-set dired-mode-map "C-t" nil)
-  (define-key dired-mode-map (kbd "f") #'find-name-dired)
-  (define-key dired-mode-map (kbd "_") (lambda () (interactive) (dired-do-rename-regexp "^.*$" "_\\&"))) ;prepend underscore
-  (define-key dired-mode-map (kbd "C-c _") (lambda () (interactive) (dired-do-rename-regexp "^_" ""))))  ;remove leading underscore
+  (keymap-set dired-mode-map "e" #'wdired-change-to-wdired-mode)
+  (keymap-set dired-mode-map "f" #'find-name-dired)
+  (keymap-set dired-mode-map "_" (lambda () (interactive) (dired-do-rename-regexp "^.*$" "_\\&"))) ;prepend underscore
+  (keymap-set dired-mode-map "C-c _" (lambda () (interactive) (dired-do-rename-regexp "^_" ""))))  ;remove leading underscore
 
 (with-eval-after-load 'eglot
   (keymap-set eglot-mode-map "C-c C-r" #'eglot-rename))
