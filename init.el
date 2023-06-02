@@ -127,9 +127,8 @@
   (add-hook 'go-mode-hook #'subword-mode))
 
 (with-eval-after-load 'isearch
-  (setq isearch-lax-whitespace t)       ;space matches any non-word
-  (setq search-whitespace-regexp ".*?") ;very loose matching
-  (global-anzu-mode 1))
+  (setq isearch-lax-whitespace t)        ;space matches any non-word
+  (setq search-whitespace-regexp ".*?")) ;very loose matching
 
 (with-eval-after-load 'magit
   (setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
@@ -248,6 +247,7 @@
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
 (run-with-idle-timer 5 nil #'global-pabbrev-mode)
+(run-with-idle-timer 5 nil #'global-anzu-mode)
 (run-with-idle-timer 5 nil #'winner-mode)
 (run-with-idle-timer 10 nil #'pixel-scroll-mode)
 (run-with-idle-timer 10 nil #'minibuffer-depth-indicate-mode)
