@@ -14,6 +14,7 @@
 (setq completions-format 'one-column)
 (setq completion-auto-select 'second-tab)
 (setq custom-file "~/.emacs.d/custom.el") ;stop customize from polluting init.el
+(setq custom-theme-directory "~/src/emacs.d")
 (setq dabbrev-case-replace t)
 (setq dabbrev-check-other-buffers nil)
 (setq delete-old-versions t)
