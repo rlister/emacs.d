@@ -294,9 +294,12 @@
 (keymap-set ctl-x-map "k" #'kill-current-buffer)
 (keymap-set ctl-x-map "m" #'smex)
 
+(keymap-set esc-map "i" #'imenu)
+(keymap-set esc-map "j" #'join-line)
 (keymap-set esc-map "'" #'insert-pair)
 (keymap-set esc-map "\"" #'insert-pair)
 (keymap-set esc-map "c" #'capitalize-dwim)
 (keymap-set esc-map "l" #'downcase-dwim)
 (keymap-set esc-map "o" #'other-window)
+(keymap-set esc-map "t" #'electric-buffer-list)
 (keymap-set esc-map "u" #'upcase-dwim)
