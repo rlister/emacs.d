@@ -277,10 +277,11 @@
 (keymap-global-set "C-c p" #'project-switch-project)
 (keymap-global-set "C-c R" #'code-review-link)
 (keymap-global-set "C-c r" #'rg)
-(keymap-global-set "C-c t" #'vterm)
 (keymap-global-set "C-c s" #'magit-branch-checkout)
+(keymap-global-set "C-c t" #'vterm)
 (keymap-global-set "C-c u" #'winner-undo)
 (keymap-global-set "C-c o" #'org-agenda)
+(keymap-global-set "C-c y" #'browse-kill-ring)
 
 (keymap-global-set "s-<up>" #'enlarge-window)
 (keymap-global-set "s-<down>" #'shrink-window)
