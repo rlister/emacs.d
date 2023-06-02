@@ -80,6 +80,8 @@
 (add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode))
 
 (put 'narrow-to-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
 
 (with-eval-after-load 'dired
   (setq dired-guess-shell-alist-user '(("\\." "xdg-open")))
