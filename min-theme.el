@@ -238,6 +238,7 @@
  '(mu4e-replied-face          ((t (:inherit font-lock-comment-face))))
 
  '(shr-selected-link ((t (:inherit warning))))
+ '(shr-mark          ((t (:inherit warning))))
 
  '(flyspell-duplicate ((t (:underline (:color "DarkGoldenrod")))))
  '(flyspell-incorrect ((t (:underline (:color "IndianRed1")))))
@@ -259,9 +260,10 @@
  '(avy-lead-face-1 ((t (:inherit warning))))
  '(avy-lead-face-2 ((t (:inherit warning))))
 
- '(eww-form-select ((t (:inherit button))))
- '(eww-form-submit ((t (:inherit button))))
- '(eww-form-text   ((t (:inherit mode-line))))
+ '(eww-form-select   ((t (:inherit button))))
+ '(eww-form-submit   ((t (:inherit button))))
+ '(eww-form-text     ((t (:inherit mode-line))))
+ '(eww-form-checkbox ((t (:inherit mode-line))))
 
  '(w3m-anchor              ((t (:inherit link))))
  '(w3m-image               ((t (:inherit font-lock-comment-face))))
