@@ -2,7 +2,6 @@
   '(anzu
     avy
     code-review
-    corfu
     dockerfile-mode
     dumb-jump
     easy-kill
@@ -13,7 +12,6 @@
     git-timemachine
     link-hint
     magit
-    marginalia
     nginx-mode
     org-present
     rainbow-mode
