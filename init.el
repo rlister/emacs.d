@@ -243,11 +243,9 @@
 
 (add-hook 'after-init-hook #'min-theme)
 (add-hook 'window-setup-hook #'fido-mode)
-(add-hook 'window-setup-hook #'translate-gui-keys)
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
-(run-with-idle-timer 5 nil #'global-pabbrev-mode)
 (run-with-idle-timer 5 nil #'global-pabbrev-mode)
 (run-with-idle-timer 5 nil #'winner-mode)
 (run-with-idle-timer 10 nil #'pixel-scroll-mode)
