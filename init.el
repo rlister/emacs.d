@@ -258,7 +258,8 @@
 (autoload 'min-theme "min-theme" nil t)
 
 (add-hook 'after-init-hook #'min-theme)
-(add-hook 'window-setup-hook #'fido-mode)
+(add-hook 'window-setup-hook #'vertico-mode)
+(add-hook 'window-setup-hook #'vertico-flat-mode)
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
