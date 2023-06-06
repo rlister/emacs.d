@@ -70,6 +70,7 @@
  '(completions-highlight ((t (:foreground "Cyan"))))
 
  '(icomplete-first-match ((t (:inherit completions-highlight))))
+ '(vertico-current ((t (:inherit completions-highlight))))
 
  '(sh-heredoc ((t (:inherit font-lock-string-face))))
  '(sh-quoted-exec ((t (:inherit font-lock-preprocessor-face))))
