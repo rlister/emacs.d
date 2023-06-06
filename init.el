@@ -310,7 +310,7 @@
 (keymap-set ctl-x-map "d" #'dired-jump)
 (keymap-set ctl-x-map "g" #'magit-status)
 (keymap-set ctl-x-map "k" #'kill-current-buffer)
-(keymap-set ctl-x-map "m" #'smex)
+(keymap-set ctl-x-map "m" #'execute-extended-command)
 
 (keymap-set esc-map "i" #'imenu)
 (keymap-set esc-map "j" #'join-line)
