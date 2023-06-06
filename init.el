@@ -215,6 +215,10 @@
 (with-eval-after-load 'terraform-mode
   (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode))
 
+(with-eval-after-load 'vertico
+  (keymap-set vertico-map "C-s" #'vertico-next)
+  (keymap-set vertico-map "C-r" #'vertico-previous))
+
 (with-eval-after-load 'vterm
   (setq vterm-buffer-name-string "*vterm %s*") ;include shell title in buffer namen
   (setq vterm-shell "screen")
