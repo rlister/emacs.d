@@ -75,14 +75,19 @@
 
 (setq display-buffer-alist
       '(("\\*Code Review\\*" (display-buffer-same-window))
-        ("\\*Help\\*" (display-buffer-same-window))
-        ("\\*Occur\\*" (display-buffer-same-window))
+        ;; ("\\*Help\\*" (display-buffer-same-window))
+        ;; ("\\*Occur\\*" (display-buffer-same-window))
         ("\\*Packages\\*" (display-buffer-same-window))
-        ("\\*rg\\*" (display-buffer-same-window))
+        ;; ("\\*rg\\*" (display-buffer-same-window))
         ("\\*Shortdoc" (display-buffer-same-window))))
 
-(add-to-list 'auto-mode-alist '("Envfile" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode))
+;; (add-to-list 'auto-mode-alist '("Envfile" . ruby-mode))
+;; (add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode))
+;; (add-to-list 'auto-mode-alist '("\\.\\(ya?ml\\)\\'" . yaml-mode))
+;; (add-to-list 'auto-mode-alist '("\\.\\(e?ya?\\|ra\\)ml\\'" . yaml-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.dockerfile\\'" . dockerfile-ts-mode))
+(add-to-list 'auto-mode-alist '("\\(?:\\.\\(?:rbw?\\|ru\\|rake\\|gemspec\\)\\|/\\(?:Env\\|Gem\\|Rake\\|Stax\\)file\\)\\'" . ruby-ts-mode))
 
 (put 'narrow-to-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
