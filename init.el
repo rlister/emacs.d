@@ -115,7 +115,7 @@
   (keymap-set forge-topic-mode-map "w" #'forge-browse-topic))
 
 (with-eval-after-load 'gcalcli-mode
-  (setq gcalcli-bin "~/.local/bin/gcalcli")
+  ;; (setq gcalcli-bin "~/.local/bin/gcalcli")
   (setq gcalcli-config-alist
         '((home . "~/.config/gcalcli/home")
           (work . "~/.config/gcalcli/work"))))
