@@ -146,6 +146,9 @@
 (with-eval-after-load 'markdown-mode
   (add-hook 'markdown-mode-hook #'visual-line-mode))
 
+(with-eval-after-load 'chatgpt-shell
+  (setq chatgpt-shell-openai-key (auth-source-pick-first-password :host "api.openai.com")))
+
 (with-eval-after-load 'org-capture
   (add-hook 'org-capture-mode-hook (lambda () (pabbrev-mode -1))))
 
