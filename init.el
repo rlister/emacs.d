@@ -10,6 +10,7 @@
 ;; (setq completion-styles ';; (basic partial-completion emacs22))
 ;; (setq completion-category-overrides '((project-file (styles substring flex))))
 ;; (setq completion-category-overrides nil)
+(setq completion-styles '(orderless basic))
 (setq completions-detailed t)
 (setq completions-format 'one-column)
 (setq completion-auto-select 'second-tab)
