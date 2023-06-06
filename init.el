@@ -1,37 +1,35 @@
+(setq Man-notify-method 'pushy)
 (setq async-shell-command-display-buffer nil)
 (setq avy-keys '(?t ?n ?s ?e ?r ?i ?a ?o ?f ?u ?d ?h ?l ?p ?g ?m ?c))
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 (setq bookmark-save-flag 1)              ;save after any modification
 (setq clean-buffer-list-delay-general 1) ;midnight-mode days
-;; (setq completion-auto-help t)
+(setq completion-auto-help 'always)
+(setq completion-auto-select 'second-tab)
+(setq completion-category-defaults nil)
+(setq completion-category-overrides '((file (styles partial-completion))))
 (setq completion-ignore-case t)
 (setq completion-show-help nil)
-;; (setq completion-styles '(initials partial-completion substring flex))
-;; (setq completion-styles ';; (basic partial-completion emacs22))
-;; (setq completion-category-overrides '((project-file (styles substring flex))))
-;; (setq completion-category-overrides nil)
 (setq completion-styles '(orderless basic))
 (setq completions-detailed t)
 (setq completions-format 'one-column)
-(setq completion-auto-select 'second-tab)
 (setq custom-file "~/.emacs.d/custom.el") ;stop customize from polluting init.el
 (setq custom-theme-directory "~/src/emacs.d")
 (setq dabbrev-case-replace t)
 (setq dabbrev-check-other-buffers nil)
 (setq delete-old-versions t)
+(setq enable-recursive-minibuffers t)
 (setq epg-pinentry-mode 'loopback)     ;pinentry queries in minibuffer
 (setq eshell-banner-message "")
-(setq enable-recursive-minibuffers t)
 (setq eww-auto-rename-buffer 'title)
 (setq gnus-inhibit-mime-unbuttonizing t) ;show attachment buttons for all mime parts, including inline images
 (setq icomplete-compute-delay 0)
 (setq icomplete-prospects-height 1) ;minibuffer height
 (setq icomplete-separator "  ")
 (setq inhibit-startup-echo-area-message "ric")
-(setq Man-notify-method 'pushy)
-(setq message-sendmail-f-is-evil t)         ;do not add username to cmdline
-(setq message-sendmail-extra-arguments '("--read-envelope-from")) ;get cfg from sender
 (setq message-send-mail-function 'message-send-mail-with-sendmail)
+(setq message-sendmail-extra-arguments '("--read-envelope-from")) ;get cfg from sender
+(setq message-sendmail-f-is-evil t)         ;do not add username to cmdline
 (setq minibuffer-default-prompt-format "")
 (setq native-comp-async-report-warnings-errors 'silent) ;log warnings but not pop up the *Warnings* buffer
 (setq next-error-message-highlight t)
@@ -41,8 +39,6 @@
 (setq resize-mini-windows nil)
 (setq scroll-conservatively 101)      ;do not center point, less jumpy
 (setq scroll-preserve-screen-position t) ;do not lose point
-;; (setq select-active-regions t)  ;do not send all regions to primary
-;; (setq select-enable-primary nil)    ;yank from primary set in other apps
 (setq send-mail-function #'smtpmail-send-it) ;no query
 (setq sendmail-program "/usr/bin/msmtp")
 (setq sentence-end-double-space nil) ;make forward/backward-sentence more useful
@@ -50,25 +46,32 @@
 (setq show-paren-context-when-offscreen t)
 (setq show-paren-when-point-in-periphery t)
 (setq shr-inhibit-images t)
-(setq shr-use-fonts nil)
 (setq shr-use-colors nil)
-;; (setq transient-mark-mode nil)
+(setq shr-use-fonts nil)
 (setq use-short-answers t)
 (setq vc-follow-symlinks nil)
 (setq version-control t)
 (setq view-read-only t)
 (setq wgrep-auto-save-buffer t)
+;; (setq completion-auto-help t)
+;; (setq completion-category-overrides '((project-file (styles substring flex))))
+;; (setq completion-category-overrides nil)
+;; (setq completion-styles '(initials partial-completion substring flex))
+;; (setq completion-styles ';; (basic partial-completion emacs22))
+;; (setq select-active-regions t)  ;do not send all regions to primary
+;; (setq select-enable-primary nil)    ;yank from primary set in other apps
+;; (setq transient-mark-mode nil)
 
-(setq-default indent-tabs-mode nil)
-(setq-default standard-indent 2)
 (setq-default c-basic-offset 2)
 (setq-default css-indent-offset 2)
+(setq-default indent-tabs-mode nil)
 (setq-default js-indent-level 2)
+(setq-default nginx-indent-level 2)
 (setq-default python-check-command "flake8")
 (setq-default python-indent-offset 2)
 (setq-default sh-basic-offset 2)
+(setq-default standard-indent 2)
 (setq-default tab-width 2)
-(setq-default nginx-indent-level 2)
 
 (setq display-buffer-alist
       '(("\\*Code Review\\*" (display-buffer-same-window))
