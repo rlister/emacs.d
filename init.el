@@ -151,6 +151,7 @@
   (add-hook 'markdown-mode-hook #'visual-line-mode))
 
 (with-eval-after-load 'chatgpt-shell
+  (autoload 'auth-source-pick-first-password "auth-sources" nil t)
   (setq chatgpt-shell-openai-key (auth-source-pick-first-password :host "api.openai.com")))
 
 (with-eval-after-load 'org-capture
