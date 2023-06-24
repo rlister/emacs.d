@@ -115,6 +115,10 @@
   (define-key elfeed-show-mode-map "d" #'elfeed-kill-buffer)
   (define-key elfeed-show-mode-map "r" #'elfeed-kill-buffer))
 
+(with-eval-after-load 'flymake
+  (keymap-set flymake-mode-map "C-c C-n" #'flymake-goto-next-error)
+  (keymap-set flymake-mode-map "C-c C-p" #'flymake-goto-prev-error))
+
 (with-eval-after-load 'forge
   (keymap-set forge-topic-mode-map "r" #'forge-edit-topic-review-requests)
   (keymap-set forge-topic-mode-map "w" #'forge-browse-topic))
