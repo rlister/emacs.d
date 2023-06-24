@@ -85,8 +85,8 @@
 ;; (add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode))
 ;; (add-to-list 'auto-mode-alist '("\\.\\(ya?ml\\)\\'" . yaml-mode))
 ;; (add-to-list 'auto-mode-alist '("\\.\\(e?ya?\\|ra\\)ml\\'" . yaml-ts-mode))
-(add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
-(add-to-list 'auto-mode-alist '("\\.dockerfile\\'" . dockerfile-ts-mode))
+;; (add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
+;; (add-to-list 'auto-mode-alist '("\\.dockerfile\\'" . dockerfile-ts-mode))
 (add-to-list 'auto-mode-alist '("\\(?:\\.\\(?:rbw?\\|ru\\|rake\\|gemspec\\)\\|/\\(?:Env\\|Gem\\|Rake\\|Stax\\)file\\)\\'" . ruby-ts-mode))
 
 (put 'narrow-to-region 'disabled nil)
