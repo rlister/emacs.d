@@ -36,3 +36,5 @@
 
 ;; borken
 ;; (advice-add 'mu4e-view-mark-for-trash :after #'kill-current-buffer)
+
+(add-to-list 'mu4e-bookmarks '(:query "maildir:/home/inbox OR maildir:/work/inbox" :name "All mail" :key ?a) t)
