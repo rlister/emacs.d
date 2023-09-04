@@ -64,6 +64,7 @@
 
 (setq-default c-basic-offset 2)
 (setq-default css-indent-offset 2)
+(setq-default electric-indent-mode nil)
 (setq-default indent-tabs-mode nil)
 (setq-default js-indent-level 2)
 (setq-default nginx-indent-level 2)
