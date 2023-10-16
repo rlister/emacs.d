@@ -44,6 +44,7 @@
 (setq sendmail-program "/usr/bin/msmtp")
 (setq sentence-end-double-space nil) ;make forward/backward-sentence more useful
 (setq server-client-instructions nil)
+(setq select-enable-primary t)    ;yank from primary set in other apps
 (setq show-paren-context-when-offscreen t)
 (setq show-paren-when-point-in-periphery t)
 (setq shr-inhibit-images t)
