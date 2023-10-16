@@ -18,6 +18,7 @@
 (setq dabbrev-case-replace t)
 (setq dabbrev-check-other-buffers nil)
 (setq delete-old-versions t)
+(setq delete-pair-blink-delay 0)
 (setq enable-recursive-minibuffers t)
 (setq epg-pinentry-mode 'loopback)     ;pinentry queries in minibuffer
 (setq eshell-banner-message "")
