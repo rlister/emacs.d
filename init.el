@@ -60,8 +60,6 @@
 ;; (setq completion-category-overrides nil)
 ;; (setq completion-styles '(initials partial-completion substring flex))
 ;; (setq completion-styles ';; (basic partial-completion emacs22))
-;; (setq select-active-regions t)  ;do not send all regions to primary
-;; (setq select-enable-primary nil)    ;yank from primary set in other apps
 ;; (setq transient-mark-mode nil)
 
 (setq-default c-basic-offset 2)
