@@ -316,6 +316,7 @@
 (keymap-global-set "C-c b" #'project-switch-to-buffer)
 (keymap-global-set "C-c c" #'org-capture)
 (keymap-global-set "C-c d" #'duplicate-dwim)
+(keymap-global-set "C-c e" #'link-hint-open-eww)
 (keymap-global-set "C-c f" #'avy-goto-char-in-line)
 (keymap-global-set "C-c g" #'magit-file-dispatch)
 (keymap-global-set "C-c j" #'avy-goto-char)
