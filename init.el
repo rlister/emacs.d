@@ -257,6 +257,16 @@
   (set-mark (line-beginning-position))
   (activate-mark))
 
+(defun mark-sexp-at-point ()
+  "Mark sexp at point. If no sexp at point, move forward and mark next sexp."
+  (interactive)
+  (or (thing-at-point 'sexp) (forward-sexp))
+  (let ((bounds (bounds-of-thing-at-point 'sexp)))
+    (when (null bounds) (error "No sexp at point"))
+    (goto-char (car bounds))
+    (push-mark nil t t)
+    (goto-char (cdr bounds))))
+
 (defun code-review-link ()
   "Use link hint to open a pull request url."
   (interactive)
