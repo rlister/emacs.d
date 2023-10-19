@@ -54,6 +54,7 @@
 (setq vc-follow-symlinks nil)
 (setq version-control t)
 (setq view-read-only t)
+(setq webjump-use-internal-browser t)
 (setq wgrep-auto-save-buffer t)
 ;; (setq completion-auto-help t)
 ;; (setq completion-category-overrides '((project-file (styles substring flex))))
