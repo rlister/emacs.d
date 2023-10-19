@@ -249,7 +249,7 @@
   (keymap-set vertico-map "C-r" #'vertico-previous))
 
 (with-eval-after-load 'vterm
-  (setq vterm-buffer-name-string "*vterm %s*") ;include shell title in buffer namen
+  (setq vterm-buffer-name-string "*vterm %s*") ;include shell title in buffer name
   (setq vterm-shell "screen")
   (keymap-set vterm-mode-map "C-t" nil)
   (keymap-set vterm-mode-map "C-<return>" #'vterm-copy-mode)
