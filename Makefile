@@ -20,3 +20,8 @@ remote:
 
 local:
 	$(EMACS) -batch -l make.el -f install-local
+
+vc:
+	$(EMACS) -batch -l make.el -f install-vc
+
+packages: local remote vc

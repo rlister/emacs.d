@@ -1,11 +1,11 @@
 (defconst remote-packages
   '(anzu
     avy
-    code-review
+    ;; code-review
     dockerfile-mode
-    dumb-jump
-    easy-kill
-    eglot
+    ;; dumb-jump
+    ;; easy-kill
+    ;; eglot
     elfeed
     forge
     git-link
@@ -13,25 +13,30 @@
     link-hint
     magit
     nginx-mode
+    orderless
     org-present
     rainbow-mode
-    string-inflection
-    visible-mark
+    selected
+    ;; string-inflection
+    vertico
+    ;; visible-mark
     vterm
     yaml-mode)
   "Packages to install.")
 
 (defconst local-packages
   '(ric-lib
-    font-height
     min-theme
     no-mouse-mode)
+  "Local packages to install.")
+
+(defconst vc-packages
+  '("https://github.com/zerolfx/copilot.el")
   "Local packages to install.")
 
 ;; setup package.el
 (package-initialize)
 
-;; install any missing packages
 (defun install-remote ()
   "Install packages from remote archives."
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -41,8 +46,12 @@
       (package-install package)))
   (print package-activated-list))
 
-;; install local packages from files
 (defun install-local ()
   "Install packages from local files."
   (dolist (file local-packages)
     (package-install-file (format "%s.el" file))))
+
+(defun install-vc ()
+  "Install packages from version control."
+  (dolist (repo vc-packages)
+    (package-vc-install repo)))
