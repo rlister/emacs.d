@@ -146,7 +146,6 @@
   (keymap-set github-review-mode-map "C-c R" #'github-review-reject))
 
 (with-eval-after-load 'go-mode
-  ;; (add-hook 'go-mode-hook #'tree-sitter-hl-mode)
   (add-hook 'go-mode-hook #'eglot-ensure)
   (add-hook 'go-mode-hook #'subword-mode))
 
