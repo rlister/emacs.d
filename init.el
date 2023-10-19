@@ -177,11 +177,21 @@
   (setq org-todo-interpretation 'sequence)
   (setq org-todo-keyword-faces '(("BLOCK" . link) ("REVIEW" . warning) ("WIP" . success)))
   (setq org-todo-keywords '("TODO" "BLOCK(b@/!)" "REVIEW(r@/!)" "WIP(w!)" "|" "DONE(d!)" "CANCELLED(c@)"))
+  (add-hook 'org-mode-hook #'visual-line-mode)
   (keymap-set org-mode-map "C-," nil))
 
+(with-eval-after-load 'ox-latex
+  (add-to-list 'org-latex-classes
+               '("paper" "\\documentclass{paper}"
+                ("\\section{%s}" . "\\section*{%s}")
+                ("\\subsection{%s}" . "\\subsection*{%s}")
+                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
+
 (with-eval-after-load 'org-agenda
-  (defun org-agenda-set-mode-name ()
-    (setq mode-name (list "OrgAgenda")))
+  ;; (defun org-agenda-set-mode-name ()
+  ;;   (setq mode-name (list "OrgAgenda")))
   (setq org-agenda-window-setup 'current-window)
   (setq org-agenda-span 'day)
   (add-hook 'org-agenda-mode-hook #'hl-line-mode)
