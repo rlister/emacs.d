@@ -280,7 +280,7 @@
     (keyboard-translate ?\C-i ?\H-i)
     (keyboard-translate ?\C-m ?\H-m)
     (keymap-global-set "H-i" #'project-find-file)
-    (keymap-global-set "H-m" #'mark-sexp)))
+    (keymap-global-set "H-m" #'mark-sexp-at-point)))
 
 (add-hook 'server-after-make-frame-hook #'translate-gui-keys) ;server initial frame
 (add-hook 'after-init-hook #'translate-gui-keys)              ;non-server
