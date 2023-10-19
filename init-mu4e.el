@@ -5,6 +5,8 @@
 (setq mu4e-headers-fields '((:human-date . 12) (:flags . 6) (:maildir . 15) (:mailing-list . 10) (:from-or-to . 22) (:subject)))
 ;; (setq mu4e-split-view 'single-window)
 
+(setq mu4e-compose-format-flowed t)
+
 (setq mu4e-contexts
       `(,(make-mu4e-context
           :name "home"
@@ -38,3 +40,5 @@
 ;; (advice-add 'mu4e-view-mark-for-trash :after #'kill-current-buffer)
 
 (add-to-list 'mu4e-bookmarks '(:query "maildir:/home/inbox OR maildir:/work/inbox" :name "All mail" :key ?a) t)
+
+(add-hook 'mu4e-view-mode-hook #'visual-line-mode)
