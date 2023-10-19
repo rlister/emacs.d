@@ -248,6 +248,8 @@
 
  '(shr-selected-link ((t (:inherit warning))))
  '(shr-mark          ((t (:inherit warning))))
+ '(shr-h1            ((t (:inherit org-level-1))))
+ '(shr-h2            ((t (:inherit org-level-2))))
 
  '(flyspell-duplicate ((t (:underline (:color "DarkGoldenrod")))))
  '(flyspell-incorrect ((t (:underline (:color "IndianRed1")))))
