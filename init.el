@@ -309,6 +309,7 @@
 (keymap-global-set "C-." #'next-buffer)
 (keymap-global-set "C-;" #'comment-line)
 (keymap-global-set "C-<tab>" #'hippie-expand)
+;; (keymap-global-set "C-=" #'er/expand-region)
 (keymap-global-set "C-\\" #'mark-line)
 (keymap-global-set "C-t" #'switch-to-buffer)
 (keymap-global-set "C-z" #'zap-up-to-char)
