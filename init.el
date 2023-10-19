@@ -274,6 +274,12 @@
   (github-review-start (current-kill 0)))
   ;; (code-review-start (current-kill 0)))
 
+(defun link-hint-open-eww ()
+  "Use link hint to open url in eww."
+  (interactive)
+  (link-hint-copy-link)
+  (eww (current-kill 0)))
+
 (defun translate-gui-keys ()
   "Translate some keys that can be differentiated in gui frames."
   (when (display-graphic-p)
