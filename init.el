@@ -295,7 +295,6 @@
 
 (run-with-idle-timer 5 nil #'global-pabbrev-mode)
 (run-with-idle-timer 5 nil #'global-anzu-mode)
-(run-with-idle-timer 5 nil #'selected-global-mode)
 (run-with-idle-timer 5 nil #'winner-mode)
 (run-with-idle-timer 10 nil #'pixel-scroll-mode)
 (run-with-idle-timer 10 nil #'minibuffer-depth-indicate-mode)
