@@ -220,8 +220,7 @@
           (project-kill-buffers "kill" ?k)
           (magit-project-status "magit" ?m)
           (rg-project "rg" ?r)
-          (ric-project-vterm "vterm" ?t)
-          (vc-dir "vc" ?v))))
+          (ric-project-vterm "vterm" ?t))))
 
 ;; (with-eval-after-load 'smerge-mode
 ;;   (define-key smerge-mode-map (kbd "C-<down>") #'smerge-next)
