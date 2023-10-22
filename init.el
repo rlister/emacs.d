@@ -32,6 +32,7 @@
 (setq message-sendmail-extra-arguments '("--read-envelope-from")) ;get cfg from sender
 (setq message-sendmail-f-is-evil t)         ;do not add username to cmdline
 (setq minibuffer-default-prompt-format "")
+(setq mouse-yank-at-point t)
 (setq native-comp-async-report-warnings-errors 'silent) ;log warnings but not pop up the *Warnings* buffer
 (setq next-error-message-highlight t)
 (setq pabbrev-idle-timer-verbose t)
