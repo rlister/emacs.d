@@ -368,6 +368,8 @@
 (keymap-global-set "C-c v" #'view-mode)
 (keymap-global-set "C-c o" #'org-agenda)
 (keymap-global-set "C-c y" #'browse-kill-ring)
+(keymap-global-set "C-c C-n" #'diff-hl-next-hunk)
+(keymap-global-set "C-c C-p" #'diff-hl-previous-hunk)
 
 (keymap-global-set "C-h j" #'webjump)
 
