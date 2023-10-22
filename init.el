@@ -295,6 +295,14 @@
     (delete-other-windows)))
 (keymap-global-set "C-h C-," #'split-window-toggle)
 
+(defun kill-whole-line-or-region ()
+  "Kill whole line, or region if active."
+  (interactive)
+  (if (region-active-p)
+      (kill-region (region-beginning) (region-end))
+    (kill-whole-line)))
+(keymap-global-set "C-w" #'kill-whole-line-or-region)
+
 (add-hook 'server-after-make-frame-hook #'translate-gui-keys) ;server initial frame
 (add-hook 'after-init-hook #'translate-gui-keys)              ;non-server
 (autoload 'mu4e "mu4e" nil t)
