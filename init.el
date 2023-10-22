@@ -198,6 +198,15 @@
           ("h" "Home"  entry (file+olp+datetree "home.org") "* TODO %?")
           ("s" "Music" entry (file+olp+datetree "music.org") "* TODO %?"))))
 
+(with-eval-after-load 'ox-latex
+  (add-to-list 'org-latex-classes
+               '("paper" "\\documentclass{paper}"
+                ("\\section{%s}" . "\\section*{%s}")
+                ("\\subsection{%s}" . "\\subsection*{%s}")
+                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
+
 (with-eval-after-load 'pabbrev
   ;; (put 'org-mode 'pabbrev-global-mode-excluded-modes t) ;org-mode has post-command-hook bug with pabbrev
   (define-key pabbrev-mode-map [tab] 'pabbrev-expand-maybe)) ;https://lists.gnu.org/archive/html/emacs-orgmode/2016-02/msg00311.html
