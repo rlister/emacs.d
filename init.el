@@ -175,15 +175,6 @@
   (add-hook 'org-mode-hook #'visual-line-mode)
   (keymap-set org-mode-map "C-," nil))
 
-(with-eval-after-load 'ox-latex
-  (add-to-list 'org-latex-classes
-               '("paper" "\\documentclass{paper}"
-                ("\\section{%s}" . "\\section*{%s}")
-                ("\\subsection{%s}" . "\\subsection*{%s}")
-                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-                ("\\paragraph{%s}" . "\\paragraph*{%s}")
-                ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
-
 (with-eval-after-load 'org-agenda
   ;; (defun org-agenda-set-mode-name ()
   ;;   (setq mode-name (list "OrgAgenda")))
