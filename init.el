@@ -188,7 +188,7 @@
           ("h" "Home" ((agenda "") (alltodo "")) ((org-agenda-files '("home.org"))))
           ("j" "Jira" ((agenda "") (alltodo "")) ((org-agenda-files '("~/.org-jira/SRE.org"))))
           ("n" "Next" tags "next" ((org-agenda-files '("work.org"))))
-          ("w" "Work" ((agenda "") (tags-todo "{SRE}")) ((org-agenda-files '("work.org" "~/.org-jira/SRE.org")))))))
+          ("w" "Work" ((agenda "") ) ((org-agenda-files '("work.org")))))))
 
 (with-eval-after-load 'org-capture
   (add-hook 'org-capture-mode-hook #'pabbrev-mode)
