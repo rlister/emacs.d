@@ -306,9 +306,13 @@
 
 (add-hook 'server-after-make-frame-hook #'translate-gui-keys) ;server initial frame
 (add-hook 'after-init-hook #'translate-gui-keys)              ;non-server
+
 (autoload 'mu4e "mu4e" nil t)
 (with-eval-after-load 'mu4e
   (load "init-mu4e"))
+
+(with-eval-after-load 'webjump
+  (load "init-webjump"))
 
 (add-to-list 'load-path "~/src/emacs.d")
 (autoload 'min-theme "min-theme" nil t)
