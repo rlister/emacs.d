@@ -122,6 +122,8 @@
   (define-key elfeed-show-mode-map "d" #'elfeed-kill-buffer)
   (define-key elfeed-show-mode-map "r" #'elfeed-kill-buffer))
 
+(with-eval-after-load 'eww
+  (keymap-set eww-mode-map "i" #'eww-toggle-images))
 (with-eval-after-load 'flymake
   (keymap-set flymake-mode-map "C-c C-n" #'flymake-goto-next-error)
   (keymap-set flymake-mode-map "C-c C-p" #'flymake-goto-prev-error))
