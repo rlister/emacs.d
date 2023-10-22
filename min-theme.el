@@ -147,6 +147,10 @@
  '(diff-refine-removed    ((t (:inherit (error highlight)))))
  '(diff-context           ((t (:inherit font-lock-comment-face))))
 
+ '(diff-hl-insert ((t (:inherit success))))
+ '(diff-hl-change ((t (:inherit warning))))
+ '(diff-hl-delete ((t (:inherit error))))
+
  ;; magit
  '(magit-header                      ((t (:weight bold))))
  '(magit-section-heading             ((t (:inherit font-lock-keyword-face))))
