@@ -287,6 +287,14 @@
     (keymap-global-set "H-i" #'project-find-file)
     (keymap-global-set "H-m" #'mark-sexp-at-point)))
 
+(defun split-window-toggle ()
+  "Split window if there is just one, else delete other windows."
+  (interactive)
+  (if (= (count-windows) 1)
+      (progn (split-window-right) (other-window 1))
+    (delete-other-windows)))
+(keymap-global-set "C-h C-," #'split-window-toggle)
+
 (add-hook 'server-after-make-frame-hook #'translate-gui-keys) ;server initial frame
 (add-hook 'after-init-hook #'translate-gui-keys)              ;non-server
 (autoload 'mu4e "mu4e" nil t)
