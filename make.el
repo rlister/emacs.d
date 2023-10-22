@@ -2,6 +2,7 @@
   '(anzu
     avy
     ;; code-review
+    diff-hl
     dockerfile-mode
     ;; dumb-jump
     ;; easy-kill
