@@ -306,7 +306,13 @@
   (if (region-active-p)
       (kill-region (region-beginning) (region-end))
     (kill-whole-line)))
-(keymap-global-set "C-w" #'kill-whole-line-or-region)
+
+(defun copy-whole-line-or-region ()
+  "Copy whole line, or region if active."
+  (interactive)
+  (if (region-active-p)
+      (kill-ring-save)
+    (kill-ring-save (line-beginning-position) (line-end-position))))
 
 (add-hook 'server-after-make-frame-hook #'translate-gui-keys) ;server initial frame
 (add-hook 'after-init-hook #'translate-gui-keys)              ;non-server
@@ -346,8 +352,10 @@
 (keymap-global-set "C-\\" #'mark-line)
 (keymap-global-set "C-j" #'forward-to-word)
 (keymap-global-set "C-t" #'switch-to-buffer)
+(keymap-global-set "C-w" #'kill-whole-line-or-region)
 (keymap-global-set "C-z" #'zap-up-to-char)
 (keymap-global-set "M-/" #'hippie-expand)
+(keymap-global-set "M-w" #'copy-whole-line-or-region)
 
 (keymap-global-set "C-c b" #'project-switch-to-buffer)
 (keymap-global-set "C-c c" #'org-capture)
