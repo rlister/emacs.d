@@ -18,6 +18,7 @@
  '(highlight           ((t (:background "grey10" :underline nil))))
  '(link                ((t (:foreground "CornflowerBlue" :underline nil))))
  '(region              ((t (:background "MidnightBlue"))))
+ '(vertical-border     ((t (:foreground "grey25"))))
  '(lazy-highlight      ((t (:inherit (warning highlight)))))
  '(secondary-selection ((t (:inherit highlight))))
  '(trailing-whitespace ((t (:inherit error))))
