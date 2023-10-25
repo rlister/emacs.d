@@ -321,7 +321,7 @@
   "Copy whole line, or region if active."
   (interactive)
   (if (region-active-p)
-      (kill-ring-save)
+      (kill-ring-save (mark) (point))
     (kill-ring-save (line-beginning-position) (line-end-position))))
 
 (add-hook 'server-after-make-frame-hook #'translate-gui-keys) ;server initial frame
