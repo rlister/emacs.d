@@ -345,6 +345,11 @@
 (run-with-idle-timer 60 nil #'midnight-mode)
 (run-with-idle-timer 60 nil #'recentf-mode)
 
+(keymap-global-set "<remap> <dabbrev-expand>" #'hippie-expand)
+(keymap-global-set "<remap> <kill-ring-save>" #'copy-whole-line-or-region)
+(keymap-global-set "<remap> <kill-region>" #'kill-whole-line-or-region)
+(keymap-global-set "<remap> <query-replace>" 'vr/query-replace)
+
 (keymap-global-set "<home>" #'beginning-of-buffer)
 (keymap-global-set "<end>" #'end-of-buffer)
 
@@ -355,10 +360,7 @@
 (keymap-global-set "C-\\" #'mark-line)
 (keymap-global-set "C-j" #'forward-to-word)
 (keymap-global-set "C-t" #'switch-to-buffer)
-(keymap-global-set "C-w" #'kill-whole-line-or-region)
 (keymap-global-set "C-z" #'zap-up-to-char)
-(keymap-global-set "M-/" #'hippie-expand)
-(keymap-global-set "M-w" #'copy-whole-line-or-region)
 
 (keymap-global-set "C-c b" #'project-switch-to-buffer)
 (keymap-global-set "C-c c" #'org-capture)
