@@ -84,8 +84,10 @@
         ;; ("\\*rg\\*" (display-buffer-same-window))
         ("\\*Shortdoc" (display-buffer-same-window))))
 
-(add-to-list 'auto-mode-alist '("Envfile" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\(Env\\|Stax\\)file" . ruby-mode))
+;; (add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.ya?ml" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.ts" . js-mode))
 
 (put 'narrow-to-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
