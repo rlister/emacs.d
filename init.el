@@ -154,7 +154,7 @@
   (setq search-whitespace-regexp ".*?")) ;very loose matching
 
 (with-eval-after-load 'magit
-  (setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
+  (setq magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1)
   (add-hook 'magit-pre-refresh-hook 'diff-hl-magit-pre-refresh)
   (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
   (defun forge--contrast-color (color) "black"))
