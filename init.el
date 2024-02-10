@@ -349,7 +349,6 @@
 (keymap-global-set "<remap> <dabbrev-expand>" #'hippie-expand)
 (keymap-global-set "<remap> <kill-ring-save>" #'copy-whole-line-or-region)
 (keymap-global-set "<remap> <kill-region>" #'kill-whole-line-or-region)
-(keymap-global-set "<remap> <query-replace>" 'vr/query-replace)
 
 (keymap-global-set "<home>" #'beginning-of-buffer)
 (keymap-global-set "<end>" #'end-of-buffer)
