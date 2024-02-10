@@ -77,18 +77,14 @@
 (setq-default standard-indent 2)
 (setq-default tab-width 2)
 
-(setq display-buffer-alist
-      '(("\\*Code Review\\*" (display-buffer-same-window))
-        ;; ("\\*Help\\*" (display-buffer-same-window))
-        ;; ("\\*Occur\\*" (display-buffer-same-window))
-        ("\\*Packages\\*" (display-buffer-same-window))
-        ;; ("\\*rg\\*" (display-buffer-same-window))
-        ("\\*Shortdoc" (display-buffer-same-window))))
-
 (add-to-list 'auto-mode-alist '("\\(Env\\|Stax\\)file" . ruby-mode))
 ;; (add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.ya?ml" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.ts" . js-mode))
+;; (setq display-buffer-alist
+;;       '(("\\*Code Review\\*" (display-buffer-same-window))
+;;         ("\\*Packages\\*" (display-buffer-same-window))
+;;         ("\\*Shortdoc" (display-buffer-same-window))))
 
 (put 'narrow-to-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
