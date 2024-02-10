@@ -331,6 +331,7 @@
 (autoload 'min-theme "min-theme" nil t)
 
 (add-hook 'after-init-hook #'min-theme)
+(add-hook 'window-setup-hook #'url-handler-mode)
 (add-hook 'window-setup-hook #'vertico-mode)
 (add-hook 'window-setup-hook #'vertico-flat-mode)
 (add-hook 'window-setup-hook #'selected-global-mode)
