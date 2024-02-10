@@ -12,7 +12,7 @@
  '(cursor              ((t (:background "PaleGreen"))))
  '(shadow              ((t (:foreground "DarkSlateGray4"))))
  '(success             ((t (:foreground "PaleGreen"))))
- '(warning             ((t (:foreground "DarkGoldenrod"))))
+ '(warning             ((t (:foreground "DarkKhaki"))))
  '(error               ((t (:foreground "IndianRed"))))
  '(match               ((t (:foreground "RosyBrown" :background "Black"))))
  '(highlight           ((t (:background "grey10" :underline nil))))
@@ -20,7 +20,7 @@
  '(region              ((t (:background "MidnightBlue"))))
  '(vertical-border     ((t (:foreground "grey25"))))
  '(lazy-highlight      ((t (:inherit (warning highlight)))))
- '(secondary-selection ((t (:inherit highlight))))
+ '(secondary-selection ((t (:inherit (warning highlight)))))
  '(trailing-whitespace ((t (:inherit error))))
  '(italic              ((t (:underline nil))))
  '(underline           ((t (:underline nil))))
@@ -73,6 +73,10 @@
  '(icomplete-first-match ((t (:inherit completions-highlight))))
  '(vertico-current ((t (:inherit completions-highlight))))
 
+ '(hi-yellow ((t (:inherit warning))))
+ '(hi-green  ((t (:inherit success))))
+ '(hi-pink   ((t (:inherit error))))
+
  '(sh-heredoc ((t (:inherit font-lock-string-face))))
  '(sh-quoted-exec ((t (:inherit font-lock-preprocessor-face))))
 
@@ -122,10 +126,12 @@
  '(org-upcoming-deadline    ((t (:inherit warning))))
  '(org-warning              ((t (:inherit warning))))
  '(org-link                 ((t (:inherit link))))
+ '(org-list-dt              ((t (:inherit font-lock-variable-name-face))))
  '(org-special-keyword      ((t (:inherit font-lock-comment-face))))
  '(org-scheduled            ((t (:inherit font-lock-comment-face))))
  '(org-scheduled-previously ((t (:inherit default))))
  '(org-scheduled-today      ((t (:inherit default))))
+ '(org-table-header         ((t (:inherit mode-line))))
  '(org-time-grid            ((t (:inherit font-lock-comment-face))))
 
  ;; org-agenda
