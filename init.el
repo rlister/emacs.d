@@ -171,8 +171,12 @@
   (setq org-directory "~/src/doc")
   (setq org-log-done 'time)
   (setq org-default-priority 67)        ;C
+  (setq org-hide-emphasis-markers t)
+  (setq org-hide-leading-stars t)
   (setq org-support-shift-select nil)
   (setq org-src-window-setup 'current-window)
+  (setq org-startup-folded 'content)
+  (setq org-table-header-line t)
   (setq org-todo-interpretation 'sequence)
   (setq org-todo-keyword-faces '(("BLOCK" . link) ("REVIEW" . warning) ("WIP" . success)))
   (setq org-todo-keywords '("TODO" "BLOCK(b@/!)" "REVIEW(r@/!)" "WIP(w!)" "|" "DONE(d!)" "CANCELLED(c@)"))
