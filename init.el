@@ -171,7 +171,7 @@
   (setq org-directory "~/src/doc")
   (setq org-log-done 'time)
   (setq org-default-priority 67)        ;C
-  (setq org-support-shift-select t)
+  (setq org-support-shift-select nil)
   (setq org-src-window-setup 'current-window)
   (setq org-todo-interpretation 'sequence)
   (setq org-todo-keyword-faces '(("BLOCK" . link) ("REVIEW" . warning) ("WIP" . success)))
