@@ -127,7 +127,7 @@
   (keymap-set flymake-mode-map "C-c C-p" #'flymake-goto-prev-error))
 
 (with-eval-after-load 'forge
-  (keymap-set forge-topic-mode-map "r" #'forge-edit-topic-review-requests)
+  (keymap-set forge-topic-mode-map "r" #'forge-topic-set-review-requests)
   (keymap-set forge-topic-mode-map "w" #'forge-browse-topic))
 
 (with-eval-after-load 'gcalcli-mode
