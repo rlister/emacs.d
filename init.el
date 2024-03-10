@@ -189,13 +189,14 @@
   (setq org-agenda-span 'day)
   (add-hook 'org-agenda-mode-hook #'hl-line-mode)
   (add-hook 'org-agenda-after-show-hook #'org-narrow-to-subtree)
+  (setq org-agenda-include-diary t)
   (setq org-agenda-custom-commands
         '(("b" "Backlog" alltodo "" ((org-agenda-files '("work.org"))))
           ("g" "Report" agenda "" ((org-agenda-files '("work.org")) (org-agenda-prefix-format "")))
           ("h" "Home" ((agenda "") (alltodo "")) ((org-agenda-files '("home.org"))))
           ("j" "Jira" ((agenda "") (alltodo "")) ((org-agenda-files '("~/.org-jira/SRE.org"))))
           ("n" "Next" tags "next" ((org-agenda-files '("work.org"))))
-          ("w" "Work" ((agenda "") ) ((org-agenda-files '("work.org")))))))
+          ("w" "Work" ((agenda "") ) ((org-agenda-files '("work.org" "ical/ric.org" "ical/listers.org" "ical/tripit.org")))))))
 
 (with-eval-after-load 'org-capture
   (add-hook 'org-capture-mode-hook #'pabbrev-mode)
