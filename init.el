@@ -174,7 +174,6 @@
   (setq org-log-done 'time)
   (setq org-default-priority 67)        ;C
   (setq org-hide-emphasis-markers t)
-  (setq org-hide-leading-stars t)
   (setq org-support-shift-select nil)
   (setq org-src-window-setup 'current-window)
   (setq org-startup-folded 'content)
