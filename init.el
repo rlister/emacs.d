@@ -52,6 +52,7 @@
 (setq shr-inhibit-images t)
 (setq shr-use-colors nil)
 (setq shr-use-fonts nil)
+(setq text-mode-hook '(turn-on-auto-fill))
 (setq use-short-answers t)
 (setq vc-follow-symlinks nil)
 (setq version-control t)
