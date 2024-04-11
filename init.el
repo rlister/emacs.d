@@ -81,6 +81,7 @@
 (add-to-list 'auto-mode-alist '("\\(Env\\|Stax\\)file" . ruby-mode))
 ;; (add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.ya?ml" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.hurl" . conf-mode))
 (add-to-list 'auto-mode-alist '("\\.ts" . js-mode))
 ;; (setq display-buffer-alist
 ;;       '(("\\*Code Review\\*" (display-buffer-same-window))
