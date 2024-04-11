@@ -268,6 +268,9 @@
  '(flymake-error   ((t (:underline nil :inherit error))))
  '(flymake-warning ((t (:underline nil :inherit warning))))
 
+ '(flycheck-error   ((t (:underline nil :inherit error))))
+ '(flycheck-warning ((t (:underline nil :inherit warning))))
+
  ;; elfeed
  '(elfeed-search-date-face         ((t (:inherit message-header-other))))
  '(elfeed-search-title-face        ((t (:inherit font-lock-comment-face :strike-through t))))
