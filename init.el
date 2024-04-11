@@ -28,6 +28,7 @@
 (setq icomplete-prospects-height 1) ;minibuffer height
 (setq icomplete-separator "  ")
 (setq inhibit-startup-echo-area-message "ric")
+(setq Man-notify-method 'pushy)
 (setq message-send-mail-function 'message-send-mail-with-sendmail)
 (setq message-sendmail-extra-arguments '("--read-envelope-from")) ;get cfg from sender
 (setq message-sendmail-f-is-evil t)         ;do not add username to cmdline
