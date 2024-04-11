@@ -225,9 +225,6 @@
 (with-eval-after-load 'package
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t))
 
-(with-eval-after-load 'prog-mode
-  (add-hook 'prog-mode-hook 'copilot-mode))
-
 (with-eval-after-load 'project
   (defun ric-project-vterm ()
     (interactive)
