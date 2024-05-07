@@ -210,6 +210,11 @@
           (rg-project "rg" ?r)
           (project-vterm "vterm" ?t))))
 
+(with-eval-after-load 'recentf
+  (defun ido-recentf-open ()
+    "Use ido to find recent file."
+    (interactive)
+    (find-file (ido-completing-read "Find recent file: " recentf-list))))
 
 ;; (with-eval-after-load 'smerge-mode
 ;;   (define-key smerge-mode-map (kbd "C-<down>") #'smerge-next)
