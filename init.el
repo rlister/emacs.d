@@ -223,11 +223,6 @@
 (with-eval-after-load 'terraform-mode
   (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode))
 
-(with-eval-after-load 'vertico
-  (keymap-set vertico-map "C-s" #'vertico-next)
-  (keymap-set vertico-map "C-r" #'vertico-previous))
-
-
 (autoload 'mu4e "mu4e" nil t)
 (with-eval-after-load 'mu4e
   (load "init-mu4e"))
