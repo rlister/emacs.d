@@ -1,17 +1,20 @@
+(setq Man-notify-method 'pushy)
 (setq async-shell-command-display-buffer nil)
 (setq avy-keys '(?t ?n ?s ?e ?r ?i ?a ?o ?f ?u ?d ?h ?l ?p ?g ?m ?c))
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 (setq bookmark-save-flag 1)              ;save after any modification
 (setq clean-buffer-list-delay-general 1) ;midnight-mode days
-(setq completion-auto-help 'always)
-(setq completion-auto-select 'second-tab)
-(setq completion-category-defaults nil)
-(setq completion-category-overrides '((file (styles partial-completion))))
+(setq completion-auto-help t)
+(setq completion-auto-select nil)
+(setq completion-category-overrides '((file (styles basic partial-completion))))
+(setq completion-cycle-threshold 3)
 (setq completion-ignore-case t)
 (setq completion-show-help nil)
 (setq completion-styles '(orderless basic))
 (setq completions-detailed t)
 (setq completions-format 'one-column)
+(setq completions-header-format nil)
+(setq confirm-nonexistent-file-or-buffer nil)
 (setq custom-file "~/.emacs.d/custom.el") ;stop customize from polluting init.el
 (setq custom-theme-directory "~/src/emacs.d")
 (setq dabbrev-case-replace t)
@@ -27,8 +30,10 @@
 (setq icomplete-compute-delay 0)
 (setq icomplete-prospects-height 1) ;minibuffer height
 (setq icomplete-separator "  ")
+(setq ido-create-new-buffer 'always)
+(setq ido-default-buffer-method 'selected-window)
+(setq ido-default-file-method 'selected-window)
 (setq inhibit-startup-echo-area-message "ric")
-(setq Man-notify-method 'pushy)
 (setq message-send-mail-function 'message-send-mail-with-sendmail)
 (setq message-sendmail-extra-arguments '("--read-envelope-from")) ;get cfg from sender
 (setq message-sendmail-f-is-evil t)         ;do not add username to cmdline
@@ -42,29 +47,24 @@
 (setq resize-mini-windows nil)
 (setq scroll-conservatively 101)      ;do not center point, less jumpy
 (setq scroll-preserve-screen-position t) ;do not lose point
+(setq select-enable-primary t)    ;yank from primary set in other apps
 (setq send-mail-function #'smtpmail-send-it) ;no query
 (setq sendmail-program "/usr/bin/msmtp")
 (setq sentence-end-double-space nil) ;make forward/backward-sentence more useful
 (setq server-client-instructions nil)
-(setq select-enable-primary t)    ;yank from primary set in other apps
 (setq show-paren-context-when-offscreen t)
 (setq show-paren-when-point-in-periphery t)
 (setq shr-inhibit-images t)
 (setq shr-use-colors nil)
 (setq shr-use-fonts nil)
-(setq text-mode-hook '(turn-on-auto-fill))
+(setq text-mode-hook nil)
 (setq use-short-answers t)
 (setq vc-follow-symlinks nil)
 (setq version-control t)
 (setq view-read-only t)
+(setq warning-minimum-level :error)
 (setq webjump-use-internal-browser t)
 (setq wgrep-auto-save-buffer t)
-;; (setq completion-auto-help t)
-;; (setq completion-category-overrides '((project-file (styles substring flex))))
-;; (setq completion-category-overrides nil)
-;; (setq completion-styles '(initials partial-completion substring flex))
-;; (setq completion-styles ';; (basic partial-completion emacs22))
-;; (setq transient-mark-mode nil)
 
 (setq-default c-basic-offset 2)
 (setq-default css-indent-offset 2)
