@@ -55,7 +55,7 @@
  '(font-lock-builtin-face              ((t (:foreground "DodgerBlue2"))))
  '(font-lock-constant-face             ((t (:foreground "RoyalBlue"))))
  '(font-lock-string-face               ((t (:foreground "DarkSlateGray4"))))
- '(font-lock-comment-face              ((t (:foreground "grey37"))))
+ '(font-lock-comment-face              ((((type tty)) (:foreground "grey")) (t (:foreground "grey37"))))
  '(font-lock-comment-delimiter-face    ((t (:inherit font-lock-comment-face))))
  '(font-lock-variable-name-face        ((t (:foreground "PaleTurquoise3"))))
  '(font-lock-doc-face                  ((t (:foreground "LightSkyBlue"))))
