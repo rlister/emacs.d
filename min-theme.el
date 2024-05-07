@@ -100,12 +100,12 @@
  '(dired-async-message      ((t (:inherit success))))
  '(dired-async-failures     ((t (:inherit error))))
 
- `(dired-subtree-depth-1-face ((t (:background "gray2" :extend t))))
- `(dired-subtree-depth-2-face ((t (:background "gray4" :extend t))))
- `(dired-subtree-depth-3-face ((t (:background "gray6" :extend t))))
- `(dired-subtree-depth-4-face ((t (:background "gray8" :extend t))))
- `(dired-subtree-depth-5-face ((t (:background "gray10" :extend t))))
- `(dired-subtree-depth-6-face ((t (:background "gray12" :extend t))))
+ '(dired-subtree-depth-1-face ((t (:background "gray2" :extend t))))
+ '(dired-subtree-depth-2-face ((t (:background "gray4" :extend t))))
+ '(dired-subtree-depth-3-face ((t (:background "gray6" :extend t))))
+ '(dired-subtree-depth-4-face ((t (:background "gray8" :extend t))))
+ '(dired-subtree-depth-5-face ((t (:background "gray10" :extend t))))
+ '(dired-subtree-depth-6-face ((t (:background "gray12" :extend t))))
 
  '(shortdoc-section ((t (:inherit default))))
 
