@@ -233,9 +233,21 @@
 (with-eval-after-load 'vterm
   (setq vterm-buffer-name-string "*vterm %s*") ;include shell title in buffer name
   (setq vterm-shell "screen")
+  (setq vterm-copy-mode-remove-fake-newlines t)
   (keymap-set vterm-mode-map "C-t" nil)
+  (keymap-set vterm-mode-map "C-c t" #'vterm)
   (keymap-set vterm-mode-map "C-<return>" #'vterm-copy-mode)
   (keymap-set vterm-copy-mode-map "C-<return>" #'vterm-copy-mode))
+
+(defun vterm-toggle ()
+  "If a vterm exists for current dir, switch to it, else create a new vterm."
+  (interactive)
+  (require 'vterm)
+  (let* ((dir (directory-file-name (abbreviate-file-name default-directory)))
+         (name (format vterm-buffer-name-string dir)))
+    (if (get-buffer name)
+        (switch-to-buffer name)
+      (vterm))))
 
 (defun mark-line ()
   "Mark whole line, leaving point in current position."
@@ -283,19 +295,19 @@
     (delete-other-windows)))
 (keymap-global-set "C-h C-," #'split-window-toggle)
 
-(defun kill-whole-line-or-region ()
-  "Kill whole line, or region if active."
-  (interactive)
-  (if (region-active-p)
-      (kill-region (region-beginning) (region-end))
-    (kill-whole-line)))
+;; (defun kill-whole-line-or-region ()
+;;   "Kill whole line, or region if active."
+;;   (interactive)
+;;   (if (region-active-p)
+;;       (kill-region (region-beginning) (region-end))
+;;     (kill-whole-line)))
 
-(defun copy-whole-line-or-region ()
-  "Copy whole line, or region if active."
-  (interactive)
-  (if (region-active-p)
-      (kill-ring-save (mark) (point))
-    (kill-ring-save (line-beginning-position) (line-end-position))))
+;; (defun copy-whole-line-or-region ()
+;;   "Copy whole line, or region if active."
+;;   (interactive)
+;;   (if (region-active-p)
+;;       (kill-ring-save (mark) (point))
+;;     (kill-ring-save (line-beginning-position) (line-end-position))))
 
 (add-hook 'server-after-make-frame-hook #'translate-gui-keys) ;server initial frame
 (add-hook 'after-init-hook #'translate-gui-keys)              ;non-server
@@ -303,15 +315,16 @@
 (add-to-list 'load-path "~/src/emacs.d")
 (autoload 'min-theme "min-theme" nil t)
 
-(add-hook 'after-init-hook #'min-theme)
+(add-hook 'window-setup-hook #'min-theme)
 (add-hook 'window-setup-hook #'url-handler-mode)
-(add-hook 'window-setup-hook #'vertico-mode)
-(add-hook 'window-setup-hook #'vertico-flat-mode)
+(add-hook 'window-setup-hook #'ido-mode)
+;; (add-hook 'window-setup-hook #'vertico-mode)
+;; (add-hook 'window-setup-hook #'vertico-flat-mode)
 (add-hook 'window-setup-hook #'selected-global-mode)
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
-(run-with-idle-timer 5 nil #'global-pabbrev-mode)
+;; (run-with-idle-timer 5 nil #'global-pabbrev-mode)
 (run-with-idle-timer 5 nil #'global-anzu-mode)
 (run-with-idle-timer 5 nil #'winner-mode)
 (run-with-idle-timer 10 nil #'pixel-scroll-mode)
@@ -320,8 +333,9 @@
 (run-with-idle-timer 60 nil #'recentf-mode)
 
 (keymap-global-set "<remap> <dabbrev-expand>" #'hippie-expand)
-(keymap-global-set "<remap> <kill-ring-save>" #'copy-whole-line-or-region)
-(keymap-global-set "<remap> <kill-region>" #'kill-whole-line-or-region)
+;; (keymap-global-set "<remap> <kill-ring-save>" #'copy-whole-line-or-region)
+;; (keymap-global-set "<remap> <kill-region>" #'kill-region)
+;; (keymap-global-set "<remap> <kill-region>" #'kill-whole-line-or-region)
 
 (keymap-global-set "<home>" #'beginning-of-buffer)
 (keymap-global-set "<end>" #'end-of-buffer)
@@ -331,10 +345,13 @@
 (keymap-global-set "C-;" #'comment-line)
 (keymap-global-set "C-=" #'quick-calc)
 (keymap-global-set "C-\\" #'mark-line)
+(keymap-global-set "C-a" #'mwim-beginning)
+(keymap-global-set "C-e" #'mwim-end)
 (keymap-global-set "C-j" #'forward-to-word)
 (keymap-global-set "C-t" #'switch-to-buffer)
-(keymap-global-set "C-z" #'zap-up-to-char)
+(keymap-global-set "C-z" #'project-switch-project)
 
+(keymap-global-set "C-c a" #'org-agenda-list)
 (keymap-global-set "C-c b" #'project-switch-to-buffer)
 (keymap-global-set "C-c c" #'org-capture)
 (keymap-global-set "C-c d" #'duplicate-dwim)
@@ -351,9 +368,10 @@
 (keymap-global-set "C-c R" #'code-review-link)
 (keymap-global-set "C-c r" #'rg)
 (keymap-global-set "C-c s" #'magit-branch-checkout)
-(keymap-global-set "C-c t" #'vterm)
+(keymap-global-set "C-c t" #'vterm-toggle)
+(keymap-global-set "C-c T" #'vterm)
 (keymap-global-set "C-c u" #'winner-undo)
-(keymap-global-set "C-c v" #'view-mode)
+(keymap-global-set "C-c v" #'vertico-mode)
 (keymap-global-set "C-c o" #'org-agenda)
 (keymap-global-set "C-c y" #'browse-kill-ring)
 (keymap-global-set "C-c C-n" #'diff-hl-next-hunk)
@@ -361,17 +379,25 @@
 
 (keymap-global-set "C-h j" #'webjump)
 
+(keymap-global-set "M-g r" #'revert-buffer)
+(keymap-global-set "M-g t" #'(lambda () (interactive) (ibuffer nil nil '((used-mode . vterm-mode)))))
 (keymap-global-set "s-<up>" #'enlarge-window)
 (keymap-global-set "s-<down>" #'shrink-window)
 (keymap-global-set "s-<right>" #'enlarge-window-horizontally)
 (keymap-global-set "s-<left>" #'shrink-window-horizontally)
 (keymap-global-set "s-o" #'other-window)
 (keymap-global-set "s-\\" #'delete-other-windows)
+(keymap-global-set "C-<tab>" #'completion-at-point)
 
 (keymap-set ctl-x-map "d" #'dired-jump)
 (keymap-set ctl-x-map "g" #'magit-status)
 (keymap-set ctl-x-map "k" #'kill-current-buffer)
-(keymap-set ctl-x-map "m" #'execute-extended-command)
+(keymap-set ctl-x-map "m" #'smex)
+(keymap-set ctl-x-map "M" #'smex-major-mode-commands)
+(keymap-set ctl-x-map "C-r" #'ido-recentf-open)
+
+(keymap-set ctl-x-r-map "a" #'append-to-register)
+(keymap-set ctl-x-r-map "p" #'prepend-to-register)
 
 (keymap-set esc-map "'" #'insert-pair)
 (keymap-set esc-map "\"" #'insert-pair)
@@ -380,8 +406,24 @@
 (keymap-set esc-map "j" #'join-line)
 (keymap-set esc-map "l" #'downcase-dwim)
 (keymap-set esc-map "o" #'other-window)
-(keymap-set esc-map "t" #'electric-buffer-list)
+(keymap-set esc-map "t" #'project-switch-project)
 (keymap-set esc-map "u" #'upcase-dwim)
+
+(keymap-set minibuffer-local-must-match-map "C-<up>" #'minibuffer-previous-completion)
+(keymap-set minibuffer-local-must-match-map "C-<down>" #'minibuffer-next-completion)
+(keymap-set minibuffer-local-must-match-map "C-r" #'minibuffer-previous-completion)
+(keymap-set minibuffer-local-must-match-map "C-s" #'minibuffer-next-completion)
+(keymap-set minibuffer-local-must-match-map "C-t" #'minibuffer-complete)
+
+(keymap-set minibuffer-local-completion-map "C-r" #'minibuffer-previous-completion)
+(keymap-set minibuffer-local-completion-map "C-s" #'minibuffer-next-completion)
+(keymap-set minibuffer-local-completion-map "C-t" #'minibuffer-complete)
+
+(keymap-set completion-list-mode-map "C-r" #'previous-completion)
+(keymap-set completion-list-mode-map "C-s" #'next-completion)
+
+(define-key completion-in-region-mode-map (kbd "C-r") 'minibuffer-previous-completion)
+(define-key completion-in-region-mode-map (kbd "C-s") 'minibuffer-next-completion)
 
 (with-eval-after-load 'selected
   (add-to-list 'selected-ignore-modes 'magit-status-mode)
