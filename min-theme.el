@@ -107,6 +107,10 @@
  '(dired-subtree-depth-5-face ((t (:background "gray10" :extend t))))
  '(dired-subtree-depth-6-face ((t (:background "gray12" :extend t))))
 
+ '(ido-first-match ((t (:inherit warning))))
+ '(ido-only-match  ((t (:inherit success))))
+ '(ido-subdir      ((t (:inherit dired-directory))))
+
  '(shortdoc-section ((t (:inherit default))))
 
  ;; org-mode
