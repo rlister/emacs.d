@@ -153,15 +153,12 @@
   (autoload 'auth-source-pick-first-password "auth-sources" nil t)
   (setq chatgpt-shell-openai-key (auth-source-pick-first-password :host "api.openai.com")))
 
-(with-eval-after-load 'org-capture
-  (add-hook 'org-capture-mode-hook (lambda () (pabbrev-mode -1))))
-
 (with-eval-after-load 'org
-  ;; (define-key pabbrev-mode-map [tab] 'pabbrev-expand-maybe) ;https://lists.gnu.org/archive/html/emacs-orgmode/2016-02/msg00311.html
-  (setq org-directory "~/src/doc")
+  (setq org-directory "~/doc")
   (setq org-log-done 'time)
   (setq org-default-priority 67)        ;C
-  (setq org-hide-emphasis-markers t)
+  (setq org-hide-emphasis-markers nil)
+  (setq org-display-remote-inline-images 'download)
   (setq org-support-shift-select nil)
   (setq org-src-window-setup 'current-window)
   (setq org-startup-folded 'content)
@@ -173,23 +170,14 @@
   (keymap-set org-mode-map "C-," nil))
 
 (with-eval-after-load 'org-agenda
-  ;; (defun org-agenda-set-mode-name ()
-  ;;   (setq mode-name (list "OrgAgenda")))
-  (setq org-agenda-window-setup 'current-window)
-  (setq org-agenda-span 'day)
-  (add-hook 'org-agenda-mode-hook #'hl-line-mode)
-  (add-hook 'org-agenda-after-show-hook #'org-narrow-to-subtree)
+  (setq org-agenda-custom-commands '(("h" "Home" ((agenda "") (alltodo "")) ((org-agenda-files '("home.org"))))))
+  (setq org-agenda-files '("work.org" "~/doc/ical"))
   (setq org-agenda-include-diary t)
-  (setq org-agenda-custom-commands
-        '(("b" "Backlog" alltodo "" ((org-agenda-files '("work.org"))))
-          ("g" "Report" agenda "" ((org-agenda-files '("work.org")) (org-agenda-prefix-format "")))
-          ("h" "Home" ((agenda "") (alltodo "")) ((org-agenda-files '("home.org"))))
-          ("j" "Jira" ((agenda "") (alltodo "")) ((org-agenda-files '("~/.org-jira/SRE.org"))))
-          ("n" "Next" tags "next" ((org-agenda-files '("work.org"))))
-          ("w" "Work" ((agenda "") ) ((org-agenda-files '("work.org" "ical/ric.org" "ical/listers.org" "ical/tripit.org")))))))
+  (setq org-agenda-window-setup 'current-window)
+  (add-hook 'org-agenda-mode-hook #'hl-line-mode)
+  (add-hook 'org-agenda-after-show-hook #'org-narrow-to-subtree))
 
 (with-eval-after-load 'org-capture
-  (add-hook 'org-capture-mode-hook #'pabbrev-mode)
   (setq org-capture-templates
         '(("t" "Todo"  entry (file+olp+datetree "work.org") "* TODO %?\n%i")
           ("m" "Mtg"   entry (file+olp+datetree "work.org") "* MTG %i%?")
@@ -204,10 +192,6 @@
                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
-
-(with-eval-after-load 'pabbrev
-  ;; (put 'org-mode 'pabbrev-global-mode-excluded-modes t) ;org-mode has post-command-hook bug with pabbrev
-  (define-key pabbrev-mode-map [tab] 'pabbrev-expand-maybe)) ;https://lists.gnu.org/archive/html/emacs-orgmode/2016-02/msg00311.html
 
 (with-eval-after-load 'package
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t))
