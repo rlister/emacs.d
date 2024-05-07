@@ -197,10 +197,10 @@
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t))
 
 (with-eval-after-load 'project
-  (defun ric-project-vterm ()
+  (defun project-vterm ()
     (interactive)
     (let ((default-directory (project-root (project-current t))))
-      (vterm)))
+      (vterm-toggle)))
   (setq project-switch-commands
         '((project-switch-to-buffer "buffer" ?b)
           (project-dired "dir" ?d)
@@ -208,7 +208,8 @@
           (project-kill-buffers "kill" ?k)
           (magit-project-status "magit" ?m)
           (rg-project "rg" ?r)
-          (ric-project-vterm "vterm" ?t))))
+          (project-vterm "vterm" ?t))))
+
 
 ;; (with-eval-after-load 'smerge-mode
 ;;   (define-key smerge-mode-map (kbd "C-<down>") #'smerge-next)
