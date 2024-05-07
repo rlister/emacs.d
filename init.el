@@ -78,25 +78,22 @@
 (setq-default standard-indent 2)
 (setq-default tab-width 2)
 
-(add-to-list 'auto-mode-alist '("\\(Env\\|Stax\\)file" . ruby-mode))
-;; (add-to-list 'auto-mode-alist '("Staxfile" . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.ya?ml" . yaml-mode))
-(add-to-list 'auto-mode-alist '("\\.hurl" . conf-mode))
-(add-to-list 'auto-mode-alist '("\\.ts" . js-mode))
-;; (setq display-buffer-alist
-;;       '(("\\*Code Review\\*" (display-buffer-same-window))
-;;         ("\\*Packages\\*" (display-buffer-same-window))
-;;         ("\\*Shortdoc" (display-buffer-same-window))))
-
 (put 'narrow-to-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
+
+(add-to-list 'auto-mode-alist '("\\(Env\\|Stax\\)file" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.ya?ml" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.hurl" . conf-mode))
+(add-to-list 'auto-mode-alist '("\\.ts" . js-mode))
+
+(add-to-list 'display-buffer-alist '("\\*.*\\*" (display-buffer-same-window)))
 
 (with-eval-after-load 'dired
   (setq dired-guess-shell-alist-user '(("\\." "xdg-open")))
   (setq dired-listing-switches "-alh")
   (setq dired-dwim-target t)
-  (add-hook 'dired-mode-hook 'turn-on-gnus-dired-mode) ;attach files from dired to mu4e
+  ;; (add-hook 'dired-mode-hook 'turn-on-gnus-dired-mode) ;attach files from dired to mu4e
   (add-to-list 'dired-font-lock-keywords (list dired-re-exe '(".+" (dired-move-to-filename) nil (0 'success))) 'append) ;face for exec files
   (keymap-set dired-mode-map "C-<down>" #'dired-subtree-down)
   (keymap-set dired-mode-map "C-<up>" #'dired-subtree-up)
