@@ -105,13 +105,10 @@
   (keymap-set dired-mode-map "_" (lambda () (interactive) (dired-do-rename-regexp "^.*$" "_\\&"))) ;prepend underscore
   (keymap-set dired-mode-map "C-c _" (lambda () (interactive) (dired-do-rename-regexp "^_" ""))))  ;remove leading underscore
 
-(with-eval-after-load 'copilot  (keymap-set copilot-completion-map "M-<tab>" 'copilot-accept-completion)
-  (keymap-set copilot-completion-map "C-<tab>" 'copilot-accept-completion-by-word)
-  (keymap-set copilot-completion-map "C-<next>" 'copilot-next-completion)
-  (keymap-set copilot-completion-map "C-<prior>" 'copilot-previous-completion))
-
-(with-eval-after-load 'eglot
-  (keymap-set eglot-mode-map "C-c C-r" #'eglot-rename))
+;; (with-eval-after-load 'copilot  (keymap-set copilot-completion-map "M-<tab>" 'copilot-accept-completion)
+;;   (keymap-set copilot-completion-map "C-<tab>" 'copilot-accept-completion-by-word)
+;;   (keymap-set copilot-completion-map "C-<next>" 'copilot-next-completion)
+;;   (keymap-set copilot-completion-map "C-<prior>" 'copilot-previous-completion))
 
 (with-eval-after-load 'elfeed
   (elfeed-load-opml "~/src/doc/elfeed.opml")
