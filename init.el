@@ -119,6 +119,7 @@
 
 (with-eval-after-load 'eww
   (keymap-set eww-mode-map "i" #'eww-toggle-images))
+
 (with-eval-after-load 'flymake
   (keymap-set flymake-mode-map "C-c C-n" #'flymake-goto-next-error)
   (keymap-set flymake-mode-map "C-c C-p" #'flymake-goto-prev-error))
@@ -139,7 +140,6 @@
   (keymap-set github-review-mode-map "C-c R" #'github-review-reject))
 
 (with-eval-after-load 'go-mode
-  (add-hook 'go-mode-hook #'eglot-ensure)
   (add-hook 'go-mode-hook #'subword-mode))
 
 (with-eval-after-load 'isearch
