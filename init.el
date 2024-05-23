@@ -316,6 +316,9 @@
 (run-with-idle-timer 60 nil #'recentf-mode)
 
 (keymap-global-set "<remap> <dabbrev-expand>" #'hippie-expand)
+(keymap-global-set "<remap> <move-beginning-of-line>" #'mwim-beginning)
+(keymap-global-set "<remap> <move-end-of-line>" #'mwim-end)
+
 ;; (keymap-global-set "<remap> <kill-ring-save>" #'copy-whole-line-or-region)
 ;; (keymap-global-set "<remap> <kill-region>" #'kill-region)
 ;; (keymap-global-set "<remap> <kill-region>" #'kill-whole-line-or-region)
