@@ -206,16 +206,6 @@
           (rg-project "rg" ?r)
           (project-vterm "vterm" ?t))))
 
-(with-eval-after-load 'recentf
-  (defun ido-recentf-open ()
-    "Use ido to find recent file."
-    (interactive)
-    (find-file (ido-completing-read "Find recent file: " recentf-list))))
-
-;; (with-eval-after-load 'smerge-mode
-;;   (define-key smerge-mode-map (kbd "C-<down>") #'smerge-next)
-;;   (define-key smerge-mode-map (kbd "C-<up>") #'smerge-prev))
-
 (with-eval-after-load 'terraform-mode
   (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode))
 
@@ -314,13 +304,10 @@
 (add-hook 'window-setup-hook #'min-theme)
 (add-hook 'window-setup-hook #'url-handler-mode)
 (add-hook 'window-setup-hook #'ido-mode)
-;; (add-hook 'window-setup-hook #'vertico-mode)
-;; (add-hook 'window-setup-hook #'vertico-flat-mode)
 (add-hook 'window-setup-hook #'selected-global-mode)
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
-;; (run-with-idle-timer 5 nil #'global-pabbrev-mode)
 (run-with-idle-timer 5 nil #'global-anzu-mode)
 (run-with-idle-timer 5 nil #'winner-mode)
 (run-with-idle-timer 10 nil #'pixel-scroll-mode)
