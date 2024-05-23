@@ -380,7 +380,7 @@
 (keymap-set ctl-x-map "k" #'kill-current-buffer)
 (keymap-set ctl-x-map "m" #'smex)
 (keymap-set ctl-x-map "M" #'smex-major-mode-commands)
-(keymap-set ctl-x-map "C-r" #'ido-recentf-open)
+(keymap-set ctl-x-map "C-r" #'recentf-open)
 
 (keymap-set ctl-x-r-map "a" #'append-to-register)
 (keymap-set ctl-x-r-map "p" #'prepend-to-register)
