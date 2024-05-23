@@ -4,10 +4,10 @@
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 (setq bookmark-save-flag 1)              ;save after any modification
 (setq clean-buffer-list-delay-general 1) ;midnight-mode days
-(setq completion-auto-help t)
 (setq completion-auto-select nil)
 (setq completion-category-overrides '((file (styles basic partial-completion))))
 (setq completion-cycle-threshold 3)
+(setq completion-auto-help 'visible)
 (setq completion-ignore-case t)
 (setq completion-show-help nil)
 (setq completion-styles '(orderless basic))
