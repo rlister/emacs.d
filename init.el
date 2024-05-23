@@ -20,17 +20,15 @@
 (setq delete-old-versions t)
 (setq delete-pair-blink-delay 0)
 (setq enable-recursive-minibuffers t)
-(setq epg-pinentry-mode 'loopback)     ;pinentry queries in minibuffer
+(setq epg-pinentry-mode 'loopback)
 (setq eshell-banner-message "")
 (setq eww-auto-rename-buffer 'title)
 (setq gnus-inhibit-mime-unbuttonizing t) ;show attachment buttons for all mime parts, including inline images
 (setq help-window-select t)
-(setq icomplete-compute-delay 0)
-(setq icomplete-prospects-height 1) ;minibuffer height
-(setq icomplete-separator "  ")
 (setq ido-create-new-buffer 'always)
 (setq ido-default-buffer-method 'selected-window)
 (setq ido-default-file-method 'selected-window)
+(setq ido-use-virtual-buffers t)
 (setq inhibit-startup-echo-area-message "ric")
 (setq message-send-mail-function 'message-send-mail-with-sendmail)
 (setq message-sendmail-extra-arguments '("--read-envelope-from")) ;get cfg from sender
