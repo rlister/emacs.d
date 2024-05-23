@@ -83,7 +83,7 @@
 (add-to-list 'auto-mode-alist '("\\.hurl" . conf-mode))
 (add-to-list 'auto-mode-alist '("\\.ts" . js-mode))
 
-(add-to-list 'display-buffer-alist '("\\*.*\\*" (display-buffer-same-window)))
+(setq display-buffer-alist '(("\\*\\(Help\\|Messages\\|Password\\|vc-\\)" (display-buffer-same-window))))
 
 (with-eval-after-load 'dired
   (setq dired-guess-shell-alist-user '(("\\." "xdg-open")))
