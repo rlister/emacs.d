@@ -14,12 +14,12 @@
     link-hint
     magit
     nginx-mode
-    orderless
+    ;; orderless
     org-present
     rainbow-mode
     selected
     ;; string-inflection
-    vertico
+    ;; vertico
     ;; visible-mark
     vterm
     yaml-mode)
