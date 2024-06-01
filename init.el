@@ -279,7 +279,6 @@
   (if (= (count-windows) 1)
       (progn (split-window-right) (other-window 1))
     (delete-other-windows)))
-(keymap-global-set "C-h C-," #'split-window-toggle)
 
 ;; (defun kill-whole-line-or-region ()
 ;;   "Kill whole line, or region if active."
@@ -331,13 +330,11 @@
 (keymap-global-set "C-;" #'comment-line)
 (keymap-global-set "C-=" #'quick-calc)
 (keymap-global-set "C-\\" #'mark-line)
-(keymap-global-set "C-a" #'mwim-beginning)
-(keymap-global-set "C-e" #'mwim-end)
 (keymap-global-set "C-j" #'forward-to-word)
 (keymap-global-set "C-t" #'switch-to-buffer)
 (keymap-global-set "C-z" #'project-switch-project)
 
-(keymap-global-set "C-c a" #'org-agenda-list)
+;; (keymap-global-set "C-c a" #'org-agenda-list)
 (keymap-global-set "C-c b" #'project-switch-to-buffer)
 (keymap-global-set "C-c c" #'org-capture)
 (keymap-global-set "C-c d" #'duplicate-dwim)
@@ -360,13 +357,14 @@
 (keymap-global-set "C-c v" #'vertico-mode)
 (keymap-global-set "C-c o" #'org-agenda)
 (keymap-global-set "C-c y" #'browse-kill-ring)
-(keymap-global-set "C-c C-n" #'diff-hl-next-hunk)
-(keymap-global-set "C-c C-p" #'diff-hl-previous-hunk)
+;; (keymap-global-set "C-c C-n" #'diff-hl-next-hunk)
+;; (keymap-global-set "C-c C-p" #'diff-hl-previous-hunk)
 
+(keymap-global-set "C-h C-," #'split-window-toggle)
 (keymap-global-set "C-h j" #'webjump)
 
-(keymap-global-set "M-g r" #'revert-buffer)
-(keymap-global-set "M-g t" #'(lambda () (interactive) (ibuffer nil nil '((used-mode . vterm-mode)))))
+;; (keymap-global-set "M-g r" #'revert-buffer)
+;; (keymap-global-set "M-g t" #'(lambda () (interactive) (ibuffer nil nil '((used-mode . vterm-mode)))))
 (keymap-global-set "s-<up>" #'enlarge-window)
 (keymap-global-set "s-<down>" #'shrink-window)
 (keymap-global-set "s-<right>" #'enlarge-window-horizontally)
