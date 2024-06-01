@@ -106,7 +106,8 @@
 ;;   (keymap-set copilot-completion-map "C-<prior>" 'copilot-previous-completion))
 
 (with-eval-after-load 'elfeed
-  (elfeed-load-opml "~/src/doc/elfeed.opml")
+  ;; (elfeed-load-opml "~/doc/elfeed.opml")
+  (load "~/doc/elfeed.el")
   (setq elfeed-search-filter "@2-weeks-ago +unread")
   (define-key elfeed-search-mode-map "d" #'elfeed-search-untag-all-unread)
   (define-key elfeed-show-mode-map "d" #'elfeed-kill-buffer)
