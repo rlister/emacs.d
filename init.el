@@ -37,7 +37,6 @@
 (setq mouse-yank-at-point t)
 (setq native-comp-async-report-warnings-errors 'silent) ;log warnings but not pop up the *Warnings* buffer
 (setq next-error-message-highlight t)
-(setq pabbrev-idle-timer-verbose t)
 (setq read-buffer-completion-ignore-case t)
 (setq read-file-name-completion-ignore-case t)
 (setq resize-mini-windows nil)
