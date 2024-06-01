@@ -65,9 +65,11 @@
  '(font-lock-regexp-grouping-construct ((t (:inherit isearch))))
  '(font-lock-warning-face              ((t (:inherit warning))))
 
- '(minibuffer-prompt ((t (:inherit success))))
+ '(minibuffer-prompt ((t (:foreground "aquamarine3"))))
+
  '(completions-annotations ((t (:inherit warning))))
- '(completions-common-part ((t (:inherit success))))
+ '(completions-common-part ((t (:foreground "DodgerBlue2"))))
+ '(completions-first-difference ((t (:foreground "MediumPurple2"))))
  '(completions-highlight ((t (:foreground "Cyan"))))
 
  '(icomplete-first-match ((t (:inherit completions-highlight))))
@@ -107,7 +109,7 @@
  '(dired-subtree-depth-5-face ((t (:background "gray10" :extend t))))
  '(dired-subtree-depth-6-face ((t (:background "gray12" :extend t))))
 
- '(ido-first-match ((t (:inherit warning))))
+ '(ido-first-match ((t (:foreground "PaleVioletRed"))))
  '(ido-only-match  ((t (:inherit success))))
  '(ido-subdir      ((t (:inherit dired-directory))))
 
@@ -278,7 +280,7 @@
  ;; elfeed
  '(elfeed-search-date-face         ((t (:inherit message-header-other))))
  '(elfeed-search-title-face        ((t (:inherit font-lock-comment-face :strike-through t))))
- '(elfeed-search-unread-title-face ((t (:inherit default))))
+ ;; '(elfeed-search-unread-title-face ((t (:inherit default))))
  '(elfeed-search-unread-title-face ((t (:inherit default :strike-through nil))))
  '(elfeed-search-feed-face         ((t (:inherit font-lock-type-face))))
  '(elfeed-search-tag-face          ((t (:inherit font-lock-variable-name-face))))
@@ -302,6 +304,8 @@
  '(w3m-form-button         ((t (:inherit font-lock-comment-face))))
  '(w3m-header-line-title   ((t (:inherit mode-line))))
  '(w3m-header-line-content ((t (:inherit mode-line :family fixed-pitch))))
+
+ '(which-func ((t (:inherit font-lock-function-name-face))))
 
  '(pabbrev-suggestions-face ((t (:inherit error))))
 
