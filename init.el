@@ -87,6 +87,60 @@
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 
+(defun ido-enter-bs-show ()
+  "Drop into `bs-show' from buffer switching."
+  (interactive)
+  (setq ido-exit 'fallback)
+  (setq ido-fallback 'bs-show)
+  (exit-minibuffer))
+
+(defun vterm-toggle ()
+  "If a vterm exists for current dir, switch to it, else create a new vterm."
+  (interactive)
+  (require 'vterm)
+  (let* ((dir (directory-file-name (abbreviate-file-name default-directory)))
+         (name (format vterm-buffer-name-string dir)))
+    (if (get-buffer name)
+        (switch-to-buffer name)
+      (vterm))))
+
+(defun mark-line ()
+  "Mark whole line, leaving point in current position."
+  (interactive)
+  (end-of-line)
+  (set-mark (line-beginning-position))
+  (activate-mark))
+
+(defun mark-sexp-at-point ()
+  "Mark sexp at point. If no sexp at point, move forward and mark next sexp."
+  (interactive)
+  (or (thing-at-point 'sexp) (forward-sexp))
+  (let ((bounds (bounds-of-thing-at-point 'sexp)))
+    (when (null bounds) (error "No sexp at point"))
+    (goto-char (car bounds))
+    (push-mark nil t t)
+    (goto-char (cdr bounds))))
+
+(defun code-review-link ()
+  "Use link hint to open a pull request url."
+  (interactive)
+  (link-hint-copy-link)
+  (github-review-start (current-kill 0)))
+  ;; (code-review-start (current-kill 0)))
+
+(defun link-hint-open-eww ()
+  "Use link hint to open url in eww."
+  (interactive)
+  (link-hint-copy-link)
+  (eww (current-kill 0)))
+
+(defun split-window-toggle ()
+  "Split window if there is just one, else delete other windows."
+  (interactive)
+  (if (= (count-windows) 1)
+      (progn (split-window-right) (other-window 1))
+    (delete-other-windows)))
+
 (with-eval-after-load 'dired
   (setq dired-guess-shell-alist-user '(("\\." "xdg-open")))
   (setq dired-listing-switches "-alh")
@@ -151,6 +205,10 @@
 (with-eval-after-load 'chatgpt-shell
   (autoload 'auth-source-pick-first-password "auth-sources" nil t)
   (setq chatgpt-shell-openai-key (auth-source-pick-first-password :host "api.openai.com")))
+(autoload 'mu4e "mu4e" nil t)
+(with-eval-after-load 'mu4e
+  (load "init-mu4e"))
+
 
 (with-eval-after-load 'org
   (setq org-directory "~/doc")
@@ -205,68 +263,86 @@
           (project-dired "dir" ?d)
           (project-find-file "file" ?f)
           (project-kill-buffers "kill" ?k)
+          (project-list-buffers "list" ?l)
           (magit-project-status "magit" ?m)
           (rg-project "rg" ?r)
           (project-vterm "vterm" ?t))))
 
+(with-eval-after-load 'selected
+  (add-to-list 'selected-ignore-modes 'magit-status-mode)
+  (add-to-list 'selected-ignore-modes 'magit-refs-mode)
+  ;; (keymap-set selected-keymap "$" #'ispell-region)
+  ;; (keymap-set selected-keymap "%" #'query-replace)
+  (keymap-set selected-keymap "'" #'insert-pair)
+  (keymap-set selected-keymap "\"" #'insert-pair)
+  (keymap-set selected-keymap "(" #'insert-pair)
+  (keymap-set selected-keymap "[" #'insert-pair)
+  (keymap-set selected-keymap "{" #'insert-pair)
+  (keymap-set selected-keymap "*" #'calc-grab-region)
+  (keymap-set selected-keymap ";" #'comment-region)
+  (keymap-set selected-keymap "<tab>" #'indent-region)
+  (keymap-set selected-keymap "C-<tab>" #'indent-rigidly)
+  (keymap-set selected-keymap "E" #'eww-search-words)
+  (keymap-set selected-keymap "N" #'narrow-to-region)
+  (keymap-set selected-keymap "R" #'reverse-region)
+  (keymap-set selected-keymap "S" #'sort-lines)
+  (keymap-set selected-keymap "U" #'upcase-region)
+  ;; (keymap-set selected-keymap "a" #'beginning-of-visual-line)
+  (keymap-set selected-keymap "b" #'backward-sexp)
+  (keymap-set selected-keymap "c" #'capitalize-region)
+  (keymap-set selected-keymap "d" #'(lambda () (interactive) (down-list 1 t) (mark-sexp)))
+  ;; (keymap-set selected-keymap "e" #'end-of-visual-line)
+  (keymap-set selected-keymap "f" #'forward-sexp)
+  ;; (keymap-set selected-keymap "g" #'keyboard-quit)
+  ;; (keymap-set selected-keymap "h" #'mark-paragraph)
+  (keymap-set selected-keymap "i" #'append-to-file)
+  (keymap-set selected-keymap "j" #'forward-to-word)
+  (keymap-set selected-keymap "k" #'kill-region)
+  (keymap-set selected-keymap "l" #'downcase-region)
+  (keymap-set selected-keymap "m" #'forward-sexp)
+  (keymap-set selected-keymap "n" #'next-line)
+  (keymap-set selected-keymap "p" #'previous-line)
+  (keymap-set selected-keymap "q" #'selected-off)
+  (keymap-set selected-keymap "r" ctl-x-r-map)
+  ;; (keymap-set selected-keymap "s" #'isearch-forward)
+  (keymap-set selected-keymap "u" #'(lambda () (interactive) (backward-up-list 1 t t) (mark-sexp)))
+  (keymap-set selected-keymap "w" #'copy-region-as-kill)
+  (keymap-set selected-keymap "x" #'exchange-point-and-mark)
+  (keymap-set selected-keymap "y" #'duplicate-dwim)
+  ;; (keymap-set selected-keymap "z" #'zap-up-to-char)
+)
+
 (with-eval-after-load 'terraform-mode
   (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode))
 
-(autoload 'mu4e "mu4e" nil t)
-(with-eval-after-load 'mu4e
-  (load "init-mu4e"))
-
-(with-eval-after-load 'webjump
-  (load "init-webjump"))
-
 (with-eval-after-load 'vterm
   (setq vterm-buffer-name-string "*vterm %s*") ;include shell title in buffer name
-  (setq vterm-shell "screen")
   (setq vterm-copy-mode-remove-fake-newlines t)
+  (setq vterm-shell "screen")
   (keymap-set vterm-mode-map "C-t" nil)
   (keymap-set vterm-mode-map "C-c t" #'vterm)
   (keymap-set vterm-mode-map "C-<return>" #'vterm-copy-mode)
   (keymap-set vterm-copy-mode-map "C-<return>" #'vterm-copy-mode))
 
-(defun vterm-toggle ()
-  "If a vterm exists for current dir, switch to it, else create a new vterm."
-  (interactive)
-  (require 'vterm)
-  (let* ((dir (directory-file-name (abbreviate-file-name default-directory)))
-         (name (format vterm-buffer-name-string dir)))
-    (if (get-buffer name)
-        (switch-to-buffer name)
-      (vterm))))
+(with-eval-after-load 'webjump
+  (load "init-webjump"))
 
-(defun mark-line ()
-  "Mark whole line, leaving point in current position."
-  (interactive)
-  (end-of-line)
-  (set-mark (line-beginning-position))
-  (activate-mark))
+(add-to-list 'load-path "~/src/emacs.d")
+(autoload 'min-theme "min-theme" nil t)
+(add-hook 'window-setup-hook #'min-theme)
 
-(defun mark-sexp-at-point ()
-  "Mark sexp at point. If no sexp at point, move forward and mark next sexp."
-  (interactive)
-  (or (thing-at-point 'sexp) (forward-sexp))
-  (let ((bounds (bounds-of-thing-at-point 'sexp)))
-    (when (null bounds) (error "No sexp at point"))
-    (goto-char (car bounds))
-    (push-mark nil t t)
-    (goto-char (cdr bounds))))
+(add-hook 'window-setup-hook #'url-handler-mode)
+;; (add-hook 'emacs-startup-hook #'ido-mode)
+(add-hook 'emacs-startup-hook #'minibuffer-depth-indicate-mode)
+(add-hook 'emacs-startup-hook #'selected-global-mode)
+(add-hook 'before-save-hook #'delete-trailing-whitespace)
+(add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
-(defun code-review-link ()
-  "Use link hint to open a pull request url."
-  (interactive)
-  (link-hint-copy-link)
-  (github-review-start (current-kill 0)))
-  ;; (code-review-start (current-kill 0)))
-
-(defun link-hint-open-eww ()
-  "Use link hint to open url in eww."
-  (interactive)
-  (link-hint-copy-link)
-  (eww (current-kill 0)))
+(run-with-idle-timer 5 nil #'global-anzu-mode)
+(run-with-idle-timer 5 nil #'winner-mode)
+(run-with-idle-timer 10 nil #'pixel-scroll-mode)
+(run-with-idle-timer 60 nil #'midnight-mode)
+(run-with-idle-timer 60 nil #'recentf-mode)
 
 (defun translate-gui-keys ()
   "Translate some keys that can be differentiated in gui frames."
