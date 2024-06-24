@@ -28,6 +28,7 @@
 (setq ido-create-new-buffer 'always)
 (setq ido-default-buffer-method 'selected-window)
 (setq ido-default-file-method 'selected-window)
+(setq ido-max-prospects 5)
 (setq ido-use-virtual-buffers t)
 (setq inhibit-startup-echo-area-message "ric")
 (setq message-send-mail-function 'message-send-mail-with-sendmail)
