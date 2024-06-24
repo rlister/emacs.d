@@ -40,6 +40,7 @@
 (setq read-buffer-completion-ignore-case t)
 (setq read-file-name-completion-ignore-case t)
 (setq resize-mini-windows nil)
+(setq save-interprogram-paste-before-kill t)
 (setq scroll-conservatively 101)      ;do not center point, less jumpy
 (setq scroll-preserve-screen-position t) ;do not lose point
 (setq select-enable-primary t)    ;yank from primary set in other apps
