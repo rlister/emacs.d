@@ -354,58 +354,17 @@
     (keymap-global-set "H-i" #'project-find-file)
     (keymap-global-set "H-m" #'mark-sexp-at-point)))
 
-(defun split-window-toggle ()
-  "Split window if there is just one, else delete other windows."
-  (interactive)
-  (if (= (count-windows) 1)
-      (progn (split-window-right) (other-window 1))
-    (delete-other-windows)))
-
-;; (defun kill-whole-line-or-region ()
-;;   "Kill whole line, or region if active."
-;;   (interactive)
-;;   (if (region-active-p)
-;;       (kill-region (region-beginning) (region-end))
-;;     (kill-whole-line)))
-
-;; (defun copy-whole-line-or-region ()
-;;   "Copy whole line, or region if active."
-;;   (interactive)
-;;   (if (region-active-p)
-;;       (kill-ring-save (mark) (point))
-;;     (kill-ring-save (line-beginning-position) (line-end-position))))
-
 (add-hook 'server-after-make-frame-hook #'translate-gui-keys) ;server initial frame
 (add-hook 'after-init-hook #'translate-gui-keys)              ;non-server
-
-(add-to-list 'load-path "~/src/emacs.d")
-(autoload 'min-theme "min-theme" nil t)
-
-(add-hook 'window-setup-hook #'min-theme)
-(add-hook 'window-setup-hook #'url-handler-mode)
-(add-hook 'window-setup-hook #'ido-mode)
-(add-hook 'window-setup-hook #'selected-global-mode)
-(add-hook 'before-save-hook #'delete-trailing-whitespace)
-(add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
-
-(run-with-idle-timer 5 nil #'global-anzu-mode)
-(run-with-idle-timer 5 nil #'winner-mode)
-(run-with-idle-timer 10 nil #'pixel-scroll-mode)
-(run-with-idle-timer 10 nil #'minibuffer-depth-indicate-mode)
-(run-with-idle-timer 60 nil #'midnight-mode)
-(run-with-idle-timer 60 nil #'recentf-mode)
 
 (keymap-global-set "<remap> <dabbrev-expand>" #'hippie-expand)
 (keymap-global-set "<remap> <move-beginning-of-line>" #'mwim-beginning)
 (keymap-global-set "<remap> <move-end-of-line>" #'mwim-end)
 
-;; (keymap-global-set "<remap> <kill-ring-save>" #'copy-whole-line-or-region)
-;; (keymap-global-set "<remap> <kill-region>" #'kill-region)
-;; (keymap-global-set "<remap> <kill-region>" #'kill-whole-line-or-region)
-
 (keymap-global-set "<home>" #'beginning-of-buffer)
 (keymap-global-set "<end>" #'end-of-buffer)
 
+(keymap-global-set "C-'" #'bs-show)
 (keymap-global-set "C-," #'previous-buffer)
 (keymap-global-set "C-." #'next-buffer)
 (keymap-global-set "C-;" #'comment-line)
@@ -490,44 +449,6 @@
 (define-key completion-in-region-mode-map (kbd "C-r") 'minibuffer-previous-completion)
 (define-key completion-in-region-mode-map (kbd "C-s") 'minibuffer-next-completion)
 
-(with-eval-after-load 'selected
-  (add-to-list 'selected-ignore-modes 'magit-status-mode)
-  (keymap-set selected-keymap "$" #'ispell-region)
-  (keymap-set selected-keymap "%" #'query-replace)
-  (keymap-set selected-keymap "'" #'insert-pair)
-  (keymap-set selected-keymap "\"" #'insert-pair)
-  (keymap-set selected-keymap "(" #'insert-pair)
-  (keymap-set selected-keymap "[" #'insert-pair)
-  (keymap-set selected-keymap "{" #'insert-pair)
-  (keymap-set selected-keymap "*" #'calc-grab-region)
-  (keymap-set selected-keymap ";" #'comment-region)
-  (keymap-set selected-keymap "<tab>" #'indent-region)
-  (keymap-set selected-keymap "C-<tab>" #'indent-rigidly)
-  (keymap-set selected-keymap "E" #'eww-search-words)
-  (keymap-set selected-keymap "N" #'narrow-to-region)
-  (keymap-set selected-keymap "R" #'reverse-region)
-  (keymap-set selected-keymap "S" #'sort-lines)
-  (keymap-set selected-keymap "U" #'upcase-region)
-  (keymap-set selected-keymap "a" #'beginning-of-visual-line)
-  (keymap-set selected-keymap "b" #'backward-sexp)
-  (keymap-set selected-keymap "c" #'capitalize-region)
-  (keymap-set selected-keymap "d" #'(lambda () (interactive) (down-list 1 t) (mark-sexp)))
-  (keymap-set selected-keymap "e" #'end-of-visual-line)
-  (keymap-set selected-keymap "f" #'forward-sexp)
-  (keymap-set selected-keymap "g" #'keyboard-quit)
-  (keymap-set selected-keymap "h" #'mark-paragraph)
-  (keymap-set selected-keymap "i" #'append-to-file)
-  (keymap-set selected-keymap "j" #'forward-to-word)
-  (keymap-set selected-keymap "k" #'kill-region)
-  (keymap-set selected-keymap "l" #'downcase-region)
-  (keymap-set selected-keymap "m" #'forward-sexp)
-  (keymap-set selected-keymap "n" #'next-line)
-  (keymap-set selected-keymap "p" #'previous-line)
-  (keymap-set selected-keymap "q" #'selected-off)
-  (keymap-set selected-keymap "r" ctl-x-r-map)
-  (keymap-set selected-keymap "s" #'isearch-forward)
-  (keymap-set selected-keymap "u" #'(lambda () (interactive) (backward-up-list 1 t t) (mark-sexp)))
-  (keymap-set selected-keymap "w" #'copy-region-as-kill)
-  (keymap-set selected-keymap "x" #'exchange-point-and-mark)
-  (keymap-set selected-keymap "y" #'duplicate-dwim)
-  (keymap-set selected-keymap "z" #'zap-up-to-char))
+(keymap-set ido-common-completion-map "C-t" #'ido-enter-bs-show)
+
+(ido-mode 'buffers)
