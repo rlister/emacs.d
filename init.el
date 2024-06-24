@@ -81,6 +81,7 @@
 (add-to-list 'auto-mode-alist '("\\.ya?ml" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.hurl" . conf-mode))
 (add-to-list 'auto-mode-alist '("\\.ts" . js-mode))
+(add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
 
 (put 'narrow-to-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
