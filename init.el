@@ -374,7 +374,6 @@
 (keymap-global-set "C-t" #'switch-to-buffer)
 (keymap-global-set "C-z" #'project-switch-project)
 
-;; (keymap-global-set "C-c a" #'org-agenda-list)
 (keymap-global-set "C-c b" #'project-switch-to-buffer)
 (keymap-global-set "C-c c" #'org-capture)
 (keymap-global-set "C-c d" #'duplicate-dwim)
@@ -394,17 +393,12 @@
 (keymap-global-set "C-c t" #'vterm-toggle)
 (keymap-global-set "C-c T" #'vterm)
 (keymap-global-set "C-c u" #'winner-undo)
-(keymap-global-set "C-c v" #'vertico-mode)
 (keymap-global-set "C-c o" #'org-agenda)
 (keymap-global-set "C-c y" #'browse-kill-ring)
-;; (keymap-global-set "C-c C-n" #'diff-hl-next-hunk)
-;; (keymap-global-set "C-c C-p" #'diff-hl-previous-hunk)
 
 (keymap-global-set "C-h C-," #'split-window-toggle)
 (keymap-global-set "C-h j" #'webjump)
 
-;; (keymap-global-set "M-g r" #'revert-buffer)
-;; (keymap-global-set "M-g t" #'(lambda () (interactive) (ibuffer nil nil '((used-mode . vterm-mode)))))
 (keymap-global-set "s-<up>" #'enlarge-window)
 (keymap-global-set "s-<down>" #'shrink-window)
 (keymap-global-set "s-<right>" #'enlarge-window-horizontally)
