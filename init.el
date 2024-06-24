@@ -75,16 +75,16 @@
 (setq-default standard-indent 2)
 (setq-default tab-width 2)
 
-(put 'narrow-to-region 'disabled nil)
-(put 'downcase-region 'disabled nil)
-(put 'upcase-region 'disabled nil)
+(setq display-buffer-alist '(("\\*\\(Buffer list\\|Help\\|Messages\\|Password\\|vc-\\)" (display-buffer-same-window))))
 
 (add-to-list 'auto-mode-alist '("\\(Env\\|Stax\\)file" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.ya?ml" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.hurl" . conf-mode))
 (add-to-list 'auto-mode-alist '("\\.ts" . js-mode))
 
-(setq display-buffer-alist '(("\\*\\(Help\\|Messages\\|Password\\|vc-\\)" (display-buffer-same-window))))
+(put 'narrow-to-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
 
 (with-eval-after-load 'dired
   (setq dired-guess-shell-alist-user '(("\\." "xdg-open")))
