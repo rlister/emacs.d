@@ -209,6 +209,8 @@
 (with-eval-after-load 'mu4e
   (load "init-mu4e"))
 
+(with-eval-after-load 'nov
+  (setq nov-unzip-program (executable-find "unzip")))
 
 (with-eval-after-load 'org
   (setq org-directory "~/doc")
