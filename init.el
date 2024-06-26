@@ -333,9 +333,9 @@
 (with-eval-after-load 'webjump
   (load "init-webjump"))
 
-(add-to-list 'load-path "~/src/emacs.d")
 (autoload 'min-theme "min-theme" nil t)
 (add-hook 'window-setup-hook #'min-theme)
+(add-to-list 'load-path "~/.emacs.d/lisp")
 
 (add-hook 'window-setup-hook #'url-handler-mode)
 (add-hook 'emacs-startup-hook #'minibuffer-depth-indicate-mode)
