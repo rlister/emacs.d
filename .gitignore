@@ -3,3 +3,30 @@
 
 # Packaging
 .cask
+
+.org-generic-id-locations
+abbrev_defs
+auto-save-list/
+backups/
+bookmarks
+chatgpt/
+custom.el
+diary
+eln-cache/
+elpa/
+emojis/
+eshell/
+*.sqlite
+ido.last
+ielm-history.eld
+image-dired/
+nov-places
+oauth2-auto.plist
+package-quickstart.el
+projects
+recentf
+request/
+smex-items
+tramp
+transient/
+url/
