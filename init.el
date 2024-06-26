@@ -279,6 +279,7 @@
   ;; (keymap-set selected-keymap "$" #'ispell-region)
   ;; (keymap-set selected-keymap "%" #'query-replace)
   (keymap-set selected-keymap "'" #'insert-pair)
+  (keymap-set selected-keymap "`" #'insert-pair)
   (keymap-set selected-keymap "\"" #'insert-pair)
   (keymap-set selected-keymap "(" #'insert-pair)
   (keymap-set selected-keymap "[" #'insert-pair)
