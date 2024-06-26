@@ -74,6 +74,8 @@
 (setq-default standard-indent 2)
 (setq-default tab-width 2)
 
+(ido-mode 'buffers)
+
 (setq display-buffer-alist '(("\\*\\(Buffer list\\|Help\\|Messages\\|Password\\|vc-\\)" (display-buffer-same-window))))
 
 (add-to-list 'auto-mode-alist '("\\(Env\\|Stax\\)file" . ruby-mode))
@@ -85,13 +87,6 @@
 (put 'narrow-to-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
-
-(defun ido-enter-bs-show ()
-  "Drop into `bs-show' from buffer switching."
-  (interactive)
-  (setq ido-exit 'fallback)
-  (setq ido-fallback 'bs-show)
-  (exit-minibuffer))
 
 (defun vterm-toggle ()
   "If a vterm exists for current dir, switch to it, else create a new vterm."
@@ -193,6 +188,15 @@
 
 (with-eval-after-load 'go-mode
   (add-hook 'go-mode-hook #'subword-mode))
+
+(with-eval-after-load 'ido
+  (defun ido-enter-bs-show ()
+    "Drop into `bs-show' from buffer switching."
+    (interactive)
+    (setq ido-exit 'fallback)
+    (setq ido-fallback 'bs-show)
+    (exit-minibuffer))
+  (keymap-set ido-common-completion-map "C-t" #'ido-enter-bs-show))
 
 (with-eval-after-load 'isearch
   (setq isearch-lax-whitespace t)        ;space matches any non-word
@@ -333,7 +337,6 @@
 (add-hook 'window-setup-hook #'min-theme)
 
 (add-hook 'window-setup-hook #'url-handler-mode)
-;; (add-hook 'emacs-startup-hook #'ido-mode)
 (add-hook 'emacs-startup-hook #'minibuffer-depth-indicate-mode)
 (add-hook 'emacs-startup-hook #'selected-global-mode)
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
