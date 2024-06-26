@@ -3,6 +3,7 @@
 (setq mu4e-context-policy 'pick-first)     ;start with default context
 (setq mu4e-headers-thread-last-child-prefix '(" >" . "└ ")) ;nicer ascii char
 (setq mu4e-headers-fields '((:human-date . 12) (:flags . 6) (:maildir . 15) (:mailing-list . 10) (:from-or-to . 22) (:subject)))
+
 ;; (setq mu4e-split-view 'single-window)
 
 (setq mu4e-compose-format-flowed t)
@@ -27,7 +28,8 @@
                   (mu4e-refile-folder . "/work/archive")
                   (mu4e-trash-folder . "/work/trash")
                   (mu4e-drafts-folder . "/work/drafts")
-                  (mu4e-maildir-shortcuts . ((:maildir "/work/inbox" :key ?i) (:maildir "/work/spam" :key ?s) (:maildir "/work/sent" :key ?S) (:maildir "/work/trash" :key ?t)))))))
+                  (mu4e-maildir-shortcuts . ((:maildir "/work/inbox" :key ?i) (:maildir "/work/spam" :key ?s) (:maildir "/work/sent" :key ?S) (:maildir "/work/trash" :key ?t)))
+))))
 
 (define-key mu4e-main-mode-map (kbd "i") #'mu4e-update-index)
 (define-key mu4e-headers-mode-map (kbd "i") #'mu4e-update-index)
@@ -42,6 +44,6 @@
 ;; borken
 ;; (advice-add 'mu4e-view-mark-for-trash :after #'kill-current-buffer)
 
-(add-to-list 'mu4e-bookmarks '(:query "maildir:/home/inbox OR maildir:/work/inbox" :name "All mail" :key ?a) t)
+;; (add-to-list 'mu4e-bookmarks '(:query "maildir:/home/inbox OR maildir:/work/inbox" :name "All mail" :key ?a) t)
 
 (add-hook 'mu4e-view-mode-hook #'visual-line-mode)
