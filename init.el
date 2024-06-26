@@ -14,7 +14,6 @@
 (setq confirm-nonexistent-file-or-buffer nil)
 (setq copy-region-blink-delay 0)        ;no blink on copy
 (setq custom-file "~/.emacs.d/custom.el") ;stop customize from polluting init.el
-(setq custom-theme-directory "~/src/emacs.d")
 (setq dabbrev-case-replace t)
 (setq dabbrev-check-other-buffers nil)
 (setq delete-old-versions t)
