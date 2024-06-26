@@ -445,7 +445,3 @@
 
 (define-key completion-in-region-mode-map (kbd "C-r") 'minibuffer-previous-completion)
 (define-key completion-in-region-mode-map (kbd "C-s") 'minibuffer-next-completion)
-
-(keymap-set ido-common-completion-map "C-t" #'ido-enter-bs-show)
-
-(ido-mode 'buffers)
