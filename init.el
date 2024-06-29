@@ -442,3 +442,5 @@
 
 (define-key completion-in-region-mode-map (kbd "C-r") 'minibuffer-previous-completion)
 (define-key completion-in-region-mode-map (kbd "C-s") 'minibuffer-next-completion)
+
+(ido-mode 'buffers)
