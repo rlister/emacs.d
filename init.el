@@ -24,11 +24,6 @@
 (setq eww-auto-rename-buffer 'title)
 (setq gnus-inhibit-mime-unbuttonizing t) ;show attachment buttons for all mime parts, including inline images
 (setq help-window-select t)
-(setq ido-create-new-buffer 'always)
-(setq ido-default-buffer-method 'selected-window)
-(setq ido-default-file-method 'selected-window)
-(setq ido-max-prospects 5)
-(setq ido-use-virtual-buffers t)
 (setq inhibit-startup-echo-area-message "ric")
 (setq message-send-mail-function 'message-send-mail-with-sendmail)
 (setq message-sendmail-extra-arguments '("--read-envelope-from")) ;get cfg from sender
@@ -73,8 +68,6 @@
 (setq-default sh-basic-offset 2)
 (setq-default standard-indent 2)
 (setq-default tab-width 2)
-
-(ido-mode 'buffers)
 
 (setq display-buffer-alist '(("\\*\\(Buffer list\\|Help\\|Messages\\|Password\\|vc-\\)" (display-buffer-same-window))))
 
@@ -196,6 +189,12 @@
     (setq ido-exit 'fallback)
     (setq ido-fallback 'bs-show)
     (exit-minibuffer))
+  (setq ido-create-new-buffer 'always)
+  (setq ido-default-buffer-method 'selected-window)
+  (setq ido-default-file-method 'selected-window)
+  ;; (setq ido-max-window-height nil)
+  (setq ido-max-prospects 5)
+  (setq ido-use-virtual-buffers t)
   (keymap-set ido-common-completion-map "C-t" #'ido-enter-bs-show))
 
 (with-eval-after-load 'isearch
