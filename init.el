@@ -429,7 +429,7 @@
 (keymap-set esc-map "j" #'join-line)
 (keymap-set esc-map "l" #'downcase-dwim)
 (keymap-set esc-map "o" #'other-window)
-(keymap-set esc-map "t" #'project-switch-project)
+(keymap-set esc-map "t" #'project-list-buffers)
 (keymap-set esc-map "u" #'upcase-dwim)
 
 (keymap-set minibuffer-local-must-match-map "C-<up>" #'minibuffer-previous-completion)
