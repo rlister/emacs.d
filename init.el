@@ -432,8 +432,6 @@
 (keymap-set esc-map "t" #'project-list-buffers)
 (keymap-set esc-map "u" #'upcase-dwim)
 
-(keymap-set minibuffer-local-must-match-map "C-<up>" #'minibuffer-previous-completion)
-(keymap-set minibuffer-local-must-match-map "C-<down>" #'minibuffer-next-completion)
 (keymap-set minibuffer-local-must-match-map "C-r" #'minibuffer-previous-completion)
 (keymap-set minibuffer-local-must-match-map "C-s" #'minibuffer-next-completion)
 (keymap-set minibuffer-local-must-match-map "C-t" #'minibuffer-complete)
