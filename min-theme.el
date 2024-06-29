@@ -1,7 +1,6 @@
 ;;; min-theme.el --- Minimalist theme
 
 ;; Version: 0
-
 (deftheme min "Minimalist theme")
 
 (custom-theme-set-faces
@@ -67,6 +66,8 @@
 
  '(minibuffer-prompt ((t (:foreground "aquamarine3"))))
 
+ '(buffer-menu-buffer ((t (:foreground "PaleGreen"))))
+
  '(completions-annotations ((t (:inherit warning))))
  '(completions-common-part ((t (:foreground "DodgerBlue2"))))
  '(completions-first-difference ((t (:foreground "MediumPurple2"))))
@@ -109,7 +110,7 @@
  '(dired-subtree-depth-5-face ((t (:background "gray10" :extend t))))
  '(dired-subtree-depth-6-face ((t (:background "gray12" :extend t))))
 
- '(ido-first-match ((t (:foreground "PaleVioletRed"))))
+ '(ido-first-match ((t (:inherit minibuffer-prompt))))
  '(ido-only-match  ((t (:inherit success))))
  '(ido-subdir      ((t (:inherit dired-directory))))
 
