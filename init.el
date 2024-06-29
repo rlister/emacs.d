@@ -71,6 +71,8 @@
 
 (setq display-buffer-alist '(("\\*\\(Buffer list\\|Help\\|Messages\\|Password\\|vc-\\)" (display-buffer-same-window))))
 
+(load-theme 'min t)
+
 (add-to-list 'auto-mode-alist '("\\(Env\\|Stax\\)file" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.ya?ml" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.hurl" . conf-mode))
