@@ -209,6 +209,9 @@
 (with-eval-after-load 'chatgpt-shell
   (autoload 'auth-source-pick-first-password "auth-sources" nil t)
   (setq chatgpt-shell-openai-key (auth-source-pick-first-password :host "api.openai.com")))
+(with-eval-after-load 'markdown
+  (add-hook 'markdown-mode-hook #'visual-line-mode))
+
 (autoload 'mu4e "mu4e" nil t)
 (with-eval-after-load 'mu4e
   (load "init-mu4e"))
