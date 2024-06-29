@@ -318,10 +318,6 @@
  '(copilot-overlay-face ((t (:inherit font-lock-comment-face))))
 )
 
-;;;###autoload
-(defun min-theme ()
-  (load-theme 'min t))
-
 (provide-theme 'min)
 
 ;;; min-theme.el ends here
