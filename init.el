@@ -1,3 +1,11 @@
+; emacs 30
+(setq completions-sort 'historical)
+(setq imenu-flatten 'prefix)
+(setq minibuffer-visible-completions t)
+(setq project-file-history-behavior 'relativize)
+(setq project-mode-line t)
+(setq register-use-preview t)
+
 (setq Man-notify-method 'pushy)
 (setq async-shell-command-display-buffer nil)
 (setq avy-keys '(?t ?n ?s ?e ?r ?i ?a ?o ?f ?u ?d ?h ?l ?p ?g ?m ?c))
