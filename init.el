@@ -125,12 +125,6 @@
   (github-review-start (current-kill 0)))
   ;; (code-review-start (current-kill 0)))
 
-(defun link-hint-open-eww ()
-  "Use link hint to open url in eww."
-  (interactive)
-  (link-hint-copy-link)
-  (eww (current-kill 0)))
-
 (defun split-window-toggle ()
   "Split window if there is just one, else delete other windows."
   (interactive)
