@@ -18,7 +18,7 @@
 (setq completion-styles '(partial-completion substring initials flex))
 (setq completions-detailed t)
 (setq completions-format 'one-column)
-(setq completions-header-format nil)
+(setq completions-header-format "")
 (setq confirm-nonexistent-file-or-buffer nil)
 (setq copy-region-blink-delay 0)        ;no blink on copy
 (setq custom-file "~/.emacs.d/custom.el") ;stop customize from polluting init.el
