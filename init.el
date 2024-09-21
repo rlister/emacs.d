@@ -384,8 +384,7 @@
 (keymap-global-set "C-\\" #'mark-line)
 (keymap-global-set "C-j" #'forward-to-word)
 (keymap-global-set "C-t" #'switch-to-buffer)
-(keymap-global-set "C-z" #'project-switch-project)
-
+(keymap-global-set "C-z" #'zap-up-to-char)
 (keymap-global-set "C-c b" #'project-switch-to-buffer)
 (keymap-global-set "C-c c" #'org-capture)
 (keymap-global-set "C-c d" #'duplicate-dwim)
