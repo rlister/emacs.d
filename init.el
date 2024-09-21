@@ -175,6 +175,7 @@
   (keymap-set flymake-mode-map "C-c C-p" #'flymake-goto-prev-error))
 
 (with-eval-after-load 'forge
+  (setq forge-post-mode-hook '(visual-line-mode))
   (keymap-set forge-topic-mode-map "r" #'forge-topic-set-review-requests)
   (keymap-set forge-topic-mode-map "w" #'forge-browse-topic))
 
