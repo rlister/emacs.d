@@ -65,6 +65,7 @@
  '(font-lock-warning-face              ((t (:inherit warning))))
 
  '(minibuffer-prompt ((t (:foreground "aquamarine3"))))
+ '(file-name-shadow  ((t (:inherit font-lock-comment-face))))
 
  '(buffer-menu-buffer ((t (:foreground "PaleGreen"))))
 
