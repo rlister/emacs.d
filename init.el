@@ -372,8 +372,6 @@
 (add-hook 'after-init-hook #'translate-gui-keys)              ;non-server
 
 (keymap-global-set "<remap> <dabbrev-expand>" #'hippie-expand)
-(keymap-global-set "<remap> <move-beginning-of-line>" #'mwim-beginning)
-(keymap-global-set "<remap> <move-end-of-line>" #'mwim-end)
 
 (keymap-global-set "<home>" #'beginning-of-buffer)
 (keymap-global-set "<end>" #'end-of-buffer)
