@@ -329,7 +329,6 @@
 (run-with-idle-timer 5 nil #'winner-mode)
 (run-with-idle-timer 10 nil #'pixel-scroll-mode)
 (run-with-idle-timer 60 nil #'midnight-mode)
-(run-with-idle-timer 60 nil #'recentf-mode)
 
 (defun translate-gui-keys ()
   "Translate some keys that can be differentiated in gui frames."
@@ -401,7 +400,6 @@
 (keymap-set ctl-x-map "k" #'kill-current-buffer)
 (keymap-set ctl-x-map "m" #'smex)
 (keymap-set ctl-x-map "M" #'smex-major-mode-commands)
-(keymap-set ctl-x-map "C-r" #'recentf-open)
 
 (keymap-set ctl-x-r-map "a" #'append-to-register)
 (keymap-set ctl-x-r-map "p" #'prepend-to-register)
