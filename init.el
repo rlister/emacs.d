@@ -1,3 +1,5 @@
+(setq dired-switches-in-mode-line 'as-is)
+
 ; emacs 30
 (setq completions-sort 'historical)
 (setq imenu-flatten 'prefix)
