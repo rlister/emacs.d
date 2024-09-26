@@ -320,7 +320,7 @@
   (keymap-set selected-keymap "r" ctl-x-r-map)
   (keymap-set selected-keymap "u" #'(lambda () (interactive) (backward-up-list 1 t t) (mark-sexp)))
   (keymap-set selected-keymap "w" #'copy-region-as-kill)
-  (keymap-set selected-keymap "x" #'exchange-point-and-mark)
+  (keymap-set selected-keymap "x" #'exchange-point-and-mark))
 
 (with-eval-after-load 'terraform-mode
   (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode))
