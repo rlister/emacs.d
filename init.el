@@ -1,5 +1,3 @@
-(setq dired-switches-in-mode-line 'as-is)
-
 ; emacs 30
 (setq completions-sort 'historical)
 (setq imenu-flatten 'prefix)
@@ -29,6 +27,10 @@
 (setq dabbrev-check-other-buffers nil)
 (setq delete-old-versions t)
 (setq delete-pair-blink-delay 0)
+(setq dired-dwim-target t)
+(setq dired-guess-shell-alist-user '(("\\." "xdg-open")))
+(setq dired-listing-switches "-Alh")
+(setq dired-switches-in-mode-line 'as-is)
 (setq enable-recursive-minibuffers t)
 (setq epg-pinentry-mode 'loopback)
 (setq eshell-banner-message "")
@@ -37,10 +39,10 @@
 (setq gnus-inhibit-mime-unbuttonizing t) ;show attachment buttons for all mime parts, including inline images
 (setq help-window-select t)
 (setq icomplete-prospects-height 1)
-(setq ido-everywhere t)
 (setq ido-create-new-buffer 'always)
 (setq ido-default-buffer-method 'selected-window)
 (setq ido-default-file-method 'selected-window)
+(setq ido-everywhere t)
 (setq ido-max-prospects 3)
 (setq ido-max-window-height 1)
 (setq ido-use-virtual-buffers t)
@@ -154,9 +156,6 @@
     (delete-other-windows)))
 
 (with-eval-after-load 'dired
-  (setq dired-guess-shell-alist-user '(("\\." "xdg-open")))
-  (setq dired-listing-switches "-Alh")
-  (setq dired-dwim-target t)
   (add-to-list 'dired-font-lock-keywords (list dired-re-exe '(".+" (dired-move-to-filename) nil (0 'success))) 'append) ;face for exec files
   (keymap-set dired-mode-map "C-t" nil)
   (keymap-set dired-mode-map "," #'dired-collapse-mode)
