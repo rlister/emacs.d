@@ -157,22 +157,11 @@
   (setq dired-guess-shell-alist-user '(("\\." "xdg-open")))
   (setq dired-listing-switches "-Alh")
   (setq dired-dwim-target t)
-  ;; (add-hook 'dired-mode-hook 'turn-on-gnus-dired-mode) ;attach files from dired to mu4e
   (add-to-list 'dired-font-lock-keywords (list dired-re-exe '(".+" (dired-move-to-filename) nil (0 'success))) 'append) ;face for exec files
-  (keymap-set dired-mode-map "C-<down>" #'dired-subtree-down)
-  (keymap-set dired-mode-map "C-<up>" #'dired-subtree-up)
   (keymap-set dired-mode-map "C-t" nil)
   (keymap-set dired-mode-map "," #'dired-collapse-mode)
   (keymap-set dired-mode-map "e" #'wdired-change-to-wdired-mode)
-  (keymap-set dired-mode-map "f" #'find-name-dired)
-  (keymap-set dired-mode-map "<tab>" #'dired-subtree-cycle)
-  (keymap-set dired-mode-map "_" (lambda () (interactive) (dired-do-rename-regexp "^.*$" "_\\&"))) ;prepend underscore
-  (keymap-set dired-mode-map "C-c _" (lambda () (interactive) (dired-do-rename-regexp "^_" ""))))  ;remove leading underscore
-
-;; (with-eval-after-load 'copilot  (keymap-set copilot-completion-map "M-<tab>" 'copilot-accept-completion)
-;;   (keymap-set copilot-completion-map "C-<tab>" 'copilot-accept-completion-by-word)
-;;   (keymap-set copilot-completion-map "C-<next>" 'copilot-next-completion)
-;;   (keymap-set copilot-completion-map "C-<prior>" 'copilot-previous-completion))
+  (keymap-set dired-mode-map "f" #'find-name-dired))
 
 (with-eval-after-load 'elfeed
   ;; (elfeed-load-opml "~/doc/elfeed.opml")
