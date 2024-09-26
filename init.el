@@ -144,7 +144,7 @@
 (defun ido-switch-project ()
   "Switch project using ido."
   (interactive)
-  (project-switch-project (ido-completing-read "Project: " (mapcar 'car project--list))))
+  (project-switch-project (ido-completing-read "Project: " (project-known-project-roots))))
 
 (defun split-window-toggle ()
   "Split window if there is just one, else delete other windows."
