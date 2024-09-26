@@ -4,6 +4,7 @@
 (setq minibuffer-visible-completions t)
 (setq project-file-history-behavior 'relativize)
 (setq project-mode-line t)
+(setq project-mode-line-face 'dired-directory)
 (setq register-use-preview t)
 
 (setq Man-notify-method 'pushy)
