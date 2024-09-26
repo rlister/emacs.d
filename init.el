@@ -271,6 +271,11 @@
 (with-eval-after-load 'package
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t))
 
+(with-eval-after-load 'password-store
+  (defun password-store--completing-read (&optional require-match)
+    "Read pass entry using ido."
+    (ido-completing-read "Pass: " (password-store-list) nil require-match)))
+
 (with-eval-after-load 'project
   (defun project-vterm ()
     (interactive)
