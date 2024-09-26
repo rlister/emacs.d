@@ -14,13 +14,14 @@
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 (setq bookmark-save-flag 1)              ;save after any modification
 (setq clean-buffer-list-delay-general 1) ;midnight-mode days
-(setq completion-auto-help 'visible)
+(setq completion-auto-help 'always)
 (setq completion-ignore-case t)
 (setq completion-show-help nil)
-(setq completion-styles '(partial-completion substring initials flex))
+(setq completion-styles '(basic partial-completion initials flex emacs22))
 (setq completions-detailed t)
 (setq completions-format 'one-column)
 (setq completions-header-format "")
+(setq completions-max-height nil)
 (setq confirm-nonexistent-file-or-buffer nil)
 (setq copy-region-blink-delay 0)        ;no blink on copy
 (setq custom-file "~/.emacs.d/custom.el") ;stop customize from polluting init.el
@@ -32,8 +33,17 @@
 (setq epg-pinentry-mode 'loopback)
 (setq eshell-banner-message "")
 (setq eww-auto-rename-buffer 'title)
+(setq frame-resize-pixelwise t)
 (setq gnus-inhibit-mime-unbuttonizing t) ;show attachment buttons for all mime parts, including inline images
 (setq help-window-select t)
+(setq icomplete-prospects-height 1)
+(setq ido-everywhere t)
+(setq ido-create-new-buffer 'always)
+(setq ido-default-buffer-method 'selected-window)
+(setq ido-default-file-method 'selected-window)
+(setq ido-max-prospects 3)
+(setq ido-max-window-height 1)
+(setq ido-use-virtual-buffers t)
 (setq inhibit-startup-echo-area-message "ric")
 (setq message-send-mail-function 'message-send-mail-with-sendmail)
 (setq message-sendmail-extra-arguments '("--read-envelope-from")) ;get cfg from sender
@@ -44,7 +54,8 @@
 (setq next-error-message-highlight t)
 (setq read-buffer-completion-ignore-case t)
 (setq read-file-name-completion-ignore-case t)
-(setq resize-mini-windows nil)
+(setq recenter-positions '(top middle bottom))
+(setq resize-mini-windows t)
 (setq save-interprogram-paste-before-kill t)
 (setq scroll-conservatively 101)      ;do not center point, less jumpy
 (setq scroll-preserve-screen-position t) ;do not lose point
@@ -66,6 +77,9 @@
 (setq warning-minimum-level :error)
 (setq webjump-use-internal-browser t)
 (setq wgrep-auto-save-buffer t)
+;; (setq completion-auto-help 'lazy)
+;; (setq completion-cycle-threshold nil)
+;; (setq completion-styles '(basic partial-completion emacs22))
 
 (setq-default c-basic-offset 2)
 (setq-default css-indent-offset 2)
@@ -188,21 +202,6 @@
 
 (with-eval-after-load 'go-mode
   (add-hook 'go-mode-hook #'subword-mode))
-
-(with-eval-after-load 'ido
-  (defun ido-enter-bs-show ()
-    "Drop into `bs-show' from buffer switching."
-    (interactive)
-    (setq ido-exit 'fallback)
-    (setq ido-fallback 'bs-show)
-    (exit-minibuffer))
-  (setq ido-create-new-buffer 'always)
-  (setq ido-default-buffer-method 'selected-window)
-  (setq ido-default-file-method 'selected-window)
-  ;; (setq ido-max-window-height nil)
-  (setq ido-max-prospects 5)
-  (setq ido-use-virtual-buffers t)
-  (keymap-set ido-common-completion-map "C-t" #'ido-enter-bs-show))
 
 (with-eval-after-load 'isearch
   (setq isearch-lax-whitespace t)        ;space matches any non-word
