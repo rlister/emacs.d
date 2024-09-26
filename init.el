@@ -416,18 +416,19 @@
 (keymap-set esc-map "t" #'project-list-buffers)
 (keymap-set esc-map "u" #'upcase-dwim)
 
-(keymap-set minibuffer-local-must-match-map "C-r" #'minibuffer-previous-completion)
-(keymap-set minibuffer-local-must-match-map "C-s" #'minibuffer-next-completion)
-(keymap-set minibuffer-local-must-match-map "C-t" #'minibuffer-complete)
+;; (keymap-set minibuffer-local-must-match-map "C-r" #'minibuffer-previous-completion)
+;; (keymap-set minibuffer-local-must-match-map "C-r" #'isearch-backward)
+;; (keymap-set minibuffer-local-must-match-map "C-s" #'minibuffer-next-completion)
+;; (keymap-set minibuffer-local-must-match-map "C-t" #'minibuffer-complete)
 
-(keymap-set minibuffer-local-completion-map "C-r" #'minibuffer-previous-completion)
-(keymap-set minibuffer-local-completion-map "C-s" #'minibuffer-next-completion)
-(keymap-set minibuffer-local-completion-map "C-t" #'minibuffer-complete)
+;; (keymap-set minibuffer-local-completion-map "C-r" #'isearch-backward)
+;; (keymap-set minibuffer-local-completion-map "C-s" #'minibuffer-next-completion)
+;; (keymap-set minibuffer-local-completion-map "C-t" #'minibuffer-complete)
 
-(keymap-set completion-list-mode-map "C-r" #'previous-completion)
-(keymap-set completion-list-mode-map "C-s" #'next-completion)
+;; (keymap-set completion-list-mode-map "C-r" #'isearch-backward)
+;; (keymap-set completion-list-mode-map "C-s" #'next-completion)
 
-(define-key completion-in-region-mode-map (kbd "C-r") 'minibuffer-previous-completion)
-(define-key completion-in-region-mode-map (kbd "C-s") 'minibuffer-next-completion)
+;; (define-key completion-in-region-mode-map (kbd "C-r") 'minibuffer-previous-completion)
+;; (define-key completion-in-region-mode-map (kbd "C-s") 'minibuffer-next-completion)
 
-(ido-mode 'buffers)
+(ido-mode)
