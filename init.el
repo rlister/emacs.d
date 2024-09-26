@@ -174,10 +174,6 @@
 (with-eval-after-load 'eww
   (keymap-set eww-mode-map "i" #'eww-toggle-images))
 
-(with-eval-after-load 'flymake
-  (keymap-set flymake-mode-map "C-c C-n" #'flymake-goto-next-error)
-  (keymap-set flymake-mode-map "C-c C-p" #'flymake-goto-prev-error))
-
 (with-eval-after-load 'forge
   (setq forge-post-mode-hook '(visual-line-mode))
   (keymap-set forge-topic-mode-map "r" #'forge-topic-set-review-requests)
@@ -283,8 +279,6 @@
 (with-eval-after-load 'selected
   (add-to-list 'selected-ignore-modes 'magit-status-mode)
   (add-to-list 'selected-ignore-modes 'magit-refs-mode)
-  ;; (keymap-set selected-keymap "$" #'ispell-region)
-  ;; (keymap-set selected-keymap "%" #'query-replace)
   (keymap-set selected-keymap "'" #'insert-pair)
   (keymap-set selected-keymap "`" #'insert-pair)
   (keymap-set selected-keymap "\"" #'insert-pair)
@@ -323,9 +317,6 @@
   (keymap-set vterm-mode-map "C-<return>" #'vterm-copy-mode)
   (keymap-set vterm-copy-mode-map "C-<return>" #'vterm-copy-mode))
 
-(with-eval-after-load 'webjump
-  (load "init-webjump"))
-
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
 (add-hook 'window-setup-hook #'url-handler-mode)
@@ -356,7 +347,6 @@
 (keymap-global-set "<home>" #'beginning-of-buffer)
 (keymap-global-set "<end>" #'end-of-buffer)
 
-(keymap-global-set "C-'" #'bs-show)
 (keymap-global-set "C-," #'previous-buffer)
 (keymap-global-set "C-." #'next-buffer)
 (keymap-global-set "C-;" #'comment-line)
@@ -365,19 +355,27 @@
 (keymap-global-set "C-j" #'forward-to-word)
 (keymap-global-set "C-t" #'switch-to-buffer)
 (keymap-global-set "C-z" #'zap-up-to-char)
+
+(keymap-global-set "C-c \"" #'insert-pair)
+(keymap-global-set "C-c '" #'insert-pair)
+(keymap-global-set "C-c (" #'insert-pair)
+(keymap-global-set "C-c {" #'insert-pair)
+(keymap-global-set "C-c [" #'insert-pair)
+(keymap-global-set "C-c a" #'org-agenda)
 (keymap-global-set "C-c b" #'project-switch-to-buffer)
 (keymap-global-set "C-c c" #'org-capture)
-(keymap-global-set "C-c d" #'duplicate-dwim)
-(keymap-global-set "C-c e" #'link-hint-open-eww)
-(keymap-global-set "C-c f" #'avy-goto-char-in-line)
+(keymap-global-set "C-c d" #'project-find-dir)
+(keymap-global-set "C-c D" #'duplicate-dwim)
+;; (keymap-global-set "C-c f" #'avy-goto-char-in-line)
+(keymap-global-set "C-c f" #'project-find-file)
 (keymap-global-set "C-c g" #'magit-file-dispatch)
-(keymap-global-set "C-c i" #'org-store-link)
+(keymap-global-set "C-c i" #'imenu)
 (keymap-global-set "C-c j" #'avy-goto-char)
 (keymap-global-set "C-c k" #'kill-whole-line)
 (keymap-global-set "C-c L" #'link-hint-copy-link)
 (keymap-global-set "C-c l" #'link-hint-open-link)
 (keymap-global-set "C-c m" #'mu4e)
-(keymap-global-set "C-c p" #'project-switch-project)
+(keymap-global-set "C-c p" #'ido-switch-project)
 (keymap-global-set "C-c R" #'code-review-link)
 (keymap-global-set "C-c r" #'rg)
 (keymap-global-set "C-c s" #'magit-branch-checkout)
@@ -398,8 +396,8 @@
 (keymap-global-set "s-\\" #'delete-other-windows)
 (keymap-global-set "C-<tab>" #'completion-at-point)
 
-(keymap-set ctl-x-map "d" #'dired-jump)
 (keymap-set ctl-x-map "g" #'magit-status)
+(keymap-set ctl-x-map "j" #'dired-jump)
 (keymap-set ctl-x-map "k" #'kill-current-buffer)
 (keymap-set ctl-x-map "m" #'smex)
 (keymap-set ctl-x-map "M" #'smex-major-mode-commands)
@@ -409,12 +407,12 @@
 (keymap-set ctl-x-r-map "p" #'prepend-to-register)
 
 (keymap-set esc-map "'" #'insert-pair)
+(keymap-set esc-map "`" #'insert-pair)
 (keymap-set esc-map "\"" #'insert-pair)
 (keymap-set esc-map "c" #'capitalize-dwim)
-(keymap-set esc-map "i" #'imenu)
 (keymap-set esc-map "j" #'join-line)
 (keymap-set esc-map "l" #'downcase-dwim)
-(keymap-set esc-map "o" #'other-window)
+(keymap-set esc-map "o" #'project-find-file)
 (keymap-set esc-map "t" #'project-list-buffers)
 (keymap-set esc-map "u" #'upcase-dwim)
 
