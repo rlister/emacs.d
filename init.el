@@ -141,6 +141,11 @@
   (github-review-start (current-kill 0)))
   ;; (code-review-start (current-kill 0)))
 
+(defun ido-switch-project ()
+  "Switch project using ido."
+  (interactive)
+  (project-switch-project (ido-completing-read "Project: " (mapcar 'car project--list))))
+
 (defun split-window-toggle ()
   "Split window if there is just one, else delete other windows."
   (interactive)
