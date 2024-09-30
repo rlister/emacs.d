@@ -206,6 +206,9 @@
 (with-eval-after-load 'markdown
   (add-hook 'markdown-mode-hook #'visual-line-mode))
 
+(with-eval-after-load 'message
+  (setq message-dont-reply-to-names (list user-mail-address "\\@noreply\\.")))
+
 (autoload 'mu4e "mu4e" nil t)
 (with-eval-after-load 'mu4e
   (load "init-mu4e"))
