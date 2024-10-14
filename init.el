@@ -46,7 +46,6 @@
 (setq ido-create-new-buffer 'always)
 (setq ido-default-buffer-method 'selected-window)
 (setq ido-default-file-method 'selected-window)
-(setq ido-everywhere t)
 (setq ido-max-prospects 3)
 (setq ido-max-window-height 1)
 (setq ido-use-virtual-buffers t)
