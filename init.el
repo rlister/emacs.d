@@ -40,6 +40,7 @@
 (setq gnus-inhibit-mime-unbuttonizing t) ;show attachment buttons for all mime parts, including inline images
 (setq help-window-select t)
 (setq icomplete-prospects-height 1)
+(setq ido-auto-merge-work-directories-length -1)
 (setq ido-create-new-buffer 'always)
 (setq ido-default-buffer-method 'selected-window)
 (setq ido-default-file-method 'selected-window)
