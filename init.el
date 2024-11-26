@@ -195,6 +195,9 @@
 (with-eval-after-load 'go-mode
   (add-hook 'go-mode-hook #'subword-mode))
 
+(with-eval-after-load 'ido
+  (keymap-set ido-file-completion-map "C-<backspace>" #'ido-delete-backward-word-updir))
+
 (with-eval-after-load 'isearch
   (setq isearch-lax-whitespace t)        ;space matches any non-word
   (setq search-whitespace-regexp ".*?")) ;very loose matching
