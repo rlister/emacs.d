@@ -1,5 +1,3 @@
-(setq tramp-allow-unsafe-temporary-files t)
-
 ; emacs 30
 (setq completions-sort 'historical)
 (setq imenu-flatten 'prefix)
