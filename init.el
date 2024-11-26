@@ -76,6 +76,7 @@
 (setq shr-use-colors nil)
 (setq shr-use-fonts nil)
 (setq text-mode-hook nil)
+(setq tramp-allow-unsafe-temporary-files t)
 (setq use-short-answers t)
 (setq vc-follow-symlinks nil)
 (setq version-control t)
