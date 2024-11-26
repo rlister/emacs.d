@@ -123,7 +123,7 @@
       (vterm))))
 
 (defun mark-line ()
-  "Mark whole line, leaving point in current position."
+  "Mark whole line."
   (interactive)
   (end-of-line)
   (set-mark (line-beginning-position))
