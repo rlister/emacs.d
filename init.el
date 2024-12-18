@@ -1,5 +1,4 @@
 ; emacs 30
-(setq completions-sort 'historical)
 (setq imenu-flatten 'prefix)
 (setq minibuffer-visible-completions t)
 (setq project-file-history-behavior 'relativize)
