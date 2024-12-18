@@ -160,7 +160,6 @@
 (with-eval-after-load 'dired
   (add-to-list 'dired-font-lock-keywords (list dired-re-exe '(".+" (dired-move-to-filename) nil (0 'success))) 'append) ;face for exec files
   (keymap-set dired-mode-map "C-t" nil)
-  (keymap-set dired-mode-map "," #'dired-collapse-mode)
   (keymap-set dired-mode-map "e" #'wdired-change-to-wdired-mode)
   (keymap-set dired-mode-map "f" #'find-name-dired))
 
