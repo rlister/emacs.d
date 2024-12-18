@@ -15,7 +15,7 @@
 (setq completion-auto-help 'always)
 (setq completion-ignore-case t)
 (setq completion-show-help nil)
-(setq completion-styles '(basic partial-completion initials flex emacs22))
+(setq completion-styles '(basic partial-completion initials emacs22))
 (setq completions-detailed t)
 (setq completions-format 'one-column)
 (setq completions-header-format "")
@@ -81,9 +81,6 @@
 (setq warning-minimum-level :error)
 (setq webjump-use-internal-browser t)
 (setq wgrep-auto-save-buffer t)
-;; (setq completion-auto-help 'lazy)
-;; (setq completion-cycle-threshold nil)
-;; (setq completion-styles '(basic partial-completion emacs22))
 
 (setq-default c-basic-offset 2)
 (setq-default css-indent-offset 2)
