@@ -267,21 +267,6 @@
     "Read pass entry using ido."
     (ido-completing-read "Pass: " (password-store-list) nil require-match)))
 
-(with-eval-after-load 'project
-  (defun project-vterm ()
-    (interactive)
-    (let ((default-directory (project-root (project-current t))))
-      (vterm-toggle)))
-  (setq project-switch-commands
-        '((project-switch-to-buffer "buffer" ?b)
-          (project-dired "dir" ?d)
-          (project-find-file "file" ?f)
-          (project-kill-buffers "kill" ?k)
-          (project-list-buffers "list" ?l)
-          (magit-project-status "magit" ?m)
-          (rg-project "rg" ?r)
-          (project-vterm "vterm" ?t))))
-
 (with-eval-after-load 'selected
   (add-to-list 'selected-ignore-modes 'magit-status-mode)
   (add-to-list 'selected-ignore-modes 'magit-refs-mode)
