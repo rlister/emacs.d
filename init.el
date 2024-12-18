@@ -338,9 +338,7 @@
 (defun translate-gui-keys ()
   "Translate some keys that can be differentiated in gui frames."
   (when (display-graphic-p)
-    (keyboard-translate ?\C-i ?\H-i)
     (keyboard-translate ?\C-m ?\H-m)
-    (keymap-global-set "H-i" #'project-find-file)
     (keymap-global-set "H-m" #'mark-sexp-at-point)))
 
 (add-hook 'server-after-make-frame-hook #'translate-gui-keys) ;server initial frame
