@@ -203,9 +203,6 @@
 (with-eval-after-load 'magit
   (setq magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1))
 
-(with-eval-after-load 'chatgpt-shell
-  (autoload 'auth-source-pick-first-password "auth-sources" nil t)
-  (setq chatgpt-shell-openai-key (auth-source-pick-first-password :host "api.openai.com")))
 (with-eval-after-load 'markdown
   (add-hook 'markdown-mode-hook #'visual-line-mode))
 
@@ -327,7 +324,7 @@
 (keymap-global-set "C-;" #'comment-line)
 (keymap-global-set "C-=" #'quick-calc)
 (keymap-global-set "C-\\" #'mark-line)
-(keymap-global-set "C-j" #'forward-to-word)
+(keymap-global-set "C-'" #'forward-to-word)
 (keymap-global-set "C-t" #'switch-to-buffer)
 (keymap-global-set "C-z" #'zap-up-to-char)
 
@@ -380,29 +377,13 @@
 (keymap-set ctl-x-r-map "a" #'append-to-register)
 (keymap-set ctl-x-r-map "p" #'prepend-to-register)
 
+(keymap-set esc-map "<up>" #'scroll-up-line)
+(keymap-set esc-map "<down>" #'scroll-down-line)
 (keymap-set esc-map "'" #'insert-pair)
 (keymap-set esc-map "`" #'insert-pair)
 (keymap-set esc-map "\"" #'insert-pair)
 (keymap-set esc-map "c" #'capitalize-dwim)
-(keymap-set esc-map "j" #'join-line)
 (keymap-set esc-map "l" #'downcase-dwim)
 (keymap-set esc-map "o" #'project-find-file)
 (keymap-set esc-map "t" #'project-list-buffers)
 (keymap-set esc-map "u" #'upcase-dwim)
-
-;; (keymap-set minibuffer-local-must-match-map "C-r" #'minibuffer-previous-completion)
-;; (keymap-set minibuffer-local-must-match-map "C-r" #'isearch-backward)
-;; (keymap-set minibuffer-local-must-match-map "C-s" #'minibuffer-next-completion)
-;; (keymap-set minibuffer-local-must-match-map "C-t" #'minibuffer-complete)
-
-;; (keymap-set minibuffer-local-completion-map "C-r" #'isearch-backward)
-;; (keymap-set minibuffer-local-completion-map "C-s" #'minibuffer-next-completion)
-;; (keymap-set minibuffer-local-completion-map "C-t" #'minibuffer-complete)
-
-;; (keymap-set completion-list-mode-map "C-r" #'isearch-backward)
-;; (keymap-set completion-list-mode-map "C-s" #'next-completion)
-
-;; (define-key completion-in-region-mode-map (kbd "C-r") 'minibuffer-previous-completion)
-;; (define-key completion-in-region-mode-map (kbd "C-s") 'minibuffer-next-completion)
-
-(ido-mode)
