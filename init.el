@@ -96,7 +96,7 @@
 
 (setq display-buffer-alist '(("\\*\\(Buffer list\\|Help\\|Messages\\|Password\\|vc-\\)" (display-buffer-same-window))))
 
-(load-theme 'min t)
+(add-to-list 'load-path "~/.emacs.d/lisp")
 
 (add-to-list 'auto-mode-alist '("\\(Env\\|Stax\\)file" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.ya?ml" . yaml-mode))
@@ -107,6 +107,9 @@
 (put 'narrow-to-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
+
+(load-theme 'min t)
+(ido-mode)
 
 (defun vterm-toggle ()
   "If a vterm exists for current dir, switch to it, else create a new vterm."
@@ -321,7 +324,6 @@
   (keymap-set vterm-mode-map "C-<return>" #'vterm-copy-mode)
   (keymap-set vterm-copy-mode-map "C-<return>" #'vterm-copy-mode))
 
-(add-to-list 'load-path "~/.emacs.d/lisp")
 
 (add-hook 'window-setup-hook #'url-handler-mode)
 (add-hook 'emacs-startup-hook #'minibuffer-depth-indicate-mode)
