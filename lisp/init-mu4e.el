@@ -34,16 +34,10 @@
 (define-key mu4e-main-mode-map (kbd "i") #'mu4e-update-index)
 (define-key mu4e-headers-mode-map (kbd "i") #'mu4e-update-index)
 
-;; (define-key mu4e-main-mode-map (kbd "q") #'bury-buffer)
-;; (define-key mu4e-main-mode-map (kbd "Q") #'mu4e-quit)
-;; (define-key mu4e-main-mode-map (kbd "i") (kbd "ji"))
-
 ;; (define-key mu4e-headers-mode-map (kbd "c") #'mu4e-context-switch)
 (define-key mu4e-view-mode-map (kbd "<backspace>") #'scroll-down)
 
 ;; borken
 ;; (advice-add 'mu4e-view-mark-for-trash :after #'kill-current-buffer)
-
-;; (add-to-list 'mu4e-bookmarks '(:query "maildir:/home/inbox OR maildir:/work/inbox" :name "All mail" :key ?a) t)
 
 (add-hook 'mu4e-view-mode-hook #'visual-line-mode)

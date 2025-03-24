@@ -12,7 +12,7 @@
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 (setq bookmark-save-flag 1)              ;save after any modification
 (setq clean-buffer-list-delay-general 1) ;midnight-mode days
-(setq completion-auto-help 'always)
+(setq completion-auto-help t) ;'always)
 (setq completion-ignore-case t)
 (setq completion-show-help nil)
 (setq completion-styles '(basic partial-completion initials emacs22))
@@ -107,9 +107,10 @@
 (put 'narrow-to-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
+(put 'set-goal-column 'disabled nil)
 
 (load-theme 'min t)
-(ido-mode)
+(ido-mode 'buffers)
 
 (defun vterm-toggle ()
   "If a vterm exists for current dir, switch to it, else create a new vterm."
@@ -121,22 +122,22 @@
         (switch-to-buffer name)
       (vterm))))
 
-(defun mark-line ()
-  "Mark whole line."
-  (interactive)
-  (end-of-line)
-  (set-mark (line-beginning-position))
-  (activate-mark))
+;; (defun mark-line ()
+;;   "Mark whole line."
+;;   (interactive)
+;;   (end-of-line)
+;;   (set-mark (line-beginning-position))
+;;   (activate-mark))
 
-(defun mark-sexp-at-point ()
-  "Mark sexp at point. If no sexp at point, move forward and mark next sexp."
-  (interactive)
-  (or (thing-at-point 'sexp) (forward-sexp))
-  (let ((bounds (bounds-of-thing-at-point 'sexp)))
-    (when (null bounds) (error "No sexp at point"))
-    (goto-char (car bounds))
-    (push-mark nil t t)
-    (goto-char (cdr bounds))))
+;; (defun mark-sexp-at-point ()
+;;   "Mark sexp at point. If no sexp at point, move forward and mark next sexp."
+;;   (interactive)
+;;   (or (thing-at-point 'sexp) (forward-sexp))
+;;   (let ((bounds (bounds-of-thing-at-point 'sexp)))
+;;     (when (null bounds) (error "No sexp at point"))
+;;     (goto-char (car bounds))
+;;     (push-mark nil t t)
+;;     (goto-char (cdr bounds))))
 
 (defun code-review-link ()
   "Use link hint to open a pull request url."
@@ -194,6 +195,7 @@
   (add-hook 'go-mode-hook #'subword-mode))
 
 (with-eval-after-load 'ido
+  (keymap-set ido-buffer-completion-map "C-t" #'ido-fallback-command)
   (keymap-set ido-file-completion-map "C-<backspace>" #'ido-delete-backward-word-updir))
 
 (with-eval-after-load 'isearch
@@ -201,6 +203,7 @@
   (setq search-whitespace-regexp ".*?")) ;very loose matching
 
 (with-eval-after-load 'magit
+  (setq magit-status-show-untracked-files "all")
   (setq magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1))
 
 (with-eval-after-load 'markdown
@@ -274,10 +277,13 @@
   (keymap-set selected-keymap "[" #'insert-pair)
   (keymap-set selected-keymap "{" #'insert-pair)
   (keymap-set selected-keymap ";" #'comment-region)
-  (keymap-set selected-keymap "c" #'capitalize-region)
-  (keymap-set selected-keymap "f" #'forward-sexp)
-  (keymap-set selected-keymap "l" #'downcase-region)
-  (keymap-set selected-keymap "m" #'forward-sexp)
+  ;; (keymap-set selected-keymap "c" #'capitalize-region)
+  ;; (keymap-set selected-keymap "f" #'forward-sexp)
+  ;; (keymap-set selected-keymap "l" #'downcase-region)
+  (keymap-set selected-keymap "d" #'down-list)
+  (keymap-set selected-keymap "m" #'mark-word)
+  (keymap-set selected-keymap "s" #'mark-sexp)
+  (keymap-set selected-keymap "u" #'backward-up-list)
   (keymap-set selected-keymap "w" #'copy-region-as-kill)
   (keymap-set selected-keymap "x" #'exchange-point-and-mark))
 
@@ -309,12 +315,14 @@
   "Translate some keys that can be differentiated in gui frames."
   (when (display-graphic-p)
     (keyboard-translate ?\C-m ?\H-m)
-    (keymap-global-set "H-m" #'mark-sexp-at-point)))
+    (keymap-global-set "H-m" #'mark-word)))
+    ;; (keymap-global-set "H-m" #'mark-sexp-at-point)))
 
 (add-hook 'server-after-make-frame-hook #'translate-gui-keys) ;server initial frame
 (add-hook 'after-init-hook #'translate-gui-keys)              ;non-server
 
 (keymap-global-set "<remap> <dabbrev-expand>" #'hippie-expand)
+(keymap-global-set "<remap> <execute-extended-command>" #'smex)
 
 (keymap-global-set "<home>" #'beginning-of-buffer)
 (keymap-global-set "<end>" #'end-of-buffer)
@@ -323,16 +331,19 @@
 (keymap-global-set "C-." #'next-buffer)
 (keymap-global-set "C-;" #'comment-line)
 (keymap-global-set "C-=" #'quick-calc)
-(keymap-global-set "C-\\" #'mark-line)
+;; (keymap-global-set "C-\\" #'mark-line)
+(keymap-global-set "C-\\" #'forward-to-word)
+(keymap-global-set "C-j" #'forward-to-word)
+(keymap-global-set "M-\\" #'backward-to-word)
 (keymap-global-set "C-'" #'forward-to-word)
 (keymap-global-set "C-t" #'switch-to-buffer)
 (keymap-global-set "C-z" #'zap-up-to-char)
 
-(keymap-global-set "C-c \"" #'insert-pair)
-(keymap-global-set "C-c '" #'insert-pair)
-(keymap-global-set "C-c (" #'insert-pair)
-(keymap-global-set "C-c {" #'insert-pair)
-(keymap-global-set "C-c [" #'insert-pair)
+;; (keymap-global-set "C-c \"" #'insert-pair)
+;; (keymap-global-set "C-c '" #'insert-pair)
+;; (keymap-global-set "C-c (" #'insert-pair)
+;; (keymap-global-set "C-c {" #'insert-pair)
+;; (keymap-global-set "C-c [" #'insert-pair)
 (keymap-global-set "C-c a" #'org-agenda)
 (keymap-global-set "C-c b" #'project-switch-to-buffer)
 (keymap-global-set "C-c c" #'org-capture)
@@ -346,7 +357,9 @@
 (keymap-global-set "C-c k" #'kill-whole-line)
 (keymap-global-set "C-c L" #'link-hint-copy-link)
 (keymap-global-set "C-c l" #'link-hint-open-link)
-(keymap-global-set "C-c m" #'mu4e)
+(keymap-global-set "C-c m" #'smex)
+(keymap-global-set "C-c M" #'smex-major-mode-commands)
+
 (keymap-global-set "C-c p" #'ido-switch-project)
 (keymap-global-set "C-c R" #'code-review-link)
 (keymap-global-set "C-c r" #'rg)
@@ -368,11 +381,14 @@
 (keymap-global-set "s-\\" #'delete-other-windows)
 (keymap-global-set "C-<tab>" #'completion-at-point)
 
+(keymap-global-set "M-<up>" #'scroll-up-line)
+(keymap-global-set "M-<down>" #'scroll-down-line)
+
 (keymap-set ctl-x-map "g" #'magit-status)
 (keymap-set ctl-x-map "j" #'dired-jump)
 (keymap-set ctl-x-map "k" #'kill-current-buffer)
-(keymap-set ctl-x-map "m" #'smex)
-(keymap-set ctl-x-map "M" #'smex-major-mode-commands)
+(keymap-set ctl-x-map "m" #'mu4e)
+;; (keymap-set ctl-x-map "M" #'smex-major-mode-commands)
 
 (keymap-set ctl-x-r-map "a" #'append-to-register)
 (keymap-set ctl-x-r-map "p" #'prepend-to-register)

@@ -21,7 +21,7 @@
  '(lazy-highlight      ((t (:inherit (warning highlight)))))
  '(secondary-selection ((t (:inherit (warning highlight)))))
  '(trailing-whitespace ((t (:inherit error))))
- '(italic              ((t (:underline nil))))
+ '(italic              ((t (:underline nil :slant italic))))
  '(underline           ((t (:underline nil))))
  '(visible-mark-active ((t (:inherit highlight :underline t))))
 
@@ -131,6 +131,7 @@
  '(org-date                 ((t (:inherit font-lock-string-face))))
  '(org-table                ((t (:inherit default))))
  '(org-done                 ((t (:inherit font-lock-comment-face :strike-through t))))
+ '(org-drawer               ((t (:inherit font-lock-comment-face))))
  '(org-todo                 ((t (:inherit error))))
  '(org-headline-done        ((t (:inherit org-done))))
  '(org-upcoming-deadline    ((t (:inherit warning))))
@@ -143,6 +144,7 @@
  '(org-scheduled-today      ((t (:inherit default))))
  '(org-table-header         ((t (:inherit mode-line))))
  '(org-time-grid            ((t (:inherit font-lock-comment-face))))
+ '(org-footnote             ((t (:inherit font-lock-doc-face))))
 
  ;; org-agenda
  '(org-agenda-structure        ((t (:inherit font-lock-comment-face))))
@@ -197,7 +199,7 @@
  '(term-color-red     ((t (:foreground "IndianRed"     :background "IndianRed1"))))
  '(term-color-green   ((t (:foreground "PaleGreen"     :background "PaleGreen1"))))
  '(term-color-yellow  ((t (:foreground "PaleGoldenrod" :background "LightGoldenrod"))))
- '(term-color-blue    ((t (:foreground "DodgerBlue"    :background "DodgerBlue1"))))
+ '(term-color-blue    ((t (:foreground "DodgerBlue2"   :background "DodgerBlue1"))))
  '(term-color-magenta ((t (:foreground "#B5A0FF"       :background "MediumPurple1"))))
  '(term-color-cyan    ((t (:foreground "cyan3"         :background "cyan1"))))
  '(term-color-white   ((t (:foreground "azure4"        :background "azure1"))))
