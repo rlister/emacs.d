@@ -12,6 +12,7 @@
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 (setq bookmark-save-flag 1)              ;save after any modification
 (setq clean-buffer-list-delay-general 1) ;midnight-mode days
+(setq column-number-mode t)
 (setq completion-auto-help t) ;'always)
 (setq completion-ignore-case t)
 (setq completion-show-help nil)
