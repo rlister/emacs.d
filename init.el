@@ -100,7 +100,7 @@
 (setq-default standard-indent 2)
 (setq-default tab-width 2)
 
-(setq display-buffer-alist '(("\\*\\(Buffer list\\|Help\\|Messages\\|Password\\|vc-\\)" (display-buffer-same-window))))
+(setq display-buffer-alist '(("\\*\\(Buffer list\\|Code Review\\|http\\|Help\\|Messages\\|Password\\|vc-\\)" (display-buffer-same-window))))
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
