@@ -17,6 +17,11 @@
 (setq completion-ignore-case t)
 (setq completion-show-help nil)
 (setq completion-styles '(basic partial-completion initials substring emacs22))
+(setq completion-category-overrides
+  '((buffer (styles initials substring))
+    (file (styles initials substring basic))
+    (imenu (styles substring))
+    (symbol-help (styles substring initials))))
 (setq completions-detailed t)
 (setq completions-format 'one-column)
 (setq completions-header-format "")
