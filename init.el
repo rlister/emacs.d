@@ -150,11 +150,13 @@
   (setq code-review-lgtm-message "lgtm"))
 
 (defun code-review-link ()
-  "Use link hint to open a pull request url."
+  "Use link hint to open a pull request url; scrub urldefense links."
   (interactive)
   (link-hint-copy-link)
-  (github-review-start (current-kill 0)))
-  ;; (code-review-start (current-kill 0)))
+  (let ((str (current-kill 0)))
+    (when (string-match "^https://urldefense.com" str)
+      (setq str (nth 1 (split-string str "__"))))
+    (code-review-start str)))
 
 (defun ido-switch-project ()
   "Switch project using ido."
