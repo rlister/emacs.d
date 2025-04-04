@@ -145,6 +145,10 @@
 ;;     (push-mark nil t t)
 ;;     (goto-char (cdr bounds))))
 
+(with-eval-after-load 'code-review
+  (setq code-review-new-buffer-window-strategy #'switch-to-buffer)
+  (setq code-review-lgtm-message "lgtm"))
+
 (defun code-review-link ()
   "Use link hint to open a pull request url."
   (interactive)
