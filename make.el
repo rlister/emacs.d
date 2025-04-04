@@ -32,7 +32,8 @@
   "Local packages to install.")
 
 (defconst vc-packages
-  '("https://github.com/zerolfx/copilot.el")
+  '("https://github.com/zerolfx/copilot.el"
+    "https://github.com/doomelpa/code-review")
   "Local packages to install.")
 
 ;; setup package.el
