@@ -16,7 +16,7 @@
 (setq completion-auto-help t) ;'always)
 (setq completion-ignore-case t)
 (setq completion-show-help nil)
-(setq completion-styles '(basic partial-completion initials emacs22))
+(setq completion-styles '(basic partial-completion initials substring emacs22))
 (setq completions-detailed t)
 (setq completions-format 'one-column)
 (setq completions-header-format "")
