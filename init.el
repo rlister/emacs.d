@@ -206,6 +206,10 @@
 (with-eval-after-load 'go-mode
   (add-hook 'go-mode-hook #'subword-mode))
 
+(with-eval-after-load 'grep-mode
+  (keymap-set grep-mode-map "e" #'wgrep-change-to-wgrep-mode)
+  (keymap-set grep-mode-map "r" #'rgrep))
+
 (with-eval-after-load 'ido
   (keymap-set ido-buffer-completion-map "C-t" #'ido-fallback-command)
   (keymap-set ido-file-completion-map "C-<backspace>" #'ido-delete-backward-word-updir))
@@ -374,7 +378,7 @@
 
 (keymap-global-set "C-c p" #'ido-switch-project)
 (keymap-global-set "C-c R" #'code-review-link)
-(keymap-global-set "C-c r" #'rg)
+(keymap-global-set "C-c r" #'rgrep)
 (keymap-global-set "C-c s" #'magit-branch-checkout)
 (keymap-global-set "C-c t" #'vterm-toggle)
 (keymap-global-set "C-c T" #'vterm)
