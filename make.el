@@ -2,7 +2,7 @@
   '(anzu
     avy
     ;; code-review
-    diff-hl
+    ;; diff-hl
     dockerfile-mode
     ;; dumb-jump
     ;; easy-kill
@@ -10,13 +10,13 @@
     elfeed
     forge
     git-link
-    git-timemachine
+    ;; git-timemachine
     link-hint
     magit
     nginx-mode
     ;; orderless
-    org-present
-    rainbow-mode
+    ;; org-present
+    ;; rainbow-mode
     selected
     ;; string-inflection
     ;; vertico
