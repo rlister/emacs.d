@@ -176,7 +176,7 @@
 (with-eval-after-load 'go-mode
   (add-hook 'go-mode-hook #'subword-mode))
 
-(with-eval-after-load 'grep-mode
+(with-eval-after-load 'grep
   (keymap-set grep-mode-map "e" #'wgrep-change-to-wgrep-mode)
   (keymap-set grep-mode-map "r" #'rgrep))
 
