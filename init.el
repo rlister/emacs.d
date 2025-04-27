@@ -114,32 +114,6 @@
 (load-theme 'min t)
 (ido-mode 'buffers)
 
-(defun vterm-toggle ()
-  "If a vterm exists for current dir, switch to it, else create a new vterm."
-  (interactive)
-  (require 'vterm)
-  (let* ((dir (directory-file-name (abbreviate-file-name default-directory)))
-         (name (format vterm-buffer-name-string dir)))
-    (if (get-buffer name)
-        (switch-to-buffer name)
-      (vterm))))
-
-;; (defun mark-line ()
-;;   "Mark whole line."
-;;   (interactive)
-;;   (end-of-line)
-;;   (set-mark (line-beginning-position))
-;;   (activate-mark))
-
-;; (defun mark-sexp-at-point ()
-;;   "Mark sexp at point. If no sexp at point, move forward and mark next sexp."
-;;   (interactive)
-;;   (or (thing-at-point 'sexp) (forward-sexp))
-;;   (let ((bounds (bounds-of-thing-at-point 'sexp)))
-;;     (when (null bounds) (error "No sexp at point"))
-;;     (goto-char (car bounds))
-;;     (push-mark nil t t)
-;;     (goto-char (cdr bounds))))
 
 (with-eval-after-load 'code-review
   (setq code-review-new-buffer-window-strategy #'switch-to-buffer)
@@ -376,8 +350,7 @@
 (keymap-global-set "C-c R" #'code-review-link)
 (keymap-global-set "C-c r" #'rgrep)
 (keymap-global-set "C-c s" #'magit-branch-checkout)
-(keymap-global-set "C-c t" #'vterm-toggle)
-(keymap-global-set "C-c T" #'vterm)
+(keymap-global-set "C-c t" #'vterm)
 (keymap-global-set "C-c u" #'winner-undo)
 (keymap-global-set "C-c o" #'org-agenda)
 (keymap-global-set "C-c y" #'browse-kill-ring)
