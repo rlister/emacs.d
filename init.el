@@ -389,5 +389,4 @@
 (keymap-set esc-map "c" #'capitalize-dwim)
 (keymap-set esc-map "l" #'downcase-dwim)
 (keymap-set esc-map "o" #'project-find-file)
-(keymap-set esc-map "t" #'project-list-buffers)
 (keymap-set esc-map "u" #'upcase-dwim)
