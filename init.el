@@ -13,15 +13,11 @@
 (setq bookmark-save-flag 1)              ;save after any modification
 (setq clean-buffer-list-delay-general 1) ;midnight-mode days
 (setq column-number-mode t)
-(setq completion-auto-help t) ;'always)
+(setq completion-auto-help t)
 (setq completion-ignore-case t)
 (setq completion-show-help nil)
-(setq completion-styles '(basic partial-completion initials substring emacs22))
-(setq completion-category-overrides
-  '((buffer (styles initials substring))
-    (file (styles initials substring basic))
-    (imenu (styles substring))
-    (symbol-help (styles substring initials))))
+(setq completion-styles '(orderless basic))
+(setq completion-category-overrides '((file (styles basic partial-completion))))
 (setq completions-detailed t)
 (setq completions-format 'one-column)
 (setq completions-header-format "")
