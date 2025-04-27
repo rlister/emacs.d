@@ -222,8 +222,10 @@
   (keymap-set org-mode-map "C-," nil))
 
 (with-eval-after-load 'org-agenda
-  (setq org-agenda-custom-commands '(("h" "Home" ((agenda "") (alltodo "")) ((org-agenda-files '("home.org"))))))
-  (setq org-agenda-files '("work.org" "~/doc/ical"))
+  (setq org-agenda-custom-commands
+        '(("h" "Home" ((agenda "") (alltodo "")) ((org-agenda-files '("home.org"))))
+          ("w" "Work" ((agenda "")) ((org-agenda-files '("work.org"))))))
+  (setq org-agenda-files '("work.org" "home.org" "~/doc/ical"))
   (setq org-agenda-include-diary t)
   (setq org-agenda-window-setup 'current-window)
   (add-hook 'org-agenda-mode-hook #'hl-line-mode)
