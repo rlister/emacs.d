@@ -282,6 +282,7 @@
   (setq vterm-buffer-name-string "*vterm %s*") ;include shell title in buffer name
   (setq vterm-copy-mode-remove-fake-newlines t)
   (setq vterm-shell "screen")
+  (keymap-set vterm-mode-map "C-j" nil)
   (keymap-set vterm-mode-map "C-t" nil)
   (keymap-set vterm-mode-map "C-c t" #'vterm)
   (keymap-set vterm-mode-map "C-<return>" #'vterm-copy-mode)
