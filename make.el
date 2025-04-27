@@ -1,33 +1,19 @@
 (defconst remote-packages
   '(anzu
-    avy
-    ;; code-review
-    ;; diff-hl
     dockerfile-mode
-    ;; dumb-jump
-    ;; easy-kill
-    ;; eglot
     elfeed
     forge
     git-link
-    ;; git-timemachine
     link-hint
     magit
     nginx-mode
-    ;; orderless
-    ;; org-present
-    ;; rainbow-mode
     selected
-    ;; string-inflection
-    ;; vertico
-    ;; visible-mark
     vterm
     yaml-mode)
   "Packages to install.")
 
 (defconst local-packages
-  '(ric-lib
-    min-theme
+  '(min-theme
     no-mouse-mode)
   "Local packages to install.")
 
