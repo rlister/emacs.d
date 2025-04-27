@@ -319,9 +319,9 @@
 (keymap-global-set "C-=" #'quick-calc)
 ;; (keymap-global-set "C-\\" #'mark-line)
 (keymap-global-set "C-\\" #'forward-to-word)
-(keymap-global-set "C-j" #'forward-to-word)
 (keymap-global-set "M-\\" #'backward-to-word)
 (keymap-global-set "C-'" #'forward-to-word)
+(keymap-global-set "C-j" #'project-find-file)
 (keymap-global-set "C-t" #'switch-to-buffer)
 (keymap-global-set "C-z" #'zap-up-to-char)
 
