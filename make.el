@@ -7,7 +7,9 @@
     link-hint
     magit
     nginx-mode
+    orderless
     selected
+    vertico
     vterm
     yaml-mode)
   "Packages to install.")
