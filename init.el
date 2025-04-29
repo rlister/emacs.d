@@ -161,11 +161,6 @@
   (keymap-set forge-topic-mode-map "r" #'forge-topic-set-review-requests)
   (keymap-set forge-topic-mode-map "w" #'forge-browse-topic))
 
-(with-eval-after-load 'gcalcli-mode
-  ;; (setq gcalcli-bin "~/.local/bin/gcalcli")
-  (setq gcalcli-config-alist
-        '((home . "~/.config/gcalcli/home")
-          (work . "~/.config/gcalcli/work"))))
 
 (with-eval-after-load 'github-review
   (keymap-set github-review-mode-map "C-c A" #'github-review-approve)
