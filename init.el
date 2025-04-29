@@ -127,6 +127,8 @@
   (if (= (count-windows) 1)
       (progn (split-window-right) (other-window 1))
     (delete-other-windows)))
+(with-eval-after-load 'confluence-reader
+  (setq confluence-host (url-host (url-generic-parse-url (plist-get (nth 0 (auth-source-search :host "atlassian.net")) :url)))))
 
 (with-eval-after-load 'dired
   (add-to-list 'dired-font-lock-keywords (list dired-re-exe '(".+" (dired-move-to-filename) nil (0 'success))) 'append) ;face for exec files
