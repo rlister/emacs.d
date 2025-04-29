@@ -135,7 +135,6 @@
   (keymap-set dired-mode-map "f" #'find-name-dired))
 
 (with-eval-after-load 'elfeed
-  ;; (elfeed-load-opml "~/doc/elfeed.opml")
   (load "~/doc/elfeed.el")
   (setq elfeed-search-filter "@2-weeks-ago +unread")
   (define-key elfeed-search-mode-map "d" #'elfeed-search-untag-all-unread)
@@ -150,6 +149,11 @@
   (keymap-set forge-topic-mode-map "r" #'forge-topic-set-review-requests)
   (keymap-set forge-topic-mode-map "w" #'forge-browse-topic))
 
+(with-eval-after-load 'frame
+  (vertico-mode)
+  (when (display-graphic-p)
+    (keyboard-translate ?\C-m ?\H-m)
+    (keymap-global-set "H-m" #'mark-word)))
 
 (with-eval-after-load 'github-review
   (keymap-set github-review-mode-map "C-c A" #'github-review-approve)
@@ -164,8 +168,9 @@
   (keymap-set grep-mode-map "r" #'rgrep))
 
 (with-eval-after-load 'isearch
-  (setq isearch-lax-whitespace t)        ;space matches any non-word
-  (setq search-whitespace-regexp ".*?")) ;very loose matching
+  (setq isearch-lax-whitespace t) ;space matches any non-word
+  (setq search-whitespace-regexp ".*?")
+  (global-anzu-mode))
 
 (with-eval-after-load 'magit
   (setq magit-status-show-untracked-files "all")
@@ -176,6 +181,9 @@
 
 (with-eval-after-load 'message
   (setq message-dont-reply-to-names (list user-mail-address "\\@noreply\\.")))
+
+(with-eval-after-load 'minibuffer
+  (minibuffer-depth-indicate-mode))
 
 (autoload 'mu4e "mu4e" nil t)
 (with-eval-after-load 'mu4e
@@ -229,6 +237,8 @@
 (with-eval-after-load 'package
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t))
 
+(with-eval-after-load 'prog-mode
+  (add-hook 'prog-mode-hook #'completion-preview-mode))
 
 (with-eval-after-load 'selected
   (add-to-list 'selected-ignore-modes 'magit-status-mode)
@@ -244,6 +254,8 @@
   ;; (keymap-set selected-keymap "f" #'forward-sexp)
   ;; (keymap-set selected-keymap "l" #'downcase-region)
   (keymap-set selected-keymap "d" #'down-list)
+  (keymap-set selected-keymap "a" #'beginning-of-line)
+  (keymap-set selected-keymap "e" #'end-of-line)
   (keymap-set selected-keymap "m" #'mark-word)
   (keymap-set selected-keymap "s" #'mark-sexp)
   (keymap-set selected-keymap "u" #'backward-up-list)
@@ -270,78 +282,53 @@
   (keymap-set vterm-mode-map "C-<return>" #'vterm-copy-mode)
   (keymap-set vterm-copy-mode-map "C-<return>" #'vterm-copy-mode))
 
+(with-eval-after-load 'yaml-mode
+  (add-hook 'yaml-mode-hook 'flymake-yamllint-setup))
 
-(add-hook 'window-setup-hook #'url-handler-mode)
-(add-hook 'emacs-startup-hook #'minibuffer-depth-indicate-mode)
+(with-eval-after-load 'xref
+  (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
+
 (add-hook 'emacs-startup-hook #'selected-global-mode)
+(add-hook 'emacs-startup-hook #'url-handler-mode)
+
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
-(add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
-
-(run-with-idle-timer 5 nil #'global-anzu-mode)
-(run-with-idle-timer 5 nil #'winner-mode)
-(run-with-idle-timer 10 nil #'pixel-scroll-mode)
-(run-with-idle-timer 60 nil #'midnight-mode)
-
-(defun translate-gui-keys ()
-  "Translate some keys that can be differentiated in gui frames."
-  (when (display-graphic-p)
-    (keyboard-translate ?\C-m ?\H-m)
-    (keymap-global-set "H-m" #'mark-word)))
-    ;; (keymap-global-set "H-m" #'mark-sexp-at-point)))
-
-(add-hook 'server-after-make-frame-hook #'translate-gui-keys) ;server initial frame
-(add-hook 'after-init-hook #'translate-gui-keys)              ;non-server
-
-(keymap-global-set "<remap> <dabbrev-expand>" #'hippie-expand)
-(keymap-global-set "<remap> <execute-extended-command>" #'smex)
 
 (keymap-global-set "<home>" #'beginning-of-buffer)
 (keymap-global-set "<end>" #'end-of-buffer)
 
+(keymap-global-set "C-'" #'forward-to-word)
 (keymap-global-set "C-," #'previous-buffer)
 (keymap-global-set "C-." #'next-buffer)
 (keymap-global-set "C-;" #'comment-line)
+(keymap-global-set "C-<tab>" #'completion-at-point)
 (keymap-global-set "C-=" #'quick-calc)
-;; (keymap-global-set "C-\\" #'mark-line)
 (keymap-global-set "C-\\" #'forward-to-word)
-(keymap-global-set "M-\\" #'backward-to-word)
-(keymap-global-set "C-'" #'forward-to-word)
 (keymap-global-set "C-j" #'project-find-file)
 (keymap-global-set "C-t" #'switch-to-buffer)
 (keymap-global-set "C-z" #'zap-up-to-char)
+;; (keymap-global-set "M-\\" #'backward-to-word)
 
-;; (keymap-global-set "C-c \"" #'insert-pair)
-;; (keymap-global-set "C-c '" #'insert-pair)
-;; (keymap-global-set "C-c (" #'insert-pair)
-;; (keymap-global-set "C-c {" #'insert-pair)
-;; (keymap-global-set "C-c [" #'insert-pair)
+(keymap-global-set "C-c D" #'duplicate-dwim)
+(keymap-global-set "C-c L" #'link-hint-copy-link)
+(keymap-global-set "C-c R" #'code-review-link)
 (keymap-global-set "C-c a" #'org-agenda)
 (keymap-global-set "C-c b" #'project-switch-to-buffer)
 (keymap-global-set "C-c c" #'org-capture)
 (keymap-global-set "C-c d" #'project-find-dir)
-(keymap-global-set "C-c D" #'duplicate-dwim)
-;; (keymap-global-set "C-c f" #'avy-goto-char-in-line)
-(keymap-global-set "C-c f" #'project-find-file)
+(keymap-global-set "C-c f" #'recentf)
 (keymap-global-set "C-c g" #'magit-file-dispatch)
 (keymap-global-set "C-c i" #'imenu)
 (keymap-global-set "C-c j" #'avy-goto-char)
 (keymap-global-set "C-c k" #'kill-whole-line)
-(keymap-global-set "C-c L" #'link-hint-copy-link)
 (keymap-global-set "C-c l" #'link-hint-open-link)
-(keymap-global-set "C-c m" #'smex)
-(keymap-global-set "C-c M" #'smex-major-mode-commands)
-
-(keymap-global-set "C-c p" #'ido-switch-project)
-(keymap-global-set "C-c R" #'code-review-link)
+(keymap-global-set "C-c o" #'split-window-right)
+(keymap-global-set "C-c p" #'project-switch-project)
 (keymap-global-set "C-c r" #'rgrep)
 (keymap-global-set "C-c s" #'magit-branch-checkout)
 (keymap-global-set "C-c t" #'vterm)
 (keymap-global-set "C-c u" #'winner-undo)
-(keymap-global-set "C-c o" #'org-agenda)
+(keymap-global-set "C-c w" #'delete-window)
 (keymap-global-set "C-c y" #'browse-kill-ring)
-
-(keymap-global-set "C-h C-," #'split-window-toggle)
-(keymap-global-set "C-h j" #'webjump)
 
 (keymap-global-set "s-<up>" #'enlarge-window)
 (keymap-global-set "s-<down>" #'shrink-window)
@@ -349,16 +336,9 @@
 (keymap-global-set "s-<left>" #'shrink-window-horizontally)
 (keymap-global-set "s-o" #'other-window)
 (keymap-global-set "s-\\" #'delete-other-windows)
-(keymap-global-set "C-<tab>" #'completion-at-point)
-
-(keymap-global-set "M-<up>" #'scroll-up-line)
-(keymap-global-set "M-<down>" #'scroll-down-line)
 
 (keymap-set ctl-x-map "g" #'magit-status)
 (keymap-set ctl-x-map "j" #'dired-jump)
-(keymap-set ctl-x-map "k" #'kill-current-buffer)
-(keymap-set ctl-x-map "m" #'mu4e)
-;; (keymap-set ctl-x-map "M" #'smex-major-mode-commands)
 
 (keymap-set ctl-x-r-map "a" #'append-to-register)
 (keymap-set ctl-x-r-map "p" #'prepend-to-register)
@@ -368,3 +348,8 @@
 (keymap-global-set "<remap> <upcase-word>" #'upcase-dwim)
 (keymap-global-set "<remap> <compose-mail>" #'mu4e)
 (keymap-global-set "<remap> <kill-buffer>" #'kill-current-buffer)
+
+(run-with-idle-timer 5 nil #'savehist-mode)
+(run-with-idle-timer 5 nil #'winner-mode)
+(run-with-idle-timer 10 nil #'pixel-scroll-mode)
+(run-with-idle-timer 60 nil #'midnight-mode)
