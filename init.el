@@ -131,6 +131,9 @@
   "Switch project using ido."
   (interactive)
   (project-switch-project (ido-completing-read "Project: " (project-known-project-roots))))
+(with-eval-after-load 'completion-preview
+  (keymap-set completion-preview-active-mode-map "M-n" #'completion-preview-next-candidate)
+  (keymap-set completion-preview-active-mode-map "M-p" #'completion-preview-prev-candidate))
 
 (defun split-window-toggle ()
   "Split window if there is just one, else delete other windows."
