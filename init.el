@@ -40,14 +40,6 @@
 (setq frame-resize-pixelwise t)
 (setq gnus-inhibit-mime-unbuttonizing t) ;show attachment buttons for all mime parts, including inline images
 (setq help-window-select t)
-(setq icomplete-prospects-height 1)
-(setq ido-auto-merge-work-directories-length -1)
-(setq ido-create-new-buffer 'always)
-(setq ido-default-buffer-method 'selected-window)
-(setq ido-default-file-method 'selected-window)
-(setq ido-max-prospects 3)
-(setq ido-max-window-height 1)
-(setq ido-use-virtual-buffers t)
 (setq inhibit-startup-echo-area-message "ric")
 (setq message-send-mail-function 'message-send-mail-with-sendmail)
 (setq message-sendmail-extra-arguments '("--read-envelope-from")) ;get cfg from sender
@@ -111,8 +103,6 @@
 (put 'set-goal-column 'disabled nil)
 
 (load-theme 'min t)
-(ido-mode 'buffers)
-
 
 (with-eval-after-load 'code-review
   (setq code-review-new-buffer-window-strategy #'switch-to-buffer)
@@ -127,10 +117,6 @@
       (setq str (nth 1 (split-string str "__"))))
     (code-review-start str)))
 
-(defun ido-switch-project ()
-  "Switch project using ido."
-  (interactive)
-  (project-switch-project (ido-completing-read "Project: " (project-known-project-roots))))
 (with-eval-after-load 'completion-preview
   (keymap-set completion-preview-active-mode-map "M-n" #'completion-preview-next-candidate)
   (keymap-set completion-preview-active-mode-map "M-p" #'completion-preview-prev-candidate))
@@ -176,10 +162,6 @@
 (with-eval-after-load 'grep
   (keymap-set grep-mode-map "e" #'wgrep-change-to-wgrep-mode)
   (keymap-set grep-mode-map "r" #'rgrep))
-
-(with-eval-after-load 'ido
-  (keymap-set ido-buffer-completion-map "C-t" #'ido-fallback-command)
-  (keymap-set ido-file-completion-map "C-<backspace>" #'ido-delete-backward-word-updir))
 
 (with-eval-after-load 'isearch
   (setq isearch-lax-whitespace t)        ;space matches any non-word
@@ -247,10 +229,6 @@
 (with-eval-after-load 'package
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t))
 
-(with-eval-after-load 'password-store
-  (defun password-store--completing-read (&optional require-match)
-    "Read pass entry using ido."
-    (ido-completing-read "Pass: " (password-store-list) nil require-match)))
 
 (with-eval-after-load 'selected
   (add-to-list 'selected-ignore-modes 'magit-status-mode)
@@ -274,6 +252,13 @@
 
 (with-eval-after-load 'terraform-mode
   (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode))
+
+(with-eval-after-load 'vertico
+  (setq vertico-resize nil)
+  (setq vertico-count 5)
+  (keymap-global-set "C-c v" #'vertico-repeat-select)
+  (keymap-set vertico-map "C-t" #'vertico-repeat-select)
+  (add-hook 'minibuffer-setup-hook #'vertico-repeat-save))
 
 (with-eval-after-load 'vterm
   (setq vterm-buffer-name-string "*vterm %s*") ;include shell title in buffer name
