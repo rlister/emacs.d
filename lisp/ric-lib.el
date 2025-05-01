@@ -1,6 +1,17 @@
 ;;; ric-lib.el --- useful functions
 
 ;; Version: 0
+
+(defun mark-sexp-at-point ()
+  "Mark sexp at point. If no sexp at point, move forward and mark next sexp."
+  (interactive)
+  (or (thing-at-point 'sexp) (forward-sexp))
+  (let ((bounds (bounds-of-thing-at-point 'sexp)))
+    (when (null bounds) (error "No sexp at point"))
+    (goto-char (car bounds))
+    (push-mark nil t t)
+    (goto-char (cdr bounds))))
+
 ;;;###autoload
 (defun mark-line ()
   "Mark whole line, leaving point in current position."
