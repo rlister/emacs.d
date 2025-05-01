@@ -171,15 +171,6 @@
   (setq code-review-new-buffer-window-strategy #'switch-to-buffer)
   (setq code-review-lgtm-message "lgtm"))
 
-(defun code-review-link ()
-  "Use link hint to open a pull request url; scrub urldefense links."
-  (interactive)
-  (link-hint-copy-link)
-  (let ((str (current-kill 0)))
-    (when (string-match "^https://urldefense.com" str)
-      (setq str (nth 1 (split-string str "__"))))
-    (code-review-start str)))
-
 (with-eval-after-load 'completion-preview
   (keymap-set completion-preview-active-mode-map "M-n" #'completion-preview-next-candidate)
   (keymap-set completion-preview-active-mode-map "M-p" #'completion-preview-prev-candidate))
@@ -253,6 +244,15 @@
 
 (autoload 'mu4e "mu4e" nil t)
 (with-eval-after-load 'mu4e
+  (defun code-review-link ()
+    "Use link hint to open a pull request url; scrub urldefense links."
+    (interactive)
+    (link-hint-copy-link)
+    (let ((str (current-kill 0)))
+      (when (string-match "^https://urldefense.com" str)
+        (setq str (nth 1 (split-string str "__"))))
+      (code-review-start str)))
+  (keymap-global-set "C-c R" #'code-review-link)
   (load "init-mu4e"))
 
 (with-eval-after-load 'nov
