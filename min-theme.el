@@ -81,6 +81,7 @@
  '(ido-only-match  ((t (:inherit success))))
  '(ido-subdir      ((t (:inherit dired-directory))))
  '(ido-indicator   ((t (:inherit warning))))
+
  '(vertico-current ((t (:background "gray10"))))
 
  '(hi-yellow ((t (:inherit warning))))
@@ -116,7 +117,6 @@
  '(dired-subtree-depth-4-face ((t (:background "gray8" :extend t))))
  '(dired-subtree-depth-5-face ((t (:background "gray10" :extend t))))
  '(dired-subtree-depth-6-face ((t (:background "gray12" :extend t))))
-
 
  '(shortdoc-section ((t (:inherit default))))
 
