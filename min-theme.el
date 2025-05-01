@@ -81,6 +81,7 @@
  '(ido-only-match  ((t (:inherit success))))
  '(ido-subdir      ((t (:inherit dired-directory))))
  '(ido-indicator   ((t (:inherit warning))))
+ '(vertico-current ((t (:background "gray10"))))
 
  '(hi-yellow ((t (:inherit warning))))
  '(hi-green  ((t (:inherit success))))
