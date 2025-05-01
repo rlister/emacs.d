@@ -4,6 +4,7 @@
     elfeed
     forge
     git-link
+    go-mode
     link-hint
     magit
     nginx-mode
