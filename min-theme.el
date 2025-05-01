@@ -74,6 +74,10 @@
  '(completions-first-difference ((t (:foreground "MediumPurple2"))))
  '(completions-highlight ((t (:foreground "Cyan"))))
 
+ '(completion-preview        ((t (:inherit font-lock-comment-face :underline nil))))
+ '(completion-preview-common ((t (:inherit completions-common-part :underline nil))))
+ '(completion-preview-exact  ((t (:inherit success :underline nil))))
+
  '(icomplete-first-match ((t (:inherit completions-highlight))))
  '(icomplete-selected-match ((t (:inherit completions-highlight))))
 
