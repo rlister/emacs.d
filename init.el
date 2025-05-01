@@ -104,6 +104,69 @@
 
 (load-theme 'min t)
 
+(add-hook 'emacs-startup-hook #'selected-global-mode)
+(add-hook 'emacs-startup-hook #'url-handler-mode)
+
+(add-hook 'before-save-hook #'delete-trailing-whitespace)
+
+(keymap-global-set "<home>" #'beginning-of-buffer)
+(keymap-global-set "<end>" #'end-of-buffer)
+
+(keymap-global-set "C-'" #'forward-to-word)
+(keymap-global-set "C-," #'previous-buffer)
+(keymap-global-set "C-." #'next-buffer)
+(keymap-global-set "C-;" #'comment-line)
+(keymap-global-set "C-<tab>" #'completion-at-point)
+(keymap-global-set "C-=" #'quick-calc)
+(keymap-global-set "C-\\" #'forward-to-word)
+(keymap-global-set "C-j" #'project-find-file)
+(keymap-global-set "C-t" #'switch-to-buffer)
+(keymap-global-set "C-z" #'zap-up-to-char)
+
+(keymap-global-set "C-c L" #'link-hint-copy-link)
+(keymap-global-set "C-c a" #'org-agenda)
+(keymap-global-set "C-c b" #'project-switch-to-buffer)
+(keymap-global-set "C-c c" #'org-capture)
+(keymap-global-set "C-c d" #'duplicate-dwim)
+(keymap-global-set "C-c f" #'recentf)
+(keymap-global-set "C-c g" #'magit-file-dispatch)
+(keymap-global-set "C-c i" #'imenu)
+(keymap-global-set "C-c j" #'project-find-dir)
+(keymap-global-set "C-c k" #'kill-whole-line)
+(keymap-global-set "C-c l" #'link-hint-open-link)
+(keymap-global-set "C-c o" #'split-window-right)
+(keymap-global-set "C-c p" #'project-switch-project)
+(keymap-global-set "C-c r" #'rgrep)
+(keymap-global-set "C-c s" #'magit-branch-checkout)
+(keymap-global-set "C-c t" #'vterm)
+(keymap-global-set "C-c u" #'winner-undo)
+(keymap-global-set "C-c w" #'delete-window)
+(keymap-global-set "C-c y" #'browse-kill-ring)
+
+(keymap-global-set "s-<up>" #'enlarge-window)
+(keymap-global-set "s-<down>" #'shrink-window)
+(keymap-global-set "s-<right>" #'enlarge-window-horizontally)
+(keymap-global-set "s-<left>" #'shrink-window-horizontally)
+(keymap-global-set "s-o" #'other-window)
+(keymap-global-set "s-\\" #'delete-other-windows)
+
+(keymap-set ctl-x-map "g" #'magit-status)
+(keymap-set ctl-x-map "j" #'dired-jump)
+
+(keymap-set ctl-x-r-map "a" #'append-to-register)
+(keymap-set ctl-x-r-map "p" #'prepend-to-register)
+
+(keymap-global-set "<remap> <capitalize-word>" #'capitalize-dwim)
+(keymap-global-set "<remap> <downcase-word>" #'downcase-dwim)
+(keymap-global-set "<remap> <upcase-word>" #'upcase-dwim)
+(keymap-global-set "<remap> <compose-mail>" #'mu4e)
+(keymap-global-set "<remap> <kill-buffer>" #'kill-current-buffer)
+
+(run-with-idle-timer 5 nil #'savehist-mode)
+(run-with-idle-timer 5 nil #'winner-mode)
+(run-with-idle-timer 10 nil #'pixel-scroll-mode)
+(run-with-idle-timer 60 nil #'midnight-mode)
+
 (with-eval-after-load 'code-review
   (setq code-review-new-buffer-window-strategy #'switch-to-buffer)
   (setq code-review-lgtm-message "lgtm"))
@@ -121,12 +184,13 @@
   (keymap-set completion-preview-active-mode-map "M-n" #'completion-preview-next-candidate)
   (keymap-set completion-preview-active-mode-map "M-p" #'completion-preview-prev-candidate))
 
-(defun split-window-toggle ()
-  "Split window if there is just one, else delete other windows."
-  (interactive)
-  (if (= (count-windows) 1)
-      (progn (split-window-right) (other-window 1))
-    (delete-other-windows)))
+;; (defun split-window-toggle ()
+;;   "Split window if there is just one, else delete other windows."
+;;   (interactive)
+;;   (if (= (count-windows) 1)
+;;       (progn (split-window-right) (other-window 1))
+;;     (delete-other-windows)))
+
 (with-eval-after-load 'confluence-reader
   (setq confluence-host (url-host (url-generic-parse-url (plist-get (nth 0 (auth-source-search :host "atlassian.net")) :url)))))
 
@@ -289,69 +353,3 @@
 
 (with-eval-after-load 'xref
   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
-
-(add-hook 'emacs-startup-hook #'selected-global-mode)
-(add-hook 'emacs-startup-hook #'url-handler-mode)
-
-(add-hook 'before-save-hook #'delete-trailing-whitespace)
-
-(keymap-global-set "<home>" #'beginning-of-buffer)
-(keymap-global-set "<end>" #'end-of-buffer)
-
-(keymap-global-set "C-'" #'forward-to-word)
-(keymap-global-set "C-," #'previous-buffer)
-(keymap-global-set "C-." #'next-buffer)
-(keymap-global-set "C-;" #'comment-line)
-(keymap-global-set "C-<tab>" #'completion-at-point)
-(keymap-global-set "C-=" #'quick-calc)
-(keymap-global-set "C-\\" #'forward-to-word)
-(keymap-global-set "C-j" #'project-find-file)
-(keymap-global-set "C-t" #'switch-to-buffer)
-(keymap-global-set "C-z" #'zap-up-to-char)
-;; (keymap-global-set "M-\\" #'backward-to-word)
-
-(keymap-global-set "C-c D" #'duplicate-dwim)
-(keymap-global-set "C-c L" #'link-hint-copy-link)
-(keymap-global-set "C-c R" #'code-review-link)
-(keymap-global-set "C-c a" #'org-agenda)
-(keymap-global-set "C-c b" #'project-switch-to-buffer)
-(keymap-global-set "C-c c" #'org-capture)
-(keymap-global-set "C-c d" #'project-find-dir)
-(keymap-global-set "C-c f" #'recentf)
-(keymap-global-set "C-c g" #'magit-file-dispatch)
-(keymap-global-set "C-c i" #'imenu)
-(keymap-global-set "C-c j" #'avy-goto-char)
-(keymap-global-set "C-c k" #'kill-whole-line)
-(keymap-global-set "C-c l" #'link-hint-open-link)
-(keymap-global-set "C-c o" #'split-window-right)
-(keymap-global-set "C-c p" #'project-switch-project)
-(keymap-global-set "C-c r" #'rgrep)
-(keymap-global-set "C-c s" #'magit-branch-checkout)
-(keymap-global-set "C-c t" #'vterm)
-(keymap-global-set "C-c u" #'winner-undo)
-(keymap-global-set "C-c w" #'delete-window)
-(keymap-global-set "C-c y" #'browse-kill-ring)
-
-(keymap-global-set "s-<up>" #'enlarge-window)
-(keymap-global-set "s-<down>" #'shrink-window)
-(keymap-global-set "s-<right>" #'enlarge-window-horizontally)
-(keymap-global-set "s-<left>" #'shrink-window-horizontally)
-(keymap-global-set "s-o" #'other-window)
-(keymap-global-set "s-\\" #'delete-other-windows)
-
-(keymap-set ctl-x-map "g" #'magit-status)
-(keymap-set ctl-x-map "j" #'dired-jump)
-
-(keymap-set ctl-x-r-map "a" #'append-to-register)
-(keymap-set ctl-x-r-map "p" #'prepend-to-register)
-
-(keymap-global-set "<remap> <capitalize-word>" #'capitalize-dwim)
-(keymap-global-set "<remap> <downcase-word>" #'downcase-dwim)
-(keymap-global-set "<remap> <upcase-word>" #'upcase-dwim)
-(keymap-global-set "<remap> <compose-mail>" #'mu4e)
-(keymap-global-set "<remap> <kill-buffer>" #'kill-current-buffer)
-
-(run-with-idle-timer 5 nil #'savehist-mode)
-(run-with-idle-timer 5 nil #'winner-mode)
-(run-with-idle-timer 10 nil #'pixel-scroll-mode)
-(run-with-idle-timer 60 nil #'midnight-mode)
