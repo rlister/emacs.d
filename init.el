@@ -39,6 +39,7 @@
 (setq eww-auto-rename-buffer 'title)
 (setq frame-resize-pixelwise t)
 (setq gnus-inhibit-mime-unbuttonizing t) ;show attachment buttons for all mime parts, including inline images
+(setq grep-save-buffers nil)
 (setq help-window-select t)
 (setq inhibit-startup-echo-area-message "ric")
 (setq message-send-mail-function 'message-send-mail-with-sendmail)
