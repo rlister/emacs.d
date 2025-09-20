@@ -1,3 +1,9 @@
+; emacs 31
+;; (setq kill-region-dwim t)
+;; (setq completion-eager-display nil)
+;; (setq completion-pcm-leading-wildcard t)
+;; (setq kill-buffer-quit-windows t)
+
 ; emacs 30
 (setq imenu-flatten 'prefix)
 (setq minibuffer-visible-completions t)
