@@ -250,7 +250,8 @@
 
 (with-eval-after-load 'magit
   (setq magit-status-show-untracked-files "all")
-  (setq magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1))
+  (setq magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1)
+  (keymap-set magit-file-section-map "C-j" #'project-find-file))
 
 (with-eval-after-load 'markdown
   (add-hook 'markdown-mode-hook #'visual-line-mode))
