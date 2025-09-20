@@ -28,6 +28,7 @@
 (setq completions-format 'one-column)
 (setq completions-header-format "")
 (setq completions-max-height nil)
+(setq completions-sort 'historical)
 (setq confirm-nonexistent-file-or-buffer nil)
 (setq copy-region-blink-delay 0)        ;no blink on copy
 (setq custom-file "~/.emacs.d/custom.el") ;stop customize from polluting init.el
