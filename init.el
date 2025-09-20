@@ -133,6 +133,7 @@
 (keymap-global-set "C-z" #'zap-up-to-char)
 
 (keymap-global-set "C-c L" #'link-hint-copy-link)
+(keymap-global-set "C-c RET" #'gptel-send)
 (keymap-global-set "C-c a" #'org-agenda)
 (keymap-global-set "C-c b" #'project-switch-to-buffer)
 (keymap-global-set "C-c c" #'org-capture)
@@ -143,6 +144,7 @@
 (keymap-global-set "C-c j" #'project-find-dir)
 (keymap-global-set "C-c k" #'kill-whole-line)
 (keymap-global-set "C-c l" #'link-hint-open-link)
+(keymap-global-set "C-c m" #'gptel-menu)
 (keymap-global-set "C-c o" #'split-window-right)
 (keymap-global-set "C-c p" #'project-switch-project)
 (keymap-global-set "C-c r" #'deadgrep)
