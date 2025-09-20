@@ -105,6 +105,7 @@
 (add-to-list 'auto-mode-alist '("\\.hurl" . conf-mode))
 (add-to-list 'auto-mode-alist '("\\.ts" . js-mode))
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+(add-to-list 'auto-mode-alist '("\\.[pP][dD][fF]\\'" . pdf-view-mode))
 
 (put 'narrow-to-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
