@@ -326,6 +326,9 @@
 (with-eval-after-load 'prog-mode
   (add-hook 'prog-mode-hook #'completion-preview-mode))
 
+(with-eval-after-load 'rg
+  (setq rg-group-result nil))
+
 (with-eval-after-load 'selected
   (add-to-list 'selected-ignore-modes 'magit-status-mode)
   (add-to-list 'selected-ignore-modes 'magit-refs-mode)
