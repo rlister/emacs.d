@@ -60,6 +60,7 @@
 (setq read-buffer-completion-ignore-case t)
 (setq read-file-name-completion-ignore-case t)
 (setq recenter-positions '(top middle bottom))
+(setq recentf-max-saved-items 100)
 (setq save-interprogram-paste-before-kill t)
 (setq scroll-conservatively 101)      ;do not center point, less jumpy
 (setq scroll-preserve-screen-position t) ;do not lose point
