@@ -109,6 +109,7 @@
 
  ;; grep-like modes
  '(wgrep-face ((t (:inherit highlight))))
+ '(deadgrep-filename-face ((t (:inherit mode-line-buffer-id))))
 
  '(dired-broken-symlink     ((t (:inherit error))))
  '(dired-async-mode-message ((t (:inherit warning))))
