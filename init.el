@@ -270,7 +270,8 @@
     (let ((str (current-kill 0)))
       (when (string-match "^https://urldefense.com" str)
         (setq str (nth 1 (split-string str "__"))))
-      (code-review-start str)))
+      ;; (code-review-start str)
+      (github-review-start str)))
   (keymap-global-set "C-c R" #'code-review-link)
   (load "init-mu4e"))
 
