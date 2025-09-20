@@ -157,7 +157,9 @@
 (keymap-global-set "s-<right>" #'enlarge-window-horizontally)
 (keymap-global-set "s-<left>" #'shrink-window-horizontally)
 (keymap-global-set "s-o" #'other-window)
+(keymap-global-set "s-." #'split-window-right)
 (keymap-global-set "s-\\" #'delete-other-windows)
+(keymap-global-set "s-," #'delete-other-windows)
 
 (keymap-set ctl-x-map "g" #'magit-status)
 (keymap-set ctl-x-map "j" #'dired-jump)
