@@ -232,6 +232,13 @@
 (with-eval-after-load 'go-mode
   (add-hook 'go-mode-hook #'subword-mode))
 
+(with-eval-after-load 'gptel
+  (gptel-make-ollama "Ollama" :stream t :models '(llama3.1 qwen3:0.6b))
+  (gptel-make-gh-copilot "Copilot")
+  (setq gptel-backend (gptel-make-gemini "Gemini" :stream t :key (auth-source-pick-first-password :host "generativelanguage.googleapis.com")))
+  (setq gptel-model "gemini-2.5-flash-preview-04-17")
+  (require 'gptel-integrations))
+
 (with-eval-after-load 'grep
   (keymap-set grep-mode-map "e" #'wgrep-change-to-wgrep-mode)
   (keymap-set grep-mode-map "r" #'rgrep))
