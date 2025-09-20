@@ -168,6 +168,7 @@
 (keymap-set ctl-x-r-map "p" #'prepend-to-register)
 
 (keymap-global-set "<remap> <capitalize-word>" #'capitalize-dwim)
+(keymap-global-set "<remap> <dabbrev-expand>" #'hippie-expand)
 (keymap-global-set "<remap> <downcase-word>" #'downcase-dwim)
 (keymap-global-set "<remap> <upcase-word>" #'upcase-dwim)
 (keymap-global-set "<remap> <compose-mail>" #'mu4e)
