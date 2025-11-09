@@ -182,9 +182,9 @@
 (run-with-idle-timer 10 nil #'pixel-scroll-mode)
 (run-with-idle-timer 60 nil #'midnight-mode)
 
-(with-eval-after-load 'code-review
-  (setq code-review-new-buffer-window-strategy #'switch-to-buffer)
-  (setq code-review-lgtm-message "lgtm"))
+;; (with-eval-after-load 'code-review
+;;   (setq code-review-new-buffer-window-strategy #'switch-to-buffer)
+;;   (setq code-review-lgtm-message "lgtm"))
 
 (with-eval-after-load 'completion-preview
   (keymap-set completion-preview-active-mode-map "M-n" #'completion-preview-next-candidate)
@@ -275,7 +275,8 @@
       (when (string-match "^https://urldefense.com" str)
         (setq str (nth 1 (split-string str "__"))))
       ;; (code-review-start str)
-      (github-review-start str)))
+      ;; (github-review-start str)
+      (prr str)))
   (keymap-global-set "C-c R" #'code-review-link)
   (load "init-mu4e"))
 
@@ -327,6 +328,7 @@
 (with-eval-after-load 'package
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t))
 
+(autoload 'prr "prr-mode" nil t)
 (with-eval-after-load 'prog-mode
   (add-hook 'prog-mode-hook #'completion-preview-mode))
 
