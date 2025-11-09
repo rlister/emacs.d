@@ -223,10 +223,7 @@
   (keymap-set forge-topic-mode-map "w" #'forge-browse-topic))
 
 (with-eval-after-load 'frame
-  (vertico-mode)
-  (when (display-graphic-p)
-    (keyboard-translate ?\C-m ?\H-m)
-    (keymap-global-set "H-m" #'mark-word)))
+  (vertico-mode))
 
 (with-eval-after-load 'github-review
   (keymap-set github-review-mode-map "C-c A" #'github-review-approve)
@@ -390,3 +387,12 @@
 
 (with-eval-after-load 'xref
   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
+
+(defun translate-gui-keys ()
+  "Translate some keys that can be differentiated in gui frames."
+  (when (display-graphic-p)
+    (keyboard-translate ?\C-m ?\H-m)
+    (keymap-global-set "H-m" #'mark-word)))
+
+(add-hook 'server-after-make-frame-hook #'translate-gui-keys) ;server initial frame
+(add-hook 'after-init-hook #'translate-gui-keys)              ;non-server
