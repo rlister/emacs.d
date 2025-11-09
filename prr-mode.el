@@ -89,7 +89,7 @@
     (mapconcat 'identity p "/")))
 
 (defun prr-url ()
-  "Return url for current pr."
+  "Return url for current PR."
   (let ((p (prr-parts)))
     (format "https://github.com/%s/%s/pull/%s" (car p) (cadr p) (caddr p))))
 
@@ -109,7 +109,7 @@
   (kill-new (prr-url)))
 
 (defun prr-submit ()
-  "Call prr and submit file from current buffer."
+  "Call prr and submit current PR."
   (interactive)
   (prr-ask-save-buffer)
   (when (buffer-modified-p)
