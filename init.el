@@ -105,7 +105,7 @@
 (add-to-list 'auto-mode-alist '("\\.hurl" . conf-mode))
 (add-to-list 'auto-mode-alist '("\\.ts" . js-mode))
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
-(add-to-list 'auto-mode-alist '("\\.[pP][dD][fF]\\'" . pdf-view-mode))
+(add-to-list 'auto-mode-alist '("\\.[pP][dD][fF]\\'" . handle-pdf-view-mode))
 
 (put 'narrow-to-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
@@ -330,6 +330,13 @@
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t))
 
 (autoload 'prr "prr-mode" nil t)
+
+(defun handle-pdf-view-mode ()
+  "Call pdf-view-mode: on first call handle error to install tools."
+  (handler-bind
+      ((error #'pdf-tools-install))
+    pdf-view-mode))
+
 (with-eval-after-load 'prog-mode
   (add-hook 'prog-mode-hook #'completion-preview-mode))
 
