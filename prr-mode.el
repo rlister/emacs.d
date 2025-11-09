@@ -86,7 +86,7 @@
 (defun prr-handle ()
   "Return handle for current prr, as org/repo/pr."
   (let ((p (prr-parts)))
-    (mapconcat 'identity (nthcdr (- (length p) 3) p) "/")))
+    (mapconcat 'identity p "/")))
 
 (defun prr-url ()
   "Return url for current pr."
