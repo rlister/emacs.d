@@ -55,7 +55,7 @@
 
 ;;; Code:
 
-(defcustom prr-program "~/.cargo/bin/prr"
+(defcustom prr-program "prr"
   "Name of prr binary."
   :type 'file)
 
