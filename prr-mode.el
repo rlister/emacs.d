@@ -126,6 +126,15 @@
      (y-or-n-p "Kill buffer?")
      (kill-buffer))
 
+(transient-define-prefix prr-transient ()
+  "Invoke transient menu for prr."
+  ["PRR Commands"
+   [("s" "Submit review" prr-submit)
+    ("r" "Remove review" prr-remove)]
+   [("b" "Browse review" prr-browse)
+    ("f" "Visit review in forge" prr-forge)]
+   [("w" "Copy URL of review" prr-copy-url-as-kill)]])
+
 ;;;###autoload
 (defun prr (pr)
   "Call prr and edit diff."
