@@ -52,6 +52,7 @@
 ;; - `prr-browse`: open the current review in a browser
 ;; - `prr-forge`: visit the current review in forge, if you have it installed
 ;; - `prr-copy-url-as-kill`: copy the github url for the current review to the kill-ring
+;; - `prr-remove`: remove the current review
 
 ;;; Code:
 
