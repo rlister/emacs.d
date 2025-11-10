@@ -155,6 +155,7 @@
   (setq-local outline-minor-mode-use-buttons 'in-margins)
   (setq-local show-trailing-whitespace t)
   (diff-minor-mode)
+  (setq-local diff-hunk-header-re (replace-regexp-in-string "\\^@@" "^> @@" diff-hunk-header-re))
   (font-lock-add-keywords nil prr-font-lock-keywords))
 
 ;;;###autoload
