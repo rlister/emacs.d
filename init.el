@@ -329,6 +329,10 @@
 (with-eval-after-load 'package
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t))
 
+(with-eval-after-load 'pdf-view
+  (setq-default pdf-view-display-size 'fit-page)
+  (keymap-set pdf-view-mode-map "g" #'revert-buffer-quick))
+
 (autoload 'prr "prr-mode" nil t)
 (with-eval-after-load 'prr
   (setq prr-program "~/.cargo/bin/prr")
