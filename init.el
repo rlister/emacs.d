@@ -329,6 +329,9 @@
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t))
 
 (autoload 'prr "prr-mode" nil t)
+(with-eval-after-load 'prr
+  (setq prr-program "~/.cargo/bin/prr")
+  (keymap-set prr-mode-map "C-<return>" #'prr-transient))
 
 (defun handle-pdf-view-mode ()
   "Call pdf-view-mode: on first call handle error to install tools."
