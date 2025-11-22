@@ -297,6 +297,7 @@
   (setq org-todo-keyword-faces '(("BLOCK" . link) ("REVIEW" . warning) ("WIP" . success)))
   (setq org-todo-keywords '("TODO" "BLOCK(b@/!)" "REVIEW(r@/!)" "WIP(w!)" "|" "DONE(d!)" "CANCELLED(c@)"))
   (add-hook 'org-mode-hook #'visual-line-mode)
+  (keymap-set org-mode-map "C-c I" #'org-cite-insert)
   (keymap-set org-mode-map "C-," nil))
 
 (with-eval-after-load 'org-agenda
