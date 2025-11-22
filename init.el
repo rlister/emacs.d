@@ -128,7 +128,7 @@
 (keymap-global-set "C-;" #'comment-line)
 (keymap-global-set "C-<tab>" #'completion-at-point)
 (keymap-global-set "C-=" #'quick-calc)
-(keymap-global-set "C-\\" #'forward-to-word)
+(keymap-global-set "C-\\" #'indent-rigidly)
 (keymap-global-set "C-j" #'project-find-file)
 (keymap-global-set "C-t" #'switch-to-buffer)
 (keymap-global-set "C-z" #'zap-up-to-char)
