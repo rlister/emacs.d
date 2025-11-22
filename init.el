@@ -186,6 +186,8 @@
 ;; (with-eval-after-load 'code-review
 ;;   (setq code-review-new-buffer-window-strategy #'switch-to-buffer)
 ;;   (setq code-review-lgtm-message "lgtm"))
+(with-eval-after-load 'bibtex
+  (bibtex-set-dialect 'biblatex))
 
 (with-eval-after-load 'completion-preview
   (keymap-set completion-preview-active-mode-map "M-n" #'completion-preview-next-candidate)
@@ -337,6 +339,9 @@
 (with-eval-after-load 'prog-mode
   (add-hook 'prog-mode-hook #'completion-preview-mode))
 
+(with-eval-after-load 'reftex-vars
+  (setq reftex-cite-format "\\autocite[][]{%l}"))
+
 (with-eval-after-load 'rg
   (setq rg-group-result nil))
 
@@ -365,6 +370,15 @@
 (with-eval-after-load 'terraform-mode
   (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode))
 
+(with-eval-after-load 'tex-mode
+  (add-hook 'latex-mode-hook 'turn-on-reftex)
+  (setq tex-open-quote "\\enquote{")
+  (setq tex-close-quote "}")
+  (define-skeleton tex-insert-footnote "footnote" nil "\\footnote" ?\{ _ ?})
+  (define-skeleton tex-insert-textit "textit" nil "\\textit" ?\{ _ ?})
+  (keymap-set latex-mode-map "C-<return>" #'reftex-citation)
+  (keymap-set latex-mode-map "C-c ^" #'tex-insert-footnote)
+  (keymap-set latex-mode-map "C-c /" #'tex-insert-textit))
 (with-eval-after-load 'vertico
   (setq vertico-resize nil)
   (setq vertico-count 5)
