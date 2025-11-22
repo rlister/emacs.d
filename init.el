@@ -153,7 +153,7 @@
 (keymap-global-set "C-c s" #'magit-branch-checkout)
 (keymap-global-set "C-c t" #'vterm)
 (keymap-global-set "C-c u" #'winner-undo)
-(keymap-global-set "C-c w" #'delete-window)
+(keymap-global-set "C-c w" #'dictionary-search)
 (keymap-global-set "C-c y" #'browse-kill-ring)
 
 (keymap-global-set "s-<up>" #'enlarge-window)
