@@ -408,5 +408,10 @@
     (keyboard-translate ?\C-m ?\H-m)
     (keymap-global-set "H-m" #'mark-word)))
 
+(defun gh-search-prs (beg end)
+  "Search for commit in github PRs."
+  (interactive "r")
+  (call-process "gh" nil nil nil "search" "prs" (buffer-substring beg end) "--web"))
+
 (add-hook 'server-after-make-frame-hook #'translate-gui-keys) ;server initial frame
 (add-hook 'after-init-hook #'translate-gui-keys)              ;non-server
