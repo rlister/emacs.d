@@ -393,6 +393,12 @@
   (setq tex-close-quote "'")
   (define-skeleton tex-insert-footnote "footnote" nil "\\footnote" ?\{ _ ?})
   (define-skeleton tex-insert-textit "textit" nil "\\textit" ?\{ _ ?})
+
+  (font-lock-add-keywords 'latex-mode '(("\\({.*?}\\)"
+                         1 font-lock-string-face prepend)))
+  (font-lock-add-keywords 'latex-mode '(("\\(\\[.*?]\\)"
+                         1 font-lock-constant-face prepend)))
+
   (keymap-set latex-mode-map "C-<return>" #'reftex-citation)
   (keymap-set latex-mode-map "C-c ^" #'tex-insert-footnote)
   (keymap-set latex-mode-map "C-c /" #'tex-insert-textit))
