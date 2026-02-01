@@ -240,7 +240,7 @@
   (gptel-make-ollama "Ollama" :stream t :models '(llama3.1 qwen3:0.6b))
   (gptel-make-gh-copilot "Copilot")
   (setq gptel-backend (gptel-make-gemini "Gemini" :stream t :key (auth-source-pick-first-password :host "generativelanguage.googleapis.com")))
-  (setq gptel-model "gemini-2.5-flash-preview-04-17")
+  (setq gptel-model "gemini-3-flash-preview")
   (require 'gptel-integrations))
 
 (with-eval-after-load 'grep
