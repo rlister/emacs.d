@@ -187,6 +187,7 @@
 ;;   (setq code-review-new-buffer-window-strategy #'switch-to-buffer)
 ;;   (setq code-review-lgtm-message "lgtm"))
 (with-eval-after-load 'bibtex
+  (setq bibtex-entry-format '(sort-fields whitespace))
   (bibtex-set-dialect 'biblatex))
 
 (with-eval-after-load 'completion-preview
