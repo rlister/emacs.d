@@ -339,6 +339,14 @@
   (setq prr-program "~/.cargo/bin/prr")
   (keymap-set prr-mode-map "C-<return>" #'prr-transient))
 
+(with-eval-after-load 'copilot
+  (keymap-set copilot-completion-map "TAB" #'copilot-accept-completion)
+  (keymap-set copilot-completion-map "<remap> <zap-up-to-char>" #'copilot-accept-completion-to-char)
+  (keymap-set copilot-completion-map "C-<return>" #'copilot-accept-completion-by-word)
+  (keymap-set copilot-completion-map "C-;" #'copilot-accept-completion-by-line)
+  (keymap-set copilot-completion-map "C-n" #'copilot-next-completion)
+  (keymap-set copilot-completion-map "C-p" #'copilot-previous-completion))
+
 (defun handle-pdf-view-mode ()
   "Call pdf-view-mode: on first call handle error to install tools."
   (handler-bind
