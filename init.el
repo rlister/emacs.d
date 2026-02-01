@@ -389,8 +389,8 @@
 
 (with-eval-after-load 'tex-mode
   (add-hook 'latex-mode-hook 'turn-on-reftex)
-  (setq tex-open-quote "\\enquote{")
-  (setq tex-close-quote "}")
+  (setq tex-open-quote "`")
+  (setq tex-close-quote "'")
   (define-skeleton tex-insert-footnote "footnote" nil "\\footnote" ?\{ _ ?})
   (define-skeleton tex-insert-textit "textit" nil "\\textit" ?\{ _ ?})
   (keymap-set latex-mode-map "C-<return>" #'reftex-citation)
