@@ -427,7 +427,8 @@
   (keymap-set vterm-copy-mode-map "C-<return>" #'vterm-copy-mode))
 
 (with-eval-after-load 'yaml-mode
-  (add-hook 'yaml-mode-hook 'flymake-yamllint-setup))
+  (add-hook 'yaml-mode-hook #'flymake-yamllint-setup)
+  (add-hook 'yaml-mode-hook #'copilot-mode))
 
 (with-eval-after-load 'xref
   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
