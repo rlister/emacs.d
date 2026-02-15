@@ -355,8 +355,8 @@
   (keymap-set copilot-completion-map "<remap> <zap-up-to-char>" #'copilot-accept-completion-to-char)
   (keymap-set copilot-completion-map "C-<return>" #'copilot-accept-completion-by-word)
   (keymap-set copilot-completion-map "C-;" #'copilot-accept-completion-by-line)
-  (keymap-set copilot-completion-map "C-n" #'copilot-next-completion)
-  (keymap-set copilot-completion-map "C-p" #'copilot-previous-completion))
+  (keymap-set copilot-completion-map "M-n" #'copilot-next-completion)
+  (keymap-set copilot-completion-map "M-p" #'copilot-previous-completion))
 
 (defun handle-pdf-view-mode ()
   "Call pdf-view-mode: on first call handle error to install tools."
