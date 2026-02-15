@@ -297,7 +297,6 @@
 
 (with-eval-after-load 'org
   (setq org-directory "~/doc")
-  (setq org-log-done 'time)
   (setq org-default-priority 67)        ;C
   (setq org-hide-emphasis-markers nil)
   (setq org-display-remote-inline-images 'download)
@@ -307,7 +306,7 @@
   (setq org-table-header-line t)
   (setq org-todo-interpretation 'sequence)
   (setq org-todo-keyword-faces '(("BLOCK" . link) ("REVIEW" . warning) ("WIP" . success)))
-  (setq org-todo-keywords '("TODO" "BLOCK(b@/!)" "REVIEW(r@/!)" "WIP(w!)" "|" "DONE(d!)" "CANCELLED(c@)"))
+  (setq org-todo-keywords '("TODO" "BLOCK(b@/!)" "REVIEW(r@/!)" "WIP(w!)" "|" "DONE(d)" "CANCELLED(c@)"))
   (add-hook 'org-mode-hook #'visual-line-mode)
   (keymap-set org-mode-map "C-c I" #'org-cite-insert)
   (keymap-set org-mode-map "C-," nil))
