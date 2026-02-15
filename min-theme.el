@@ -65,10 +65,10 @@
 
  '(buffer-menu-buffer ((t (:foreground "PaleGreen"))))
 
- '(completions-annotations ((t (:inherit warning))))
- '(completions-common-part ((t (:foreground "DodgerBlue2"))))
+ '(completions-annotations      ((t (:inherit warning))))
+ '(completions-common-part      ((t (:foreground "DodgerBlue2"))))
  '(completions-first-difference ((t (:foreground "MediumPurple2"))))
- '(completions-highlight ((t (:foreground "Cyan"))))
+ '(completions-highlight        ((t (:foreground "Cyan"))))
 
  '(completion-preview        ((t (:inherit font-lock-comment-face :underline nil))))
  '(completion-preview-common ((t (:inherit completions-common-part :underline nil))))
