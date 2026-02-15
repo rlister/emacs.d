@@ -21,7 +21,9 @@
   "Local packages to install.")
 
 (defconst vc-packages
-  '("https://git.sr.ht/~sebasmonia/confluence-reader.el"
+  '("https://github.com/rlister/prr-mode"
+    "https://github.com/protesilaos/institution-calendar.git"
+    "https://git.sr.ht/~sebasmonia/confluence-reader.el"
     "https://github.com/doomelpa/code-review"
     "https://github.com/zerolfx/copilot.el")
   "Local packages to install.")
