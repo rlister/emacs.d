@@ -155,15 +155,26 @@
  '(org-agenda-dimmed-todo-face ((t (:inherit font-lock-comment-face))))
  '(org-agenda-restriction-lock ((t (:inherit warning))))
 
- '(diff-header            ((t (:inherit (font-lock-type-face highlight)))))
- '(diff-file-header       ((t (:inherit font-lock-type-face))))
+ '(font-latex-warning-face ((t (:inherit warning))))
+ '(font-latex-string-face ((t (:inherit font-lock-string-face))))
+ '(font-latex-italic-face ((t (:inherit font-lock-preprocessor-face))))
+
+ '(dictionary-button-face          ((t (:inherit font-lock-comment-face))))
+ '(dictionary-reference-face       ((t (:inherit link))))
+ '(dictionary-word-definition-face ((t (:inherit default))))
+ '(dictionary-word-entry-face      ((t (:inherit font-lock-doc-face))))
+
  '(diff-added             ((t (:inherit success))))
- '(diff-indicator-added   ((t (:inherit success)))) ;plus/minus symbol
- '(diff-refine-added      ((t (:inherit (success highlight)))))
- '(diff-removed           ((t (:inherit error))))
- '(diff-indicator-removed ((t (:inherit error)))) ;plus/minus symbol
- '(diff-refine-removed    ((t (:inherit (error highlight)))))
  '(diff-context           ((t (:inherit font-lock-comment-face))))
+ '(diff-file-header       ((t (:inherit font-lock-preprocessor-face))))
+ '(diff-header            ((t (:inherit (font-lock-doc-face highlight)))))
+ '(diff-index             ((t (:inherit font-lock-comment-face))))
+ '(diff-hunk-header       ((t (:inherit (font-lock-type-face highlight)))))
+ '(diff-indicator-added   ((t (:inherit success)))) ;plus/minus symbol
+ '(diff-indicator-removed ((t (:inherit error)))) ;plus/minus symbol
+ '(diff-refine-added      ((t (:inherit (success highlight)))))
+ '(diff-refine-removed    ((t (:inherit (error highlight)))))
+ '(diff-removed           ((t (:inherit error))))
 
  '(diff-hl-insert ((t (:inherit success))))
  '(diff-hl-change ((t (:inherit warning))))
