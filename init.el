@@ -266,7 +266,11 @@
 (with-eval-after-load 'magit
   (setq magit-status-show-untracked-files "all")
   (setq magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1)
-  (keymap-set magit-file-section-map "C-j" #'project-find-file))
+  (keymap-set magit-file-section-map "C-j" #'project-find-file)
+  (defun gh-search-prs (beg end)
+    "Search for commit in github PRs."
+    (interactive "r")
+    (call-process "gh" nil nil nil "search" "prs" (buffer-substring beg end) "--web")))
 
 (with-eval-after-load 'markdown
   (add-hook 'markdown-mode-hook #'visual-line-mode))
@@ -450,11 +454,6 @@
   (when (display-graphic-p)
     (keyboard-translate ?\C-m ?\H-m)
     (keymap-global-set "H-m" #'mark-word)))
-
-(defun gh-search-prs (beg end)
-  "Search for commit in github PRs."
-  (interactive "r")
-  (call-process "gh" nil nil nil "search" "prs" (buffer-substring beg end) "--web"))
 
 (add-hook 'server-after-make-frame-hook #'translate-gui-keys) ;server initial frame
 (add-hook 'after-init-hook #'translate-gui-keys)              ;non-server
