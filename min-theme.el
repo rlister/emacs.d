@@ -6,8 +6,7 @@
 (custom-theme-set-faces
  'min
 
- ;; standard faces
- '(default             ((((type tty)) (:foreground "white")) (t (:foreground "azure4" :background "Black"))))
+ '(default             ((((type tty)) (:foreground "white")) (t (:foreground "azure3" :background "Black"))))
  '(cursor              ((t (:background "PaleGreen"))))
  '(shadow              ((t (:foreground "DarkSlateGray4"))))
  '(success             ((t (:foreground "PaleGreen"))))
