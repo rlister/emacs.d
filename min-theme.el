@@ -24,7 +24,6 @@
  '(underline           ((t (:underline nil))))
  '(visible-mark-active ((t (:inherit highlight :underline t))))
 
- ;; mode-line
  '(mode-line           ((t (:foreground "aquamarine3" :background "grey14" :box nil))))
  '(mode-line-inactive  ((t (:foreground "grey50" :background "grey7" :box nil))))
  '(mode-line-buffer-id ((t (:foreground "PaleGreen"))))
@@ -41,12 +40,10 @@
  ;; gui elements when using lucid
  '(menu ((t (:inherit mode-line))))
 
- ;; search and replace
  '(isearch       ((t (:inherit success))))
  '(isearch-fail  ((t (:inherit error))))
  '(query-replace ((t (:inherit success))))
 
- ;; font-lock
  '(font-lock-function-name-face        ((t (:foreground "LightBlue"))))
  '(font-lock-keyword-face              ((t (:foreground "LightSkyBlue"))))
  '(font-lock-type-face                 ((t (:foreground "CornflowerBlue"))))
@@ -124,7 +121,6 @@
 
  '(shortdoc-section ((t (:inherit default))))
 
- ;; org-mode
  '(org-level-1              ((t (:inherit font-lock-function-name-face :height 1.2))))
  '(org-level-2              ((t (:inherit font-lock-keyword-face :height 1.1))))
  '(org-level-3              ((t (:inherit font-lock-type-face))))
@@ -151,7 +147,6 @@
  '(org-time-grid            ((t (:inherit font-lock-comment-face))))
  '(org-footnote             ((t (:inherit font-lock-doc-face))))
 
- ;; org-agenda
  '(org-agenda-structure        ((t (:inherit font-lock-comment-face))))
  '(org-agenda-date             ((t (:inherit font-lock-function-name-face :weight bold))))
  '(org-agenda-date-weekend     ((t (:inherit org-agenda-date :weight medium))))
@@ -160,7 +155,6 @@
  '(org-agenda-dimmed-todo-face ((t (:inherit font-lock-comment-face))))
  '(org-agenda-restriction-lock ((t (:inherit warning))))
 
- ;; inherited by modes using diffs
  '(diff-header            ((t (:inherit (font-lock-type-face highlight)))))
  '(diff-file-header       ((t (:inherit font-lock-type-face))))
  '(diff-added             ((t (:inherit success))))
@@ -175,7 +169,6 @@
  '(diff-hl-change ((t (:inherit warning))))
  '(diff-hl-delete ((t (:inherit error))))
 
- ;; magit
  '(magit-header                      ((t (:weight bold))))
  '(magit-section-heading             ((t (:inherit font-lock-keyword-face))))
  '(magit-section-highlight           ((t (:inherit highlight))))
