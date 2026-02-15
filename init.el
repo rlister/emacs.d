@@ -400,6 +400,7 @@
 
 (with-eval-after-load 'tex-mode
   (add-hook 'latex-mode-hook 'turn-on-reftex)
+  (add-hook 'latex-mode-hook 'visual-line-mode)
   (setq tex-open-quote "`")
   (setq tex-close-quote "'")
   (define-skeleton tex-insert-footnote "footnote" nil "\\footnote" ?\{ _ ?})
