@@ -49,6 +49,7 @@
 (setq grep-save-buffers nil)
 (setq help-window-select t)
 (setq inhibit-startup-echo-area-message "ric")
+(setq institution-calendar-entity 'cambridge-university)
 (setq message-send-mail-function 'message-send-mail-with-sendmail)
 (setq message-sendmail-extra-arguments '("--read-envelope-from")) ;get cfg from sender
 (setq message-sendmail-f-is-evil t)         ;do not add username to cmdline
@@ -189,6 +190,9 @@
 (with-eval-after-load 'bibtex
   (setq bibtex-entry-format '(sort-fields whitespace))
   (bibtex-set-dialect 'biblatex))
+
+(with-eval-after-load 'calendar
+  (institution-calendar-mode))
 
 (with-eval-after-load 'completion-preview
   (keymap-set completion-preview-active-mode-map "M-n" #'completion-preview-next-candidate)
