@@ -209,10 +209,17 @@
   (setq confluence-host (url-host (url-generic-parse-url (plist-get (nth 0 (auth-source-search :host "atlassian.net")) :url)))))
 
 (with-eval-after-load 'dired
+  (require 'dired-x)
   (add-to-list 'dired-font-lock-keywords (list dired-re-exe '(".+" (dired-move-to-filename) nil (0 'success))) 'append) ;face for exec files
   (keymap-set dired-mode-map "C-t" nil)
   (keymap-set dired-mode-map "e" #'wdired-change-to-wdired-mode)
   (keymap-set dired-mode-map "f" #'find-name-dired))
+
+(with-eval-after-load 'dired-x
+  (add-to-list 'dired-bibtex-unclean-extensions ".bcf")
+  (add-to-list 'dired-latex-unclean-extensions ".run.xml")
+  (setq dired-omit-files (concat dired-omit-files "\\|^\\..+$"))
+  (keymap-set dired-mode-map "." #'dired-omit-mode))
 
 (with-eval-after-load 'elfeed
   (load "~/doc/elfeed.el")
