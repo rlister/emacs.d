@@ -314,18 +314,19 @@
 (with-eval-after-load 'org-agenda
   (setq org-agenda-custom-commands
         '(("h" "Home" ((agenda "") (alltodo "")) ((org-agenda-files '("home.org"))))
-          ("w" "Work" ((agenda "")) ((org-agenda-files '("work.org"))))))
-  (setq org-agenda-files '("work.org" "home.org" "~/doc/ical"))
-  (setq org-agenda-include-diary t)
+          ("w" "Work" ((agenda "")) ((org-agenda-files '("work.org"))))
+          ("c" "Cantab" ((agenda "")) ((org-agenda-files '("cantab.org"))))))
+  (setq org-agenda-files '("work.org" "home.org" "cantab.org"))
   (setq org-agenda-window-setup 'current-window)
   (add-hook 'org-agenda-mode-hook #'hl-line-mode)
   (add-hook 'org-agenda-after-show-hook #'org-narrow-to-subtree))
 
 (with-eval-after-load 'org-capture
   (setq org-capture-templates
-        '(("t" "Todo"  entry (file+olp+datetree "work.org") "* TODO %?\n%i")
-          ("m" "Mtg"   entry (file+olp+datetree "work.org") "* MTG %i%?")
-          ("h" "Home"  entry (file+olp+datetree "home.org") "* TODO %?")
+        '(("t" "Todo" entry (file+olp+datetree "work.org") "* TODO %?\n%i")
+          ("m" "Mtg" entry (file+olp+datetree "work.org") "* MTG %i%?")
+          ("h" "Home" entry (file+olp+datetree "home.org") "* TODO %?")
+          ("c" "Cantab" entry (file+olp+datetree "cantab.org") "* TODO %?")
           ("s" "Music" entry (file+olp+datetree "music.org") "* TODO %?"))))
 
 (with-eval-after-load 'ox-latex
