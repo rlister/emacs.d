@@ -331,6 +331,8 @@
  '(highlight-indentation-current-column-face ((t (:inherit highlight))))
 
  '(copilot-overlay-face ((t (:inherit font-lock-comment-face))))
+
+ '(gscholar-bibtex-title ((t (:inherit font-lock-keyword-face))))
 )
 
 (provide-theme 'min)
