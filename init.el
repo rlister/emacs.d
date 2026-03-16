@@ -136,7 +136,7 @@
 
 (keymap-global-set "C-c -" #'string-inflection-toggle)
 (keymap-global-set "C-c L" #'link-hint-copy-link)
-(keymap-global-set "C-c RET" #'gptel-send)
+(keymap-global-set "C-c RET" #'agent-shell)
 (keymap-global-set "C-c a" #'org-agenda)
 (keymap-global-set "C-c b" #'project-switch-to-buffer)
 (keymap-global-set "C-c c" #'org-capture)
