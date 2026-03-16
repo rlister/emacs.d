@@ -296,6 +296,10 @@
   (keymap-global-set "C-c R" #'code-review-link)
   (load "init-mu4e"))
 
+(with-eval-after-load 'neotree
+  (keymap-set neotree-mode-map "e" #'neotree-open-file-in-system-application)
+  (keymap-set neotree-mode-map "o" #'neotree-quick-look))
+
 (with-eval-after-load 'nov
   (setq nov-unzip-program (executable-find "unzip")))
 
