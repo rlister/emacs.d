@@ -22,7 +22,7 @@
 (setq completion-auto-help t)
 (setq completion-ignore-case t)
 (setq completion-show-help nil)
-(setq completion-styles '(orderless basic))
+(setq completion-styles '(orderless initials basic))
 (setq completion-category-overrides '((file (styles substring partial-completion basic))))
 (setq completions-detailed t)
 (setq completions-format 'one-column)
