@@ -369,14 +369,6 @@
   (setq prr-program "~/.cargo/bin/prr")
   (keymap-set prr-mode-map "C-<return>" #'prr-transient))
 
-(with-eval-after-load 'copilot
-  (keymap-set copilot-completion-map "TAB" #'copilot-accept-completion)
-  (keymap-set copilot-completion-map "<remap> <zap-up-to-char>" #'copilot-accept-completion-to-char)
-  (keymap-set copilot-completion-map "C-<return>" #'copilot-accept-completion-by-word)
-  (keymap-set copilot-completion-map "C-;" #'copilot-accept-completion-by-line)
-  (keymap-set copilot-completion-map "M-n" #'copilot-next-completion)
-  (keymap-set copilot-completion-map "M-p" #'copilot-previous-completion))
-
 (defun handle-pdf-view-mode ()
   "Call pdf-view-mode: on first call handle error to install tools."
   (handler-bind
@@ -458,8 +450,7 @@
   (keymap-set vterm-copy-mode-map "C-<return>" #'vterm-copy-mode))
 
 (with-eval-after-load 'yaml-mode
-  (add-hook 'yaml-mode-hook #'flymake-yamllint-setup)
-  (add-hook 'yaml-mode-hook #'copilot-mode))
+  (add-hook 'yaml-mode-hook #'flymake-yamllint-setup))
 
 (with-eval-after-load 'xref
   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
