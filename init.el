@@ -184,9 +184,14 @@
 (run-with-idle-timer 10 nil #'pixel-scroll-mode)
 (run-with-idle-timer 60 nil #'midnight-mode)
 
+(with-eval-after-load 'agent-shell
+  (setq agent-shell-show-session-id t)
+  (setq agent-shell-prefer-viewport-interaction t))
+
 ;; (with-eval-after-load 'code-review
 ;;   (setq code-review-new-buffer-window-strategy #'switch-to-buffer)
 ;;   (setq code-review-lgtm-message "lgtm"))
+
 (with-eval-after-load 'bibtex
   (setq bibtex-entry-format '(sort-fields whitespace))
   (bibtex-set-dialect 'biblatex))
