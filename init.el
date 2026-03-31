@@ -186,7 +186,12 @@
 
 (with-eval-after-load 'agent-shell
   (setq agent-shell-show-session-id t)
-  (setq agent-shell-prefer-viewport-interaction t))
+  (setq agent-shell-prefer-viewport-interaction t)
+  (defun agent-shell-subdir (subdir)
+    (let* ((cwd (string-remove-suffix "/" (agent-shell-cwd)))
+           (sanitized (replace-regexp-in-string "/" "-" (string-remove-prefix "/" cwd))))
+      (expand-file-name subdir (locate-user-emacs-file (concat "agent-shell/" sanitized)))))
+  (setq agent-shell-dot-subdir-function #'agent-shell-subdir))
 
 ;; (with-eval-after-load 'code-review
 ;;   (setq code-review-new-buffer-window-strategy #'switch-to-buffer)
