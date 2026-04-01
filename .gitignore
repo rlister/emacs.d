@@ -1,3 +1,6 @@
+.*
+!.gitignore
+
 # Compiled
 *.elc
 
@@ -6,6 +9,7 @@
 
 .org-generic-id-locations
 abbrev_defs
+agent*
 auto-save-list/
 backups/
 bookmarks
@@ -17,6 +21,7 @@ elpa/
 emojis/
 eshell/
 *.sqlite
+history
 ido.last
 ielm-history.eld
 image-dired/
@@ -28,5 +33,6 @@ recentf
 request/
 smex-items
 tramp
+tree-sitter/
 transient/
 url/
