@@ -1,1 +1,1 @@
-moved to [https://git.sr.ht/~rlister/emacs.d](https://git.sr.ht/~rlister/emacs.d)
+moved to [https://git.sr.ht/~rl/emacs.d](https://git.sr.ht/~rl/emacs.d)
