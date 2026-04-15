@@ -57,7 +57,7 @@
 (setq mouse-yank-at-point t)
 (setq native-comp-async-report-warnings-errors 'silent) ;log warnings but not pop up the *Warnings* buffer
 (setq next-error-message-highlight t)
-(setq project-switch-commands 'project-dired)
+(setq project-switch-commands 'project-vc-dir)
 (setq read-buffer-completion-ignore-case t)
 (setq read-file-name-completion-ignore-case t)
 (setq recenter-positions '(top middle bottom))
@@ -468,3 +468,7 @@
 
 (add-hook 'server-after-make-frame-hook #'translate-gui-keys) ;server initial frame
 (add-hook 'after-init-hook #'translate-gui-keys)              ;non-server
+
+;; (with-current-buffer "Claude Code Agent @ emperor-penguin"
+;;   (let (kill-buffer-hook kill-buffer-query-functions)
+;;     (kill-buffer)))
