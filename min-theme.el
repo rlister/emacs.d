@@ -1,4 +1,4 @@
-;;; min-theme.el --- Minimalist theme
+;;; min-theme.el --- Minimalist theme  -*- lexical-binding: t; -*-
 
 ;; Version: 0
 (deftheme min "Minimalist theme")
